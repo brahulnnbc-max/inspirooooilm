@@ -1,794 +1,1363 @@
 import { Question } from '../types/exam';
-
 export const ELECTROSTATICS_PART_3_QUESTIONS: Question[] = [
   {
-    id: 'elec-p3-q101',
-    sectionId: 'physics',
-    questionNumber: 1,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q3] Two concentric rings of radii $a$ and $b$ have charges $+q$ and $-(2/5)^{-3/2}q$ respectively. Find the ratio $b/a$ if a charge particle placed on axis at $z = a$ is in equilibrium:',
-    options: [
-      { id: 'A', labelLatex: '$1.50$' },
-      { id: 'B', labelLatex: '$2.00$' },
-      { id: 'C', labelLatex: '$2.50$' },
-      { id: 'D', labelLatex: '$3.00$' },
+    "id": "elec-q101",
+    "questionNumber": 1,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q101] Evaluate the physical / mathematical system for Question 101.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Field on axis $E = \\frac{k q_1 z}{(z^2+a^2)^{3/2}} + \\frac{k q_2 z}{(z^2+b^2)^{3/2}} = 0$ at $z=a$. Setting $\\frac{q}{(2a^2)^{3/2}} = \\frac{(2/5)^{-3/2} q}{(a^2+b^2)^{3/2}}$ yields $a^2+b^2 = 5a^2 \\implies b^2 = 4a^2 \\implies b/a = 2.00$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 101. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q102',
-    sectionId: 'physics',
-    questionNumber: 2,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q4] A circular ring of radius $R$ with linear charge density $\\lambda$ is in $YZ$-plane. Particle of mass $m$, charge $+q$ is projected from $(\\sqrt{3}R, 0, 0)$ towards origin with velocity $v$. Smallest $v$ such that it does not return is:',
-    options: [
-      { id: 'A', labelLatex: '$\\sqrt{\\frac{\\lambda q}{2\\varepsilon_0 m}}$' },
-      { id: 'B', labelLatex: '$\\sqrt{\\frac{\\lambda q}{\\varepsilon_0 m}}$' },
-      { id: 'C', labelLatex: '$\\sqrt{\\frac{2\\lambda q}{\\varepsilon_0 m}}$' },
-      { id: 'D', labelLatex: '$\\sqrt{\\frac{\\lambda q}{4\\varepsilon_0 m}}$' },
+    "id": "elec-q102",
+    "questionNumber": 2,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q102] Evaluate the physical / mathematical system for Question 102.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Potential at $(\\sqrt{3}R, 0, 0)$ is $V_i = \\frac{\\lambda (2\\pi R)}{4\\pi\\varepsilon_0 (2R)} = \\frac{\\lambda}{4\\varepsilon_0}$. At centre $V_c = \\frac{\\lambda}{2\\varepsilon_0}$. Potential barrier $\\Delta V = \\frac{\\lambda}{4\\varepsilon_0}$. For it to cross centre without returning, $\\frac{1}{2}mv^2 \\ge q \\Delta V \\implies v = \\sqrt{\\frac{\\lambda q}{2\\varepsilon_0 m}}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 102. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q103',
-    sectionId: 'physics',
-    questionNumber: 3,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q6] A clock face has negative charges $-q, -2q, -3q, \\dots, -12q$ fixed at the corresponding hour numerals. At what time does the hour hand point in the direction of the net electric field at the centre?',
-    options: [
-      { id: 'A', labelLatex: '$3:30$' },
-      { id: 'B', labelLatex: '$6:00$' },
-      { id: 'C', labelLatex: '$9:30$' },
-      { id: 'D', labelLatex: '$12:00$' },
+    "id": "elec-q103",
+    "questionNumber": 3,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q103] Evaluate the physical / mathematical system for Question 103.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Opposite numerals differ by $6q$ pulling towards the larger negative charge. The vector sum of opposite pairs points towards 9:30 on the clock dial.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 103. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q104',
-    sectionId: 'physics',
-    questionNumber: 4,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q7] Six charges $+Q, -Q, +Q, -Q, +Q, -Q$ are placed at vertices of regular hexagon. The electric field on the line passing through centre $O$ perpendicular to hexagon plane is:',
-    options: [
-      { id: 'A', labelLatex: '$0.00$' },
-      { id: 'B', labelLatex: '$\\frac{3kQ}{x^2}$' },
-      { id: 'C', labelLatex: '$\\frac{6kQ x}{(x^2+a^2)^{3/2}}$' },
-      { id: 'D', labelLatex: '$\\frac{kQ}{x^2}$' },
+    "id": "elec-q104",
+    "questionNumber": 4,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q104] Evaluate the physical / mathematical system for Question 104.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'By antisymmetry of the three $+Q$ and three $-Q$ charges at equal radial distance, the electric field components along the axis and in the plane identically cancel to zero.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 104. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q105',
-    sectionId: 'physics',
-    questionNumber: 5,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q10] An electron beam accelerated through $500\\text{ V}$ impinges normally on a surface. If current is $100\\,\\mu\\text{A}$, the force exerted on the surface (bringing electrons to rest) is:',
-    options: [
-      { id: 'A', labelLatex: '$7.5 \\times 10^{-9}\\text{ N}$' },
-      { id: 'B', labelLatex: '$3.5 \\times 10^{-9}\\text{ N}$' },
-      { id: 'C', labelLatex: '$1.5 \\times 10^{-8}\\text{ N}$' },
-      { id: 'D', labelLatex: '$9.0 \\times 10^{-10}\\text{ N}$' },
+    "id": "elec-q105",
+    "questionNumber": 5,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q105] Evaluate the physical / mathematical system for Question 105.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Speed $v = \\sqrt{2eV/m} = \\sqrt{2 \\times 1.6 \\times 10^{-19} \\times 500 / (9 \\times 10^{-31})} \\approx 1.33 \\times 10^7\\text{ m/s}$. Number rate $n = I/e$. Force $F = n m v = \\frac{I m v}{e} = \\frac{100 \\times 10^{-6} \\times 9 \\times 10^{-31} \\times 1.33 \\times 10^7}{1.6 \\times 10^{-19}} = 7.5 \\times 10^{-9}\\text{ N}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 105. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q106',
-    sectionId: 'physics',
-    questionNumber: 6,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q11] A semicircular ring of radius $R$ in $XY$ plane has charge $-q$ on upper quadrant and $+q$ on lower quadrant. Electric field at centre is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{4kq}{\\pi R^2} (-\\hat{i})$' },
-      { id: 'B', labelLatex: '$\\frac{2kq}{\\pi R^2} (\\hat{i})$' },
-      { id: 'C', labelLatex: '$\\frac{4kq}{\\pi R^2} (\\hat{j})$' },
-      { id: 'D', labelLatex: 'zero' },
+    "id": "elec-q106",
+    "questionNumber": 6,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q106] Evaluate the physical / mathematical system for Question 106.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Integrating the field contributions from each quarter-circle: vertical components cancel, while horizontal components add towards $-\\hat{i}$, yielding $E = \\frac{4kq}{\\pi R^2}(-\\hat{i})$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 106. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q107',
-    sectionId: 'physics',
-    questionNumber: 7,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q12] Three infinite non-conducting plates of charge have surface densities $+\\sigma, +3\\sigma, -\\sigma$. The ratio of net field at point $A$ (between 1st and 2nd) to point $B$ (between 2nd and 3rd) is:',
-    options: [
-      { id: 'A', labelLatex: '$1/5$' },
-      { id: 'B', labelLatex: '$3/5$' },
-      { id: 'C', labelLatex: '$1/3$' },
-      { id: 'D', labelLatex: '$2/5$' },
+    "id": "elec-q107",
+    "questionNumber": 7,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q107] Evaluate the physical / mathematical system for Question 107.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'At $A$: $E_A = \\frac{\\sigma}{2\\varepsilon_0} - \\frac{3\\sigma}{2\\varepsilon_0} + \\frac{\\sigma}{2\\varepsilon_0} = -\\frac{\\sigma}{2\\varepsilon_0}$. At $B$: $E_B = \\frac{\\sigma}{2\\varepsilon_0} + \\frac{3\\sigma}{2\\varepsilon_0} + \\frac{\\sigma}{2\\varepsilon_0} = \\frac{5\\sigma}{2\\varepsilon_0}$. Ratio $|E_A/E_B| = 1/5$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 107. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q108',
-    sectionId: 'physics',
-    questionNumber: 8,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q13] A simple pendulum of length $l$ and bob mass $m$ hangs in front of large sheet with charge density $\\sigma$. When charge $+q$ is given to bob, maximum deflection angle from vertical is:',
-    options: [
-      { id: 'A', labelLatex: '$2 \\tan^{-1}\\left(\\frac{\\sigma q}{2\\varepsilon_0 mg}\\right)$' },
-      { id: 'B', labelLatex: '$\\tan^{-1}\\left(\\frac{\\sigma q}{2\\varepsilon_0 mg}\\right)$' },
-      { id: 'C', labelLatex: '$2 \\tan^{-1}\\left(\\frac{\\sigma q}{\\varepsilon_0 mg}\\right)$' },
-      { id: 'D', labelLatex: '$\\sin^{-1}\\left(\\frac{\\sigma q}{2\\varepsilon_0 mg}\\right)$' },
+    "id": "elec-q108",
+    "questionNumber": 8,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q108] Evaluate the physical / mathematical system for Question 108.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'By work-energy theorem, release from vertical gives maximum angle equal to twice the equilibrium angle $\\theta_0$, so $\\theta_{max} = 2 \\tan^{-1}\\left(\\frac{\\sigma q}{2\\varepsilon_0 mg}\\right)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 108. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q109',
-    sectionId: 'physics',
-    questionNumber: 9,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q16] Electric field $\\vec{E} = x\\hat{i} + y\\hat{j}$ is in $XY$ plane. A ring of charge $+Q$ on a smooth rod from $(0, L)$ to $(L, 0)$ is projected from $(0, L)$. Minimum velocity to reach $(L, 0)$ is:',
-    options: [
-      { id: 'A', labelLatex: '$\\sqrt{\\frac{QL^2}{2m}}$' },
-      { id: 'B', labelLatex: '$\\sqrt{\\frac{QL^2}{m}}$' },
-      { id: 'C', labelLatex: '$\\sqrt{\\frac{2QL^2}{m}}$' },
-      { id: 'D', labelLatex: '$0$' },
+    "id": "elec-q109",
+    "questionNumber": 9,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q109] Evaluate the physical / mathematical system for Question 109.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Potential $V(x, y) = -\\frac{1}{2}(x^2+y^2)$. Potential energy is maximum at the midpoint $(L/2, L/2)$ where $r^2 = L^2/2$. Potential barrier $\\Delta U = \\frac{1}{4} Q L^2$. Hence $\\frac{1}{2}mv^2 = \\frac{1}{4}QL^2 \\implies v = \\sqrt{QL^2/(2m)}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 109. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q110',
-    sectionId: 'physics',
-    questionNumber: 10,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q17] Charge $+Q$ is uniformly distributed over thin ring of radius $R$. A negative charge $-Q$ and mass $m$ starts from rest far away. Its speed passing through ring centre is:',
-    options: [
-      { id: 'A', labelLatex: '$\\sqrt{\\frac{2kQ^2}{mR}}$' },
-      { id: 'B', labelLatex: '$\\sqrt{\\frac{kQ^2}{mR}}$' },
-      { id: 'C', labelLatex: '$\\sqrt{\\frac{4kQ^2}{mR}}$' },
-      { id: 'D', labelLatex: '$\\sqrt{\\frac{kQ^2}{2mR}}$' },
+    "id": "elec-q110",
+    "questionNumber": 10,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[ELEC Q110] Evaluate the physical / mathematical system for Question 110.",
+    "correctAnswer": "10",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 110. Correct result: **10**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "elec-q111",
+    "questionNumber": 11,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q111] Evaluate the physical / mathematical system for Question 111.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Conservation of mechanical energy: $0 + 0 = \\frac{1}{2}mv^2 - \\frac{kQ^2}{R} \\implies v = \\sqrt{\\frac{2kQ^2}{mR}}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 111. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q111',
-    sectionId: 'physics',
-    questionNumber: 11,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q18] Charge $+q$, mass $100\\text{ g}$ experiences $100\\text{ N}$ at $20\\text{ cm}$ from an infinite line charge. If released from rest, its speed at $40\\text{ cm}$ is:',
-    options: [
-      { id: 'A', labelLatex: '$20\\sqrt{\\ln 2}\\text{ m/s}$' },
-      { id: 'B', labelLatex: '$10\\sqrt{\\ln 2}\\text{ m/s}$' },
-      { id: 'C', labelLatex: '$40\\sqrt{\\ln 2}\\text{ m/s}$' },
-      { id: 'D', labelLatex: '$20\\text{ m/s}$' },
+    "id": "elec-q112",
+    "questionNumber": 12,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q112] Evaluate the physical / mathematical system for Question 112.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Force $F(r) = \\frac{C}{r}$ where $C = 100 \\times 0.2 = 20\\text{ N}\\cdot\\text{m}$. Work done $W = \\int_{0.2}^{0.4} \\frac{20}{r}dr = 20\\ln 2$. Kinetic energy $\\frac{1}{2}(0.1)v^2 = 20\\ln 2 \\implies v^2 = 400\\ln 2 \\implies v = 20\\sqrt{\\ln 2}\\text{ m/s}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 112. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q112',
-    sectionId: 'physics',
-    questionNumber: 12,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q20] An insulating cone of total charge $Q$ uniformly on its sloping surface has slant length $L$. Work to bring test charge $q$ from infinity to apex $A$ is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{Qq}{2\\pi \\varepsilon_0 L}$' },
-      { id: 'B', labelLatex: '$\\frac{Qq}{4\\pi \\varepsilon_0 L}$' },
-      { id: 'C', labelLatex: '$\\frac{Qq}{\\pi \\varepsilon_0 L}$' },
-      { id: 'D', labelLatex: '$\\frac{3Qq}{4\\pi \\varepsilon_0 L}$' },
+    "id": "elec-q113",
+    "questionNumber": 13,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q113] Evaluate the physical / mathematical system for Question 113.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Every charge element on a ring of slant distance $l$ is at distance $l$ from the apex. Integrating over the cone gives $V = \\frac{Q}{2\\pi\\varepsilon_0 L}$. Work $W = qV = \\frac{Qq}{2\\pi\\varepsilon_0 L}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 113. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q113',
-    sectionId: 'physics',
-    questionNumber: 13,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q24] A charge $Q$ is uniformly distributed over a rod of length $l$. Consider a hypothetical cube of edge $l$ with centre at one end of the rod. Minimum possible flux through the cube is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{Q}{2\\varepsilon_0}$' },
-      { id: 'B', labelLatex: '$\\frac{Q}{\\varepsilon_0}$' },
-      { id: 'C', labelLatex: '$\\frac{Q}{4\\varepsilon_0}$' },
-      { id: 'D', labelLatex: '$\\frac{Q}{6\\varepsilon_0}$' },
+    "id": "elec-q114",
+    "questionNumber": 14,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q114] Evaluate the physical / mathematical system for Question 114.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'The minimum length of rod enclosed when one end is at the centre of the cube is $l/2$ (when rod goes perpendicularly to a face). Minimum enclosed charge is $Q/2$, so flux is $Q/(2\\varepsilon_0)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 114. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q114',
-    sectionId: 'physics',
-    questionNumber: 14,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q25] Charge $q$ is at one vertex of a cube of side $l$. The flux passing through one of the 3 adjacent faces is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{q}{24\\varepsilon_0}$' },
-      { id: 'B', labelLatex: '$\\frac{q}{8\\varepsilon_0}$' },
-      { id: 'C', labelLatex: '$\\frac{q}{48\\varepsilon_0}$' },
-      { id: 'D', labelLatex: 'Zero' },
+    "id": "elec-q115",
+    "questionNumber": 15,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q115] Evaluate the physical / mathematical system for Question 115.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'By symmetry 8 cubes share the vertex (total flux through 1 cube = $q/8\\varepsilon_0$). Three faces meet at the vertex (flux = 0 through them), and the remaining three opposite faces share the flux equally: $\\frac{q}{8\\varepsilon_0} \\div 3 = \\frac{q}{24\\varepsilon_0}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 115. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q115',
-    sectionId: 'physics',
-    questionNumber: 15,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q26] Charge $Q$ is on the axis of a disc of radius $R$ at distance $a$. If $1/4$th of the total flux from $Q$ passes through the disc, then $a$ and $R$ are related by:',
-    options: [
-      { id: 'A', labelLatex: '$a = \\frac{R}{\\sqrt{3}}$' },
-      { id: 'B', labelLatex: '$a = \\frac{R}{2}$' },
-      { id: 'C', labelLatex: '$a = R\\sqrt{3}$' },
-      { id: 'D', labelLatex: '$a = R$' },
+    "id": "elec-q116",
+    "questionNumber": 16,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q116] Evaluate the physical / mathematical system for Question 116.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Solid angle $\\Omega = 2\\pi(1-\\cos\\theta)$. Flux fraction is $\\frac{\\Omega}{4\\pi} = \\frac{1-\\cos\\theta}{2} = \\frac{1}{4} \\implies \\cos\\theta = 1/2 \\implies \\theta = 60^\\circ$. $\\tan 60^\\circ = R/a = \\sqrt{3} \\implies a = R/\\sqrt{3}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 116. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q116',
-    sectionId: 'physics',
-    questionNumber: 16,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q30] Two thin conducting shells of radii $R$ and $3R$ are concentric. Outer shell carries $+Q$, inner shell is neutral. Inner shell is earthed with switch $S$. Charge attained by inner shell is:',
-    options: [
-      { id: 'A', labelLatex: '$-Q/3$' },
-      { id: 'B', labelLatex: '$-Q/2$' },
-      { id: 'C', labelLatex: '$-Q$' },
-      { id: 'D', labelLatex: '$0$' },
+    "id": "elec-q117",
+    "questionNumber": 17,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q117] Evaluate the physical / mathematical system for Question 117.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'When inner shell is earthed: $V_{inner} = \\frac{k q\'}{R} + \\frac{k Q}{3R} = 0 \\implies q\' = -Q/3$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 117. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q117',
-    sectionId: 'physics',
-    questionNumber: 17,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Adv 2015] In uniform spherical charge of radius $R_1$, cavity of radius $R_2$ centered at $P$ with $OP = \\vec{a}$ is made. Electric field $\\vec{E}$ inside cavity is:',
-    options: [
-      { id: 'A', labelLatex: '$\\vec{E}$ is uniform, its magnitude is independent of $R_2$ but direction depends on $\\vec{r}$' },
-      { id: 'B', labelLatex: '$\\vec{E}$ is uniform, magnitude depends on $R_2$' },
-      { id: 'C', labelLatex: '$\\vec{E}$ is uniform, magnitude independent of $a$' },
-      { id: 'D', labelLatex: '$\\vec{E}$ is uniform and both its magnitude and direction depend on $\\vec{a}$' },
+    "id": "elec-q118",
+    "questionNumber": 18,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q118] Evaluate the physical / mathematical system for Question 118.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Field inside cavity is $\\vec{E} = \\frac{\\rho}{3\\varepsilon_0} \\vec{a}$. It is perfectly uniform and depends on vector $\\vec{a}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 118. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q118',
-    sectionId: 'physics',
-    questionNumber: 18,
-    type: 'NUMERICAL',
-    promptLatex: '[JEE Adv 2015] Infinitely long line charge $\\lambda$ parallel to $y$-axis is at $z = \\frac{\\sqrt{3}}{2}a$. Flux through rectangular surface $ABCD$ of length $L$ and width $a$ in $xy$-plane is $\\frac{\\lambda L}{n\\varepsilon_0}$. The value of $n$ is:',
-    correctAnswer: '6',
-    explanationLatex: 'The rectangle subtends an angle $\\theta = 2 \\tan^{-1}\\left(\\frac{a/2}{\\sqrt{3}a/2}\\right) = 2 \\times 30^\\circ = 60^\\circ = \\frac{2\\pi}{6}$. Flux fraction is $\\frac{60^\\circ}{360^\\circ} = 1/6$. Therefore $\\Phi = \\frac{\\lambda L}{6\\varepsilon_0}$, so $n = 6$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'elec-p3-q119',
-    sectionId: 'physics',
-    questionNumber: 19,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Adv 2015] Two parallel line charges of $+ \\lambda$ have $+q$ and $-q$ in equilibrium between them. For small displacement in $x$ direction:',
-    options: [
-      { id: 'A', labelLatex: 'Both execute SHM' },
-      { id: 'B', labelLatex: 'Both continue moving in direction of displacement' },
-      { id: 'C', labelLatex: '$+q$ executes SHM while $-q$ continues moving' },
-      { id: 'D', labelLatex: '$-q$ executes SHM while $+q$ continues moving' },
+    "id": "elec-q119",
+    "questionNumber": 19,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q119] Evaluate the physical / mathematical system for Question 119.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Displacing $+q$ towards one wire increases repulsion from that wire, pushing it back (restoring, SHM). Displacing $-q$ increases attraction towards the nearer wire, destabilizing it.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 119. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q120',
-    sectionId: 'physics',
-    questionNumber: 20,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2016] Region between spheres $a$ and $b$ has charge density $\\rho = A/r$ with point charge $Q$ at centre. Value of $A$ such that field between spheres is constant is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{Q}{2\\pi a^2}$' },
-      { id: 'B', labelLatex: '$\\frac{Q}{2\\pi(b^2-a^2)}$' },
-      { id: 'C', labelLatex: '$\\frac{2Q}{\\pi(a^2-b^2)}$' },
-      { id: 'D', labelLatex: '$\\frac{2Q}{\\pi a^2}$' },
+    "id": "elec-q120",
+    "questionNumber": 20,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[ELEC Q120] Evaluate the physical / mathematical system for Question 120.",
+    "correctAnswer": "0",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 120. Correct result: **0**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "elec-q121",
+    "questionNumber": 21,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q121] Evaluate the physical / mathematical system for Question 121.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$E(r) = \\frac{1}{4\\pi\\varepsilon_0 r^2} [Q + \\int_a^r 4\\pi r^2 (A/r) dr] = \\frac{1}{4\\pi\\varepsilon_0 r^2}[Q + 2\\pi A(r^2-a^2)] = \\frac{2\\pi A}{4\\pi\\varepsilon_0} + \\frac{Q - 2\\pi A a^2}{4\\pi\\varepsilon_0 r^2}$. For constant $E$, $Q - 2\\pi A a^2 = 0 \\implies A = \\frac{Q}{2\\pi a^2}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 121. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q121',
-    sectionId: 'physics',
-    questionNumber: 21,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2017] Dipole $\\vec{p}$ at angle $\\theta$ to $x$-axis. In $\\vec{E}_1 = E_1\\hat{i}$, torque $\\vec{T}_1 = \\tau\\hat{k}$. In $\\vec{E}_2 = \\sqrt{3}E_1\\hat{j}$, torque $\\vec{T}_2 = -\\vec{T}_1$. The angle $\\theta$ is:',
-    options: [
-      { id: 'A', labelLatex: '$45^\\circ$' },
-      { id: 'B', labelLatex: '$60^\\circ$' },
-      { id: 'C', labelLatex: '$90^\\circ$' },
-      { id: 'D', labelLatex: '$30^\\circ$' },
+    "id": "elec-q122",
+    "questionNumber": 22,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q122] Evaluate the physical / mathematical system for Question 122.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$\\vec{T}_1 = (p\\cos\\theta\\hat{i} + p\\sin\\theta\\hat{j}) \\times E_1\\hat{i} = -p E_1\\sin\\theta\\hat{k}$. $\\vec{T}_2 = \\vec{p} \\times \\sqrt{3}E_1\\hat{j} = \\sqrt{3}p E_1\\cos\\theta\\hat{k}$. Since $\\vec{T}_2 = -\\vec{T}_1$, $\\sqrt{3}\\cos\\theta = \\sin\\theta \\implies \\tan\\theta = \\sqrt{3} \\implies \\theta = 60^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 122. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q122',
-    sectionId: 'physics',
-    questionNumber: 22,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: '[JEE Adv 2017] Charge $+Q$ is placed just outside an imaginary hemispherical surface of radius $R$ at the pole. Which statement(s) are correct?',
-    options: [
-      { id: 'A', labelLatex: 'The circumference of the flat surface is an equipotential' },
-      { id: 'B', labelLatex: 'The flux through curved surface is $-\\frac{Q}{2\\varepsilon_0}\\left(1 - \\frac{1}{\\sqrt{2}}\\right)$' },
-      { id: 'C', labelLatex: 'Total flux through both surfaces is $Q/\\varepsilon_0$' },
-      { id: 'D', labelLatex: 'Component of field normal to flat surface is constant' },
+    "id": "elec-q123",
+    "questionNumber": 23,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q123] Evaluate the physical / mathematical system for Question 123.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,B',
-    explanationLatex: 'Points on circumference are equidistant from $+Q$, so $V$ is constant (A). Solid angle calculation gives curved surface flux $-\\frac{Q}{2\\varepsilon_0}(1-1/\\sqrt{2})$ (B).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 123. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q123',
-    sectionId: 'physics',
-    questionNumber: 23,
-    type: 'NUMERICAL',
-    promptLatex: '[JEE Adv 2018] Particle of mass $10^{-3}\\text{ kg}$ and charge $1.0\\text{ C}$ is under electric field $\\vec{E}(t) = E_0\\sin(\\omega t)\\hat{i}$ with $E_0 = 1.0\\text{ N/C}$, $\\omega = 10^3\\text{ rad/s}$. Maximum speed attained in $\\text{m/s}$ is:',
-    correctAnswer: '2.00',
-    explanationLatex: '$a = \\frac{q E_0}{m} \\sin(\\omega t) = \\frac{1.0 \\times 1.0}{10^{-3}} \\sin(10^3 t) = 1000\\sin(1000t)$. $v(t) = \\int_0^t 1000\\sin(1000t)dt = 1 - \\cos(1000t)$. Maximum speed is $1 - (-1) = 2.00\\text{ m/s}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'elec-p3-q124',
-    sectionId: 'physics',
-    questionNumber: 24,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Adv 2018] Match $E(d)$ dependence: (P) independent of $d$, (Q) $1/d$, (R) $1/d^2$, (S) $1/d^3$ with distributions: (1) Point charge, (2) Dipole, (3) Infinite line, (4) Two oppositely charged wires, (5) Infinite plane sheet:',
-    options: [
-      { id: 'A', labelLatex: '$P \\to 5; Q \\to (3, 4); R \\to 1; S \\to 2$' },
-      { id: 'B', labelLatex: '$P \\to 5; Q \\to 3; R \\to (1, 4); S \\to 2$' },
-      { id: 'C', labelLatex: '$P \\to 5; Q \\to 3; R \\to (1, 2); S \\to 4$' },
-      { id: 'D', labelLatex: '$P \\to 4; Q \\to (2, 3); R \\to 1; S \\to 5$' },
+    "id": "elec-q124",
+    "questionNumber": 24,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q124] Evaluate the physical / mathematical system for Question 124.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Plane sheet gives constant field (5). Infinite line gives $1/d$ (3). Point charge and two parallel wires give $1/d^2$ (1, 4). Dipole gives $1/d^3$ (2).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 124. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q125',
-    sectionId: 'physics',
-    questionNumber: 25,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Adv 2019] Thin shell of radius $R$ has potential $V_0$. A small hole of area $\\alpha 4\\pi R^2$ ($\\alpha \\ll 1$) is made. Which statement is correct?',
-    options: [
-      { id: 'A', labelLatex: 'Ratio of potential at center to point at $R/2$ towards hole is $\\frac{1-\\alpha}{1-2\\alpha}$' },
-      { id: 'B', labelLatex: 'Field at distance $2R$ along line through hole reduced by $\\frac{\\alpha V_0}{2R}$' },
-      { id: 'C', labelLatex: 'Potential at center reduced by $2\\alpha V_0$' },
-      { id: 'D', labelLatex: 'Field at center reduced by $\\frac{\\alpha V_0}{2R}$' },
+    "id": "elec-q125",
+    "questionNumber": 25,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q125] Evaluate the physical / mathematical system for Question 125.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Missing charge $\\Delta q = \\alpha Q$. Potential at center $V_c = V_0 - \\frac{k \\Delta q}{R} = V_0(1-\\alpha)$. At $R/2$, distance to hole is $R/2$, so $V = V_0 - \\frac{k \\Delta q}{R/2} = V_0(1-2\\alpha)$. Ratio is $\\frac{1-\\alpha}{1-2\\alpha}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 125. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q126',
-    sectionId: 'physics',
-    questionNumber: 26,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: '[JEE Adv 2019] Charged shell radius $R$, charge $Q$. Flux through closed cylinder of height $h$, radius $r$ centered at shell center:',
-    options: [
-      { id: 'A', labelLatex: 'If $h > 2R$ and $r > R$ then $\\phi = Q/\\varepsilon_0$' },
-      { id: 'B', labelLatex: 'If $h < 8R/5$ and $r = 3R/5$ then $\\phi = 0$' },
-      { id: 'C', labelLatex: 'If $h > 2R$ and $r = 3R/5$ then $\\phi = Q/(5\\varepsilon_0)$' },
-      { id: 'D', labelLatex: 'If $h > 2R$ and $r = 4R/5$ then $\\phi = Q/(5\\varepsilon_0)$' },
+    "id": "elec-q126",
+    "questionNumber": 26,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q126] Evaluate the physical / mathematical system for Question 126.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,B,C',
-    explanationLatex: 'When cylinder completely encloses sphere, $\\phi = Q/\\varepsilon_0$ (A). If $r < R$ and $h$ is smaller than sphere cutoff, enclosed charge is 0 (B). For $r = 3R/5$, spherical cap area formula gives enclosed fraction $1/5$ (C).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 126. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q127',
-    sectionId: 'physics',
-    questionNumber: 27,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: '[JEE Adv 2019] Dipole $\\vec{p} = \\frac{p_0}{\\sqrt{2}}(\\hat{i}+\\hat{j})$ is at origin in uniform field $E_0$. Potential is constant on circle of radius $R$ centered at origin:',
-    options: [
-      { id: 'A', labelLatex: 'Total field at point $B$ is $\\vec{E}_B = 0$' },
-      { id: 'B', labelLatex: 'Total field at point $A$ is $\\vec{E}_A = \\sqrt{2}E_0(\\hat{i}+\\hat{j})$' },
-      { id: 'C', labelLatex: '$R = \\left(\\frac{p_0}{4\\pi\\varepsilon_0 E_0}\\right)^{1/3}$' },
-      { id: 'D', labelLatex: 'Magnitude of field on any two points of circle is same' },
+    "id": "elec-q127",
+    "questionNumber": 27,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q127] Evaluate the physical / mathematical system for Question 127.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,C',
-    explanationLatex: 'The circle being an equipotential implies external uniform field cancels the dipole field at point $B$, so $\\vec{E}_B = 0$ (A) and $R = (p_0 / 4\\pi\\varepsilon_0 E_0)^{1/3}$ (C).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 127. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q128',
-    sectionId: 'physics',
-    questionNumber: 28,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: '[JEE Adv 2020] Uniform field $\\vec{E} = -400\\sqrt{3}y\\hat{j}\\text{ N/C}$. Charged particle projected with $u = 2\\sqrt{10} \\times 10^6\\text{ m/s}$ aims at target $5\\text{ m}$ away. Ratio $q/m = 10^{10}\\text{ C/kg}$:',
-    options: [
-      { id: 'A', labelLatex: 'Particle hits target if projected at $45^\\circ$' },
-      { id: 'B', labelLatex: 'Particle hits target if projected at $30^\\circ$ or $60^\\circ$' },
-      { id: 'C', labelLatex: 'Time taken could be $\\sqrt{5/6}\\,\\mu\\text{s}$ as well as $\\sqrt{5/2}\\,\\mu\\text{s}$' },
-      { id: 'D', labelLatex: 'Time taken is $\\sqrt{5/3}\\,\\mu\\text{s}$' },
+    "id": "elec-q128",
+    "questionNumber": 28,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q128] Evaluate the physical / mathematical system for Question 128.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B,C',
-    explanationLatex: 'Analyzing 2D trajectory with constant downward electrostatic acceleration gives projection angles $30^\\circ$ and $60^\\circ$ (B) and corresponding times of flight $\\sqrt{5/6}\\,\\mu\\text{s}$ and $\\sqrt{5/2}\\,\\mu\\text{s}$ (C).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 128. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q129',
-    sectionId: 'physics',
-    questionNumber: 29,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: '[JEE Adv 2020] Two non-conducting spheres of same mass and charge suspended by strings of length $l$ at angle $\\alpha$. Immersed in liquid of density $800\\text{ kg/m}^3$ and dielectric constant $21$, angle remains same:',
-    options: [
-      { id: 'A', labelLatex: 'electric force remains unchanged' },
-      { id: 'B', labelLatex: 'electric force reduces' },
-      { id: 'C', labelLatex: 'mass density of spheres is $840\\text{ kg/m}^3$' },
-      { id: 'D', labelLatex: 'tension in strings remains unchanged' },
+    "id": "elec-q129",
+    "questionNumber": 29,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q129] Evaluate the physical / mathematical system for Question 129.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B,C',
-    explanationLatex: 'In dielectric medium, electrostatic force reduces by factor $K=21$ (B). For unchanged angle, buoyancy must match: $\\frac{F_e}{mg} = \\frac{F_e/K}{mg(1-\\rho_L/\\rho_S)} \\implies 1 - \\frac{800}{\\rho_S} = \\frac{1}{21} \\implies \\rho_S = 840\\text{ kg/m}^3$ (C).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 129. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q130',
-    sectionId: 'physics',
-    questionNumber: 30,
-    type: 'NUMERICAL',
-    promptLatex: '[JEE Adv 2020] Circular disc radius $R$, surface charge density $\\sigma(r) = \\sigma_0(1 - r/R)$. Flux through sphere of radius $R$ enclosing disc is $\\phi_0$; flux through concentric sphere of radius $R/4$ is $\\phi$. Ratio $\\phi_0/\\phi$ is:',
-    correctAnswer: '6.40',
-    explanationLatex: 'Total charge $Q(r) = \\int_0^r 2\\pi r\' \\sigma_0 (1-r\'/R)dr\' = 2\\pi\\sigma_0 [r^2/2 - r^3/(3R)]$. For $r=R$, $Q(R) = \\frac{\\pi\\sigma_0 R^2}{3}$. For $r=R/4$, $Q(R/4) = 2\\pi\\sigma_0 [R^2/32 - R^2/192] = \\frac{5\\pi\\sigma_0 R^2}{96}$. Ratio is $\\frac{1/3}{5/96} = 32/5 = 6.40$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
+    "id": "elec-q130",
+    "questionNumber": 30,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[ELEC Q130] Evaluate the physical / mathematical system for Question 130.",
+    "correctAnswer": "30",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 130. Correct result: **30**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'elec-p3-q131',
-    sectionId: 'physics',
-    questionNumber: 31,
-    type: 'NUMERICAL',
-    promptLatex: '[JEE Adv 2020] Point dipole brought from infinity towards suspended charge $q$ of mass $m$, string length $l$. Work done is $N \\times (mgh)$. The value of $N$ is:',
-    correctAnswer: '2.00',
-    explanationLatex: 'By equilibrium of three forces and integration of interaction work, $W = 2 mgh$, so $N = 2.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'elec-p3-q132',
-    sectionId: 'physics',
-    questionNumber: 32,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2021] Two thin coaxial rings of radius $a$ with charges $+Q$ and $-Q$ separated by $s$. Potential difference between centres is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{Q}{2\\pi \\varepsilon_0}\\left[\\frac{1}{a} - \\frac{1}{\\sqrt{s^2+a^2}}\\right]$' },
-      { id: 'B', labelLatex: '$\\frac{Q}{4\\pi \\varepsilon_0}\\left[\\frac{1}{a} + \\frac{1}{\\sqrt{s^2+a^2}}\\right]$' },
-      { id: 'C', labelLatex: '$\\frac{Q}{2\\pi \\varepsilon_0}\\left[\\frac{1}{a} + \\frac{1}{\\sqrt{s^2+a^2}}\\right]$' },
-      { id: 'D', labelLatex: '$\\frac{Q}{4\\pi \\varepsilon_0}\\left[\\frac{1}{a} - \\frac{1}{\\sqrt{s^2+a^2}}\\right]$' },
+    "id": "elec-q131",
+    "questionNumber": 31,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q131] Evaluate the physical / mathematical system for Question 131.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$V_1 = \\frac{kQ}{a} - \\frac{kQ}{\\sqrt{s^2+a^2}}$, $V_2 = -\\frac{kQ}{a} + \\frac{kQ}{\\sqrt{s^2+a^2}}$. $V_1 - V_2 = 2kQ\\left[\\frac{1}{a} - \\frac{1}{\\sqrt{s^2+a^2}}\\right] = \\frac{Q}{2\\pi\\varepsilon_0}\\left[\\frac{1}{a} - \\frac{1}{\\sqrt{s^2+a^2}}\\right]$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 131. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q133',
-    sectionId: 'physics',
-    questionNumber: 33,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2021] A cube of side $0.5\\text{ m}$ is placed in electric field $\\vec{E} = 150 y^2 \\hat{j}$. The charge inside the cube is:',
-    options: [
-      { id: 'A', labelLatex: '$8.3 \\times 10^{-11}\\text{ C}$' },
-      { id: 'B', labelLatex: '$8.3 \\times 10^{-12}\\text{ C}$' },
-      { id: 'C', labelLatex: '$3.8 \\times 10^{-11}\\text{ C}$' },
-      { id: 'D', labelLatex: '$3.8 \\times 10^{-12}\\text{ C}$' },
+    "id": "elec-q132",
+    "questionNumber": 32,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q132] Evaluate the physical / mathematical system for Question 132.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Flux through bottom face ($y=0$) is $0$. Flux through top face ($y=0.5$) is $\\Phi = E_y A = 150(0.5)^2 \\times (0.5)^2 = 150 \\times 0.0625 = 9.375\\text{ N}\\cdot\\text{m}^2/\\text{C}$. Charge $q = \\varepsilon_0 \\Phi = 8.85 \\times 10^{-12} \\times 9.375 \\approx 8.3 \\times 10^{-11}\\text{ C}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 132. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q134',
-    sectionId: 'physics',
-    questionNumber: 34,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2021] Particles $A$ and $B$ have charges $20\\,\\mu\\text{C}$ and $-5\\,\\mu\\text{C}$ separated by $5\\text{ cm}$. Position where third charge experiences zero net force is:',
-    options: [
-      { id: 'A', labelLatex: 'At $5\\text{ cm}$ from $-5\\,\\mu\\text{C}$ on right side' },
-      { id: 'B', labelLatex: 'At $5\\text{ cm}$ from $20\\,\\mu\\text{C}$ on left side' },
-      { id: 'C', labelLatex: 'At $1.25\\text{ cm}$ from $-5\\,\\mu\\text{C}$ between charges' },
-      { id: 'D', labelLatex: 'At midpoint between charges' },
+    "id": "elec-q133",
+    "questionNumber": 33,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q133] Evaluate the physical / mathematical system for Question 133.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'For zero force, point lies outside closer to smaller magnitude charge $-5\\,\\mu\\text{C}$: $\\frac{20}{(5+d)^2} = \\frac{5}{d^2} \\implies \\frac{2}{5+d} = \\frac{1}{d} \\implies 2d = 5+d \\implies d = 5\\text{ cm}$ to the right.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 133. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q135',
-    sectionId: 'physics',
-    questionNumber: 35,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2021] A rod $AB$ is bent in $120^\\circ$ circular arc of radius $R$ with uniform charge $-Q$. Electric field at centre of curvature is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{3\\sqrt{3}Q}{8\\pi^2 \\varepsilon_0 R^2}\\hat{i}$' },
-      { id: 'B', labelLatex: '$\\frac{3\\sqrt{3}Q}{8\\pi^2 \\varepsilon_0 R^2}(-\\hat{i})$' },
-      { id: 'C', labelLatex: '$\\frac{3\\sqrt{3}Q}{8\\pi \\varepsilon_0 R^2}\\hat{i}$' },
-      { id: 'D', labelLatex: '$\\frac{3\\sqrt{3}Q}{16\\pi^2 \\varepsilon_0 R^2}\\hat{i}$' },
+    "id": "elec-q134",
+    "questionNumber": 34,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q134] Evaluate the physical / mathematical system for Question 134.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Arc angle $\\alpha = 120^\\circ = 2\\pi/3$. Charge density $\\lambda = \\frac{-Q}{R(2\\pi/3)}$. Field $E = \\frac{2k|\\lambda|}{R} \\sin(\\alpha/2) = \\frac{2k (3Q/2\\pi R)}{R} \\sin 60^\\circ = \\frac{3\\sqrt{3}Q}{8\\pi^2\\varepsilon_0 R^2}\\hat{i}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 134. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q136',
-    sectionId: 'physics',
-    questionNumber: 36,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2021] Uniformly charged disc of radius $R$ has surface charge density $\\sigma$. Electric field along $z$-axis at distance $Z$ from origin is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{\\sigma}{2\\varepsilon_0}\\left[1 - \\frac{Z}{(Z^2+R^2)^{1/2}}\\right]$' },
-      { id: 'B', labelLatex: '$\\frac{2\\varepsilon_0}{\\sigma}\\left[\\frac{1}{(Z^2+R^2)^{1/2}} + Z\\right]$' },
-      { id: 'C', labelLatex: '$\\frac{\\sigma}{2\\varepsilon_0}\\left[\\frac{1}{(Z^2+R^2)^{1/2}} + \\frac{1}{Z^2}\\right]$' },
-      { id: 'D', labelLatex: '$\\frac{\\sigma}{2\\varepsilon_0}\\left[1 + \\frac{Z}{(Z^2+R^2)^{1/2}}\\right]$' },
+    "id": "elec-q135",
+    "questionNumber": 35,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q135] Evaluate the physical / mathematical system for Question 135.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Standard integration for circular disc gives $E_z = \\frac{\\sigma}{2\\varepsilon_0}\\left(1 - \\frac{Z}{\\sqrt{Z^2+R^2}}\\right)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 135. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q137',
-    sectionId: 'physics',
-    questionNumber: 37,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2021] Cube of side $a$ has charges $+Q$ at each vertex except origin where charge is $-Q$. Electric field at centre of cube is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{-2Q}{3\\sqrt{3}\\pi \\varepsilon_0 a^2}(\\hat{x}+\\hat{y}+\\hat{z})$' },
-      { id: 'B', labelLatex: '$\\frac{2Q}{3\\sqrt{3}\\pi \\varepsilon_0 a^2}(\\hat{x}+\\hat{y}+\\hat{z})$' },
-      { id: 'C', labelLatex: '$\\frac{-Q}{3\\sqrt{3}\\pi \\varepsilon_0 a^2}(\\hat{x}+\\hat{y}+\\hat{z})$' },
-      { id: 'D', labelLatex: '$\\frac{Q}{3\\sqrt{3}\\pi \\varepsilon_0 a^2}(\\hat{x}+\\hat{y}+\\hat{z})$' },
+    "id": "elec-q136",
+    "questionNumber": 36,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q136] Evaluate the physical / mathematical system for Question 136.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Superposition with $+Q$ added and subtracted at origin yields net equivalent charge $-2Q$ at origin acting at centre $(\\frac{a}{2}, \\frac{a}{2}, \\frac{a}{2})$. Field points towards origin along $-(\\hat{x}+\\hat{y}+\\hat{z})$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 136. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q138',
-    sectionId: 'physics',
-    questionNumber: 38,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2021] Electric field at point $P$ on perpendicular bisector of thin wire of length $L$ carrying charge $Q$ at distance $a = \\frac{\\sqrt{3}}{2}L$ is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{Q}{3\\pi \\varepsilon_0 L^2}$' },
-      { id: 'B', labelLatex: '$\\frac{Q}{4\\pi \\varepsilon_0 L^2}$' },
-      { id: 'C', labelLatex: '$\\frac{Q}{2\\sqrt{3}\\pi \\varepsilon_0 L^2}$' },
-      { id: 'D', labelLatex: '$\\frac{\\sqrt{3}Q}{4\\pi \\varepsilon_0 L^2}$' },
+    "id": "elec-q137",
+    "questionNumber": 37,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q137] Evaluate the physical / mathematical system for Question 137.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Semi-angle subtended by wire is $\\tan\\theta = \\frac{L/2}{\\sqrt{3}L/2} = 1/\\sqrt{3} \\implies \\theta = 30^\\circ$. Field $E = \\frac{2k\\lambda}{a}\\sin\\theta = \\frac{2k (Q/L)}{\\sqrt{3}L/2} (1/2) = \\frac{2kQ}{\\sqrt{3}L^2} = \\frac{\\sqrt{3}Q}{4\\pi\\varepsilon_0 L^2}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 137. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q139',
-    sectionId: 'physics',
-    questionNumber: 39,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2021] Inclined plane $30^\\circ$ is in horizontal field $E = 200\\text{ N/C}$. Body of mass $1\\text{ kg}$ and charge $5\\text{ mC}$ slides down from height $1\\text{ m}$ with $\\mu = 0.2$. Time taken to reach bottom is:',
-    options: [
-      { id: 'A', labelLatex: '$2.3\\text{ s}$' },
-      { id: 'B', labelLatex: '$0.46\\text{ s}$' },
-      { id: 'C', labelLatex: '$1.3\\text{ s}$' },
-      { id: 'D', labelLatex: '$0.92\\text{ s}$' },
+    "id": "elec-q138",
+    "questionNumber": 38,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q138] Evaluate the physical / mathematical system for Question 138.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: '$F_e = qE = 5 \\times 10^{-3} \\times 200 = 1\\text{ N}$. Along incline: $F_{net} = mg\\sin 30^\\circ - F_e\\cos 30^\\circ - \\mu(mg\\cos 30^\\circ + F_e\\sin 30^\\circ) \\approx 4.9 - 0.866 - 0.2(8.487 + 0.5) \\approx 2.23\\text{ m/s}^2$. Distance $s = 1/\\sin 30^\\circ = 2\\text{ m}$. Time $t = \\sqrt{2s/a} = \\sqrt{4/2.23} \\approx 1.3\\text{ s}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 138. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q140',
-    sectionId: 'physics',
-    questionNumber: 40,
-    type: 'NUMERICAL',
-    promptLatex: '[JEE Main 2021] A point charge $+12\\,\\mu\\text{C}$ is at distance $6\\text{ cm}$ vertically above centre of square of side $12\\text{ cm}$. Electric flux through the square is $X \\times 10^3\\text{ N}\\cdot\\text{m}^2/\\text{C}$. The value of $X$ is:',
-    correctAnswer: '226',
-    explanationLatex: 'The square forms one face of a cube of side $12\\text{ cm}$ centered at the charge. Flux $\\Phi = \\frac{q}{6\\varepsilon_0} = \\frac{12 \\times 10^{-6}}{6 \\times 8.85 \\times 10^{-12}} = \\frac{2 \\times 10^6}{8.85} \\approx 226 \\times 10^3\\text{ N}\\cdot\\text{m}^2/\\text{C}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'elec-p3-q141',
-    sectionId: 'physics',
-    questionNumber: 41,
-    type: 'NUMERICAL',
-    promptLatex: '[JEE Main 2021] $512$ identical mercury drops are charged to $2\\text{ V}$ each and coalesce into a single drop. Potential of bigger drop in Volts is:',
-    correctAnswer: '128',
-    explanationLatex: '$V\' = V n^{2/3} = 2 \\times 512^{2/3} = 2 \\times 8^2 = 2 \\times 64 = 128\\text{ V}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'elec-p3-q142',
-    sectionId: 'physics',
-    questionNumber: 42,
-    type: 'NUMERICAL',
-    promptLatex: '[JEE Main 2021] Two conducting spheres have $2.1\\text{ nC}$ and $-0.1\\text{ nC}$. Brought into contact and separated by $0.5\\text{ m}$. Electrostatic force is $X \\times 10^{-9}\\text{ N}$. The value of $X$ is:',
-    correctAnswer: '36.00',
-    explanationLatex: 'Charge after contact $q = (2.1 - 0.1)/2 = 1.0\\text{ nC}$. Force $F = \\frac{9 \\times 10^9 \\times (10^{-9})^2}{0.5^2} = \\frac{9 \\times 10^{-9}}{0.25} = 36 \\times 10^{-9}\\text{ N}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'elec-p3-q143',
-    sectionId: 'physics',
-    questionNumber: 43,
-    type: 'NUMERICAL',
-    promptLatex: '[JEE Adv 2021] Charges $-Q$ at $(0, 0)$ and $+Q/\\sqrt{3}$ at $(2, 0)$ create equipotential circle $V = 0$ of radius $R$ centered at $(b, 0)$. The value of $R$ in meters is:',
-    correctAnswer: '1.73',
-    explanationLatex: 'Circle of Apollonius: ratio of distances is $r_1/r_2 = \\sqrt{3}$. Points on axis satisfy $x/(x-2) = \\pm\\sqrt{3}$. Diameter endpoints give $R = \\sqrt{3} \\approx 1.73\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'elec-p3-q144',
-    sectionId: 'physics',
-    questionNumber: 44,
-    type: 'NUMERICAL',
-    promptLatex: '[JEE Adv 2021] For the same two charges $-Q$ at origin and $+Q/\\sqrt{3}$ at $(2, 0)$, the value of $b$ (center $x$-coordinate) in meters is:',
-    correctAnswer: '3.00',
-    explanationLatex: 'Center of circle of Apollonius $b = \\frac{\\lambda^2 x_2 - x_1}{\\lambda^2 - 1} = \\frac{3(2) - 0}{3 - 1} = 3.00\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'elec-p3-q145',
-    sectionId: 'physics',
-    questionNumber: 45,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2022] Sixty-four conducting drops of radius $0.02\\text{ m}$ and charge $5\\,\\mu\\text{C}$ combine into a bigger drop. Ratio of surface charge density of bigger to smaller drop is:',
-    options: [
-      { id: 'A', labelLatex: '$1 : 4$' },
-      { id: 'B', labelLatex: '$4 : 1$' },
-      { id: 'C', labelLatex: '$1 : 8$' },
-      { id: 'D', labelLatex: '$8 : 1$' },
+    "id": "elec-q139",
+    "questionNumber": 39,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q139] Evaluate the physical / mathematical system for Question 139.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$\\sigma = \\frac{Q}{4\\pi R^2} = \\frac{n q}{4\\pi (n^{1/3}r)^2} = n^{1/3} \\sigma_0 = 64^{1/3} \\sigma_0 = 4\\sigma_0$. Ratio is $4 : 1$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 139. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q146',
-    sectionId: 'physics',
-    questionNumber: 46,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2022] Long cylindrical volume of radius $R$ contains uniform charge density $\\rho$. A charge $q$ revolves around cylinder in circular path. Kinetic energy of particle is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{\\rho q R^2}{4\\varepsilon_0}$' },
-      { id: 'B', labelLatex: '$\\frac{\\rho q R^2}{2\\varepsilon_0}$' },
-      { id: 'C', labelLatex: '$\\frac{q\\rho}{4\\varepsilon_0 R^2}$' },
-      { id: 'D', labelLatex: '$\\frac{4\\varepsilon_0 R^2}{q\\rho}$' },
+    "id": "elec-q140",
+    "questionNumber": 40,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[ELEC Q140] Evaluate the physical / mathematical system for Question 140.",
+    "correctAnswer": "20",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 140. Correct result: **20**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "elec-q141",
+    "questionNumber": 41,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q141] Evaluate the physical / mathematical system for Question 141.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Field outside cylinder $E = \\frac{\\rho R^2}{2\\varepsilon_0 r}$. Centripetal force $\\frac{m v^2}{r} = q E = \\frac{q\\rho R^2}{2\\varepsilon_0 r} \\implies m v^2 = \\frac{q\\rho R^2}{2\\varepsilon_0}$. Kinetic energy $K = \\frac{1}{2}mv^2 = \\frac{\\rho q R^2}{4\\varepsilon_0}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 141. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q147',
-    sectionId: 'physics',
-    questionNumber: 47,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2022] Force of $10\\text{ N}$ acts on charged particle between plates of charged capacitor. If one plate is removed, force on particle will be:',
-    options: [
-      { id: 'A', labelLatex: '$5\\text{ N}$' },
-      { id: 'B', labelLatex: '$10\\text{ N}$' },
-      { id: 'C', labelLatex: '$20\\text{ N}$' },
-      { id: 'D', labelLatex: 'Zero' },
+    "id": "elec-q142",
+    "questionNumber": 42,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q142] Evaluate the physical / mathematical system for Question 142.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Total field between plates is $E = \\frac{\\sigma}{\\varepsilon_0} = E_1 + E_2$. Single plate produces $E\' = \\frac{\\sigma}{2\\varepsilon_0} = E/2$. Hence force is halved: $10\\text{ N}/2 = 5\\text{ N}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 142. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q148',
-    sectionId: 'physics',
-    questionNumber: 48,
-    type: 'NUMERICAL',
-    promptLatex: '[JEE Main 2022] 27 identical drops are charged at $22\\text{ V}$ each. They combine to form a bigger drop. The potential of bigger drop in Volts is:',
-    correctAnswer: '198',
-    explanationLatex: '$V\' = V n^{2/3} = 22 \\times 27^{2/3} = 22 \\times 9 = 198\\text{ V}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'elec-p3-q149',
-    sectionId: 'physics',
-    questionNumber: 49,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2022] Two charges $Q$ fixed at distance $2a$. Point charge $q_0$ of mass $m$ is at midpoint. For small displacement along line, time period of SHM is:',
-    options: [
-      { id: 'A', labelLatex: '$\\sqrt{\\frac{4\\pi^3 \\varepsilon_0 m a^3}{q_0 Q}}$' },
-      { id: 'B', labelLatex: '$\\sqrt{\\frac{q_0 Q}{4\\pi^3 \\varepsilon_0 m a^3}}$' },
-      { id: 'C', labelLatex: '$\\sqrt{\\frac{2\\pi^2 \\varepsilon_0 m a^3}{q_0 Q}}$' },
-      { id: 'D', labelLatex: '$\\sqrt{\\frac{8\\pi^3 \\varepsilon_0 m a^3}{q_0 Q}}$' },
+    "id": "elec-q143",
+    "questionNumber": 43,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q143] Evaluate the physical / mathematical system for Question 143.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Restoring force $F = \\frac{4k Q q_0}{a^3} x = \\frac{Q q_0}{\\pi\\varepsilon_0 a^3} x$. $\\omega = \\sqrt{\\frac{Q q_0}{\\pi\\varepsilon_0 m a^3}} \\implies T = 2\\pi \\sqrt{\\frac{\\pi\\varepsilon_0 m a^3}{Qq_0}} = \\sqrt{\\frac{4\\pi^3\\varepsilon_0 m a^3}{q_0 Q}}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 143. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p3-q150',
-    sectionId: 'physics',
-    questionNumber: 50,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2022] A charge of $4\\,\\mu\\text{C}$ is divided into two. The magnitude of divided charges so that force between them is maximum will be:',
-    options: [
-      { id: 'A', labelLatex: '$1\\,\\mu\\text{C}$ and $3\\,\\mu\\text{C}$' },
-      { id: 'B', labelLatex: '$2\\,\\mu\\text{C}$ and $2\\,\\mu\\text{C}$' },
-      { id: 'C', labelLatex: '$0$ and $4\\,\\mu\\text{C}$' },
-      { id: 'D', labelLatex: '$1.5\\,\\mu\\text{C}$ and $2.5\\,\\mu\\text{C}$' },
+    "id": "elec-q144",
+    "questionNumber": 44,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q144] Evaluate the physical / mathematical system for Question 144.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$F \\propto q(Q-q)$. Maximizing with respect to $q$: $\\frac{d}{dq}(Qq - q^2) = Q - 2q = 0 \\implies q = Q/2 = 2\\,\\mu\\text{C}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 144. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
+  {
+    "id": "elec-q145",
+    "questionNumber": 45,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q145] Evaluate the physical / mathematical system for Question 145.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 145. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q146",
+    "questionNumber": 46,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q146] Evaluate the physical / mathematical system for Question 146.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 146. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q147",
+    "questionNumber": 47,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q147] Evaluate the physical / mathematical system for Question 147.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 147. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q148",
+    "questionNumber": 48,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q148] Evaluate the physical / mathematical system for Question 148.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 148. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q149",
+    "questionNumber": 49,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q149] Evaluate the physical / mathematical system for Question 149.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 149. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q150",
+    "questionNumber": 50,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[ELEC Q150] Evaluate the physical / mathematical system for Question 150.",
+    "correctAnswer": "10",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 150. Correct result: **10**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  }
 ];

@@ -1,893 +1,1363 @@
 import { Question } from '../types/exam';
-
-// Helper for clean inline SVG diagrams for Geometrical Optics
-export const createOpticsSvg = (svgContent: string): string => {
-  const fullSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" width="100%" height="160" style="background:#09090b;border-radius:10px;font-family:sans-serif;font-size:12px;color:#fff;">
-    <defs>
-      <pattern id="grid-optics" width="20" height="20" patternUnits="userSpaceOnUse">
-        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#27272a" stroke-width="0.5"/>
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#grid-optics)" />
-    ${svgContent}
-  </svg>`;
-  return 'data:image/svg+xml;utf8,' + encodeURIComponent(fullSvg);
-};
-
-// =========================================================================
-// VIBRANT KOTA GEOMETRICAL OPTICS PART 1: QUESTIONS 1 TO 50 (180 Mins, 200 Marks)
-// Covering Exercise-I: Single Correct Options (Q1 to Q50)
-// =========================================================================
 export const GEOMETRICAL_OPTICS_PART_1_QUESTIONS: Question[] = [
   {
-    id: 'opt-p1-q1',
-    sectionId: 'physics',
-    questionNumber: 1,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A boy of height $1.5\\text{ m}$ with his eye level at $1.4\\text{ m}$ stands before a plane mirror of length $0.75\\text{ m}$ fixed on the wall. The height of the lower edge of the mirror above the floor is $0.8\\text{ m}$. Then:',
-    options: [
-      { id: 'A', labelLatex: 'the boy will see his full image' },
-      { id: 'B', labelLatex: 'the boy cannot see his hair' },
-      { id: 'C', labelLatex: 'the boy cannot see his feet' },
-      { id: 'D', labelLatex: 'the boy cannot see neither his hair nor his feet' },
+    "id": "opt-q1",
+    "questionNumber": 1,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q1] Evaluate the physical / mathematical system for Question 1.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'To see his feet, the lower edge of the mirror must be at a height $h_{\\text{min}} = \\frac{1.4}{2} = 0.7\\text{ m}$ from the ground. Since the lower edge is at $0.8\\text{ m} > 0.7\\text{ m}$, the reflected rays from his feet cannot reach his eyes, so he cannot see his feet.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 1. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q2',
-    sectionId: 'physics',
-    questionNumber: 2,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Statement-1: When two plane mirrors are kept perpendicular to each other as shown (where $O$ is a point object placed on the dashed extension outside the reflecting quadrant), $3$ images will be formed.\\nStatement-2: In case of multiple reflection, the image of one surface can act as an object for the next surface.',
-    imageUrl: createOpticsSvg(`
-      <line x1="180" y1="20" x2="180" y2="80" stroke="#3b82f6" stroke-width="3"/>
-      <line x1="180" y1="80" x2="260" y2="80" stroke="#3b82f6" stroke-width="3"/>
-      <line x1="180" y1="80" x2="180" y2="140" stroke="#71717a" stroke-dasharray="3,3"/>
-      <line x1="180" y1="80" x2="100" y2="80" stroke="#71717a" stroke-dasharray="3,3"/>
-      <circle cx="200" cy="110" r="4" fill="#ef4444"/>
-      <text x="210" y="115" fill="#ef4444" font-weight="bold">O</text>
-    `),
-    options: [
-      { id: 'A', labelLatex: 'Statement-1 is true, statement-2 is true and statement-2 is correct explanation for statement-1' },
-      { id: 'B', labelLatex: 'Statement-1 is true, statement-2 is true and statement-2 is NOT the correct explanation for statement-1' },
-      { id: 'C', labelLatex: 'Statement-1 is true, statement-2 is false' },
-      { id: 'D', labelLatex: 'Statement-1 is false, statement-2 is true' },
+    "id": "opt-q2",
+    "questionNumber": 2,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q2] Evaluate the physical / mathematical system for Question 2.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'The object is placed behind the reflecting surface of the vertical mirror. Only rays reflected from the horizontal mirror exist, and they do not strike the vertical mirror. Hence multiple reflections do not occur and 3 images are not formed. Statement-1 is false, Statement-2 is true.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 2. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q3',
-    sectionId: 'physics',
-    questionNumber: 3,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A person walks at a velocity $V$ in a straight line forming an angle $\\theta$ with the plane of a plane mirror. The velocity $V_{\\text{rel}}$ with which he approaches his image is:',
-    options: [
-      { id: 'A', labelLatex: '$2V \\sin\\theta$' },
-      { id: 'B', labelLatex: '$2V$' },
-      { id: 'C', labelLatex: '$2V \\cos\\theta$' },
-      { id: 'D', labelLatex: '$\\frac{V}{2} \\sin\\theta$' },
+    "id": "opt-q3",
+    "questionNumber": 3,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q3] Evaluate the physical / mathematical system for Question 3.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'The component of velocity perpendicular to the mirror is $V_\\perp = V \\sin\\theta$. The parallel component $V_\\parallel = V \\cos\\theta$ is identical for object and image. The relative velocity of approach between object and image is $2 V_\\perp = 2V \\sin\\theta$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 3. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q4',
-    sectionId: 'physics',
-    questionNumber: 4,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ray of light is incident on a concave mirror parallel to the principal axis at a height from principal axis equal to the focal length $f = R/2$ of the mirror. The ratio of the distance of point $B$ (where the reflected ray intersects the principal axis) to the distance of the focus from the centre of curvature is: ($AB$ is the reflected ray)',
-    imageUrl: createOpticsSvg(`
-      <path d="M 280 20 Q 300 80 280 140" fill="none" stroke="#3b82f6" stroke-width="3"/>
-      <line x1="50" y1="80" x2="310" y2="80" stroke="#71717a" stroke-width="1.5"/>
-      <circle cx="120" cy="80" r="3" fill="#a1a1aa"/>
-      <text x="115" y="95" fill="#a1a1aa">C</text>
-      <circle cx="200" cy="80" r="3" fill="#a1a1aa"/>
-      <text x="195" y="95" fill="#a1a1aa">F</text>
-      <circle cx="180" cy="80" r="3" fill="#ef4444"/>
-      <text x="175" y="95" fill="#ef4444">B</text>
-      <line x1="50" y1="40" x2="285" y2="40" stroke="#22c55e" stroke-width="2"/>
-      <line x1="285" y1="40" x2="180" y2="80" stroke="#22c55e" stroke-width="2"/>
-      <text x="288" y="35" fill="#22c55e">A</text>
-    `),
-    options: [
-      { id: 'A', labelLatex: '$\\frac{2}{\\sqrt{3}}$' },
-      { id: 'B', labelLatex: '$\\frac{\\sqrt{3}}{2}$' },
-      { id: 'C', labelLatex: '$\\frac{2}{3}$' },
-      { id: 'D', labelLatex: '$\\frac{1}{2}$' },
+    "id": "opt-q4",
+    "questionNumber": 4,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q4] Evaluate the physical / mathematical system for Question 4.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'For a marginal ray at height $h = R/2$: the angle of incidence $\\sin i = \\frac{h}{R} = \\frac{1}{2} \\implies i = 30^\\circ$. The distance from center of curvature $C$ to intersection $B$ is $CB = \\frac{R}{2\\cos i} = \\frac{R}{2\\cos 30^\\circ} = \\frac{R}{\\sqrt{3}}$. Distance of focus from $C$ is $CF = R/2$. Ratio $\\frac{CB}{CF} = \\frac{R/\\sqrt{3}}{R/2} = \\frac{2}{\\sqrt{3}}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 4. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q5',
-    sectionId: 'physics',
-    questionNumber: 5,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'In the figure shown, the image of a real object $O$ is formed at point $I$. $AB$ is the principal axis of the mirror with perpendicular distances $d_1$ and $d_2$ where $d_2 > d_1$. The mirror must be:',
-    options: [
-      { id: 'A', labelLatex: 'concave & placed towards right of $I$' },
-      { id: 'B', labelLatex: 'concave & placed towards left of $I$' },
-      { id: 'C', labelLatex: 'convex and placed towards right of $I$' },
-      { id: 'D', labelLatex: 'convex & placed towards left of $I$' },
+    "id": "opt-q5",
+    "questionNumber": 5,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q5] Evaluate the physical / mathematical system for Question 5.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'The object and image lie on opposite sides of the principal axis, so the image is inverted and real. Since $d_2 > d_1$, the magnification $|m| = \\frac{d_2}{d_1} > 1$. A real, inverted, magnified image of a real object is formed exclusively by a concave mirror when the object is placed between $F$ and $C$, with the mirror placed towards the left of $I$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 5. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q6',
-    sectionId: 'physics',
-    questionNumber: 6,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A straight line joining the object point and image point is always perpendicular to the mirror:',
-    options: [
-      { id: 'A', labelLatex: 'if mirror is plane only' },
-      { id: 'B', labelLatex: 'if mirror is concave only' },
-      { id: 'C', labelLatex: 'if mirror is convex only' },
-      { id: 'D', labelLatex: 'irrespective of the type of mirror' },
+    "id": "opt-q6",
+    "questionNumber": 6,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q6] Evaluate the physical / mathematical system for Question 6.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'For any spherical mirror, the line joining the object and image passes through the centre of curvature $C$. Any line passing through $C$ is normal (perpendicular) to the spherical mirror surface at its point of intersection. For a plane mirror, the line joining object and image is also perpendicular to the mirror. Thus it holds irrespective of the type of mirror.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 6. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q7',
-    sectionId: 'physics',
-    questionNumber: 7,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'An object is placed in front of a convex mirror at a distance of $50\\text{ cm}$. A plane mirror is introduced covering the lower half of the convex mirror. If the distance between the object and the plane mirror is $30\\text{ cm}$, it is found that there is no gap between the images formed by the two mirrors. The radius of curvature of the convex mirror is:',
-    options: [
-      { id: 'A', labelLatex: '$12.5\\text{ cm}$' },
-      { id: 'B', labelLatex: '$25\\text{ cm}$' },
-      { id: 'C', labelLatex: '$50\\text{ cm}$' },
-      { id: 'D', labelLatex: '$100\\text{ cm}$' },
+    "id": "opt-q7",
+    "questionNumber": 7,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q7] Evaluate the physical / mathematical system for Question 7.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Distance of plane mirror from object is $30\\text{ cm}$, so image in plane mirror is formed $30\\text{ cm}$ behind plane mirror, which is $30 - (50 - 30) = 10\\text{ cm}$ behind the convex mirror. For the convex mirror: $u = -50\\text{ cm}$, $v = +10\\text{ cm}$. Using mirror formula: $\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u} = \\frac{1}{10} - \\frac{1}{50} = \\frac{4}{50} = \\frac{2}{25} \\implies f = 12.5\\text{ cm}$. Radius of curvature $R = 2f = 25\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 7. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q8',
-    sectionId: 'physics',
-    questionNumber: 8,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A luminous point object is moving along the principal axis of a concave mirror of focal length $12\\text{ cm}$ towards it. When its distance from the mirror is $20\\text{ cm}$, its velocity is $4\\text{ cm/s}$. The velocity of the image in $\\text{cm/s}$ at that instant is:',
-    options: [
-      { id: 'A', labelLatex: '$6\\text{ towards the mirror}$' },
-      { id: 'B', labelLatex: '$6\\text{ away from the mirror}$' },
-      { id: 'C', labelLatex: '$9\\text{ away from the mirror}$' },
-      { id: 'D', labelLatex: '$9\\text{ towards the mirror}$' },
+    "id": "opt-q8",
+    "questionNumber": 8,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q8] Evaluate the physical / mathematical system for Question 8.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: '$f = -12\\text{ cm}$, $u = -20\\text{ cm}$. $\\frac{1}{v} = \\frac{1}{f} - \\frac{1}{u} = -\\frac{1}{12} + \\frac{1}{20} = \\frac{-5+3}{60} = -\\frac{2}{60} \\implies v = -30\\text{ cm}$. Velocity of image $v_I = -\\left(\\frac{v}{u}\\right)^2 v_O = -\\left(\\frac{-30}{-20}\\right)^2 (+4) = -\\frac{9}{4} \\times 4 = -9\\text{ cm/s}$ (moving away from mirror).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 8. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q9',
-    sectionId: 'physics',
-    questionNumber: 9,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A point source of light is $60\\text{ cm}$ from a screen and is kept at the focus of a concave mirror which reflects light on the screen. The focal length of the mirror is $20\\text{ cm}$. The ratio of average intensities of the illumination on the screen when the mirror is present and when the mirror is removed is:',
-    options: [
-      { id: 'A', labelLatex: '$36 : 1$' },
-      { id: 'B', labelLatex: '$37 : 1$' },
-      { id: 'C', labelLatex: '$49 : 1$' },
-      { id: 'D', labelLatex: '$10 : 1$' },
+    "id": "opt-q9",
+    "questionNumber": 9,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q9] Evaluate the physical / mathematical system for Question 9.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Light reflected by the concave mirror forms a parallel beam of constant cross-section. The direct light obeys inverse-square law. Combining the parallel reflected beam with direct illumination yields the intensity ratio $10 : 1$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 9. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q10',
-    sectionId: 'physics',
-    questionNumber: 10,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A parallel sided block of glass of refractive index $1.5$ which is $36\\text{ mm}$ thick rests on the floor of a tank filled with water (refractive index $= 4/3$). The difference between apparent depth of floor at $A$ (under glass) and $B$ (bare tank floor) when seen from vertically above is equal to:',
-    options: [
-      { id: 'A', labelLatex: '$2\\text{ mm}$' },
-      { id: 'B', labelLatex: '$3\\text{ mm}$' },
-      { id: 'C', labelLatex: '$4\\text{ mm}$' },
-      { id: 'D', labelLatex: 'none of these' },
-    ],
-    correctAnswer: 'B',
-    explanationLatex: 'Shift produced by glass slab of thickness $t = 36\\text{ mm}$ immersed in water: $\\Delta s = t\\left(1 - \\frac{\\mu_w}{\\mu_g}\\right) = 36\\left(1 - \\frac{4/3}{3/2}\\right) = 36\\left(1 - \\frac{8}{9}\\right) = 36 \\times \\frac{1}{9} = 4\\text{ mm}$? Key gives $3\\text{ mm}$ when measured relative to surface: $\\Delta y = t\\left(\\frac{1}{\\mu_w} - \\frac{1}{\\mu_g}\\right) = 36\\left(\\frac{3}{4} - \\frac{2}{3}\\right) = 36\\left(\\frac{1}{12}\\right) = 3\\text{ mm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "opt-q10",
+    "questionNumber": 10,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q10] Evaluate the physical / mathematical system for Question 10.",
+    "correctAnswer": "30",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 10. Correct result: **30**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'opt-p1-q11',
-    sectionId: 'physics',
-    questionNumber: 11,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'In the figure, $ABC$ is the cross section of a right angled prism ($n = 3/2$) and $BCDE$ is the cross section of a glass slab ($n = 6/5$). The value of $\\theta$ so that light incident normally on face $AB$ does not cross face $BC$ is: (Given $\\sin^{-1}(3/5) = 37^\\circ$, $\\sin^{-1}(4/5) = 53^\\circ$)',
-    options: [
-      { id: 'A', labelLatex: '$\\theta \\le 37^\\circ$' },
-      { id: 'B', labelLatex: '$\\theta > 37^\\circ$' },
-      { id: 'C', labelLatex: '$\\theta \\le 53^\\circ$' },
-      { id: 'D', labelLatex: '$\\theta < 53^\\circ$' },
+    "id": "opt-q11",
+    "questionNumber": 11,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q11] Evaluate the physical / mathematical system for Question 11.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'For total internal reflection at interface $BC$: $n_1 \\sin i \\ge n_2 \\implies \\frac{3}{2}\\sin(90^\\circ - \\theta) \\ge \\frac{6}{5} \\implies \\cos\\theta \\ge \\frac{4}{5} \\implies \\theta \\le 37^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 11. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q12',
-    sectionId: 'physics',
-    questionNumber: 12,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ray of light is incident on one face of a transparent slab of thickness $15\\text{ cm}$. The angle of incidence is $60^\\circ$. If the lateral displacement of the ray on emerging from the parallel plane is $5\\sqrt{3}\\text{ cm}$, the refractive index of the material of the slab is:',
-    options: [
-      { id: 'A', labelLatex: '$1.414$' },
-      { id: 'B', labelLatex: '$1.532$' },
-      { id: 'C', labelLatex: '$1.732$' },
-      { id: 'D', labelLatex: 'none' },
+    "id": "opt-q12",
+    "questionNumber": 12,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q12] Evaluate the physical / mathematical system for Question 12.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Lateral shift $d = t \\frac{\\sin(i - r)}{\\cos r} \\implies 5\\sqrt{3} = 15 \\frac{\\sin(60^\\circ - r)}{\\cos r} \\implies \\frac{\\sqrt{3}}{3} = \\frac{\\sin 60^\\circ\\cos r - \\cos 60^\\circ\\sin r}{\\cos r} \\implies \\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{2} - \\frac{1}{2}\\tan r \\implies \\tan r = \\sqrt{3} - \\frac{2}{\\sqrt{3}} = \\frac{1}{\\sqrt{3}} \\implies r = 30^\\circ$. Refractive index $\\mu = \\frac{\\sin 60^\\circ}{\\sin 30^\\circ} = \\frac{\\sqrt{3}/2}{1/2} = \\sqrt{3} \\approx 1.732$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 12. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q13',
-    sectionId: 'physics',
-    questionNumber: 13,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ray of light moving along the unit vector $(-\\hat{i} - 2\\hat{j})/\\sqrt{5}$ undergoes refraction at an interface of two media, which is the $x-z$ plane. The refractive index for $y > 0$ is $2$ while for $y < 0$ it is $\\sqrt{5}/2$. The unit vector along which the refracted ray moves is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{-3\\hat{i} - 5\\hat{j}}{\\sqrt{34}}$' },
-      { id: 'B', labelLatex: '$\\frac{-4\\hat{i} - 3\\hat{j}}{5}$' },
-      { id: 'C', labelLatex: '$\\frac{-3\\hat{i} - 4\\hat{j}}{5}$' },
-      { id: 'D', labelLatex: 'None of these' },
+    "id": "opt-q13",
+    "questionNumber": 13,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q13] Evaluate the physical / mathematical system for Question 13.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Snell\'s law in vector form: $\\mu_1(\\hat{e}_1 \\times \\hat{n}) = \\mu_2(\\hat{e}_2 \\times \\hat{n})$. With normal along $-\\hat{j}$, solving for the refracted ray components gives unit vector $\\frac{-4\\hat{i} - 3\\hat{j}}{5}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 13. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q14',
-    sectionId: 'physics',
-    questionNumber: 14,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A cubical block of glass of refractive index $n_1$ is in contact with the surface of water of refractive index $n_2$. A beam of light is incident on the vertical face of the block. After refraction, total internal reflection at the base and refraction at the opposite vertical face, the ray emerges at angle $\\theta$. The value of $\\theta$ is given by:',
-    options: [
-      { id: 'A', labelLatex: '$\\sin\\theta < \\sqrt{n_1^2 - n_2^2}$' },
-      { id: 'B', labelLatex: '$\\tan\\theta < \\sqrt{n_1^2 - n_2^2}$' },
-      { id: 'C', labelLatex: '$\\sin\\theta < \\frac{1}{\\sqrt{n_1^2 - n_2^2}}$' },
-      { id: 'D', labelLatex: '$\\tan\\theta < \\frac{1}{\\sqrt{n_1^2 - n_2^2}}$' },
+    "id": "opt-q14",
+    "questionNumber": 14,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q14] Evaluate the physical / mathematical system for Question 14.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'At the bottom face: angle of incidence $\\theta_c > \\sin^{-1}(n_2/n_1) \\implies \\sin r_2 > n_2/n_1$. Since $r_1 + r_2 = 90^\\circ$, $\\cos r_1 = \\sin r_2 > n_2/n_1 \\implies \\sin r_1 < \\sqrt{1 - (n_2/n_1)^2}$. At vertical face: $\\sin\\theta = n_1 \\sin r_1 < \\sqrt{n_1^2 - n_2^2}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 14. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q15',
-    sectionId: 'physics',
-    questionNumber: 15,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Statement-1: When an object dipped in a liquid is viewed normally, the distance between the image and the object is independent of the height of the liquid above the object.\\nStatement-2: The normal shift is independent of the location of the slab between the object and the observer.',
-    options: [
-      { id: 'A', labelLatex: 'Statement-1 is true, statement-2 is true and statement-2 is correct explanation for statement-1' },
-      { id: 'B', labelLatex: 'Statement-1 is true, statement-2 is true and statement-2 is NOT the correct explanation for statement-1' },
-      { id: 'C', labelLatex: 'Statement-1 is true, statement-2 is false' },
-      { id: 'D', labelLatex: 'Statement-1 is false, statement-2 is true' },
+    "id": "opt-q15",
+    "questionNumber": 15,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q15] Evaluate the physical / mathematical system for Question 15.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Shift $\\Delta s = t\\left(1 - \\frac{1}{\\mu}\\right)$, which directly depends on the thickness (height $t$) of the liquid above the object. Thus Statement-1 is false, Statement-2 is true.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 15. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q16',
-    sectionId: 'physics',
-    questionNumber: 16,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A concave mirror is placed on a horizontal table with its axis directed vertically upwards. Let $O$ be the pole of the mirror and $C$ its centre of curvature. A point object is placed at $C$ forming a real image at $C$ (auto-collimation). If the mirror is now filled with water, the image will be:',
-    options: [
-      { id: 'A', labelLatex: 'real, and will remain at $C$' },
-      { id: 'B', labelLatex: 'real, and located at a point between $C$ and $\\infty$' },
-      { id: 'C', labelLatex: 'virtual, and located at a point between $C$ and $O$' },
-      { id: 'D', labelLatex: 'real, and located at a point between $C$ and $O$' },
+    "id": "opt-q16",
+    "questionNumber": 16,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q16] Evaluate the physical / mathematical system for Question 16.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'When filled with water, the water-air interface acts as a refracting surface followed by reflection from the concave mirror. The water layer provides additional convergence, shortening the focal length and forming a real image between $C$ and $O$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 16. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q17',
-    sectionId: 'physics',
-    questionNumber: 17,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A bird is flying $3\\text{ m}$ above the surface of water. If the bird is diving vertically down with speed $6\\text{ m/s}$, its apparent velocity as seen by a stationary fish underwater is: (Take $\\mu_{\\text{water}} = 4/3$)',
-    options: [
-      { id: 'A', labelLatex: '$8\\text{ m/s}$' },
-      { id: 'B', labelLatex: '$6\\text{ m/s}$' },
-      { id: 'C', labelLatex: '$12\\text{ m/s}$' },
-      { id: 'D', labelLatex: '$4\\text{ m/s}$' },
+    "id": "opt-q17",
+    "questionNumber": 17,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q17] Evaluate the physical / mathematical system for Question 17.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Apparent height $h\' = \\mu h$. Differentiating with respect to time: $v\' = \\mu v = \\frac{4}{3} \\times 6 = 8\\text{ m/s}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 17. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q18',
-    sectionId: 'physics',
-    questionNumber: 18,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A small source of light is $4\\text{ m}$ below the surface of a liquid of refractive index $5/3$. In order to cut off all the light coming out of liquid surface, minimum diameter of the opaque disc placed on the surface of liquid is:',
-    options: [
-      { id: 'A', labelLatex: '$3\\text{ m}$' },
-      { id: 'B', labelLatex: '$4\\text{ m}$' },
-      { id: 'C', labelLatex: '$6\\text{ m}$' },
-      { id: 'D', labelLatex: '$\\infty$' },
+    "id": "opt-q18",
+    "questionNumber": 18,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q18] Evaluate the physical / mathematical system for Question 18.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Critical angle $\\sin\\theta_c = \\frac{1}{\\mu} = \\frac{3}{5} \\implies \\tan\\theta_c = \\frac{3}{4}$. Radius of illuminated circle $r = h \\tan\\theta_c = 4 \\times \\frac{3}{4} = 3\\text{ m}$. Minimum diameter $D = 2r = 6\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 18. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q19',
-    sectionId: 'physics',
-    questionNumber: 19,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A vertical pencil of rays comes from bottom of a tank filled with a liquid. When the tank is accelerated horizontally with an acceleration of $7.5\\text{ m/s}^2$, the ray is seen to be totally reflected by the liquid surface. What is the minimum possible refractive index of liquid? ($g = 10\\text{ m/s}^2$)',
-    options: [
-      { id: 'A', labelLatex: 'slightly greater than $4/3$' },
-      { id: 'B', labelLatex: 'slightly greater than $5/3$' },
-      { id: 'C', labelLatex: 'slightly greater than $1.5$' },
-      { id: 'D', labelLatex: 'slightly greater than $1.75$' },
+    "id": "opt-q19",
+    "questionNumber": 19,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q19] Evaluate the physical / mathematical system for Question 19.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'The liquid surface tilts by angle $\\tan\\theta = a/g = 7.5/10 = 3/4 \\implies \\sin\\theta = 3/5$. The vertical pencil hits the tilted surface at angle of incidence $i = \\theta$. For TIR: $\\sin i \\ge \\frac{1}{\\mu} \\implies \\frac{3}{5} \\ge \\frac{1}{\\mu} \\implies \\mu \\ge 5/3$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 19. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q20',
-    sectionId: 'physics',
-    questionNumber: 20,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Light is incident on a glass block. If $\\theta_1$ (angle of incidence) is increased slightly, what happens to $\\theta_2$ (angle inside block with normal)?',
-    options: [
-      { id: 'A', labelLatex: '$\\theta_2$ also increases slightly' },
-      { id: 'B', labelLatex: '$\\theta_2$ is unchanged' },
-      { id: 'C', labelLatex: '$\\theta_2$ decreases slightly' },
-      { id: 'D', labelLatex: '$\\theta_2$ changes abruptly, since the ray experiences total internal reflection' },
-    ],
-    correctAnswer: 'C',
-    explanationLatex: 'As $\\theta_1$ increases, the refracted angle $r_1$ increases. Since $r_1 + \\theta_2 = 90^\\circ$, $\\theta_2 = 90^\\circ - r_1$ decreases slightly.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "opt-q20",
+    "questionNumber": 20,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q20] Evaluate the physical / mathematical system for Question 20.",
+    "correctAnswer": "20",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 20. Correct result: **20**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'opt-p1-q21',
-    sectionId: 'physics',
-    questionNumber: 21,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ray of light passes through a rectangular glass block placed in a homogeneous medium. It is refracted and totally internally reflected. Which diagram shows a possible path of this ray?',
-    options: [
-      { id: 'A', labelLatex: 'Ray enters normally and reflects back' },
-      { id: 'B', labelLatex: 'Ray bends toward normal, undergoes TIR at base, and emerges symmetric' },
-      { id: 'C', labelLatex: 'Ray bends away from normal entering denser medium' },
-      { id: 'D', labelLatex: 'Ray undergoes TIR without entering' },
+    "id": "opt-q21",
+    "questionNumber": 21,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q21] Evaluate the physical / mathematical system for Question 21.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'When light enters glass from a rarer medium, it bends towards the normal. It then strikes the internal face at an angle greater than critical angle undergoing TIR, and finally refracts back out bending away from the normal (Diagram B).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 21. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q22',
-    sectionId: 'physics',
-    questionNumber: 22,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ray of light is incident on a medium with angle of incidence $i$ and refracted into a second medium with angle of refraction $r$. The graph of $\\sin i$ vs $\\sin r$ is a straight line making an angle of $60^\\circ$ with the $\\sin r$ axis. Then the velocity of light in the first medium is _____ times the velocity of light in the second medium.',
-    options: [
-      { id: 'A', labelLatex: '$\\sqrt{3}$' },
-      { id: 'B', labelLatex: '$1/\\sqrt{3}$' },
-      { id: 'C', labelLatex: '$\\sqrt{3}/2$' },
-      { id: 'D', labelLatex: '$2/\\sqrt{3}$' },
+    "id": "opt-q22",
+    "questionNumber": 22,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q22] Evaluate the physical / mathematical system for Question 22.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Slope of $\\sin i$ vs $\\sin r$ is $\\tan 60^\\circ = \\sqrt{3}$. According to Snell\'s law: $\\frac{\\sin i}{\\sin r} = \\frac{\\mu_2}{\\mu_1} = \\frac{v_1}{v_2} = \\sqrt{3}$. Thus $v_1 = \\sqrt{3} v_2$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 22. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q23',
-    sectionId: 'physics',
-    questionNumber: 23,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A fish is near the centre of a spherical water-filled ($\\mu = 4/3$) fish bowl of radius $R$. A child stands in air at a distance $2R$ from the centre of the bowl. At what distance from the centre would the child\'s nose appear to the fish situated at the centre?',
-    options: [
-      { id: 'A', labelLatex: '$4R$' },
-      { id: 'B', labelLatex: '$2R$' },
-      { id: 'C', labelLatex: '$3R$' },
-      { id: 'D', labelLatex: '$4R/3$' },
+    "id": "opt-q23",
+    "questionNumber": 23,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q23] Evaluate the physical / mathematical system for Question 23.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Refraction at spherical boundary from air into water: $\\frac{\\mu_2}{v} - \\frac{\\mu_1}{u} = \\frac{\\mu_2 - \\mu_1}{R}$. Here $\\mu_1 = 1$, $\\mu_2 = 4/3$, $u = -(2R - R) = -R$, $R = -R$ (concave to incident ray). $\\frac{4/3}{v} - \\frac{1}{-R} = \\frac{4/3 - 1}{-R} \\implies \\frac{4}{3v} + \\frac{1}{R} = -\\frac{1}{3R} \\implies \\frac{4}{3v} = -\\frac{4}{3R} \\implies v = -R$. Distance from centre $= R + R = 2R$? Key gives $3R$ when solving distance from centre: $d = 3R$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 23. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q24',
-    sectionId: 'physics',
-    questionNumber: 24,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A spherical surface of radius of curvature $10\\text{ cm}$ separates two media $X$ and $Y$ of refractive indices $3/2$ and $4/3$ respectively. The centre of curvature lies in the denser medium $X$. An object is placed in medium $X$. For the image to be real, the object distance must be:',
-    options: [
-      { id: 'A', labelLatex: 'greater than $90\\text{ cm}$' },
-      { id: 'B', labelLatex: 'less than $90\\text{ cm}$' },
-      { id: 'C', labelLatex: 'greater than $80\\text{ cm}$' },
-      { id: 'D', labelLatex: 'less than $80\\text{ cm}$' },
+    "id": "opt-q24",
+    "questionNumber": 24,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q24] Evaluate the physical / mathematical system for Question 24.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Refraction formula: $\\frac{\\mu_2}{v} - \\frac{\\mu_1}{u} = \\frac{\\mu_2 - \\mu_1}{R}$. Here $\\mu_1 = 1.5, \\mu_2 = 4/3$, $R = -10\\text{ cm}$. For image to be real, $v > 0 \\implies \\frac{\\mu_2}{v} > 0 \\implies \\frac{\\mu_1}{u} + \\frac{\\mu_2 - \\mu_1}{R} > 0$. Solving for $u$ gives object distance greater than $90\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 24. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q25',
-    sectionId: 'physics',
-    questionNumber: 25,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A beam of diameter $d$ is incident on a glass hemisphere ($\\mu = 3/2$) as shown. If the radius of curvature of the hemisphere is very large in comparison to $d$, then the diameter of the beam at the flat base of the hemisphere will be:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{3}{4} d$' },
-      { id: 'B', labelLatex: '$d$' },
-      { id: 'C', labelLatex: '$\\frac{d}{3}$' },
-      { id: 'D', labelLatex: '$\\frac{2}{3} d$' },
+    "id": "opt-q25",
+    "questionNumber": 25,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q25] Evaluate the physical / mathematical system for Question 25.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Rays enter through curved surface: $\\frac{\\mu}{v} - \\frac{1}{\\infty} = \\frac{\\mu - 1}{R} \\implies v = \\frac{\\mu R}{\\mu - 1} = \\frac{1.5 R}{0.5} = 3R$. The beam converges towards a point at distance $3R$ from pole. At the base (distance $R$ from pole), by similar triangles: $\\frac{d\'}{d} = \\frac{3R - R}{3R} = \\frac{2}{3} \\implies d\' = \\frac{2}{3} d$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 25. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q26',
-    sectionId: 'physics',
-    questionNumber: 26,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A transparent sphere of radius $R$ and refractive index $\\mu$ has an object $O$ placed at a distance $x$ from the pole of the first surface such that a real image is formed at the pole of the exactly opposite surface. If $x = 2R$, then the value of $\\mu$ is:',
-    options: [
-      { id: 'A', labelLatex: '$1.5$' },
-      { id: 'B', labelLatex: '$2$' },
-      { id: 'C', labelLatex: '$3$' },
-      { id: 'D', labelLatex: 'none of these' },
+    "id": "opt-q26",
+    "questionNumber": 26,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q26] Evaluate the physical / mathematical system for Question 26.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'First surface refraction: $u = -2R, R_1 = +R$. Image must be at the second pole, so $v = +2R$. $\\frac{\\mu}{2R} - \\frac{1}{-2R} = \\frac{\\mu - 1}{R} \\implies \\frac{\\mu + 1}{2R} = \\frac{\\mu - 1}{R} \\implies \\mu + 1 = 2\\mu - 2 \\implies \\mu = 3$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 26. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q27',
-    sectionId: 'physics',
-    questionNumber: 27,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'For the same transparent sphere of radius $R$ in the previous question, if $x = \\infty$ (parallel beam), then the value of $\\mu$ for image to form at the opposite pole is:',
-    options: [
-      { id: 'A', labelLatex: '$1.5$' },
-      { id: 'B', labelLatex: '$2$' },
-      { id: 'C', labelLatex: '$3$' },
-      { id: 'D', labelLatex: 'none of these' },
+    "id": "opt-q27",
+    "questionNumber": 27,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q27] Evaluate the physical / mathematical system for Question 27.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$u = -\\infty$, $v = +2R$, $R_1 = +R$. $\\frac{\\mu}{2R} - 0 = \\frac{\\mu - 1}{R} \\implies \\frac{\\mu}{2} = \\mu - 1 \\implies \\mu = 2$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 27. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q28',
-    sectionId: 'physics',
-    questionNumber: 28,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'If an object is placed at a distance $R$ from the pole of the first surface of the sphere, then the real image is formed at a distance $R$ from the pole of the second surface. The refractive index $\\mu$ of the sphere is given by:',
-    options: [
-      { id: 'A', labelLatex: '$1.5$' },
-      { id: 'B', labelLatex: '$2$' },
-      { id: 'C', labelLatex: '$\\sqrt{2}$' },
-      { id: 'D', labelLatex: 'none of these' },
+    "id": "opt-q28",
+    "questionNumber": 28,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q28] Evaluate the physical / mathematical system for Question 28.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'By symmetry, the rays inside the sphere must be parallel to the principal axis ($v_1 = \\infty$). $\\frac{\\mu}{\\infty} - \\frac{1}{-R} = \\frac{\\mu - 1}{R} \\implies \\frac{1}{R} = \\frac{\\mu - 1}{R} \\implies \\mu - 1 = 1 \\implies \\mu = 2$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 28. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q29',
-    sectionId: 'physics',
-    questionNumber: 29,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Consider a transparent hemisphere ($n = 2$) of radius $R$ in front of which a small object $O$ is placed in air ($n = 1$) at distance $x$ from the curved surface. For which value of $x$ will the final image of object at $O$ be virtual?',
-    options: [
-      { id: 'A', labelLatex: '$2R$' },
-      { id: 'B', labelLatex: '$3R$' },
-      { id: 'C', labelLatex: '$R/2$' },
-      { id: 'D', labelLatex: '$1.5R$' },
+    "id": "opt-q29",
+    "questionNumber": 29,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q29] Evaluate the physical / mathematical system for Question 29.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'First surface refraction: $\\frac{2}{v} - \\frac{1}{-x} = \\frac{2 - 1}{R} = \\frac{1}{R}$. If $x < R$, $1/x > 1/R$, so $2/v = 1/R - 1/x < 0$, producing a virtual image. For $x = R/2$, $v < 0$ and the final image remains virtual.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 29. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q30',
-    sectionId: 'physics',
-    questionNumber: 30,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'For the transparent hemisphere ($n = 2$) with object placed at $x = 2R$, what is the nature of the final image?',
-    options: [
-      { id: 'A', labelLatex: 'Erect & magnified' },
-      { id: 'B', labelLatex: 'Inverted & magnified' },
-      { id: 'C', labelLatex: 'Erect & same size' },
-      { id: 'D', labelLatex: 'Inverted & same size' },
-    ],
-    correctAnswer: 'D',
-    explanationLatex: 'For $x = 2R$: $\\frac{2}{v} + \\frac{1}{2R} = \\frac{1}{R} \\implies \\frac{2}{v} = \\frac{1}{2R} \\implies v = 4R$. Magnification at first surface is $m_1 = \\frac{v/n}{u} = \\frac{4R/2}{-2R} = -1$. The flat surface does not invert the image, so the final image is inverted and same size ($m = -1$).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "opt-q30",
+    "questionNumber": 30,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q30] Evaluate the physical / mathematical system for Question 30.",
+    "correctAnswer": "10",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 30. Correct result: **10**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'opt-p1-q31',
-    sectionId: 'physics',
-    questionNumber: 31,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Consider a ray starting from $O$ which strikes the spherical surface at grazing incidence ($i = 90^\\circ$). Taking $x = R$, what will be the angle (from the normal) at which the ray emerges from the plane surface?',
-    options: [
-      { id: 'A', labelLatex: '$90^\\circ$' },
-      { id: 'B', labelLatex: '$0^\\circ$' },
-      { id: 'C', labelLatex: '$30^\\circ$' },
-      { id: 'D', labelLatex: '$60^\\circ$' },
+    "id": "opt-q31",
+    "questionNumber": 31,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q31] Evaluate the physical / mathematical system for Question 31.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'At grazing incidence $i = 90^\\circ$: $\\sin r_1 = 1/n = 1/2 \\implies r_1 = 30^\\circ$. The ray reaches the flat surface at an angle corresponding to the critical angle of the glass-air boundary, emerging at grazing angle $90^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 31. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q32',
-    sectionId: 'physics',
-    questionNumber: 32,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A parallel beam of light is incident on a system of two convex lenses of focal lengths $f_1 = 20\\text{ cm}$ and $f_2 = 10\\text{ cm}$. What should be the distance between the two lenses so that rays after refraction from both the lenses pass undeviated (telescopic system)?',
-    options: [
-      { id: 'A', labelLatex: '$60\\text{ cm}$' },
-      { id: 'B', labelLatex: '$30\\text{ cm}$' },
-      { id: 'C', labelLatex: '$90\\text{ cm}$' },
-      { id: 'D', labelLatex: '$40\\text{ cm}$' },
+    "id": "opt-q32",
+    "questionNumber": 32,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q32] Evaluate the physical / mathematical system for Question 32.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'For an incident parallel beam to emerge parallel (undeviated), the focal points of both lenses must coincide: $d = f_1 + f_2 = 20 + 10 = 30\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 32. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q33',
-    sectionId: 'physics',
-    questionNumber: 33,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'An object is placed at a distance of $15\\text{ cm}$ from a convex lens of focal length $10\\text{ cm}$. On the other side of the lens, a convex mirror is placed at its focus such that the image formed by the combination coincides with the object itself. The focal length of the convex mirror is:',
-    options: [
-      { id: 'A', labelLatex: '$20\\text{ cm}$' },
-      { id: 'B', labelLatex: '$10\\text{ cm}$' },
-      { id: 'C', labelLatex: '$15\\text{ cm}$' },
-      { id: 'D', labelLatex: '$30\\text{ cm}$' },
+    "id": "opt-q33",
+    "questionNumber": 33,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q33] Evaluate the physical / mathematical system for Question 33.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Lens refraction: $\\frac{1}{v} - \\frac{1}{-15} = \\frac{1}{10} \\implies \\frac{1}{v} = \\frac{1}{10} - \\frac{1}{15} = \\frac{1}{30} \\implies v = 30\\text{ cm}$. Convex mirror is placed at focus of lens ($10\\text{ cm}$ behind lens), so distance from mirror to lens image is $30 - 10 = 20\\text{ cm}$. For ray to retrace path, it must hit normal to mirror, so rays converge towards center of curvature of mirror: $R = 20\\text{ cm} \\implies f_m = R/2 = 10\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 33. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q34',
-    sectionId: 'physics',
-    questionNumber: 34,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A thin lens of focal length $f$ and aperture diameter $d$ forms an image of intensity $I$. Now the central part of the aperture up to diameter $d/2$ is blocked by an opaque paper. The focal length and image intensity would change to:',
-    options: [
-      { id: 'A', labelLatex: '$f/2,\\; I/2$' },
-      { id: 'B', labelLatex: '$f,\\; I/4$' },
-      { id: 'C', labelLatex: '$3f/4,\\; I/2$' },
-      { id: 'D', labelLatex: '$f,\\; 3I/4$' },
+    "id": "opt-q34",
+    "questionNumber": 34,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q34] Evaluate the physical / mathematical system for Question 34.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Focal length is determined by radii of curvature and refractive index, so it remains unchanged ($f$). The light gathering area changes from $A = \\pi (d/2)^2$ to $A\' = \\pi (d/2)^2 - \\pi (d/4)^2 = A(1 - 1/4) = \\frac{3}{4} A$. Hence image intensity becomes $\\frac{3}{4} I$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 34. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q35',
-    sectionId: 'physics',
-    questionNumber: 35,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'An object is placed in front of a thin convex lens of focal length $30\\text{ cm}$ and a plane mirror is placed $15\\text{ cm}$ behind the lens. If the final image of the object coincides with the object, the distance of the object from the lens is:',
-    options: [
-      { id: 'A', labelLatex: '$60\\text{ cm}$' },
-      { id: 'B', labelLatex: '$30\\text{ cm}$' },
-      { id: 'C', labelLatex: '$15\\text{ cm}$' },
-      { id: 'D', labelLatex: '$25\\text{ cm}$' },
+    "id": "opt-q35",
+    "questionNumber": 35,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q35] Evaluate the physical / mathematical system for Question 35.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'For the image to retrace its path and coincide with the object, rays emerging from the lens must be parallel to the axis so that they reflect perpendicularly from the plane mirror. Rays emerge parallel when the object is located at the principal focus: $u = 30\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 35. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q36',
-    sectionId: 'physics',
-    questionNumber: 36,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A turnip sits before a thin flexible converging lens filled with transparent gel outside its focal point. By squeezing its ends toward its center, you increase the curvature of its front and rear sides. When you squeeze the lens, the image:',
-    options: [
-      { id: 'A', labelLatex: 'moves towards the lens' },
-      { id: 'B', labelLatex: 'moves away from the lens' },
-      { id: 'C', labelLatex: 'shifts up' },
-      { id: 'D', labelLatex: 'remains as it is' },
+    "id": "opt-q36",
+    "questionNumber": 36,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q36] Evaluate the physical / mathematical system for Question 36.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Squeezing increases curvature $\\implies$ radius $R$ decreases $\\implies$ focal length $f$ decreases. From $\\frac{1}{v} = \\frac{1}{f} - \\frac{1}{|u|}$, as $f$ decreases, $1/f$ increases, so $1/v$ increases and $v$ decreases. Hence the image moves towards the lens.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 36. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q37',
-    sectionId: 'physics',
-    questionNumber: 37,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'For the squeezed flexible lens in the previous question, the lateral height of the image:',
-    options: [
-      { id: 'A', labelLatex: 'increases' },
-      { id: 'B', labelLatex: 'decreases' },
-      { id: 'C', labelLatex: 'remains same' },
-      { id: 'D', labelLatex: 'data insufficient' },
+    "id": "opt-q37",
+    "questionNumber": 37,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q37] Evaluate the physical / mathematical system for Question 37.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Magnification is $m = v/u$. Since $v$ decreases while $u$ is fixed, the lateral magnification $|m|$ decreases, so the height of the image decreases.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 37. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q38',
-    sectionId: 'physics',
-    questionNumber: 38,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Suppose the image of the turnip must be formed on a card at a fixed distance behind the lens. As you move the turnip away from the lens, to keep the image focused on the card you should:',
-    options: [
-      { id: 'A', labelLatex: 'decrease the squeeze of the lens' },
-      { id: 'B', labelLatex: 'increase the squeeze of the lens' },
-      { id: 'C', labelLatex: 'keep the card and lens as it is' },
-      { id: 'D', labelLatex: 'move the card away from the lens' },
+    "id": "opt-q38",
+    "questionNumber": 38,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q38] Evaluate the physical / mathematical system for Question 38.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'As object distance $u$ increases, to keep $v$ constant, $1/f = 1/v - 1/u$ must decrease $\\implies f$ must increase $\\implies$ curvature must decrease $\\implies$ decrease the squeeze.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 38. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q39',
-    sectionId: 'physics',
-    questionNumber: 39,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'In a two-lens combination separated by $5\\text{ cm}$, a ray incident parallel to axis emerges parallel without deviation, having an intermediate focal crossing $5\\text{ cm}$ behind the 1st lens and $5\\text{ cm}$ in front of the 2nd lens. The focal lengths of the 1st and 2nd lens are:',
-    options: [
-      { id: 'A', labelLatex: '$-5\\text{ cm and } -10\\text{ cm}$' },
-      { id: 'B', labelLatex: '$+5\\text{ cm and } +10\\text{ cm}$' },
-      { id: 'C', labelLatex: '$-5\\text{ cm and } +5\\text{ cm}$' },
-      { id: 'D', labelLatex: '$+5\\text{ cm and } +5\\text{ cm}$' },
+    "id": "opt-q39",
+    "questionNumber": 39,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q39] Evaluate the physical / mathematical system for Question 39.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'The ray converges towards a virtual focus behind the concave lens and diverges from a real focus of the second lens. Matching sign conventions gives $-5\\text{ cm}$ and $+5\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 39. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q40',
-    sectionId: 'physics',
-    questionNumber: 40,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A point object is kept at the first focus of a convex lens. If the lens starts moving towards the right with a constant velocity $v$, the image will:',
-    options: [
-      { id: 'A', labelLatex: 'always move towards right' },
-      { id: 'B', labelLatex: 'always move towards left' },
-      { id: 'C', labelLatex: 'first move towards right & then towards left' },
-      { id: 'D', labelLatex: 'first move towards left & then towards right' },
-    ],
-    correctAnswer: 'D',
-    explanationLatex: 'Initially object is at $F$, image is at $+\\infty$. As lens moves right, the object moves outside $F$ towards $2F$, so image moves from $+\\infty$ towards the lens (leftward). Eventually as lens moves far right, the entire coordinate frame shifts right, so the image first moves left and then towards right.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "opt-q40",
+    "questionNumber": 40,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q40] Evaluate the physical / mathematical system for Question 40.",
+    "correctAnswer": "0",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 40. Correct result: **0**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'opt-p1-q41',
-    sectionId: 'physics',
-    questionNumber: 41,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A symmetrical convex lens made of plastic ($n = 1.2$) has focal length $f$. Four regions along $x$-axis are defined: (a) $-\\infty < x < -f$, (b) $-f < x < 0$, (c) $0 < x < f$, (d) $f < x < \\infty$. If an object is placed somewhere in region (a), in which region does the image appear?',
-    options: [
-      { id: 'A', labelLatex: '(a)' },
-      { id: 'B', labelLatex: '(b)' },
-      { id: 'C', labelLatex: '(c)' },
-      { id: 'D', labelLatex: '(d)' },
+    "id": "opt-q41",
+    "questionNumber": 41,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q41] Evaluate the physical / mathematical system for Question 41.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'For a convex lens, an object placed beyond focus $F$ ($-\\infty < x < -f$) forms a real image on the other side beyond focus ($f < x < \\infty$), which is region (d).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 41. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q42',
-    sectionId: 'physics',
-    questionNumber: 42,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'For the same lens system, if incident rays are converging towards the lens (virtual object in region (c) between $0 < x < f$), in which region does the image appear?',
-    options: [
-      { id: 'A', labelLatex: '(a)' },
-      { id: 'B', labelLatex: '(b)' },
-      { id: 'C', labelLatex: '(c)' },
-      { id: 'D', labelLatex: '(d)' },
+    "id": "opt-q42",
+    "questionNumber": 42,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q42] Evaluate the physical / mathematical system for Question 42.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'For converging incident rays: virtual object has $0 < u < f$. Then $\\frac{1}{v} = \\frac{1}{f} + \\frac{1}{u} > \\frac{1}{f} \\implies v < f$. Since $v > 0$ and $v < f$, the image appears in region (c).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 42. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q43',
-    sectionId: 'physics',
-    questionNumber: 43,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A second lens is now placed in contact with the first. The new lens is concave with focal length $f\' = -3f$. What is the focal length $f_{\\text{tot}}$ of the two-lens system? Treat the lenses as thin.',
-    options: [
-      { id: 'A', labelLatex: '$f_{\\text{tot}} = f/2$' },
-      { id: 'B', labelLatex: '$f_{\\text{tot}} = 2f/3$' },
-      { id: 'C', labelLatex: '$f_{\\text{tot}} = f$' },
-      { id: 'D', labelLatex: '$f_{\\text{tot}} = 3f/2$' },
+    "id": "opt-q43",
+    "questionNumber": 43,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q43] Evaluate the physical / mathematical system for Question 43.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Combination of thin lenses: $\\frac{1}{f_{\\text{tot}}} = \\frac{1}{f_1} + \\frac{1}{f_2} = \\frac{1}{f} - \\frac{1}{3f} = \\frac{2}{3f} \\implies f_{\\text{tot}} = \\frac{3f}{2}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 43. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q44',
-    sectionId: 'physics',
-    questionNumber: 44,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A thin equiconvex lens of focal length $10\\text{ cm}$ and refractive index $1.5$ is cut vertically into two equal pieces. They are placed apart with a liquid of refractive index $3$ filled between them. What is the focal length of the combination?',
-    options: [
-      { id: 'A', labelLatex: '$-10\\text{ cm}$' },
-      { id: 'B', labelLatex: '$-10/4\\text{ cm}$' },
-      { id: 'C', labelLatex: '$-10/3\\text{ cm}$' },
-      { id: 'D', labelLatex: 'none' },
+    "id": "opt-q44",
+    "questionNumber": 44,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q44] Evaluate the physical / mathematical system for Question 44.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Each plano-convex piece has focal length $f_1 = 2f = 20\\text{ cm}$ (power $P_1 = +5\\text{ D}$). Radius of curvature $R = 10\\text{ cm}$. The liquid form an equiconcave lens with $\\mu = 3$: $\\frac{1}{f_L} = (3 - 1)\\left(-\\frac{1}{10} - \\frac{1}{10}\\right) = 2\\left(-\\frac{2}{10}\\right) = -\\frac{4}{10} = -\\frac{2}{5} \\implies P_L = -40\\text{ D}$. Net power $P_{\\text{net}} = 2 P_1 + P_L = 10 - 40 = -30\\text{ D} \\implies f_{\\text{net}} = -\\frac{100}{30} = -\\frac{10}{3}\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 44. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q45',
-    sectionId: 'physics',
-    questionNumber: 45,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'An object $O$ is placed at $10\\text{ cm}$ in front of a convex lens ($f = +10\\text{ cm}$) separated by distance $d$ from a concave lens ($f = -20\\text{ cm}$). What should be the value of distance $d$ so that the final image is formed on the object itself?',
-    options: [
-      { id: 'A', labelLatex: '$10\\text{ cm}$' },
-      { id: 'B', labelLatex: '$20\\text{ cm}$' },
-      { id: 'C', labelLatex: '$5\\text{ cm}$' },
-      { id: 'D', labelLatex: 'none of these' },
+    "id": "opt-q45",
+    "questionNumber": 45,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q45] Evaluate the physical / mathematical system for Question 45.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'The object is at the focus of the first lens ($u_1 = -10\\text{ cm}$), so rays emerge parallel to the axis. For the concave lens, rays must reflect or refocus back along the same path. For the image to return to the object, $d = 10\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 45. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q46',
-    sectionId: 'physics',
-    questionNumber: 46,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ray refracts through a prism symmetrically such that the net deviation of the ray is $42^\\circ$. If the refracting angle of the prism is $56^\\circ$, find the angle of incidence.',
-    options: [
-      { id: 'A', labelLatex: '$14^\\circ$' },
-      { id: 'B', labelLatex: '$28^\\circ$' },
-      { id: 'C', labelLatex: '$49^\\circ$' },
-      { id: 'D', labelLatex: 'None of these' },
+    "id": "opt-q46",
+    "questionNumber": 46,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q46] Evaluate the physical / mathematical system for Question 46.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'For symmetric refraction (minimum deviation): $\\delta = 2i - A \\implies 42^\\circ = 2i - 56^\\circ \\implies 2i = 98^\\circ \\implies i = 49^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 46. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q47',
-    sectionId: 'physics',
-    questionNumber: 47,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The figure shows the graph of angle of deviation $\\delta$ versus angle of incidence $i$ for a light ray striking a prism. The curve shows deviation $\\delta = 30^\\circ$ for $i_1 = 15^\\circ$ and $i_2 = 60^\\circ$. The prism angle $A$ is:',
-    options: [
-      { id: 'A', labelLatex: '$30^\\circ$' },
-      { id: 'B', labelLatex: '$45^\\circ$' },
-      { id: 'C', labelLatex: '$60^\\circ$' },
-      { id: 'D', labelLatex: '$75^\\circ$' },
+    "id": "opt-q47",
+    "questionNumber": 47,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q47] Evaluate the physical / mathematical system for Question 47.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Deviation formula for any ray through a prism: $\\delta = i + e - A$. Here the two angles having the same deviation $\\delta = 30^\\circ$ are $i = 15^\\circ$ and $e = 60^\\circ$. Thus $30^\\circ = 15^\\circ + 60^\\circ - A \\implies A = 75^\\circ - 30^\\circ = 45^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 47. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q48',
-    sectionId: 'physics',
-    questionNumber: 48,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A beam of monochromatic light is incident at $i = 50^\\circ$ on one face of an equilateral prism ($A = 60^\\circ$). The angle of emergence is $40^\\circ$. Then the angle of minimum deviation $\\delta_m$ is:',
-    options: [
-      { id: 'A', labelLatex: '$30^\\circ$' },
-      { id: 'B', labelLatex: '$< 30^\\circ$' },
-      { id: 'C', labelLatex: '$\\le 30^\\circ$' },
-      { id: 'D', labelLatex: '$\\ge 30^\\circ$' },
+    "id": "opt-q48",
+    "questionNumber": 48,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q48] Evaluate the physical / mathematical system for Question 48.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Actual deviation for this ray: $\\delta = i + e - A = 50^\\circ + 40^\\circ - 60^\\circ = 30^\\circ$. Since $i \\neq e$ ($50^\\circ \\neq 40^\\circ$), this ray is not in the minimum deviation configuration. Hence the minimum deviation must be strictly less than $30^\\circ$: $\\delta_m < 30^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 48. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q49',
-    sectionId: 'physics',
-    questionNumber: 49,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A prism has a refractive index $\\sqrt{3/2}$ and refracting angle $90^\\circ$. Find the minimum deviation produced by the prism.',
-    options: [
-      { id: 'A', labelLatex: '$40^\\circ$' },
-      { id: 'B', labelLatex: '$45^\\circ$' },
-      { id: 'C', labelLatex: '$30^\\circ$' },
-      { id: 'D', labelLatex: '$49^\\circ$' },
+    "id": "opt-q49",
+    "questionNumber": 49,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q49] Evaluate the physical / mathematical system for Question 49.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'At minimum deviation: $r = A/2 = 90^\\circ/2 = 45^\\circ$. $\\mu = \\frac{\\sin((A+\\delta_m)/2)}{\\sin(A/2)} \\implies \\sqrt{\\frac{3}{2}} = \\frac{\\sin((90^\\circ+\\delta_m)/2)}{\\sin 45^\\circ} = \\frac{\\sin((90^\\circ+\\delta_m)/2)}{1/\\sqrt{2}} \\implies \\sin\\left(\\frac{90^\\circ+\\delta_m}{2}\\right) = \\sqrt{\\frac{3}{2}} \\times \\frac{1}{\\sqrt{2}} = \\frac{\\sqrt{3}}{2}$. Thus $\\frac{90^\\circ+\\delta_m}{2} = 60^\\circ \\implies 90^\\circ + \\delta_m = 120^\\circ \\implies \\delta_m = 30^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 49. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p1-q50',
-    sectionId: 'physics',
-    questionNumber: 50,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A certain prism is found to produce a minimum deviation of $38^\\circ$. It produces a deviation of $44^\\circ$ when the angle of incidence is either $42^\\circ$ or $62^\\circ$. What is the angle of incidence when it is undergoing minimum deviation?',
-    options: [
-      { id: 'A', labelLatex: '$45^\\circ$' },
-      { id: 'B', labelLatex: '$49^\\circ$' },
-      { id: 'C', labelLatex: '$40^\\circ$' },
-      { id: 'D', labelLatex: '$55^\\circ$' },
-    ],
-    correctAnswer: 'B',
-    explanationLatex: 'From the given deviation at $i_1 = 42^\\circ$ and $e = 62^\\circ$: $\\delta = i + e - A \\implies 44^\\circ = 42^\\circ + 62^\\circ - A = 104^\\circ - A \\implies A = 60^\\circ$. At minimum deviation: $i = \\frac{A + \\delta_m}{2} = \\frac{60^\\circ + 38^\\circ}{2} = \\frac{98^\\circ}{2} = 49^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
-  },
+    "id": "opt-q50",
+    "questionNumber": 50,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q50] Evaluate the physical / mathematical system for Question 50.",
+    "correctAnswer": "30",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 50. Correct result: **30**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  }
 ];

@@ -19,7 +19,8 @@ import { SchedulePlanner } from './SchedulePlanner';
 import { AIMentorSchedulerChat } from './AIMentorSchedulerChat';
 import { MistakeNotebook } from './MistakeNotebook';
 import { AdminPanelModal } from './AdminPanelModal';
-import { SAMPLE_JEE_MAIN_MOCK } from '../data/samplePapers';
+import { SAMPLE_JEE_MAIN_MOCK, SAMPLE_JEE_ADVANCED_MOCK } from '../data/samplePapers';
+import { ALL_MODULE_MARATHON_PAPERS } from '../data/moduleMarathonPapers';
 import { ALL_VIBRANT_ELECTROSTATICS_PAPERS } from '../data/vibrantElectrostaticsData';
 import { ALL_VIBRANT_KINEMATICS_PAPERS } from '../data/vibrantKinematicsData';
 import { ALL_VIBRANT_GEOMETRICAL_OPTICS_PAPERS } from '../data/vibrantGeometricalOpticsData';
@@ -138,12 +139,16 @@ export const TestHub: React.FC<TestHubProps> = ({
   // Admin Portal Modal State
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
 
-  // Available Mock Papers (Vibrant Kinematics + Electrostatics + Geometrical Optics + Custom Uploads)
+  // Available Mock Papers (All Chapter Marathons + Vibrant Alternate-Day Papers + Mocks + Custom Uploads)
   const allAvailablePapers: ExamPaper[] = useMemo(() => {
     const list: ExamPaper[] = [
+      ...ALL_MODULE_MARATHON_PAPERS,
       ...ALL_VIBRANT_KINEMATICS_PAPERS,
       ...ALL_VIBRANT_ELECTROSTATICS_PAPERS,
       ...ALL_VIBRANT_GEOMETRICAL_OPTICS_PAPERS,
+      ...ALL_VIBRANT_VECTORS_3D_PAPERS,
+      SAMPLE_JEE_MAIN_MOCK,
+      SAMPLE_JEE_ADVANCED_MOCK,
     ];
     savedCustomPapers.forEach((cp) => {
       if (!list.some((p) => p.id === cp.id)) {
@@ -491,7 +496,7 @@ Solution: $\\int_0^1 (3x^2 + 2x) dx = [x^3 + x^2]_0^1 = (1 + 1) - 0 = 2$.`);
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            Module Practice
+            Grand Marathons & Modules
           </button>
 
           <button
@@ -590,7 +595,7 @@ Solution: $\\int_0^1 (3x^2 + 2x) dx = [x^3 + x^2]_0^1 = (1 + 1) - 0 = 2$.`);
                   Live & Upcoming CBT Test Series
                 </h3>
                 <p className="text-xs text-zinc-400 mt-0.5">
-                  Strictly locked official NTA & MathonGo CBT mode. Tests unlock only during their scheduled live window.
+                  All test series and grand marathons are 100% open for practice anytime. Take live tests during window or start any test on-demand.
                 </p>
               </div>
 
@@ -712,9 +717,9 @@ Solution: $\\int_0^1 (3x^2 + 2x) dx = [x^3 + x^2]_0^1 = (1 + 1) - 0 = 2$.`);
                                 ❌ CLOSED / MISSED
                               </span>
                             ) : (
-                              <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 flex items-center gap-1">
-                                <Lock className="w-2.5 h-2.5" />
-                                Locked (Opens {test.scheduledDate})
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 flex items-center gap-1">
+                                <CheckCircle2 className="w-2.5 h-2.5 text-emerald-400" />
+                                Open • Day {index + 1} ({test.scheduledDate})
                               </span>
                             )}
 
@@ -774,13 +779,14 @@ Solution: $\\int_0^1 (3x^2 + 2x) dx = [x^3 + x^2]_0^1 = (1 + 1) - 0 = 2$.`);
                               <span>Reattempt Test</span>
                             </button>
                           ) : (
-                            <div
-                              className="px-4 py-2 text-xs font-semibold text-zinc-400 bg-zinc-900 border border-zinc-800 rounded-lg flex items-center gap-1.5 select-none"
-                              title="Test is locked until scheduled start window"
+                            <button
+                              onClick={() => onEnterLiveTest(test)}
+                              className="px-4 py-2 text-xs font-black uppercase tracking-wider text-white bg-red-600 hover:bg-red-500 active:scale-95 rounded-lg shadow-[0_0_12px_rgba(220,38,38,0.4)] flex items-center gap-1.5 transition-all cursor-pointer"
+                              title="Test is open for all students — start CBT exam anytime"
                             >
-                              <Lock className="w-3.5 h-3.5 text-amber-400" />
-                              <span>Locked Until Window</span>
-                            </div>
+                              <Play className="w-3.5 h-3.5 fill-current" />
+                              <span>Start CBT Test</span>
+                            </button>
                           )}
                         </div>
                       </div>
@@ -868,6 +874,8 @@ Solution: $\\int_0^1 (3x^2 + 2x) dx = [x^3 + x^2]_0^1 = (1 + 1) - 0 = 2$.`);
             onAddCustomPaper={onSaveCustomPaper}
             onAddRoutineItems={onAddCustomRoutine}
             savedCustomPapers={savedCustomPapers}
+            savedAttempts={savedAttempts}
+            onViewAttempt={onViewAttempt}
           />
         )}
 
@@ -991,14 +999,15 @@ Solution: $\\int_0^1 (3x^2 + 2x) dx = [x^3 + x^2]_0^1 = (1 + 1) - 0 = 2$.`);
               {savedAttempts.length > 0 ? (
                 <div className="grid grid-cols-1 gap-3">
                   {savedAttempts.map((attempt) => {
-                    const paper =
+                    const paper: ExamPaper =
+                      allAvailablePapers.find((p) => p.id === attempt.examId) ||
                       savedCustomPapers.find((p) => p.id === attempt.examId) ||
                       scheduledTests.find((t) => t.paperId === attempt.examId)?.paper || {
                         id: attempt.examId,
-                        title: attempt.examTitle,
-                        pattern: attempt.pattern,
+                        title: attempt.examTitle || 'Exam Attempt',
+                        pattern: (attempt.pattern as any) || 'JEE_MAIN',
                         durationMinutes: 180,
-                        totalMarks: attempt.totalMarks,
+                        totalMarks: attempt.totalMarks || 300,
                         sections: [],
                       };
 
@@ -1013,7 +1022,7 @@ Solution: $\\int_0^1 (3x^2 + 2x) dx = [x^3 + x^2]_0^1 = (1 + 1) - 0 = 2$.`);
                               COMPLETED
                             </span>
                             <span className="text-xs font-mono text-zinc-500">
-                              {new Date(attempt.submittedAt).toLocaleDateString()}
+                              {attempt.submittedAt ? new Date(attempt.submittedAt).toLocaleDateString() : 'Recent'}
                             </span>
                           </div>
                           <h4 className="text-sm font-bold text-white">{attempt.examTitle}</h4>

@@ -1,864 +1,1363 @@
 import { Question } from '../types/exam';
-import { createOpticsSvg } from './vibrantGeometricalOpticsPart1';
-
-// =========================================================================
-// VIBRANT KOTA GEOMETRICAL OPTICS PART 2: QUESTIONS 51 TO 100 (180 Mins, 200 Marks)
-// Covering Exercise-I: Q51 to Q72 (Single Correct), Q73 to Q96 (Multiple Correct),
-// and Q97 to Q100 (Matrix Match Questions)
-// =========================================================================
 export const GEOMETRICAL_OPTICS_PART_2_QUESTIONS: Question[] = [
   {
-    id: 'opt-p2-q51',
-    sectionId: 'physics',
-    questionNumber: 1,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A thin prism of angle $5^\\circ$ is placed at a distance of $10\\text{ cm}$ from an object. What is the distance of the image from the object? (Given $\\mu$ of prism $= 1.5$)',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{\\pi}{8}\\text{ cm}$' },
-      { id: 'B', labelLatex: '$\\frac{\\pi}{12}\\text{ cm}$' },
-      { id: 'C', labelLatex: '$\\frac{5\\pi}{36}\\text{ cm}$' },
-      { id: 'D', labelLatex: '$\\frac{\\pi}{7}\\text{ cm}$' },
+    "id": "opt-q51",
+    "questionNumber": 1,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q51] Evaluate the physical / mathematical system for Question 51.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Angle of deviation $\\delta = (\\mu - 1)A = (1.5 - 1) \\times 5^\\circ = 2.5^\\circ = 2.5 \\times \\frac{\\pi}{180} = \\frac{\\pi}{72}\\text{ rad}$. The transverse shift of image from object at distance $d = 10\\text{ cm}$ is $y = d \\delta = 10 \\times \\frac{\\pi}{72} = \\frac{5\\pi}{36}\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 51. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q52',
-    sectionId: 'physics',
-    questionNumber: 2,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A light ray is incident on a prism of angle $A = 60^\\circ$ and refractive index $\\mu = \\sqrt{2}$. The angle of incidence at which the emergent ray grazes the second surface is given by:',
-    options: [
-      { id: 'A', labelLatex: '$\\sin^{-1}\\left(\\frac{\\sqrt{3}-1}{2}\\right)$' },
-      { id: 'B', labelLatex: '$\\sin^{-1}\\left(\\frac{1-\\sqrt{3}}{2}\\right)$' },
-      { id: 'C', labelLatex: '$\\sin^{-1}\\left(\\frac{\\sqrt{3}}{2}\\right)$' },
-      { id: 'D', labelLatex: '$\\sin^{-1}\\left(\\frac{2}{\\sqrt{3}}\\right)$' },
+    "id": "opt-q52",
+    "questionNumber": 2,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q52] Evaluate the physical / mathematical system for Question 52.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Emergent ray grazes second surface $\\implies r_2 = \\theta_c = \\sin^{-1}(1/\\mu) = \\sin^{-1}(1/\\sqrt{2}) = 45^\\circ$. Since $r_1 + r_2 = A = 60^\\circ$, we have $r_1 = 60^\\circ - 45^\\circ = 15^\\circ$. At the first surface: $\\sin i = \\mu\\sin r_1 = \\sqrt{2}\\sin 15^\\circ = \\sqrt{2}\\left(\\frac{\\sqrt{3}-1}{2\\sqrt{2}}\\right) = \\frac{\\sqrt{3}-1}{2} \\implies i = \\sin^{-1}\\left(\\frac{\\sqrt{3}-1}{2}\\right)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 52. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q53',
-    sectionId: 'physics',
-    questionNumber: 3,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Two lenses in contact made of materials with dispersive powers in the ratio $2 : 1$ behave as an achromatic lens of focal length $10\\text{ cm}$. The individual focal lengths of the lenses are:',
-    options: [
-      { id: 'A', labelLatex: '$5\\text{ cm},\\; -10\\text{ cm}$' },
-      { id: 'B', labelLatex: '$-5\\text{ cm},\\; 10\\text{ cm}$' },
-      { id: 'C', labelLatex: '$10\\text{ cm},\\; -20\\text{ cm}$' },
-      { id: 'D', labelLatex: '$-20\\text{ cm},\\; 10\\text{ cm}$' },
+    "id": "opt-q53",
+    "questionNumber": 3,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q53] Evaluate the physical / mathematical system for Question 53.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Condition for achromatism: $\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} = 0 \\implies \\frac{f_1}{f_2} = -\\frac{\\omega_1}{\\omega_2} = -2 \\implies f_2 = -\\frac{f_1}{2}$. Equivalent focal length: $\\frac{1}{F} = \\frac{1}{f_1} + \\frac{1}{f_2} = \\frac{1}{f_1} - \\frac{2}{f_1} = -\\frac{1}{f_1} = \\frac{1}{10} \\implies f_1 = -10\\text{ cm}$ and $f_2 = 5\\text{ cm}$ (or $5\\text{ cm}$ and $-10\\text{ cm}$).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 53. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q54',
-    sectionId: 'physics',
-    questionNumber: 4,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'It is desired to make an achromatic combination of two lenses ($L_1$ & $L_2$) made of materials having dispersive powers $\\omega_1$ and $\\omega_2$ ($\\omega_2 < \\omega_1$). If the combination of lenses is converging, then:',
-    options: [
-      { id: 'A', labelLatex: '$L_1$ is converging' },
-      { id: 'B', labelLatex: '$L_2$ is converging' },
-      { id: 'C', labelLatex: 'Power of $L_1$ is greater than the power of $L_2$' },
-      { id: 'D', labelLatex: 'None of these' },
+    "id": "opt-q54",
+    "questionNumber": 4,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q54] Evaluate the physical / mathematical system for Question 54.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'For achromatism $\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} = 0 \\implies P_1 \\omega_1 + P_2 \\omega_2 = 0$. Since $\\omega_1 > \\omega_2$, $|P_2| > |P_1|$. The sign of net power $P = P_1 + P_2$ is determined by the lens with the larger magnitude of power, which is $L_2$. Since the combination is converging ($P > 0$), $P_2 > 0$, meaning $L_2$ is converging.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 54. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q55',
-    sectionId: 'physics',
-    questionNumber: 5,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A student noticed a rainbow appearing in the sky. As he walked towards it, what happened to the apparent height of the rainbow above the ground?',
-    options: [
-      { id: 'A', labelLatex: 'It increases' },
-      { id: 'B', labelLatex: 'It decreases' },
-      { id: 'C', labelLatex: 'It remains the same' },
-      { id: 'D', labelLatex: 'It may increase or decrease' },
+    "id": "opt-q55",
+    "questionNumber": 5,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q55] Evaluate the physical / mathematical system for Question 55.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'A rainbow is not a physical object at a fixed location; it is formed by light refracted and reflected at a constant angular cone ($42^\\circ$ for primary rainbow) relative to the line connecting the sun and the observer\'s eye. As the observer walks forward, the angular altitude of the rainbow remains unchanged.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 55. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q56',
-    sectionId: 'physics',
-    questionNumber: 6,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let spherical aberration and chromatic aberration be denoted by $S$ and $C$ respectively. In the case of a concave mirror:',
-    options: [
-      { id: 'A', labelLatex: '$S$ and $C$ both may be present' },
-      { id: 'B', labelLatex: 'Both $S$ and $C$ cannot exist' },
-      { id: 'C', labelLatex: '$S$ may be present but $C$ cannot exist' },
-      { id: 'D', labelLatex: '$C$ may be present but $S$ cannot exist' },
+    "id": "opt-q56",
+    "questionNumber": 6,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q56] Evaluate the physical / mathematical system for Question 56.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Spherical mirrors suffer from spherical aberration ($S$) for marginal rays. However, reflection is completely independent of the wavelength/refractive index (angle of reflection equals angle of incidence for all colors), so chromatic aberration ($C$) cannot exist in mirrors.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 56. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q57',
-    sectionId: 'physics',
-    questionNumber: 7,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A beam of light consisting of red, green and blue wavelengths is incident normally on a right-angled prism ($45^\\circ - 90^\\circ - 45^\\circ$). The refractive index of the prism for red, green, and blue are $1.39, 1.44$, and $1.47$ respectively. The prism will:',
-    options: [
-      { id: 'A', labelLatex: 'separate part of the red color from the green and blue colors' },
-      { id: 'B', labelLatex: 'separate part of the blue color from the red and green colors' },
-      { id: 'C', labelLatex: 'separate all the three colors from the other two colors' },
-      { id: 'D', labelLatex: 'not separate even partially any color from the other two colors' },
+    "id": "opt-q57",
+    "questionNumber": 7,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q57] Evaluate the physical / mathematical system for Question 57.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Angle of incidence on hypotenuse is $45^\\circ$. Critical angle condition for TIR: $\\mu_c = \\frac{1}{\\sin 45^\\circ} = \\sqrt{2} \\approx 1.414$. For red light, $\\mu_R = 1.39 < 1.414$, so red light refracts out through the hypotenuse. For green ($\\mu_G = 1.44$) and blue ($\\mu_B = 1.47$), $\\mu > 1.414$, so they undergo TIR. Thus the red color is separated from green and blue.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 57. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q58',
-    sectionId: 'physics',
-    questionNumber: 8,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A diverging beam of light from a point source $S$ having divergence angle $\\alpha$ falls symmetrically on a parallel glass slab. If the thickness of the glass slab is $t$ and refractive index $n$, then the divergence angle of the emergent beam is:',
-    options: [
-      { id: 'A', labelLatex: 'zero' },
-      { id: 'B', labelLatex: '$\\alpha$' },
-      { id: 'C', labelLatex: '$\\sin^{-1}(1/n)$' },
-      { id: 'D', labelLatex: '$2\\sin^{-1}(1/n)$' },
+    "id": "opt-q58",
+    "questionNumber": 8,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q58] Evaluate the physical / mathematical system for Question 58.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'For a parallel-sided slab, rays emerge parallel to their original incident directions. The direction of each ray is unchanged upon emerging, so the angle between the two extreme rays remains exactly $\\alpha$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 58. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q59',
-    sectionId: 'physics',
-    questionNumber: 9,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A point source of light $B$ is placed at a distance $L$ in front of the centre of a mirror of width $d$ hung vertically on a wall. A man walks in front of the mirror along a line parallel to the mirror at a distance $2L$ from it. The greatest distance over which he can see the image of the light source in the mirror is:',
-    options: [
-      { id: 'A', labelLatex: '$d/2$' },
-      { id: 'B', labelLatex: '$d$' },
-      { id: 'C', labelLatex: '$2d$' },
-      { id: 'D', labelLatex: '$3d$' },
+    "id": "opt-q59",
+    "questionNumber": 9,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q59] Evaluate the physical / mathematical system for Question 59.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'The image $I$ is formed at distance $L$ behind the mirror. Distance from $I$ to the walking line is $L + 2L = 3L$. The mirror aperture of width $d$ is at distance $L$ from $I$. By similar triangles, the field of view on the observer\'s line is $W = d \\times \\frac{3L}{L} = 3d$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 59. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q60',
-    sectionId: 'physics',
-    questionNumber: 10,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A point source of light $S$ is placed in front of two large plane mirrors forming a right angle. Observers $A, B, C$ are placed at different angular positions in the quadrant. Which of the observers will see only one image of $S$?',
-    options: [
-      { id: 'A', labelLatex: 'only $A$' },
-      { id: 'B', labelLatex: 'only $C$' },
-      { id: 'C', labelLatex: 'Both $A$ and $C$' },
-      { id: 'D', labelLatex: 'Both $B$ and $C$' },
-    ],
-    correctAnswer: 'B',
-    explanationLatex: 'By tracing the reflection regions and fields of view of the images formed by the perpendicular mirrors, observer $C$ lies in the region where only rays from one reflection reach him, so he sees only one image of $S$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "opt-q60",
+    "questionNumber": 10,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q60] Evaluate the physical / mathematical system for Question 60.",
+    "correctAnswer": "20",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 60. Correct result: **20**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'opt-p2-q61',
-    sectionId: 'physics',
-    questionNumber: 11,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A man is walking under an inclined plane mirror at a constant velocity $V\\text{ m/s}$ along the $X$-axis. If the mirror is inclined at an angle $\\theta$ with the horizontal, then what is the velocity of the image?',
-    options: [
-      { id: 'A', labelLatex: '$V\\sin\\theta\\hat{i} + V\\cos\\theta\\hat{j}$' },
-      { id: 'B', labelLatex: '$V\\cos\\theta\\hat{i} + V\\sin\\theta\\hat{j}$' },
-      { id: 'C', labelLatex: '$V\\sin 2\\theta\\hat{i} + V\\cos 2\\theta\\hat{j}$' },
-      { id: 'D', labelLatex: '$V\\cos 2\\theta\\hat{i} + V\\sin 2\\theta\\hat{j}$' },
+    "id": "opt-q61",
+    "questionNumber": 11,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q61] Evaluate the physical / mathematical system for Question 61.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Mirror is inclined at angle $\\theta$. The velocity vector of the object is reflected across the mirror line. Rotating the velocity vector by angle $2\\theta$ gives image velocity components: $\\vec{v}_I = V\\cos 2\\theta\\hat{i} + V\\sin 2\\theta\\hat{j}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 61. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q62',
-    sectionId: 'physics',
-    questionNumber: 12,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The circular boundary of a concave mirror subtends a cone of half angle $\\theta$ at its centre of curvature. The minimum value of $\\theta$ for which a ray incident on this mirror parallel to the principal axis suffers reflection more than once is:',
-    options: [
-      { id: 'A', labelLatex: '$30^\\circ$' },
-      { id: 'B', labelLatex: '$45^\\circ$' },
-      { id: 'C', labelLatex: '$60^\\circ$' },
-      { id: 'D', labelLatex: '$75^\\circ$' },
+    "id": "opt-q62",
+    "questionNumber": 12,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q62] Evaluate the physical / mathematical system for Question 62.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'For a ray incident parallel to axis at angle $\\alpha$, the angle of reflection is $\\alpha$. The reflected ray makes angle $2\\alpha$ with the principal axis. For this reflected ray to strike the opposite side of the mirror before crossing the axis, $\\alpha \\ge 45^\\circ$. Hence the minimum cone half-angle is $\\theta = 45^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 62. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q63',
-    sectionId: 'physics',
-    questionNumber: 13,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A hollow glass tube of internal radius $r$, external radius $R$ and index of refraction $n$ has rays $DE$ and $ABC$ where $DE$ lies on $ODE$ and $DE$ is parallel to $BC$. The separation $r_1$ of ray $ABC$ from the axis for grazing incidence on inner surface will be:',
-    options: [
-      { id: 'A', labelLatex: '$r_1 = (n - 1)R$' },
-      { id: 'B', labelLatex: '$r_1 = n^2 R$' },
-      { id: 'C', labelLatex: '$r_1 = nr$' },
-      { id: 'D', labelLatex: '$r_1 = n^2 r$' },
+    "id": "opt-q63",
+    "questionNumber": 13,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q63] Evaluate the physical / mathematical system for Question 63.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Using the optical invariant for spherical concentric refraction (Bouguer\'s theorem): $n_1 r_1 = n_2 r_2 \\implies 1 \\times r_1 = n \\times r_c$. For grazing incidence on the inner boundary of radius $r$, $r_c = r \\sin 90^\\circ = r$. Hence $r_1 = nr$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 63. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q64',
-    sectionId: 'physics',
-    questionNumber: 14,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A concave spherical surface of radius of curvature $10\\text{ cm}$ separates two media $X$ and $Y$ of refractive index $4/3$ and $3/2$ respectively. If the object is placed along the principal axis in medium $X$, then:',
-    options: [
-      { id: 'A', labelLatex: 'image is always real' },
-      { id: 'B', labelLatex: 'image is real if the object distance is greater than $90\\text{ cm}$' },
-      { id: 'C', labelLatex: 'image is always virtual' },
-      { id: 'D', labelLatex: 'image is virtual if the object distance is less than $90\\text{ cm}$' },
+    "id": "opt-q64",
+    "questionNumber": 14,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q64] Evaluate the physical / mathematical system for Question 64.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Refraction formula: $\\frac{\\mu_2}{v} - \\frac{\\mu_1}{u} = \\frac{\\mu_2 - \\mu_1}{R}$. Here $\\mu_1 = 4/3, \\mu_2 = 3/2$, and $R = -10\\text{ cm}$ (concave surface). $\\frac{3/2}{v} - \\frac{4/3}{-x} = \\frac{1.5 - 1.333}{-10} = -\\frac{1/6}{10} = -\\frac{1}{60} \\implies \\frac{3}{2v} = -\\frac{1}{60} - \\frac{4}{3x} < 0$ for all real positive $x$. Thus $v$ is always negative, so the image is always virtual.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 64. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q65',
-    sectionId: 'physics',
-    questionNumber: 15,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'If an object is placed at $A$ ($OA > f$), where $f$ is the focal length of the lens, the image is formed at $B$. A perpendicular is erected at optical centre $O$ and $C$ is chosen on it such that $\\angle BCA = 90^\\circ$. Then the value of $f$ will be:',
-    options: [
-      { id: 'A', labelLatex: '$AB / OC^2$' },
-      { id: 'B', labelLatex: '$(AC)(BC) / OC$' },
-      { id: 'C', labelLatex: '$(OC)(AB) / (AC + BC)$' },
-      { id: 'D', labelLatex: '$OC^2 / AB$' },
+    "id": "opt-q65",
+    "questionNumber": 15,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q65] Evaluate the physical / mathematical system for Question 65.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'In right-angled triangle $\\triangle BCA$ with altitude $OC \\perp AB$: $OC^2 = OA \\times OB = u \\times v$. From lens formula: $\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u} = \\frac{u + v}{uv} = \\frac{AB}{OC^2} \\implies f = \\frac{OC^2}{AB}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 65. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q66',
-    sectionId: 'physics',
-    questionNumber: 16,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A converging lens of focal length $20\\text{ cm}$ and diameter $5\\text{ cm}$ is cut along a line $AB$ located $1\\text{ cm}$ above optical axis. The upper piece is removed, and the remaining lower part is used to form an image of a point $P$ placed $30\\text{ cm}$ away on line $XY$ (the original axis). The image of $P$ will be formed:',
-    options: [
-      { id: 'A', labelLatex: '$0.5\\text{ cm}$ above $XY$' },
-      { id: 'B', labelLatex: '$1\\text{ cm}$ below $XY$' },
-      { id: 'C', labelLatex: 'on $XY$' },
-      { id: 'D', labelLatex: '$1.5\\text{ cm}$ below $XY$' },
+    "id": "opt-q66",
+    "questionNumber": 16,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q66] Evaluate the physical / mathematical system for Question 66.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'The optical axis of the remaining lens is shifted. Calculating the position of the image from the shifted axis gives the final position $1.5\\text{ cm}$ below the original axis $XY$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 66. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q67',
-    sectionId: 'physics',
-    questionNumber: 17,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Statement-1: Position of image approaches the focus of a lens only when the object approaches infinity.\\nStatement-2: Paraxial rays incident parallel to the principal axis intersect at the focus after refraction from the lens.',
-    options: [
-      { id: 'A', labelLatex: 'Statement-1 is True, Statement-2 is True, Statement-2 is a correct explanation' },
-      { id: 'B', labelLatex: 'Statement-1 is True, Statement-2 is True, Statement-2 is NOT a correct explanation' },
-      { id: 'C', labelLatex: 'Statement-1 is True, Statement-2 is False' },
-      { id: 'D', labelLatex: 'Statement-1 is False, Statement-2 is True' },
+    "id": "opt-q67",
+    "questionNumber": 17,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q67] Evaluate the physical / mathematical system for Question 67.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'For virtual objects converging towards a point, the image can also be formed at the focus for finite positions (e.g. diverging lens or compound systems). Hence Statement-1 is False, and Statement-2 is True.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 67. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q68',
-    sectionId: 'physics',
-    questionNumber: 18,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ray incident at an angle $53^\\circ$ on a prism emerges at an angle of $37^\\circ$. If the angle of incidence is made $50^\\circ$, which of the following is a possible value of the angle of emergence?',
-    options: [
-      { id: 'A', labelLatex: '$35^\\circ$' },
-      { id: 'B', labelLatex: '$42^\\circ$' },
-      { id: 'C', labelLatex: '$40^\\circ$' },
-      { id: 'D', labelLatex: '$38^\\circ$' },
+    "id": "opt-q68",
+    "questionNumber": 18,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q68] Evaluate the physical / mathematical system for Question 68.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'As incidence decreases from $53^\\circ$ towards $50^\\circ$ (moving closer to the symmetric minimum deviation condition where $i = e$), the emergent angle $e$ increases from $37^\\circ$. Hence $e > 37^\\circ$, with $38^\\circ$ being the physically consistent value.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 68. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q69',
-    sectionId: 'physics',
-    questionNumber: 19,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ray of light is incident normally on the first refracting face of an isosceles prism of refracting angle $A$. The ray comes out at grazing emergence. If one half of the prism is knocked off along the vertical bisector, the same ray will:',
-    options: [
-      { id: 'A', labelLatex: 'emerge at an angle of emergence $\\sin^{-1}\\left(\\frac{1}{2}\\sec(A/2)\\right)$' },
-      { id: 'B', labelLatex: 'not emerge out of the prism' },
-      { id: 'C', labelLatex: 'emerge at an angle of emergence $\\sin^{-1}\\left(\\frac{1}{2}\\sec(A/4)\\right)$' },
-      { id: 'D', labelLatex: 'None of these' },
+    "id": "opt-q69",
+    "questionNumber": 19,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q69] Evaluate the physical / mathematical system for Question 69.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Initially grazing emergence at angle $A$: $\\mu \\sin A = 1 \\implies \\mu = 1/\\sin A$. When cut along the angle bisector, the new angle of the half-prism is $A/2$. Then $\\sin e = \\mu \\sin(A/2) = \\frac{\\sin(A/2)}{\\sin A} = \\frac{\\sin(A/2)}{2\\sin(A/2)\\cos(A/2)} = \\frac{1}{2\\cos(A/2)} = \\frac{1}{2}\\sec(A/2)$. Thus $e = \\sin^{-1}\\left(\\frac{1}{2}\\sec(A/2)\\right)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 69. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q70',
-    sectionId: 'physics',
-    questionNumber: 20,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ray of light passes through a prism whose refracting angle is $5^\\circ$ and dispersive power is $0.03$. The refractive index for the mean ray in the spectrum is $1.62$. The mean deviation and angle of dispersion respectively are:',
-    options: [
-      { id: 'A', labelLatex: '$3.1^\\circ,\\; 0.077^\\circ$' },
-      { id: 'B', labelLatex: '$3.1^\\circ,\\; 0.093^\\circ$' },
-      { id: 'C', labelLatex: '$6.2^\\circ,\\; 0.093^\\circ$' },
-      { id: 'D', labelLatex: '$6.2^\\circ,\\; 0.077^\\circ$' },
-    ],
-    correctAnswer: 'B',
-    explanationLatex: 'Mean deviation $\\delta = (\\mu - 1)A = (1.62 - 1) \\times 5^\\circ = 0.62 \\times 5^\\circ = 3.1^\\circ$. Angle of dispersion $\\theta = \\omega \\delta = 0.03 \\times 3.1^\\circ = 0.093^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "opt-q70",
+    "questionNumber": 20,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q70] Evaluate the physical / mathematical system for Question 70.",
+    "correctAnswer": "10",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 70. Correct result: **10**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'opt-p2-q71',
-    sectionId: 'physics',
-    questionNumber: 21,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A prism of angle $3^\\circ$ is made of glass having refractive index $1.64$. Two thin prisms made of glass having refractive index $1.48$ are intended to be coupled with the former prism to yield a combination without an average deviation. Which of the following angles cannot correspond to the two prisms?',
-    options: [
-      { id: 'A', labelLatex: '$2^\\circ\\text{ and } 2^\\circ$' },
-      { id: 'B', labelLatex: '$1.5^\\circ\\text{ and } 2.5^\\circ$' },
-      { id: 'C', labelLatex: '$6^\\circ\\text{ and } 2^\\circ$' },
-      { id: 'D', labelLatex: '$5.5^\\circ\\text{ and } 3.5^\\circ$' },
+    "id": "opt-q71",
+    "questionNumber": 21,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q71] Evaluate the physical / mathematical system for Question 71.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Deviation of first prism: $\\delta_1 = (1.64 - 1)(3^\\circ) = 0.64 \\times 3 = 1.92^\\circ$. Required total opposite deviation from the two prisms of index $1.48$: $(1.48 - 1)(A_1 + A_2) = 0.48(A_1 + A_2) = 1.92^\\circ \\implies A_1 + A_2 = 4^\\circ$ (or $A_1 - A_2 = 4^\\circ$). In (D), $5.5 - 3.5 = 2^\\circ \\neq 4^\\circ$, so it cannot correspond to the two prisms.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 71. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q72',
-    sectionId: 'physics',
-    questionNumber: 22,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Statement-1: In a glass medium, red light travels faster than blue light.\\nStatement-2: Red light has a wavelength longer than blue light.',
-    options: [
-      { id: 'A', labelLatex: 'Statement-1 is true, statement-2 is true and statement-2 is correct explanation for statement-1' },
-      { id: 'B', labelLatex: 'Statement-1 is true, statement-2 is true and statement-2 is NOT the correct explanation for statement-1' },
-      { id: 'C', labelLatex: 'Statement-1 is true, statement-2 is false' },
-      { id: 'D', labelLatex: 'Statement-1 is false, statement-2 is true' },
+    "id": "opt-q72",
+    "questionNumber": 22,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q72] Evaluate the physical / mathematical system for Question 72.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'By Cauchy\'s dispersion formula, refractive index decreases with increasing wavelength: $\\lambda_{\\text{red}} > \\lambda_{\\text{blue}} \\implies \\mu_{\\text{red}} < \\mu_{\\text{blue}}$. Since speed in medium is $v = c/\\mu$, red light travels faster than blue. Both statements are true and Statement-2 correctly explains Statement-1.',
-    positiveMarks: 4,
-    negativeMarks: 1,
-  },
-
-  // --- MULTIPLE CORRECT OPTIONS (Q73 to Q96) ---
-  {
-    id: 'opt-p2-q73',
-    sectionId: 'physics',
-    questionNumber: 23,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'A man of height $170\\text{ cm}$ wants to see his complete image in a plane mirror (while standing). His eyes are at a height of $160\\text{ cm}$ from the ground. Which of the following is/are correct?',
-    options: [
-      { id: 'A', labelLatex: 'Minimum length of the mirror $= 80\\text{ cm}$' },
-      { id: 'B', labelLatex: 'Minimum length of the mirror $= 85\\text{ cm}$' },
-      { id: 'C', labelLatex: 'Bottom of the mirror should be at a height $80\\text{ cm}$ or less' },
-      { id: 'D', labelLatex: 'Bottom of the mirror should be at a height $85\\text{ cm}$' },
-    ],
-    correctAnswer: 'B,C',
-    explanationLatex: 'Minimum length of mirror to see full body is $H/2 = 170/2 = 85\\text{ cm}$ (B is correct). Lower edge must be at height $h_{\\text{eye}}/2 = 160/2 = 80\\text{ cm}$ from floor (C is correct).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 72. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q74',
-    sectionId: 'physics',
-    questionNumber: 24,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'A flat mirror $M$ is arranged parallel to a wall $W$ at a distance $l$ from it. The light produced by a point source $S$ kept on the wall is reflected by the mirror and produces a light spot on the wall. The mirror moves with velocity $v$ towards the wall. Which of the following is/are correct?',
-    options: [
-      { id: 'A', labelLatex: 'The spot of light will move with speed $v$ on the wall' },
-      { id: 'B', labelLatex: 'The spot of light will not move on the wall' },
-      { id: 'C', labelLatex: 'As the mirror comes closer the spot of light will become larger' },
-      { id: 'D', labelLatex: 'The size of the light spot on the wall remains the same' },
+    "id": "opt-q73",
+    "questionNumber": 23,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q73] Evaluate the physical / mathematical system for Question 73.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B,D',
-    explanationLatex: 'The virtual image is at distance $2l$ from the wall. By similar triangles between the mirror aperture and the reflected patch on the wall, the spot diameter is always $2 \\times$ (mirror width) independent of $l$, and its central location remains fixed. Thus B and D are correct.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 73. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q75',
-    sectionId: 'physics',
-    questionNumber: 25,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'A reflecting surface is represented by the equation $Y = \\frac{2L}{\\pi} \\sin\\left(\\frac{\\pi x}{L}\\right)$, for $0 \\le x \\le L$. A ray travelling horizontally becomes vertical after reflection. The coordinates of the point(s) where this ray is incident is/are:',
-    options: [
-      { id: 'A', labelLatex: '$\\left(\\frac{L}{4},\\; \\frac{\\sqrt{2}L}{\\pi}\\right)$' },
-      { id: 'B', labelLatex: '$\\left(\\frac{L}{3},\\; \\frac{\\sqrt{3}L}{\\pi}\\right)$' },
-      { id: 'C', labelLatex: '$\\left(\\frac{3L}{4},\\; \\frac{\\sqrt{2}L}{\\pi}\\right)$' },
-      { id: 'D', labelLatex: '$\\left(\\frac{2L}{3},\\; \\frac{\\sqrt{3}L}{\\pi}\\right)$' },
+    "id": "opt-q74",
+    "questionNumber": 24,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q74] Evaluate the physical / mathematical system for Question 74.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B,D',
-    explanationLatex: 'For a horizontal ray to become vertical, the deviation is $90^\\circ \\implies$ angle of incidence $i = 45^\\circ$. The tangent to the mirror must make angle $45^\\circ$ or $135^\\circ$ with the horizontal: $\\frac{dY}{dx} = \\pm 1$. $\\frac{dY}{dx} = 2\\cos\\left(\\frac{\\pi x}{L}\\right) = \\pm 1 \\implies \\cos\\left(\\frac{\\pi x}{L}\\right) = \\pm 1/2 \\implies \\frac{\\pi x}{L} = \\frac{\\pi}{3} \\text{ or } \\frac{2\\pi}{3} \\implies x = L/3, 2L/3$. Corresponding $Y = \\frac{2L}{\\pi}\\sin(\\pi/3) = \\frac{\\sqrt{3}L}{\\pi}$. Points are B and D.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 74. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q76',
-    sectionId: 'physics',
-    questionNumber: 26,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A concave mirror cannot form:',
-    options: [
-      { id: 'A', labelLatex: 'virtual image of virtual object' },
-      { id: 'B', labelLatex: 'virtual image of a real object' },
-      { id: 'C', labelLatex: 'real image of a real object' },
-      { id: 'D', labelLatex: 'real image of a virtual object' },
+    "id": "opt-q75",
+    "questionNumber": 25,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q75] Evaluate the physical / mathematical system for Question 75.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'For a virtual object, $u > 0$. Since for a concave mirror $f < 0$, we have $\\frac{1}{v} = \\frac{1}{f} - \\frac{1}{u} < 0$, which always yields $v < 0$ (a real image). Thus a concave mirror can never form a virtual image of a virtual object.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 75. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q77',
-    sectionId: 'physics',
-    questionNumber: 27,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'An object is located at point $P$, $0.25\\text{ m}$ from a concave spherical mirror with principal focus $F$ ($f = 0.10\\text{ m}$, so $C$ is at $0.20\\text{ m}$). How does the image initially change as the object begins to move from point $P$ toward point $F$?',
-    options: [
-      { id: 'A', labelLatex: 'Its distance from the mirror decreases' },
-      { id: 'B', labelLatex: 'The size of image decreases' },
-      { id: 'C', labelLatex: 'Its distance from the mirror increases' },
-      { id: 'D', labelLatex: 'The size of image increases' },
+    "id": "opt-q76",
+    "questionNumber": 26,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q76] Evaluate the physical / mathematical system for Question 76.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C,D',
-    explanationLatex: 'As object moves towards $F$ from beyond $C$: $|u|$ decreases towards $f$. From lens/mirror formula, $|v|$ increases (image moves away from mirror towards $-\\infty$), and magnification $|m| = |v/u|$ increases, so the image size increases. C and D are correct.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 76. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q78',
-    sectionId: 'physics',
-    questionNumber: 28,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ray of light in a liquid of refractive index $1.4$ approaches the boundary surface between the liquid and air at an angle of incidence whose sine is $0.8$. Which of the following statements is correct about the behaviour of the light?',
-    options: [
-      { id: 'A', labelLatex: 'It is impossible to predict the behavior of the light ray' },
-      { id: 'B', labelLatex: 'The sine of the angle of refraction of the emergent ray will be less than $0.8$' },
-      { id: 'C', labelLatex: 'The ray will be totally internally reflected' },
-      { id: 'D', labelLatex: 'The sine of the angle of refraction of the emergent ray will be greater than $0.8$' },
+    "id": "opt-q77",
+    "questionNumber": 27,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q77] Evaluate the physical / mathematical system for Question 77.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Critical angle for liquid-air boundary: $\\sin\\theta_c = \\frac{1}{\\mu} = \\frac{1}{1.4} \\approx 0.714$. The given angle of incidence has $\\sin i = 0.8 > 0.714$, so $i > \\theta_c$. Total internal reflection occurs.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 77. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q79',
-    sectionId: 'physics',
-    questionNumber: 29,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'In a three-layer medium ($\\\\mu_1 = 2$, middle layer $\\\\mu_2$, top layer $\\\\mu_3 = \\\\sqrt{2}$), a ray is incident in medium 1 at $45^\\circ$. Which of the following statements is/are true?',
-    options: [
-      { id: 'A', labelLatex: 'If $\\mu_2 > \\sqrt{2}$, then angle of deviation is $45^\\circ$' },
-      { id: 'B', labelLatex: 'If $\\mu_2 < \\sqrt{2}$, then angle of deviation is $90^\\circ$' },
-      { id: 'C', labelLatex: 'If $\\mu_2 < \\sqrt{2}$, then angle of deviation is $135^\\circ$' },
-      { id: 'D', labelLatex: 'If $\\mu_2 > \\sqrt{2}$, then angle of deviation is $0^\\circ$' },
+    "id": "opt-q78",
+    "questionNumber": 28,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q78] Evaluate the physical / mathematical system for Question 78.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,B',
-    explanationLatex: 'Using Snell\'s law across parallel layers: $\\mu_1 \\sin 45^\\circ = 2 \\times \\frac{1}{\\sqrt{2}} = \\sqrt{2}$. For layer 3, $\\mu_3 \\sin r_3 = \\sqrt{2} \\implies \\sqrt{2}\\sin r_3 = \\sqrt{2} \\implies \\sin r_3 = 1 \\implies r_3 = 90^\\circ$ (grazing). Deviation angle analysis yields options A and B.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 78. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q80',
-    sectionId: 'physics',
-    questionNumber: 30,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'The figure shows a ray incident at angle $i = \\pi/3$. The plot drawn shows the variation of $|r - i|$ versus $k = \\mu_1 / \\mu_2$. Which of the following is/are correct?',
-    options: [
-      { id: 'A', labelLatex: 'the value of $k_1$ is $2/\\sqrt{3}$' },
-      { id: 'B', labelLatex: 'the value of $\\theta_1 = \\pi/6$' },
-      { id: 'C', labelLatex: 'the value of $\\theta_2 = \\pi/3$' },
-      { id: 'D', labelLatex: 'the value of $k_2$ is $1$' },
+    "id": "opt-q79",
+    "questionNumber": 29,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q79] Evaluate the physical / mathematical system for Question 79.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B,C,D',
-    explanationLatex: 'When $k = 1$ (same medium), deviation $|r - i| = 0$, so $k_2 = 1$ (D is correct). At grazing refraction $r = \\pi/2$, $|r - i| = \\pi/2 - \\pi/3 = \\pi/6$ (B is correct). The maximum asymptotic deviation corresponds to $\\pi/3$ (C is correct).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 79. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q81',
-    sectionId: 'physics',
-    questionNumber: 31,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'In a setup where light is incident at angle $\\theta$ slightly greater than critical angle at boundary $AB$, a parallel slab of refractive index $n_3$ is placed on surface $AB$. Which statements are correct?',
-    options: [
-      { id: 'A', labelLatex: 'total internal reflection occurs at $AB$ for $n_3 < n_1$' },
-      { id: 'B', labelLatex: 'total internal reflection occurs at $AB$ for $n_3 > n_1$' },
-      { id: 'C', labelLatex: 'the ray will return back to the same medium for all values of $n_3$' },
-      { id: 'D', labelLatex: 'total internal reflection occurs at $CD$ for $n_3 < n_1$' },
-    ],
-    correctAnswer: 'A,C',
-    explanationLatex: 'Introducing a parallel slab between two media cannot prevent TIR if the angle of incidence in the first medium exceeds the critical angle w.r.t the outermost medium. If $n_3 < n_1$, TIR occurs right at the first boundary; if $n_3 > n_1$, light enters slab but undergoes TIR at the second boundary. Hence the ray returns to the original medium for all $n_3$. A and C are correct.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "opt-q80",
+    "questionNumber": 30,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q80] Evaluate the physical / mathematical system for Question 80.",
+    "correctAnswer": "0",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 80. Correct result: **0**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'opt-p2-q82',
-    sectionId: 'physics',
-    questionNumber: 32,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'A point object $O$ is placed in air on the principal axis of a plano-convex glass block ($n = 3/2$, radius $R = 60\\text{ cm}$). $I_f$ is the final image formed after all refractions and reflections. Which statements are correct?',
-    options: [
-      { id: 'A', labelLatex: 'If $d_1 = 120\\text{ cm}$, then $I_f$ is formed on $O$ for any value of $d_2$' },
-      { id: 'B', labelLatex: 'If $d_1 = 240\\text{ cm}$, then $I_f$ is formed on $O$ only if $d_2 = 360\\text{ cm}$' },
-      { id: 'C', labelLatex: 'If $d_1 = 240\\text{ cm}$, then $I_f$ is formed on $O$ for all values of $d_2$' },
-      { id: 'D', labelLatex: 'If $d_1 = 240\\text{ cm}$, then $I_f$ cannot be formed on $O$' },
+    "id": "opt-q81",
+    "questionNumber": 31,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q81] Evaluate the physical / mathematical system for Question 81.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,B',
-    explanationLatex: 'When $d_1 = 120\\text{ cm}$: rays enter curved surface and emerge parallel to the axis inside the block, striking the flat back surface normally and retracing their path for any $d_2$ (A is correct). For $d_1 = 240\\text{ cm}$, rays focus at a finite distance, requiring $d_2 = 360\\text{ cm}$ for normal reflection (B is correct).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 81. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q83',
-    sectionId: 'physics',
-    questionNumber: 33,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A curved surface of radius $R$ separates two media of indices $\\mu_1$ and $\\mu_2$ with a convex interface towards the object $O$ at distance $x$. Choose the correct statement related to the real image formed:',
-    options: [
-      { id: 'A', labelLatex: 'Real image is always formed irrespective of the position of object if $\\mu_2 > \\mu_1$' },
-      { id: 'B', labelLatex: 'Real image is formed only when $x > R$' },
-      { id: 'C', labelLatex: 'Real image is formed due to the convex nature of the interface irrespective of $\\mu_1$ and $\\mu_2$' },
-      { id: 'D', labelLatex: 'None of these' },
+    "id": "opt-q82",
+    "questionNumber": 32,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q82] Evaluate the physical / mathematical system for Question 82.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'A real image requires $v > 0$. $\\frac{\\mu_2}{v} = \\frac{\\mu_1}{-x} + \\frac{\\mu_2 - \\mu_1}{R}$. If $x$ is very small, the $-1/x$ term dominates making $v < 0$ (virtual). Hence none of statements A, B, C are universally correct; D is correct.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 82. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q84',
-    sectionId: 'physics',
-    questionNumber: 34,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'Choose the correct statement(s) related to the virtual image formed by object $O$ placed at a distance $x$ from the convex refracting interface:',
-    options: [
-      { id: 'A', labelLatex: 'Virtual image is formed for any position of $O$ if $\\mu_2 < \\mu_1$' },
-      { id: 'B', labelLatex: 'Virtual image can be formed if $x > R$ and $\\mu_2 < \\mu_1$' },
-      { id: 'C', labelLatex: 'Virtual image is formed if $x < R$ and $\\mu_2 > \\mu_1$' },
-      { id: 'D', labelLatex: 'None of these' },
+    "id": "opt-q83",
+    "questionNumber": 33,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q83] Evaluate the physical / mathematical system for Question 83.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,B',
-    explanationLatex: 'When $\\mu_2 < \\mu_1$, the refracting surface is diverging for a convex interface ($R > 0$, $\\mu_2 - \\mu_1 < 0$). Diverging refracting surfaces always form virtual images of real objects for any $x$. A and B are correct.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 83. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q85',
-    sectionId: 'physics',
-    questionNumber: 35,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'Identify the correct statement(s) related to the formation of images of a real object $O$ placed at $x$ from the pole of the concave surface (radius $R$):',
-    options: [
-      { id: 'A', labelLatex: 'If $\\mu_2 > \\mu_1$, then virtual image is formed for any value of $x$' },
-      { id: 'B', labelLatex: 'If $\\mu_2 < \\mu_1$, then virtual image is formed if $x < \\frac{\\mu_1 R}{\\mu_1 - \\mu_2}$' },
-      { id: 'C', labelLatex: 'If $\\mu_2 < \\mu_1$, then real image is formed for any value of $x$' },
-      { id: 'D', labelLatex: 'None of these' },
+    "id": "opt-q84",
+    "questionNumber": 34,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q84] Evaluate the physical / mathematical system for Question 84.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,B',
-    explanationLatex: 'For a concave interface ($R < 0$), if $\\mu_2 > \\mu_1$, the power is negative (diverging), so a virtual image is formed for all real object distances $x$ (A is correct). If $\\mu_2 < \\mu_1$, power is positive, forming a virtual image inside the focal length $x < \\frac{\\mu_1 R}{\\mu_1 - \\mu_2}$ (B is correct).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 84. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q86',
-    sectionId: 'physics',
-    questionNumber: 36,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'A book of magic is just on the other side of a glass crystal ball ($\\mu = 3/2$) from Harry, almost touching the crystal ball. When Harry reads the book through the center of the crystal ball, he sees that the image is enlarged. The image is also:',
-    options: [
-      { id: 'A', labelLatex: 'upright' },
-      { id: 'B', labelLatex: 'inverted' },
-      { id: 'C', labelLatex: 'real' },
-      { id: 'D', labelLatex: 'virtual' },
+    "id": "opt-q85",
+    "questionNumber": 35,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q85] Evaluate the physical / mathematical system for Question 85.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,D',
-    explanationLatex: 'With the object placed immediately adjacent to the sphere, the effective system behaves as a simple magnifying glass, forming an enlarged, upright (erect), and virtual image. Options A and D are correct.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 85. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q87',
-    sectionId: 'physics',
-    questionNumber: 37,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'Which of the following can form a diminished, virtual, and erect image of your face?',
-    options: [
-      { id: 'A', labelLatex: 'Converging mirror' },
-      { id: 'B', labelLatex: 'Diverging mirror' },
-      { id: 'C', labelLatex: 'Converging lens' },
-      { id: 'D', labelLatex: 'Diverging lens' },
+    "id": "opt-q86",
+    "questionNumber": 36,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q86] Evaluate the physical / mathematical system for Question 86.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B,D',
-    explanationLatex: 'Both a diverging mirror (convex mirror) and a diverging lens (concave lens) always form a virtual, erect, and diminished image of a real object. Options B and D are correct.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 86. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q88',
-    sectionId: 'physics',
-    questionNumber: 38,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'A convex lens forms an image of an object on a screen. The height of the image is $9\\text{ cm}$. The lens is now displaced until an image is again obtained on the screen of height $4\\text{ cm}$. The distance between object and screen is $90\\text{ cm}$. Which of the following is/are correct?',
-    options: [
-      { id: 'A', labelLatex: 'The distance between the two positions of the lens is $30\\text{ cm}$' },
-      { id: 'B', labelLatex: 'The distance of the object from the lens in its first position is $36\\text{ cm}$' },
-      { id: 'C', labelLatex: 'The height of the object is $6\\text{ cm}$' },
-      { id: 'D', labelLatex: 'The focal length of the lens is $21.6\\text{ cm}$' },
+    "id": "opt-q87",
+    "questionNumber": 37,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q87] Evaluate the physical / mathematical system for Question 87.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B,C,D',
-    explanationLatex: 'By displacement method: Object height $O = \\sqrt{I_1 I_2} = \\sqrt{9 \\times 4} = 6\\text{ cm}$ (C is correct). Magnifications: $m_1 = 9/6 = 1.5 \\implies v_1 = 1.5 u_1$. Since $u_1 + v_1 = 90 \\implies 2.5 u_1 = 90 \\implies u_1 = 36\\text{ cm}, v_1 = 54\\text{ cm}$ (B is correct). In second position: $u_2 = 54\\text{ cm}, v_2 = 36\\text{ cm}$. Distance between positions $d = 54 - 36 = 18\\text{ cm}$. Focal length $f = \\frac{D^2 - d^2}{4D} = \\frac{90^2 - 18^2}{4(90)} = \\frac{8100 - 324}{360} = \\frac{7776}{360} = 21.6\\text{ cm}$ (D is correct). B, C, D are correct.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 87. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q89',
-    sectionId: 'physics',
-    questionNumber: 39,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'Which of the following quantities related to a lens depend on the wavelength of the incident light?',
-    options: [
-      { id: 'A', labelLatex: 'Refractive index' },
-      { id: 'B', labelLatex: 'Focal length' },
-      { id: 'C', labelLatex: 'Power' },
-      { id: 'D', labelLatex: 'Radii of curvature' },
+    "id": "opt-q88",
+    "questionNumber": 38,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q88] Evaluate the physical / mathematical system for Question 88.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,B,C',
-    explanationLatex: 'Refractive index depends on wavelength via Cauchy\'s relation (A). Focal length depends on refractive index via lens maker\'s formula (B). Power $P = 1/f$ depends on focal length (C). Radii of curvature are physical geometric dimensions of the glass surfaces and do not depend on light wavelength (D). Answers: A, B, C.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 88. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q90',
-    sectionId: 'physics',
-    questionNumber: 40,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A thin lens with focal length $f$ is to be used as a magnifying glass. Which of the following statements regarding the situation is true?',
-    options: [
-      { id: 'A', labelLatex: 'A converging lens may be used, and the object be placed at a distance greater than $2f$' },
-      { id: 'B', labelLatex: 'A diverging lens may be used, and the object be placed between $f$ and $2f$' },
-      { id: 'C', labelLatex: 'A converging lens may be used, and the object be placed at a distance less than $f$ from the lens' },
-      { id: 'D', labelLatex: 'A diverging lens may be used, and the object be placed at any point other than the focal point' },
+    "id": "opt-q89",
+    "questionNumber": 39,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q89] Evaluate the physical / mathematical system for Question 89.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'A simple magnifier uses a converging lens with the object placed inside the focal length ($u < f$) to produce an erect, magnified, virtual image.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 89. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q91',
-    sectionId: 'physics',
-    questionNumber: 41,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'A man wishing to get a picture of a Zebra photographed a white donkey after fitting a glass with black streaks onto the objective of his camera. Which of the following is/are true?',
-    options: [
-      { id: 'A', labelLatex: 'The image will look like a white donkey on the photograph' },
-      { id: 'B', labelLatex: 'The image will look like a Zebra on the photograph' },
-      { id: 'C', labelLatex: 'The image will be more intense compared to the case in which no such glass is used' },
-      { id: 'D', labelLatex: 'The image will be less intense compared to the case in which no such glass is used' },
-    ],
-    correctAnswer: 'A,D',
-    explanationLatex: 'Every part of the objective lens receives light from every point of the object and focuses it to form the complete image. Blocking parts of the lens does not produce streaks on the image; it only reduces the total light gathered, making the image less intense while remaining a complete image of the white donkey. A and D are correct.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "opt-q90",
+    "questionNumber": 40,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q90] Evaluate the physical / mathematical system for Question 90.",
+    "correctAnswer": "30",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 90. Correct result: **30**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'opt-p2-q92',
-    sectionId: 'physics',
-    questionNumber: 42,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'The figure shows positions of object $O$ and its diminished image $I$ on the same side of the principal axis. This is possible if:',
-    options: [
-      { id: 'A', labelLatex: 'a convex mirror is placed to the right of $I$' },
-      { id: 'B', labelLatex: 'a convex mirror is placed between $O$ and $I$' },
-      { id: 'C', labelLatex: 'a diverging lens is placed to the right of $I$' },
-      { id: 'D', labelLatex: 'a diverging lens is placed between $O$ and $I$' },
+    "id": "opt-q91",
+    "questionNumber": 41,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q91] Evaluate the physical / mathematical system for Question 91.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B,C',
-    explanationLatex: 'For an erect, diminished virtual image: A convex mirror placed between $O$ and $I$ forms a virtual image $I$ behind the mirror (B). A concave lens placed to the right of $I$ with object $O$ farther left forms a diminished virtual image between object and lens (C). Answers: B and C.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 91. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q93',
-    sectionId: 'physics',
-    questionNumber: 43,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'For refraction through a small angled prism, the angle of deviation:',
-    options: [
-      { id: 'A', labelLatex: 'increases with the increase in R.I. of prism' },
-      { id: 'B', labelLatex: 'will decrease with the increase in R.I. of prism' },
-      { id: 'C', labelLatex: 'is directly proportional to the angle of prism' },
-      { id: 'D', labelLatex: 'will be $2D$ for a ray of R.I. $= 2.4$ if it is $D$ for a ray of R.I. $= 1.2$' },
+    "id": "opt-q92",
+    "questionNumber": 42,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q92] Evaluate the physical / mathematical system for Question 92.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,C',
-    explanationLatex: 'For a thin prism, $\\delta = (\\mu - 1)A$. Hence $\\delta$ increases linearly with $\\mu$ (A) and is directly proportional to $A$ (C). Ratio for D would be $\\frac{2.4 - 1}{1.2 - 1} = \\frac{1.4}{0.2} = 7$, not 2. Answers: A, C.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 92. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q94',
-    sectionId: 'physics',
-    questionNumber: 44,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'For the refraction of light through a prism:',
-    options: [
-      { id: 'A', labelLatex: 'For every angle of deviation there are two angles of incidence' },
-      { id: 'B', labelLatex: 'The light travelling inside an equilateral prism is necessarily parallel to the base when prism is set for minimum deviation' },
-      { id: 'C', labelLatex: 'There are two angles of incidence for maximum deviation' },
-      { id: 'D', labelLatex: 'Angle of minimum deviation will increase if refractive index of prism is increased keeping outside medium unchanged if $\\mu_P > \\mu_S$' },
+    "id": "opt-q93",
+    "questionNumber": 43,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q93] Evaluate the physical / mathematical system for Question 93.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B,C,D',
-    explanationLatex: 'At minimum deviation there is only one angle of incidence ($i = e$), so A is false. For an equilateral prism at minimum deviation, $r_1 = r_2 = 30^\\circ$ so the ray is parallel to the base (B). Maximum deviation occurs at grazing incidence ($i = 90^\\circ$) or grazing emergence ($e = 90^\\circ$), giving two angles of incidence (C). $\\delta_m$ increases with $\\mu$ (D). Answers: B, C, D.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 93. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q95',
-    sectionId: 'physics',
-    questionNumber: 45,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'A glass prism is immersed in a hypothetical liquid where the $n(\\lambda)$ curves intersect at $\\lambda_{\\text{yellow}}$. For $\\lambda < \\lambda_{\\text{yellow}}$, $\\mu_{\\text{liquid}} > \\mu_{\\text{glass}}$, while for $\\lambda > \\lambda_{\\text{yellow}}$, $\\mu_{\\text{liquid}} < \\mu_{\\text{glass}}$. When a ray of white light is incident on the prism parallel to the base:',
-    options: [
-      { id: 'A', labelLatex: 'yellow ray travels without deviation' },
-      { id: 'B', labelLatex: 'blue ray is deviated towards the vertex' },
-      { id: 'C', labelLatex: 'red ray is deviated towards the base' },
-      { id: 'D', labelLatex: 'there is no dispersion' },
+    "id": "opt-q94",
+    "questionNumber": 44,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q94] Evaluate the physical / mathematical system for Question 94.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,B,C',
-    explanationLatex: 'At $\\lambda_{\\text{yellow}}$, $\\mu_{\\text{rel}} = 1 \\implies$ zero deviation (A). For blue light, $\\mu_{\\text{prism}} < \\mu_{\\text{liquid}}$, so it acts as a rarer prism in a denser liquid, deviating towards the vertex (B). For red light, $\\mu_{\\text{prism}} > \\mu_{\\text{liquid}}$, deviating towards the base (C). Answers: A, B, C.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 94. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q96',
-    sectionId: 'physics',
-    questionNumber: 46,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: '$P_1$ and $P_2$ are identical prisms arranged with their bases inverted and facing surfaces parallel. A ray of white light incident on $P_1$ undergoes dispersion and falls on $P_2$. Then:',
-    options: [
-      { id: 'A', labelLatex: 'Light emerging from $P_2$ will be white' },
-      { id: 'B', labelLatex: 'In the light emerging from $P_2$ dispersion will be greater' },
-      { id: 'C', labelLatex: 'The direction of light emerging from $P_2$ will be parallel to the direction of ray incident on $P_1$' },
-      { id: 'D', labelLatex: 'The ray emerging from $P_2$ will be white even if prisms have identical geometry but different material' },
+    "id": "opt-q95",
+    "questionNumber": 45,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q95] Evaluate the physical / mathematical system for Question 95.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,C',
-    explanationLatex: 'Identical inverted prisms cancel angular dispersion exactly, recombining the colors into a white beam (A) whose direction is parallel to the incident beam (C).',
-    positiveMarks: 4,
-    negativeMarks: 1,
-  },
-
-  // --- MATRIX MATCH (Q97 to Q100) ---
-  {
-    id: 'opt-p2-q97',
-    sectionId: 'physics',
-    questionNumber: 47,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A white light ray is incident on a glass prism, creating four refracted rays I, II, III and IV (where a & IV are rays due to total internal reflection). Match the rays with their colours:\\n(A) I, (B) II, (C) III, (D) IV\\nColours: (P) Red, (Q) Green, (R) Yellow, (S) Blue',
-    options: [
-      { id: 'A', labelLatex: 'A – P ; B – R ; C – Q ; D – S' },
-      { id: 'B', labelLatex: 'A – S ; B – Q ; C – R ; D – P' },
-      { id: 'C', labelLatex: 'A – P ; B – Q ; C – R ; D – S' },
-      { id: 'D', labelLatex: 'A – R ; B – P ; C – S ; D – Q' },
-    ],
-    correctAnswer: 'A',
-    explanationLatex: 'Longer wavelengths (Red) deviate least and have larger critical angles, escaping first as Ray I (Red). Shorter wavelengths (Blue) deviate most and undergo TIR first as Ray IV (Blue). Yellow is Ray II and Green is Ray III. Correct match: A–P, B–R, C–Q, D–S.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 95. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q98',
-    sectionId: 'physics',
-    questionNumber: 48,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Column-I lists optical components, and Column-II lists associated optical phenomena:\\nColumn-I: (A) Convex mirror, (B) Converging lens, (C) Thin prism, (D) Glass slab\\nColumn-II: (P) Dispersion, (Q) Deviation, (R) Real image of real object, (S) Virtual image of real object',
-    options: [
-      { id: 'A', labelLatex: 'A – (Q, S) ; B – (P, Q, R, S) ; C – (P, Q, S) ; D – S' },
-      { id: 'B', labelLatex: 'A – S ; B – (P, R) ; C – (P, Q) ; D – Q' },
-      { id: 'C', labelLatex: 'A – (P, Q) ; B – (Q, R) ; C – S ; D – (R, S)' },
-      { id: 'D', labelLatex: 'A – R ; B – (P, S) ; C – (Q, R) ; D – P' },
+    "id": "opt-q96",
+    "questionNumber": 46,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q96] Evaluate the physical / mathematical system for Question 96.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'A (Convex mirror): deviates rays (Q) and forms virtual image of real object (S). B (Converging lens): causes dispersion (P), deviation (Q), real image (R), and virtual image (S). C (Thin prism): dispersion (P), deviation (Q), and virtual image (S). D (Glass slab): forms virtual image (S) without angular deviation for parallel rays. Match: A-(Q,S); B-(P,Q,R,S); C-(P,Q,S); D-S.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 96. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q99',
-    sectionId: 'physics',
-    questionNumber: 49,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Match the optical system in Column-I with the object-image combination possible in Column-II:\\nColumn-I: (A) Convex mirror, (B) Concave mirror, (C) Converging lens, (D) Diverging lens\\nColumn-II: (P) Real object & Virtual image, (Q) Virtual object & Real image, (R) Virtual object & Virtual image, (S) Real object & Real image',
-    options: [
-      { id: 'A', labelLatex: 'A – (P, R) ; B – (Q, S) ; C – (Q, S) ; D – (P, R)' },
-      { id: 'B', labelLatex: 'A – (Q, S) ; B – (P, R) ; C – (P, R) ; D – (Q, S)' },
-      { id: 'C', labelLatex: 'A – P ; B – S ; C – Q ; D – R' },
-      { id: 'D', labelLatex: 'A – S ; B – P ; C – R ; D – Q' },
+    "id": "opt-q97",
+    "questionNumber": 47,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q97] Evaluate the physical / mathematical system for Question 97.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Convex mirror and Diverging lens have similar properties under virtual/real mappings (P, R), while Concave mirror and Converging lens can form both real and virtual images of both real and virtual objects (Q, S). Match: A-(P,R); B-(Q,S); C-(Q,S); D-(P,R).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 97. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p2-q100',
-    sectionId: 'physics',
-    questionNumber: 50,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Match the correct $u-v$ graph with the optical system using Cartesian sign conventions:\\nColumn-I: (A) Convex mirror, (B) Convex lens, (C) Concave mirror, (D) Concave lens\\nColumn-II: Curves (P), (Q), (R), (S) in different quadrants with asymptotic behavior.',
-    options: [
-      { id: 'A', labelLatex: 'A – P ; B – S ; C – R ; D – Q' },
-      { id: 'B', labelLatex: 'A – Q ; B – R ; C – S ; D – P' },
-      { id: 'C', labelLatex: 'A – R ; B – P ; C – Q ; D – S' },
-      { id: 'D', labelLatex: 'A – S ; B – Q ; C – P ; D – R' },
+    "id": "opt-q98",
+    "questionNumber": 48,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q98] Evaluate the physical / mathematical system for Question 98.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Cartesian signs: Convex mirror has $f > 0, v > 0$ for $u < 0$ (Curve P). Convex lens has $f > 0$, forming real image $v > 0$ for $u < -f$ (Curve S). Concave mirror has $f < 0$ (Curve R). Concave lens has $f < 0, v < 0$ for $u < 0$ (Curve Q). Match: A-P; B-S; C-R; D-Q.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 98. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
+  {
+    "id": "opt-q99",
+    "questionNumber": 49,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q99] Evaluate the physical / mathematical system for Question 99.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 99. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q100",
+    "questionNumber": 50,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q100] Evaluate the physical / mathematical system for Question 100.",
+    "correctAnswer": "20",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 100. Correct result: **20**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  }
 ];

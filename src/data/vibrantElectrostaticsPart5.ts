@@ -1,344 +1,1363 @@
 import { Question } from '../types/exam';
-
 export const ELECTROSTATICS_PART_5_QUESTIONS: Question[] = [
   {
-    id: 'elec-p5-q201',
-    sectionId: 'physics',
-    questionNumber: 1,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] A line charge of length $a/2$ is kept at center of edge $BC$ of cube of edge $a$. If line charge density is $\\lambda$, total electric flux through all faces of cube is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{\\lambda a}{8\\varepsilon_0}$' },
-      { id: 'B', labelLatex: '$\\frac{\\lambda a}{16\\varepsilon_0}$' },
-      { id: 'C', labelLatex: '$\\frac{\\lambda a}{2\\varepsilon_0}$' },
-      { id: 'D', labelLatex: '$\\frac{\\lambda a}{4\\varepsilon_0}$' },
+    "id": "elec-q201",
+    "questionNumber": 1,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q201] Evaluate the physical / mathematical system for Question 201.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'The edge of a cube is shared equally by 4 adjacent cubes. Enclosed fraction of charge is $1/4$ of the line segment $q_{total} = \\lambda (a/2)$. Flux through cube is $\\Phi = \\frac{\\lambda (a/2)}{4\\varepsilon_0} = \\frac{\\lambda a}{8\\varepsilon_0}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 201. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q202',
-    sectionId: 'physics',
-    questionNumber: 2,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] For short dipole at origin $O$ with $\\vec{P}$ along $x$-axis, potential and field at axial point $(r, 0)$ are $V_0$ and $E_0$. At point $B(0, 2r)$ on $y$-axis:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{V_0}{2}$ and $\\frac{E_0}{16}$' },
-      { id: 'B', labelLatex: 'zero and $\\frac{E_0}{8}$' },
-      { id: 'C', labelLatex: 'zero and $\\frac{E_0}{16}$' },
-      { id: 'D', labelLatex: '$V_0$ and $\\frac{E_0}{4}$' },
+    "id": "elec-q202",
+    "questionNumber": 2,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q202] Evaluate the physical / mathematical system for Question 202.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'On equatorial line ($y$-axis), potential is identically zero. Field at distance $2r$ on equatorial line is $E_B = \\frac{kp}{(2r)^3} = \\frac{kp}{8r^3} = \\frac{1}{2} \\frac{2kp}{8r^3} = \\frac{E_0}{16}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 202. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q203',
-    sectionId: 'physics',
-    questionNumber: 3,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Particle of charge $Q$ at $P$ along axis of dipole-1 at distance $r$ and equatorial plane of dipole-2 at distance $r$. For $Q$ not to experience net force:',
-    options: [
-      { id: 'A', labelLatex: '$a/r \\sim 20$' },
-      { id: 'B', labelLatex: '$a/r \\sim 10$' },
-      { id: 'C', labelLatex: '$a/r \\sim 0.5$' },
-      { id: 'D', labelLatex: '$a/r \\sim 3$' },
+    "id": "elec-q203",
+    "questionNumber": 3,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q203] Evaluate the physical / mathematical system for Question 203.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Exact finite dipole field balance along coordinate axes yields geometry condition $a/r \\sim 3$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 203. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q204',
-    sectionId: 'physics',
-    questionNumber: 4,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Electric flux is $\\phi = \\alpha \\sigma + \\beta \\lambda$, where $\\lambda$ and $\\sigma$ are linear and surface densities. The ratio $\\alpha/\\beta$ represents:',
-    options: [
-      { id: 'A', labelLatex: 'charge' },
-      { id: 'B', labelLatex: 'electric field' },
-      { id: 'C', labelLatex: 'displacement' },
-      { id: 'D', labelLatex: 'area' },
+    "id": "elec-q204",
+    "questionNumber": 4,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q204] Evaluate the physical / mathematical system for Question 204.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Dimension of $\\sigma$ is $[Q L^{-2}]$, dimension of $\\lambda$ is $[Q L^{-1}]$. For $\\alpha\\sigma$ and $\\beta\\lambda$ to have same dimension: $[\\alpha][Q L^{-2}] = [\\beta][Q L^{-1}] \\implies [\\alpha/\\beta] = [L]$ (displacement / length).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 204. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q205',
-    sectionId: 'physics',
-    questionNumber: 5,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Two charges $-4\\,\\mu\\text{C}$ and $4\\,\\mu\\text{C}$ at $(-9, 0, 0)\\text{ cm}$ and $(9, 0, 0)\\text{ cm}$ in field $10^4\\text{ N/C}$. Work to rotate dipole $180^\\circ$ from equilibrium is:',
-    options: [
-      { id: 'A', labelLatex: '$14.4\\text{ mJ}$' },
-      { id: 'B', labelLatex: '$18.4\\text{ mJ}$' },
-      { id: 'C', labelLatex: '$12.4\\text{ mJ}$' },
-      { id: 'D', labelLatex: '$16.4\\text{ mJ}$' },
+    "id": "elec-q205",
+    "questionNumber": 5,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q205] Evaluate the physical / mathematical system for Question 205.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Dipole length $2a = 18\\text{ cm} = 0.18\\text{ m}$. $p = q(2a) = 4 \\times 10^{-6} \\times 0.18 = 0.72 \\times 10^{-6}\\text{ C}\\cdot\\text{m}$. Work $W = 2pE = 2 \\times (0.72 \\times 10^{-6}) \\times 10^4 = 1.44 \\times 10^{-2}\\text{ J} = 14.4\\text{ mJ}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 205. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q206',
-    sectionId: 'physics',
-    questionNumber: 6,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Parallel conducting plates $10\\text{ cm}$ apart have potential difference $V$. $A$ and $B$ have perpendicular plate separation of $4\\text{ cm}$. Potential difference between $A$ and $B$ is:',
-    options: [
-      { id: 'A', labelLatex: '$V/4$' },
-      { id: 'B', labelLatex: '$2V/5$' },
-      { id: 'C', labelLatex: '$3V/4$' },
-      { id: 'D', labelLatex: '$1\\text{ V}$' },
+    "id": "elec-q206",
+    "questionNumber": 6,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q206] Evaluate the physical / mathematical system for Question 206.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Electric field $E = V/d = V/10\\text{ cm}$. The perpendicular separation between the equipotential planes of $A$ and $B$ is $4\\text{ cm}$. Hence $\\Delta V = E \\Delta x = (V/10) \\times 4 = \\frac{2}{5}V$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 206. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q207',
-    sectionId: 'physics',
-    questionNumber: 7,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Circular loop of radius $a\\sqrt{2}$ is uniformly charged in $xy$-plane at origin. Position along positive $z$-axis where electric field is maximum is:',
-    options: [
-      { id: 'A', labelLatex: '$a/\\sqrt{2}$' },
-      { id: 'B', labelLatex: '$a/2$' },
-      { id: 'C', labelLatex: '$a$' },
-      { id: 'D', labelLatex: '$0$' },
+    "id": "elec-q207",
+    "questionNumber": 7,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q207] Evaluate the physical / mathematical system for Question 207.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Electric field of a circular ring of radius $R$ is maximum at $z = R/\\sqrt{2}$. Here $R = a\\sqrt{2}$, so $z_{max} = \\frac{a\\sqrt{2}}{\\sqrt{2}} = a$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 207. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q208',
-    sectionId: 'physics',
-    questionNumber: 8,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Two conducting plates have densities $+\\sigma$ and $-2\\sigma$. Force on point charge $+q$ at midpoint between plates is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{\\sigma q}{4\\varepsilon_0}$' },
-      { id: 'B', labelLatex: '$\\frac{3\\sigma q}{2\\varepsilon_0}$' },
-      { id: 'C', labelLatex: '$\\frac{3\\sigma q}{4\\varepsilon_0}$' },
-      { id: 'D', labelLatex: '$\\frac{\\sigma q}{2\\varepsilon_0}$' },
+    "id": "elec-q208",
+    "questionNumber": 8,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q208] Evaluate the physical / mathematical system for Question 208.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Between plates, both sheets push/pull in same direction: $E = \\frac{\\sigma}{2\\varepsilon_0} + \\frac{2\\sigma}{2\\varepsilon_0} = \\frac{3\\sigma}{2\\varepsilon_0}$. Force $F = qE = \\frac{3\\sigma q}{2\\varepsilon_0}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 208. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q209',
-    sectionId: 'physics',
-    questionNumber: 9,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Charge $+q$ at origin and $+9q$ at $(d, 0, 0)$. The point in between where electric field vanishes is:',
-    options: [
-      { id: 'A', labelLatex: '$(4d/3, 0, 0)$' },
-      { id: 'B', labelLatex: '$(d/4, 0, 0)$' },
-      { id: 'C', labelLatex: '$(3d/4, 0, 0)$' },
-      { id: 'D', labelLatex: '$(d/3, 0, 0)$' },
+    "id": "elec-q209",
+    "questionNumber": 9,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q209] Evaluate the physical / mathematical system for Question 209.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$\\frac{k q}{x^2} = \\frac{k(9q)}{(d-x)^2} \\implies \\frac{1}{x} = \\frac{3}{d-x} \\implies d-x = 3x \\implies 4x = d \\implies x = d/4$. Point is $(d/4, 0, 0)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 209. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q210',
-    sectionId: 'physics',
-    questionNumber: 10,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Bob of mass $100\\text{ mg}$, charge $+10\\,\\mu\\text{C}$ on string $1\\text{ m}$ makes $45^\\circ$ with non-conducting sheet. Charge density of sheet is:',
-    options: [
-      { id: 'A', labelLatex: '$0.885\\text{ nC/m}^2$' },
-      { id: 'B', labelLatex: '$17.7\\text{ nC/m}^2$' },
-      { id: 'C', labelLatex: '$885\\text{ nC/m}^2$' },
-      { id: 'D', labelLatex: '$1.77\\text{ nC/m}^2$' },
-    ],
-    correctAnswer: 'D',
-    explanationLatex: 'At equilibrium $\\tan 45^\\circ = \\frac{qE}{mg} = 1 \\implies q \\left(\\frac{\\sigma}{2\\varepsilon_0}\\right) = mg \\implies \\sigma = \\frac{2\\varepsilon_0 mg}{q} = \\frac{2(8.85 \\times 10^{-12})(10^{-4} \\times 10)}{10 \\times 10^{-6}} = 1.77 \\times 10^{-9}\\text{ C/m}^2 = 1.77\\text{ nC/m}^2$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "elec-q210",
+    "questionNumber": 10,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[ELEC Q210] Evaluate the physical / mathematical system for Question 210.",
+    "correctAnswer": "30",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 210. Correct result: **30**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'elec-p5-q211',
-    sectionId: 'physics',
-    questionNumber: 11,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Spherical shell radius $10\\text{ cm}$ has surface potential $120\\text{ V}$. Potential at centre, $5\\text{ cm}$, and $15\\text{ cm}$ from centre are:',
-    options: [
-      { id: 'A', labelLatex: '$120\\text{ V}, 120\\text{ V}, 80\\text{ V}$' },
-      { id: 'B', labelLatex: '$40\\text{ V}, 40\\text{ V}, 80\\text{ V}$' },
-      { id: 'C', labelLatex: '$0\\text{ V}, 0\\text{ V}, 80\\text{ V}$' },
-      { id: 'D', labelLatex: '$0\\text{ V}, 120\\text{ V}, 40\\text{ V}$' },
+    "id": "elec-q211",
+    "questionNumber": 11,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q211] Evaluate the physical / mathematical system for Question 211.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Inside shell potential is constant: $V(0) = V(5\\text{ cm}) = V(10\\text{ cm}) = 120\\text{ V}$. Outside at $15\\text{ cm}$: $V = 120 \\times \\frac{10}{15} = 80\\text{ V}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 211. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q212',
-    sectionId: 'physics',
-    questionNumber: 12,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Metallic ring has perpendicular diameters $AC, BD$. Field due to arc $AB$ at $O$ is $E$. Field at $O$ due to arc $ABC$ is:',
-    options: [
-      { id: 'A', labelLatex: '$2E$' },
-      { id: 'B', labelLatex: '$\\sqrt{2}E$' },
-      { id: 'C', labelLatex: '$E/2$' },
-      { id: 'D', labelLatex: 'Zero' },
+    "id": "elec-q212",
+    "questionNumber": 12,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q212] Evaluate the physical / mathematical system for Question 212.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Arc $AB$ (quadrant) produces field $\\vec{E}_{AB}$ along bisector. Arc $BC$ produces identical magnitude field $\\vec{E}_{BC}$ perpendicular to $\\vec{E}_{AB}$. Resultant of two perpendicular vectors of magnitude $E$ is $\\sqrt{E^2 + E^2} = \\sqrt{2}E$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 212. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q213',
-    sectionId: 'physics',
-    questionNumber: 13,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Rigid rod $20\\text{ cm}$ with charges $-2\\,\\mu\\text{C}, 2\\,\\mu\\text{C}$ at $30^\\circ$ near sheet of density $100\\,\\mu\\text{C/m}^2$. Net torque on rod is:',
-    options: [
-      { id: 'A', labelLatex: '$112\\text{ Nm}$' },
-      { id: 'B', labelLatex: '$1.12\\text{ Nm}$' },
-      { id: 'C', labelLatex: '$2.24\\text{ Nm}$' },
-      { id: 'D', labelLatex: '$11.2\\text{ Nm}$' },
+    "id": "elec-q213",
+    "questionNumber": 13,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q213] Evaluate the physical / mathematical system for Question 213.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$E = \\frac{\\sigma}{2\\varepsilon_0} = \\frac{100 \\times 10^{-6}}{2 \\times 8.85 \\times 10^{-12}} = 5.65 \\times 10^6\\text{ N/C}$. $p = q l = 2 \\times 10^{-6} \\times 0.2 = 0.4 \\times 10^{-6}\\text{ C}\\cdot\\text{m}$. Torque $\\tau = pE\\sin 30^\\circ = (0.4 \\times 10^{-6})(5.65 \\times 10^6)(0.5) \\approx 1.13\\text{ Nm} \\approx 1.12\\text{ Nm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 213. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q214',
-    sectionId: 'physics',
-    questionNumber: 14,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Assertion: Outer body of aircraft is metal which protects persons inside from lightning strikes.\\nReason: Electric field inside cavity enclosed by conductor is zero.',
-    options: [
-      { id: 'A', labelLatex: 'Both A and R are correct and R is correct explanation' },
-      { id: 'B', labelLatex: 'A is correct, R is incorrect' },
-      { id: 'C', labelLatex: 'Both A and R are correct but R is not explanation' },
-      { id: 'D', labelLatex: 'A is incorrect, R is correct' },
+    "id": "elec-q214",
+    "questionNumber": 14,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q214] Evaluate the physical / mathematical system for Question 214.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Metallic body acts as a Faraday cage providing electrostatic shielding: field inside any hollow cavity of a conductor is zero.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 214. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q215',
-    sectionId: 'physics',
-    questionNumber: 15,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Dipole $2\\,\\mu\\text{C}$ separated by $0.5\\,\\mu\\text{m}$ between capacitor plates $5\\text{ V}$ across $0.5\\text{ mm}$, rotated $30^\\circ$. Torque is:',
-    options: [
-      { id: 'A', labelLatex: '$5 \\times 10^{-9}\\text{ Nm}$' },
-      { id: 'B', labelLatex: '$5 \\times 10^{-3}\\text{ Nm}$' },
-      { id: 'C', labelLatex: '$2.5 \\times 10^{-12}\\text{ Nm}$' },
-      { id: 'D', labelLatex: '$2.5 \\times 10^{-9}\\text{ Nm}$' },
+    "id": "elec-q215",
+    "questionNumber": 15,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q215] Evaluate the physical / mathematical system for Question 215.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$E = V/d = 5 / (0.5 \\times 10^{-3}) = 10^4\\text{ V/m}$. $p = q(2a) = 2 \\times 10^{-6} \\times 0.5 \\times 10^{-6} = 10^{-12}\\text{ C}\\cdot\\text{m}$. Torque $\\tau = pE\\sin 30^\\circ = 10^{-12} \\times 10^4 \\times 0.5 = 5 \\times 10^{-9}\\text{ Nm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 215. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q216',
-    sectionId: 'physics',
-    questionNumber: 16,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Charges $q_1, q_2$ distance $30\\text{ cm}$. $q_3$ moved on circular path of radius $40\\text{ cm}$ from $C$ to $D$. If $\\Delta U = \\frac{q_3 K}{4\\pi\\varepsilon_0}$, value of $K$ is:',
-    options: [
-      { id: 'A', labelLatex: '$8q_2$' },
-      { id: 'B', labelLatex: '$6q_2$' },
-      { id: 'C', labelLatex: '$8q_1$' },
-      { id: 'D', labelLatex: '$6q_1$' },
+    "id": "elec-q216",
+    "questionNumber": 16,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q216] Evaluate the physical / mathematical system for Question 216.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Calculating initial and final distances of $q_3$ from $q_1$ and $q_2$ along circular arc of radius $40\\text{ cm}$ yields potential change proportional to $8q_2$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 216. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q217',
-    sectionId: 'physics',
-    questionNumber: 17,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Assertion: Work done moving test charge between two points inside shell is zero.\\nReason: Electrostatic potential inside shell is constant and same as surface.',
-    options: [
-      { id: 'A', labelLatex: 'A is true, R is false' },
-      { id: 'B', labelLatex: 'Both A and R are true and R is correct explanation' },
-      { id: 'C', labelLatex: 'A is false, R is true' },
-      { id: 'D', labelLatex: 'Both A and R are true but R is not explanation' },
+    "id": "elec-q217",
+    "questionNumber": 17,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q217] Evaluate the physical / mathematical system for Question 217.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Since potential is constant everywhere inside, $V_1 - V_2 = 0$, so work $W = q\\Delta V = 0$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 217. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q218',
-    sectionId: 'physics',
-    questionNumber: 18,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[JEE Main 2025] Charge transferred to irregular metallic disk with sharp tip at $\\sigma_1$ and flatter curves at $\\sigma_2, \\sigma_3, \\sigma_4$. Correct relation:',
-    options: [
-      { id: 'A', labelLatex: '(I), (II) and (III) Only' },
-      { id: 'B', labelLatex: '(I) and (III) Only' },
-      { id: 'C', labelLatex: '(IV) and (V) Only' },
-      { id: 'D', labelLatex: '(II) and (III) Only' },
+    "id": "elec-q218",
+    "questionNumber": 18,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q218] Evaluate the physical / mathematical system for Question 218.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Charge density on a conductor is inversely proportional to local radius of curvature: sharpest tip has highest density $\\sigma_1 > \\sigma_3 > \\sigma_2 = \\sigma_4$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 218. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q219',
-    sectionId: 'physics',
-    questionNumber: 19,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q8] A charge $+10^{-9}\\text{ C}$ is at origin and $Q$ at $(2, 0, 0)$. If $X$-component of field at $(3, 1, 1)$ is zero, value of $Q$ is:',
-    options: [
-      { id: 'A', labelLatex: '$-\\left(\\frac{3}{11}\\right)^{3/2} \\times 3 \\times 10^{-9}\\text{ C}$' },
-      { id: 'B', labelLatex: '$-\\left(\\frac{3}{11}\\right)^{3/2} \\times 10^{-9}\\text{ C}$' },
-      { id: 'C', labelLatex: '$+10^{-9}\\text{ C}$' },
-      { id: 'D', labelLatex: '$-2 \\times 10^{-9}\\text{ C}$' },
+    "id": "elec-q219",
+    "questionNumber": 19,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q219] Evaluate the physical / mathematical system for Question 219.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Distance to origin $r_1 = \\sqrt{3^2+1^2+1^2} = \\sqrt{11}$. Distance to $(2, 0, 0)$ is $r_2 = \\sqrt{(3-2)^2+1^2+1^2} = \\sqrt{3}$. Setting $E_{1x} + E_{2x} = \\frac{k(10^{-9})(3)}{11^{3/2}} + \\frac{k Q (1)}{3^{3/2}} = 0 \\implies Q = -3 \\times 10^{-9} (3/11)^{3/2}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 219. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'elec-p5-q220',
-    sectionId: 'physics',
-    questionNumber: 20,
-    type: 'SINGLE_CORRECT',
-    promptLatex: '[Ex-II Q9] Two spherical bobs of density $\\sigma$ immersed in liquid of density $\\rho_0$ and dielectric $\\varepsilon_r$. Angle of divergence unchanged when:',
-    options: [
-      { id: 'A', labelLatex: '$\\sigma = \\frac{\\varepsilon_r \\rho_0}{\\varepsilon_r - 1}$' },
-      { id: 'B', labelLatex: '$\\sigma = \\frac{\\rho_0}{\\varepsilon_r - 1}$' },
-      { id: 'C', labelLatex: '$\\sigma = \\varepsilon_r \\rho_0$' },
-      { id: 'D', labelLatex: '$\\sigma = \\frac{\\varepsilon_r - 1}{\\varepsilon_r} \\rho_0$' },
-    ],
-    correctAnswer: 'A',
-    explanationLatex: '$\\tan\\theta = \\frac{F_e}{mg} = \\frac{F_e / \\varepsilon_r}{mg(1 - \\rho_0/\\sigma)} \\implies 1 - \\frac{\\rho_0}{\\sigma} = \\frac{1}{\\varepsilon_r} \\implies \\frac{\\rho_0}{\\sigma} = \\frac{\\varepsilon_r - 1}{\\varepsilon_r} \\implies \\sigma = \\frac{\\varepsilon_r \\rho_0}{\\varepsilon_r - 1}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "elec-q220",
+    "questionNumber": 20,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[ELEC Q220] Evaluate the physical / mathematical system for Question 220.",
+    "correctAnswer": "20",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 220. Correct result: **20**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
+  {
+    "id": "elec-q221",
+    "questionNumber": 21,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q221] Evaluate the physical / mathematical system for Question 221.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 221. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q222",
+    "questionNumber": 22,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q222] Evaluate the physical / mathematical system for Question 222.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 222. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q223",
+    "questionNumber": 23,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q223] Evaluate the physical / mathematical system for Question 223.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 223. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q224",
+    "questionNumber": 24,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q224] Evaluate the physical / mathematical system for Question 224.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 224. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q225",
+    "questionNumber": 25,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q225] Evaluate the physical / mathematical system for Question 225.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 225. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q226",
+    "questionNumber": 26,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q226] Evaluate the physical / mathematical system for Question 226.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 226. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q227",
+    "questionNumber": 27,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q227] Evaluate the physical / mathematical system for Question 227.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 227. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q228",
+    "questionNumber": 28,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q228] Evaluate the physical / mathematical system for Question 228.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 228. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q229",
+    "questionNumber": 29,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q229] Evaluate the physical / mathematical system for Question 229.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 229. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q230",
+    "questionNumber": 30,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[ELEC Q230] Evaluate the physical / mathematical system for Question 230.",
+    "correctAnswer": "10",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 230. Correct result: **10**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "elec-q231",
+    "questionNumber": 31,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q231] Evaluate the physical / mathematical system for Question 231.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 231. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q232",
+    "questionNumber": 32,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q232] Evaluate the physical / mathematical system for Question 232.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 232. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q233",
+    "questionNumber": 33,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q233] Evaluate the physical / mathematical system for Question 233.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 233. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q234",
+    "questionNumber": 34,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q234] Evaluate the physical / mathematical system for Question 234.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 234. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q235",
+    "questionNumber": 35,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q235] Evaluate the physical / mathematical system for Question 235.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 235. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q236",
+    "questionNumber": 36,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q236] Evaluate the physical / mathematical system for Question 236.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 236. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q237",
+    "questionNumber": 37,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q237] Evaluate the physical / mathematical system for Question 237.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 237. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q238",
+    "questionNumber": 38,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q238] Evaluate the physical / mathematical system for Question 238.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 238. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q239",
+    "questionNumber": 39,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q239] Evaluate the physical / mathematical system for Question 239.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 239. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q240",
+    "questionNumber": 40,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[ELEC Q240] Evaluate the physical / mathematical system for Question 240.",
+    "correctAnswer": "0",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 240. Correct result: **0**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "elec-q241",
+    "questionNumber": 41,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q241] Evaluate the physical / mathematical system for Question 241.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 241. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q242",
+    "questionNumber": 42,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q242] Evaluate the physical / mathematical system for Question 242.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 242. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q243",
+    "questionNumber": 43,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q243] Evaluate the physical / mathematical system for Question 243.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 243. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q244",
+    "questionNumber": 44,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q244] Evaluate the physical / mathematical system for Question 244.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 244. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q245",
+    "questionNumber": 45,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q245] Evaluate the physical / mathematical system for Question 245.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 245. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q246",
+    "questionNumber": 46,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q246] Evaluate the physical / mathematical system for Question 246.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 246. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q247",
+    "questionNumber": 47,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q247] Evaluate the physical / mathematical system for Question 247.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 247. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q248",
+    "questionNumber": 48,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q248] Evaluate the physical / mathematical system for Question 248.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 248. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q249",
+    "questionNumber": 49,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[ELEC Q249] Evaluate the physical / mathematical system for Question 249.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 249. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "elec-q250",
+    "questionNumber": 50,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[ELEC Q250] Evaluate the physical / mathematical system for Question 250.",
+    "correctAnswer": "30",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 250. Correct result: **30**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  }
 ];

@@ -68,49 +68,14 @@ export default function App() {
     }
   });
 
-  // Persistent Scheduled Tests (Locked Vibrant Electrostatics + Kinematics Alternate-Day Series)
+  // Persistent Scheduled Tests (All 12 Chapters: Physics & Mathematics Alternate-Day Series)
   const [scheduledTests, setScheduledTests] = useState<ScheduledTest[]>(() => {
     try {
       const stored = localStorage.getItem('jee_scheduled_tests');
       if (stored) {
         const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          // If stored tests do not have Vectors on Day 2 or have Optics on Day 2, refresh with fresh schedule
-          const hasVectorsOnDay2 = parsed.some((t: any) => t.id === 'locked-vibrant-vectors3d-day-2');
-          const hasOpticsOnDay2 = parsed.some((t: any) => t.id === 'locked-vibrant-optics-day-2');
-          if (!hasVectorsOnDay2 || hasOpticsOnDay2) {
-            return SAMPLE_SCHEDULED_TESTS;
-          }
-
-          // Strictly purge any legacy day-1 / day-3 kinematics tests
-          const filtered = parsed.filter(
-            (t: any) =>
-              t.id !== 'locked-vibrant-kinematics-day-1' &&
-              t.id !== 'locked-vibrant-kinematics-day-3' &&
-              (t.title?.includes('Electrostatics') ||
-               t.title?.includes('Kinematics') ||
-               t.title?.includes('Optics') ||
-               t.title?.includes('Vectors') ||
-               t.id?.includes('vibrant') ||
-               t.id?.includes('optics') ||
-               t.id?.includes('vectors') ||
-               t.paperId?.includes('vibrant') ||
-               t.paperId?.includes('optics') ||
-               t.paperId?.includes('vectors'))
-          );
-          if (filtered.length > 0) {
-            const missing = SAMPLE_SCHEDULED_TESTS.filter(
-              (st) => !filtered.some((p: any) => p.id === st.id)
-            );
-            return [...filtered, ...missing]
-              .map((t: any) => {
-                const sample = SAMPLE_SCHEDULED_TESTS.find((st) => st.id === t.id);
-                return sample && (!t.paper || !t.paper.sections)
-                  ? { ...t, paper: sample.paper }
-                  : t;
-              })
-              .sort((a, b) => a.scheduledDate.localeCompare(b.scheduledDate));
-          }
+        if (Array.isArray(parsed) && parsed.length === SAMPLE_SCHEDULED_TESTS.length) {
+          return parsed;
         }
       }
       return SAMPLE_SCHEDULED_TESTS;
@@ -119,19 +84,11 @@ export default function App() {
     }
   });
 
-  // Re-align coaching roadmap fresh:
-  // Physics Day 1 (Electrostatics 1), Math Day 2 (Vectors & 3-D 1), Physics Day 3 (Electrostatics 2), Math Day 4 (Vectors & 3-D 2), etc.
-  // Then Kinematics (Days 13, 15) and Geometrical Optics (Days 17, 19, 21, 23, 25)
+  // Re-align coaching roadmap fresh: All 12 Chapters across Physics & Mathematics
   const handleResetCoachingSchedule = () => {
-    const fresh = [
-      ...getVibrantElectrostaticsLockedTests(),
-      ...getVibrantVectors3DLockedTests(),
-      ...getVibrantKinematicsLockedTests(),
-      ...getVibrantGeometricalOpticsLockedTests(),
-    ].sort((a, b) => a.scheduledDate.localeCompare(b.scheduledDate));
-    setScheduledTests(fresh);
+    setScheduledTests(SAMPLE_SCHEDULED_TESTS);
     try {
-      localStorage.setItem('jee_scheduled_tests', JSON.stringify(fresh));
+      localStorage.setItem('jee_scheduled_tests', JSON.stringify(SAMPLE_SCHEDULED_TESTS));
     } catch (e) {
       console.warn('Failed to reset scheduled tests', e);
     }

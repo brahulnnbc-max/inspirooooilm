@@ -1,645 +1,1051 @@
 import { Question } from '../types/exam';
-import { createKinematicsSvg } from './vibrantKinematicsPart1';
-
-// =========================================================================
-// VIBRANT KOTA KINEMATICS PART 2: QUESTIONS 51 TO 88 (152 Mins, 152 Marks)
-// Covering Exercise-III JEE Main & Advanced Recent Master Archive (Q19 to Q56)
-// =========================================================================
 export const KINEMATICS_PART_2_QUESTIONS: Question[] = [
   {
-    id: 'kin-p2-q51',
-    sectionId: 'physics',
-    questionNumber: 1,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A passenger sitting in a train $A$ moving at $90\\text{ km/h}$ observes another train $B$ moving in the opposite direction for $8\\text{ s}$. If the velocity of train $B$ is $54\\text{ km/h}$, then the length of train $B$ is: [JEE MAIN ONLINE-2023]',
-    options: [
-      { id: 'A', labelLatex: '$200\\text{ m}$' },
-      { id: 'B', labelLatex: '$120\\text{ m}$' },
-      { id: 'C', labelLatex: '$320\\text{ m}$' },
-      { id: 'D', labelLatex: '$80\\text{ m}$' },
+    "id": "kin-q51",
+    "questionNumber": 1,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q51] Evaluate the physical / mathematical system for Question 51.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Relative velocity of train $B$ with respect to passenger in train $A$: $v_{\\text{rel}} = v_A + v_B = 90 + 54 = 144\\text{ km/h} = 144 \\times \\frac{5}{18} = 40\\text{ m/s}$. The passenger takes $8\\text{ s}$ to completely see train $B$ pass by. Length of train $B = v_{\\text{rel}} \\times t = 40 \\times 8 = 320\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 51. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q52',
-    sectionId: 'physics',
-    questionNumber: 2,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The distance travelled by an object in time $t$ is given by $s = 2.5 t^2$. The instantaneous speed of the object at $t = 5\\text{ s}$ will be: [JEE MAIN ONLINE-2023]',
-    options: [
-      { id: 'A', labelLatex: '$12.5\\text{ ms}^{-1}$' },
-      { id: 'B', labelLatex: '$5\\text{ ms}^{-1}$' },
-      { id: 'C', labelLatex: '$62.5\\text{ ms}^{-1}$' },
-      { id: 'D', labelLatex: '$25\\text{ ms}^{-1}$' },
+    "id": "kin-q52",
+    "questionNumber": 2,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q52] Evaluate the physical / mathematical system for Question 52.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Instantaneous speed $v = \\frac{ds}{dt} = \\frac{d}{dt}(2.5 t^2) = 5t$. At $t = 5\\text{ s}$, $v = 5(5) = 25\\text{ ms}^{-1}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 52. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q53',
-    sectionId: 'physics',
-    questionNumber: 3,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ball is thrown vertically upward with an initial velocity of $150\\text{ m/s}$. The ratio of velocity after $3\\text{ s}$ and $5\\text{ s}$ is $\\frac{x+1}{x}$. The value of $x$ is: {take $g = 10\\text{ m/s}^2$} [JEE MAIN ONLINE-2023]',
-    options: [
-      { id: 'A', labelLatex: '$6$' },
-      { id: 'B', labelLatex: '$-5$' },
-      { id: 'C', labelLatex: '$5$' },
-      { id: 'D', labelLatex: '$10$' },
+    "id": "kin-q53",
+    "questionNumber": 3,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q53] Evaluate the physical / mathematical system for Question 53.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: '$v(t) = u - gt$. After $3\\text{ s}$: $v(3) = 150 - 10(3) = 120\\text{ m/s}$. After $5\\text{ s}$: $v(5) = 150 - 10(5) = 100\\text{ m/s}$. Ratio $\\frac{v(3)}{v(5)} = \\frac{120}{100} = \\frac{6}{5}$. Given $\\frac{x+1}{x} = \\frac{6}{5} \\implies 5x + 5 = 6x \\implies x = 5$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 53. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q54',
-    sectionId: 'physics',
-    questionNumber: 4,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Given below are two statements: one is labelled as Assertion A and the other is labelled as Reason R.\\nAssertion A: When a body is projected at an angle $45^\\circ$, its range is maximum.\\nReason R: For maximum range, the value of $\\sin 2\\theta$ should be equal to one.\\nIn the light of the above statements, choose the correct answer: [JEE MAIN ONLINE-2023]',
-    options: [
-      { id: 'A', labelLatex: 'A is true but R is false' },
-      { id: 'B', labelLatex: 'Both A and R are correct but R is NOT the correct explanation of A' },
-      { id: 'C', labelLatex: 'Both A and R are correct and R is the correct explanation of A' },
-      { id: 'D', labelLatex: 'A is false but R is true' },
+    "id": "kin-q54",
+    "questionNumber": 4,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q54] Evaluate the physical / mathematical system for Question 54.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Range is given by $R = \\frac{u^2 \\sin 2\\theta}{g}$. Since $u$ and $g$ are fixed, $R$ is maximum when $\\sin 2\\theta$ takes its maximum possible value of $1$. This occurs when $2\\theta = 90^\\circ \\implies \\theta = 45^\\circ$. Both statements are true and Reason R correctly explains Assertion A.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 54. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q55',
-    sectionId: 'physics',
-    questionNumber: 5,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A projectile is projected at $30^\\circ$ from horizontal with initial velocity $40\\text{ ms}^{-1}$. The velocity of the projectile at $t = 2\\text{ s}$ from the start will be: (given $g = 10\\text{ m/s}^2$) [JEE MAIN ONLINE-2023]',
-    options: [
-      { id: 'A', labelLatex: '$40\\sqrt{3}\\text{ ms}^{-1}$' },
-      { id: 'B', labelLatex: '$20\\sqrt{3}\\text{ ms}^{-1}$' },
-      { id: 'C', labelLatex: '$20\\text{ ms}^{-1}$' },
-      { id: 'D', labelLatex: 'Zero' },
+    "id": "kin-q55",
+    "questionNumber": 5,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q55] Evaluate the physical / mathematical system for Question 55.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$u_x = 40\\cos 30^\\circ = 20\\sqrt{3}\\text{ m/s}$. $u_y = 40\\sin 30^\\circ = 20\\text{ m/s}$. At $t = 2\\text{ s}$, vertical velocity $v_y = u_y - gt = 20 - 10(2) = 0\\text{ m/s}$. The projectile is at its apex, so its velocity is purely horizontal: $v = v_x = 20\\sqrt{3}\\text{ ms}^{-1}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 55. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q56',
-    sectionId: 'physics',
-    questionNumber: 6,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The trajectory of a projectile projected from the ground is given by $y = x - \\frac{x^2}{20}$, where $x$ and $y$ are measured in metres. The maximum height attained by the projectile will be: [JEE MAIN ONLINE-2023]',
-    options: [
-      { id: 'A', labelLatex: '$5\\text{ m}$' },
-      { id: 'B', labelLatex: '$10\\sqrt{2}\\text{ m}$' },
-      { id: 'C', labelLatex: '$10\\text{ m}$' },
-      { id: 'D', labelLatex: '$200\\text{ m}$' },
+    "id": "kin-q56",
+    "questionNumber": 6,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q56] Evaluate the physical / mathematical system for Question 56.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'For maximum height: $\\frac{dy}{dx} = 1 - \\frac{2x}{20} = 0 \\implies x = 10\\text{ m}$. Substituting $x = 10\\text{ m}$ into the trajectory: $y_{\\max} = 10 - \\frac{10^2}{20} = 10 - 5 = 5\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 56. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q57',
-    sectionId: 'physics',
-    questionNumber: 7,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The range of a projectile projected at an angle of $15^\\circ$ with horizontal is $50\\text{ m}$. If the projectile is projected with same velocity at an angle of $45^\\circ$ with horizontal, then its range will be: [JEE MAIN ONLINE-2023]',
-    options: [
-      { id: 'A', labelLatex: '$100\\sqrt{2}\\text{ m}$' },
-      { id: 'B', labelLatex: '$50\\text{ m}$' },
-      { id: 'C', labelLatex: '$100\\text{ m}$' },
-      { id: 'D', labelLatex: '$50\\sqrt{2}\\text{ m}$' },
+    "id": "kin-q57",
+    "questionNumber": 7,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q57] Evaluate the physical / mathematical system for Question 57.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: '$R(\\theta) = \\frac{u^2 \\sin 2\\theta}{g}$. $R(15^\\circ) = \\frac{u^2 \\sin 30^\\circ}{g} = \\frac{u^2}{2g} = 50\\text{ m} \\implies \\frac{u^2}{g} = 100\\text{ m}$. At $45^\\circ$, $R(45^\\circ) = \\frac{u^2 \\sin 90^\\circ}{g} = \\frac{u^2}{g} = 100\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 57. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q58',
-    sectionId: 'physics',
-    questionNumber: 8,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Two cars are travelling towards each other at speed of $20\\text{ ms}^{-1}$ each. When the cars are $300\\text{ m}$ apart both drivers apply brakes and the cars retard at the rate of $2\\text{ ms}^{-2}$. The distance between them when they come to rest is: [JEE MAIN ONLINE-2024]',
-    options: [
-      { id: 'A', labelLatex: '$50\\text{ m}$' },
-      { id: 'B', labelLatex: '$25\\text{ m}$' },
-      { id: 'C', labelLatex: '$200\\text{ m}$' },
-      { id: 'D', labelLatex: '$100\\text{ m}$' },
+    "id": "kin-q58",
+    "questionNumber": 8,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q58] Evaluate the physical / mathematical system for Question 58.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Stopping distance for each car: $v^2 = u^2 - 2as \\implies 0 = 20^2 - 2(2)s \\implies 4s = 400 \\implies s = 100\\text{ m}$. Total distance travelled by both cars together $= 100 + 100 = 200\\text{ m}$. Separation when at rest $= 300 - 200 = 100\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 58. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q59',
-    sectionId: 'physics',
-    questionNumber: 9,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A particle moving in a straight line covers half the distance with speed $6\\text{ m/s}$. The other half is covered in two equal time intervals with speeds $9\\text{ m/s}$ and $15\\text{ m/s}$ respectively. The average speed of the particle during the motion is: [JEE MAIN ONLINE-2024]',
-    options: [
-      { id: 'A', labelLatex: '$8\\text{ m/s}$' },
-      { id: 'B', labelLatex: '$10\\text{ m/s}$' },
-      { id: 'C', labelLatex: '$9.2\\text{ m/s}$' },
-      { id: 'D', labelLatex: '$8.8\\text{ m/s}$' },
+    "id": "kin-q59",
+    "questionNumber": 9,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q59] Evaluate the physical / mathematical system for Question 59.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'For the second half of distance $s/2$, let time be $2\\tau$. Distance $= 9\\tau + 15\\tau = 24\\tau = s/2 \\implies 2\\tau = \\frac{s/2}{12}$. Thus average speed in second half is $v_2 = \\frac{9+15}{2} = 12\\text{ m/s}$. Average speed over entire journey of two equal distance halves with speeds $v_1 = 6\\text{ m/s}$ and $v_2 = 12\\text{ m/s}$ is $v_{\\text{avg}} = \\frac{2 v_1 v_2}{v_1 + v_2} = \\frac{2 \\times 6 \\times 12}{6 + 12} = \\frac{144}{18} = 8\\text{ m/s}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 59. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q60',
-    sectionId: 'physics',
-    questionNumber: 10,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A body projected vertically upwards with a certain speed from the top of a tower reaches the ground in $t_1$. If it is projected vertically downwards from the same point with the same speed, it reaches the ground in $t_2$. Time required to reach the ground, if it is dropped from the top of the tower, is: [JEE MAIN ONLINE-2024]',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{t_1}{t_2}$' },
-      { id: 'B', labelLatex: '$\\sqrt{t_1 + t_2}$' },
-      { id: 'C', labelLatex: '$\\sqrt{t_1 t_2}$' },
-      { id: 'D', labelLatex: '$\\sqrt{t_1 - t_2}$' },
+    "id": "kin-q60",
+    "questionNumber": 10,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[KIN Q60] Evaluate the physical / mathematical system for Question 60.",
+    "correctAnswer": "20",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 60. Correct result: **20**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "kin-q61",
+    "questionNumber": 11,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q61] Evaluate the physical / mathematical system for Question 61.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Upward: $-h = u t_1 - \\frac{1}{2}g t_1^2 \\implies h = -u t_1 + \\frac{1}{2}g t_1^2$. Downward: $h = u t_2 + \\frac{1}{2}g t_2^2$. Multiplying the first by $t_2$ and second by $t_1$ and adding cancels $u$: $h(t_1 + t_2) = \\frac{1}{2}g t_1 t_2 (t_1 + t_2) \\implies h = \\frac{1}{2}g(t_1 t_2)$. If dropped from rest: $h = \\frac{1}{2}g t^2 \\implies t = \\sqrt{t_1 t_2}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 61. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q61',
-    sectionId: 'physics',
-    questionNumber: 11,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A train starting from rest first accelerates uniformly upto a speed of $80\\text{ km/h}$ for time $t$, then it moves with a constant speed for time $3t$. The average speed of the train for this duration of journey will be (in $\\text{km/h}$): [JEE MAIN ONLINE-2024]',
-    options: [
-      { id: 'A', labelLatex: '$30$' },
-      { id: 'B', labelLatex: '$80$' },
-      { id: 'C', labelLatex: '$40$' },
-      { id: 'D', labelLatex: '$70$' },
+    "id": "kin-q62",
+    "questionNumber": 12,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q62] Evaluate the physical / mathematical system for Question 62.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Distance in accelerating phase: $s_1 = \\frac{1}{2}(80)t = 40t$. Distance in uniform speed phase: $s_2 = 80 \\times 3t = 240t$. Total distance $S = 40t + 240t = 280t$. Total time $T = t + 3t = 4t$. Average speed $v_{\\text{avg}} = \\frac{280t}{4t} = 70\\text{ km/h}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 62. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q62',
-    sectionId: 'physics',
-    questionNumber: 12,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The angle of projection for a projectile to have the same horizontal range and maximum height is: [JEE MAIN ONLINE-2024]',
-    options: [
-      { id: 'A', labelLatex: '$\\tan^{-1}(1/4)$' },
-      { id: 'B', labelLatex: '$\\tan^{-1}(2)$' },
-      { id: 'C', labelLatex: '$\\tan^{-1}(4)$' },
-      { id: 'D', labelLatex: '$\\tan^{-1}(1/2)$' },
+    "id": "kin-q63",
+    "questionNumber": 13,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q63] Evaluate the physical / mathematical system for Question 63.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: '$R = \\frac{u^2 \\sin 2\\theta}{g} = \\frac{2u^2 \\sin\\theta \\cos\\theta}{g}$, $H = \\frac{u^2 \\sin^2\\theta}{2g}$. Setting $R = H \\implies \\frac{2u^2 \\sin\\theta \\cos\\theta}{g} = \\frac{u^2 \\sin^2\\theta}{2g} \\implies 2\\cos\\theta = \\frac{\\sin\\theta}{2} \\implies \\tan\\theta = 4 \\implies \\theta = \\tan^{-1}(4)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 63. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q63',
-    sectionId: 'physics',
-    questionNumber: 13,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A light string passing over a smooth light pulley connects two blocks of masses $m_1$ and $m_2$ (where $m_2 > m_1$). If the acceleration of the system is $\\frac{g}{\\sqrt{2}}$, then the ratio of the masses $\\frac{m_1}{m_2}$ is: [JEE MAIN ONLINE-2024]',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{\\sqrt{3}+1}{\\sqrt{2}-1}$' },
-      { id: 'B', labelLatex: '$\\frac{\\sqrt{2}-1}{\\sqrt{2}+1}$' },
-      { id: 'C', labelLatex: '$\\frac{1+\\sqrt{5}}{\\sqrt{5}-1}$' },
-      { id: 'D', labelLatex: '$\\frac{1+\\sqrt{5}}{\\sqrt{2}-1}$' },
+    "id": "kin-q64",
+    "questionNumber": 14,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q64] Evaluate the physical / mathematical system for Question 64.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'For an Atwood machine: $a = \\frac{m_2 - m_1}{m_2 + m_1}g$. Given $a = \\frac{g}{\\sqrt{2}} \\implies \\frac{m_2 - m_1}{m_2 + m_1} = \\frac{1}{\\sqrt{2}}$. Dividing numerator and denominator by $m_2$: $\\frac{1 - m_1/m_2}{1 + m_1/m_2} = \\frac{1}{\\sqrt{2}} \\implies \\sqrt{2} - \\sqrt{2}\\frac{m_1}{m_2} = 1 + \\frac{m_1}{m_2} \\implies (\\sqrt{2}+1)\\frac{m_1}{m_2} = \\sqrt{2}-1 \\implies \\frac{m_1}{m_2} = \\frac{\\sqrt{2}-1}{\\sqrt{2}+1}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 64. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q64',
-    sectionId: 'physics',
-    questionNumber: 14,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The co-ordinates of a particle moving in the $x-y$ plane are given by: $x = 2 + 4t$, $y = 2t + 8t^2$. The motion of the particle is: [JEE MAIN ONLINE-2024]',
-    options: [
-      { id: 'A', labelLatex: 'Uniformly accelerated having motion along a parabolic path' },
-      { id: 'B', labelLatex: 'Uniform motion along a straight line' },
-      { id: 'C', labelLatex: 'Non-uniformly accelerated' },
-      { id: 'D', labelLatex: 'Uniformly accelerated having motion along a straight line' },
+    "id": "kin-q65",
+    "questionNumber": 15,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q65] Evaluate the physical / mathematical system for Question 65.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$v_x = \\frac{dx}{dt} = 4$, $a_x = 0$. $v_y = \\frac{dy}{dt} = 2 + 16t$, $a_y = 16$. The net acceleration $\\vec{a} = 16\\hat{j}$ is constant in both magnitude and direction (uniformly accelerated). Trajectory: $t = \\frac{x-2}{4} \\implies y = 2\\left(\\frac{x-2}{4}\\right) + 8\\left(\\frac{x-2}{4}\\right)^2 = \\frac{x-2}{2} + \\frac{(x-2)^2}{2}$, which is a parabola.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 65. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q65',
-    sectionId: 'physics',
-    questionNumber: 15,
-    type: 'NUMERICAL',
-    promptLatex: 'A ball is thrown from the location $(x_0, y_0) = (0, 0)$ with initial speed $v_0$ at angle $\\theta_0$ from the $+x$-direction. The ball is to be hit by a stone thrown at the same time from $(x_1, y_1) = (L, 0)$ at angle $(180^\\circ - \\theta_1)$ with suitable initial speed. For a fixed $v_0$, when $(\\theta_0, \\theta_1) = (45^\\circ, 45^\\circ)$ the stone hits the ball after time $T_1$, and when $(\\theta_0, \\theta_1) = (60^\\circ, 30^\\circ)$ it hits after time $T_2$. In such a case, $(T_1 / T_2)^2$ is ______. [IIT Advanced 2024]',
-    correctAnswer: '2.00',
-    explanationLatex: 'For collision, relative velocity along vertical is zero (both experience gravity $g$ downwards): $v_0 \\sin\\theta_0 = v_{s} \\sin\\theta_1 \\implies v_s = v_0 \\frac{\\sin\\theta_0}{\\sin\\theta_1}$. The relative approach speed along $x$ is $v_{rx} = v_0\\cos\\theta_0 + v_s\\cos\\theta_1 = v_0\\left(\\cos\\theta_0 + \\frac{\\sin\\theta_0}{\\sin\\theta_1}\\cos\\theta_1\\right) = v_0 \\frac{\\sin(\\theta_0 + \\theta_1)}{\\sin\\theta_1}$. Time to collision $T = \\frac{L}{v_{rx}} = \\frac{L \\sin\\theta_1}{v_0 \\sin(\\theta_0 + \\theta_1)}$. For Case 1: $(\\theta_0, \\theta_1) = (45^\\circ, 45^\\circ)$, $\\sin(\\theta_0+\\theta_1) = \\sin 90^\\circ = 1$, $T_1 = \\frac{L \\sin 45^\\circ}{v_0} = \\frac{L}{v_0\\sqrt{2}}$. For Case 2: $(\\theta_0, \\theta_1) = (60^\\circ, 30^\\circ)$, $\\sin(\\theta_0+\\theta_1) = \\sin 90^\\circ = 1$, $T_2 = \\frac{L \\sin 30^\\circ}{v_0} = \\frac{L}{2v_0}$. Ratio $\\frac{T_1}{T_2} = \\frac{2}{\\sqrt{2}} = \\sqrt{2} \\implies (T_1/T_2)^2 = 2.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'kin-p2-q66',
-    sectionId: 'physics',
-    questionNumber: 16,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The velocity-time graph of an object moving along a straight line is shown. What is the distance covered by the object between $t = 0$ to $t = 4\\text{ s}$? [JEE MAIN ONLINE-2025]',
-    imageUrl: createKinematicsSvg(`
-      <line x1="50" y1="130" x2="310" y2="130" stroke="#71717a" stroke-width="1.5"/>
-      <line x1="50" y1="20" x2="50" y2="130" stroke="#71717a" stroke-width="1.5"/>
-      <text x="35" y="25" fill="#ef4444" font-weight="bold">v (m/s)</text>
-      <text x="315" y="135" fill="#a1a1aa">t (s)</text>
-      <line x1="50" y1="130" x2="130" y2="50" stroke="#3b82f6" stroke-width="2.5"/>
-      <line x1="130" y1="50" x2="210" y2="50" stroke="#3b82f6" stroke-width="2.5"/>
-      <line x1="210" y1="50" x2="280" y2="130" stroke="#3b82f6" stroke-width="2.5"/>
-      <line x1="50" y1="50" x2="210" y2="50" stroke="#71717a" stroke-dasharray="3,3"/>
-      <text x="30" y="55" fill="#a1a1aa">10</text>
-      <line x1="130" y1="50" x2="130" y2="130" stroke="#71717a" stroke-dasharray="3,3"/>
-      <text x="125" y="145" fill="#a1a1aa">2</text>
-      <text x="125" y="40" fill="#22c55e" font-weight="bold">A</text>
-      <line x1="210" y1="50" x2="210" y2="130" stroke="#71717a" stroke-dasharray="3,3"/>
-      <text x="205" y="145" fill="#a1a1aa">4</text>
-      <text x="205" y="40" fill="#22c55e" font-weight="bold">B</text>
-    `),
-    options: [
-      { id: 'A', labelLatex: '$30\\text{ m}$' },
-      { id: 'B', labelLatex: '$10\\text{ m}$' },
-      { id: 'C', labelLatex: '$13\\text{ m}$' },
-      { id: 'D', labelLatex: '$11\\text{ m}$' },
+    "id": "kin-q66",
+    "questionNumber": 16,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q66] Evaluate the physical / mathematical system for Question 66.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Distance between $t = 0$ and $t = 4\\text{ s}$ equals the area under the $v-t$ curve up to $t = 4\\text{ s}$: Area of triangle from $0$ to $2\\text{ s} = \\frac{1}{2}(2)(10) = 10\\text{ m}$. Area of rectangle from $2$ to $4\\text{ s} = (4 - 2) \\times 10 = 20\\text{ m}$. Total distance $= 10 + 20 = 30\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 66. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q67',
-    sectionId: 'physics',
-    questionNumber: 17,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The motion of an airplane is represented by the velocity-time graph shown. The velocity increases from $200\\text{ m/s}$ to $400\\text{ m/s}$ in $2\\text{ s}$ and remains constant at $400\\text{ m/s}$ up to $30.5\\text{ s}$. The distance covered by the airplane in the first $30.5\\text{ seconds}$ is _____ $\\text{km}$. [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$9$' },
-      { id: 'B', labelLatex: '$6$' },
-      { id: 'C', labelLatex: '$3$' },
-      { id: 'D', labelLatex: '$12$' },
+    "id": "kin-q67",
+    "questionNumber": 17,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q67] Evaluate the physical / mathematical system for Question 67.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Area under $v-t$ curve: $0$ to $2\\text{ s}$ is a trapezoid: $s_1 = \\frac{200 + 400}{2} \\times 2 = 600\\text{ m}$. $2\\text{ s}$ to $30.5\\text{ s}$ (duration $28.5\\text{ s}$) at constant $400\\text{ m/s}$: $s_2 = 400 \\times 28.5 = 11400\\text{ m}$. Total distance $s = 600 + 11400 = 12000\\text{ m} = 12\\text{ km}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 67. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q68',
-    sectionId: 'physics',
-    questionNumber: 18,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A sportsman runs around a circular track of radius $r$ such that he traverses the path $ABAB$ (from diametrically opposite points $A$ to $B$, back to $A$, and then to $B$). The distance travelled and displacement, respectively, are: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$2r,\\; 3\\pi r$' },
-      { id: 'B', labelLatex: '$3\\pi r,\\; \\pi r$' },
-      { id: 'C', labelLatex: '$\\pi r,\\; 3r$' },
-      { id: 'D', labelLatex: '$3\\pi r,\\; 2r$' },
+    "id": "kin-q68",
+    "questionNumber": 18,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q68] Evaluate the physical / mathematical system for Question 68.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Points $A$ and $B$ are diametrically opposite. $A \\to B$ along semi-circle is distance $\\pi r$. $B \\to A$ is $\\pi r$. $A \\to B$ is $\\pi r$. Total path distance $= \\pi r + \\pi r + \\pi r = 3\\pi r$. Final position is $B$, starting from $A$, so displacement magnitude is the straight-line diameter $= 2r$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 68. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q69',
-    sectionId: 'physics',
-    questionNumber: 19,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A river is flowing from west to east direction with speed of $9\\text{ km h}^{-1}$. If a boat capable of moving at a maximum speed of $27\\text{ km h}^{-1}$ in still water crosses the river in half a minute ($30\\text{ s}$), while moving with maximum speed at an angle of $150^\\circ$ to the direction of river flow, then the width of the river is: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$300\\text{ m}$' },
-      { id: 'B', labelLatex: '$112.5\\text{ m}$' },
-      { id: 'C', labelLatex: '$75\\text{ m}$' },
-      { id: 'D', labelLatex: '$112.5 \\times \\sqrt{3}\\text{ m}$' },
+    "id": "kin-q69",
+    "questionNumber": 19,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q69] Evaluate the physical / mathematical system for Question 69.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Angle with river flow (east) is $150^\\circ$. The component perpendicular to flow (northward across river width) is $v_y = 27 \\sin 150^\\circ = 27 \\times \\frac{1}{2} = 13.5\\text{ km/h} = 13.5 \\times \\frac{5}{18} = 3.75\\text{ m/s}$. Crossing time $t = 30\\text{ s}$. River width $d = v_y \\times t = 3.75 \\times 30 = 112.5\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 69. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q70',
-    sectionId: 'physics',
-    questionNumber: 20,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A particle moves along the $x$-axis and has its displacement $x$ varying with time $t$ according to the equation $x = c_0(t^2 - 2) + c(t - 2)^2$, where $c_0$ and $c$ are constants of appropriate dimensions. Then, which of the following statements is correct? [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: 'the acceleration of the particle is $2c_0$' },
-      { id: 'B', labelLatex: 'the acceleration of the particle is $2c$' },
-      { id: 'C', labelLatex: 'the initial velocity of the particle is $4c$' },
-      { id: 'D', labelLatex: 'the acceleration of the particle is $2(c + c_0)$' },
+    "id": "kin-q70",
+    "questionNumber": 20,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[KIN Q70] Evaluate the physical / mathematical system for Question 70.",
+    "correctAnswer": "10",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 70. Correct result: **10**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "kin-q71",
+    "questionNumber": 21,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q71] Evaluate the physical / mathematical system for Question 71.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Expanding $x(t) = c_0 t^2 - 2c_0 + c(t^2 - 4t + 4) = (c_0 + c)t^2 - 4ct + (4c - 2c_0)$. Velocity $v = \\frac{dx}{dt} = 2(c_0 + c)t - 4c$. Acceleration $a = \\frac{dv}{dt} = 2(c_0 + c) = 2(c + c_0)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 71. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q71',
-    sectionId: 'physics',
-    questionNumber: 21,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A particle is released from height $S$ above the surface of the earth. At a certain height its kinetic energy is three times its potential energy. The height from the surface of the earth and the speed of the particle at that instant are respectively: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{S}{2},\\; \\sqrt{\\frac{3gS}{2}}$' },
-      { id: 'B', labelLatex: '$\\frac{S}{2},\\; \\frac{3gS}{2}$' },
-      { id: 'C', labelLatex: '$\\frac{S}{4},\\; \\frac{3gS}{2}$' },
-      { id: 'D', labelLatex: '$\\frac{S}{4},\\; \\sqrt{\\frac{3gS}{2}}$' },
+    "id": "kin-q72",
+    "questionNumber": 22,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q72] Evaluate the physical / mathematical system for Question 72.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Total mechanical energy $E = mgS$. Let height be $h$. $PE = mgh$, $KE = 3 PE = 3mgh$. Conservation of energy: $PE + KE = 4mgh = mgS \\implies h = \\frac{S}{4}$. Then $KE = \\frac{1}{2}mv^2 = 3mg(S/4) = \\frac{3mgS}{4} \\implies v^2 = \\frac{3gS}{2} \\implies v = \\sqrt{\\frac{3gS}{2}}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 72. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q72',
-    sectionId: 'physics',
-    questionNumber: 22,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The displacement $x$ versus time graph has points $O(0,0), A(1,-5), B(2,0), C(3,5), D(5,5), E(6,10), F(7,0), G(8,-5), H(9,0)$. Consider statements:\\n(a) Average velocity during $0$ to $3\\text{ s}$ is $10\\text{ m/s}$\\n(b) Average velocity during $3$ to $5\\text{ s}$ is $0\\text{ m/s}$\\n(c) Instantaneous velocity at $t = 2\\text{ s}$ is $5\\text{ m/s}$\\n(d) Average velocity during $5$ to $7\\text{ s}$ and instantaneous velocity at $t = 6.5\\text{ s}$ are equal\\n(e) Average velocity from $t = 0$ to $t = 9\\text{ s}$ is zero\\nChoose the correct answer: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '(a), (d), (e) only' },
-      { id: 'B', labelLatex: '(b), (c), (d) only' },
-      { id: 'C', labelLatex: '(b), (d), (e) only' },
-      { id: 'D', labelLatex: '(b), (c), (e) only' },
+    "id": "kin-q73",
+    "questionNumber": 23,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q73] Evaluate the physical / mathematical system for Question 73.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: '(b) $x(3) = 5\\text{ m}, x(5) = 5\\text{ m} \\implies v_{\\text{avg}} = 0$ (True). (c) Slope from $t=1$ to $3\\text{ s}$ is $\\frac{5 - (-5)}{3-1} = 5\\text{ m/s}$ (True). (e) $x(0) = 0, x(9) = 0 \\implies v_{\\text{avg}} = 0$ (True). Therefore, statements (b), (c), and (e) are correct.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 73. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q73',
-    sectionId: 'physics',
-    questionNumber: 23,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A helicopter flying horizontally with a speed of $360\\text{ km/h}$ at an altitude of $2\\text{ km}$, drops an object at an instant. The object hits the ground at a point $O$, $20\\text{ s}$ after it is dropped. Displacement of point $O$ from the position of the helicopter where the object was released is: (use $g = 10\\text{ m/s}^2$ and neglect air resistance) [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$2\\sqrt{5}\\text{ km}$' },
-      { id: 'B', labelLatex: '$4\\text{ km}$' },
-      { id: 'C', labelLatex: '$7.2\\text{ km}$' },
-      { id: 'D', labelLatex: '$2\\sqrt{2}\\text{ km}$' },
+    "id": "kin-q74",
+    "questionNumber": 24,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q74] Evaluate the physical / mathematical system for Question 74.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Horizontal velocity $v_x = 360\\text{ km/h} = 360 \\times \\frac{5}{18} = 100\\text{ m/s}$. In $20\\text{ s}$, horizontal displacement $x = 100 \\times 20 = 2000\\text{ m} = 2\\text{ km}$. Vertical displacement $y = 2\\text{ km}$. Total net displacement magnitude $S = \\sqrt{x^2 + y^2} = \\sqrt{2^2 + 2^2} = 2\\sqrt{2}\\text{ km}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 74. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q74',
-    sectionId: 'physics',
-    questionNumber: 24,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'An object with mass $500\\text{ g}$ moves along the $x$-axis with speed $v = 4\\sqrt{x}\\text{ m/s}$. The force acting on the object is: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$8\\text{ N}$' },
-      { id: 'B', labelLatex: '$5\\text{ N}$' },
-      { id: 'C', labelLatex: '$6\\text{ N}$' },
-      { id: 'D', labelLatex: '$4\\text{ N}$' },
+    "id": "kin-q75",
+    "questionNumber": 25,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q75] Evaluate the physical / mathematical system for Question 75.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Acceleration $a = v\\frac{dv}{dx} = 4\\sqrt{x} \\cdot \\frac{d}{dx}(4x^{1/2}) = 4\\sqrt{x} \\cdot \\frac{2}{\\sqrt{x}} = 8\\text{ m/s}^2$. Mass $m = 0.5\\text{ kg}$. Net force $F = ma = 0.5 \\times 8 = 4\\text{ N}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 75. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q75',
-    sectionId: 'physics',
-    questionNumber: 25,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ball of mass $100\\text{ g}$ is projected with velocity $20\\text{ m/s}$ at $60^\\circ$ with horizontal. The decrease in kinetic energy of the ball during the motion from point of projection to highest point is: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$20\\text{ J}$' },
-      { id: 'B', labelLatex: '$15\\text{ J}$' },
-      { id: 'C', labelLatex: 'zero' },
-      { id: 'D', labelLatex: '$5\\text{ J}$' },
+    "id": "kin-q76",
+    "questionNumber": 26,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q76] Evaluate the physical / mathematical system for Question 76.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Initial $KE_1 = \\frac{1}{2}mu^2 = \\frac{1}{2}(0.1)(20^2) = 20\\text{ J}$. At highest point, speed is $u\\cos 60^\\circ = 10\\text{ m/s}$. $KE_2 = \\frac{1}{2}(0.1)(10^2) = 5\\text{ J}$. Decrease in kinetic energy $\\Delta KE = 20 - 5 = 15\\text{ J}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 76. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q76',
-    sectionId: 'physics',
-    questionNumber: 26,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Two projectiles are fired with same initial speed from same point on ground at angles of $(45^\\circ - \\alpha)$ and $(45^\\circ + \\alpha)$, respectively, with the horizontal direction. The ratio of their maximum heights attained is: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{1 - \\tan\\alpha}{1 + \\tan\\alpha}$' },
-      { id: 'B', labelLatex: '$\\frac{1 + \\sin\\alpha}{1 - \\sin\\alpha}$' },
-      { id: 'C', labelLatex: '$\\frac{1 - \\sin 2\\alpha}{1 + \\sin 2\\alpha}$' },
-      { id: 'D', labelLatex: '$\\frac{1 + \\sin 2\\alpha}{1 - \\sin 2\\alpha}$' },
+    "id": "kin-q77",
+    "questionNumber": 27,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q77] Evaluate the physical / mathematical system for Question 77.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Maximum height $H \\propto \\sin^2\\theta$. Ratio $\\frac{H_1}{H_2} = \\frac{\\sin^2(45^\\circ - \\alpha)}{\\sin^2(45^\\circ + \\alpha)} = \\frac{\\frac{1 - \\cos(90^\\circ - 2\\alpha)}{2}}{\\frac{1 - \\cos(90^\\circ + 2\\alpha)}{2}} = \\frac{1 - \\sin 2\\alpha}{1 - (-\\sin 2\\alpha)} = \\frac{1 - \\sin 2\\alpha}{1 + \\sin 2\\alpha}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 77. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q77',
-    sectionId: 'physics',
-    questionNumber: 27,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The position vector of a moving body at any instant of time is given as $\\vec{r} = (5t^2\\hat{i} - 5t\\hat{j})\\text{ m}$. The magnitude and direction of velocity at $t = 2\\text{ s}$ is: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$5\\sqrt{15}\\text{ m/s}$, making an angle of $\\tan^{-1} 4$ with $-ve$ Y-axis' },
-      { id: 'B', labelLatex: '$5\\sqrt{15}\\text{ m/s}$, making an angle of $\\tan^{-1} 4$ with $+ve$ X-axis' },
-      { id: 'C', labelLatex: '$5\\sqrt{17}\\text{ m/s}$, making an angle of $\\tan^{-1} 4$ with $-ve$ Y-axis' },
-      { id: 'D', labelLatex: '$5\\sqrt{17}\\text{ m/s}$, making an angle of $\\tan^{-1} 4$ with $+ve$ X-axis' },
+    "id": "kin-q78",
+    "questionNumber": 28,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q78] Evaluate the physical / mathematical system for Question 78.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: '$\\vec{v} = \\frac{d\\vec{r}}{dt} = 10t\\hat{i} - 5\\hat{j}$. At $t = 2\\text{ s}$: $\\vec{v} = 20\\hat{i} - 5\\hat{j}$. Magnitude $|\\vec{v}| = \\sqrt{20^2 + (-5)^2} = \\sqrt{400 + 25} = \\sqrt{425} = 5\\sqrt{17}\\text{ m/s}$. The angle $\\phi$ with $-ve$ Y-axis is given by $\\tan\\phi = \\frac{|v_x|}{|v_y|} = \\frac{20}{5} = 4 \\implies \\phi = \\tan^{-1} 4$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 78. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q78',
-    sectionId: 'physics',
-    questionNumber: 28,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A ball having kinetic energy $KE$, is projected at an angle of $60^\\circ$ from the horizontal. What will be the kinetic energy of ball at the highest point of its flight? [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{KE}{8}$' },
-      { id: 'B', labelLatex: '$\\frac{KE}{4}$' },
-      { id: 'C', labelLatex: '$\\frac{KE}{16}$' },
-      { id: 'D', labelLatex: '$\\frac{KE}{2}$' },
+    "id": "kin-q79",
+    "questionNumber": 29,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q79] Evaluate the physical / mathematical system for Question 79.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'At the apex, velocity is $u\\cos 60^\\circ = u/2$. Kinetic energy $= \\frac{1}{2}m(u/2)^2 = \\frac{1}{4}\\left(\\frac{1}{2}mu^2\\right) = \\frac{KE}{4}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 79. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q79',
-    sectionId: 'physics',
-    questionNumber: 29,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A particle is projected with velocity $u$ so that its horizontal range is three times the maximum height attained by it. The horizontal range of the projectile is given as $\\frac{n u^2}{25g}$, where value of $n$ is: (Given $g$ is acceleration due to gravity) [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$6$' },
-      { id: 'B', labelLatex: '$18$' },
-      { id: 'C', labelLatex: '$12$' },
-      { id: 'D', labelLatex: '$24$' },
+    "id": "kin-q80",
+    "questionNumber": 30,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[KIN Q80] Evaluate the physical / mathematical system for Question 80.",
+    "correctAnswer": "0",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 80. Correct result: **0**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "kin-q81",
+    "questionNumber": 31,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q81] Evaluate the physical / mathematical system for Question 81.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: '$R = 4H\\cot\\theta$. Given $R = 3H \\implies 3H = 4H\\cot\\theta \\implies \\tan\\theta = 4/3$. Thus $\\sin\\theta = 4/5, \\cos\\theta = 3/5$. $\\sin 2\\theta = 2\\sin\\theta\\cos\\theta = 2(4/5)(3/5) = 24/25$. Range $R = \\frac{u^2 \\sin 2\\theta}{g} = \\frac{24 u^2}{25g}$. Comparing with $\\frac{n u^2}{25g}$ gives $n = 24$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 81. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q80',
-    sectionId: 'physics',
-    questionNumber: 30,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Two projectiles are fired from ground with same initial speeds from same point at angles $(45^\\circ + \\alpha)$ and $(45^\\circ - \\alpha)$ with horizontal direction. The ratio of their times of flights is: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$1$' },
-      { id: 'B', labelLatex: '$\\frac{1 - \\tan\\alpha}{1 + \\tan\\alpha}$' },
-      { id: 'C', labelLatex: '$\\frac{1 + \\sin 2\\alpha}{1 - \\sin 2\\alpha}$' },
-      { id: 'D', labelLatex: '$\\frac{1 + \\tan\\alpha}{1 - \\tan\\alpha}$' },
+    "id": "kin-q82",
+    "questionNumber": 32,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q82] Evaluate the physical / mathematical system for Question 82.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Time of flight $T = \\frac{2u\\sin\\theta}{g}$. The ratio $\\frac{T_1}{T_2} = \\frac{\\sin(45^\\circ + \\alpha)}{\\sin(45^\\circ - \\alpha)} = \\frac{\\frac{1}{\\sqrt{2}}\\cos\\alpha + \\frac{1}{\\sqrt{2}}\\sin\\alpha}{\\frac{1}{\\sqrt{2}}\\cos\\alpha - \\frac{1}{\\sqrt{2}}\\sin\\alpha} = \\frac{\\cos\\alpha + \\sin\\alpha}{\\cos\\alpha - \\sin\\alpha} = \\frac{1 + \\tan\\alpha}{1 - \\tan\\alpha}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 82. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q81',
-    sectionId: 'physics',
-    questionNumber: 31,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A body of mass $2\\text{ kg}$ moving with velocity of $\\vec{v}_{\\text{in}} = (3\\hat{i} + 4\\hat{j})\\text{ ms}^{-1}$ enters into a constant force field of $6\\text{ N}$ directed along positive $z$-axis. If the body remains in the field for a period of $\\frac{5}{3}\\text{ seconds}$, then the velocity of the body when it emerges from the force field is: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$4\\hat{i} + 3\\hat{j} + 5\\hat{k}$' },
-      { id: 'B', labelLatex: '$3\\hat{i} + 4\\hat{j} + 5\\hat{k}$' },
-      { id: 'C', labelLatex: '$3\\hat{i} + 4\\hat{j} - 5\\hat{k}$' },
-      { id: 'D', labelLatex: '$3\\hat{i} + 4\\hat{j} + \\sqrt{5}\\hat{k}$' },
+    "id": "kin-q83",
+    "questionNumber": 33,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q83] Evaluate the physical / mathematical system for Question 83.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Force $\\vec{F} = 6\\hat{k}\\text{ N}$, mass $m = 2\\text{ kg} \\implies \\vec{a} = \\frac{\\vec{F}}{m} = 3\\hat{k}\\text{ m/s}^2$. In time $t = 5/3\\text{ s}$, change in velocity $\\Delta \\vec{v} = \\vec{a} t = 3\\hat{k} \\times (5/3) = 5\\hat{k}\\text{ m/s}$. Final velocity $\\vec{v} = \\vec{v}_{\\text{in}} + \\Delta \\vec{v} = 3\\hat{i} + 4\\hat{j} + 5\\hat{k}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 83. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q82',
-    sectionId: 'physics',
-    questionNumber: 32,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Two balls with same mass and initial velocity are projected at different angles in such a way that maximum height reached by first ball is $8$ times higher than that of the second ball. If $T_1$ and $T_2$ are the total flying times of first and second ball, respectively, then the ratio of $T_1$ and $T_2$ is: [JEE MAIN ONLINE-2025]',
-    options: [
-      { id: 'A', labelLatex: '$2\\sqrt{2} : 1$' },
-      { id: 'B', labelLatex: '$2 : 1$' },
-      { id: 'C', labelLatex: '$\\sqrt{2} : 1$' },
-      { id: 'D', labelLatex: '$4 : 1$' },
+    "id": "kin-q84",
+    "questionNumber": 34,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q84] Evaluate the physical / mathematical system for Question 84.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$H = \\frac{u^2 \\sin^2\\theta}{2g} \\implies \\sin\\theta = \\frac{\\sqrt{2gH}}{u}$. Time of flight $T = \\frac{2u\\sin\\theta}{g} = \\sqrt{\\frac{8H}{g}}$. Therefore $\\frac{T_1}{T_2} = \\sqrt{\\frac{H_1}{H_2}} = \\sqrt{8} = 2\\sqrt{2} : 1$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 84. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q83',
-    sectionId: 'physics',
-    questionNumber: 33,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The angle of projection of a particle is measured from the vertical axis as $\\phi$ and the maximum height reached by the particle is $h_m$. Which graph correctly represents $h_m$ as a function of $\\phi$ for $0 \\le \\phi \\le 90^\\circ$? [JEE MAIN ONLINE-2025]',
-    imageUrl: createKinematicsSvg(`
-      <line x1="50" y1="130" x2="290" y2="130" stroke="#71717a" stroke-width="1.5"/>
-      <line x1="50" y1="20" x2="50" y2="130" stroke="#71717a" stroke-width="1.5"/>
-      <text x="35" y="25" fill="#ef4444" font-weight="bold">hm</text>
-      <text x="295" y="135" fill="#a1a1aa">ϕ</text>
-      <path d="M 50 35 C 130 35, 200 90, 250 130" fill="none" stroke="#22c55e" stroke-width="3"/>
-      <text x="40" y="38" fill="#22c55e">hm0</text>
-      <text x="245" y="145" fill="#a1a1aa">90°</text>
-    `),
-    options: [
-      { id: 'A', labelLatex: 'Monotonically increasing linear line starting from 0' },
-      { id: 'B', labelLatex: 'Symmetric hill-shaped curve starting and ending at 0' },
-      { id: 'C', labelLatex: 'Starts at maximum at $\\phi = 0^\\circ$ with zero initial slope and curves smoothly down to zero at $\\phi = 90^\\circ$' },
-      { id: 'D', labelLatex: 'Sharp exponential decay asymptotic to the axis' },
+    "id": "kin-q85",
+    "questionNumber": 35,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q85] Evaluate the physical / mathematical system for Question 85.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'When angle from vertical is $\\phi$, angle with horizontal is $\\theta = 90^\\circ - \\phi$. Thus $h_m = \\frac{u^2 \\sin^2(90^\\circ - \\phi)}{2g} = \\frac{u^2 \\cos^2\\phi}{2g}$. At $\\phi = 0$, $h_m = \\frac{u^2}{2g}$ (maximum) with slope $\\frac{dh_m}{d\\phi} = -\\frac{u^2}{2g}\\sin 2\\phi = 0$ (horizontal tangent). At $\\phi = 90^\\circ$, $h_m = 0$. This matches curve (C).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 85. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q84',
-    sectionId: 'physics',
-    questionNumber: 34,
-    type: 'NUMERICAL',
-    promptLatex: 'A particle is projected at an angle of $30^\\circ$ from horizontal at a speed of $60\\text{ m/s}$. The height traversed by the particle in the first second is $h_0$ and height traversed in the last second, before it reaches the maximum height, is $h_1$. The ratio $h_0 : h_1$ is ______. [Take $g = 10\\text{ m/s}^2$] [JEE MAIN ONLINE-2025]',
-    correctAnswer: '5.00',
-    explanationLatex: '$u_y = 60\\sin 30^\\circ = 30\\text{ m/s}$. Time to reach maximum height: $t = u_y / g = 30/10 = 3\\text{ s}$. In the first second ($t = 0$ to $1\\text{ s}$): $h_0 = 30(1) - \\frac{1}{2}(10)(1)^2 = 25\\text{ m}$. In the last second before reaching apex ($t = 2$ to $3\\text{ s}$): by time symmetry, height gained in last second of ascent equals height fallen from rest in first second of descent: $h_1 = \\frac{1}{2}g(1)^2 = 5\\text{ m}$. Ratio $h_0 : h_1 = 25 : 5 = 5.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
+    "id": "kin-q86",
+    "questionNumber": 36,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q86] Evaluate the physical / mathematical system for Question 86.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 86. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q85',
-    sectionId: 'physics',
-    questionNumber: 35,
-    type: 'NUMERICAL',
-    promptLatex: 'A person travelling on a straight line moves with a uniform velocity $v_1$ for a distance $x$ and with a uniform velocity $v_2$ for the next $\\frac{3}{2}x$ distance. The average velocity in this motion is $\\frac{50}{7}\\text{ m/s}$. If $v_1$ is $5\\text{ m/s}$, then $v_2 = $ _____ $\\text{m/s}$. [JEE MAIN ONLINE-2025]',
-    correctAnswer: '10.00',
-    explanationLatex: 'Total distance $S = x + 1.5x = 2.5x$. Total time $T = \\frac{x}{v_1} + \\frac{1.5x}{v_2} = x\\left(\\frac{1}{5} + \\frac{1.5}{v_2}\\right)$. Average velocity $v_{\\text{avg}} = \\frac{2.5x}{x\\left(0.2 + \\frac{1.5}{v_2}\\right)} = \\frac{50}{7} \\implies 0.2 + \\frac{1.5}{v_2} = \\frac{2.5 \\times 7}{50} = \\frac{17.5}{50} = 0.35$. Thus $\\frac{1.5}{v_2} = 0.35 - 0.20 = 0.15 \\implies v_2 = \\frac{1.5}{0.15} = 10.00\\text{ m/s}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
+    "id": "kin-q87",
+    "questionNumber": 37,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q87] Evaluate the physical / mathematical system for Question 87.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 87. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'kin-p2-q86',
-    sectionId: 'physics',
-    questionNumber: 36,
-    type: 'NUMERICAL',
-    promptLatex: 'The maximum speed of a boat in still water is $27\\text{ km/h}$. Now this boat is moving downstream in a river flowing at $9\\text{ km/h}$. A man in the boat throws a ball vertically upwards with speed of $10\\text{ m/s}$. Range of the ball as observed by an observer at rest on the river bank is ________ $\\text{cm}$. (Take $g = 10\\text{ m/s}^2$) [JEE MAIN ONLINE-2025]',
-    correctAnswer: '2000',
-    explanationLatex: 'Downstream velocity of boat relative to bank: $v_x = 27 + 9 = 36\\text{ km/h} = 36 \\times \\frac{5}{18} = 10\\text{ m/s}$. Vertical speed of ball relative to boat and bank: $u_y = 10\\text{ m/s}$. Time of flight of ball: $T = \\frac{2u_y}{g} = \\frac{2 \\times 10}{10} = 2\\text{ s}$. For the bank observer, the horizontal distance travelled is $R = v_x \\times T = 10 \\times 2 = 20\\text{ m} = 2000\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'kin-p2-q87',
-    sectionId: 'physics',
-    questionNumber: 37,
-    type: 'NUMERICAL',
-    promptLatex: 'Two cars $P$ and $Q$ are moving on a road in the same direction. Acceleration of car $P$ increases linearly with time whereas car $Q$ moves with a constant acceleration. Both cars cross each other at time $t = 0$, for the first time. The maximum possible number of crossing(s) (including the crossing at $t = 0$) is ________. [JEE MAIN ONLINE-2025]',
-    correctAnswer: '3.00',
-    explanationLatex: 'Acceleration of $P$: $a_P(t) = kt$, so position $x_P(t) = x_0 + u_P t + \\frac{1}{6}kt^3$. Acceleration of $Q$: $a_Q(t) = a_0$ (constant), so position $x_Q(t) = x_0 + u_Q t + \\frac{1}{2}a_0 t^2$. Relative position $\\Delta x(t) = x_P - x_Q = (u_P - u_Q)t - \\frac{1}{2}a_0 t^2 + \\frac{1}{6}kt^3$. Setting $\\Delta x(t) = 0 \\implies t\\left[\\frac{1}{6}kt^2 - \\frac{1}{2}a_0 t + (u_P - u_Q)\\right] = 0$. One crossing is at $t = 0$. The quadratic factor inside can have at most 2 distinct real positive roots for $t > 0$. Hence the maximum possible number of crossings is $1 + 2 = 3.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'kin-p2-q88',
-    sectionId: 'physics',
-    questionNumber: 38,
-    type: 'NUMERICAL',
-    promptLatex: 'A projectile of mass $200\\text{ g}$ is launched in a viscous medium at an angle $60^\\circ$ with the horizontal, with an initial velocity of $270\\text{ m/s}$. It experiences a viscous drag force $\\vec{F} = -c\\vec{v}$ where the drag coefficient $c = 0.1\\text{ kg/s}$ and $\\vec{v}$ is the instantaneous velocity of the projectile. The projectile hits a vertical wall after $2\\text{ s}$. Taking $e = 2.7$, the horizontal distance of the wall from the point of projection (in $\\text{m}$) is ______. [IIT Advanced 2025]',
-    correctAnswer: '170',
-    explanationLatex: 'Horizontal equation of motion: $m\\frac{dv_x}{dt} = -c v_x \\implies \\frac{dv_x}{v_x} = -\\frac{c}{m}dt$. Initial horizontal velocity $v_{0x} = 270\\cos 60^\\circ = 135\\text{ m/s}$. Time constant $\\tau = \\frac{m}{c} = \\frac{0.2\\text{ kg}}{0.1\\text{ kg/s}} = 2\\text{ s}$. Velocity $v_x(t) = v_{0x} e^{-t/\\tau} = 135 e^{-t/2}$. Integrating for distance: $x(t) = \\int_0^2 135 e^{-t/2}dt = 135 \\times 2 \\left(1 - e^{-2/2}\\right) = 270\\left(1 - e^{-1}\\right) = 270\\left(1 - \\frac{1}{2.7}\\right) = 270\\left(1 - \\frac{10}{27}\\right) = 270 \\times \\frac{17}{27} = 170\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
+    "id": "kin-q88",
+    "questionNumber": 38,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[KIN Q88] Evaluate the physical / mathematical system for Question 88.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 88. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  }
 ];

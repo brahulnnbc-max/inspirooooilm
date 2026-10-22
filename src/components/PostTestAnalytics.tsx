@@ -403,7 +403,7 @@ export const PostTestAnalytics: React.FC<PostTestAnalyticsProps> = ({
                 {paper.title}
               </h1>
               <p className="text-xs text-zinc-400 mt-1">
-                Submitted on {new Date(attempt.submittedAt).toLocaleDateString()}
+                Submitted on {attempt.submittedAt ? new Date(attempt.submittedAt).toLocaleDateString() : 'Just now'}
               </p>
             </div>
 

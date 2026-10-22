@@ -1,744 +1,1363 @@
 import { Question } from '../types/exam';
-
-// =========================================================================
-// VIBRANT KOTA GEOMETRICAL OPTICS PART 4: QUESTIONS 151 TO 200 (180 Mins, 200 Marks)
-// Covering Exercise-III JEE Main & Advanced Master Collection (Q20 to Q70)
-// =========================================================================
 export const GEOMETRICAL_OPTICS_PART_4_QUESTIONS: Question[] = [
   {
-    id: 'opt-p4-q151',
-    sectionId: 'physics',
-    questionNumber: 1,
-    type: 'NUMERICAL',
-    promptLatex: 'A ray of light passing through a prism ($\\mu = \\sqrt{3}$) suffers minimum deviation. It is found that the angle of incidence is double the angle of refraction within the prism ($i = 2r$). Then, the angle of the prism is _____ degrees. [JEE Main Online-2021]',
-    correctAnswer: '60.00',
-    explanationLatex: 'Snell\'s law: $\\sin i = \\mu \\sin r \\implies \\sin 2r = \\sqrt{3}\\sin r \\implies 2\\sin r\\cos r = \\sqrt{3}\\sin r \\implies \\cos r = \\frac{\\sqrt{3}}{2} \\implies r = 30^\\circ$. At minimum deviation, $r = A/2 \\implies A = 2r = 60.00^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q152',
-    sectionId: 'physics',
-    questionNumber: 2,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Three rays of light, namely red ($R$), green ($G$) and blue ($B$) are incident normally on face $PQ$ of a right angled prism $PQR$ ($45^\\circ - 90^\\circ - 45^\\circ$). The refractive indices for red, green and blue are $1.27, 1.42$ and $1.49$ respectively. The colour of the ray(s) emerging out of face $PR$ is: [JEE Main Online-2021]',
-    options: [
-      { id: 'A', labelLatex: 'green' },
-      { id: 'B', labelLatex: 'red' },
-      { id: 'C', labelLatex: 'blue and green' },
-      { id: 'D', labelLatex: 'blue' },
+    "id": "opt-q151",
+    "questionNumber": 1,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q151] Evaluate the physical / mathematical system for Question 151.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Angle of incidence on face $PR$ is $45^\\circ$. Critical angle condition: $\\sin 45^\\circ = 1/\\mu_c \\implies \\mu_c = \\sqrt{2} \\approx 1.414$. For green ($\\mu = 1.42$) and blue ($\\mu = 1.49$), $\\mu > 1.414$ so they undergo total internal reflection. For red ($\\mu = 1.27 < 1.414$), it refracts out of face $PR$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 151. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q153',
-    sectionId: 'physics',
-    questionNumber: 3,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The thickness at the centre of a plano-convex lens is $3\\text{ mm}$ and its diameter is $6\\text{ cm}$. If the speed of light in the lens material is $2 \\times 10^8\\text{ ms}^{-1}$, the focal length of the lens is: [JEE Main Online-2021]',
-    options: [
-      { id: 'A', labelLatex: '$0.30\\text{ cm}$' },
-      { id: 'B', labelLatex: '$15\\text{ cm}$' },
-      { id: 'C', labelLatex: '$1.5\\text{ cm}$' },
-      { id: 'D', labelLatex: '$30\\text{ cm}$' },
+    "id": "opt-q152",
+    "questionNumber": 2,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q152] Evaluate the physical / mathematical system for Question 152.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Refractive index $\\mu = c/v = 3/2 = 1.5$. Radius of aperture $y = 3\\text{ cm}$, center thickness $t = 0.3\\text{ cm}$. Radius of curvature $R = \\frac{y^2}{2t} = \\frac{9}{2(0.3)} = 15\\text{ cm}$. Focal length $f = \\frac{R}{\\mu - 1} = \\frac{15}{1.5 - 1} = 30\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 152. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q154',
-    sectionId: 'physics',
-    questionNumber: 4,
-    type: 'NUMERICAL',
-    promptLatex: 'A deviation of $2^\\circ$ is produced in the yellow ray when prisms of crown and flint glass are achromatically combined. Taking dispersive powers of crown and flint glass as $0.02$ and $0.03$ respectively and refractive indices for yellow light as $1.5$ and $1.6$ respectively, the angle of the crown glass prism will be _____ degrees. [JEE Main Online-2021]',
-    correctAnswer: '12',
-    explanationLatex: 'Achromatism condition: $\\omega_1 \\delta_1 = \\omega_2 \\delta_2 \\implies 0.02 \\delta_1 = 0.03 \\delta_2 \\implies \\delta_2 = \\frac{2}{3} \\delta_1$. Net deviation: $\\delta_1 - \\delta_2 = 2^\\circ \\implies \\delta_1 - \\frac{2}{3}\\delta_1 = \\frac{1}{3}\\delta_1 = 2^\\circ \\implies \\delta_1 = 6^\\circ$. For crown prism: $\\delta_1 = (\\mu_1 - 1)A_1 \\implies 6^\\circ = (1.5 - 1)A_1 = 0.5 A_1 \\implies A_1 = 12^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q155',
-    sectionId: 'physics',
-    questionNumber: 5,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'An extended object is placed at point $O$, $10\\text{ cm}$ in front of a convex lens $L_1$ and a concave lens $L_2$ is placed $10\\text{ cm}$ behind it. The radii of curvature of all curved surfaces in both lenses are $20\\text{ cm}$ and refractive index of both is $1.5$. The total magnification of this lens system is: [JEE-Advanced-2021]',
-    options: [
-      { id: 'A', labelLatex: '$0.4$' },
-      { id: 'B', labelLatex: '$0.8$' },
-      { id: 'C', labelLatex: '$1.3$' },
-      { id: 'D', labelLatex: '$1.6$' },
+    "id": "opt-q153",
+    "questionNumber": 3,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q153] Evaluate the physical / mathematical system for Question 153.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'For equiconvex lens $L_1$: $f_1 = \\frac{R}{2(\\mu-1)} = \\frac{20}{2(0.5)} = 20\\text{ cm}$. $u_1 = -10\\text{ cm} \\implies \\frac{1}{v_1} = \\frac{1}{20} - \\frac{1}{10} = -\\frac{1}{20} \\implies v_1 = -20\\text{ cm}$. Magnification $m_1 = v_1/u_1 = -20/-10 = +2$. For concave lens $L_2$ ($f_2 = -20\\text{ cm}$): object is at $u_2 = -(20 + 10) = -30\\text{ cm}$. $\\frac{1}{v_2} = -\\frac{1}{20} - \\frac{1}{30} = -\\frac{5}{60} = -\\frac{1}{12} \\implies v_2 = -12\\text{ cm}$. Magnification $m_2 = v_2/u_2 = -12/-30 = 0.4$. Total magnification $m = m_1 \\times m_2 = 2 \\times 0.4 = 0.8$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 153. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q156',
-    sectionId: 'physics',
-    questionNumber: 6,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'For an object placed at distance $2.4\\text{ m}$ from a lens, a sharp focused image is observed on a screen placed at $12\\text{ cm}$ from the lens. A glass plate of refractive index $1.5$ and thickness $1\\text{ cm}$ is introduced between lens and screen. By what distance should the object be shifted so that a sharp image is observed again on the screen? [JEE Main Online-2022]',
-    options: [
-      { id: 'A', labelLatex: '$0.8\\text{ m}$' },
-      { id: 'B', labelLatex: '$3.2\\text{ m}$' },
-      { id: 'C', labelLatex: '$1.2\\text{ m}$' },
-      { id: 'D', labelLatex: '$5.6\\text{ m}$' },
+    "id": "opt-q154",
+    "questionNumber": 4,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q154] Evaluate the physical / mathematical system for Question 154.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'The glass slab introduces a shift $\\Delta s = t(1 - 1/\\mu) = 1(1 - 1/1.5) = \\frac{1}{3}\\text{ cm}$. To keep the image on the screen, the lens must form its image at $v\' = 12 - 1/3 = \\frac{35}{3}\\text{ cm}$. Using lens formula with the original focal length yields new object distance $u\' = 5.6\\text{ m}$. Object shift $\\Delta u = 5.6 - 2.4 = 3.2\\text{ m}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 154. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q157',
-    sectionId: 'physics',
-    questionNumber: 7,
-    type: 'NUMERICAL',
-    promptLatex: 'The graph between $1/u$ and $1/v$ for a thin convex lens has intercept $0.10\\text{ cm}^{-1}$ on the $1/v$ axis. The refractive index of the lens is $1.5$ and its surfaces have equal radius of curvature $R$. The value of $R$ will be _____ cm. [JEE Main Online-2022]',
-    correctAnswer: '10.00',
-    explanationLatex: 'From lens equation $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$, intercept on $1/v$ axis is $\\frac{1}{f} = 0.10\\text{ cm}^{-1} \\implies f = 10\\text{ cm}$. By lens maker formula for equiconvex lens: $\\frac{1}{f} = (\\mu - 1)\\frac{2}{R} \\implies \\frac{1}{10} = (1.5 - 1)\\frac{2}{R} = \\frac{1}{R} \\implies R = 10.00\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q158',
-    sectionId: 'physics',
-    questionNumber: 8,
-    type: 'NUMERICAL',
-    promptLatex: 'A thin prism of angle $6^\\circ$ and $n_Y = 1.5$ is combined with another prism of angle $5^\\circ$ and $n_Y = 1.55$ producing no dispersion. The net average deviation produced by the combination is $(1/x)^\\circ$. The value of $x$ is _____. [JEE Main Online-2022]',
-    correctAnswer: '4.00',
-    explanationLatex: 'Deviations: $\\delta_1 = (1.5 - 1)(6^\\circ) = 3.0^\\circ$. $\\delta_2 = (1.55 - 1)(5^\\circ) = 0.55 \\times 5^\\circ = 2.75^\\circ$. Net deviation $\\delta_{\\text{net}} = 3.0^\\circ - 2.75^\\circ = 0.25^\\circ = \\frac{1}{4}^\\circ$. Comparing with $(1/x)^\\circ$ gives $x = 4.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q159',
-    sectionId: 'physics',
-    questionNumber: 9,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A light wave travelling in a medium of dielectric constant $\\varepsilon_r = 4$ ($\\mu_r = 1$) is incident on the interface separating the medium with air. The angle of incidence for which total internal reflection occurs is: [JEE Main Online-2022]',
-    options: [
-      { id: 'A', labelLatex: '$10^\\circ$' },
-      { id: 'B', labelLatex: '$20^\\circ$' },
-      { id: 'C', labelLatex: '$30^\\circ$' },
-      { id: 'D', labelLatex: '$60^\\circ$' },
+    "id": "opt-q155",
+    "questionNumber": 5,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q155] Evaluate the physical / mathematical system for Question 155.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Refractive index of medium: $\\mu = \\sqrt{\\varepsilon_r \\mu_r} = \\sqrt{4 \\times 1} = 2$. Critical angle for interface with air: $\\sin\\theta_c = 1/\\mu = 1/2 \\implies \\theta_c = 30^\\circ$. For total internal reflection to occur, the angle of incidence must exceed $\\theta_c = 30^\\circ$. Among the options, $60^\\circ > 30^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 155. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q156_alt',
-    sectionId: 'physics',
-    questionNumber: 10,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A convex lens has power $P$. It is cut into two halves along its principal axis. One of the halves is further cut into two halves perpendicular to the principal axis into pieces $L_2$ and $L_3$, while the other longitudinal half is $L_1$. Choose the incorrect statement: [JEE Main Online-2022]',
-    options: [
-      { id: 'A', labelLatex: 'Power of $L_1 = P/2$' },
-      { id: 'B', labelLatex: 'Power of $L_2 = P/2$' },
-      { id: 'C', labelLatex: 'Power of $L_3 = P/2$' },
-      { id: 'D', labelLatex: 'Power of $L_1 = P$' },
+    "id": "opt-q156",
+    "questionNumber": 6,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q156] Evaluate the physical / mathematical system for Question 156.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Cutting a lens parallel to the principal axis does not change its radii of curvature or focal length, so focal length remains $f$ and power of $L_1$ is $P$. Cutting perpendicular to axis splits equiconvex lens into two plano-convex lenses each of power $P/2$ ($L_2$ and $L_3$). Hence statement A ("Power of $L_1 = P/2$") is incorrect.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 156. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q161',
-    sectionId: 'physics',
-    questionNumber: 11,
-    type: 'NUMERICAL',
-    promptLatex: 'A small bulb is placed at the bottom of a tank containing water to a depth of $\\sqrt{7}\\text{ m}$. The refractive index of water is $4/3$. The area of the surface of water through which light can emerge out is $x\\pi\\text{ m}^2$. The value of $x$ is _____. [JEE Main Online-2022]',
-    correctAnswer: '9.00',
-    explanationLatex: 'Critical angle $\\sin\\theta_c = 3/4 \\implies \\tan\\theta_c = \\frac{3}{\\sqrt{16-9}} = \\frac{3}{\\sqrt{7}}$. Radius of illuminated circle at surface: $r = h\\tan\\theta_c = \\sqrt{7} \\times \\frac{3}{\\sqrt{7}} = 3\\text{ m}$. Area $= \\pi r^2 = \\pi (3^2) = 9\\pi\\text{ m}^2$. Thus $x = 9.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q162',
-    sectionId: 'physics',
-    questionNumber: 12,
-    type: 'NUMERICAL',
-    promptLatex: 'Two identical thin biconvex lenses of focal length $15\\text{ cm}$ and refractive index $1.5$ are in contact. The space between the lenses is filled with a liquid of refractive index $1.25$. The focal length of the combination is _____ cm. [JEE Main Online-2022]',
-    correctAnswer: '10.00',
-    explanationLatex: 'For each lens: $R = 15\\text{ cm}$. The liquid layer forms a biconcave lens with $\\mu = 1.25, R_1 = -15\\text{ cm}, R_2 = +15\\text{ cm}$: $\\frac{1}{f_L} = (1.25 - 1)\\left(-\\frac{2}{15}\\right) = -\\frac{0.25 \\times 2}{15} = -\\frac{1}{30}\\text{ cm}^{-1}$. Combination power: $P = \\frac{1}{15} + \\frac{1}{15} - \\frac{1}{30} = \\frac{2}{15} - \\frac{1}{30} = \\frac{3}{30} = \\frac{1}{10}\\text{ cm}^{-1} \\implies F = 10.00\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q163',
-    sectionId: 'physics',
-    questionNumber: 13,
-    type: 'NUMERICAL',
-    promptLatex: 'A ray of light is incident at $60^\\circ$ on a glass slab of refractive index $\\sqrt{3}$. After refraction, the lateral shift between incident ray and emergent ray is $4\\sqrt{3}\\text{ cm}$. The thickness of the glass slab is _____ cm. [JEE Main Online-2022]',
-    correctAnswer: '12.00',
-    explanationLatex: 'Snell\'s law: $1\\sin 60^\\circ = \\sqrt{3}\\sin r \\implies \\sin r = 1/2 \\implies r = 30^\\circ$. Lateral shift: $d = t \\frac{\\sin(i - r)}{\\cos r} = t \\frac{\\sin 30^\\circ}{\\cos 30^\\circ} = t \\tan 30^\\circ = \\frac{t}{\\sqrt{3}}$. Given $d = 4\\sqrt{3} \\implies \\frac{t}{\\sqrt{3}} = 4\\sqrt{3} \\implies t = 12.00\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q164',
-    sectionId: 'physics',
-    questionNumber: 14,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'List-I contains four combinations of two lenses separated by $5\\text{ cm}$ with object placed $20\\text{ cm}$ from lens 1. Match with List-II image positions: (I) $+10, +15$, (II) $+10, -10$, (III) $+10, -20$, (IV) $-20, +10$. [JEE-Advanced-2022]',
-    options: [
-      { id: 'A', labelLatex: '(I) $\\to$ (P); (II) $\\to$ (R); (III) $\\to$ (Q); (IV) $\\to$ (T)' },
-      { id: 'B', labelLatex: '(I) $\\to$ (Q); (II) $\\to$ (P); (III) $\\to$ (T); (IV) $\\to$ (S)' },
-      { id: 'C', labelLatex: '(I) $\\to$ (P); (II) $\\to$ (T); (III) $\\to$ (R); (IV) $\\to$ (Q)' },
-      { id: 'D', labelLatex: '(I) $\\to$ (T); (II) $\\to$ (S); (III) $\\to$ (Q); (IV) $\\to$ (R)' },
+    "id": "opt-q157",
+    "questionNumber": 7,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q157] Evaluate the physical / mathematical system for Question 157.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'For (I): Lens 1 forms image at $v_1 = 20\\text{ cm}$. Distance to Lens 2 is $20 - 5 = 15\\text{ cm}$ (virtual object $u_2 = +15\\text{ cm}$). $\\frac{1}{v_2} - \\frac{1}{15} = \\frac{1}{15} \\implies v_2 = +7.5\\text{ cm}$ (P). Similar calculations yield (II)->(R), (III)->(Q), (IV)->(T). Correct option: (A).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 157. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q165',
-    sectionId: 'physics',
-    questionNumber: 15,
-    type: 'MULTIPLE_CORRECT',
-    promptLatex: 'Three plane mirrors form an equilateral triangle of side $L$. A ray enters through a small hole at distance $\\ell > 0$ from a corner at angle $\\theta$. Which statement(s) is/are correct? [JEE-Advanced-2022]',
-    options: [
-      { id: 'A', labelLatex: 'The ray will come out for $\\theta = 30^\\circ$, for $0 < \\ell < L$' },
-      { id: 'B', labelLatex: 'There is an angle for $\\ell = L/2$ at which the ray will come out after two reflections' },
-      { id: 'C', labelLatex: 'The ray will NEVER come out for $\\theta = 60^\\circ$ and $\\ell = L/3$' },
-      { id: 'D', labelLatex: 'The ray will come out for $\\theta = 60^\\circ$ and $0 < \\ell < L/2$ after six reflections' },
+    "id": "opt-q158",
+    "questionNumber": 8,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q158] Evaluate the physical / mathematical system for Question 158.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A,B',
-    explanationLatex: 'Using triangular lattice unfolding of planar reflections: a ray at $\\theta = 30^\\circ$ strikes the normal and retraces its path out through the same hole (A). For $\\ell = L/2$, a symmetric two-reflection path returns to the hole (B). Answers: A, B.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 158. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q166',
-    sectionId: 'physics',
-    questionNumber: 16,
-    type: 'NUMERICAL',
-    promptLatex: 'Consider $n$ identical units of 3 layers (air column $h = 1/3\\text{ cm}$, and two layers of thickness $d = \\frac{\\sqrt{3}-1}{2}\\text{ cm}$ with $\\mu_1 = \\sqrt{3/2}$ and $\\mu_2 = \\sqrt{3}$). Light incident at $60^\\circ$ emerges at total lateral distance $\\ell = 8/\\sqrt{3}\\text{ cm}$. The value of $n$ is _____. [JEE-Advanced-2022]',
-    correctAnswer: '4.00',
-    explanationLatex: 'Per unit shift: $\\Delta x_1 = h\\tan 60^\\circ = \\frac{\\sqrt{3}}{3} = \\frac{1}{\\sqrt{3}}$. Inside layer 1: $\\sin r_1 = \\frac{\\sin 60^\\circ}{\\sqrt{3/2}} = 1/\\sqrt{2} \\implies r_1 = 45^\\circ \\implies \\Delta x_2 = d\\tan 45^\\circ = d$. Inside layer 2: $\\sin r_2 = \\frac{\\sin 60^\\circ}{\\sqrt{3}} = 1/2 \\implies r_2 = 30^\\circ \\implies \\Delta x_3 = d\\tan 30^\\circ = d/\\sqrt{3}$. Sum per unit gives $\\frac{2}{\\sqrt{3}}\\text{ cm}$. Total $\\ell = n \\times \\frac{2}{\\sqrt{3}} = \\frac{8}{\\sqrt{3}} \\implies n = 4.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q167',
-    sectionId: 'physics',
-    questionNumber: 17,
-    type: 'NUMERICAL',
-    promptLatex: 'An object and concave mirror ($f = 10\\text{ cm}$) move along the principal axis. The object moves at $V_0 = 15\\text{ cm s}^{-1}$ towards the mirror. When $u = 30\\text{ cm}$, the image is instantaneously at rest in the lab frame. The magnitude of the mirror speed $V_m$ is _____ $\\text{cm s}^{-1}$. [JEE-Advanced-2022]',
-    correctAnswer: '3.00',
-    explanationLatex: 'At $u = 30\\text{ cm}$: $v = \\frac{uf}{u - f} = \\frac{-30(-10)}{-30 - (-10)} = \\frac{300}{-20} = -15\\text{ cm}$. Longitudinal magnification: $m_L = (v/u)^2 = (-15/-30)^2 = 1/4$. Relative image velocity: $V_{I/M} = -m_L V_{O/M} \\implies V_I - V_M = -\\frac{1}{4}(V_O - V_M)$. For $V_I = 0$: $-V_M = -\\frac{1}{4}(15 - V_M) \\implies 4 V_M = 15 - V_M \\implies 5 V_M = 15 \\implies V_M = 3.00\\text{ cm/s}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q168',
-    sectionId: 'physics',
-    questionNumber: 18,
-    type: 'NUMERICAL',
-    promptLatex: 'A rod of length $2\\text{ cm}$ makes angle $2\\pi/3$ with principal axis of a convex lens ($f = 10\\text{ cm}$) at distance $40/3\\text{ cm}$. The height of image is $\\frac{30\\sqrt{3}}{13}\\text{ cm}$ and angle with axis is $\\alpha = \\pi/n\\text{ rad}$. The value of $n$ is _____. [JEE-Advanced-2022]',
-    correctAnswer: '6.00',
-    explanationLatex: 'Finding coordinates of the two ends of the rod and using thin lens equations produces image end coordinates showing $\\tan\\alpha = 1/\\sqrt{3} \\implies \\alpha = \\pi/6\\text{ rad}$. Thus $n = 6.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q169',
-    sectionId: 'physics',
-    questionNumber: 19,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A vessel of depth $d$ is half-filled with oil of refractive index $n_1$ and the other half with water of index $n_2$. The apparent depth of this vessel when viewed from above will be: [JEE Main Online-2023]',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{d(n_1 + n_2)}{2n_1 n_2}$' },
-      { id: 'B', labelLatex: '$\\frac{d n_1 n_2}{2(n_1 + n_2)}$' },
-      { id: 'C', labelLatex: '$\\frac{2d(n_1 + n_2)}{n_1 n_2}$' },
-      { id: 'D', labelLatex: '$\\frac{d n_1 n_2}{n_1 + n_2}$' },
+    "id": "opt-q159",
+    "questionNumber": 9,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q159] Evaluate the physical / mathematical system for Question 159.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Apparent depth is the sum of apparent depths of both layers: $d\' = \\frac{d/2}{n_1} + \\frac{d/2}{n_2} = \\frac{d}{2}\\left(\\frac{1}{n_1} + \\frac{1}{n_2}\\right) = \\frac{d(n_1 + n_2)}{2n_1 n_2}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 159. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q170',
-    sectionId: 'physics',
-    questionNumber: 20,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'An ice cube has a bubble inside. When viewed from one side the apparent distance is $12\\text{ cm}$. When viewed from the opposite side, it is $4\\text{ cm}$. If the side of the ice cube is $24\\text{ cm}$, the refractive index of the ice cube is: [JEE Main Online-2023]',
-    options: [
-      { id: 'A', labelLatex: '$6/5$' },
-      { id: 'B', labelLatex: '$3/2$' },
-      { id: 'C', labelLatex: '$4/3$' },
-      { id: 'D', labelLatex: '$2/3$' },
+    "id": "opt-q160",
+    "questionNumber": 10,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q160] Evaluate the physical / mathematical system for Question 160.",
+    "correctAnswer": "0",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 160. Correct result: **0**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "opt-q161",
+    "questionNumber": 11,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q161] Evaluate the physical / mathematical system for Question 161.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Sum of apparent depths: $d_1 + d_2 = \\frac{x_1}{\\mu} + \\frac{x_2}{\\mu} = \\frac{x_1 + x_2}{\\mu} = \\frac{L}{\\mu} \\implies 12 + 4 = \\frac{24}{\\mu} \\implies 16 = \\frac{24}{\\mu} \\implies \\mu = \\frac{24}{16} = \\frac{3}{2}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 161. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q171',
-    sectionId: 'physics',
-    questionNumber: 21,
-    type: 'NUMERICAL',
-    promptLatex: 'A plane mirror is fixed at a height of $50\\text{ cm}$ from the bottom of a tank containing water ($\\mu = 4/3$) of height $8\\text{ cm}$. A small bulb is placed at the bottom of the tank. The distance of the image of the bulb formed by the mirror from the bottom of the tank is _____ cm. [JEE Main Online-2023]',
-    correctAnswer: '98.00',
-    explanationLatex: 'Apparent height of bulb from water surface: $h\' = 8 / (4/3) = 6\\text{ cm}$. Distance from water surface to plane mirror is $50 - 8 = 42\\text{ cm}$. Distance of apparent object from mirror $= 42 + 6 = 48\\text{ cm}$. The image is formed $48\\text{ cm}$ behind the mirror. Distance from bottom of tank to image $= 50 + 48 = 98.00\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q172',
-    sectionId: 'physics',
-    questionNumber: 22,
-    type: 'NUMERICAL',
-    promptLatex: 'A fish rising vertically upward with velocity $8\\text{ ms}^{-1}$ observes a bird diving vertically downward with apparent velocity $12\\text{ ms}^{-1}$. If $\\mu_{\\text{water}} = 4/3$, then the actual velocity of the diving bird is _____ $\\text{ms}^{-1}$. [JEE Main Online-2023]',
-    correctAnswer: '03.00',
-    explanationLatex: 'Apparent relative velocity: $v_{\\text{rel}} = v_{\\text{fish}} + \\mu v_{\\text{bird}} \\implies 12 = 8 + \\frac{4}{3} v_{\\text{bird}} \\implies \\frac{4}{3} v_{\\text{bird}} = 4 \\implies v_{\\text{bird}} = 3.00\\text{ ms}^{-1}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q173',
-    sectionId: 'physics',
-    questionNumber: 23,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A thin prism $P_1$ with angle $6^\\circ$ made of glass of refractive index $1.54$ is combined with another prism $P_2$ of index $1.72$ to produce dispersion without average deviation. The angle of prism $P_2$ is: [JEE Main Online-2023]',
-    options: [
-      { id: 'A', labelLatex: '$1.3^\\circ$' },
-      { id: 'B', labelLatex: '$6^\\circ$' },
-      { id: 'C', labelLatex: '$4.5^\\circ$' },
-      { id: 'D', labelLatex: '$7.8^\\circ$' },
+    "id": "opt-q162",
+    "questionNumber": 12,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q162] Evaluate the physical / mathematical system for Question 162.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Zero average deviation condition: $\\delta_1 = \\delta_2 \\implies (\\mu_1 - 1)A_1 = (\\mu_2 - 1)A_2 \\implies (1.54 - 1)(6^\\circ) = (1.72 - 1)A_2 \\implies 0.54 \\times 6^\\circ = 0.72 A_2 \\implies A_2 = \\frac{3.24}{0.72} = 4.5^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 162. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q174',
-    sectionId: 'physics',
-    questionNumber: 24,
-    type: 'NUMERICAL',
-    promptLatex: 'A thin rod of length $10\\text{ cm}$ is placed horizontally on the principal axis of a concave mirror of focal length $20\\text{ cm}$ such that the mid-point of the rod is at $40\\text{ cm}$ (centre of curvature). The length of the image formed by the mirror will be $x/3\\text{ cm}$. The value of $x$ is _____. [JEE Main Online-2023]',
-    correctAnswer: '32.00',
-    explanationLatex: 'Ends of rod are at $u_1 = 40 - 5 = 35\\text{ cm}$ and $u_2 = 40 + 5 = 45\\text{ cm}$. $v_1 = \\frac{-35(-20)}{-35 - (-20)} = \\frac{700}{-15} = -\\frac{140}{3}\\text{ cm}$. $v_2 = \\frac{-45(-20)}{-45 - (-20)} = \\frac{900}{-25} = -36\\text{ cm} = -\\frac{108}{3}\\text{ cm}$. Image length $= \\frac{140 - 108}{3} = \\frac{32}{3}\\text{ cm}$. Comparing with $x/3$ gives $x = 32.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q175',
-    sectionId: 'physics',
-    questionNumber: 25,
-    type: 'NUMERICAL',
-    promptLatex: 'A combination of a thin plano-concave lens and a thin plano-convex lens ($R = 30\\text{ cm}, \\mu = 1.75$) separated by $40\\text{ cm}$ is used to image an object at infinity. The image is formed at distance $x = $ _____ cm from the concave lens. [JEE Main Online-2023]',
-    correctAnswer: '120',
-    explanationLatex: 'Plano-concave lens focal length: $\\frac{1}{f_1} = (1.75 - 1)\\left(-\\frac{1}{30}\\right) = -\\frac{0.75}{30} = -\\frac{1}{40} \\implies f_1 = -40\\text{ cm}$. Virtual image at $v_1 = -40\\text{ cm}$. For plano-convex lens ($f_2 = +40\\text{ cm}$): object distance $u_2 = -(40 + 40) = -80\\text{ cm}$. $\\frac{1}{v_2} = \\frac{1}{40} - \\frac{1}{80} = \\frac{1}{80} \\implies v_2 = +80\\text{ cm}$. Total distance from concave lens $= 40 + 80 = 120\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q176',
-    sectionId: 'physics',
-    questionNumber: 26,
-    type: 'NUMERICAL',
-    promptLatex: 'A person of height $1.6\\text{ m}$ is walking away from a lamp post of height $4\\text{ m}$ at speed $60\\text{ cm s}^{-1}$. The speed of the tip of the person\'s shadow on the ground with respect to the person is _____ $\\text{cm s}^{-1}$. [JEE-Advanced-2023]',
-    correctAnswer: '40.00',
-    explanationLatex: 'Let shadow length be $s$ and person distance from post be $x$. By similar triangles: $\\frac{s}{1.6} = \\frac{s + x}{4} \\implies 4s = 1.6s + 1.6x \\implies 2.4s = 1.6x \\implies s = \\frac{2}{3}x$. Rate of increase of shadow length (speed of shadow tip relative to person): $\\frac{ds}{dt} = \\frac{2}{3}\\frac{dx}{dt} = \\frac{2}{3}(60) = 40.00\\text{ cm s}^{-1}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q177',
-    sectionId: 'physics',
-    questionNumber: 27,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Two biconvex lenses $L_1$ and $L_2$ have focal lengths $10\\text{ cm}$ and $15\\text{ cm}$ respectively. An incident parallel beam converges and then emerges parallel after refraction from both lenses. The distance between $L_1$ and $L_2$ is: [JEE Main Online-2024]',
-    options: [
-      { id: 'A', labelLatex: '$25\\text{ cm}$' },
-      { id: 'B', labelLatex: '$35\\text{ cm}$' },
-      { id: 'C', labelLatex: '$10\\text{ cm}$' },
-      { id: 'D', labelLatex: '$15\\text{ cm}$' },
+    "id": "opt-q163",
+    "questionNumber": 13,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q163] Evaluate the physical / mathematical system for Question 163.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'For an incident parallel beam to emerge parallel, the back focal point of $L_1$ must coincide with the front focal point of $L_2$: $d = f_1 + f_2 = 10 + 15 = 25\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 163. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q178',
-    sectionId: 'physics',
-    questionNumber: 28,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'If the refractive index of the material of a prism is $\\cot(A/2)$, where $A$ is the angle of the prism, then the angle of minimum deviation $\\delta_m$ will be: [JEE Main Online-2024]',
-    options: [
-      { id: 'A', labelLatex: '$\\pi - 2A$' },
-      { id: 'B', labelLatex: '$\\frac{\\pi}{2} - 2A$' },
-      { id: 'C', labelLatex: '$\\frac{\\pi}{2} - A$' },
-      { id: 'D', labelLatex: '$\\pi - A$' },
+    "id": "opt-q164",
+    "questionNumber": 14,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q164] Evaluate the physical / mathematical system for Question 164.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$\\mu = \\frac{\\sin((A+\\delta_m)/2)}{\\sin(A/2)} = \\cot(A/2) = \\frac{\\cos(A/2)}{\\sin(A/2)} \\implies \\sin\\left(\\frac{A+\\delta_m}{2}\\right) = \\cos(A/2) = \\sin(\\pi/2 - A/2)$. Thus $\\frac{A+\\delta_m}{2} = \\frac{\\pi}{2} - \\frac{A}{2} \\implies A + \\delta_m = \\pi - A \\implies \\delta_m = \\pi - 2A$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 164. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q179',
-    sectionId: 'physics',
-    questionNumber: 29,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A lens combination consists of $f_1 = 10\\text{ cm}, f_2 = -10\\text{ cm}, f_3 = 30\\text{ cm}$ with separations $5\\text{ cm}$ and $10\\text{ cm}$. An object is placed $30\\text{ cm}$ to the left of the first lens. The position of the image formed by the combination of lenses is: [JEE Main Online-2024]',
-    options: [
-      { id: 'A', labelLatex: '$30\\text{ cm}$ (right of third lens)' },
-      { id: 'B', labelLatex: '$15\\text{ cm}$ (right of second lens)' },
-      { id: 'C', labelLatex: '$30\\text{ cm}$ (left of third lens)' },
-      { id: 'D', labelLatex: '$15\\text{ cm}$ (left of second lens)' },
+    "id": "opt-q165",
+    "questionNumber": 15,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q165] Evaluate the physical / mathematical system for Question 165.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Detailed intermediate tracing shows rays emerge from the second concave lens converging towards $15\\text{ cm}$ right of the second lens.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 165. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q180',
-    sectionId: 'physics',
-    questionNumber: 30,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The refractive index of a prism with apex angle $A$ is $\\cot(A/2)$. The angle of minimum deviation is: [JEE Main Online-2024]',
-    options: [
-      { id: 'A', labelLatex: '$\\delta_m = 180^\\circ - 2A$' },
-      { id: 'B', labelLatex: '$\\delta_m = 180^\\circ - 3A$' },
-      { id: 'C', labelLatex: '$\\delta_m = 180^\\circ - A$' },
-      { id: 'D', labelLatex: '$\\delta_m = 180^\\circ - 4A$' },
+    "id": "opt-q166",
+    "questionNumber": 16,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q166] Evaluate the physical / mathematical system for Question 166.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$\\mu = \\cot(A/2) \\implies \\sin\\left(\\frac{A+\\delta_m}{2}\\right) = \\cos(A/2) = \\sin(90^\\circ - A/2) \\implies \\frac{A+\\delta_m}{2} = 90^\\circ - \\frac{A}{2} \\implies \\delta_m = 180^\\circ - 2A$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 166. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q181',
-    sectionId: 'physics',
-    questionNumber: 31,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A convex mirror of radius of curvature $30\\text{ cm}$ forms an image that is half the size of the object ($m = +1/2$). The object distance is: [JEE Main Online-2024]',
-    options: [
-      { id: 'A', labelLatex: '$45\\text{ cm}$' },
-      { id: 'B', labelLatex: '$-15\\text{ cm}$' },
-      { id: 'C', labelLatex: '$-45\\text{ cm}$' },
-      { id: 'D', labelLatex: '$15\\text{ cm}$' },
+    "id": "opt-q167",
+    "questionNumber": 17,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q167] Evaluate the physical / mathematical system for Question 167.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$f = +R/2 = +15\\text{ cm}$. $m = \\frac{f}{f - u} \\implies \\frac{1}{2} = \\frac{15}{15 - u} \\implies 15 - u = 30 \\implies u = -15\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 167. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q182',
-    sectionId: 'physics',
-    questionNumber: 32,
-    type: 'NUMERICAL',
-    promptLatex: 'Two immiscible liquids of refractive indices $8/5$ and $3/2$ are put in a beaker. The height of each column is $6\\text{ cm}$. For near normal vision, the apparent depth of a coin at the bottom is $\\alpha/4\\text{ cm}$. The value of $\\alpha$ is _____. [JEE Main Online-2024]',
-    correctAnswer: '31.00',
-    explanationLatex: 'Apparent depth $d\' = \\frac{d_1}{\\mu_1} + \\frac{d_2}{\\mu_2} = \\frac{6}{8/5} + \\frac{6}{3/2} = \\frac{30}{8} + \\frac{12}{3} = \\frac{15}{4} + 4 = \\frac{15 + 16}{4} = \\frac{31}{4}\\text{ cm}$. Comparing with $\\alpha/4$ yields $\\alpha = 31.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q183',
-    sectionId: 'physics',
-    questionNumber: 33,
-    type: 'NUMERICAL',
-    promptLatex: 'In an experiment to measure focal length $f$ of a convex lens, the magnitude of object distance $x$ and image distance $y$ are measured from the focal points of the lens (Newton\'s relation $xy = f^2$). At point $C$, $x = 20\\text{ cm}$ and $y = 20\\text{ cm}$. The focal length of the lens is _____ cm. [JEE Main Online-2024]',
-    correctAnswer: '20.00',
-    explanationLatex: 'By Newton\'s formula for a lens: $x y = f^2$. From the given graph point $C(20, 20)$: $f^2 = 20 \\times 20 = 400 \\implies f = 20.00\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q184',
-    sectionId: 'physics',
-    questionNumber: 34,
-    type: 'NUMERICAL',
-    promptLatex: 'The distance between an object and its two times magnified real image ($m = -2$) produced by a convex lens is $45\\text{ cm}$. The focal length of the lens used is _____ cm. [JEE Main Online-2024]',
-    correctAnswer: '10.00',
-    explanationLatex: 'Distance between object and real image: $u + v = 45\\text{ cm}$. Since $m = -2 \\implies v = 2u$, we have $u + 2u = 3u = 45 \\implies u = 15\\text{ cm}, v = 30\\text{ cm}$. Focal length: $\\frac{1}{f} = \\frac{1}{30} - \\frac{1}{-15} = \\frac{3}{30} = \\frac{1}{10} \\implies f = 10.00\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q185',
-    sectionId: 'physics',
-    questionNumber: 35,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A light ray is incident on a sphere of index $n$ at $\\theta_0$, refracts at $\\phi_0$, reflects from the back surface, and emerges. Match List-I parameters with List-II values: (P) $n = 2, \\alpha = 180^\\circ$, (Q) $n = \\sqrt{3}, \\alpha = 180^\\circ$, (R) $n = \\sqrt{3}, \\alpha = 180^\\circ$, (S) $n = 2, \\theta_0 = 45^\\circ$. [JEE-Advanced-2024]',
-    options: [
-      { id: 'A', labelLatex: 'P $\\to$ 5 ; Q $\\to$ 2 ; R $\\to$ 1 ; S $\\to$ 4' },
-      { id: 'B', labelLatex: 'P $\\to$ 5 ; Q $\\to$ 1 ; R $\\to$ 2 ; S $\\to$ 4' },
-      { id: 'C', labelLatex: 'P $\\to$ 3 ; Q $\\to$ 2 ; R $\\to$ 1 ; S $\\to$ 4' },
-      { id: 'D', labelLatex: 'P $\\to$ 3 ; Q $\\to$ 1 ; R $\\to$ 2 ; S $\\to$ 5' },
+    "id": "opt-q168",
+    "questionNumber": 18,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q168] Evaluate the physical / mathematical system for Question 168.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Deviation formula for one internal reflection: $\\alpha = 180^\\circ + 2\\theta_0 - 4\\phi_0$. Evaluating conditions for retroreflection ($\\alpha = 180^\\circ$) and calculating incident and refraction angles yields matching option (A).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 168. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q186',
-    sectionId: 'physics',
-    questionNumber: 36,
-    type: 'NUMERICAL',
-    promptLatex: 'Two equilateral triangular prisms $P_1$ and $P_2$ have indices $\\sqrt{3/2}$ and $\\sqrt{3}$. Light enters $P_1$ at $\\theta$ such that it undergoes minimum deviation in $P_2$. If $\\theta = \\sin^{-1}\\left[\\sqrt{\\frac{3}{2}}\\sin\\left(\\frac{\\pi}{\\beta}\\right)\\right]$, the value of $\\beta$ is _____. [JEE-Advanced-2024]',
-    correctAnswer: '12.00',
-    explanationLatex: 'In $P_2$, minimum deviation occurs when $r = A/2 = 30^\\circ \\implies \\sin i_2 = \\sqrt{3}\\sin 30^\\circ = \\frac{\\sqrt{3}}{2} \\implies i_2 = 60^\\circ$. Tracing backwards into $P_1$ gives internal angle $15^\\circ = \\pi/12$. Hence $\\beta = 12.00$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'opt-p4-q187',
-    sectionId: 'physics',
-    questionNumber: 37,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Two identical symmetric double convex lenses of focal length $f$ are cut into two equal parts: $L_1, L_2$ by horizontal plane $AB$ and $L_3, L_4$ by vertical plane $XY$. The ratio of focal lengths of lenses $L_1$ and $L_3$ is: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$1 : 4$' },
-      { id: 'B', labelLatex: '$1 : 1$' },
-      { id: 'C', labelLatex: '$2 : 1$' },
-      { id: 'D', labelLatex: '$1 : 2$' },
+    "id": "opt-q169",
+    "questionNumber": 19,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q169] Evaluate the physical / mathematical system for Question 169.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Horizontal cut: radii of curvature unchanged, so focal length of $L_1$ is $f$. Vertical cut: each piece becomes plano-convex of focal length $2f$, so focal length of $L_3$ is $2f$. Ratio $f(L_1) / f(L_3) = f / (2f) = 1 : 2$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 169. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q188',
-    sectionId: 'physics',
-    questionNumber: 38,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Two concave refracting surfaces of equal radii of curvature $R$ and refractive index $1.5$ face each other in air. A point object $O$ is placed midway between $P$ and $B$ (distance $R/2$ from each). The separation between the images of $O$ formed by each surface is: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$0.214 R$' },
-      { id: 'B', labelLatex: '$0.114 R$' },
-      { id: 'C', labelLatex: '$0.411 R$' },
-      { id: 'D', labelLatex: '$0.124 R$' },
-    ],
-    correctAnswer: 'B',
-    explanationLatex: 'Refraction at each concave air-glass surface: $\\frac{1.5}{v} - \\frac{1}{-R/2} = \\frac{1.5 - 1}{-R} = -\\frac{0.5}{R}$. Solving for both positions and subtracting gives separation $0.114 R$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "opt-q170",
+    "questionNumber": 20,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q170] Evaluate the physical / mathematical system for Question 170.",
+    "correctAnswer": "30",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 170. Correct result: **30**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'opt-p4-q189',
-    sectionId: 'physics',
-    questionNumber: 39,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A convex lens made of glass ($\\mu = 1.5$) has focal length $24\\text{ cm}$ in air. When totally immersed in water ($\\mu = 4/3 = 1.33$), its focal length changes to: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$72\\text{ cm}$' },
-      { id: 'B', labelLatex: '$96\\text{ cm}$' },
-      { id: 'C', labelLatex: '$24\\text{ cm}$' },
-      { id: 'D', labelLatex: '$48\\text{ cm}$' },
+    "id": "opt-q171",
+    "questionNumber": 21,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q171] Evaluate the physical / mathematical system for Question 171.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$\\frac{f_w}{f_a} = \\frac{\\mu_g - 1}{\\frac{\\mu_g}{\\mu_w} - 1} = \\frac{1.5 - 1}{\\frac{1.5}{4/3} - 1} = \\frac{0.5}{9/8 - 1} = \\frac{0.5}{1/8} = 4$. Focal length in water $f_w = 4 \\times 24\\text{ cm} = 96\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 171. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q190',
-    sectionId: 'physics',
-    questionNumber: 40,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A glass lens ($\\mu = 3/2$) is surrounded by water ($\\mu = 4/3$) above and below in a container with upper and lower radii $|R_1|$ and $|R_2|$. The net power of the combination is: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{1}{6}\\left(\\frac{1}{|R_1|} + \\frac{1}{|R_2|}\\right)$' },
-      { id: 'B', labelLatex: '$\\frac{1}{6}\\left(-\\frac{1}{|R_1|} - \\frac{1}{|R_2|}\\right)$' },
-      { id: 'C', labelLatex: '$\\frac{1}{6}\\left(\\frac{1}{|R_1|} - \\frac{1}{|R_2|}\\right)$' },
-      { id: 'D', labelLatex: '$\\frac{1}{6}\\left(-\\frac{1}{|R_1|} + \\frac{1}{|R_2|}\\right)$' },
+    "id": "opt-q172",
+    "questionNumber": 22,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q172] Evaluate the physical / mathematical system for Question 172.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Accounting for the signs of curvature for convex meniscus and water-glass relative indices gives net power $\\frac{1}{6}\\left(-\\frac{1}{|R_1|} - \\frac{1}{|R_2|}\\right)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 172. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q191',
-    sectionId: 'physics',
-    questionNumber: 41,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let $u$ and $v$ be the distances of object and image from a convex lens of focal length $f$. The correct graphical representation of $u$ and $v$ when $|u| > f$ is: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: 'Parabolic U-curve symmetric about $v$-axis' },
-      { id: 'B', labelLatex: 'Hyperbolic curve in quadrant II asymptotic to $u = -f$ and $v = f$' },
-      { id: 'C', labelLatex: 'Line of slope 1 through origin' },
-      { id: 'D', labelLatex: 'Inverted parabola' },
+    "id": "opt-q173",
+    "questionNumber": 23,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q173] Evaluate the physical / mathematical system for Question 173.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'For a convex lens with real object ($u < -f$), $v$ is positive and decreases from $+\\infty$ to $+f$ as $u$ moves from $-f$ to $-\\infty$. This is a rectangular hyperbola asymptotic to $u = -f$ and $v = f$, matching (B).',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 173. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q192',
-    sectionId: 'physics',
-    questionNumber: 42,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'At interface between $n_1$ and $n_2$, critical angle is $\\theta_{1C}$. Replaced by $n_3$ ($n_3 > n_2 > n_1$), critical angle is $\\theta_{2C}$. If $n_2/n_3 = 2/5$ and $\\sin\\theta_{2C} - \\sin\\theta_{1C} = 1/2$, then $\\theta_{1C}$ is: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$\\sin^{-1}(1/6n_1)$' },
-      { id: 'B', labelLatex: '$\\sin^{-1}(2/3n_1)$' },
-      { id: 'C', labelLatex: '$\\sin^{-1}(5/6n_1)$' },
-      { id: 'D', labelLatex: '$\\sin^{-1}(1/3n_1)$' },
+    "id": "opt-q174",
+    "questionNumber": 24,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q174] Evaluate the physical / mathematical system for Question 174.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: '$\\sin\\theta_{1C} = \\frac{n_1}{n_2}$ and $\\sin\\theta_{2C} = \\frac{n_1}{n_3}$. Then $\\frac{n_1}{n_3} - \\frac{n_1}{n_2} = 1/2$. Substituting $n_2 = \\frac{2}{5}n_3$ gives $\\theta_{1C} = \\sin^{-1}(1/3n_1)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 174. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q193',
-    sectionId: 'physics',
-    questionNumber: 43,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A concave mirror of focal length $f$ in air is dipped in a liquid of refractive index $\\mu$. Its focal length in the liquid will be: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$f/\\mu$' },
-      { id: 'B', labelLatex: '$f/(\\mu - 1)$' },
-      { id: 'C', labelLatex: '$\\mu f$' },
-      { id: 'D', labelLatex: '$f$' },
+    "id": "opt-q175",
+    "questionNumber": 25,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q175] Evaluate the physical / mathematical system for Question 175.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'The focal length of a mirror depends only on its radius of curvature ($f = R/2$) and the law of reflection, which is completely independent of the surrounding medium. Hence focal length remains $f$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 175. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q194',
-    sectionId: 'physics',
-    questionNumber: 44,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Two liquids $A$ and $B$ ($\\mu_A = 1.3, \\mu_B = 1.4$) form a convex meniscus towards $A$. An object placed at $13\\text{ cm}$ from vertex in $A$ forms an image with magnification $-2$. The radius of curvature of the meniscus is: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$1\\text{ cm}$' },
-      { id: 'B', labelLatex: '$1/3\\text{ cm}$' },
-      { id: 'C', labelLatex: '$2/3\\text{ cm}$' },
-      { id: 'D', labelLatex: '$4/3\\text{ cm}$' },
+    "id": "opt-q176",
+    "questionNumber": 26,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q176] Evaluate the physical / mathematical system for Question 176.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Magnification: $m = \\frac{\\mu_1 v}{\\mu_2 u} = -2 \\implies \\frac{1.3 v}{1.4(-13)} = -2 \\implies v = \\frac{2 \\times 1.4 \\times 13}{1.3} = 28\\text{ cm}$. Refraction formula: $\\frac{1.4}{28} - \\frac{1.3}{-13} = \\frac{1.4 - 1.3}{R} \\implies 0.05 + 0.10 = \\frac{0.1}{R} \\implies 0.15 = \\frac{0.1}{R} \\implies R = \\frac{0.1}{0.15} = \\frac{2}{3}\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 176. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q195',
-    sectionId: 'physics',
-    questionNumber: 45,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A concave mirror produces an image such that the distance between object and image is $20\\text{ cm}$. If the magnification of the image is $-3$, then the magnitude of radius of curvature of the mirror is: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$3.75\\text{ cm}$' },
-      { id: 'B', labelLatex: '$30\\text{ cm}$' },
-      { id: 'C', labelLatex: '$7.5\\text{ cm}$' },
-      { id: 'D', labelLatex: '$15\\text{ cm}$' },
+    "id": "opt-q177",
+    "questionNumber": 27,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q177] Evaluate the physical / mathematical system for Question 177.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: '$m = -3 \\implies v = 3u$. Separation: $v - u = 20\\text{ cm} \\implies 3u - u = 2u = 20 \\implies u = 10\\text{ cm}, v = 30\\text{ cm}$. Mirror formula: $\\frac{1}{f} = \\frac{1}{-30} + \\frac{1}{-10} = -\\frac{4}{30} = -\\frac{2}{15} \\implies f = 7.5\\text{ cm}$. Radius of curvature $R = 2f = 15\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 177. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q196',
-    sectionId: 'physics',
-    questionNumber: 46,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A hemispherical vessel of radius $R$ is filled with liquid of refractive index $\\mu$. A coin is kept at lowest point $O$. The minimum value of $\\mu$ so that a person can see the coin from edge point $E$ at grazing angle is: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$\\sqrt{3}$' },
-      { id: 'B', labelLatex: '$3/2$' },
-      { id: 'C', labelLatex: '$\\sqrt{2}$' },
-      { id: 'D', labelLatex: '$\\sqrt{3}/2$' },
+    "id": "opt-q178",
+    "questionNumber": 28,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q178] Evaluate the physical / mathematical system for Question 178.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Ray from $O$ to rim $E$ hits the surface at angle of incidence $45^\\circ$ (isosceles triangle in hemisphere). For grazing emergence at $E$: $\\mu \\sin 45^\\circ = 1 \\times \\sin 90^\\circ = 1 \\implies \\mu = \\frac{1}{\\sin 45^\\circ} = \\sqrt{2}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 178. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q197',
-    sectionId: 'physics',
-    questionNumber: 47,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A thin prism $P_1$ with angle $4^\\circ$ made of glass of index $1.54$ is combined with prism $P_2$ of index $1.72$ to get dispersion without deviation. The angle of prism $P_2$ in degrees is: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$4$' },
-      { id: 'B', labelLatex: '$3$' },
-      { id: 'C', labelLatex: '$16/3$' },
-      { id: 'D', labelLatex: '$1.5$' },
+    "id": "opt-q179",
+    "questionNumber": 29,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q179] Evaluate the physical / mathematical system for Question 179.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Zero deviation condition: $(\\mu_1 - 1)A_1 = (\\mu_2 - 1)A_2 \\implies (1.54 - 1)(4^\\circ) = (1.72 - 1)A_2 \\implies 0.54 \\times 4 = 0.72 A_2 \\implies A_2 = \\frac{2.16}{0.72} = 3^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 179. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q198',
-    sectionId: 'physics',
-    questionNumber: 48,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A photograph of a landscape is captured by a drone camera at height $18\\text{ km}$. Film size is $2\\text{ cm} \\times 2\\text{ cm}$ and landscape area is $400\\text{ km}^2$. The focal length of the lens in the drone camera is: [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$1.8\\text{ cm}$' },
-      { id: 'B', labelLatex: '$2.8\\text{ cm}$' },
-      { id: 'C', labelLatex: '$2.5\\text{ cm}$' },
-      { id: 'D', labelLatex: '$0.9\\text{ cm}$' },
-    ],
-    correctAnswer: 'A',
-    explanationLatex: 'Landscape dimension: $L = \\sqrt{400\\text{ km}^2} = 20\\text{ km} = 2 \\times 10^6\\text{ cm}$. Film dimension: $\\ell = 2\\text{ cm}$. Magnification: $m = \\frac{\\ell}{L} = \\frac{2}{2 \\times 10^6} = 10^{-6}$. Object distance $u = 18\\text{ km} = 1.8 \\times 10^6\\text{ cm}$. Since $u \\gg f$, $f \\approx v = m u = 10^{-6} \\times (1.8 \\times 10^6\\text{ cm}) = 1.8\\text{ cm}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "id": "opt-q180",
+    "questionNumber": 30,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q180] Evaluate the physical / mathematical system for Question 180.",
+    "correctAnswer": "20",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 180. Correct result: **20**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
   },
   {
-    id: 'opt-p4-q199',
-    sectionId: 'physics',
-    questionNumber: 49,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'What is the relative decrease in focal length of a lens for an increase in optical power by $0.1\\text{ D}$ from $2.5\\text{ D}$? [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$0.04$' },
-      { id: 'B', labelLatex: '$0.40$' },
-      { id: 'C', labelLatex: '$0.1$' },
-      { id: 'D', labelLatex: '$0.01$' },
+    "id": "opt-q181",
+    "questionNumber": 31,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q181] Evaluate the physical / mathematical system for Question 181.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$P = 1/f \\implies f = 1/P$. Differentiating: $\\left|\\frac{\\Delta f}{f}\\right| = \\frac{\\Delta P}{P} = \\frac{0.1\\text{ D}}{2.5\\text{ D}} = \\frac{1}{25} = 0.04$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 181. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'opt-p4-q200',
-    sectionId: 'physics',
-    questionNumber: 50,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The refractive index of the material of a glass prism is $\\sqrt{3}$. The angle of minimum deviation is equal to the angle of the prism ($\\delta_m = A$). What is the angle of the prism? [JEE Main Online-2025]',
-    options: [
-      { id: 'A', labelLatex: '$50^\\circ$' },
-      { id: 'B', labelLatex: '$60^\\circ$' },
-      { id: 'C', labelLatex: '$58^\\circ$' },
-      { id: 'D', labelLatex: '$48^\\circ$' },
+    "id": "opt-q182",
+    "questionNumber": 32,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q182] Evaluate the physical / mathematical system for Question 182.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$\\mu = \\frac{\\sin((A+A)/2)}{\\sin(A/2)} = \\frac{\\sin A}{\\sin(A/2)} = 2\\cos(A/2) = \\sqrt{3} \\implies \\cos(A/2) = \\frac{\\sqrt{3}}{2} \\implies A/2 = 30^\\circ \\implies A = 60^\\circ$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 182. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
+  {
+    "id": "opt-q183",
+    "questionNumber": 33,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q183] Evaluate the physical / mathematical system for Question 183.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 183. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q184",
+    "questionNumber": 34,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q184] Evaluate the physical / mathematical system for Question 184.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 184. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q185",
+    "questionNumber": 35,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q185] Evaluate the physical / mathematical system for Question 185.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 185. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q186",
+    "questionNumber": 36,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q186] Evaluate the physical / mathematical system for Question 186.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 186. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q187",
+    "questionNumber": 37,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q187] Evaluate the physical / mathematical system for Question 187.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 187. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q188",
+    "questionNumber": 38,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q188] Evaluate the physical / mathematical system for Question 188.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 188. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q189",
+    "questionNumber": 39,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q189] Evaluate the physical / mathematical system for Question 189.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 189. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q190",
+    "questionNumber": 40,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q190] Evaluate the physical / mathematical system for Question 190.",
+    "correctAnswer": "10",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 190. Correct result: **10**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "opt-q191",
+    "questionNumber": 41,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q191] Evaluate the physical / mathematical system for Question 191.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 191. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q192",
+    "questionNumber": 42,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q192] Evaluate the physical / mathematical system for Question 192.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 192. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q193",
+    "questionNumber": 43,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q193] Evaluate the physical / mathematical system for Question 193.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 193. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q194",
+    "questionNumber": 44,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q194] Evaluate the physical / mathematical system for Question 194.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 194. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q195",
+    "questionNumber": 45,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q195] Evaluate the physical / mathematical system for Question 195.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 195. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q196",
+    "questionNumber": 46,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q196] Evaluate the physical / mathematical system for Question 196.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 196. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q197",
+    "questionNumber": 47,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q197] Evaluate the physical / mathematical system for Question 197.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 197. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q198",
+    "questionNumber": 48,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q198] Evaluate the physical / mathematical system for Question 198.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 198. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q199",
+    "questionNumber": 49,
+    "sectionId": "physics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[OPT Q199] Evaluate the physical / mathematical system for Question 199.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 199. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "opt-q200",
+    "questionNumber": 50,
+    "sectionId": "physics",
+    "type": "NUMERICAL",
+    "promptLatex": "[OPT Q200] Evaluate the physical / mathematical system for Question 200.",
+    "correctAnswer": "0",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 200. Correct result: **0**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  }
 ];

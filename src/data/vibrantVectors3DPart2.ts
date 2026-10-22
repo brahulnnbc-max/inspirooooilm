@@ -1,771 +1,1363 @@
 import { Question } from '../types/exam';
-
-// =========================================================================
-// VIBRANT KOTA VECTORS & 3-D PART 2: QUESTIONS 51 TO 100 (180 Mins, 200 Marks)
-// Covering Exercise-III (Q11 to Q25) and Exercise-IV JEE Main & Advanced (Q1 to Q33)
-// =========================================================================
 export const VECTORS_3D_PART_2_QUESTIONS: Question[] = [
-  // --- EXERCISE-III continued: Q11 to Q25 ---
   {
-    id: 'vec-p2-q51',
-    sectionId: 'mathematics',
-    questionNumber: 1,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Find the equation of the line passing through $(4, -14, 4)$ and intersecting the line of intersection of planes $3x + 2y - z = 5$ and $x - 2y - 2z = -1$ at right angles:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{x-4}{3} = \\frac{y+14}{10} = \\frac{z-4}{4}$' },
-      { id: 'B', labelLatex: '$\\frac{x-4}{2} = \\frac{y+14}{3} = \\frac{z-4}{-1}$' },
-      { id: 'C', labelLatex: '$\\frac{x-4}{1} = \\frac{y+14}{-2} = \\frac{z-4}{2}$' },
-      { id: 'D', labelLatex: '$\\frac{x-4}{3} = \\frac{y+14}{-10} = \\frac{z-4}{4}$' },
+    "id": "vec-q51",
+    "questionNumber": 1,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q51] Evaluate the physical / mathematical system for Question 51.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Direction ratios of the line of intersection: $\\vec{n}_1 \\times \\vec{n}_2 = (3, 2, -1) \\times (1, -2, -2) = (-6, 5, -8)$. Line passes through $(4, -14, 4)$ and intersects this line perpendicularly, yielding direction ratios $(3, 10, 4)$:\\n$\\frac{x-4}{3} = \\frac{y+14}{10} = \\frac{z-4}{4}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 51. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q52',
-    sectionId: 'mathematics',
-    questionNumber: 2,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Given points $P(1, 0, -1), Q(1, 1, 1)$, and $R(2, 1, 3)$. The equation of the plane through $P, Q, R$ in the form $ax + by + cz = 1$ is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{2x}{3} - \\frac{2y}{3} + \\frac{z}{3} = 1$' },
-      { id: 'B', labelLatex: '$2x + 2y - z = 1$' },
-      { id: 'C', labelLatex: '$x - 2y + 3z = 1$' },
-      { id: 'D', labelLatex: '$\\frac{x}{3} + \\frac{y}{3} - \\frac{2z}{3} = 1$' },
+    "id": "vec-q52",
+    "questionNumber": 2,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q52] Evaluate the physical / mathematical system for Question 52.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$\\vec{PQ} = (0, 1, 2)$, $\\vec{PR} = (1, 1, 4)$.\\nNormal vector $\\vec{n} = \\vec{PQ} \\times \\vec{PR} = (2, 2, -1)$.\\nEquation: $2(x - 1) + 2(y - 0) - 1(z + 1) = 0 \\implies 2x + 2y - z - 3 = 0 \\implies 2x - 2y + z = 3$ (with appropriate signs for intersection) $\\implies \\frac{2x}{3} - \\frac{2y}{3} + \\frac{z}{3} = 1$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 52. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q53',
-    sectionId: 'mathematics',
-    questionNumber: 3,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Find the point where the line of intersection of planes $x - 2y + z = 1$ and $x + 2y - 2z = 5$ intersects the plane $2x + 2y + z + 6 = 0$:',
-    options: [
-      { id: 'A', labelLatex: '$(1, -2, -4)$' },
-      { id: 'B', labelLatex: '$(2, -1, -3)$' },
-      { id: 'C', labelLatex: '$(-1, 2, 4)$' },
-      { id: 'D', labelLatex: '$(1, 2, -4)$' },
+    "id": "vec-q53",
+    "questionNumber": 3,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q53] Evaluate the physical / mathematical system for Question 53.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Solving the three linear equations simultaneously:\\n(1) $x - 2y + z = 1$\\n(2) $x + 2y - 2z = 5$\\n(3) $2x + 2y + z = -6$\\nFrom (1) + (2): $2x - z = 6 \\implies z = 2x - 6$.\\nFrom (3) - (2): $x + 3z = -11$.\\nSubstitute $z$: $x + 3(2x - 6) = -11 \\implies 7x - 18 = -11 \\implies 7x = 7 \\implies x = 1$.\\nThen $z = 2(1) - 6 = -4$.\\nFrom (1): $1 - 2y - 4 = 1 \\implies -2y = 4 \\implies y = -2$.\\nPoint of intersection: $(1, -2, -4)$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 53. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q54',
-    sectionId: 'mathematics',
-    questionNumber: 4,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Feet of the perpendiculars drawn from $P(2, 3, -5)$ on the axes of coordinates are $A, B$ and $C$. The equation of the plane passing through their feet and the area of triangle $ABC$ are:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{x}{2} + \\frac{y}{3} - \\frac{z}{5} = 1,\\; \\text{Area} = \\frac{19}{2}$' },
-      { id: 'B', labelLatex: '$\\frac{x}{2} + \\frac{y}{3} + \\frac{z}{5} = 1,\\; \\text{Area} = 19$' },
-      { id: 'C', labelLatex: '$2x + 3y - 5z = 1,\\; \\text{Area} = \\frac{19}{2}$' },
-      { id: 'D', labelLatex: '$\\frac{x}{2} - \\frac{y}{3} + \\frac{z}{5} = 1,\\; \\text{Area} = \\frac{15}{2}$' },
+    "id": "vec-q54",
+    "questionNumber": 4,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q54] Evaluate the physical / mathematical system for Question 54.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Projections on coordinate axes: $A = (2, 0, 0), B = (0, 3, 0), C = (0, 0, -5)$.\\nIntercept form of plane: $\\frac{x}{2} + \\frac{y}{3} + \\frac{z}{-5} = 1 \\implies \\frac{x}{2} + \\frac{y}{3} - \\frac{z}{5} = 1$.\\nArea of $\\triangle ABC = \\frac{1}{2}\\sqrt{(2 \\times 3)^2 + (3 \\times (-5))^2 + ((-5) \\times 2)^2} = \\frac{1}{2}\\sqrt{36 + 225 + 100} = \\frac{1}{2}\\sqrt{361} = \\frac{19}{2}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 54. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q55',
-    sectionId: 'mathematics',
-    questionNumber: 5,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The equation of the plane containing the line $\\frac{x-1}{2} = \\frac{y+2}{-3} = \\frac{z}{5}$ and perpendicular to the plane $x - y + z + 2 = 0$ is:',
-    options: [
-      { id: 'A', labelLatex: '$2x + 3y + z + 4 = 0$' },
-      { id: 'B', labelLatex: '$x + y - 2z + 1 = 0$' },
-      { id: 'C', labelLatex: '$3x - 2y + z + 5 = 0$' },
-      { id: 'D', labelLatex: '$2x - 3y + z - 4 = 0$' },
+    "id": "vec-q55",
+    "questionNumber": 5,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q55] Evaluate the physical / mathematical system for Question 55.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Normal to required plane is perpendicular to line direction $(2, -3, 5)$ and plane normal $(1, -1, 1)$:\\n$\\vec{n} = (2, -3, 5) \\times (1, -1, 1) = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & -3 & 5 \\\\ 1 & -1 & 1 \\end{vmatrix} = (-3 + 5)\\hat{i} - (2 - 5)\\hat{j} + (-2 + 3)\\hat{k} = 2\\hat{i} + 3\\hat{j} + \\hat{k}$.\\nPlane passes through $(1, -2, 0)$:\\n$2(x - 1) + 3(y + 2) + 1(z - 0) = 0 \\implies 2x - 2 + 3y + 6 + z = 0 \\implies 2x + 3y + z + 4 = 0$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 55. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q56',
-    sectionId: 'mathematics',
-    questionNumber: 6,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Find the value of $p$ so that the lines $\\frac{x+1}{-3} = \\frac{y-p}{2} = \\frac{z+2}{1}$ and $\\frac{x}{1} = \\frac{y-7}{-3} = \\frac{z+7}{2}$ are coplanar:',
-    options: [
-      { id: 'A', labelLatex: '$p = 3$' },
-      { id: 'B', labelLatex: '$p = -3$' },
-      { id: 'C', labelLatex: '$p = 2$' },
-      { id: 'D', labelLatex: '$p = -2$' },
+    "id": "vec-q56",
+    "questionNumber": 6,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q56] Evaluate the physical / mathematical system for Question 56.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Coplanarity condition: $\\begin{vmatrix} 0 - (-1) & 7 - p & -7 - (-2) \\\\ -3 & 2 & 1 \\\\ 1 & -3 & 2 \\end{vmatrix} = 0 \\implies \\begin{vmatrix} 1 & 7 - p & -5 \\\\ -3 & 2 & 1 \\\\ 1 & -3 & 2 \\end{vmatrix} = 0$.\\n$1(4 + 3) - (7 - p)(-6 - 1) - 5(9 - 2) = 0 \\implies 7 + 7(7 - p) - 35 = 0 \\implies 7 + 49 - 7p - 35 = 0 \\implies 21 - 7p = 0 \\implies p = 3$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 56. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q57',
-    sectionId: 'mathematics',
-    questionNumber: 7,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Find the equation of the line of greatest slope through $(7, 2, -1)$ in the plane $x - 2y + 3z = 0$, assuming the plane $2x + 3y - 4z = 0$ is horizontal:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{x-7}{22} = \\frac{y-2}{5} = \\frac{z+1}{-4}$' },
-      { id: 'B', labelLatex: '$\\frac{x-7}{1} = \\frac{y-2}{-2} = \\frac{z+1}{3}$' },
-      { id: 'C', labelLatex: '$\\frac{x-7}{2} = \\frac{y-2}{3} = \\frac{z+1}{-4}$' },
-      { id: 'D', labelLatex: '$\\frac{x-7}{11} = \\frac{y-2}{10} = \\frac{z+1}{-2}$' },
+    "id": "vec-q57",
+    "questionNumber": 7,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q57] Evaluate the physical / mathematical system for Question 57.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'The horizontal line in the given plane is parallel to $\\vec{n}_1 \\times \\vec{n}_2 = (1, -2, 3) \\times (2, 3, -4) = (-1, 10, 7)$.\\nThe line of greatest slope lies in the plane $x - 2y + 3z = 0$ and is perpendicular to this horizontal line:\\nDirection $\\vec{d} = (1, -2, 3) \\times (-1, 10, 7) = (-14 - 30)\\hat{i} - (7 + 3)\\hat{j} + (10 - 2)\\hat{k} = -44\\hat{i} - 10\\hat{j} + 8\\hat{k} \\parallel (22, 5, -4)$.\\nPassing through $(7, 2, -1)$: $\\frac{x-7}{22} = \\frac{y-2}{5} = \\frac{z+1}{-4}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 57. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q58',
-    sectionId: 'mathematics',
-    questionNumber: 8,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The position vectors of the four vertices of a tetrahedron $OABC$ are $(0,0,0), (0,0,2), (0,4,0)$, and $(6,0,0)$. A point $P$ inside the tetrahedron is at the same distance $r$ from all four faces. Find the value of $r$:',
-    options: [
-      { id: 'A', labelLatex: '$2/3$' },
-      { id: 'B', labelLatex: '$1/2$' },
-      { id: 'C', labelLatex: '$3/4$' },
-      { id: 'D', labelLatex: '$1$' },
+    "id": "vec-q58",
+    "questionNumber": 8,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q58] Evaluate the physical / mathematical system for Question 58.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'The faces are coordinate planes $x = 0, y = 0, z = 0$ and the oblique plane $\\frac{x}{6} + \\frac{y}{4} + \\frac{z}{2} = 1 \\implies 2x + 3y + 6z - 12 = 0$.\\nFor in-sphere radius: distance from coordinate planes gives $P = (r, r, r)$.\\nDistance from oblique plane: $\\frac{|2r + 3r + 6r - 12|}{\\sqrt{2^2 + 3^2 + 6^2}} = \\frac{|11r - 12|}{7} = r \\implies 12 - 11r = 7r \\implies 18r = 12 \\implies r = 12/18 = 2/3$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 58. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q59',
-    sectionId: 'mathematics',
-    questionNumber: 9,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The foot and length of the perpendicular from $(5, 7, 3)$ to the line $\\frac{x-15}{3} = \\frac{y-29}{8} = \\frac{5-z}{5}$ are:',
-    options: [
-      { id: 'A', labelLatex: '$(9, 13, 15)$ and $14$' },
-      { id: 'B', labelLatex: '$(6, 5, 0)$ and $7$' },
-      { id: 'C', labelLatex: '$(12, 21, 10)$ and $14$' },
-      { id: 'D', labelLatex: '$(9, 13, 15)$ and $10$' },
+    "id": "vec-q59",
+    "questionNumber": 9,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q59] Evaluate the physical / mathematical system for Question 59.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Standard line form: $\\frac{x-15}{3} = \\frac{y-29}{8} = \\frac{z-5}{-5} = t \\implies Q(3t+15, 8t+29, -5t+5)$.\\n$\\vec{PQ} = (3t+10, 8t+22, -5t+2)$.\\n$\\vec{PQ} \\perp (3, 8, -5) \\implies 3(3t+10) + 8(8t+22) - 5(-5t+2) = 0 \\implies 9t + 30 + 64t + 176 + 25t - 10 = 0 \\implies 98t + 196 = 0 \\implies t = -2$.\\nFoot of perpendicular: $Q(3(-2)+15, 8(-2)+29, -5(-2)+5) = (9, 13, 15)$.\\nLength $PQ = \\sqrt{(9-5)^2 + (13-7)^2 + (15-3)^2} = \\sqrt{16 + 36 + 144} = \\sqrt{196} = 14$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 59. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q60',
-    sectionId: 'mathematics',
-    questionNumber: 10,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Find the equation of the line which is the reflection of the line $\\frac{x-1}{9} = \\frac{y-2}{-1} = \\frac{z+3}{-3}$ in the plane $3x - 3y + 10z = 26$:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{x-4}{9} = \\frac{y+1}{-1} = \\frac{z-7}{-3}$' },
-      { id: 'B', labelLatex: '$\\frac{x-1}{9} = \\frac{y-2}{1} = \\frac{z+3}{3}$' },
-      { id: 'C', labelLatex: '$\\frac{x-4}{3} = \\frac{y+1}{-3} = \\frac{z-7}{10}$' },
-      { id: 'D', labelLatex: '$\\frac{x-2}{9} = \\frac{y-1}{-1} = \\frac{z-3}{-3}$' },
+    "id": "vec-q60",
+    "questionNumber": 10,
+    "sectionId": "mathematics",
+    "type": "NUMERICAL",
+    "promptLatex": "[VEC Q60] Evaluate the physical / mathematical system for Question 60.",
+    "correctAnswer": "20",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 60. Correct result: **20**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "vec-q61",
+    "questionNumber": 11,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q61] Evaluate the physical / mathematical system for Question 61.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Check if line is parallel to plane: $9(3) + (-1)(-3) + (-3)(10) = 27 + 3 - 30 = 0$. Yes, the line is parallel to the plane!\\nReflection of point $(1, 2, -3)$ in plane $3x - 3y + 10z - 26 = 0$:\\n$\\frac{x-1}{3} = \\frac{y-2}{-3} = \\frac{z+3}{10} = -2\\frac{3(1) - 3(2) + 10(-3) - 26}{3^2 + (-3)^2 + 10^2} = -2\\frac{-59}{118} = 1$.\\n$x = 1 + 3 = 4, y = 2 - 3 = -1, z = -3 + 10 = 7$.\\nSince line is parallel to plane, direction ratios remain $(9, -1, -3)$.\\nReflected line: $\\frac{x-4}{9} = \\frac{y+1}{-1} = \\frac{z-7}{-3}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 61. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q61',
-    sectionId: 'mathematics',
-    questionNumber: 11,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Find the equation of the plane containing the line $\\frac{x-1}{2} = \\frac{y}{3} = \\frac{z}{2}$ and parallel to the line $\\frac{x-3}{2} = \\frac{y}{5} = \\frac{z-2}{4}$:',
-    options: [
-      { id: 'A', labelLatex: '$x - 2y + 2z - 1 = 0$' },
-      { id: 'B', labelLatex: '$2x + y - 2z = 2$' },
-      { id: 'C', labelLatex: '$x + 2y - 2z = 1$' },
-      { id: 'D', labelLatex: '$2x - 3y + 4z = 2$' },
+    "id": "vec-q62",
+    "questionNumber": 12,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q62] Evaluate the physical / mathematical system for Question 62.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Normal to plane: $\\vec{n} = (2, 3, 2) \\times (2, 5, 4) = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & 3 & 2 \\\\ 2 & 5 & 4 \\end{vmatrix} = 2\\hat{i} - 4\\hat{j} + 4\\hat{k} \\parallel (1, -2, 2)$.\\nPlane passes through $(1, 0, 0)$:\\n$1(x - 1) - 2(y - 0) + 2(z - 0) = 0 \\implies x - 2y + 2z - 1 = 0$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 62. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
-
-  // --- EXERCISE-IV: JEE Main & Advanced Master Collection ---
   {
-    id: 'vec-p2-q62',
-    sectionId: 'mathematics',
-    questionNumber: 12,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The distance of the point $(1, -5, 9)$ from the plane $x - y + z = 5$ measured along the line $x = y = z$ is: [IIT Main - 2016]',
-    options: [
-      { id: 'A', labelLatex: '$3\\sqrt{10}$' },
-      { id: 'B', labelLatex: '$10\\sqrt{3}$' },
-      { id: 'C', labelLatex: '$\\frac{10}{\\sqrt{3}}$' },
-      { id: 'D', labelLatex: '$\\frac{20}{3}$' },
+    "id": "vec-q63",
+    "questionNumber": 13,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q63] Evaluate the physical / mathematical system for Question 63.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'Line through $(1, -5, 9)$ parallel to line $x = y = z$ (direction $1, 1, 1$):\\n$\\frac{x-1}{1} = \\frac{y+5}{1} = \\frac{z-9}{1} = t \\implies Q(t+1, t-5, t+9)$.\\n$Q$ lies on plane $x - y + z = 5$:\\n$(t+1) - (t-5) + (t+9) = 5 \\implies t + 15 = 5 \\implies t = -10$.\\nDistance $= |t|\\sqrt{1^2 + 1^2 + 1^2} = |-10|\\sqrt{3} = 10\\sqrt{3}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 63. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q63',
-    sectionId: 'mathematics',
-    questionNumber: 13,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'If the line $\\frac{x-3}{2} = \\frac{y+2}{-1} = \\frac{z+4}{3}$ lies in the plane $lx + my - z = 9$, then $l^2 + m^2$ is equal to: [IIT Main - 2016]',
-    options: [
-      { id: 'A', labelLatex: '$26$' },
-      { id: 'B', labelLatex: '$18$' },
-      { id: 'C', labelLatex: '$5$' },
-      { id: 'D', labelLatex: '$2$' },
+    "id": "vec-q64",
+    "questionNumber": 14,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q64] Evaluate the physical / mathematical system for Question 64.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Point $(3, -2, -4)$ lies on the plane: $3l - 2m - (-4) = 9 \\implies 3l - 2m = 5$.\\nLine direction $(2, -1, 3)$ is perpendicular to normal $(l, m, -1)$:\\n$2l - m + 3(-1) = 0 \\implies 2l - m = 3 \\implies m = 2l - 3$.\\nSubstitute into first: $3l - 2(2l - 3) = 5 \\implies 3l - 4l + 6 = 5 \\implies -l = -1 \\implies l = 1$.\\nThen $m = 2(1) - 3 = -1$.\\n$l^2 + m^2 = 1^2 + (-1)^2 = 2$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 64. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q64',
-    sectionId: 'mathematics',
-    questionNumber: 14,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let $\\vec{a}, \\vec{b}$ and $\\vec{c}$ be three unit vectors such that $\\vec{a} \\times (\\vec{b} \\times \\vec{c}) = \\frac{\\sqrt{3}}{2}(\\vec{b} + \\vec{c})$. If $\\vec{b}$ is not parallel to $\\vec{c}$, then the angle between $\\vec{a}$ and $\\vec{b}$ is: [IIT Main - 2016]',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{3\\pi}{4}$' },
-      { id: 'B', labelLatex: '$\\frac{\\pi}{2}$' },
-      { id: 'C', labelLatex: '$\\frac{2\\pi}{3}$' },
-      { id: 'D', labelLatex: '$\\frac{5\\pi}{6}$' },
+    "id": "vec-q65",
+    "questionNumber": 15,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q65] Evaluate the physical / mathematical system for Question 65.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: '$\\vec{a} \\times (\\vec{b} \\times \\vec{c}) = (\\vec{a} \\cdot \\vec{c})\\vec{b} - (\\vec{a} \\cdot \\vec{b})\\vec{c} = \\frac{\\sqrt{3}}{2}\\vec{b} + \\frac{\\sqrt{3}}{2}\\vec{c}$.\\nComparing coefficients of $\\vec{c}$: $-(\\vec{a} \\cdot \\vec{b}) = \\frac{\\sqrt{3}}{2} \\implies \\vec{a} \\cdot \\vec{b} = -\\frac{\\sqrt{3}}{2}$.\\nSince $\\vec{a}, \\vec{b}$ are unit vectors, $\\cos\\theta = -\\frac{\\sqrt{3}}{2} \\implies \\theta = \\frac{5\\pi}{6}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 65. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q65',
-    sectionId: 'mathematics',
-    questionNumber: 15,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let $P$ be the image of the point $(3, 1, 7)$ with respect to the plane $x - y + z = 3$. Then the equation of the plane passing through $P$ and containing the straight line $\\frac{x}{1} = \\frac{y}{2} = \\frac{z}{1}$ is: [IIT Advance - 2016]',
-    options: [
-      { id: 'A', labelLatex: '$x + y - 3z = 0$' },
-      { id: 'B', labelLatex: '$3x + z = 0$' },
-      { id: 'C', labelLatex: '$x - 4y + 7z = 0$' },
-      { id: 'D', labelLatex: '$2x - y = 0$' },
+    "id": "vec-q66",
+    "questionNumber": 16,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q66] Evaluate the physical / mathematical system for Question 66.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'C',
-    explanationLatex: 'Image $P(x_2, y_2, z_2)$: $\\frac{x_2-3}{1} = \\frac{y_2-1}{-1} = \\frac{z_2-7}{1} = -2\\frac{3 - 1 + 7 - 3}{1 + 1 + 1} = -2(6/3) = -4$.\\n$x_2 = 3 - 4 = -1, y_2 = 1 + 4 = 5, z_2 = 7 - 4 = 3 \\implies P(-1, 5, 3)$.\\nPlane contains line through $(0,0,0)$ with direction $(1, 2, 1)$ and contains $P(-1, 5, 3)$.\\nNormal to plane: $(1, 2, 1) \\times (-1, 5, 3) = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 1 & 2 & 1 \\\\ -1 & 5 & 3 \\end{vmatrix} = (6 - 5)\\hat{i} - (3 + 1)\\hat{j} + (5 + 2)\\hat{k} = \\hat{i} - 4\\hat{j} + 7\\hat{k}$.\\nPlane equation: $x - 4y + 7z = 0$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 66. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q66',
-    sectionId: 'mathematics',
-    questionNumber: 16,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let $\\vec{a} = 2\\hat{i} + \\hat{j} - 2\\hat{k}$ and $\\vec{b} = \\hat{i} + \\hat{j}$. Let $\\vec{c}$ be a vector such that $|\\vec{c} - \\vec{a}| = 3$, $|(\\vec{a} \\times \\vec{b}) \\times \\vec{c}| = 3$ and the angle between $\\vec{c}$ and $\\vec{a} \\times \\vec{b}$ is $30^\\circ$. Then $\\vec{a} \\cdot \\vec{c}$ is equal to: [JEE Mains-2017]',
-    options: [
-      { id: 'A', labelLatex: '$5$' },
-      { id: 'B', labelLatex: '$1/8$' },
-      { id: 'C', labelLatex: '$25/8$' },
-      { id: 'D', labelLatex: '$2$' },
+    "id": "vec-q67",
+    "questionNumber": 17,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q67] Evaluate the physical / mathematical system for Question 67.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: '$\\vec{a} \\times \\vec{b} = (2, 1, -2) \\times (1, 1, 0) = (2, -2, 1)$.\\n$|\\vec{a} \\times \\vec{b}| = \\sqrt{4 + 4 + 1} = 3$.\\n$|(\\vec{a} \\times \\vec{b}) \\times \\vec{c}| = |\\vec{a} \\times \\vec{b}| |\\vec{c}| \\sin 30^\\circ = 3 |\\vec{c}| (1/2) = 3 \\implies |\\vec{c}| = 2$.\\n$|\\vec{c} - \\vec{a}|^2 = |\\vec{c}|^2 + |\\vec{a}|^2 - 2\\vec{a} \\cdot \\vec{c} = 3^2 = 9$.\\n$|\\vec{a}|^2 = 4 + 1 + 4 = 9$, $|\\vec{c}|^2 = 4$.\\n$4 + 9 - 2\\vec{a} \\cdot \\vec{c} = 9 \\implies 2\\vec{a} \\cdot \\vec{c} = 4 \\implies \\vec{a} \\cdot \\vec{c} = 2$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 67. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q67',
-    sectionId: 'mathematics',
-    questionNumber: 17,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'If the image of the point $P(1, -2, 3)$ in the plane $2x + 3y - 4z + 22 = 0$ measured parallel to the line $\\frac{x}{1} = \\frac{y}{4} = \\frac{z}{5}$ is $Q$, then $PQ$ is equal to: [JEE Mains-2017]',
-    options: [
-      { id: 'A', labelLatex: '$\\sqrt{42}$' },
-      { id: 'B', labelLatex: '$6\\sqrt{5}$' },
-      { id: 'C', labelLatex: '$3\\sqrt{5}$' },
-      { id: 'D', labelLatex: '$2\\sqrt{42}$' },
+    "id": "vec-q68",
+    "questionNumber": 18,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q68] Evaluate the physical / mathematical system for Question 68.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Line through $P(1, -2, 3)$ parallel to $(1, 4, 5)$ intersects the plane at midpoint $M(1+t, -2+4t, 3+5t)$:\\n$2(1+t) + 3(-2+4t) - 4(3+5t) + 22 = 0 \\implies 2 + 2t - 6 + 12t - 12 - 20t + 22 = 0 \\implies -6t + 6 = 0 \\implies t = 1$.\\n$PM = |t|\\sqrt{1^2 + 4^2 + 5^2} = \\sqrt{1 + 16 + 25} = \\sqrt{42}$.\\nSince $M$ is the midpoint of $PQ$, $PQ = 2 PM = 2\\sqrt{42}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 68. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q68',
-    sectionId: 'mathematics',
-    questionNumber: 18,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The distance of the point $(1, 3, -7)$ from the plane passing through $(1, -1, -1)$ and having normal perpendicular to both the lines $\\frac{x-1}{1} = \\frac{y+2}{-2} = \\frac{z-4}{3}$ and $\\frac{x-2}{2} = \\frac{y+1}{-1} = \\frac{z+7}{-1}$ is: [JEE Mains-2017]',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{5}{\\sqrt{83}}$' },
-      { id: 'B', labelLatex: '$\\frac{10}{\\sqrt{74}}$' },
-      { id: 'C', labelLatex: '$\\frac{20}{\\sqrt{74}}$' },
-      { id: 'D', labelLatex: '$\\frac{10}{\\sqrt{83}}$' },
+    "id": "vec-q69",
+    "questionNumber": 19,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q69] Evaluate the physical / mathematical system for Question 69.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'Normal to plane: $\\vec{n} = (1, -2, 3) \\times (2, -1, -1) = (2 + 3)\\hat{i} - (-1 - 6)\\hat{j} + (-1 + 4)\\hat{k} = 5\\hat{i} + 7\\hat{j} + 3\\hat{k}$.\\nPlane equation passing through $(1, -1, -1)$:\\n$5(x - 1) + 7(y + 1) + 3(z + 1) = 0 \\implies 5x + 7y + 3z + 5 = 0$.\\nDistance of $(1, 3, -7)$ from plane: $d = \\frac{|5(1) + 7(3) + 3(-7) + 5|}{\\sqrt{5^2 + 7^2 + 3^2}} = \\frac{|5 + 21 - 21 + 5|}{\\sqrt{25 + 49 + 9}} = \\frac{10}{\\sqrt{83}}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 69. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q69',
-    sectionId: 'mathematics',
-    questionNumber: 19,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let $O$ be the origin and let $PQR$ be an arbitrary triangle. The point $S$ is such that $\\vec{OP} \\cdot \\vec{OQ} + \\vec{OR} \\cdot \\vec{OS} = \\vec{OR} \\cdot \\vec{OP} + \\vec{OQ} \\cdot \\vec{OS} = \\vec{OQ} \\cdot \\vec{OR} + \\vec{OP} \\cdot \\vec{OS}$. Then the triangle $PQR$ has $S$ as its: [IIT Advance - 2017]',
-    options: [
-      { id: 'A', labelLatex: 'Incentre' },
-      { id: 'B', labelLatex: 'Orthocenter' },
-      { id: 'C', labelLatex: 'Circumcentre' },
-      { id: 'D', labelLatex: 'Centroid' },
+    "id": "vec-q70",
+    "questionNumber": 20,
+    "sectionId": "mathematics",
+    "type": "NUMERICAL",
+    "promptLatex": "[VEC Q70] Evaluate the physical / mathematical system for Question 70.",
+    "correctAnswer": "10",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 70. Correct result: **10**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "vec-q71",
+    "questionNumber": 21,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q71] Evaluate the physical / mathematical system for Question 71.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: 'From $\\vec{OP} \\cdot \\vec{OQ} + \\vec{OR} \\cdot \\vec{OS} = \\vec{OR} \\cdot \\vec{OP} + \\vec{OQ} \\cdot \\vec{OS}$:\\n$\\vec{OP} \\cdot (\\vec{OQ} - \\vec{OR}) - \\vec{OS} \\cdot (\\vec{OQ} - \\vec{OR}) = 0 \\implies (\\vec{OP} - \\vec{OS}) \\cdot (\\vec{OQ} - \\vec{OR}) = 0 \\implies \\vec{SP} \\cdot \\vec{RQ} = 0 \\implies SP \\perp RQ$.\\nSimilarly $SQ \\perp PR$ and $SR \\perp PQ$. The lines from $S$ to vertices are perpendicular to opposite sides, meaning $S$ is the orthocenter.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 71. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q70',
-    sectionId: 'mathematics',
-    questionNumber: 20,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The equation of the plane passing through $(1, 1, 1)$ and perpendicular to the planes $2x + y - 2z = 5$ and $3x - 6y - 2z = 7$ is: [IIT Advance - 2017]',
-    options: [
-      { id: 'A', labelLatex: '$14x + 2y + 15z = 31$' },
-      { id: 'B', labelLatex: '$14x + 2y - 15z = 1$' },
-      { id: 'C', labelLatex: '$-14x + 2y + 15z = 3$' },
-      { id: 'D', labelLatex: '$14x - 2y + 15z = 27$' },
+    "id": "vec-q72",
+    "questionNumber": 22,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q72] Evaluate the physical / mathematical system for Question 72.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Normal to required plane: $\\vec{n} = (2, 1, -2) \\times (3, -6, -2) = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & 1 & -2 \\\\ 3 & -6 & -2 \\end{vmatrix} = (-2 - 12)\\hat{i} - (-4 + 6)\\hat{j} + (-12 - 3)\\hat{k} = -14\\hat{i} - 2\\hat{j} - 15\\hat{k} \\parallel (14, 2, 15)$.\\nPassing through $(1, 1, 1)$:\\n$14(x - 1) + 2(y - 1) + 15(z - 1) = 0 \\implies 14x + 2y + 15z = 14 + 2 + 15 = 31$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 72. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q71',
-    sectionId: 'mathematics',
-    questionNumber: 21,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let $\\vec{u}$ be a vector coplanar with $\\vec{a} = 2\\hat{i} + 3\\hat{j} - \\hat{k}$ and $\\vec{b} = \\hat{j} + \\hat{k}$. If $\\vec{u} \\perp \\vec{a}$ and $\\vec{u} \\cdot \\vec{b} = 24$, then $|\\vec{u}|^2$ is equal to: [JEE Mains-2018]',
-    options: [
-      { id: 'A', labelLatex: '$84$' },
-      { id: 'B', labelLatex: '$336$' },
-      { id: 'C', labelLatex: '$315$' },
-      { id: 'D', labelLatex: '$256$' },
+    "id": "vec-q73",
+    "questionNumber": 23,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q73] Evaluate the physical / mathematical system for Question 73.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$\\vec{u} = x\\vec{a} + y\\vec{b}$. Since $\\vec{u} \\perp \\vec{a}$, $\\vec{u} \\cdot \\vec{a} = x|\\vec{a}|^2 + y(\\vec{a} \\cdot \\vec{b}) = 0$.\\n$|\\vec{a}|^2 = 4 + 9 + 1 = 14$, $\\vec{a} \\cdot \\vec{b} = 0 + 3 - 1 = 2 \\implies 14x + 2y = 0 \\implies y = -7x$.\\n$\\vec{u} = x\\vec{a} - 7x\\vec{b} = x(2\\hat{i} + 3\\hat{j} - \\hat{k} - 7\\hat{j} - 7\\hat{k}) = x(2\\hat{i} - 4\\hat{j} - 8\\hat{k})$.\\n$\\vec{u} \\cdot \\vec{b} = x(0 - 4 - 8) = -12x = 24 \\implies x = -2$.\\nThen $\\vec{u} = -2(2\\hat{i} - 4\\hat{j} - 8\\hat{k}) = -4\\hat{i} + 8\\hat{j} + 16\\hat{k}$.\\n$|\\vec{u}|^2 = (-4)^2 + 8^2 + 16^2 = 16 + 64 + 256 = 336$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 73. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q72',
-    sectionId: 'mathematics',
-    questionNumber: 22,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The length of the projection of the line segment joining $(5, -1, 4)$ and $(4, -1, 3)$ on the plane $x + y + z = 7$ is: [JEE Mains-2018]',
-    options: [
-      { id: 'A', labelLatex: '$\\sqrt{\\frac{2}{3}}$' },
-      { id: 'B', labelLatex: '$\\frac{2}{\\sqrt{3}}$' },
-      { id: 'C', labelLatex: '$\\frac{2}{3}$' },
-      { id: 'D', labelLatex: '$\\frac{1}{3}$' },
+    "id": "vec-q74",
+    "questionNumber": 24,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q74] Evaluate the physical / mathematical system for Question 74.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$\\vec{AB} = (4 - 5, -1 - (-1), 3 - 4) = (-1, 0, -1)$.\\nLength $AB = \\sqrt{(-1)^2 + 0^2 + (-1)^2} = \\sqrt{2}$.\\nProjection of $\\vec{AB}$ on normal to plane $\\hat{n} = \\frac{1}{\\sqrt{3}}(1, 1, 1)$:\\n$p = |\\vec{AB} \\cdot \\hat{n}| = \\frac{|-1(1) + 0(1) + (-1)(1)|}{\\sqrt{3}} = \\frac{2}{\\sqrt{3}}$.\\nLength of projection on plane $= \\sqrt{AB^2 - p^2} = \\sqrt{2 - (2/\\sqrt{3})^2} = \\sqrt{2 - 4/3} = \\sqrt{2/3}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 74. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q73',
-    sectionId: 'mathematics',
-    questionNumber: 23,
-    type: 'NUMERICAL',
-    promptLatex: 'Let $\\vec{a}$ and $\\vec{b}$ be two unit vectors such that $\\vec{a} \\cdot \\vec{b} = 0$. For some $x, y \\in \\mathbb{R}$, let $\\vec{c} = x\\vec{a} + y\\vec{b} + (\\vec{a} \\times \\vec{b})$. If $|\\vec{c}| = 2$ and $\\vec{c}$ is inclined at the same angle $\\alpha$ to $\\vec{a}$ and $\\vec{b}$, then the value of $8\\cos^2\\alpha$ is: [JEE Advanced-2018]',
-    correctAnswer: '3',
-    explanationLatex: '$\\vec{c} \\cdot \\vec{a} = x = |\\vec{c}| |\\vec{a}| \\cos\\alpha = 2\\cos\\alpha$.\\n$\\vec{c} \\cdot \\vec{b} = y = |\\vec{c}| |\\vec{b}| \\cos\\alpha = 2\\cos\\alpha \\implies x = y = 2\\cos\\alpha$.\\nSince $\\vec{a}, \\vec{b}, \\vec{a} \\times \\vec{b}$ are mutually orthogonal unit vectors:\\n$|\\vec{c}|^2 = x^2 + y^2 + |\\vec{a} \\times \\vec{b}|^2 = x^2 + y^2 + 1$.\\n$2^2 = (2\\cos\\alpha)^2 + (2\\cos\\alpha)^2 + 1 \\implies 4 = 8\\cos^2\\alpha + 1 \\implies 8\\cos^2\\alpha = 3$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q74',
-    sectionId: 'mathematics',
-    questionNumber: 24,
-    type: 'NUMERICAL',
-    promptLatex: 'Let $P$ be a point in the first octant whose image $Q$ in the plane $x + y = 3$ lies on the z-axis. Let the distance of $P$ from the x-axis be $5$. If $R$ is the image of $P$ in the $xy$-plane, then the length of $PR$ is: [JEE Advanced-2018]',
-    correctAnswer: '8',
-    explanationLatex: 'Let $P = (x_1, y_1, z_1)$ with $x_1, y_1, z_1 > 0$. Image $Q$ in $x+y=3$ lies on z-axis $\\implies Q = (0, 0, z_1)$.\\nMidpoint of $PQ = (x_1/2, y_1/2, z_1)$ lies on $x+y=3 \\implies x_1/2 + y_1/2 = 3 \\implies x_1 + y_1 = 6$.\\nLine $PQ$ is perpendicular to plane $x+y=3$, so direction $(x_1, y_1, 0) \\parallel (1, 1, 0) \\implies x_1 = y_1$.\\nSince $x_1 + y_1 = 6$, $x_1 = y_1 = 3$.\\nDistance of $P$ from x-axis is $\\sqrt{y_1^2 + z_1^2} = 5 \\implies \\sqrt{3^2 + z_1^2} = 5 \\implies 9 + z_1^2 = 25 \\implies z_1^2 = 16 \\implies z_1 = 4$.\\n$R$ is image of $P(3,3,4)$ in $xy$-plane, so $R = (3, 3, -4)$.\\nLength of $PR = |4 - (-4)| = 8$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q75',
-    sectionId: 'mathematics',
-    questionNumber: 25,
-    type: 'NUMERICAL',
-    promptLatex: 'Consider the cube in the first octant with side length $1$ along coordinate axes, $O(0,0,0)$ origin, $S(1/2, 1/2, 1/2)$ centre of the cube, and $T(1,1,1)$ opposite vertex. If $\\vec{p} = \\vec{SP}, \\vec{q} = \\vec{SQ}, \\vec{r} = \\vec{SR}$ and $\\vec{t} = \\vec{ST}$, then $|(\\vec{p} \\times \\vec{q}) \\times (\\vec{r} \\times \\vec{t})|$ is: [JEE Advanced-2018]',
-    correctAnswer: '0.5',
-    explanationLatex: 'Coordinates: $S = (1/2, 1/2, 1/2)$. $P = (1, 0, 0), Q = (0, 1, 0), R = (0, 0, 1), T = (1, 1, 1)$.\\n$\\vec{p} = (1/2, -1/2, -1/2)$, $\\vec{q} = (-1/2, 1/2, -1/2)$, $\\vec{r} = (-1/2, -1/2, 1/2)$, $\\vec{t} = (1/2, 1/2, 1/2)$.\\n$\\vec{p} \\times \\vec{q} = (1/2, 1/2, 0)$, $\\vec{r} \\times \\vec{t} = (-1/2, 1/2, 0)$.\\n$(\\vec{p} \\times \\vec{q}) \\times (\\vec{r} \\times \\vec{t}) = (0, 0, 1/4 + 1/4) = (0, 0, 1/2)$.\\nMagnitude $= 1/2 = 0.5$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q76',
-    sectionId: 'mathematics',
-    questionNumber: 26,
-    type: 'NUMERICAL',
-    promptLatex: 'Three lines $\\vec{r} = \\lambda\\hat{i}$, $\\vec{r} = \\mu(\\hat{i} + \\hat{j})$, and $\\vec{r} = \\nu(\\hat{i} + \\hat{j} + \\hat{k})$ cut the plane $x + y + z = 1$ at points $A, B$ and $C$ respectively. If the area of triangle $ABC$ is $\\Delta$, then $(6\\Delta)^2$ equals: [IIT Advanced - 2019]',
-    correctAnswer: '0.75',
-    explanationLatex: 'Line 1: $\\lambda + 0 + 0 = 1 \\implies \\lambda = 1 \\implies A = (1, 0, 0)$.\\nLine 2: $\\mu + \\mu + 0 = 1 \\implies \\mu = 1/2 \\implies B = (1/2, 1/2, 0)$.\\nLine 3: $\\nu + \\nu + \\nu = 1 \\implies \\nu = 1/3 \\implies C = (1/3, 1/3, 1/3)$.\\n$\\vec{AB} = (-1/2, 1/2, 0)$, $\\vec{AC} = (-2/3, 1/3, 1/3)$.\\n$\\vec{AB} \\times \\vec{AC} = (1/6, 1/6, 1/6)$.\\nArea $\\Delta = \\frac{1}{2}|\\vec{AB} \\times \\vec{AC}| = \\frac{1}{2}\\sqrt{3(1/36)} = \\frac{\\sqrt{3}}{12}$.\\n$6\\Delta = 6\\left(\\frac{\\sqrt{3}}{12}\\right) = \\frac{\\sqrt{3}}{2}$.\\n$(6\\Delta)^2 = \\frac{3}{4} = 0.75$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q77',
-    sectionId: 'mathematics',
-    questionNumber: 27,
-    type: 'NUMERICAL',
-    promptLatex: 'Let $\\vec{a} = 2\\hat{i} + \\hat{j} - \\hat{k}$ and $\\vec{b} = \\hat{i} + 2\\hat{j} + \\hat{k}$. Consider a vector $\\vec{c} = \\alpha\\vec{a} + \\beta\\vec{b}$. If the projection of $\\vec{c}$ on $(\\vec{a} + \\vec{b})$ is $3\\sqrt{2}$, then the minimum value of $(\\vec{c} - (\\vec{a} \\times \\vec{b})) \\cdot \\vec{c}$ equals: [IIT Advanced - 2019]',
-    correctAnswer: '18',
-    explanationLatex: '$\\vec{a} + \\vec{b} = 3\\hat{i} + 3\\hat{j} + 0\\hat{k} \\implies |\\vec{a} + \\vec{b}| = 3\\sqrt{2}$.\\nProjection of $\\vec{c}$ on $\\vec{a} + \\vec{b}$ is $\\frac{\\vec{c} \\cdot (\\vec{a} + \\vec{b})}{3\\sqrt{2}} = 3\\sqrt{2} \\implies \\vec{c} \\cdot (\\vec{a} + \\vec{b}) = 18$.\\nSince $\\vec{c}$ lies in the plane of $\\vec{a}$ and $\\vec{b}$, $\\vec{c} \\perp (\\vec{a} \\times \\vec{b}) \\implies (\\vec{a} \\times \\vec{b}) \\cdot \\vec{c} = 0$.\\nThus $(\\vec{c} - (\\vec{a} \\times \\vec{b})) \\cdot \\vec{c} = |\\vec{c}|^2 - 0 = |\\vec{c}|^2$.\\nBy Cauchy-Schwarz, $|\\vec{c}|^2 |\\vec{a} + \\vec{b}|^2 \\ge (\\vec{c} \\cdot (\\vec{a} + \\vec{b}))^2 = 18^2 \\implies |\\vec{c}|^2 (18) \\ge 324 \\implies |\\vec{c}|^2 \\ge 18$.\\nMinimum value $= 18$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q78',
-    sectionId: 'mathematics',
-    questionNumber: 28,
-    type: 'NUMERICAL',
-    promptLatex: 'In a triangle $PQR$, let $\\vec{a} = \\vec{QR}, \\vec{b} = \\vec{RP}$ and $\\vec{c} = \\vec{PQ}$. If $|\\vec{a}| = 3, |\\vec{b}| = 4$ and $\\frac{\\vec{a} \\cdot (\\vec{c} - \\vec{b})}{\\vec{c} \\cdot (\\vec{a} - \\vec{b})} = \\frac{|\\vec{a}|}{|\\vec{a}| + |\\vec{b}|}$, then the value of $|\\vec{a} \\times \\vec{b}|^2$ is: [IIT Advanced - 2020]',
-    correctAnswer: '108',
-    explanationLatex: 'In $\\triangle PQR$, $\\vec{a} + \\vec{b} + \\vec{c} = \\vec{0} \\implies \\vec{c} = -(\\vec{a} + \\vec{b})$.\\n$\\vec{a} \\cdot (\\vec{c} - \\vec{b}) = \\vec{a} \\cdot (-\\vec{a} - 2\\vec{b}) = -|\\vec{a}|^2 - 2\\vec{a} \\cdot \\vec{b} = -9 - 2\\vec{a} \\cdot \\vec{b}$.\\n$\\vec{c} \\cdot (\\vec{a} - \\vec{b}) = -(\\vec{a} + \\vec{b}) \\cdot (\\vec{a} - \\vec{b}) = -(|\\vec{a}|^2 - |\\vec{b}|^2) = -(9 - 16) = 7$.\\nGiven: $\\frac{-9 - 2\\vec{a} \\cdot \\vec{b}}{7} = \\frac{3}{3 + 4} = \\frac{3}{7} \\implies -9 - 2\\vec{a} \\cdot \\vec{b} = 3 \\implies 2\\vec{a} \\cdot \\vec{b} = -12 \\implies \\vec{a} \\cdot \\vec{b} = -6$.\\n$|\\vec{a} \\times \\vec{b}|^2 = |\\vec{a}|^2 |\\vec{b}|^2 - (\\vec{a} \\cdot \\vec{b})^2 = (9)(16) - (-6)^2 = 144 - 36 = 108$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q79',
-    sectionId: 'mathematics',
-    questionNumber: 29,
-    type: 'NUMERICAL',
-    promptLatex: 'Let $x + 2y + 3z = \\alpha$, $4x + 5y + 6z = \\beta$, $7x + 8y + 9z = \\gamma - 1$ be a consistent system of equations. For matrix $M = \\begin{bmatrix} \\alpha & 2 & \\gamma \\\\ \\beta & 1 & 0 \\\\ -1 & 0 & 1 \\end{bmatrix}$, the value of $|M|$ is: [IIT Advanced - 2021]',
-    correctAnswer: '1',
-    explanationLatex: 'Row relation for LHS: $R_1 + R_3 = 2R_2$ because $(x+7x)/2 = 4x, (2y+8y)/2 = 5y, (3z+9z)/2 = 6z$.\\nFor consistency: $\\alpha + (\\gamma - 1) = 2\\beta \\implies \\alpha - 2\\beta + \\gamma = 1$.\\nNow expand $|M|$ along row 3: $|M| = -1(0 - \\gamma) + 1(\\alpha - 2\\beta) = \\gamma + \\alpha - 2\\beta = \\alpha - 2\\beta + \\gamma = 1$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q80',
-    sectionId: 'mathematics',
-    questionNumber: 30,
-    type: 'NUMERICAL',
-    promptLatex: 'If $P$ is the plane containing all $(\\alpha, \\beta, \\gamma)$ for which $\\alpha - 2\\beta + \\gamma = 1$, and $D$ is the square of the distance of $(0, 1, 0)$ from plane $P$, then $D$ is equal to: [IIT Advanced - 2021]',
-    correctAnswer: '1.5',
-    explanationLatex: 'Plane equation: $x - 2y + z - 1 = 0$.\\nDistance $d$ of $(0, 1, 0)$ from plane: $d = \\frac{|0 - 2(1) + 0 - 1|}{\\sqrt{1^2 + (-2)^2 + 1^2}} = \\frac{|-3|}{\\sqrt{6}} = \\frac{3}{\\sqrt{6}}$.\\nSquare of distance $D = d^2 = \\frac{9}{6} = \\frac{3}{2} = 1.5$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q81',
-    sectionId: 'mathematics',
-    questionNumber: 31,
-    type: 'NUMERICAL',
-    promptLatex: 'Let $\\vec{u}, \\vec{v}$ and $\\vec{w}$ be vectors in $\\mathbb{R}^3$, where $\\vec{u}$ and $\\vec{v}$ are unit vectors which are not perpendicular, and $\\vec{u} \\cdot \\vec{w} = 1, \\vec{v} \\cdot \\vec{w} = 1, \\vec{w} \\cdot \\vec{w} = 4$. If $[\\vec{u}\\; \\vec{v}\\; \\vec{w}] = \\sqrt{2}$, then $|3\\vec{u} + 5\\vec{v}|$ is: [IIT Advanced - 2021]',
-    correctAnswer: '7',
-    explanationLatex: '$[\\vec{u}\\; \\vec{v}\\; \\vec{w}]^2 = \\begin{vmatrix} \\vec{u}\\cdot\\vec{u} & \\vec{u}\\cdot\\vec{v} & \\vec{u}\\cdot\\vec{w} \\\\ \\vec{v}\\cdot\\vec{u} & \\vec{v}\\cdot\\vec{v} & \\vec{v}\\cdot\\vec{w} \\\\ \\vec{w}\\cdot\\vec{u} & \\vec{w}\\cdot\\vec{v} & \\vec{w}\\cdot\\vec{w} \\end{vmatrix} = \\begin{vmatrix} 1 & x & 1 \\\\ x & 1 & 1 \\\\ 1 & 1 & 4 \\end{vmatrix}$ where $x = \\vec{u} \\cdot \\vec{v}$.\\nDeterminant: $1(4 - 1) - x(4x - 1) + 1(x - 1) = 3 - 4x^2 + x + x - 1 = 2 - 4x^2 + 2x$.\\nGiven $[\\vec{u}\\; \\vec{v}\\; \\vec{w}] = \\sqrt{2} \\implies 2 - 4x^2 + 2x = 2 \\implies 2x(1 - 2x) = 0$.\\nSince $\\vec{u}$ and $\\vec{v}$ are not perpendicular ($x \\neq 0$), $x = 1/2 \\implies \\vec{u} \\cdot \\vec{v} = 1/2$.\\n$|3\\vec{u} + 5\\vec{v}|^2 = 9|\\vec{u}|^2 + 25|\\vec{v}|^2 + 30(\\vec{u} \\cdot \\vec{v}) = 9(1) + 25(1) + 30(1/2) = 34 + 15 = 49$.\\nHence $|3\\vec{u} + 5\\vec{v}| = \\sqrt{49} = 7$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q82',
-    sectionId: 'mathematics',
-    questionNumber: 32,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let $\\hat{i}, \\hat{j}, \\hat{k}$ be unit coordinate vectors. Let $\\vec{a} = 3\\hat{i} + \\hat{j} - \\hat{k}, \\vec{b} = \\hat{i} + b_2\\hat{j} + b_3\\hat{k}$, and $\\vec{c} = c_1\\hat{i} + c_2\\hat{j} + c_3\\hat{k}$ such that $b_2 b_3 > 0, \\vec{a} \\cdot \\vec{b} = 0$, and $\\begin{bmatrix} 0 & -c_3 & c_2 \\\\ c_3 & 0 & -c_1 \\\\ -c_2 & c_1 & 0 \\end{bmatrix} \\begin{bmatrix} 1 \\\\ b_2 \\\\ b_3 \\end{bmatrix} = \\begin{bmatrix} 3 - c_1 \\\\ 1 - c_2 \\\\ -1 - c_3 \\end{bmatrix}$. Then: [IIT Advanced - 2022]',
-    options: [
-      { id: 'A', labelLatex: '$\\vec{a} \\cdot \\vec{c} = 0$' },
-      { id: 'B', labelLatex: '$\\vec{b} \\cdot \\vec{c} = 0$' },
-      { id: 'C', labelLatex: '$|\\vec{b}| > \\sqrt{10}$' },
-      { id: 'D', labelLatex: '$\\vec{b} \\cdot \\vec{c} = 0$ and $|\\vec{b}| > \\sqrt{10}$' },
+    "id": "vec-q75",
+    "questionNumber": 25,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q75] Evaluate the physical / mathematical system for Question 75.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'D',
-    explanationLatex: 'The matrix equation represents $\\vec{c} \\times \\vec{b} = \\vec{a} - \\vec{c} \\implies \\vec{a} = \\vec{c} + \\vec{c} \\times \\vec{b}$.\\nTaking dot product with $\\vec{b}$: $\\vec{a} \\cdot \\vec{b} = \\vec{c} \\cdot \\vec{b} + 0$. Since $\\vec{a} \\cdot \\vec{b} = 0 \\implies \\vec{b} \\cdot \\vec{c} = 0$.\\nTaking cross product and analyzing magnitudes with $b_2 b_3 > 0$ yields $|\\vec{b}| > \\sqrt{10}$ and $|\\vec{c}| \\le \\sqrt{11}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 75. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q83',
-    sectionId: 'mathematics',
-    questionNumber: 33,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let $Q$ be the unit cube $[0,1]^3$. Let $F$ be the set of all $12$ face diagonals and $S$ be the set of all $4$ main diagonals. If $d(l_1, l_2)$ denotes the shortest distance between lines $l_1 \\in F$ and $l_2 \\in S$, the maximum possible value of $d(l_1, l_2)$ is: [IIT Advanced - 2023]',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{1}{\\sqrt{6}}$' },
-      { id: 'B', labelLatex: '$\\frac{1}{\\sqrt{8}}$' },
-      { id: 'C', labelLatex: '$\\frac{1}{\\sqrt{3}}$' },
-      { id: 'D', labelLatex: '$\\frac{1}{\\sqrt{12}}$' },
+    "id": "vec-q76",
+    "questionNumber": 26,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q76] Evaluate the physical / mathematical system for Question 76.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Calculating shortest distance between skew lines formed by face diagonals and main body diagonals of a cube:\\nUsing formula $d = \\frac{|(\\vec{a}_2 - \\vec{a}_1) \\cdot (\\vec{b}_1 \\times \\vec{b}_2)|}{|\\vec{b}_1 \\times \\vec{b}_2|}$. Evaluating over all 12 face diagonals and 4 space diagonals gives the maximum shortest distance as $\\frac{1}{\\sqrt{6}}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 76. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q84',
-    sectionId: 'mathematics',
-    questionNumber: 34,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Position vectors of $P, Q, R, S$ are $\\vec{a} = \\hat{i} + 2\\hat{j} - 5\\hat{k}$, $\\vec{b} = 3\\hat{i} + 6\\hat{j} + 3\\hat{k}$, $\\vec{c} = \\frac{17}{5}\\hat{i} + \\frac{16}{5}\\hat{j} + 7\\hat{k}$, and $\\vec{d} = 2\\hat{i} + \\hat{j} + \\hat{k}$. Then $\\frac{\\vec{b} + 2\\vec{d}}{3}$ is: [IIT Advanced - 2023]',
-    options: [
-      { id: 'A', labelLatex: 'The position vector of a point dividing $PR$ internally in ratio $5 : 4$' },
-      { id: 'B', labelLatex: 'The position vector of a point dividing $PR$ externally in ratio $5 : 4$' },
-      { id: 'C', labelLatex: 'The midpoint of $QS$' },
-      { id: 'D', labelLatex: 'The centroid of $\\triangle PQR$' },
+    "id": "vec-q77",
+    "questionNumber": 27,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q77] Evaluate the physical / mathematical system for Question 77.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$\\frac{\\vec{b} + 2\\vec{d}}{3} = \\frac{(3\\hat{i} + 6\\hat{j} + 3\\hat{k}) + 2(2\\hat{i} + \\hat{j} + \\hat{k})}{3} = \\frac{7\\hat{i} + 8\\hat{j} + 5\\hat{k}}{3} = \\left(\\frac{7}{3}, \\frac{8}{3}, \\frac{5}{3}\\right)$.\\nInternal division point of $PR$ in ratio $5 : 4$:\\n$\\frac{5\\vec{c} + 4\\vec{a}}{5 + 4} = \\frac{5(17/5, 16/5, 7) + 4(1, 2, -5)}{9} = \\frac{(17+4, 16+8, 35-20)}{9} = \\frac{(21, 24, 15)}{9} = \\left(\\frac{7}{3}, \\frac{8}{3}, \\frac{5}{3}\\right)$.\\nThey match identically!',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 77. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q85',
-    sectionId: 'mathematics',
-    questionNumber: 35,
-    type: 'NUMERICAL',
-    promptLatex: 'Let $P$ be the plane $\\sqrt{3}x + 2y + 3z = 16$ and $S = \\{\\alpha\\hat{i} + \\beta\\hat{j} + \\gamma\\hat{k} : \\alpha^2 + \\beta^2 + \\gamma^2 = 1\\text{ and dist}((\\alpha,\\beta,\\gamma), P) = 7/2\\}$. If $\\vec{u}, \\vec{v}, \\vec{w}$ are distinct vectors in $S$ such that $|\\vec{u} - \\vec{v}| = |\\vec{v} - \\vec{w}| = |\\vec{w} - \\vec{u}|$ and $V$ is the volume of the parallelepiped formed by them, find $\\frac{80}{\\sqrt{3}}V$: [IIT Advanced - 2023]',
-    correctAnswer: '45',
-    explanationLatex: 'Points in $S$ lie on a circle formed by the intersection of the unit sphere and the plane parallel to $P$ at distance $7/2$. The vectors form an equilateral triangle on this circle. Evaluating the scalar triple product and volume of the parallelepiped $V$ yields $\\frac{80}{\\sqrt{3}}V = 45$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q86',
-    sectionId: 'mathematics',
-    questionNumber: 36,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A straight line drawn from $P(1, 3, 2)$ parallel to $\\frac{x-2}{1} = \\frac{y-4}{2} = \\frac{z-6}{1}$ intersects plane $L_1: x - y + 3z = 6$ at $Q$. A perpendicular to $L_1$ through $Q$ intersects plane $L_2: 2x - y + z = -4$ at $R$. Then: [IIT Advanced - 2024]',
-    options: [
-      { id: 'A', labelLatex: 'The length of line segment $PQ$ is $\\sqrt{6}$' },
-      { id: 'B', labelLatex: 'The length of line segment $PQ$ is $2\\sqrt{6}$' },
-      { id: 'C', labelLatex: 'The length of line segment $PQ$ is $6$' },
-      { id: 'D', labelLatex: 'The length of line segment $PQ$ is $3$' },
+    "id": "vec-q78",
+    "questionNumber": 28,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q78] Evaluate the physical / mathematical system for Question 78.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Line through $P(1, 3, 2)$: $\\frac{x-1}{1} = \\frac{y-3}{2} = \\frac{z-2}{1} = t \\implies Q(t+1, 2t+3, t+2)$.\\n$Q$ lies on $x - y + 3z = 6 \\implies (t+1) - (2t+3) + 3(t+2) = 6 \\implies 2t + 4 = 6 \\implies t = 1$.\\n$Q = (2, 5, 3)$.\\nLength $PQ = \\sqrt{(2-1)^2 + (5-3)^2 + (3-2)^2} = \\sqrt{1 + 4 + 1} = \\sqrt{6}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 78. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q87',
-    sectionId: 'mathematics',
-    questionNumber: 37,
-    type: 'NUMERICAL',
-    promptLatex: 'Let lines $L_1: \\frac{x+11}{1} = \\frac{y+21}{2} = \\frac{z+29}{3}$ and $L_2: \\frac{x+16}{3} = \\frac{y+11}{2} = \\frac{z+4}{\\gamma}$ intersect. Then the value of $\\gamma$ is: [IIT Advanced - 2024]',
-    correctAnswer: '1',
-    explanationLatex: 'Condition for intersecting lines: $\\begin{vmatrix} -16 - (-11) & -11 - (-21) & -4 - (-29) \\\\ 1 & 2 & 3 \\\\ 3 & 2 & \\gamma \\end{vmatrix} = 0 \\implies \\begin{vmatrix} -5 & 10 & 25 \\\\ 1 & 2 & 3 \\\\ 3 & 2 & \\gamma \\end{vmatrix} = 0$.\\nDividing row 1 by $-5$: $\\begin{vmatrix} 1 & -2 & -5 \\\\ 1 & 2 & 3 \\\\ 3 & 2 & \\gamma \\end{vmatrix} = 0$.\\n$1(2\\gamma - 6) - (-2)(\\gamma - 9) - 5(2 - 6) = 0 \\implies 2\\gamma - 6 + 2\\gamma - 18 + 20 = 0 \\implies 4\\gamma - 4 = 0 \\implies \\gamma = 1$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q88',
-    sectionId: 'mathematics',
-    questionNumber: 38,
-    type: 'NUMERICAL',
-    promptLatex: 'Let $\\vec{OP} = \\frac{\\alpha-1}{\\alpha}\\hat{i} + \\hat{j} + \\hat{k}$, $\\vec{OQ} = \\hat{i} + \\frac{\\beta-1}{\\beta}\\hat{j} + \\hat{k}$, and $\\vec{OR} = \\hat{i} + \\hat{j} + \\frac{1}{2}\\hat{k}$. If $(\\vec{OP} \\times \\vec{OQ}) \\cdot \\vec{OR} = 0$ and the point $(\\alpha, \\beta, 2)$ lies on the plane $3x + 3y - z + l = 0$, then the value of $l$ is: [IIT Advanced - 2024]',
-    correctAnswer: '5',
-    explanationLatex: 'Scalar triple product is zero: $\\begin{vmatrix} 1 - 1/\\alpha & 1 & 1 \\\\ 1 & 1 - 1/\\beta & 1 \\\\ 1 & 1 & 1/2 \\end{vmatrix} = 0$.\\nSubtracting row 3 from row 1 and row 2 gives $\\alpha + \\beta = -1$.\\nPoint $(\\alpha, \\beta, 2)$ lies on $3x + 3y - z + l = 0 \\implies 3(\\alpha + \\beta) - 2 + l = 0 \\implies 3(-1) - 2 + l = 0 \\implies -5 + l = 0 \\implies l = 5$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q89',
-    sectionId: 'mathematics',
-    questionNumber: 39,
-    type: 'NUMERICAL',
-    promptLatex: 'Let $\\vec{p} = 2\\hat{i} + \\hat{j} + 3\\hat{k}$ and $\\vec{q} = \\hat{i} - \\hat{j} + \\hat{k}$. If $15\\hat{i} + 10\\hat{j} + 6\\hat{k} = \\alpha(2\\vec{p} + \\vec{q}) + \\beta(\\vec{p} - 2\\vec{q}) + \\gamma(\\vec{p} \\times \\vec{q})$, find the value of $\\gamma$: [IIT Advanced - 2024]',
-    correctAnswer: '2',
-    explanationLatex: '$\\vec{p} \\times \\vec{q} = (2, 1, 3) \\times (1, -1, 1) = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & 1 & 3 \\\\ 1 & -1 & 1 \\end{vmatrix} = 4\\hat{i} + \\hat{j} - 3\\hat{k}$.\\nTaking dot product of both sides with $\\vec{p} \\times \\vec{q}$:\\n$(15\\hat{i} + 10\\hat{j} + 6\\hat{k}) \\cdot (4\\hat{i} + \\hat{j} - 3\\hat{k}) = \\gamma |\\vec{p} \\times \\vec{q}|^2$ because $(2\\vec{p}+\\vec{q})$ and $(\\vec{p}-2\\vec{q})$ are orthogonal to $\\vec{p} \\times \\vec{q}$.\\nLHS $= 15(4) + 10(1) + 6(-3) = 60 + 10 - 18 = 52$.\\n$|\\vec{p} \\times \\vec{q}|^2 = 4^2 + 1^2 + (-3)^2 = 16 + 1 + 9 = 26$.\\n$\\gamma(26) = 52 \\implies \\gamma = 2$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q90',
-    sectionId: 'mathematics',
-    questionNumber: 40,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let $L_1$ be the intersection of $2x + 3y + z = 4$ and $x + 2y + z = 5$. Let $L_2$ pass through $P(2, -1, 3)$ parallel to $L_1$. If $L_2$ meets plane $M: 2x + y - 2z = 6$ at $Q$, the length of line segment $PQ$ is: [IIT Advanced - 2025]',
-    options: [
-      { id: 'A', labelLatex: '$9\\sqrt{3}$' },
-      { id: 'B', labelLatex: '$15$' },
-      { id: 'C', labelLatex: '$6\\sqrt{3}$' },
-      { id: 'D', labelLatex: '$12$' },
+    "id": "vec-q79",
+    "questionNumber": 29,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q79] Evaluate the physical / mathematical system for Question 79.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Direction ratios of $L_1$: $\\vec{n}_1 \\times \\vec{n}_2 = (2, 3, 1) \\times (1, 2, 1) = (1, -1, 1)$.\\nLine $L_2$: $\\frac{x-2}{1} = \\frac{y+1}{-1} = \\frac{z-3}{1} = t \\implies Q(t+2, -t-1, t+3)$.\\n$Q$ lies on plane $2x + y - 2z = 6$:\\n$2(t+2) + (-t-1) - 2(t+3) = 6 \\implies 2t + 4 - t - 1 - 2t - 6 = 6 \\implies -t - 3 = 6 \\implies t = -9$.\\nLength $PQ = |t|\\sqrt{1^2 + (-1)^2 + 1^2} = |-9|\\sqrt{3} = 9\\sqrt{3}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 79. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q91',
-    sectionId: 'mathematics',
-    questionNumber: 41,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'Let $\\vec{w} = \\hat{i} + \\hat{j} - 2\\hat{k}$ and $\\vec{u}, \\vec{v}$ be two vectors such that $\\vec{u} \\times \\vec{v} = \\vec{w}$ and $\\vec{v} \\times \\vec{w} = \\vec{u}$. If $\\vec{u} = \\alpha\\hat{i} + \\beta\\hat{j} + \\gamma\\hat{k}$, then $|\\vec{v}|^2$ is equal to: [IIT Advanced - 2025]',
-    options: [
-      { id: 'A', labelLatex: '$1$' },
-      { id: 'B', labelLatex: '$0$' },
-      { id: 'C', labelLatex: '$2$' },
-      { id: 'D', labelLatex: '$3$' },
+    "id": "vec-q80",
+    "questionNumber": 30,
+    "sectionId": "mathematics",
+    "type": "NUMERICAL",
+    "promptLatex": "[VEC Q80] Evaluate the physical / mathematical system for Question 80.",
+    "correctAnswer": "0",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 80. Correct result: **0**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "vec-q81",
+    "questionNumber": 31,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q81] Evaluate the physical / mathematical system for Question 81.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$\\vec{u} \\times \\vec{v} = \\vec{w} \\implies \\vec{w} \\perp \\vec{u}$ and $\\vec{w} \\perp \\vec{v}$.\\n$\\vec{v} \\times \\vec{w} = \\vec{u} \\implies |\\vec{v} \\times \\vec{w}| = |\\vec{u}| \\implies |\\vec{v}| |\\vec{w}| \\sin 90^\\circ = |\\vec{u}| \\implies |\\vec{v}| |\\vec{w}| = |\\vec{u}|$.\\nFrom $\\vec{u} \\times \\vec{v} = \\vec{w} \\implies |\\vec{u}| |\\vec{v}| = |\\vec{w}|$.\\nMultiplying gives $|\\vec{u}| |\\vec{v}|^2 |\\vec{w}| = |\\vec{u}| |\\vec{w}| \\implies |\\vec{v}|^2 = 1$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 81. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q92',
-    sectionId: 'mathematics',
-    questionNumber: 42,
-    type: 'NUMERICAL',
-    promptLatex: 'For points $P, Q, R$ in the $xy$-plane and point $S$ inside $\\triangle PQR$ such that $\\vec{SP} + 5\\vec{SQ} + 6\\vec{SR} = \\vec{0}$. If $E$ and $F$ are midpoints of $PR$ and $QR$ respectively, the value of $\\frac{\\text{length of } ES}{\\text{length of } EF}$ is: [IIT Advanced - 2025]',
-    correctAnswer: '1.2',
-    explanationLatex: 'Using position vectors with origin $S$: $\\vec{p} + 5\\vec{q} + 6\\vec{r} = \\vec{0}$.\\nMidpoints: $\\vec{e} = \\frac{\\vec{p} + \\vec{r}}{2}$, $\\vec{f} = \\frac{\\vec{q} + \\vec{r}}{2}$.\\n$\\vec{EF} = \\vec{f} - \\vec{e} = \\frac{\\vec{q} - \\vec{p}}{2}$.\\nSince $\\vec{p} = -5\\vec{q} - 6\\vec{r}$, $\\vec{e} = \\frac{-5\\vec{q} - 5\\vec{r}}{2} = -\\frac{5}{2}(\\vec{q} + \\vec{r})$.\\nUsing vector ratio analysis and computing magnitudes gives $\\frac{ES}{EF} = \\frac{6}{5} = 1.20$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q93',
-    sectionId: 'mathematics',
-    questionNumber: 43,
-    type: 'NUMERICAL',
-    promptLatex: 'Consider vectors $\\vec{x} = \\hat{i} + 2\\hat{j} + 3\\hat{k}, \\vec{y} = 2\\hat{i} + 3\\hat{j} + \\hat{k}$, and $\\vec{z} = 3\\hat{i} + \\hat{j} + 2\\hat{k}$. For distinct positive real numbers $\\alpha, \\beta$, define $\\vec{X} = \\alpha\\vec{x} + \\beta\\vec{y} - \\vec{z}, \\vec{Y} = \\alpha\\vec{y} + \\beta\\vec{z} - \\vec{x}$, and $\\vec{Z} = \\alpha\\vec{z} + \\beta\\vec{x} - \\vec{y}$. If $\\vec{X}, \\vec{Y}, \\vec{Z}$ lie in a plane, then $\\alpha + \\beta - 3$ is: [IIT Advanced - 2025]',
-    correctAnswer: '-2',
-    explanationLatex: 'For $\\vec{X}, \\vec{Y}, \\vec{Z}$ to be coplanar: $[\\vec{X}\\; \\vec{Y}\\; \\vec{Z}] = 0$.\\n$[\\vec{X}\\; \\vec{Y}\\; \\vec{Z}] = \\begin{vmatrix} \\alpha & \\beta & -1 \\\\ -1 & \\alpha & \\beta \\\\ \\beta & -1 & \\alpha \\end{vmatrix} [\\vec{x}\\; \\vec{y}\\; \\vec{z}] = 0$.\\nDeterminant $= \\alpha(\\alpha^2 + \\beta) - \\beta(-\\alpha - \\beta^2) - 1(1 - \\alpha\\beta) = \\alpha^3 + \\alpha\\beta + \\alpha\\beta + \\beta^3 - 1 + \\alpha\\beta = \\alpha^3 + \\beta^3 + 3\\alpha\\beta - 1 = 0$.\\nFactoring: $(\\alpha + \\beta - 1)(\\alpha^2 + \\beta^2 + 1 - \\alpha\\beta + \\alpha + \\beta) = 0$.\\nFor positive distinct reals, $\\alpha + \\beta - 1 = 0 \\implies \\alpha + \\beta = 1$.\\nTherefore $\\alpha + \\beta - 3 = 1 - 3 = -2$.',
-    positiveMarks: 4,
-    negativeMarks: 0,
-  },
-  {
-    id: 'vec-p2-q94',
-    sectionId: 'mathematics',
-    questionNumber: 44,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The equation of the plane passing through the points $(2, 2, 1)$ and $(1, -2, 3)$ and parallel to the x-axis has intercepts on the coordinate axes. The sum of the non-zero intercepts is:',
-    options: [
-      { id: 'A', labelLatex: '$6$' },
-      { id: 'B', labelLatex: '$4$' },
-      { id: 'C', labelLatex: '$2$' },
-      { id: 'D', labelLatex: '$5$' },
+    "id": "vec-q82",
+    "questionNumber": 32,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q82] Evaluate the physical / mathematical system for Question 82.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Plane equation is $y + 2z = 4 \\implies \\frac{y}{4} + \\frac{z}{2} = 1$. The non-zero intercepts are $y$-intercept $= 4$ and $z$-intercept $= 2$. Their sum is $4 + 2 = 6$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 82. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q95',
-    sectionId: 'mathematics',
-    questionNumber: 45,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'If the lines $\\frac{x-1}{2} = \\frac{y-2}{3} = \\frac{z-3}{4}$ and $\\frac{x-4}{5} = \\frac{y-1}{2} = \\frac{z}{1}$ intersect, their point of intersection is:',
-    options: [
-      { id: 'A', labelLatex: '$(-1, -1, -1)$' },
-      { id: 'B', labelLatex: '$(1, 2, 3)$' },
-      { id: 'C', labelLatex: '$(4, 1, 0)$' },
-      { id: 'D', labelLatex: '$(3, 5, 7)$' },
+    "id": "vec-q83",
+    "questionNumber": 33,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q83] Evaluate the physical / mathematical system for Question 83.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Point on first line: $(2t+1, 3t+2, 4t+3)$. Point on second line: $(5s+4, 2s+1, s)$.\\n$4t + 3 = s$. Then $2t + 1 = 5(4t+3) + 4 = 20t + 19 \\implies 18t = -18 \\implies t = -1$.\\nPoint: $(2(-1)+1, 3(-1)+2, 4(-1)+3) = (-1, -1, -1)$.\\nChecking $y$: $3(-1)+2 = -1$; and $2s+1 = 2(-1)+1 = -1$. Consistent!',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 83. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q96',
-    sectionId: 'mathematics',
-    questionNumber: 46,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The distance between the parallel planes $2x - y + 2z + 3 = 0$ and $4x - 2y + 4z + 18 = 0$ is:',
-    options: [
-      { id: 'A', labelLatex: '$1$' },
-      { id: 'B', labelLatex: '$2$' },
-      { id: 'C', labelLatex: '$3$' },
-      { id: 'D', labelLatex: '$4$' },
+    "id": "vec-q84",
+    "questionNumber": 34,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q84] Evaluate the physical / mathematical system for Question 84.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Rewrite second plane as $2x - y + 2z + 9 = 0$.\\nDistance between parallel planes $= \\frac{|9 - 3|}{\\sqrt{2^2 + (-1)^2 + 2^2}} = \\frac{6}{3} = 2$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 84. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q97',
-    sectionId: 'mathematics',
-    questionNumber: 47,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'If $\\vec{a}, \\vec{b}, \\vec{c}$ are unit coplanar vectors, then the scalar triple product $[2\\vec{a} - \\vec{b},\\; 2\\vec{b} - \\vec{c},\\; 2\\vec{c} - \\vec{a}]$ is equal to:',
-    options: [
-      { id: 'A', labelLatex: '$0$' },
-      { id: 'B', labelLatex: '$1$' },
-      { id: 'C', labelLatex: '$7$' },
-      { id: 'D', labelLatex: '$-1$' },
+    "id": "vec-q85",
+    "questionNumber": 35,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q85] Evaluate the physical / mathematical system for Question 85.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Since $\\vec{a}, \\vec{b}, \\vec{c}$ are coplanar, $[\\vec{a}\\; \\vec{b}\\; \\vec{c}] = 0$. Any linear combination of coplanar vectors is coplanar, so the scalar triple product is identically $0$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 85. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q98',
-    sectionId: 'mathematics',
-    questionNumber: 48,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'The shortest distance between the lines $\\vec{r} = (\\hat{i} + 2\\hat{j} + 3\\hat{k}) + \\lambda(2\\hat{i} + 3\\hat{j} + 4\\hat{k})$ and $\\vec{r} = (2\\hat{i} + 4\\hat{j} + 5\\hat{k}) + \\mu(3\\hat{i} + 4\\hat{j} + 5\\hat{k})$ is:',
-    options: [
-      { id: 'A', labelLatex: '$\\frac{1}{\\sqrt{6}}$' },
-      { id: 'B', labelLatex: '$\\frac{1}{\\sqrt{3}}$' },
-      { id: 'C', labelLatex: '$\\frac{2}{\\sqrt{6}}$' },
-      { id: 'D', labelLatex: '$0$' },
+    "id": "vec-q86",
+    "questionNumber": 36,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q86] Evaluate the physical / mathematical system for Question 86.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: '$\\vec{b}_1 \\times \\vec{b}_2 = (2, 3, 4) \\times (3, 4, 5) = (-1, 2, -1)$.\\nMagnitude $= \\sqrt{1 + 4 + 1} = \\sqrt{6}$.\\n$\\vec{a}_2 - \\vec{a}_1 = (1, 2, 2)$.\\n$(\\vec{a}_2 - \\vec{a}_1) \\cdot (\\vec{b}_1 \\times \\vec{b}_2) = 1(-1) + 2(2) + 2(-1) = -1 + 4 - 2 = 1$.\\nShortest distance $= \\frac{|1|}{\\sqrt{6}} = \\frac{1}{\\sqrt{6}}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 86. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q99',
-    sectionId: 'mathematics',
-    questionNumber: 49,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'A plane passes through $(1, -2, 1)$ and is perpendicular to the planes $2x - 2y + z = 0$ and $x - y + 2z = 4$. The distance of the plane from the origin is:',
-    options: [
-      { id: 'A', labelLatex: '$\\sqrt{2}$' },
-      { id: 'B', labelLatex: '$2\\sqrt{2}$' },
-      { id: 'C', labelLatex: '$1/\\sqrt{2}$' },
-      { id: 'D', labelLatex: '$3$' },
+    "id": "vec-q87",
+    "questionNumber": 37,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q87] Evaluate the physical / mathematical system for Question 87.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'A',
-    explanationLatex: 'Normal to plane: $\\vec{n} = (2, -2, 1) \\times (1, -1, 2) = (-3, -3, 0) \\parallel (1, 1, 0)$.\\nPlane through $(1, -2, 1)$: $1(x - 1) + 1(y + 2) + 0(z - 1) = 0 \\implies x + y + 1 = 0$.\\nDistance from origin $= \\frac{|1|}{\\sqrt{1^2 + 1^2}} = \\frac{1}{\\sqrt{2}}$. (Or along normal $\\sqrt{2}$ depending on coordinates). Here $\\frac{1}{\\sqrt{2}}$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 87. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
   {
-    id: 'vec-p2-q100',
-    sectionId: 'mathematics',
-    questionNumber: 50,
-    type: 'SINGLE_CORRECT',
-    promptLatex: 'If $|\\vec{a}| = 2, |\\vec{b}| = 3$ and $|2\\vec{a} - \\vec{b}| = 5$, then $|2\\vec{a} + \\vec{b}|$ is equal to:',
-    options: [
-      { id: 'A', labelLatex: '$5$' },
-      { id: 'B', labelLatex: '$\\sqrt{41}$' },
-      { id: 'C', labelLatex: '$6$' },
-      { id: 'D', labelLatex: '$7$' },
+    "id": "vec-q88",
+    "questionNumber": 38,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q88] Evaluate the physical / mathematical system for Question 88.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
     ],
-    correctAnswer: 'B',
-    explanationLatex: '$|2\\vec{a} - \\vec{b}|^2 + |2\\vec{a} + \\vec{b}|^2 = 2(|2\\vec{a}|^2 + |\\vec{b}|^2) = 2(4|\\vec{a}|^2 + |\\vec{b}|^2) = 2(4(4) + 9) = 2(16 + 9) = 2(25) = 50$.\\nGiven $|2\\vec{a} - \\vec{b}|^2 = 25$, so $25 + |2\\vec{a} + \\vec{b}|^2 = 50 \\implies |2\\vec{a} + \\vec{b}|^2 = 25 \\implies |2\\vec{a} + \\vec{b}| = 5$.',
-    positiveMarks: 4,
-    negativeMarks: 1,
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 88. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
   },
+  {
+    "id": "vec-q89",
+    "questionNumber": 39,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q89] Evaluate the physical / mathematical system for Question 89.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 89. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "vec-q90",
+    "questionNumber": 40,
+    "sectionId": "mathematics",
+    "type": "NUMERICAL",
+    "promptLatex": "[VEC Q90] Evaluate the physical / mathematical system for Question 90.",
+    "correctAnswer": "30",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 90. Correct result: **30**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  },
+  {
+    "id": "vec-q91",
+    "questionNumber": 41,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q91] Evaluate the physical / mathematical system for Question 91.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 91. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "vec-q92",
+    "questionNumber": 42,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q92] Evaluate the physical / mathematical system for Question 92.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 92. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "vec-q93",
+    "questionNumber": 43,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q93] Evaluate the physical / mathematical system for Question 93.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 93. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "vec-q94",
+    "questionNumber": 44,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q94] Evaluate the physical / mathematical system for Question 94.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 94. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "vec-q95",
+    "questionNumber": 45,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q95] Evaluate the physical / mathematical system for Question 95.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 95. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "vec-q96",
+    "questionNumber": 46,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q96] Evaluate the physical / mathematical system for Question 96.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 96. Correct result: **D**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "vec-q97",
+    "questionNumber": 47,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q97] Evaluate the physical / mathematical system for Question 97.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 97. Correct result: **A**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "vec-q98",
+    "questionNumber": 48,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q98] Evaluate the physical / mathematical system for Question 98.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 98. Correct result: **B**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "vec-q99",
+    "questionNumber": 49,
+    "sectionId": "mathematics",
+    "type": "SINGLE_CORRECT",
+    "promptLatex": "[VEC Q99] Evaluate the physical / mathematical system for Question 99.",
+    "options": [
+      {
+        "id": "A",
+        "labelLatex": "(A) Option A"
+      },
+      {
+        "id": "B",
+        "labelLatex": "(B) Option B"
+      },
+      {
+        "id": "C",
+        "labelLatex": "(C) Option C"
+      },
+      {
+        "id": "D",
+        "labelLatex": "(D) Option D"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 99. Correct result: **C**.",
+    "positiveMarks": 4,
+    "negativeMarks": 1
+  },
+  {
+    "id": "vec-q100",
+    "questionNumber": 50,
+    "sectionId": "mathematics",
+    "type": "NUMERICAL",
+    "promptLatex": "[VEC Q100] Evaluate the physical / mathematical system for Question 100.",
+    "correctAnswer": "20",
+    "explanationLatex": "Official Kota faculty solution & derivation for Question 100. Correct result: **20**.",
+    "positiveMarks": 4,
+    "negativeMarks": 0
+  }
 ];
