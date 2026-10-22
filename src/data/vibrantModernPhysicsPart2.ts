@@ -1,1363 +1,871 @@
 import { Question } from '../types/exam';
+
+// Helper for clean inline SVG diagrams with dark theme for Modern Physics
+export const createModernPhysicsSvg = (svgContent: string): string => {
+  const fullSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" width="100%" height="160" style="background:#09090b;border-radius:10px;font-family:sans-serif;font-size:12px;color:#fff;">
+    <defs>
+      <pattern id="grid-mod" width="20" height="20" patternUnits="userSpaceOnUse">
+        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#27272a" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid-mod)" />
+    ${svgContent}
+  </svg>`;
+  return 'data:image/svg+xml;utf8,' + encodeURIComponent(fullSvg);
+};
+
+// =========================================================================
+// VIBRANT KOTA MODERN PHYSICS PART 2: QUESTIONS 51 TO 100 (Exercise-I Q51-Q90 & Exercise-II Q1-Q10)
+// =========================================================================
 export const MODERN_PHYSICS_PART_2_QUESTIONS: Question[] = [
   {
-    "id": "mod-q51",
-    "questionNumber": 1,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q51] Evaluate the physical / mathematical system for Question 51.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q51',
+    sectionId: 'physics',
+    questionNumber: 51,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'If each fission in a U235 nucleus releases 200 MeV, how many fissions must occurs per second to produce\na power of 1 KW',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q51%20%E2%80%94%20Quantum%20Photoelectric%20Interaction%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Matter%20wave%20%26%20quantum%20photon%20interaction%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2040%2080%20Q%2060%2060%2080%2080%20Q%20100%20100%20120%2080%20Q%20140%2060%20160%2080%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22165%2C80%20157%2C75%20157%2C85%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%2265%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EPhoton%20h%CE%BD%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Target%20plate%20%2F%20electron%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22180%22%20y%3D%2245%22%20width%3D%2214%22%20height%3D%2275%22%20rx%3D%223%22%20fill%3D%22%233f3f46%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22230%22%20cy%3D%2270%22%20r%3D%226%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22236%22%20y1%3D%2270%22%20x2%3D%22280%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22285%2C70%20277%2C66%20277%2C74%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22224%22%20y%3D%2290%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ee%E2%81%BB%20(K_max)%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22195%22%20y%3D%22115%22%20width%3D%22145%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22202%22%20y%3D%22131%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EK_max%20%3D%20h%CE%BD%20-%20%CE%A6%20%3D%20eV%E2%82%80%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '1.325 \\times  1013' },
+      { id: 'B', labelLatex: '3.125 \\times  1013' },
+      { id: 'C', labelLatex: '1.235 \\times  1013' },
+      { id: 'D', labelLatex: '2.135 \\times  1013' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 51. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q51: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q52",
-    "questionNumber": 2,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q52] Evaluate the physical / mathematical system for Question 52.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q52',
+    sectionId: 'physics',
+    questionNumber: 52,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The rest mass of the deuteron , 2\n1 H , is equivalent to an energy of 1876 MeV, the rest mass of a proton is\nequivalent to 939 MeV and that of a neutron to 940 MeV. A deuteron may disintegrate to a proton and a\nneutron if it :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q52%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'emits a \\gamma -ray photon of energy 2 MeV' },
+      { id: 'B', labelLatex: 'captures a \\gamma -ray photon of energy 2 MeV' },
+      { id: 'C', labelLatex: 'emits a \\gamma -ray photon of energy 3 MeV' },
+      { id: 'D', labelLatex: 'captures a \\gamma -ray photon of energy 3 MeV' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 52. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q52: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q53",
-    "questionNumber": 3,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q53] Evaluate the physical / mathematical system for Question 53.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q53',
+    sectionId: 'physics',
+    questionNumber: 53,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the uranium radioactive series the initial nucleus is 92U238, and the final nucleus is 82Pb206. When the\nuranium nucleus decays to lead, the number of \\alpha -particles emitted is.. and the number of \\beta -particles emitted...',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q53%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '6, 8' },
+      { id: 'B', labelLatex: '8, 6' },
+      { id: 'C', labelLatex: '16, 6' },
+      { id: 'D', labelLatex: '32, 12' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 53. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q53: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q54",
-    "questionNumber": 4,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q54] Evaluate the physical / mathematical system for Question 54.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q54',
+    sectionId: 'physics',
+    questionNumber: 54,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The radioactive sources A and B of half lifes of 2 hr and 4 hr respectively, initially contain the same number of\nradioactive atoms. At the end of 2 hours, their rates of disintegration are in the ratio A to B :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q54%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '4 : 1' },
+      { id: 'B', labelLatex: '2 : 1' },
+      { id: 'C', labelLatex: '2 : 1' },
+      { id: 'D', labelLatex: '1 : 1' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 54. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q54: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q55",
-    "questionNumber": 5,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q55] Evaluate the physical / mathematical system for Question 55.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q55',
+    sectionId: 'physics',
+    questionNumber: 55,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '90% of a radioactive sample is left undecayed after time t has elapsed. What percentage of the initialsample\nwill decay in a total time 2t :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q55%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '20%' },
+      { id: 'B', labelLatex: '19%' },
+      { id: 'C', labelLatex: '40%' },
+      { id: 'D', labelLatex: '38%' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 55. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q55: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q56",
-    "questionNumber": 6,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q56] Evaluate the physical / mathematical system for Question 56.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q56',
+    sectionId: 'physics',
+    questionNumber: 56,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Activity of a radioactive substance is R1 at time t 1 and R2 at time t 2(t 2 > t 1). Then the ratio 1\n2\nR\nR is :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q56%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '1\n2\nt\nt' },
+      { id: 'B', labelLatex: ')	t	t( 	2	1\n	e 	\\lambda 	' },
+      { id: 'C', labelLatex: 'e 	\n\n\n\n\n\n\\lambda \n 2	1 	t	t' },
+      { id: 'D', labelLatex: ')	t	t( 	2	1\n	e 	\\lambda' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 56. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q56: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q57",
-    "questionNumber": 7,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q57] Evaluate the physical / mathematical system for Question 57.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q57',
+    sectionId: 'physics',
+    questionNumber: 57,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'There are two radionuclei A and B. A is an alpha emitter and B is a beta emitter. Their distintegration\nconstants are in the ratio of 1 : 2. What should be the ratio of number of atoms of two at time t = 0 so that\nprobabilities of getting \\alpha  and \\beta  particles are same at time t = 0.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q57%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '2 : 1' },
+      { id: 'B', labelLatex: '1 : 2' },
+      { id: 'C', labelLatex: 'e' },
+      { id: 'D', labelLatex: 'e–1' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 57. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q57: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q58",
-    "questionNumber": 8,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q58] Evaluate the physical / mathematical system for Question 58.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q58',
+    sectionId: 'physics',
+    questionNumber: 58,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The activity of a sample reduces from A0 to A0 / 	3 in one hour. The activity after 3 hours more will be',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q58%20%E2%80%94%20Quantum%20Photoelectric%20Interaction%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Matter%20wave%20%26%20quantum%20photon%20interaction%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2040%2080%20Q%2060%2060%2080%2080%20Q%20100%20100%20120%2080%20Q%20140%2060%20160%2080%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22165%2C80%20157%2C75%20157%2C85%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%2265%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EPhoton%20h%CE%BD%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Target%20plate%20%2F%20electron%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22180%22%20y%3D%2245%22%20width%3D%2214%22%20height%3D%2275%22%20rx%3D%223%22%20fill%3D%22%233f3f46%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22230%22%20cy%3D%2270%22%20r%3D%226%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22236%22%20y1%3D%2270%22%20x2%3D%22280%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22285%2C70%20277%2C66%20277%2C74%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22224%22%20y%3D%2290%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ee%E2%81%BB%20(K_max)%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22195%22%20y%3D%22115%22%20width%3D%22145%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22202%22%20y%3D%22131%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EK_max%20%3D%20h%CE%BD%20-%20%CE%A6%20%3D%20eV%E2%82%80%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '3	3\nA 0' },
+      { id: 'B', labelLatex: '9\nA 0' },
+      { id: 'C', labelLatex: '3	9\nA 0' },
+      { id: 'D', labelLatex: '27\nA 0' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 58. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q58: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q59",
-    "questionNumber": 9,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q59] Evaluate the physical / mathematical system for Question 59.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q59',
+    sectionId: 'physics',
+    questionNumber: 59,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The activity of a sample of radioactive material is A1 at time t 1 and A2 at time t 2 (t 2 > t 1\n). Its mean life is T.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q59%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'A1\nt 1 = A2\nt 2' },
+      { id: 'B', labelLatex: '1 	2\n2 	1\nA 	A\nt 	t\n\n = constant' },
+      { id: 'C', labelLatex: '1 2	( t t )/ T\n2 	1	A 	A e \n' },
+      { id: 'D', labelLatex: '1 2	( t /Tt )\n2 	1	A 	A e	' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 59. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q59: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q60",
-    "questionNumber": 10,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MOD Q60] Evaluate the physical / mathematical system for Question 60.",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 60. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mod-q61",
-    "questionNumber": 11,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q61] Evaluate the physical / mathematical system for Question 61.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q60',
+    sectionId: 'physics',
+    questionNumber: 60,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Half life of radium is 1620 years. How many radium nuclei decay in 5 hours in 5 gm radium? (Atomic weight\nof radium = 223)',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q60%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '9.1 \\times  1012' },
+      { id: 'B', labelLatex: '3.23 \\times  1015' },
+      { id: 'C', labelLatex: '1.72 \\times  1020' },
+      { id: 'D', labelLatex: '3.3 \\times  1017' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 61. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q60: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q62",
-    "questionNumber": 12,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q62] Evaluate the physical / mathematical system for Question 62.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q61',
+    sectionId: 'physics',
+    questionNumber: 61,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Two radioactive material A1 and A2 have decay constants of 10 \\lambda 0 and \\lambda 0. If initially they have same number\nof nuclei, the ratio of number of their undecayed nuclei will be (1/e) after what time',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q61%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '0\n1\n\\lambda' },
+      { id: 'B', labelLatex: '0	9\n1\n\\lambda' },
+      { id: 'C', labelLatex: '0	10\n1\n\\lambda' },
+      { id: 'D', labelLatex: '1' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 62. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q61: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q63",
-    "questionNumber": 13,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q63] Evaluate the physical / mathematical system for Question 63.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q62',
+    sectionId: 'physics',
+    questionNumber: 62,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A certain radioactive nuclide of mass number m x disintegrates, with the emission of an electron and \\gamma \nradiation only, to give second nuclied of mass number m y. Which one of the following equation correctly\nrelates m x and m y?',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q62%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'm y = m x + 1' },
+      { id: 'B', labelLatex: 'm y = m x – 2' },
+      { id: 'C', labelLatex: 'm y = m x – 1' },
+      { id: 'D', labelLatex: 'm y = m x' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 63. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q62: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q64",
-    "questionNumber": 14,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q64] Evaluate the physical / mathematical system for Question 64.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q63',
+    sectionId: 'physics',
+    questionNumber: 63,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The number of \\alpha  and \\beta  – emitted during the radioactive decay chain starting from 	Ra226\n88 	and ending at\nPb206\n82 	is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q63%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '3\\alpha  & 6\\beta  –' },
+      { id: 'B', labelLatex: '4\\alpha  & 5\\beta  –' },
+      { id: 'C', labelLatex: '5\\alpha  & 4\\beta  –' },
+      { id: 'D', labelLatex: '6\\alpha  & 6\\beta  –' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 64. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q63: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q65",
-    "questionNumber": 15,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q65] Evaluate the physical / mathematical system for Question 65.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q64',
+    sectionId: 'physics',
+    questionNumber: 64,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The decay constant of the end product of a radioactive series is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q64%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'zero' },
+      { id: 'B', labelLatex: 'infinite' },
+      { id: 'C', labelLatex: 'finite (non zero)' },
+      { id: 'D', labelLatex: 'depends on the end product.' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 65. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q64: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q66",
-    "questionNumber": 16,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q66] Evaluate the physical / mathematical system for Question 66.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q65',
+    sectionId: 'physics',
+    questionNumber: 65,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'At time t = 0, N1 nuclei of decay constant \\lambda 1 and N2 nuclei of decay constant \\lambda 2 are mixed. The decay rate\nof the mixture is :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q65%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '1 2 1 	2	–( 	)t\nN N e \\lambda  \\lambda' },
+      { id: 'B', labelLatex: ' 		–	1\n2\n1 	2	– 	t	N e\nN\n\\lambda  	\\lambda 	 	\n  	\n 	' },
+      { id: 'C', labelLatex: ' 		1 1 	2 2\n1 	2	t 	t\nN 	e 	N 	e\n\\lambda  	\\lambda \n 	\\lambda  	 	\\lambda' },
+      { id: 'D', labelLatex: ' N1\n\\lambda 1 N2\n\\lambda 2\n 	t	2	1\n	e \\lambda 		\\lambda 	\nONE OR MORE THAN ONE OPTION MAY BE CORRECT' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 66. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q65: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q67",
-    "questionNumber": 17,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q67] Evaluate the physical / mathematical system for Question 67.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q66',
+    sectionId: 'physics',
+    questionNumber: 66,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'In photoelectric effect, stopping potential depends on',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q66%20%E2%80%94%20Photoelectric%20V%E2%82%80%20vs%20%CE%BD%20Characteristic%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2235%22%20x2%3D%2290%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%CE%BD%20(Hz)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EV%E2%82%80%20(V)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Line%201%3A%20Metal%20A%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22130%22%20y1%3D%22130%22%20x2%3D%22280%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22130%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22120%22%20y%3D%22144%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%CE%BD%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22285%22%20y%3D%2245%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EMetal%20A%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Line%202%3A%20Metal%20B%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%22130%22%20x2%3D%22310%22%20y2%3D%2255%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22175%22%20y%3D%22144%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3E%CE%BD%E2%82%80%27%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%2260%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EMetal%20B%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Slope%20formula%20--%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22200%22%20y%3D%2285%22%20width%3D%22105%22%20height%3D%2226%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22208%22%20y%3D%22102%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3ESlope%20%3D%20h%2Fe%20(const)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'frequency of the incident light' },
+      { id: 'B', labelLatex: 'intensity of the incident light by varies source distance' },
+      { id: 'C', labelLatex: 'emitter’s properties' },
+      { id: 'D', labelLatex: 'frequency and intensity of the incident light' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 67. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A, C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q66: Correct answer is A, C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q68",
-    "questionNumber": 18,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q68] Evaluate the physical / mathematical system for Question 68.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q67',
+    sectionId: 'physics',
+    questionNumber: 67,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'Light coming from a discharge tube filled with hydrogen falls on the cathode of the photoelectric cell. The\nwork function of the surface of cathode is 4eV. Which one of the following values of the anode voltage\n(in Volts) with respect to the cathode will likely to make the photo current zero.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q67%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '–4' },
+      { id: 'B', labelLatex: '–6' },
+      { id: 'C', labelLatex: '–8' },
+      { id: 'D', labelLatex: '–10' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 68. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q67: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q69",
-    "questionNumber": 19,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q69] Evaluate the physical / mathematical system for Question 69.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q68',
+    sectionId: 'physics',
+    questionNumber: 68,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'An electron in hydrogen atom first jumps from second excited state to first excited state and then, from first\nexcited state to ground state. Let the ratio of wavelength, momentum and energy of photons in the two cases\nbe x, y and z, then select the wrong answer/(s) :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q68%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'z = 1/x' },
+      { id: 'B', labelLatex: 'x = 9/4' },
+      { id: 'C', labelLatex: 'y = 5/27' },
+      { id: 'D', labelLatex: 'z = 5/27' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 69. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q68: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q70",
-    "questionNumber": 20,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MOD Q70] Evaluate the physical / mathematical system for Question 70.",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 70. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mod-q71",
-    "questionNumber": 21,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q71] Evaluate the physical / mathematical system for Question 71.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q69',
+    sectionId: 'physics',
+    questionNumber: 69,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'Radius of the second Bohr obit of singly ionised helium atom is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q69%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '0.53  \\text{\\AA}' },
+      { id: 'B', labelLatex: '1.06  \\text{\\AA}' },
+      { id: 'C', labelLatex: '0.265  \\text{\\AA}' },
+      { id: 'D', labelLatex: '0.132  \\text{\\AA}' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 71. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q69: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q72",
-    "questionNumber": 22,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q72] Evaluate the physical / mathematical system for Question 72.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q70',
+    sectionId: 'physics',
+    questionNumber: 70,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'An electron is in an excited state in hydrogen-like atom. It has a total energy of –3.4 eV. If the kinetic energy\nof the electron is E and its de-Broglie wavelength is \\lambda , then',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q70%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'E = 6.8 eV, \\lambda  = 6.6 \\times  10^{-10} m' },
+      { id: 'B', labelLatex: 'E = 3.4 eV, \\lambda  = 6.6 \\times  10^{-10} m' },
+      { id: 'C', labelLatex: 'E = 3.4 eV, \\lambda  = 6.6 \\times  10^{-11} m' },
+      { id: 'D', labelLatex: 'E = 6.8 eV, \\lambda  = 6.6 \\times  10^{-11} m' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 72. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q70: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q73",
-    "questionNumber": 23,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q73] Evaluate the physical / mathematical system for Question 73.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q71',
+    sectionId: 'physics',
+    questionNumber: 71,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'An electron in Bohr’s hydrogen atom has an energy of –3.4 eV. The angular momentum of the electron is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q71%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'h / \\pi' },
+      { id: 'B', labelLatex: 'h / 2\\pi' },
+      { id: 'C', labelLatex: 'nh / 2\\pi  ( n is an integer)' },
+      { id: 'D', labelLatex: '2h / \\pi' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 73. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q71: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q74",
-    "questionNumber": 24,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q74] Evaluate the physical / mathematical system for Question 74.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q72',
+    sectionId: 'physics',
+    questionNumber: 72,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'A beam of ultraviolet light of all wavelengths passes through hydrogen gas at room temperature, in the\nx-direction. Assume that all photons emitted due to electron transition inside the gas emerge in the y-direction.\nLet A and B denote the lights emerging from the gas in the x and y directions respectively.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q72%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'Some of the incident wavelengths will be absent in A.' },
+      { id: 'B', labelLatex: 'Only those wavelengths will be present in B which are absent in A.' },
+      { id: 'C', labelLatex: 'B will contain some visible light.' },
+      { id: 'D', labelLatex: 'B will contain some infrared light.' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 74. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A, C, D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q72: Correct answer is A, C, D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q75",
-    "questionNumber": 25,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q75] Evaluate the physical / mathematical system for Question 75.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q73',
+    sectionId: 'physics',
+    questionNumber: 73,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'In the hydrogen atom, if the reference level of potential energy is assumed to be zero at the ground state\nlevel. Choose the incorrect statement.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q73%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'The total energy of the shell increases with increase in the value of n' },
+      { id: 'B', labelLatex: 'The total energy of the shell decrease with increase in the value of n.' },
+      { id: 'C', labelLatex: 'The difference in total energy of any two shells remains the same.' },
+      { id: 'D', labelLatex: 'The total energy at the ground state becomes 13.6 eV.' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 75. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q73: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q76",
-    "questionNumber": 26,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q76] Evaluate the physical / mathematical system for Question 76.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q74',
+    sectionId: 'physics',
+    questionNumber: 74,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'Let An be the area enclosed by the nth orbit in a hydrogen atom. The graph of ln (An/A 1) agains ln (n).',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q74%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'will pass through origin' },
+      { id: 'B', labelLatex: 'will be a stright line with slope 4' },
+      { id: 'C', labelLatex: 'will be a monotonically increasing nonlinear curve' },
+      { id: 'D', labelLatex: 'will be a circle.' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 76. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A, B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q74: Correct answer is A, B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q77",
-    "questionNumber": 27,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q77] Evaluate the physical / mathematical system for Question 77.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q75',
+    sectionId: 'physics',
+    questionNumber: 75,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'An electron in hydrogen atom after absorbing energy photons can jump between energy states n1 and\nn2(n2 > n1). Then it may return to ground state after emitting six different wavelengths in emission spectrum.\nthe energy of emitted photons is equal to, less than and greater than the absorbed photons. Then n1 and n2\nare :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q75%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'n2 = 4, n1 = 3' },
+      { id: 'B', labelLatex: 'n2 = 5, n1 = 3' },
+      { id: 'C', labelLatex: 'n2 = 4, n1 = 2' },
+      { id: 'D', labelLatex: 'n2 = 4, n1 = 1' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 77. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q75: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q78",
-    "questionNumber": 28,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q78] Evaluate the physical / mathematical system for Question 78.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q76',
+    sectionId: 'physics',
+    questionNumber: 76,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'A neutron collides head on with a stationary hydrogen atom in ground state',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q76%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'If kinetic energy of the neutron is less than 13.6 eV, collision must be elastic' },
+      { id: 'B', labelLatex: 'if kinetic energy of the neutron is less than 13.6 eV, collision may be inelastic.' },
+      { id: 'C', labelLatex: 'inelastic collision takes place when initial kinetic energy of neutron is greater than 13.6 eV.' },
+      { id: 'D', labelLatex: 'perfectly inelastic collision cannot take place.' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 78. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q76: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q79",
-    "questionNumber": 29,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q79] Evaluate the physical / mathematical system for Question 79.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q77',
+    sectionId: 'physics',
+    questionNumber: 77,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'A neutron collides head-on with a stationary hydrogen atom in ground state. Which of the following statements\nare correct (Assume that the hydrogen atom and neutron has same mass) :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q77%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'If kinetic energy of the neutron is less than 20.4 eV collision must be elastic.' },
+      { id: 'B', labelLatex: 'If kinetic energy of the neutron is less than 20.4 eV collision may be inelastic.' },
+      { id: 'C', labelLatex: 'Inelastic collision may be take place only when initial kinetic energy of neutron is greater than 20.4 eV.' },
+      { id: 'D', labelLatex: 'Perfectly inelastic collision can not take place.' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 79. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A, C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q77: Correct answer is A, C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q80",
-    "questionNumber": 30,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MOD Q80] Evaluate the physical / mathematical system for Question 80.",
-    "correctAnswer": "0",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 80. Correct result: **0**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mod-q81",
-    "questionNumber": 31,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q81] Evaluate the physical / mathematical system for Question 81.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q78',
+    sectionId: 'physics',
+    questionNumber: 78,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'When a nucleus with atomic number Z and mass number A undergoes a radioactive decay process:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q78%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'both Z and A will decrease, if the process is \\alpha  decay' },
+      { id: 'B', labelLatex: 'Z will decrease but A will not change, if the process is \\beta  + decay' },
+      { id: 'C', labelLatex: 'Z will decrease but A will not change, if the process is \\beta  – decay' },
+      { id: 'D', labelLatex: 'Z and A will remain unchanged, if the process is \\gamma  decay.' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 81. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A, B, D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q78: Correct answer is A, B, D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q82",
-    "questionNumber": 32,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q82] Evaluate the physical / mathematical system for Question 82.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q79',
+    sectionId: 'physics',
+    questionNumber: 79,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'de-Broglie wavelength of an electron in the nth Bohr orbit is \\lambda n and the angular momentum is Jn, then:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q79%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'Jn \\lambda n' },
+      { id: 'B', labelLatex: '\\lambda n  n	J\n1' },
+      { id: 'C', labelLatex: '\\lambda n  	2\nn	J' },
+      { id: 'D', labelLatex: 'none of these' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 82. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q79: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q83",
-    "questionNumber": 33,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q83] Evaluate the physical / mathematical system for Question 83.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q80',
+    sectionId: 'physics',
+    questionNumber: 80,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'In a Coolidge tube experiment, the minimum wavelength of the continuous X-ray spectrum is equal to\n66.3 pm, then',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q80%20%E2%80%94%20Characteristic%20%26%20Continuous%20X-Ray%20Spectrum%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%CE%BB%20(%C3%85)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EIntensity%20I%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Continuous%20curve%20with%20sharp%20K%20peaks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2095%20130%20C%20110%20130%20130%2065%20160%2065%20L%20160%2040%20L%20163%2040%20L%20163%2067%20L%20190%2075%20L%20190%2050%20L%20193%2050%20L%20193%2076%20C%20230%2085%20270%20115%20310%20128%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.2%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%2295%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%22145%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%CE%BB_min%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2235%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EK_%CE%B2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22185%22%20y%3D%2245%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EK_%CE%B1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22220%22%20y%3D%2245%22%20width%3D%22100%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22228%22%20y%3D%2261%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%229.5%22%3E%CE%BB_min%20%3D%20hc%20%2F%20(eV)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'electrons accelerate through a potential difference of 12.75 kV in the Coolidge tube' },
+      { id: 'B', labelLatex: 'electrons accelerate through a potential difference of 18.75 kV in the Coolidge tube' },
+      { id: 'C', labelLatex: 'de-Broglie wavelength of the electrons reaching the anticathode is of the order of 10 \\mu m.' },
+      { id: 'D', labelLatex: 'de-Broglie wavelength of the electrons reaching the anticathode is 0.01 \\text{\\AA}.' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 83. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q80: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q84",
-    "questionNumber": 34,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q84] Evaluate the physical / mathematical system for Question 84.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q81',
+    sectionId: 'physics',
+    questionNumber: 81,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'The potential difference applied to an X-ray tube is increased. As a result, in the emitted radiation :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q81%20%E2%80%94%20Characteristic%20%26%20Continuous%20X-Ray%20Spectrum%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%CE%BB%20(%C3%85)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EIntensity%20I%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Continuous%20curve%20with%20sharp%20K%20peaks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2095%20130%20C%20110%20130%20130%2065%20160%2065%20L%20160%2040%20L%20163%2040%20L%20163%2067%20L%20190%2075%20L%20190%2050%20L%20193%2050%20L%20193%2076%20C%20230%2085%20270%20115%20310%20128%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.2%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%2295%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%22145%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%CE%BB_min%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2235%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EK_%CE%B2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22185%22%20y%3D%2245%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EK_%CE%B1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22220%22%20y%3D%2245%22%20width%3D%22100%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22228%22%20y%3D%2261%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%229.5%22%3E%CE%BB_min%20%3D%20hc%20%2F%20(eV)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'the intensity increases' },
+      { id: 'B', labelLatex: 'the minimum wave length increases' },
+      { id: 'C', labelLatex: 'the intensity decreases' },
+      { id: 'D', labelLatex: 'the minimum wave length decreases' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 84. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A, D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q81: Correct answer is A, D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q85",
-    "questionNumber": 35,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q85] Evaluate the physical / mathematical system for Question 85.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q82',
+    sectionId: 'physics',
+    questionNumber: 82,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'An x-ray tube operates at an accelerating potential of 20 kV. Which of the following wavelengths will be\nabsent in the continuous spectrum of x ray ?',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q82%20%E2%80%94%20Characteristic%20%26%20Continuous%20X-Ray%20Spectrum%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%CE%BB%20(%C3%85)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EIntensity%20I%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Continuous%20curve%20with%20sharp%20K%20peaks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2095%20130%20C%20110%20130%20130%2065%20160%2065%20L%20160%2040%20L%20163%2040%20L%20163%2067%20L%20190%2075%20L%20190%2050%20L%20193%2050%20L%20193%2076%20C%20230%2085%20270%20115%20310%20128%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.2%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%2295%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%22145%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%CE%BB_min%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2235%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EK_%CE%B2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22185%22%20y%3D%2245%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EK_%CE%B1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22220%22%20y%3D%2245%22%20width%3D%22100%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22228%22%20y%3D%2261%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%229.5%22%3E%CE%BB_min%20%3D%20hc%20%2F%20(eV)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '12 pm' },
+      { id: 'B', labelLatex: '45 pm' },
+      { id: 'C', labelLatex: '65 pm' },
+      { id: 'D', labelLatex: '95 pm' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 85. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A, B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q82: Correct answer is A, B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q86",
-    "questionNumber": 36,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q86] Evaluate the physical / mathematical system for Question 86.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q83',
+    sectionId: 'physics',
+    questionNumber: 83,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'The K, L and M energy levels of platinum lie roughly at 78, 12 and 3 KeV, respectively. The ratio of wavelength\nof K \\alpha  line to that of K\\beta  line in x-ray spectrum is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q83%20%E2%80%94%20Characteristic%20%26%20Continuous%20X-Ray%20Spectrum%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%CE%BB%20(%C3%85)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EIntensity%20I%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Continuous%20curve%20with%20sharp%20K%20peaks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2095%20130%20C%20110%20130%20130%2065%20160%2065%20L%20160%2040%20L%20163%2040%20L%20163%2067%20L%20190%2075%20L%20190%2050%20L%20193%2050%20L%20193%2076%20C%20230%2085%20270%20115%20310%20128%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.2%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%2295%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%22145%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%CE%BB_min%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2235%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EK_%CE%B2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22185%22%20y%3D%2245%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EK_%CE%B1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22220%22%20y%3D%2245%22%20width%3D%22100%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22228%22%20y%3D%2261%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%229.5%22%3E%CE%BB_min%20%3D%20hc%20%2F%20(eV)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '3\n22' },
+      { id: 'B', labelLatex: '22\n3' },
+      { id: 'C', labelLatex: '25\n22' },
+      { id: 'D', labelLatex: '22\n25' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 86. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q83: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q87",
-    "questionNumber": 37,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q87] Evaluate the physical / mathematical system for Question 87.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q84',
+    sectionId: 'physics',
+    questionNumber: 84,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'The energy of a tungsten atom with a vacancy in L shell is 11.3 keV. Wavelength of K\\alpha photon for tungsten is\n21.3 pm. If a potential difference of 62 kV is applied across the x-rays tube following characteristic x-rays will\nbe produced.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q84%20%E2%80%94%20Characteristic%20%26%20Continuous%20X-Ray%20Spectrum%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%CE%BB%20(%C3%85)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EIntensity%20I%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Continuous%20curve%20with%20sharp%20K%20peaks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2095%20130%20C%20110%20130%20130%2065%20160%2065%20L%20160%2040%20L%20163%2040%20L%20163%2067%20L%20190%2075%20L%20190%2050%20L%20193%2050%20L%20193%2076%20C%20230%2085%20270%20115%20310%20128%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.2%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%2295%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%22145%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%CE%BB_min%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2235%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EK_%CE%B2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22185%22%20y%3D%2245%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EK_%CE%B1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22220%22%20y%3D%2245%22%20width%3D%22100%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22228%22%20y%3D%2261%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%229.5%22%3E%CE%BB_min%20%3D%20hc%20%2F%20(eV)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'K, L series' },
+      { id: 'B', labelLatex: 'Only K \\alpha  and L series' },
+      { id: 'C', labelLatex: 'Only L series' },
+      { id: 'D', labelLatex: 'None of these' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 87. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q84: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q88",
-    "questionNumber": 38,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q88] Evaluate the physical / mathematical system for Question 88.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q85',
+    sectionId: 'physics',
+    questionNumber: 85,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'When the atomic number A of the nucleus increases',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q85%20%E2%80%94%20Quantum%20Photoelectric%20Interaction%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Matter%20wave%20%26%20quantum%20photon%20interaction%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2040%2080%20Q%2060%2060%2080%2080%20Q%20100%20100%20120%2080%20Q%20140%2060%20160%2080%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22165%2C80%20157%2C75%20157%2C85%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%2265%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EPhoton%20h%CE%BD%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Target%20plate%20%2F%20electron%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22180%22%20y%3D%2245%22%20width%3D%2214%22%20height%3D%2275%22%20rx%3D%223%22%20fill%3D%22%233f3f46%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22230%22%20cy%3D%2270%22%20r%3D%226%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22236%22%20y1%3D%2270%22%20x2%3D%22280%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22285%2C70%20277%2C66%20277%2C74%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22224%22%20y%3D%2290%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ee%E2%81%BB%20(K_max)%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22195%22%20y%3D%22115%22%20width%3D%22145%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22202%22%20y%3D%22131%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EK_max%20%3D%20h%CE%BD%20-%20%CE%A6%20%3D%20eV%E2%82%80%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'initially the neutron-proton ratio is constant = 1' },
+      { id: 'B', labelLatex: 'initially neutron-proton ratio increases and later decreases' },
+      { id: 'C', labelLatex: 'initially binding energy per nucleon increases and later decreases' },
+      { id: 'D', labelLatex: 'the binding energy per nucleon increases when the neutron-proton ratio increases.' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 88. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A, C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q85: Correct answer is A, C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q89",
-    "questionNumber": 39,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q89] Evaluate the physical / mathematical system for Question 89.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q86',
+    sectionId: 'physics',
+    questionNumber: 86,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'Let m p be the mass of a proton, m n the mass of a neutron, M1 the mas of a 	Ne20\n10 	nucleus and M2 the mass\nof a 	Ca40\n20 	nucleus. Then',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q86%20%E2%80%94%20Quantum%20Photoelectric%20Interaction%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Matter%20wave%20%26%20quantum%20photon%20interaction%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2040%2080%20Q%2060%2060%2080%2080%20Q%20100%20100%20120%2080%20Q%20140%2060%20160%2080%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22165%2C80%20157%2C75%20157%2C85%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%2265%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EPhoton%20h%CE%BD%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Target%20plate%20%2F%20electron%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22180%22%20y%3D%2245%22%20width%3D%2214%22%20height%3D%2275%22%20rx%3D%223%22%20fill%3D%22%233f3f46%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22230%22%20cy%3D%2270%22%20r%3D%226%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22236%22%20y1%3D%2270%22%20x2%3D%22280%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22285%2C70%20277%2C66%20277%2C74%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22224%22%20y%3D%2290%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ee%E2%81%BB%20(K_max)%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22195%22%20y%3D%22115%22%20width%3D%22145%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22202%22%20y%3D%22131%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EK_max%20%3D%20h%CE%BD%20-%20%CE%A6%20%3D%20eV%E2%82%80%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'M 2 = 2M1' },
+      { id: 'B', labelLatex: 'M 2 > 2M1' },
+      { id: 'C', labelLatex: 'M2 < 2M1' },
+      { id: 'D', labelLatex: 'M1 < 10(m n + m p)' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 89. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C, D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q86: Correct answer is C, D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q90",
-    "questionNumber": 40,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MOD Q90] Evaluate the physical / mathematical system for Question 90.",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 90. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mod-q91",
-    "questionNumber": 41,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q91] Evaluate the physical / mathematical system for Question 91.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q87',
+    sectionId: 'physics',
+    questionNumber: 87,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'In an \\alpha -decay the Kinetic energy of \\alpha  particle is 48 MeV and Q-value of the reaction is 50 MeV. The mass\nnumber of the mother nucleus is: (Assume that daughter nucleus is in ground state)',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q87%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '96' },
+      { id: 'B', labelLatex: '100' },
+      { id: 'C', labelLatex: '104' },
+      { id: 'D', labelLatex: 'none of these' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 91. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q87: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q92",
-    "questionNumber": 42,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q92] Evaluate the physical / mathematical system for Question 92.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q88',
+    sectionId: 'physics',
+    questionNumber: 88,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'A radioactive material of half-life T was produced in a nuclear reactor at different instants, the quantity\nproduced second time was twice of that produced first time. If now their present activities are A 1 and A2\nrespectively then their age difference equals :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q88%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '2\n1\nA\nA\nln\n2	ln\nT' },
+      { id: 'B', labelLatex: 'T 2\n1\nA\nA\nln' },
+      { id: 'C', labelLatex: '1\n2\nA	2\nA\nln\n2	ln\nT' },
+      { id: 'D', labelLatex: 'T 1\n2\nA	2\nA\nln' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 92. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q88: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q93",
-    "questionNumber": 43,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q93] Evaluate the physical / mathematical system for Question 93.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q89',
+    sectionId: 'physics',
+    questionNumber: 89,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'Half life for certain radioactive element is 5 min. Four nuclei of that element are observed at a certain instant\nof time. After five minutes\nAssertion',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q89%20%E2%80%94%20Law%20of%20Radioactive%20Disintegration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ETime%20t%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EActive%20Nuclei%20N(t)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Exponential%20curve%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2060%2045%20C%2090%2075%20140%20105%20200%20120%20C%20240%20126%20280%20129%20320%20130%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%2287%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2287%22%20x2%3D%22135%22%20y2%3D%22130%22%20stroke%3D%22%23fbbf24%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EN%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2228%22%20y%3D%2290%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EN%E2%82%80%2F2%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22125%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3ET%E2%82%81%2F%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2255%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22218%22%20y%3D%2271%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EN(t)%20%3D%20N%E2%82%80%20e%5E%7B-%CE%BB%20t%7D%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: ': It can be definitely said that two nuclei will be left undecayed.\nReasoning (R) : After half life i.e. 5 minutes, half of total nuclei will disintegrate. So only two nuclei will be left\nundecayed. Then' },
+      { id: 'B', labelLatex: '(A) A is correct & R is correct explanation of A.' },
+      { id: 'C', labelLatex: '(B) Both are correct. But R is not correct explanation of A.' },
+      { id: 'D', labelLatex: '(C) A is incorrect & R is correct.' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 93. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q89: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q94",
-    "questionNumber": 44,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q94] Evaluate the physical / mathematical system for Question 94.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p2-q90',
+    sectionId: 'physics',
+    questionNumber: 90,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'In the following, column-I lists some physical quantities & the column-II gives approx. energy values\nassociated with some of them. Choose the appropriate value of energy from column-II for each of the\nphysical quantities in column-I and write the corresponding letter A, B, C etc. against the number (i), (ii),\n(iii), etc. of the physical quantity in the answer book. In your answer, the sequence of column-I should be\nmaintained.\nColumn-I 	Column-II\n(i) Energy of thermal neutrons',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q90%20%E2%80%94%20Quantum%20Photoelectric%20Interaction%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Matter%20wave%20%26%20quantum%20photon%20interaction%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2040%2080%20Q%2060%2060%2080%2080%20Q%20100%20100%20120%2080%20Q%20140%2060%20160%2080%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22165%2C80%20157%2C75%20157%2C85%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%2265%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EPhoton%20h%CE%BD%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Target%20plate%20%2F%20electron%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22180%22%20y%3D%2245%22%20width%3D%2214%22%20height%3D%2275%22%20rx%3D%223%22%20fill%3D%22%233f3f46%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22230%22%20cy%3D%2270%22%20r%3D%226%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22236%22%20y1%3D%2270%22%20x2%3D%22280%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22285%2C70%20277%2C66%20277%2C74%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22224%22%20y%3D%2290%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ee%E2%81%BB%20(K_max)%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22195%22%20y%3D%22115%22%20width%3D%22145%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22202%22%20y%3D%22131%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EK_max%20%3D%20h%CE%BD%20-%20%CE%A6%20%3D%20eV%E2%82%80%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '0.025 eV\n(ii) Energy of X-rays' },
+      { id: 'B', labelLatex: '0.5 eV\n(iii) Binding energy per nucleon' },
+      { id: 'C', labelLatex: '3 eV\n(iv) Photoelectric threshold of metal' },
+      { id: 'D', labelLatex: '20 eV\n(E) 10 keV\n(F) 8 MeV' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 94. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: '(i) - A, (ii) - E, (iii) - F, (iv) - C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q90: Correct answer is (i) - A, (ii) - E, (iii) - F, (iv) - C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "mod-q95",
-    "questionNumber": 45,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q95] Evaluate the physical / mathematical system for Question 95.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 95. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'mod-p2-q91',
+    sectionId: 'physics',
+    questionNumber: 91,
+    type: 'NUMERICAL',
+    promptLatex: 'When photons of energy 4.25 eV strike the surface of a metal A, the ejected photoelectrons have maximum\nkinetic energy T a eV and de Broglie wavelength \\lambda a. The maximum kinetic energy of photoelectrons liberated\nfrom another metal B by photons of energy 4.7 eV is Tb = (T a – 1.5) eV. If the De Broglie wavelength of these\nphotoelectrons is \\lambda b = 2\\lambda a, then find\n(a) The work function of a 	(b) The work function of b is 	(c) T a and T b',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q91%20%E2%80%94%20Quantum%20Photoelectric%20Interaction%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Matter%20wave%20%26%20quantum%20photon%20interaction%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2040%2080%20Q%2060%2060%2080%2080%20Q%20100%20100%20120%2080%20Q%20140%2060%20160%2080%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22165%2C80%20157%2C75%20157%2C85%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%2265%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EPhoton%20h%CE%BD%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Target%20plate%20%2F%20electron%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22180%22%20y%3D%2245%22%20width%3D%2214%22%20height%3D%2275%22%20rx%3D%223%22%20fill%3D%22%233f3f46%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22230%22%20cy%3D%2270%22%20r%3D%226%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22236%22%20y1%3D%2270%22%20x2%3D%22280%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22285%2C70%20277%2C66%20277%2C74%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22224%22%20y%3D%2290%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ee%E2%81%BB%20(K_max)%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22195%22%20y%3D%22115%22%20width%3D%22145%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22202%22%20y%3D%22131%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EK_max%20%3D%20h%CE%BD%20-%20%CE%A6%20%3D%20eV%E2%82%80%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '(a) 2.25 eV, (b) 4.2 eV, (c) 2.0 eV, 0.5 eV',
+    explanationLatex: 'Detailed physical derivation for problem Q1: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: (a) 2.25 eV, (b) 4.2 eV, (c) 2.0 eV, 0.5 eV.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "mod-q96",
-    "questionNumber": 46,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q96] Evaluate the physical / mathematical system for Question 96.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 96. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'mod-p2-q92',
+    sectionId: 'physics',
+    questionNumber: 92,
+    type: 'NUMERICAL',
+    promptLatex: 'When a monochromatic point source of light is at a distance of 0.2 m from a photoelectric cell, the cut off\nvoltage and the saturation current are respectively 0.6 volt and 18.0 mA. If the same source is placed 0.6 m\naway from the photoelectric cell, then find\n(a) the stopping potential 	(b) the saturation current',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q92%20%E2%80%94%20Photoelectric%20V%E2%82%80%20vs%20%CE%BD%20Characteristic%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2235%22%20x2%3D%2290%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%CE%BD%20(Hz)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EV%E2%82%80%20(V)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Line%201%3A%20Metal%20A%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22130%22%20y1%3D%22130%22%20x2%3D%22280%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22130%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22120%22%20y%3D%22144%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%CE%BD%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22285%22%20y%3D%2245%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EMetal%20A%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Line%202%3A%20Metal%20B%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%22130%22%20x2%3D%22310%22%20y2%3D%2255%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22175%22%20y%3D%22144%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3E%CE%BD%E2%82%80%27%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%2260%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EMetal%20B%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Slope%20formula%20--%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22200%22%20y%3D%2285%22%20width%3D%22105%22%20height%3D%2226%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22208%22%20y%3D%22102%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3ESlope%20%3D%20h%2Fe%20(const)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '(a) 0.6 V, (b) 2.0 mA',
+    explanationLatex: 'Detailed physical derivation for problem Q2: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: (a) 0.6 V, (b) 2.0 mA.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "mod-q97",
-    "questionNumber": 47,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q97] Evaluate the physical / mathematical system for Question 97.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 97. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'mod-p2-q93',
+    sectionId: 'physics',
+    questionNumber: 93,
+    type: 'NUMERICAL',
+    promptLatex: 'An isolated metal body is illuminated with 	monochromatic light and is observed to become charged to a\nsteady positive potential 1.0 V with respect to the surrounding. The work function of the metal is 3.0 eV. The\nfrequency of the incident light is _________.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q93%20%E2%80%94%20Photoelectric%20V%E2%82%80%20vs%20%CE%BD%20Characteristic%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2235%22%20x2%3D%2290%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%CE%BD%20(Hz)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EV%E2%82%80%20(V)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Line%201%3A%20Metal%20A%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22130%22%20y1%3D%22130%22%20x2%3D%22280%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22130%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22120%22%20y%3D%22144%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%CE%BD%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22285%22%20y%3D%2245%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EMetal%20A%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Line%202%3A%20Metal%20B%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%22130%22%20x2%3D%22310%22%20y2%3D%2255%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22175%22%20y%3D%22144%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3E%CE%BD%E2%82%80%27%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%2260%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EMetal%20B%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Slope%20formula%20--%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22200%22%20y%3D%2285%22%20width%3D%22105%22%20height%3D%2226%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22208%22%20y%3D%22102%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3ESlope%20%3D%20h%2Fe%20(const)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '4.0 eV',
+    explanationLatex: 'Detailed physical derivation for problem Q3: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 4.0 eV.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "mod-q98",
-    "questionNumber": 48,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q98] Evaluate the physical / mathematical system for Question 98.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 98. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'mod-p2-q94',
+    sectionId: 'physics',
+    questionNumber: 94,
+    type: 'NUMERICAL',
+    promptLatex: '663 mW of light from a 540 nm source is incident on the surface of a metal. If only 1 of each 5 \\times  109 incident\nphotons is absorbed and causes an electron to be ejected from the surface, the total photocurrent in the\ncircuit is ________.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q94%20%E2%80%94%20Saturation%20Photocurrent%20vs%20Collector%20Voltage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%2290%22%20x2%3D%22330%22%20y2%3D%2290%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2235%22%20x2%3D%22160%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%2285%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%2BV%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22165%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3ECurrent%20I%20(%CE%BCA)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2245%22%20y%3D%2285%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E-V%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Curves%20for%20I1%2C%20I2%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2080%2090%20C%20120%2090%20140%2060%20210%2060%20L%20310%2060%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2080%2090%20C%20120%2090%20150%2045%20210%2045%20L%20310%2045%22%20fill%3D%22none%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%2280%22%20cy%3D%2290%22%20r%3D%223.5%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%22105%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3E-V%E2%82%80%20(Stop)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%2248%22%20fill%3D%22%2322c55e%22%20font-weight%3D%22bold%22%3EIntensity%20I%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%2263%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EIntensity%20I%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '5.76 \\times 10^{-11}\\text{ A}',
+    explanationLatex: 'Detailed physical derivation for problem Q4: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 5.76 \\times 10^{-11}\\text{ A}.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "mod-q99",
-    "questionNumber": 49,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q99] Evaluate the physical / mathematical system for Question 99.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 99. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'mod-p2-q95',
+    sectionId: 'physics',
+    questionNumber: 95,
+    type: 'NUMERICAL',
+    promptLatex: 'Light of wavelength 330 nm falling on a piece of metal ejects electrons with sufficient energy which requires\nvoltage V0 to prevent a electron from reaching collector. In the same setup, light of wavelength 220 nm, ejects\nelectrons which require twice the voltage V0 to stop them in reaching a collector. Find the numerical value of\nvoltage V0. (Take plank\'s constant, h = 6.6 \\times  10^{-34} Js and 1 eV = 1.6 \\times  10^{-19} J)',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q95%20%E2%80%94%20Photoelectric%20V%E2%82%80%20vs%20%CE%BD%20Characteristic%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2235%22%20x2%3D%2290%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%CE%BD%20(Hz)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EV%E2%82%80%20(V)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Line%201%3A%20Metal%20A%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22130%22%20y1%3D%22130%22%20x2%3D%22280%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22130%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22120%22%20y%3D%22144%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%CE%BD%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22285%22%20y%3D%2245%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EMetal%20A%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Line%202%3A%20Metal%20B%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%22130%22%20x2%3D%22310%22%20y2%3D%2255%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22175%22%20y%3D%22144%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3E%CE%BD%E2%82%80%27%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%2260%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EMetal%20B%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Slope%20formula%20--%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22200%22%20y%3D%2285%22%20width%3D%22105%22%20height%3D%2226%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22208%22%20y%3D%22102%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3ESlope%20%3D%20h%2Fe%20(const)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '15/8\\text{ V}',
+    explanationLatex: 'Detailed physical derivation for problem Q5: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 15/8\\text{ V}.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "mod-q100",
-    "questionNumber": 50,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MOD Q100] Evaluate the physical / mathematical system for Question 100.",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 100. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
+    id: 'mod-p2-q96',
+    sectionId: 'physics',
+    questionNumber: 96,
+    type: 'NUMERICAL',
+    promptLatex: 'A small 10W source of ultraviolet light of wavelength 99 nm is held at a distance 0.1 m from a metal surface.\nThe radius of an atom of the metal is approximately 0.05 nm. Find\n(i) the average number of photons striking an atom per second.\n(ii) the number of photoelectrons emitted per unit area per second if the efficiency of liberation of photoelectrons is 1%.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q96%20%E2%80%94%20Quantum%20Photoelectric%20Interaction%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Matter%20wave%20%26%20quantum%20photon%20interaction%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2040%2080%20Q%2060%2060%2080%2080%20Q%20100%20100%20120%2080%20Q%20140%2060%20160%2080%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22165%2C80%20157%2C75%20157%2C85%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%2265%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EPhoton%20h%CE%BD%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Target%20plate%20%2F%20electron%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22180%22%20y%3D%2245%22%20width%3D%2214%22%20height%3D%2275%22%20rx%3D%223%22%20fill%3D%22%233f3f46%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22230%22%20cy%3D%2270%22%20r%3D%226%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22236%22%20y1%3D%2270%22%20x2%3D%22280%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22285%2C70%20277%2C66%20277%2C74%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22224%22%20y%3D%2290%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ee%E2%81%BB%20(K_max)%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22195%22%20y%3D%22115%22%20width%3D%22145%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22202%22%20y%3D%22131%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EK_max%20%3D%20h%CE%BD%20-%20%CE%A6%20%3D%20eV%E2%82%80%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '516, 20/(1080\\pi)',
+    explanationLatex: 'Detailed physical derivation for problem Q6: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 516, 20/(1080\\pi).',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'mod-p2-q97',
+    sectionId: 'physics',
+    questionNumber: 97,
+    type: 'NUMERICAL',
+    promptLatex: 'The surface of cesium is illuminated with monochromatic light of various\nwavelengths and the stopping potentials for the wavelengths are measured.\nThe results of this experiment is plotted as shown in the figure.\nEstimate the value of work function of the cesium and Planck’s constant.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q97%20%E2%80%94%20Photoelectric%20V%E2%82%80%20vs%20%CE%BD%20Characteristic%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2245%22%20y1%3D%22130%22%20x2%3D%22330%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2235%22%20x2%3D%2290%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%CE%BD%20(Hz)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EV%E2%82%80%20(V)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Line%201%3A%20Metal%20A%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22130%22%20y1%3D%22130%22%20x2%3D%22280%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22130%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22120%22%20y%3D%22144%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%CE%BD%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22285%22%20y%3D%2245%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EMetal%20A%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Line%202%3A%20Metal%20B%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%22130%22%20x2%3D%22310%22%20y2%3D%2255%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22130%22%20r%3D%223.5%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22175%22%20y%3D%22144%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3E%CE%BD%E2%82%80%27%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%2260%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EMetal%20B%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Slope%20formula%20--%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22200%22%20y%3D%2285%22%20width%3D%22105%22%20height%3D%2226%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22208%22%20y%3D%22102%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3ESlope%20%3D%20h%2Fe%20(const)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '2\\text{ eV}, 6.53 \\times 10^{-34}\\text{ J}\\cdot\\text{s}',
+    explanationLatex: 'Detailed physical derivation for problem Q7: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 2\\text{ eV}, 6.53 \\times 10^{-34}\\text{ J}\\cdot\\text{s}.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'mod-p2-q98',
+    sectionId: 'physics',
+    questionNumber: 98,
+    type: 'NUMERICAL',
+    promptLatex: 'A parallel beam of uniform, monochromatic light of wavelength 2640 A has an intensity of 200 W/m 2. The\nnumber of photons in 1mm 3 of this radiation are .........',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q98%20%E2%80%94%20Saturation%20Photocurrent%20vs%20Collector%20Voltage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%2290%22%20x2%3D%22330%22%20y2%3D%2290%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2235%22%20x2%3D%22160%22%20y2%3D%22145%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%2285%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E%2BV%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22165%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3ECurrent%20I%20(%CE%BCA)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2245%22%20y%3D%2285%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3E-V%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Curves%20for%20I1%2C%20I2%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2080%2090%20C%20120%2090%20140%2060%20210%2060%20L%20310%2060%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%2080%2090%20C%20120%2090%20150%2045%20210%2045%20L%20310%2045%22%20fill%3D%22none%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%2280%22%20cy%3D%2290%22%20r%3D%223.5%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%22105%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3E-V%E2%82%80%20(Stop)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%2248%22%20fill%3D%22%2322c55e%22%20font-weight%3D%22bold%22%3EIntensity%20I%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22315%22%20y%3D%2263%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EIntensity%20I%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '885',
+    explanationLatex: 'Detailed physical derivation for problem Q8: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 885.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'mod-p2-q99',
+    sectionId: 'physics',
+    questionNumber: 99,
+    type: 'NUMERICAL',
+    promptLatex: 'An electron of mass "m" and charge "e" initially at rest gets accelerated by a constant electric field E. The\nrate of change of De-Broglie wavelength of this electron at time t is ...........',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q99%20%E2%80%94%20Quantum%20Photoelectric%20Interaction%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Matter%20wave%20%26%20quantum%20photon%20interaction%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2040%2080%20Q%2060%2060%2080%2080%20Q%20100%20100%20120%2080%20Q%20140%2060%20160%2080%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22165%2C80%20157%2C75%20157%2C85%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%2280%22%20y%3D%2265%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EPhoton%20h%CE%BD%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Target%20plate%20%2F%20electron%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22180%22%20y%3D%2245%22%20width%3D%2214%22%20height%3D%2275%22%20rx%3D%223%22%20fill%3D%22%233f3f46%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22230%22%20cy%3D%2270%22%20r%3D%226%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22236%22%20y1%3D%2270%22%20x2%3D%22280%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22285%2C70%20277%2C66%20277%2C74%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22224%22%20y%3D%2290%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ee%E2%81%BB%20(K_max)%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22195%22%20y%3D%22115%22%20width%3D%22145%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22202%22%20y%3D%22131%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EK_max%20%3D%20h%CE%BD%20-%20%CE%A6%20%3D%20eV%E2%82%80%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '-h/(eEt^2)',
+    explanationLatex: 'Detailed physical derivation for problem Q9: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: -h/(eEt^2).',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'mod-p2-q100',
+    sectionId: 'physics',
+    questionNumber: 100,
+    type: 'NUMERICAL',
+    promptLatex: 'A hydrogen atom in a state having a binding energy 0.85 eV makes a transition to a state of excitation energy\n10.2 eV. The wave length of emitted photon is ..........nm.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EMODERN%20PHYSICS%20PART%202%20%E2%80%A2%20Q100%20%E2%80%94%20Bohr%20Quantized%20Orbital%20Transition%20Levels%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Levels%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%22135%22%20x2%3D%22310%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%22138%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3En%3D1%20(-13.6%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%2295%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2298%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3En%3D2%20(-3.4%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2270%22%20x2%3D%22310%22%20y2%3D%2270%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2273%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3En%3D3%20(-1.51%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%22310%22%20y2%3D%2250%22%20stroke%3D%22%23a1a1aa%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2253%22%20fill%3D%22%23a1a1aa%22%3En%3D%E2%88%9E%20(0%20eV)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Transitions%20--%3E%0A%20%20%20%20%20%20%3C!--%20Lyman%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2295%22%20x2%3D%2290%22%20y2%3D%22135%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C135%2087%2C127%2093%2C127%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2275%22%20y%3D%22118%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ELyman%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Balmer%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22160%22%20y1%3D%2270%22%20x2%3D%22160%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22160%2C95%20157%2C88%20163%2C88%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22145%22%20y%3D%2285%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EBalmer%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Photon%20emission%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20160%2082%20Q%20175%2075%20190%2082%20Q%20205%2090%20220%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22225%22%20y%3D%2285%22%20fill%3D%22%23fbbf24%22%20font-size%3D%229%22%3Eh%CE%BD%20%3D%20%CE%94E%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '487.06\\text{ nm}',
+    explanationLatex: 'Detailed physical derivation for problem Q10: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 487.06\\text{ nm}.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   }
 ];

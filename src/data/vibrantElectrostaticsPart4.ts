@@ -1,1363 +1,764 @@
 import { Question } from '../types/exam';
+
 export const ELECTROSTATICS_PART_4_QUESTIONS: Question[] = [
   {
-    "id": "elec-q151",
-    "questionNumber": 1,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q151] Evaluate the physical / mathematical system for Question 151.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q151',
+    sectionId: 'physics',
+    questionNumber: 1,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2022] Two uniformly charged spherical conductors $A$ and $B$ of radii $5\\text{ mm}$ and $10\\text{ mm}$ are connected by a wire. Ratio of electric field at surfaces of $A$ and $B$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q1%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$1 : 2$' },
+      { id: 'B', labelLatex: '$2 : 1$' },
+      { id: 'C', labelLatex: '$1 : 1$' },
+      { id: 'D', labelLatex: '$1 : 4$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 151. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'When connected, potentials equalize: $V_A = V_B \\implies \\frac{k q_A}{R_A} = \\frac{k q_B}{R_B} \\implies \\frac{q_A}{q_B} = \\frac{R_A}{R_B}$. Field $E = \\frac{k q}{R^2} = \\frac{V}{R} \\propto \\frac{1}{R}$. Thus $\\frac{E_A}{E_B} = \\frac{R_B}{R_A} = \\frac{10}{5} = 2 : 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q152",
-    "questionNumber": 2,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q152] Evaluate the physical / mathematical system for Question 152.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q152',
+    sectionId: 'physics',
+    questionNumber: 2,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2022] Spherically symmetric charge distribution has $\\rho(r) = \\rho_0\\left(\\frac{3}{4} - \\frac{r}{R}\\right)$ for $r \\le R$ and $0$ for $r > R$. Electric field at point $P$ at distance $r < R$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q2%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\rho_0 r}{4\\varepsilon_0}\\left(\\frac{3}{4} - \\frac{r}{R}\\right)$' },
+      { id: 'B', labelLatex: '$\\frac{\\rho_0 r}{3\\varepsilon_0}\\left(\\frac{3}{4} - \\frac{r}{R}\\right)$' },
+      { id: 'C', labelLatex: '$\\frac{\\rho_0 r}{4\\varepsilon_0}\\left(1 - \\frac{r}{R}\\right)$' },
+      { id: 'D', labelLatex: '$\\frac{\\rho_0 r}{5\\varepsilon_0}\\left(1 - \\frac{r}{R}\\right)$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 152. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'By Gauss\'s Law: $E(4\\pi r^2) = \\frac{1}{\\varepsilon_0} \\int_0^r 4\\pi r\'^2 \\rho_0 (3/4 - r\'/R) dr\' = \\frac{4\\pi\\rho_0}{\\varepsilon_0}[r^3/4 - r^4/4R] \\implies E = \\frac{\\rho_0 r}{4\\varepsilon_0}\\left(1 - \\frac{r}{R}\\right)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q153",
-    "questionNumber": 3,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q153] Evaluate the physical / mathematical system for Question 153.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q153',
+    sectionId: 'physics',
+    questionNumber: 3,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2022] Sphere of radius $6\\text{ m}$ has charge density $2\\,\\mu\\text{C}/\\text{cm}^3$. Number of field lines per unit surface area coming out is $X \\times 10^{10}\\text{ N/C}$. Value of $X$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q3%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    correctAnswer: '45',
+    explanationLatex: 'Field at surface $E = \\frac{\\rho R}{3\\varepsilon_0} = \\frac{2 \\times 10^{-6}/10^{-6} \\times 6}{3 \\times 8.85 \\times 10^{-12}} = \\frac{12}{3 \\times 8.85 \\times 10^{-12}} \\approx 45.2 \\times 10^{10}\\text{ N/C}$. In integer convention, $X = 45$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q154',
+    sectionId: 'physics',
+    questionNumber: 4,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2022] Three charges $5\\,\\mu\\text{C}, 0.16\\,\\mu\\text{C}$ and $0.3\\,\\mu\\text{C}$ at vertices $A, B, C$ of right triangle ($AB = 3\\text{ cm}, AC = 3\\text{ cm}$, right angle at $A$). Force on $A$ in Newtons is:',
+    correctAnswer: '17',
+    explanationLatex: '$F_{AB} = \\frac{9 \\times 10^9 \\times 5 \\times 10^{-6} \\times 0.16 \\times 10^{-6}}{(0.03)^2} = 8\\text{ N}$. $F_{AC} = \\frac{9 \\times 10^9 \\times 5 \\times 10^{-6} \\times 0.3 \\times 10^{-6}}{(0.03)^2} = 15\\text{ N}$. Net force $F = \\sqrt{8^2 + 15^2} = 17\\text{ N}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q155',
+    sectionId: 'physics',
+    questionNumber: 5,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2022] Two dipoles $1.2 \\times 10^{-30}\\text{ C}\\cdot\\text{m}$ and $2.4 \\times 10^{-30}\\text{ C}\\cdot\\text{m}$ in fields $5 \\times 10^4\\text{ N/C}$ and $15 \\times 10^4\\text{ N/C}$. Ratio of maximum torques is $1/x$. The value of $x$ is:',
+    correctAnswer: '6.00',
+    explanationLatex: '$\\tau_1 = p_1 E_1 = 1.2 \\times 5 = 6.0 \\times 10^{-26}$. $\\tau_2 = p_2 E_2 = 2.4 \\times 15 = 36.0 \\times 10^{-26}$. Ratio $\\frac{\\tau_1}{\\tau_2} = \\frac{6}{36} = \\frac{1}{6}$, so $x = 6.00$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q156',
+    sectionId: 'physics',
+    questionNumber: 6,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2022] Long cylinder with charge density $\\rho$. Electric field inside cylinder at distance $x = \\frac{2\\varepsilon_0}{\\rho}\\text{ m}$ from axis in $\\text{V/m}$ is:',
+    correctAnswer: '1.00',
+    explanationLatex: '$E = \\frac{\\rho x}{2\\varepsilon_0} = \\frac{\\rho}{2\\varepsilon_0} \\left(\\frac{2\\varepsilon_0}{\\rho}\\right) = 1.00\\text{ V/m}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q157',
+    sectionId: 'physics',
+    questionNumber: 7,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: '[JEE Adv 2022] Six charges around regular hexagon of side $a$. Five have charge $q$, one has charge $x$. Which statement(s) are correct?',
+    options: [
+      { id: 'A', labelLatex: 'When $x = q$, magnitude of field at $O$ is zero' },
+      { id: 'B', labelLatex: 'When $x = -q$, magnitude of field at $O$ is $\\frac{q}{6\\pi\\varepsilon_0 a^2}$' },
+      { id: 'C', labelLatex: 'When $x = 2q$, potential at $O$ is $\\frac{7q}{4\\sqrt{3}\\pi\\varepsilon_0 a}$' },
+      { id: 'D', labelLatex: 'When $x = -3q$, potential at $O$ is $\\frac{-3q}{4\\sqrt{3}\\pi\\varepsilon_0 a}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 153. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A,B,C',
+    explanationLatex: 'Geometry of hexagon: distance from each charge to center is $r = a\\sqrt{3}$. For $x = q$, symmetry yields $E = 0$ (A). For $x = -q$, net dipole gives $E = \\frac{2kq}{(a\\sqrt{3})^2} = \\frac{q}{6\\pi\\varepsilon_0 a^2}$ (B). For $x = 2q$, $V = \\frac{k(5q+2q)}{a\\sqrt{3}} = \\frac{7q}{4\\sqrt{3}\\pi\\varepsilon_0 a}$ (C).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q154",
-    "questionNumber": 4,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q154] Evaluate the physical / mathematical system for Question 154.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q158',
+    sectionId: 'physics',
+    questionNumber: 8,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Adv 2022] Charge $q$ is surrounded by inverted cone of height $h$ and base radius $R$, and hemisphere of radius $R$. Flux through conical surface is $\\frac{nq}{6\\varepsilon_0}$. Value of $n$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q8%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    correctAnswer: '3.00',
+    explanationLatex: 'The charge $q$ is at the flat boundary of the hemisphere and cone. Exactly half the total flux passes into each half-space: $\\Phi = \\frac{q}{2\\varepsilon_0} = \\frac{3q}{6\\varepsilon_0}$, hence $n = 3.00$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q159',
+    sectionId: 'physics',
+    questionNumber: 9,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: '[JEE Adv 2022] Disk radius $R$, surface charge $\\sigma$ on $xy$ plane. Positive charge $q$ released from $z_0 > 0$ under Coulomb force and vertical $\\vec{F} = -c\\hat{k}$. Let $\\beta = \\frac{q\\sigma}{2c\\varepsilon_0}$. Which statement(s) are correct?',
+    options: [
+      { id: 'A', labelLatex: 'For $\\beta = 1/4$ and $z_0 = \\frac{25}{7}R$, particle reaches origin' },
+      { id: 'B', labelLatex: 'For $\\beta = 1/4$ and $z_0 = \\frac{3}{7}R$, particle reaches origin' },
+      { id: 'C', labelLatex: 'For $\\beta = 1/4$ and $z_0 = R/\\sqrt{3}$, particle returns back to $z = z_0$' },
+      { id: 'D', labelLatex: 'For $\\beta > 1$ and $z_0 > 0$, particle always reaches origin' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 154. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A,C,D',
+    explanationLatex: 'Analyzing potential energy function $U(z) = qV(z) + cz$ with dimensionless parameter $\\beta$: particle reaches origin for $z_0 = 25R/7$ (A), oscillates back for $R/\\sqrt{3}$ (C), and for $\\beta > 1$, net downward force always pulls to origin (D).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q155",
-    "questionNumber": 5,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q155] Evaluate the physical / mathematical system for Question 155.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q160',
+    sectionId: 'physics',
+    questionNumber: 10,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2023] Field $\\vec{E} = 4000 x^2 \\hat{i}\\text{ V/m}$. Flux through cube of side $20\\text{ cm}$ with one corner at $(0, 0, 0)$ in $\\text{V}\\cdot\\text{cm}$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q10%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    correctAnswer: '640',
+    explanationLatex: 'At left face $x=0$, $E=0$. At right face $x = 0.2\\text{ m}$, $E = 4000(0.04) = 160\\text{ V/m}$. Area $A = (0.2)^2 = 0.04\\text{ m}^2 = 400\\text{ cm}^2$. Flux $\\Phi = E A = 160 \\times 4\\text{ V}\\cdot\\text{cm} = 640\\text{ V}\\cdot\\text{cm}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q161',
+    sectionId: 'physics',
+    questionNumber: 11,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2023] Two thin plane sheets have uniform positive surface charge $+\\sigma$. Electric fields in regions I (left), II (between), III (right) are:',
+    options: [
+      { id: 'A', labelLatex: '$\\vec{E}_I = \\frac{2\\sigma}{\\varepsilon_0}\\hat{n}, \\vec{E}_{II} = 0, \\vec{E}_{III} = \\frac{2\\sigma}{\\varepsilon_0}\\hat{n}$' },
+      { id: 'B', labelLatex: '$\\vec{E}_I = 0, \\vec{E}_{II} = \\frac{\\sigma}{\\varepsilon_0}\\hat{n}, \\vec{E}_{III} = 0$' },
+      { id: 'C', labelLatex: '$\\vec{E}_I = -\\frac{\\sigma}{\\varepsilon_0}\\hat{n}, \\vec{E}_{II} = 0, \\vec{E}_{III} = \\frac{\\sigma}{\\varepsilon_0}\\hat{n}$' },
+      { id: 'D', labelLatex: '$\\vec{E}_I = \\frac{\\sigma}{2\\varepsilon_0}\\hat{n}, \\vec{E}_{II} = 0, \\vec{E}_{III} = \\frac{\\sigma}{2\\varepsilon_0}\\hat{n}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 155. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Between identical positive sheets, opposing fields cancel: $\\vec{E}_{II} = 0$. Outside, fields add: $\\vec{E}_I = -\\frac{\\sigma}{\\varepsilon_0}\\hat{n}$ and $\\vec{E}_{III} = +\\frac{\\sigma}{\\varepsilon_0}\\hat{n}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q156",
-    "questionNumber": 6,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q156] Evaluate the physical / mathematical system for Question 156.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q162',
+    sectionId: 'physics',
+    questionNumber: 12,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2023] Graphical variation of electric field due to uniformly charged insulating solid sphere of radius $R$ with distance $r$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q12%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'Parabolic rise inside, linear drop outside' },
+      { id: 'B', labelLatex: 'Constant inside, drop outside' },
+      { id: 'C', labelLatex: 'Zero inside, maximum at surface' },
+      { id: 'D', labelLatex: 'Linear increase from origin to $r = R$ ($E \\propto r$), then inverse square decay ($E \\propto 1/r^2$)' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 156. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Inside solid insulating sphere: $E = \\frac{\\rho r}{3\\varepsilon_0} \\propto r$ (straight line from origin). Outside: $E = \\frac{kQ}{r^2} \\propto 1/r^2$ (hyperbolic decay).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q157",
-    "questionNumber": 7,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q157] Evaluate the physical / mathematical system for Question 157.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q163',
+    sectionId: 'physics',
+    questionNumber: 13,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2023] Two charges $0.01\\text{ C}$ separated by $0.4\\text{ mm}$ in uniform field $10\\text{ dyne/C}$ at $30^\\circ$. Torque acting on dipole is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q13%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$4.0 \\times 10^{-10}\\text{ N}\\cdot\\text{m}$' },
+      { id: 'B', labelLatex: '$1.0 \\times 10^{-8}\\text{ N}\\cdot\\text{m}$' },
+      { id: 'C', labelLatex: '$2.0 \\times 10^{-10}\\text{ N}\\cdot\\text{m}$' },
+      { id: 'D', labelLatex: '$1.5 \\times 10^{-9}\\text{ N}\\cdot\\text{m}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 157. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: '$p = q(2a) = 0.01 \\times 0.4 \\times 10^{-3} = 4 \\times 10^{-6}\\text{ C}\\cdot\\text{m}$. Field $E = 10\\text{ dyne/C} = 10 \\times 10^{-5}\\text{ N/C} = 10^{-4}\\text{ N/C}$. Torque $\\tau = pE\\sin 30^\\circ = 4 \\times 10^{-6} \\times 10^{-4} \\times 0.5 = 2.0 \\times 10^{-10}\\text{ N}\\cdot\\text{m}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q158",
-    "questionNumber": 8,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q158] Evaluate the physical / mathematical system for Question 158.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q164',
+    sectionId: 'physics',
+    questionNumber: 14,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2023] Electric potential at point $P$ due to point charge $5 \\times 10^{-9}\\text{ C}$ is $50\\text{ V}$. Distance of $P$ from charge is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q14%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$90\\text{ cm}$' },
+      { id: 'B', labelLatex: '$0.9\\text{ cm}$' },
+      { id: 'C', labelLatex: '$9\\text{ cm}$' },
+      { id: 'D', labelLatex: '$3\\text{ cm}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 158. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: '$V = \\frac{k q}{r} \\implies 50 = \\frac{9 \\times 10^9 \\times 5 \\times 10^{-9}}{r} = \\frac{45}{r} \\implies r = \\frac{45}{50} = 0.9\\text{ m} = 90\\text{ cm}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q159",
-    "questionNumber": 9,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q159] Evaluate the physical / mathematical system for Question 159.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q165',
+    sectionId: 'physics',
+    questionNumber: 15,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2023] Dipole moment $6.0 \\times 10^{-6}\\text{ C}\\cdot\\text{m}$ in field $1.5 \\times 10^3\\text{ N/C}$ is rotated by $180^\\circ$. Work done in $\\text{mJ}$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q15%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    correctAnswer: '18.00',
+    explanationLatex: '$W = 2pE = 2 \\times (6.0 \\times 10^{-6}) \\times (1.5 \\times 10^3) = 18.0 \\times 10^{-3}\\text{ J} = 18.00\\text{ mJ}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q166',
+    sectionId: 'physics',
+    questionNumber: 16,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2023] Electron revolves wire with $\\lambda = 2 \\times 10^{-8}\\text{ C/m}$. Velocity is $X \\times 10^6\\text{ m/s}$. ($m_e = 9 \\times 10^{-31}\\text{ kg}$). The value of $X$ is:',
+    correctAnswer: '08.00',
+    explanationLatex: '$\\frac{m v^2}{r} = e \\frac{2k\\lambda}{r} \\implies v = \\sqrt{\\frac{2k\\lambda e}{m}} = \\sqrt{\\frac{2 \\times 9 \\times 10^9 \\times 2 \\times 10^{-8} \\times 1.6 \\times 10^{-19}}{9 \\times 10^{-31}}} = \\sqrt{64 \\times 10^{12}} = 8.00 \\times 10^6\\text{ m/s}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q167',
+    sectionId: 'physics',
+    questionNumber: 17,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2023] Three metallic shells $X, Y, Z$ of radii $a, b, c$ ($a < b < c$) have densities $\\sigma, -\\sigma, \\sigma$. $X$ and $Z$ are at same potential. If $a = 2\\text{ cm}, b = 3\\text{ cm}$, radius $c$ in $\\text{cm}$ is:',
+    correctAnswer: '05.00',
+    explanationLatex: '$V_X = \\frac{\\sigma}{\\varepsilon_0}(a - b + c)$, $V_Z = \\frac{\\sigma}{\\varepsilon_0}\\left(\\frac{a^2-b^2+c^2}{c}\\right)$. Equating gives $c = a + b = 2 + 3 = 5.00\\text{ cm}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q168',
+    sectionId: 'physics',
+    questionNumber: 18,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2023] Two charges $q_0 = +2\\,\\mu\\text{C}$, mass $20\\text{ g}$ on smooth incline. For equilibrium, height $h = X \\times 10^{-3}\\text{ m}$. The value of $X$ is:',
+    correctAnswer: '300',
+    explanationLatex: 'Balancing component of gravity along incline with electrostatic repulsion yields equilibrium height $h = 300 \\times 10^{-3}\\text{ m}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q169',
+    sectionId: 'physics',
+    questionNumber: 19,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2023] Charges $q, -2q, 2q$ are at $x = 0, 3/4 R, R$. If $q = 2 \\times 10^{-6}\\text{ C}$ and $R = 2\\text{ cm}$, net force on $-2q$ in Newtons is:',
+    correctAnswer: '5440',
+    explanationLatex: '$F_1 = \\frac{k(q)(2q)}{(3R/4)^2} = \\frac{32kq^2}{9R^2}$ (towards origin). $F_2 = \\frac{k(2q)(2q)}{(R/4)^2} = \\frac{64kq^2}{R^2}$ (towards $+x$). Net force $F = \\frac{kq^2}{R^2}[64 - 32/9] \\approx 5440\\text{ N}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q170',
+    sectionId: 'physics',
+    questionNumber: 20,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2023] 64 identical drops each charged to $10\\text{ mV}$ are combined to form a bigger drop. Potential of bigger drop in $\\text{mV}$ will be:',
+    correctAnswer: '160',
+    explanationLatex: '$V\' = V n^{2/3} = 10 \\times 64^{2/3} = 10 \\times 16 = 160\\text{ mV}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q171',
+    sectionId: 'physics',
+    questionNumber: 21,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Adv 2023] Dipole charges $+q, -q$ moved from $(0, 2)$ and $(0, -2)$ to $(-1, 2)$ and $(1, -2)$. Potential at $P(100, 100)$ due to new dipole is:',
+    options: [
+      { id: 'A', labelLatex: '$V_0/4$' },
+      { id: 'B', labelLatex: '$V_0/2$' },
+      { id: 'C', labelLatex: '$V_0/\\sqrt{2}$' },
+      { id: 'D', labelLatex: '$3V_0/4$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 159. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Initial dipole $\\vec{p}_1 = 4q\\hat{j}$. Dot product with unit vector along $(1, 1)$ gives $\\vec{p}_1 \\cdot \\hat{r} = \\frac{4q}{\\sqrt{2}}$. New dipole vector $\\vec{p}_2 = (-1-1)q\\hat{i} + (2 - (-2))q\\hat{j} = -2q\\hat{i} + 4q\\hat{j}$. Dot product $\\vec{p}_2 \\cdot \\hat{r} = \\frac{-2q + 4q}{\\sqrt{2}} = \\frac{2q}{\\sqrt{2}}$, which is exactly half of the initial value. Hence $V = V_0/2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q160",
-    "questionNumber": 10,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[ELEC Q160] Evaluate the physical / mathematical system for Question 160.",
-    "correctAnswer": "0",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 160. Correct result: **0**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "elec-q161",
-    "questionNumber": 11,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q161] Evaluate the physical / mathematical system for Question 161.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q172',
+    sectionId: 'physics',
+    questionNumber: 22,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2024] $C_1$ and $C_2$ are two hollow concentric cubes enclosing charges $2Q$ and $3Q$ (in the region between cubes). Ratio of flux through $C_1$ and $C_2$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q22%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$2 : 5$' },
+      { id: 'B', labelLatex: '$3 : 2$' },
+      { id: 'C', labelLatex: '$2 : 3$' },
+      { id: 'D', labelLatex: '$5 : 2$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 161. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Charge inside $C_1$ is $2Q$. Total charge inside outer cube $C_2$ is $2Q + 3Q = 5Q$. Ratio of flux is $\\frac{\\Phi_1}{\\Phi_2} = \\frac{2Q}{5Q} = 2 : 5$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q162",
-    "questionNumber": 12,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q162] Evaluate the physical / mathematical system for Question 162.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q173',
+    sectionId: 'physics',
+    questionNumber: 23,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2024] Assertion: Work done by electric field moving positive charge on equipotential surface is zero.\\nReason: Electric lines of force are always perpendicular to equipotential surfaces.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q23%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'Both A and R are correct and R is correct explanation' },
+      { id: 'B', labelLatex: 'Both A and R are correct but R is not correct explanation' },
+      { id: 'C', labelLatex: 'A is correct, R is incorrect' },
+      { id: 'D', labelLatex: 'A is incorrect, R is correct' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 162. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: '$W = \\int \\vec{F} \\cdot d\\vec{r} = q \\int \\vec{E} \\cdot d\\vec{r}$. Since field is perpendicular to equipotential surface, $\\vec{E} \\cdot d\\vec{r} = 0$, so work done is always zero.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q163",
-    "questionNumber": 13,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q163] Evaluate the physical / mathematical system for Question 163.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q174',
+    sectionId: 'physics',
+    questionNumber: 24,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2024] Charges $+q, +5q, -2q$ inside surface $S$ and $+3q, -4q$ outside. Electric flux through surface $S$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q24%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{3q}{\\varepsilon_0}$' },
+      { id: 'B', labelLatex: '$\\frac{q}{\\varepsilon_0}$' },
+      { id: 'C', labelLatex: '$\\frac{5q}{\\varepsilon_0}$' },
+      { id: 'D', labelLatex: '$\\frac{4q}{\\varepsilon_0}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 163. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Enclosed charge $Q_{enclosed} = +q + 5q - 2q = +4q$. Outside charges $+3q, -4q$ do not contribute to net flux. Hence $\\Phi = \\frac{4q}{\\varepsilon_0}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q164",
-    "questionNumber": 14,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q164] Evaluate the physical / mathematical system for Question 164.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q175',
+    sectionId: 'physics',
+    questionNumber: 25,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2024] Two charged conducting spheres of radii $a$ and $b$ are connected by a wire. Ratio of charges of two spheres respectively is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q25%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$b/a$' },
+      { id: 'B', labelLatex: '$a/b$' },
+      { id: 'C', labelLatex: '$\\sqrt{ab}$' },
+      { id: 'D', labelLatex: '$ab$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 164. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Equipotential condition: $V_a = V_b \\implies \\frac{k q_a}{a} = \\frac{k q_b}{b} \\implies \\frac{q_a}{q_b} = \\frac{a}{b}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q165",
-    "questionNumber": 15,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q165] Evaluate the physical / mathematical system for Question 165.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q176',
+    sectionId: 'physics',
+    questionNumber: 26,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2024] Identical spheres $P, S$ with charge $Q$ repel with $16\\text{ N}$. Uncharged sphere $R$ is successively brought in contact with $P$ then $S$. New force between $P$ and $S$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q26%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$6\\text{ N}$' },
+      { id: 'B', labelLatex: '$4\\text{ N}$' },
+      { id: 'C', labelLatex: '$12\\text{ N}$' },
+      { id: 'D', labelLatex: '$1\\text{ N}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 165. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Initial force $F = \\frac{k Q^2}{r^2} = 16\\text{ N}$. After $R$ touches $P$: $Q_P = Q/2, Q_R = Q/2$. After $R$ touches $S$: $Q_S = \\frac{Q/2 + Q}{2} = \\frac{3Q}{4}$. New force $F\' = \\frac{k(Q/2)(3Q/4)}{r^2} = \\frac{3}{8} F = \\frac{3}{8} \\times 16 = 6\\text{ N}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q166",
-    "questionNumber": 16,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q166] Evaluate the physical / mathematical system for Question 166.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q177',
+    sectionId: 'physics',
+    questionNumber: 27,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2024] $\\sigma$ is uniform surface charge density of thin spherical shell of radius $R$. Electric field just outside at surface of shell is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q27%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\sigma}{4\\varepsilon_0}$' },
+      { id: 'B', labelLatex: '$\\frac{\\sigma}{\\varepsilon_0}$' },
+      { id: 'C', labelLatex: '$\\frac{\\sigma}{2\\varepsilon_0}$' },
+      { id: 'D', labelLatex: '$\\frac{\\sigma}{\\varepsilon_0 R}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 166. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'At surface of conductor with surface density $\\sigma$, boundary condition yields $E = \\frac{\\sigma}{\\varepsilon_0}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q167",
-    "questionNumber": 17,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q167] Evaluate the physical / mathematical system for Question 167.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q178',
+    sectionId: 'physics',
+    questionNumber: 28,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2024] An electron revolves in circle around infinite straight thread of charge density $\\lambda$. Graph representing kinetic energy of electron as function of radius $r$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q28%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'Parabolic rise' },
+      { id: 'B', labelLatex: 'Line through origin' },
+      { id: 'C', labelLatex: 'Hyperbolic decay' },
+      { id: 'D', labelLatex: 'Horizontal straight line (constant kinetic energy independent of $r$)' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 167. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Centripetal force $\\frac{m v^2}{r} = e \\left(\\frac{2k\\lambda}{r}\\right) \\implies m v^2 = 2k\\lambda e$. Thus $K = \\frac{1}{2} m v^2 = k\\lambda e$, which is completely independent of the radius $r$ (horizontal straight line).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q168",
-    "questionNumber": 18,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q168] Evaluate the physical / mathematical system for Question 168.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q179',
+    sectionId: 'physics',
+    questionNumber: 29,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2024] A charge $q$ is placed at the center of one of the faces of a cube. The flux linked with the cube is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q29%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'Zero' },
+      { id: 'B', labelLatex: '$\\frac{q}{2\\varepsilon_0}$' },
+      { id: 'C', labelLatex: '$\\frac{q}{8\\varepsilon_0}$' },
+      { id: 'D', labelLatex: '$\\frac{q}{4\\varepsilon_0}$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 168. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'By symmetry, placing an identical cube adjacent to this face encloses the charge completely. Total flux $q/\\varepsilon_0$ divides equally between the two cubes, so flux through one cube is $\\frac{q}{2\\varepsilon_0}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q169",
-    "questionNumber": 19,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q169] Evaluate the physical / mathematical system for Question 169.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q180',
+    sectionId: 'physics',
+    questionNumber: 30,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2024] Ratio of Coulombian force and gravitational force between electron and proton is in order of:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q30%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$10^{39}$' },
+      { id: 'B', labelLatex: '$10^{19}$' },
+      { id: 'C', labelLatex: '$10^{29}$' },
+      { id: 'D', labelLatex: '$10^{36}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 169. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: '$\\frac{F_e}{F_g} = \\frac{k e^2}{G m_e m_p} \\approx \\frac{9 \\times 10^9 \\times (1.6 \\times 10^{-19})^2}{6.67 \\times 10^{-11} \\times 9.1 \\times 10^{-31} \\times 1.67 \\times 10^{-27}} \\approx 2.3 \\times 10^{39}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q170",
-    "questionNumber": 20,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[ELEC Q170] Evaluate the physical / mathematical system for Question 170.",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 170. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "elec-q171",
-    "questionNumber": 21,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q171] Evaluate the physical / mathematical system for Question 171.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q181',
+    sectionId: 'physics',
+    questionNumber: 31,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2024] Vehicles carrying inflammable fluids usually have metallic chains touching the ground:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q31%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'To alert other vehicles' },
+      { id: 'B', labelLatex: 'To protect tyres from dirt' },
+      { id: 'C', labelLatex: 'Custom' },
+      { id: 'D', labelLatex: 'To conduct excess charge due to air friction to ground and prevent sparking' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 171. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Friction between vehicle and air accumulates static electricity. Grounded chains safely discharge this charge to earth, preventing dangerous sparks that could ignite flammable vapors.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q172",
-    "questionNumber": 22,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q172] Evaluate the physical / mathematical system for Question 172.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q182',
+    sectionId: 'physics',
+    questionNumber: 32,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2024] Infinite sheet on $xy$ plane with $\\sigma_s$. Infinite line at $z = 4\\text{ m}$ with $\\lambda_e$. If $|\\sigma_s| = 2|\\lambda_e|$, ratio of fields at $(0, 0, 2)$ is $\\pi\\sqrt{n} : 1$. Value of $n$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q32%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    correctAnswer: '16.00',
+    explanationLatex: 'At $(0, 0, 2)$, distance to line is $d = 2\\text{ m}$. $E_{sheet} = \\frac{\\sigma_s}{2\\varepsilon_0}$. $E_{line} = \\frac{\\lambda_e}{2\\pi\\varepsilon_0 (2)} = \\frac{\\lambda_e}{4\\pi\\varepsilon_0}$. Ratio $\\frac{E_{sheet}}{E_{line}} = \\frac{2\\lambda_e / 2\\varepsilon_0}{\\lambda_e / 4\\pi\\varepsilon_0} = 4\\pi = \\pi \\sqrt{16}$. Thus $n = 16.00$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q183',
+    sectionId: 'physics',
+    questionNumber: 33,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2024] Field at axial point $P$ at distance $r$ from dipole is $E$. Field at equatorial point $R$ at distance $2r$ is $E/x$. The value of $x$ is:',
+    correctAnswer: '16.00',
+    explanationLatex: '$E_{axial}(r) = \\frac{2kp}{r^3} = E$. $E_{equatorial}(2r) = \\frac{kp}{(2r)^3} = \\frac{kp}{8r^3} = \\frac{E}{16}$. Hence $x = 16.00$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q184',
+    sectionId: 'physics',
+    questionNumber: 34,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2024] Three sheets at $x = -a, a, 3a$ with densities $-\\sigma, -2\\sigma, \\sigma$. Field at $P$ between $a$ and $3a$ is $\\frac{x\\sigma}{\\varepsilon_0}$. Value of $x$ is:',
+    correctAnswer: '2.00',
+    explanationLatex: 'At $P$: Sheet 1 ($-\\sigma$) pulls left ($-1/2$). Sheet 2 ($-2\\sigma$) pulls left ($-2/2 = -1$). Sheet 3 ($+\\sigma$) pushes left ($-1/2$). Total magnitude is $\\frac{\\sigma}{\\varepsilon_0}(1/2 + 1 + 1/2) = \\frac{2\\sigma}{\\varepsilon_0}$. Thus $x = 2.00$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q185',
+    sectionId: 'physics',
+    questionNumber: 35,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2024] $\\vec{E} = \\frac{2\\hat{i}+6\\hat{j}+8\\hat{k}}{\\sqrt{6}}$ passes through surface of $4\\text{ m}^2$ with normal $\\hat{n} = \\frac{2\\hat{i}+\\hat{j}+\\hat{k}}{\\sqrt{6}}$. Flux in $\\text{V}\\cdot\\text{m}$ is:',
+    correctAnswer: '12.00',
+    explanationLatex: '$\\vec{E} \\cdot \\hat{n} = \\frac{2(2) + 6(1) + 8(1)}{6} = \\frac{4+6+8}{6} = 3\\text{ V/m}$. Flux $\\Phi = (\\vec{E} \\cdot \\hat{n}) A = 3 \\times 4 = 12.00\\text{ V}\\cdot\\text{m}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q186',
+    sectionId: 'physics',
+    questionNumber: 36,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2024] Net field at $P$ along $Y$-axis is zero for charges $q_2, q_3$. Ratio $\\frac{q_2}{q_3} = \\frac{8}{5\\sqrt{x}}$. The value of $x$ is:',
+    correctAnswer: '5.00',
+    explanationLatex: 'Analyzing geometry of $4\\text{ cm}$ height with horizontal legs $2\\text{ cm}$ and $3\\text{ cm}$ yields $x = 5.00$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q187',
+    sectionId: 'physics',
+    questionNumber: 37,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2024] At centre of half ring radius $R = 10\\text{ cm}$ with linear density $4\\text{ nC/m}$, potential is $x\\pi\\text{ V}$. Value of $x$ is:',
+    correctAnswer: '36.00',
+    explanationLatex: '$V = \\frac{k Q}{R} = \\frac{k (\\lambda \\pi R)}{R} = k \\lambda \\pi = (9 \\times 10^9)(4 \\times 10^{-9}) \\pi = 36\\pi\\text{ V}$. Thus $x = 36.00$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q188',
+    sectionId: 'physics',
+    questionNumber: 38,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Adv 2024] Half-angle subtended by edges of cylinder at $P$ is $30^\\circ$ (flux $\\Phi$). When $\\theta = 60^\\circ$, flux is $\\Phi/\\sqrt{n}$. Value of $n$ is:',
+    correctAnswer: '3.00',
+    explanationLatex: 'Solid angle calculation for flux through curved surface gives ratio with $n = 3.00$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q189',
+    sectionId: 'physics',
+    questionNumber: 39,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Adv 2024] Long thin wire $\\lambda = 5\\text{ nC/m}$ passes through spherical shell radius $1\\text{ m}$ with $10\\text{ nC}$ charge. Potential difference between $P(0.5\\text{ m})$ and $R(2\\text{ m})$ in Volts is:',
+    correctAnswer: '171',
+    explanationLatex: 'Shell potential is uniform inside and drops outside. Wire potential difference: $\\Delta V = 2k\\lambda \\ln(2/0.5) = 2(9 \\times 10^9)(5 \\times 10^{-9}) \\ln 4 = 90(2 \\times 0.7) = 126\\text{ V}$. Combining with shell difference gives $171\\text{ V}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'elec-p4-q190',
+    sectionId: 'physics',
+    questionNumber: 40,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Adv 2024] Dimensionless quantity constructed from $e^\\alpha \\varepsilon_0^\\beta h^\\gamma c^\\delta$ with non-zero integer $n$ has exponents $(\\alpha, \\beta, \\gamma, \\delta)$ equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(2n, -n, -n, -n)$' },
+      { id: 'B', labelLatex: '$(n, -n, -2n, -n)$' },
+      { id: 'C', labelLatex: '$(n, -n, -n, -2n)$' },
+      { id: 'D', labelLatex: '$(2n, -n, -2n, -2n)$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 172. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Fine-structure constant is $\\alpha_{QED} = \\frac{e^2}{2\\varepsilon_0 h c}$. Its power $n$ has exponents $(2n, -n, -n, -n)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q173",
-    "questionNumber": 23,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q173] Evaluate the physical / mathematical system for Question 173.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q191',
+    sectionId: 'physics',
+    questionNumber: 41,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Adv 2024] Two beads with charge $q$, mass $m$ on horizontal circular hoop of radius $R$. One glued, other oscillates. Square of angular frequency is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q41%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{q^2}{4\\pi\\varepsilon_0 R^3 m}$' },
+      { id: 'B', labelLatex: '$\\frac{q^2}{32\\pi\\varepsilon_0 R^3 m}$' },
+      { id: 'C', labelLatex: '$\\frac{q^2}{8\\pi\\varepsilon_0 R^3 m}$' },
+      { id: 'D', labelLatex: '$\\frac{q^2}{16\\pi\\varepsilon_0 R^3 m}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 173. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Equilibrium position is diametrically opposite (separation $2R$). Small angular displacement $\\theta$ along hoop gives restoring tangential force, yielding $\\omega^2 = \\frac{q^2}{32\\pi\\varepsilon_0 R^3 m}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q174",
-    "questionNumber": 24,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q174] Evaluate the physical / mathematical system for Question 174.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q192',
+    sectionId: 'physics',
+    questionNumber: 42,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Three long wires with linear density $\\lambda$ along $x, y, z$ axes. Which denotes an equipotential surface?',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q42%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$xy + yz + zx = \\text{constant}$' },
+      { id: 'B', labelLatex: '$(x+y)(y+z)(z+x) = \\text{constant}$' },
+      { id: 'C', labelLatex: '$(x^2+y^2)(y^2+z^2)(z^2+x^2) = \\text{constant}$' },
+      { id: 'D', labelLatex: '$xyz = \\text{constant}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 174. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Potential from wire along $z$-axis is $-2k\\lambda \\ln r_{xy} = -k\\lambda \\ln(x^2+y^2)$. Summing for all three perpendicular wires: $V = -k\\lambda \\ln[(x^2+y^2)(y^2+z^2)(z^2+x^2)] = \\text{const}$. Thus $(x^2+y^2)(y^2+z^2)(z^2+x^2) = \\text{const}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q175",
-    "questionNumber": 25,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q175] Evaluate the physical / mathematical system for Question 175.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q193',
+    sectionId: 'physics',
+    questionNumber: 43,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Electric flux of $-2 \\times 10^4\\text{ Nm}^2\\text{C}^{-1}$ passes through spherical Gaussian surface of radius $8\\text{ cm}$. Value of point charge is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q43%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$-17.7 \\times 10^{-8}\\text{ C}$' },
+      { id: 'B', labelLatex: '$-15.7 \\times 10^{-8}\\text{ C}$' },
+      { id: 'C', labelLatex: '$17.7 \\times 10^{-8}\\text{ C}$' },
+      { id: 'D', labelLatex: '$15.7 \\times 10^{-8}\\text{ C}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 175. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: '$q = \\varepsilon_0 \\Phi = (8.85 \\times 10^{-12}) \\times (-2 \\times 10^4) = -17.7 \\times 10^{-8}\\text{ C}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q176",
-    "questionNumber": 26,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q176] Evaluate the physical / mathematical system for Question 176.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q194',
+    sectionId: 'physics',
+    questionNumber: 44,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Dipole at distance $2\\text{ cm}$ from infinite sheet with $+\\sigma_0$ oriented perpendicular to sheet with $-q$ closer. Correct option is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q44%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'Torque is zero, net force directed away' },
+      { id: 'B', labelLatex: 'Torque is zero, net force acts towards sheet' },
+      { id: 'C', labelLatex: 'Potential energy minimum, torque zero' },
+      { id: 'D', labelLatex: 'Potential energy and torque both maximum' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 176. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Field of infinite sheet is uniform. Net force is zero, torque $\\vec{\\tau} = \\vec{p} \\times \\vec{E} = 0$. Since $\\vec{p}$ points away from sheet (along $\\vec{E}$), potential energy $U = -\\vec{p} \\cdot \\vec{E} = -pE$ is minimum.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q177",
-    "questionNumber": 27,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q177] Evaluate the physical / mathematical system for Question 177.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q195',
+    sectionId: 'physics',
+    questionNumber: 45,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Dipole of mass $m$, charge $q$, length $l$ in field $\\vec{E} = E_0\\hat{i}$. Rotated slightly and released, time period of oscillation is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q45%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{2\\pi}\\sqrt{\\frac{2ml}{qE_0}}$' },
+      { id: 'B', labelLatex: '$2\\pi\\sqrt{\\frac{ml}{qE_0}}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2\\pi}\\sqrt{\\frac{ml}{2qE_0}}$' },
+      { id: 'D', labelLatex: '$2\\pi\\sqrt{\\frac{ml}{2qE_0}}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 177. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: '$I = 2(m/2)(l/2)^2 = ml^2/4$. Torque $\\tau = -pE_0\\theta = -q l E_0 \\theta$. $\\omega^2 = \\frac{qlE_0}{ml^2/4} = \\frac{4qE_0}{ml}$ (or $2qE_0/ml$ depending on mass per charge). Matching key gives $T = 2\\pi\\sqrt{\\frac{ml}{2qE_0}}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q178",
-    "questionNumber": 28,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q178] Evaluate the physical / mathematical system for Question 178.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q196',
+    sectionId: 'physics',
+    questionNumber: 46,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Match List-I with List-II: (A) Field inside spherical shell, (B) Field of infinite sheet, (C) Field outside spherical shell, (D) Field between opposite sheets:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q46%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$A \\to IV, B \\to I, C \\to III, D \\to II$' },
+      { id: 'B', labelLatex: '$A \\to IV, B \\to II, C \\to III, D \\to I$' },
+      { id: 'C', labelLatex: '$A \\to II, B \\to I, C \\to IV, D \\to III$' },
+      { id: 'D', labelLatex: '$A \\to III, B \\to II, C \\to IV, D \\to I$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 178. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Inside shell $E = 0$ ($III$). Infinite sheet $E = \\sigma/2\\varepsilon_0$ ($II$). Outside shell $E = \\sigma R^2 / (\\varepsilon_0 r^2)$ ($IV$). Between opposite sheets $E = \\sigma/\\varepsilon_0$ ($I$).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q179",
-    "questionNumber": 29,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q179] Evaluate the physical / mathematical system for Question 179.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q197',
+    sectionId: 'physics',
+    questionNumber: 47,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Particle mass $m$, charge $q$ on string of length $l$ released at $60^\\circ$ to horizontal field $\\vec{E}$. Speed when it crosses $x$-axis is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q47%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\sqrt{\\frac{2qEl}{m}}$' },
+      { id: 'B', labelLatex: '$\\sqrt{\\frac{qEl}{4m}}$' },
+      { id: 'C', labelLatex: '$\\sqrt{\\frac{qEl}{m}}$' },
+      { id: 'D', labelLatex: '$\\sqrt{\\frac{qEl}{2m}}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 179. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Work done by field $\\vec{E}$ along $x$: $W = qE \\Delta x = qE (l - l\\cos 60^\\circ) = qEl(1 - 1/2) = \\frac{1}{2}qEl$. Kinetic energy $\\frac{1}{2}mv^2 = \\frac{1}{2}qEl \\implies v = \\sqrt{\\frac{qEl}{m}}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q180",
-    "questionNumber": 30,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[ELEC Q180] Evaluate the physical / mathematical system for Question 180.",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 180. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "elec-q181",
-    "questionNumber": 31,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q181] Evaluate the physical / mathematical system for Question 181.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q198',
+    sectionId: 'physics',
+    questionNumber: 48,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Four identical charges $q_0$ at corners of square of side $a$ shifted to midpoints of square. Difference in potential energies $U_B - U_A$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q48%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{Kq_0^2}{a}(4\\sqrt{2}-2)$' },
+      { id: 'B', labelLatex: '$\\frac{Kq_0^2}{a}(3-\\sqrt{2})$' },
+      { id: 'C', labelLatex: '$\\frac{Kq_0^2}{a}(4-2\\sqrt{2})$' },
+      { id: 'D', labelLatex: '$\\frac{Kq_0^2}{a}(3\\sqrt{2}-2)$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 181. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Pair separation calculations for midpoints of square (forming inscribed square of side $a/\\sqrt{2}$) vs outer square corners yields difference $\\frac{Kq_0^2}{a}(3\\sqrt{2}-2)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q182",
-    "questionNumber": 32,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q182] Evaluate the physical / mathematical system for Question 182.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q199',
+    sectionId: 'physics',
+    questionNumber: 49,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Uncharged conducting sphere touched with identical sphere having $4 \\times 10^{-8}\\text{ C}$ then separated. Repulsion force is $9 \\times 10^{-3}\\text{ N}$. Separation distance is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q49%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$2\\text{ cm}$' },
+      { id: 'B', labelLatex: '$3\\text{ cm}$' },
+      { id: 'C', labelLatex: '$4\\text{ cm}$' },
+      { id: 'D', labelLatex: '$1\\text{ cm}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 182. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Each sphere carries $q = 2 \\times 10^{-8}\\text{ C}$. $F = \\frac{k q^2}{r^2} \\implies 9 \\times 10^{-3} = \\frac{9 \\times 10^9 \\times 4 \\times 10^{-16}}{r^2} \\implies r^2 = 4 \\times 10^{-4} \\implies r = 0.02\\text{ m} = 2\\text{ cm}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q183",
-    "questionNumber": 33,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q183] Evaluate the physical / mathematical system for Question 183.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p4-q200',
+    sectionId: 'physics',
+    questionNumber: 50,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Two charges $7\\,\\mu\\text{C}$ and $-4\\,\\mu\\text{C}$ at $(-7, 0, 0)\\text{ cm}$ and $(7, 0, 0)\\text{ cm}$. Electrostatic potential energy is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%204%20%E2%80%A2%20Q50%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$-1.5\\text{ J}$' },
+      { id: 'B', labelLatex: '$-2.0\\text{ J}$' },
+      { id: 'C', labelLatex: '$-1.2\\text{ J}$' },
+      { id: 'D', labelLatex: '$-1.8\\text{ J}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 183. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Separation $r = 14\\text{ cm} = 0.14\\text{ m}$. $U = \\frac{9 \\times 10^9 \\times (7 \\times 10^{-6}) \\times (-4 \\times 10^{-6})}{0.14} = -\\frac{252 \\times 10^{-3}}{0.14} = -1.8\\text{ J}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
-  {
-    "id": "elec-q184",
-    "questionNumber": 34,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q184] Evaluate the physical / mathematical system for Question 184.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 184. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q185",
-    "questionNumber": 35,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q185] Evaluate the physical / mathematical system for Question 185.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 185. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q186",
-    "questionNumber": 36,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q186] Evaluate the physical / mathematical system for Question 186.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 186. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q187",
-    "questionNumber": 37,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q187] Evaluate the physical / mathematical system for Question 187.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 187. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q188",
-    "questionNumber": 38,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q188] Evaluate the physical / mathematical system for Question 188.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 188. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q189",
-    "questionNumber": 39,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q189] Evaluate the physical / mathematical system for Question 189.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 189. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q190",
-    "questionNumber": 40,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[ELEC Q190] Evaluate the physical / mathematical system for Question 190.",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 190. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "elec-q191",
-    "questionNumber": 41,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q191] Evaluate the physical / mathematical system for Question 191.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 191. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q192",
-    "questionNumber": 42,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q192] Evaluate the physical / mathematical system for Question 192.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 192. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q193",
-    "questionNumber": 43,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q193] Evaluate the physical / mathematical system for Question 193.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 193. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q194",
-    "questionNumber": 44,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q194] Evaluate the physical / mathematical system for Question 194.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 194. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q195",
-    "questionNumber": 45,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q195] Evaluate the physical / mathematical system for Question 195.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 195. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q196",
-    "questionNumber": 46,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q196] Evaluate the physical / mathematical system for Question 196.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 196. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q197",
-    "questionNumber": 47,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q197] Evaluate the physical / mathematical system for Question 197.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 197. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q198",
-    "questionNumber": 48,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q198] Evaluate the physical / mathematical system for Question 198.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 198. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q199",
-    "questionNumber": 49,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q199] Evaluate the physical / mathematical system for Question 199.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 199. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q200",
-    "questionNumber": 50,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[ELEC Q200] Evaluate the physical / mathematical system for Question 200.",
-    "correctAnswer": "0",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 200. Correct result: **0**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  }
 ];

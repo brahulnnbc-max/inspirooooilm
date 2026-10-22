@@ -20,6 +20,16 @@ export const ExamInstructions: React.FC<ExamInstructionsProps> = ({
 
   const totalQuestions = paper.sections.reduce((acc, s) => acc + s.questions.length, 0);
 
+  // Check if student has a paused session
+  const savedSession = React.useMemo(() => {
+    try {
+      const stored = localStorage.getItem(`jee_live_session_${paper.id}`);
+      return stored ? JSON.parse(stored) : null;
+    } catch {
+      return null;
+    }
+  }, [paper.id]);
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col justify-between p-4 md:p-8">
       <div className="max-w-5xl mx-auto w-full bg-zinc-950 rounded-2xl shadow-2xl border border-zinc-800 overflow-hidden flex flex-col">
@@ -40,7 +50,7 @@ export const ExamInstructions: React.FC<ExamInstructionsProps> = ({
           <div className="flex items-center gap-3 text-xs font-medium text-zinc-300">
             <span className="flex items-center gap-1.5 bg-zinc-900 px-3 py-1.5 rounded-lg border border-zinc-800">
               <Clock className="w-4 h-4 text-red-500" />
-              Duration: {paper.durationMinutes} Minutes
+              Duration: {paper.durationMinutes} Mins ({(paper.durationMinutes / 60).toFixed(1)}h • 4m/Q)
             </span>
             <span className="bg-zinc-900 px-3 py-1.5 rounded-lg border border-zinc-800">
               Total Marks: {paper.totalMarks}
@@ -50,6 +60,21 @@ export const ExamInstructions: React.FC<ExamInstructionsProps> = ({
             </span>
           </div>
         </div>
+
+        {/* Saved Session Notification Banner */}
+        {savedSession && typeof savedSession.secondsRemaining === 'number' && savedSession.secondsRemaining > 0 && (
+          <div className="bg-amber-950/40 border-b border-amber-600/40 px-6 py-3 flex items-center justify-between gap-4 text-xs text-amber-200">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping shrink-0" />
+              <span>
+                <strong>Paused Attempt Found:</strong> You were at <strong>Question {(savedSession.activeQuestionIndex || 0) + 1}</strong> with <strong>{Math.floor(savedSession.secondsRemaining / 60)}m {savedSession.secondsRemaining % 60}s</strong> remaining.
+              </span>
+            </div>
+            <span className="text-[10px] uppercase font-mono font-bold px-2 py-0.5 bg-amber-500/20 rounded border border-amber-500/30 text-amber-300 shrink-0">
+              Auto-Resume Ready
+            </span>
+          </div>
+        )}
 
         {/* Instructions Body */}
         <div className="p-6 md:p-8 overflow-y-auto max-h-[65vh] space-y-6 text-sm text-zinc-300 leading-relaxed">
@@ -72,10 +97,13 @@ export const ExamInstructions: React.FC<ExamInstructionsProps> = ({
 
           <ol className="list-decimal pl-5 space-y-2.5 text-zinc-300">
             <li>
-              Total duration of examination is <strong className="text-white">{paper.durationMinutes} minutes (3 Hours)</strong>.
+              Total duration of examination is <strong className="text-white">{paper.durationMinutes} minutes ({(paper.durationMinutes / 60).toFixed(1)} Hours — Allotted 4 min/question)</strong>.
             </li>
             <li>
-              The clock will be set at the server. The countdown timer in the top right corner of the screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end automatically.
+              The clock will be set at the server. The countdown timer in the top right corner of the screen will display the remaining time available for you to complete the examination.
+            </li>
+            <li>
+              <strong className="text-white">Marathon Practice Persistence:</strong> If you leave, escape (Esc), or close this tab during practice, your exact question and countdown timer are saved. When you return, you will rejoin at the exact same question and timestamp!
             </li>
             <li>
               The Question Palette displayed on the right side of screen will show the status of each question using one of the following symbols:

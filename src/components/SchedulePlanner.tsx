@@ -1014,7 +1014,7 @@ MATHEMATICS: Quadratic Equations, Complex Numbers, Sequences, Binomial Theorem, 
               {nextTargetTest.syllabus.map((topic) => (
                 <label
                   key={topic.id}
-                  onClick={() => onToggleTopic(nextTargetTest.id, topic.id)}
+                  onClick={() => onToggleTopic(nextTargetTest.id, topic.id || '')}
                   className={`p-3 rounded-xl border cursor-pointer transition-all flex items-start gap-3 ${
                     topic.completed
                       ? 'bg-red-950/40 border-red-600/80 text-white shadow-xs'
@@ -1179,7 +1179,8 @@ MATHEMATICS: Quadratic Equations, Complex Numbers, Sequences, Binomial Theorem, 
         <div className="space-y-4">
           {filteredTests.map((test, index) => {
             const isExpanded = !!expandedTestIds[test.id];
-            const isUnlocked = true; // All test series tests are open for student practice
+            const isUnlocked =
+              test.status === 'LIVE_NOW' || !!earlyUnlockOverrides[test.id];
             const completedTopics = test.syllabus.filter((t) => t.completed).length;
 
             return (
@@ -1199,9 +1200,9 @@ MATHEMATICS: Quadratic Equations, Complex Numbers, Sequences, Binomial Theorem, 
                           ● LIVE WINDOW
                         </span>
                       ) : (
-                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-zinc-900 border border-emerald-500/30 text-emerald-400 flex items-center gap-1">
-                          <CheckCircle2 className="w-2.5 h-2.5 text-emerald-400" />
-                          Open • Scheduled {test.scheduledDate}
+                        <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 flex items-center gap-1">
+                          <Lock className="w-2.5 h-2.5" />
+                          Locked
                         </span>
                       )}
                     </div>
@@ -1255,10 +1256,15 @@ MATHEMATICS: Quadratic Equations, Complex Numbers, Sequences, Binomial Theorem, 
 
                     <button
                       onClick={() => onEnterLiveTest(test)}
-                      className="px-4 py-2 text-xs font-black uppercase tracking-wider text-white bg-red-600 hover:bg-red-500 active:scale-95 rounded-lg shadow-[0_0_12px_rgba(220,38,38,0.4)] transition-all flex items-center gap-1.5 cursor-pointer"
+                      disabled={!isUnlocked}
+                      className="px-4 py-2 text-xs font-black uppercase tracking-wider text-white bg-red-600 hover:bg-red-500 active:scale-95 rounded-lg shadow-[0_0_12px_rgba(220,38,38,0.4)] transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
                     >
                       <Play className="w-3.5 h-3.5 fill-current" />
-                      {test.status === 'LIVE_NOW' ? 'Take Live Test' : 'Take CBT Test'}
+                      {test.status === 'LIVE_NOW'
+                        ? 'Take Live Test'
+                        : isUnlocked
+                        ? 'Take Test'
+                        : 'Locked'}
                     </button>
 
                     {test.isLocked ? (
@@ -1291,7 +1297,7 @@ MATHEMATICS: Quadratic Equations, Complex Numbers, Sequences, Binomial Theorem, 
                       {test.syllabus.map((topic) => (
                         <label
                           key={topic.id}
-                          onClick={() => onToggleTopic(test.id, topic.id)}
+                          onClick={() => onToggleTopic(test.id, topic.id || '')}
                           className={`p-2.5 rounded-lg border text-xs cursor-pointer flex items-center gap-2.5 transition-colors ${
                             topic.completed
                               ? 'bg-red-950/40 border-red-800 text-white'

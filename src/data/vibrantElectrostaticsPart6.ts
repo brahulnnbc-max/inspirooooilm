@@ -1,420 +1,145 @@
 import { Question } from '../types/exam';
+
 export const ELECTROSTATICS_PART_6_QUESTIONS: Question[] = [
   {
-    "id": "elec-q251",
-    "questionNumber": 1,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q251] Evaluate the physical / mathematical system for Question 251.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p6-q251',
+    sectionId: 'physics',
+    questionNumber: 1,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Long wire has $\\lambda = 2\\text{ nC/m}$. Net flux through Gaussian cube of side $\\sqrt{3}\\text{ cm}$ if wire passes through opposite body diagonal corners is $x\\text{ Nm}^2\\text{C}^{-1}$, where $x$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%206%20%E2%80%A2%20Q1%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$0.72\\pi$' },
+      { id: 'B', labelLatex: '$1.44\\pi$' },
+      { id: 'C', labelLatex: '$6.48\\pi$' },
+      { id: 'D', labelLatex: '$2.16\\pi$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 251. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Body diagonal length $L = \\sqrt{3} \\times \\text{side} = \\sqrt{3} \\times \\sqrt{3}\\text{ cm} = 3\\text{ cm} = 0.03\\text{ m}$. Enclosed charge $q = \\lambda L = 2 \\times 10^{-9} \\times 0.03 = 0.06 \\times 10^{-9}\\text{ C}$. Flux $\\Phi = \\frac{q}{\\varepsilon_0} = 4\\pi k q = 4\\pi (9 \\times 10^9)(0.06 \\times 10^{-9}) = 2.16\\pi$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q252",
-    "questionNumber": 2,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q252] Evaluate the physical / mathematical system for Question 252.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p6-q252',
+    sectionId: 'physics',
+    questionNumber: 2,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Main 2025] Two metal spheres of radii $R$ and $3R$ have same surface density $\\sigma$. Brought in contact and separated, ratio of final densities $\\sigma_1 / \\sigma_2$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%206%20%E2%80%A2%20Q2%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$1/9$' },
+      { id: 'B', labelLatex: '$9$' },
+      { id: 'C', labelLatex: '$1/3$' },
+      { id: 'D', labelLatex: '$3$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 252. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'When in contact, potentials are equal: $V_1 = V_2 \\implies \\frac{k q_1}{R} = \\frac{k q_2}{3R} \\implies q_2 = 3q_1$. Densities: $\\sigma_1 = \\frac{q_1}{4\\pi R^2}$ and $\\sigma_2 = \\frac{q_2}{4\\pi (3R)^2} = \\frac{3q_1}{36\\pi R^2} = \\frac{q_1}{12\\pi R^2}$. Ratio $\\frac{\\sigma_1}{\\sigma_2} = \\frac{1/4}{1/12} = 3$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q253",
-    "questionNumber": 3,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q253] Evaluate the physical / mathematical system for Question 253.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 253. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'elec-p6-q253',
+    sectionId: 'physics',
+    questionNumber: 3,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2025] $\\vec{E} = (2\\hat{i} + 4\\hat{j} + 6\\hat{k}) \\times 10^3\\text{ N/C}$. Flux through surface parallel to $xz$-plane is $6.0\\text{ Nm}^2\\text{C}^{-1}$. Area of surface in $\\text{cm}^2$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%206%20%E2%80%A2%20Q3%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    correctAnswer: '15.00',
+    explanationLatex: 'Surface parallel to $xz$-plane has normal along $\\hat{j}$: $\\Phi = E_y A = 4 \\times 10^3 A = 6.0 \\implies A = \\frac{6}{4 \\times 10^3} = 1.5 \\times 10^{-3}\\text{ m}^2 = 15.00\\text{ cm}^2$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "elec-q254",
-    "questionNumber": 4,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q254] Evaluate the physical / mathematical system for Question 254.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 254. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'elec-p6-q254',
+    sectionId: 'physics',
+    questionNumber: 4,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2025] Square loop side $a = 1\\text{ m}$ held normally in front of point charge $q = 1\\text{ C}$. Flux through shaded region is $\\frac{5}{p\\varepsilon_0}$. Value of $p$ is:',
+    correctAnswer: '48.00',
+    explanationLatex: 'Solid angle calculation for symmetrical shaded octant of the square face gives flux fraction $\\frac{5}{48\\varepsilon_0}$, so $p = 48.00$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "elec-q255",
-    "questionNumber": 5,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q255] Evaluate the physical / mathematical system for Question 255.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 255. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'elec-p6-q255',
+    sectionId: 'physics',
+    questionNumber: 5,
+    type: 'NUMERICAL',
+    promptLatex: '[JEE Main 2025] Dipole $6 \\times 10^{-6}\\text{ C}\\cdot\\text{m}$ placed in uniform field $10^6\\text{ V/m}$ parallel to field. Work to rotate dipole opposite to field in Joules is:',
+    correctAnswer: '12.00',
+    explanationLatex: '$W = 2pE = 2 \\times (6 \\times 10^{-6}) \\times 10^6 = 12.00\\text{ J}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "elec-q256",
-    "questionNumber": 6,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q256] Evaluate the physical / mathematical system for Question 256.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p6-q256',
+    sectionId: 'physics',
+    questionNumber: 6,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Adv 2025] Match dipole configurations separated by $2r$ along $x$ with resultant electric field at midpoint $X$:',
+    options: [
+      { id: 'A', labelLatex: '$P \\to 3, Q \\to 1, R \\to 2, S \\to 4$' },
+      { id: 'B', labelLatex: '$P \\to 4, Q \\to 5, R \\to 3, S \\to 1$' },
+      { id: 'C', labelLatex: '$P \\to 2, Q \\to 1, R \\to 4, S \\to 5$' },
+      { id: 'D', labelLatex: '$P \\to 2, Q \\to 1, R \\to 3, S \\to 5$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 256. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Using vector addition of axial ($2kp/r^3$) and equatorial ($-kp/r^3$) fields at midpoint: $P \\to 2, Q \\to 1, R \\to 4, S \\to 5$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q257",
-    "questionNumber": 7,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q257] Evaluate the physical / mathematical system for Question 257.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p6-q257',
+    sectionId: 'physics',
+    questionNumber: 7,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Adv 2025] Coaxial conducting cylinders length $l$, radii $\\sqrt{2}R$ and $2R$. Inner charge $Q$, outer grounded, dielectric $\\kappa = 5$. Flux through plane at distance $R$ parallel to axis is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%206%20%E2%80%A2%20Q7%20%E2%80%94%20Parallel%20Plate%20Capacitor%20Uniform%20Field%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Parallel%20Plates%20--%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22100%22%20y%3D%2240%22%20width%3D%2210%22%20height%3D%2280%22%20rx%3D%222%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22250%22%20y%3D%2240%22%20width%3D%2210%22%20height%3D%2280%22%20rx%3D%222%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2292%22%20y%3D%2232%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2BQ%20(Plate%201)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2232%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3E-Q%20(Plate%202)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Electric%20field%20lines%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2260%22%20x2%3D%22245%22%20y2%3D%2260%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22185%2C60%20178%2C57%20178%2C63%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2280%22%20x2%3D%22245%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%22100%22%20x2%3D%22245%22%20y2%3D%22100%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%221.8%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22185%2C100%20178%2C97%20178%2C103%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22170%22%20y%3D%22115%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%3EE%20%3D%20%CF%83%20%2F%20%CE%B5%E2%82%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Plate%20spacing%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22110%22%20y1%3D%22130%22%20x2%3D%22250%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22175%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%20d%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{Q}{30\\varepsilon_0}$' },
+      { id: 'B', labelLatex: '$\\frac{Q}{15\\varepsilon_0}$' },
+      { id: 'C', labelLatex: '$\\frac{Q}{60\\varepsilon_0}$' },
+      { id: 'D', labelLatex: '$\\frac{Q}{120\\varepsilon_0}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 257. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'With dielectric constant $\\kappa = 5$ reducing field by $5$, and geometry subtending angle $\\pi/6$ (one-twelfth of cylinder), total flux is $\\frac{Q}{12 \\times 5 \\varepsilon_0} = \\frac{Q}{60\\varepsilon_0}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q258",
-    "questionNumber": 8,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q258] Evaluate the physical / mathematical system for Question 258.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p6-q258',
+    sectionId: 'physics',
+    questionNumber: 8,
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[JEE Adv 2025] Six sheets in configs I and II with separation $1\\,\\mu\\text{m}$, $\\sigma_0 = 9\\,\\mu\\text{C/m}^2$. Correct statement is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%206%20%E2%80%A2%20Q8%20%E2%80%94%20Electric%20Dipole%20Lines%20of%20Force%20%26%20Equipotentials%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C!--%20Dipole%20%2Bq%20and%20-q%20--%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22113%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E%2Bq%3C%2Ftext%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22234%22%20y%3D%2285%22%20fill%3D%22%23fff%22%20font-weight%3D%22bold%22%3E-q%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Field%20curved%20lines%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2066%20C%20150%2035%20210%2035%20240%2066%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C42%20178%2C39%20178%2C45%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20120%2094%20C%20150%20125%20210%20125%20240%2094%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C118%20178%2C115%20178%2C121%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22134%22%20y1%3D%2280%22%20x2%3D%22226%22%20y2%3D%2280%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%22185%2C80%20178%2C77%20178%2C83%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22160%22%20y%3D%22140%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3ESeparation%202a%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'In region 4 of configuration I, the magnitude of electric field is zero' },
+      { id: 'B', labelLatex: 'In region 3 of configuration II, field is $\\sigma_0/\\varepsilon_0$' },
+      { id: 'C', labelLatex: 'Potential difference between first and last sheets in config I is $5\\text{ V}$' },
+      { id: 'D', labelLatex: 'Potential difference between first and last in config II is zero' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 258. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'In configuration I, alternating $+ - + - + -$ cancels out in interior regions including region 4 where opposing plate pairs yield net zero field.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "elec-q259",
-    "questionNumber": 9,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q259] Evaluate the physical / mathematical system for Question 259.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'elec-p6-q259',
+    sectionId: 'physics',
+    questionNumber: 9,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: '[JEE Adv 2025] Point charge $10^{-8}\\text{ C}$ at distance $20\\text{ cm}$ from neutral conducting sphere of radius $10\\text{ cm}$. Sphere grounded then ground removed and charge moved $10\\text{ cm}$ further away:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EELECTROSTATICS%20PART%206%20%E2%80%A2%20Q9%20%E2%80%94%20Concentric%20Spherical%20Shells%20Field%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Inner%20sphere%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2230%22%20fill%3D%22%2318181b%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22172%22%20y%3D%2288%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3E%2Bq%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22195%22%20y%3D%2270%22%20fill%3D%22%23ef4444%22%20font-size%3D%229%22%3ERadius%20R%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Outer%20shell%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%2255%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22210%22%20y%3D%22130%22%20fill%3D%22%2338bdf8%22%20font-size%3D%229%22%3EShell%20R%E2%82%82%20(%2Bq%E2%82%82)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Field%20line%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2220%22%20x2%3D%22180%22%20y2%3D%22150%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22115%22%20y1%3D%2285%22%20x2%3D%22245%22%20y2%3D%2285%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2220%22%20y%3D%2245%22%20width%3D%2285%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2226%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%229.5%22%3EV%20%3D%20k%20q%20%2F%20r%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'Before grounding, potential of sphere is $450\\text{ V}$' },
+      { id: 'B', labelLatex: 'Charge flowing to ground because of grounding is $5 \\times 10^{-9}\\text{ C}$' },
+      { id: 'C', labelLatex: 'After grounding removed, charge on sphere is $-5 \\times 10^{-9}\\text{ C}$' },
+      { id: 'D', labelLatex: 'Final electrostatic potential of sphere is $300\\text{ V}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 259. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A,B,C',
+    explanationLatex: 'Before grounding: $V = \\frac{kq}{d} = \\frac{9 \\times 10^9 \\times 10^{-8}}{0.2} = 450\\text{ V}$ (A). On grounding: $V = \\frac{kq\'}{R} + \\frac{kq}{d} = 0 \\implies q\' = -q(R/d) = -10^{-8}(0.1/0.2) = -5 \\times 10^{-9}\\text{ C}$ (B & C).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
-  {
-    "id": "elec-q260",
-    "questionNumber": 10,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[ELEC Q260] Evaluate the physical / mathematical system for Question 260.",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 260. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "elec-q261",
-    "questionNumber": 11,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q261] Evaluate the physical / mathematical system for Question 261.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 261. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q262",
-    "questionNumber": 12,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q262] Evaluate the physical / mathematical system for Question 262.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 262. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q263",
-    "questionNumber": 13,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q263] Evaluate the physical / mathematical system for Question 263.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 263. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q264",
-    "questionNumber": 14,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q264] Evaluate the physical / mathematical system for Question 264.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 264. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "elec-q265",
-    "questionNumber": 15,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[ELEC Q265] Evaluate the physical / mathematical system for Question 265.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 265. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  }
 ];

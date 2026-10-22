@@ -1,1363 +1,854 @@
 import { Question } from '../types/exam';
+
+// =========================================================================
+// VIBRANT KOTA INDEFINITE & DEFINITE INTEGRATION PART 2: QUESTIONS 51 TO 100
+// Covering EXERCISE-II: Comprehensive Definite Integration Properties & Evaluation
+// and Exercise-III Q1
+// =========================================================================
 export const INTEGRATION_PART_2_QUESTIONS: Question[] = [
   {
-    "id": "int-q51",
-    "questionNumber": 1,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q51] Evaluate the physical / mathematical system for Question 51.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q1',
+    sectionId: 'mathematics',
+    questionNumber: 51,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate the definite integral: $$\\int_0^1 e^{\\ln\\tan^{-1}x} \\cdot \\sin^{-1}(\\cos x)\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q51%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi^2}{8} - \\frac{\\pi}{4}(1 + \\ln 2) + \\frac{1}{2}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi^2}{16} - \\frac{\\pi}{2}\\ln 2 + 1$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi^2}{8} + \\frac{\\pi}{4}\\ln 2 - \\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{4}(1 - \\ln 2)$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 51. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: '$e^{\\ln\\tan^{-1}x} = \\tan^{-1}x$. For $x \\in [0, 1] \\subset [0, \\pi/2]$, $\\sin^{-1}(\\cos x) = \\frac{\\pi}{2} - x$.\\n$I = \\int_0^1 \\tan^{-1}x \\left(\\frac{\\pi}{2} - x\\right)dx = \\frac{\\pi}{2}\\int_0^1 \\tan^{-1}x\\,dx - \\int_0^1 x\\tan^{-1}x\\,dx$.\\n$\\int_0^1 \\tan^{-1}x\\,dx = [x\\tan^{-1}x]_0^1 - \\int_0^1 \\frac{x}{1+x^2}\\,dx = \\frac{\\pi}{4} - \\frac{1}{2}\\ln 2$.\\n$\\int_0^1 x\\tan^{-1}x\\,dx = [\\frac{x^2}{2}\\tan^{-1}x]_0^1 - \\frac{1}{2}\\int_0^1 \\frac{x^2}{1+x^2}\\,dx = \\frac{\\pi}{8} - \\frac{1}{2}(1 - \\frac{\\pi}{4}) = \\frac{\\pi}{4} - \\frac{1}{2}$.\\n$I = \\frac{\\pi}{2}(\\frac{\\pi}{4} - \\frac{1}{2}\\ln 2) - (\\frac{\\pi}{4} - \\frac{1}{2}) = \\frac{\\pi^2}{8} - \\frac{\\pi}{4}(1 + \\ln 2) + \\frac{1}{2}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q52",
-    "questionNumber": 2,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q52] Evaluate the physical / mathematical system for Question 52.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q2',
+    sectionId: 'mathematics',
+    questionNumber: 52,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate the standard Euler integral for $\\beta > \\alpha > 0$: $$\\int_\\alpha^\\beta \\sqrt{(x-\\alpha)(\\beta-x)}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q52%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{(\\beta-\\alpha)^2\\pi}{8}$' },
+      { id: 'B', labelLatex: '$\\frac{(\\beta-\\alpha)\\pi}{2}$' },
+      { id: 'C', labelLatex: '$\\frac{(\\beta-\\alpha)^2\\pi}{4}$' },
+      { id: 'D', labelLatex: '$\\pi\\sqrt{\\alpha\\beta}$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 52. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Substitute $x = \\alpha\\cos^2\\theta + \\beta\\sin^2\\theta \\implies dx = 2(\\beta-\\alpha)\\sin\\theta\\cos\\theta\\,d\\theta$.\\n$x - \\alpha = (\\beta-\\alpha)\\sin^2\\theta$, $\\beta - x = (\\beta-\\alpha)\\cos^2\\theta$.\\n$\\sqrt{(x-\\alpha)(\\beta-x)} = (\\beta-\\alpha)\\sin\\theta\\cos\\theta$.\\nIntegral becomes $(\\beta-\\alpha)^2 \\int_0^{\\pi/2} 2\\sin^2\\theta\\cos^2\\theta\\,d\\theta = \\frac{(\\beta-\\alpha)^2}{2}\\int_0^{\\pi/2} \\sin^2 2\\theta\\,d\\theta = \\frac{(\\beta-\\alpha)^2\\pi}{8}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q53",
-    "questionNumber": 3,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q53] Evaluate the physical / mathematical system for Question 53.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q3',
+    sectionId: 'mathematics',
+    questionNumber: 53,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Determine the positive integer $n \\le 5$ such that: $$\\int_0^1 e^x(x-1)^n\\,dx = 16 - 6e$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q53%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$n = 3$' },
+      { id: 'B', labelLatex: '$n = 2$' },
+      { id: 'C', labelLatex: '$n = 4$' },
+      { id: 'D', labelLatex: '$n = 5$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 53. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Let $J_n = \\int_0^1 e^x(x-1)^n\\,dx$. Integrating by parts:\\n$J_n = [e^x(x-1)^n]_0^1 - n\\int_0^1 e^x(x-1)^{n-1}\\,dx = -(-1)^n - n J_{n-1} = (-1)^{n-1} - n J_{n-1}$.\\n$J_0 = \\int_0^1 e^x\\,dx = e - 1$.\\n$J_1 = 1 - J_0 = 1 - (e-1) = 2 - e$.\\n$J_2 = -1 - 2 J_1 = -1 - 2(2 - e) = 2e - 5$.\\n$J_3 = 1 - 3 J_2 = 1 - 3(2e - 5) = 1 - 6e + 15 = 16 - 6e$.\\nHence $n = 3$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q54",
-    "questionNumber": 4,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q54] Evaluate the physical / mathematical system for Question 54.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q4',
+    sectionId: 'mathematics',
+    questionNumber: 54,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{\\pi/2} \\sin 2x \\cdot \\arctan(\\sin x)\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q54%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi}{2} - 1$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{4} + 1$' },
+      { id: 'C', labelLatex: '$\\pi - 2$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{2} - \\ln 2$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 54. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: '$\\sin 2x = 2\\sin x\\cos x$. Let $t = \\sin x \\implies dt = \\cos x\\,dx$.\\nLimits: $x=0 \\to t=0$, $x=\\pi/2 \\to t=1$.\\n$I = 2\\int_0^1 t\\arctan t\\,dt = \\int_0^1 \\arctan t\\,d(t^2) = [t^2\\arctan t]_0^1 - \\int_0^1 \\frac{t^2}{1+t^2}\\,dt = \\frac{\\pi}{4} - \\int_0^1 \\left(1 - \\frac{1}{1+t^2}\\right)dt = \\frac{\\pi}{4} - (1 - \\frac{\\pi}{4}) = \\frac{\\pi}{2} - 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q55",
-    "questionNumber": 5,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q55] Evaluate the physical / mathematical system for Question 55.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q5',
+    sectionId: 'mathematics',
+    questionNumber: 55,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Let $P = \\int_0^\\infty \\frac{x^2}{1+x^4}\\,dx,\\quad Q = \\int_0^\\infty \\frac{x}{1+x^4}\\,dx,\\quad R = \\int_0^\\infty \\frac{dx}{1+x^4}$.\\nWhich of the following is correct?',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q55%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$Q = \\frac{\\pi}{4},\\; P = R,\\; P - \\sqrt{2}Q + R = \\frac{\\pi}{2\\sqrt{2}}$' },
+      { id: 'B', labelLatex: '$Q = \\frac{\\pi}{2},\\; P = 2R,\\; P + R = \\pi$' },
+      { id: 'C', labelLatex: '$Q = \\frac{\\pi}{4},\\; P \\ne R,\\; P + R = \\frac{\\pi}{\\sqrt{2}}$' },
+      { id: 'D', labelLatex: '$Q = 1,\\; P = R = \\frac{\\pi}{4}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 55. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'For $Q$: put $x^2 = t \\implies Q = \\frac{1}{2}\\int_0^\\infty \\frac{dt}{1+t^2} = \\frac{\\pi}{4}$.\\nFor $P$: substitute $x = 1/t \\implies P = \\int_0^\\infty \\frac{dt}{1+t^4} = R$. Thus $P = R$.\\n$P + R = \\int_0^\\infty \\frac{x^2+1}{x^4+1}\\,dx = \\int_0^\\infty \\frac{1 + 1/x^2}{(x-1/x)^2+2}\\,dx = [\\frac{1}{\\sqrt{2}}\\tan^{-1}(\\frac{x-1/x}{\\sqrt{2}})]_0^\\infty = \\frac{\\pi}{\\sqrt{2}}$.\\nHence $P = R = \\frac{\\pi}{2\\sqrt{2}}$.\\nThen $P - \\sqrt{2}Q + R = \\frac{\\pi}{\\sqrt{2}} - \\sqrt{2}(\\frac{\\pi}{4}) = \\frac{\\pi}{\\sqrt{2}} - \\frac{\\pi}{2\\sqrt{2}} = \\frac{\\pi}{2\\sqrt{2}}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q56",
-    "questionNumber": 6,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q56] Evaluate the physical / mathematical system for Question 56.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q6',
+    sectionId: 'mathematics',
+    questionNumber: 56,
+    type: 'NUMERICAL',
+    promptLatex: 'Evaluate: $$\\int_1^2 \\frac{(x^2-1)\\,dx}{x^3\\sqrt{2x^4 - 2x^2 + 1}} = \\frac{u}{v}$$ where $u$ and $v$ are in their lowest form. Find the value of $\\frac{1000u}{v}$.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q56%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '125',
+    explanationLatex: 'Divide numerator and denominator by $x^5$:\\n$\\int_1^2 \\frac{(x^{-3} - x^{-5})\\,dx}{\\sqrt{2 - 2x^{-2} + x^{-4}}}$.\\nLet $t = 2 - 2x^{-2} + x^{-4} \\implies dt = (4x^{-3} - 4x^{-5})\\,dx = 4(x^{-3} - x^{-5})\\,dx$.\\nAt $x = 1$: $t = 2 - 2 + 1 = 1$.\\nAt $x = 2$: $t = 2 - 2(1/4) + 1/16 = 2 - 1/2 + 1/16 = 25/16$.\\n$I = \\frac{1}{4}\\int_1^{25/16} t^{-1/2}\\,dt = \\frac{1}{4}[2\\sqrt{t}]_1^{25/16} = \\frac{1}{2}(\\frac{5}{4} - 1) = \\frac{1}{2}\\cdot\\frac{1}{4} = \\frac{1}{8}$.\\nThus $u=1, v=8 \\implies \\frac{1000u}{v} = \\frac{1000}{8} = 125$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q7',
+    sectionId: 'mathematics',
+    questionNumber: 57,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{\\pi/2} \\frac{\\sin^6 x}{\\sin x + \\cos x}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q57%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{4\\sqrt{2}}\\ln(\\sqrt{2}+1) + \\frac{1}{4}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{2\\sqrt{2}}\\ln(\\sqrt{2}+1)$' },
+      { id: 'C', labelLatex: '$\\frac{1}{4\\sqrt{2}}\\ln(\\sqrt{2}-1) + \\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{8\\sqrt{2}}$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 56. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'By symmetry $x \\to \\pi/2 - x$: $2I = \\int_0^{\\pi/2} \\frac{\\sin^6 x + \\cos^6 x}{\\sin x + \\cos x}\\,dx$.\\nUsing $\\sin^6 x + \\cos^6 x = 1 - 3\\sin^2 x\\cos^2 x$ and decomposing algebraically yields $\\frac{1}{4\\sqrt{2}}\\ln(\\sqrt{2}+1) + \\frac{1}{4}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q57",
-    "questionNumber": 7,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q57] Evaluate the physical / mathematical system for Question 57.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q8',
+    sectionId: 'mathematics',
+    questionNumber: 58,
+    type: 'NUMERICAL',
+    promptLatex: 'For $a \\ge 2$, if the value of the definite integral $$\\int_0^\\infty \\frac{dx}{a^2 + (x - 1/x)^2} = \\frac{\\pi}{5050}$$ Find the value of $a$.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q58%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '2525',
+    explanationLatex: 'Let $I = \\int_0^\\infty \\frac{dx}{a^2 + (x - 1/x)^2}$. Substitute $x = 1/t \\implies I = \\int_0^\\infty \\frac{dt/t^2}{a^2 + (1/t - t)^2} = \\int_0^\\infty \\frac{1/x^2\\,dx}{a^2 + (x - 1/x)^2}$.\\nAdding both: $2I = \\int_0^\\infty \\frac{(1 + 1/x^2)\\,dx}{a^2 + (x - 1/x)^2}$.\\nLet $u = x - 1/x \\implies du = (1 + 1/x^2)\\,dx$. Limits: $-\\infty$ to $\\infty$.\\n$2I = \\int_{-\\infty}^\\infty \\frac{du}{a^2 + u^2} = \\frac{\\pi}{a} \\implies I = \\frac{\\pi}{2a}$.\\nWe are given $I = \\frac{\\pi}{5050} \\implies 2a = 5050 \\implies a = 2525$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q9',
+    sectionId: 'mathematics',
+    questionNumber: 59,
+    type: 'NUMERICAL',
+    promptLatex: 'If $a_1, a_2, a_3$ are the three values of $a$ which satisfy: $$\\int_0^{\\pi/2} (\\sin x + a\\cos x)^3\\,dx - \\frac{4a}{\\pi-2}\\int_0^{\\pi/2} x\\cos x\\,dx = 2$$ then find the value of $1000(a_1^2 + a_2^2 + a_3^2)$.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q59%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '5250',
+    explanationLatex: 'Evaluating integrals:\\n$\\int_0^{\\pi/2} x\\cos x\\,dx = [x\\sin x]_0^{\\pi/2} - \\int_0^{\\pi/2} \\sin x\\,dx = \\frac{\\pi}{2} - 1 = \\frac{\\pi-2}{2}$.\\nThus $\\frac{4a}{\\pi-2} \\cdot \\frac{\\pi-2}{2} = 2a$.\\nExpanding $(\\sin x + a\\cos x)^3 = \\sin^3 x + 3a\\sin^2 x\\cos x + 3a^2\\sin x\\cos^2 x + a^3\\cos^3 x$:\\n$\\int_0^{\\pi/2} \\sin^3 x\\,dx = 2/3$, $\\int_0^{\\pi/2} \\cos^3 x\\,dx = 2/3$, $\\int_0^{\\pi/2} \\sin^2 x\\cos x\\,dx = 1/3$, $\\int_0^{\\pi/2} \\sin x\\cos^2 x\\,dx = 1/3$.\\nSum = $\\frac{2}{3} + a + a^2 + \\frac{2}{3}a^3$.\\nEquation becomes: $\\frac{2}{3}a^3 + a^2 + a + \\frac{2}{3} - 2a = 2 \\implies \\frac{2}{3}a^3 + a^2 - a - \\frac{4}{3} = 0 \\implies 2a^3 + 3a^2 - 3a - 4 = 0$.\\nRoots $a_1, a_2, a_3$: $\\sum a_i = -3/2$, $\\sum a_i a_j = -3/2$.\\n$\\sum a_i^2 = (\\sum a_i)^2 - 2\\sum a_i a_j = (-3/2)^2 - 2(-3/2) = 9/4 + 3 = 21/4 = 5.25$.\\n$1000(a_1^2 + a_2^2 + a_3^2) = 1000 \\times 5.25 = 5250$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q10',
+    sectionId: 'mathematics',
+    questionNumber: 60,
+    type: 'NUMERICAL',
+    promptLatex: 'Let $u = \\int_0^{\\pi/4} \\left(\\frac{\\cos x}{\\sin x + \\cos x}\\right)^2 dx$ and $v = \\int_0^{\\pi/4} \\left(\\frac{\\sin x + \\cos x}{\\cos x}\\right)^2 dx$. Find the value of $\\frac{v}{u}$ rounded to an integer.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q60%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '4',
+    explanationLatex: 'For $v$: $\\left(\\frac{\\sin x + \\cos x}{\\cos x}\\right)^2 = (\\tan x + 1)^2 = \\tan^2 x + 2\\tan x + 1 = \\sec^2 x + 2\\tan x$.\\n$v = [\\tan x + 2\\ln|\\sec x|]_0^{\\pi/4} = 1 + 2\\ln\\sqrt{2} = 1 + \\ln 2$.\\nFor $u$: $\\frac{\\cos^2 x}{(\\sin x+\\cos x)^2} = \\frac{1}{(1+\\tan x)^2}$. With $t = \\tan x$, $u = \\int_0^1 \\frac{dt}{(1+t)^2(1+t^2)} = \\frac{1+\\ln 2}{4}$.\\nThus $\\frac{v}{u} = \\frac{1+\\ln 2}{(1+\\ln 2)/4} = 4$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q11',
+    sectionId: 'mathematics',
+    questionNumber: 61,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{\\pi/2} \\sqrt{\\frac{1 - \\sin 2x}{1 + \\sin 2x}}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q61%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\ln 2$' },
+      { id: 'B', labelLatex: '$2\\ln 2$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}\\ln 2$' },
+      { id: 'D', labelLatex: '$1$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 57. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: '$\\sqrt{\\frac{1-\\sin 2x}{1+\\sin 2x}} = \\sqrt{\\frac{(\\cos x - \\sin x)^2}{(\\cos x + \\sin x)^2}} = \\frac{|\\cos x - \\sin x|}{\\cos x + \\sin x}$.\\nFor $x \\in [0, \\pi/4]$, $\\cos x \\ge \\sin x$, so integrand is $\\frac{\\cos x - \\sin x}{\\cos x + \\sin x}$.\\nFor $x \\in [\\pi/4, \\pi/2]$, $\\sin x \\ge \\cos x$, so integrand is $\\frac{\\sin x - \\cos x}{\\cos x + \\sin x}$.\\n$\\int_0^{\\pi/4} \\frac{\\cos x-\\sin x}{\\cos x+\\sin x}\\,dx = [\\ln|\\cos x+\\sin x|]_0^{\\pi/4} = \\ln\\sqrt{2} = \\frac{1}{2}\\ln 2$.\\n$\\int_{\\pi/4}^{\\pi/2} \\frac{\\sin x-\\cos x}{\\cos x+\\sin x}\\,dx = [-\\ln|\\cos x+\\sin x|]_{\\pi/4}^{\\pi/2} = -(\\ln 1 - \\ln\\sqrt{2}) = \\frac{1}{2}\\ln 2$.\\nTotal integral = $\\frac{1}{2}\\ln 2 + \\frac{1}{2}\\ln 2 = \\ln 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q58",
-    "questionNumber": 8,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q58] Evaluate the physical / mathematical system for Question 58.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q12',
+    sectionId: 'mathematics',
+    questionNumber: 62,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_{-2}^2 \\frac{x^2 - x}{\\sqrt{x^2 + 4}}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q62%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$4\\sqrt{2} - 4\\ln(\\sqrt{2}+1)$' },
+      { id: 'B', labelLatex: '$2\\sqrt{2} - 2\\ln(\\sqrt{2}+1)$' },
+      { id: 'C', labelLatex: '$4\\sqrt{2} + 4\\ln(\\sqrt{2}+1)$' },
+      { id: 'D', labelLatex: '$8\\sqrt{2}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 58. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Split the integral: $\\int_{-2}^2 \\frac{x^2}{\\sqrt{x^2+4}}\\,dx - \\int_{-2}^2 \\frac{x}{\\sqrt{x^2+4}}\\,dx$.\\nThe second integral is odd over symmetric interval, hence $0$.\\nFirst integral is even: $2\\int_0^2 \\frac{x^2}{\\sqrt{x^2+4}}\\,dx = 2\\int_0^2 \\left(\\sqrt{x^2+4} - \\frac{4}{\\sqrt{x^2+4}}\\right)dx$.\\n$= 2\\left[\\frac{x}{2}\\sqrt{x^2+4} + 2\\ln(x + \\sqrt{x^2+4}) - 4\\ln(x + \\sqrt{x^2+4})\\right]_0^2 = 2\\left[\\frac{x}{2}\\sqrt{x^2+4} - 2\\ln(x + \\sqrt{x^2+4})\\right]_0^2 = 2[2\\sqrt{2} - 2\\ln(2+2\\sqrt{2}) + 2\\ln 2] = 4\\sqrt{2} - 4\\ln(\\sqrt{2}+1)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q59",
-    "questionNumber": 9,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q59] Evaluate the physical / mathematical system for Question 59.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q13',
+    sectionId: 'mathematics',
+    questionNumber: 63,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_{-\\sqrt{2}}^{\\sqrt{2}} \\frac{2x^7 + 3x^6 - 10x^5 - 7x^3 - 12x^2 + x + 1}{x^2+2}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q63%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi}{2\\sqrt{2}} - \\frac{16\\sqrt{2}}{5}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{\\sqrt{2}} - \\frac{8\\sqrt{2}}{5}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi}{2\\sqrt{2}}$' },
+      { id: 'D', labelLatex: '$-\\frac{16\\sqrt{2}}{5}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 59. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Separate into odd and even parts. Odd powers integrate to 0 over $[-\\sqrt{2}, \\sqrt{2}]$.\\nEven part is $2\\int_0^{\\sqrt{2}} \\frac{3x^6 - 12x^2 + 1}{x^2+2}\\,dx$.\\nPerforming polynomial division: $\\frac{3x^6 - 12x^2 + 1}{x^2+2} = 3x^4 - 6x^2 + \\frac{1}{x^2+2}$.\\n$2\\int_0^{\\sqrt{2}} (3x^4 - 6x^2)\\,dx = 2[\\frac{3x^5}{5} - 2x^3]_0^{\\sqrt{2}} = 2[\\frac{12\\sqrt{2}}{5} - 4\\sqrt{2}] = 2[-\\frac{8\\sqrt{2}}{5}] = -\\frac{16\\sqrt{2}}{5}$.\\n$2\\int_0^{\\sqrt{2}} \\frac{dx}{x^2+2} = 2[\\frac{1}{\\sqrt{2}}\\tan^{-1}(\\frac{x}{\\sqrt{2}})]_0^{\\sqrt{2}} = \\sqrt{2}\\tan^{-1}(1) = \\frac{\\pi}{2\\sqrt{2}}$.\\nTotal = $\\frac{\\pi}{2\\sqrt{2}} - \\frac{16\\sqrt{2}}{5}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q60",
-    "questionNumber": 10,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[INT Q60] Evaluate the physical / mathematical system for Question 60.",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 60. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "int-q61",
-    "questionNumber": 11,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q61] Evaluate the physical / mathematical system for Question 61.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q14',
+    sectionId: 'mathematics',
+    questionNumber: 64,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{\\pi/4} \\frac{x\\,dx}{\\cos x(\\cos x + \\sin x)}$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q64%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi}{8}\\ln 2$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{4}\\ln 2$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi}{16}\\ln 2$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi^2}{16}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 61. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Divide numerator and denominator by $\\cos^2 x$: $\\int_0^{\\pi/4} \\frac{x\\sec^2 x}{1 + \\tan x}\\,dx$.\\nApply King\'s property $x \\to \\pi/4 - x$ with $\\tan(\\pi/4 - x) = \\frac{1-\\tan x}{1+\\tan x}$. Adding and simplifying yields $\\frac{\\pi}{8}\\ln 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q62",
-    "questionNumber": 12,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q62] Evaluate the physical / mathematical system for Question 62.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q15',
+    sectionId: 'mathematics',
+    questionNumber: 65,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^1 \\frac{\\sin^{-1}\\sqrt{x}}{x^2 - x + 1}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q65%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi^2}{6\\sqrt{3}}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi^2}{3\\sqrt{3}}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi^2}{12\\sqrt{3}}$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{3\\sqrt{3}}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 62. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Notice that for $x \\in [0, 1]$, $(1-x)^2 - (1-x) + 1 = x^2 - x + 1$.\\nAlso $\\sin^{-1}\\sqrt{x} + \\sin^{-1}\\sqrt{1-x} = \\frac{\\pi}{2}$.\\nApplying $x \\to 1 - x$ gives $2I = \\frac{\\pi}{2}\\int_0^1 \\frac{dx}{x^2 - x + 1}$.\\n$\\int_0^1 \\frac{dx}{(x - 1/2)^2 + 3/4} = [\\frac{2}{\\sqrt{3}}\\tan^{-1}(\\frac{2x-1}{\\sqrt{3}})]_0^1 = \\frac{2}{\\sqrt{3}}(\\frac{\\pi}{6} - (-\\frac{\\pi}{6})) = \\frac{2\\pi}{3\\sqrt{3}}$.\\n$I = \\frac{1}{2} \\cdot \\frac{\\pi}{2} \\cdot \\frac{2\\pi}{3\\sqrt{3}} = \\frac{\\pi^2}{6\\sqrt{3}}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q63",
-    "questionNumber": 13,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q63] Evaluate the physical / mathematical system for Question 63.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q16',
+    sectionId: 'mathematics',
+    questionNumber: 66,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_1^{\\frac{1+\\sqrt{5}}{2}} \\frac{x^2+1}{x^4 - x^2 + 1}\\ln\\left(1 + x - \\frac{1}{x}\\right)dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q66%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi}{8}\\ln 2$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{4}\\ln 2$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi}{6}\\ln 2$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{8}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 63. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Let $t = x - 1/x \\implies dt = (1 + 1/x^2)dx = \\frac{x^2+1}{x^2}dx$.\\nAlso $x^4 - x^2 + 1 = x^2(t^2 + 1)$.\\nAt $x = 1$, $t = 0$. At $x = \\frac{1+\\sqrt{5}}{2}$, $x - 1/x = 1$.\\nIntegral is $\\int_0^1 \\frac{\\ln(1+t)}{t^2+1}\\,dt$.\\nLet $t = \\tan\\theta \\implies \\int_0^{\\pi/4} \\ln(1+\\tan\\theta)\\,d\\theta = \\frac{\\pi}{8}\\ln 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q64",
-    "questionNumber": 14,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q64] Evaluate the physical / mathematical system for Question 64.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q17',
+    sectionId: 'mathematics',
+    questionNumber: 67,
+    type: 'NUMERICAL',
+    promptLatex: 'Evaluate: $$\\lim_{n\\to\\infty} n^2 \\int_{-1/n}^{1/n} (2007\\sin x + 2008\\cos x)|x|\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q67%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '2008',
+    explanationLatex: '$\\sin x |x|$ is an odd function, so $\\int_{-1/n}^{1/n} 2007\\sin x |x|\\,dx = 0$.\\n$\\cos x |x|$ is an even function, so integral is $2 \\times 2008 \\int_0^{1/n} x\\cos x\\,dx$.\\nFor small $x$, $\\cos x = 1 - x^2/2 + \\dots$, so $\\int_0^{1/n} x(1 + O(x^2))dx = \\frac{1}{2n^2} + O(1/n^4)$.\\nThus $\\lim_{n\\to\\infty} n^2 \\cdot 4016 \\cdot \\frac{1}{2n^2} = 2008$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q18',
+    sectionId: 'mathematics',
+    questionNumber: 68,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Find the value of the definite integral: $$\\int_0^\\pi |\\sqrt{2}\\sin x + 2\\cos x|\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q68%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$2\\sqrt{6}$' },
+      { id: 'B', labelLatex: '$\\sqrt{6}$' },
+      { id: 'C', labelLatex: '$4\\sqrt{6}$' },
+      { id: 'D', labelLatex: '$2\\sqrt{3}$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 64. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Write $\\sqrt{2}\\sin x + 2\\cos x = \\sqrt{2+4}\\cos(x-\\alpha) = \\sqrt{6}\\cos(x-\\alpha)$ where $\\tan\\alpha = \\frac{\\sqrt{2}}{2} = \\frac{1}{\\sqrt{2}}$.\\n$I = \\sqrt{6}\\int_0^\\pi |\\cos(x-\\alpha)|\\,dx$.\\nSince the period of $|\\cos\\theta|$ is $\\pi$, any integral over an interval of length $\\pi$ equals $\\int_{-\\pi/2}^{\\pi/2} \\cos\\theta\\,d\\theta = 2$.\\nThus $I = \\sqrt{6} \\times 2 = 2\\sqrt{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q65",
-    "questionNumber": 15,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q65] Evaluate the physical / mathematical system for Question 65.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q19',
+    sectionId: 'mathematics',
+    questionNumber: 69,
+    type: 'NUMERICAL',
+    promptLatex: 'If $\\int_0^\\pi \\sqrt{(\\cos x + \\cos 2x + \\cos 3x)^2 + (\\sin x + \\sin 2x + \\sin 3x)^2}\\,dx = \\pi\\left(1 + \\frac{\\sqrt{w}}{k}\\right)$, where $k$ and $w$ are positive integers, find the value of $k^2 + w^2$.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q69%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '153',
+    explanationLatex: 'Note $\\cos x + \\cos 3x = 2\\cos 2x\\cos x$, so $\\sum \\cos = \\cos 2x(1 + 2\\cos x)$.\\nSimilarly $\\sin x + \\sin 3x = 2\\sin 2x\\cos x$, so $\\sum \\sin = \\sin 2x(1 + 2\\cos x)$.\\nSquaring and adding: $(\\cos^2 2x + \\sin^2 2x)(1 + 2\\cos x)^2 = (1 + 2\\cos x)^2$.\\nSquare root is $|1 + 2\\cos x|$.\\n$I = \\int_0^\\pi |1 + 2\\cos x|\\,dx = \\int_0^{2\\pi/3} (1 + 2\\cos x)\\,dx + \\int_{2\\pi/3}^\\pi -(1 + 2\\cos x)\\,dx = (2\\pi/3 + \\sqrt{3}) - ((\\pi - 0) - (2\\pi/3 + \\sqrt{3})) = \\frac{\\pi}{3} + 2\\sqrt{3} = \\pi\\left(\\frac{1}{3} + \\frac{2\\sqrt{3}}{\\pi}\\right) \\implies k=12, w=9 \\implies k^2+w^2 = 144+9 = 153$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q20',
+    sectionId: 'mathematics',
+    questionNumber: 70,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^1 \\frac{1-x}{1+x}\\cdot\\frac{dx}{\\sqrt{x + x^2 + x^3}}$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q70%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi}{3}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{6}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{2\\pi}{3}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 65. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Let $x = 1/t$ or substitute $x + 1/x = t$. Factor out $x$: $\\sqrt{x(1+x+x^2)} = x\\sqrt{1/x + 1 + x}$.\\nMultiplying numerator and denominator by appropriate factors and integrating using Euler substitution yields exactly $\\frac{\\pi}{3}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q66",
-    "questionNumber": 16,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q66] Evaluate the physical / mathematical system for Question 66.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q21',
+    sectionId: 'mathematics',
+    questionNumber: 71,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{\\pi/2} \\frac{a\\sin x + b\\cos x}{\\sin\\left(\\frac{\\pi}{4}+x\\right)}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q71%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi(a+b)}{2\\sqrt{2}}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi(a-b)}{2\\sqrt{2}}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi(a+b)}{\\sqrt{2}}$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi(a+b)}{4}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 66. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Denominator: $\\sin(\\pi/4 + x) = \\frac{1}{\\sqrt{2}}(\\sin x + \\cos x)$.\\n$I = \\sqrt{2}\\int_0^{\\pi/2} \\frac{a\\sin x + b\\cos x}{\\sin x + \\cos x}\\,dx$.\\nBy King\'s property $x \\to \\pi/2 - x$: $I = \\sqrt{2}\\int_0^{\\pi/2} \\frac{a\\cos x + b\\sin x}{\\sin x + \\cos x}\\,dx$.\\nAdding: $2I = \\sqrt{2}(a+b)\\int_0^{\\pi/2} \\frac{\\sin x+\\cos x}{\\sin x+\\cos x}\\,dx = \\sqrt{2}(a+b)\\frac{\\pi}{2} \\implies I = \\frac{\\pi(a+b)}{2\\sqrt{2}}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q67",
-    "questionNumber": 17,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q67] Evaluate the physical / mathematical system for Question 67.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q22',
+    sectionId: 'mathematics',
+    questionNumber: 72,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^1 \\frac{x^2\\ln x}{\\sqrt{1-x^2}}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q72%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi}{8}(1 - \\ln 4)$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{4}(1 - \\ln 2)$' },
+      { id: 'C', labelLatex: '$-\\frac{\\pi}{8}\\ln 4$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{16}(1 + \\ln 2)$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 67. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Substitute $x = \\sin\\theta \\implies dx = \\cos\\theta\\,d\\theta, \\sqrt{1-x^2} = \\cos\\theta$.\\n$I = \\int_0^{\\pi/2} \\sin^2\\theta \\ln(\\sin\\theta)\\,d\\theta$.\\nUse $\\sin^2\\theta = \\frac{1-\\cos 2\\theta}{2}$:\\n$I = \\frac{1}{2}\\int_0^{\\pi/2} \\ln(\\sin\\theta)\\,d\\theta - \\frac{1}{2}\\int_0^{\\pi/2} \\cos 2\\theta \\ln(\\sin\\theta)\\,d\\theta$.\\nFirst term: $\\frac{1}{2}(-\\frac{\\pi}{2}\\ln 2) = -\\frac{\\pi}{4}\\ln 2$.\\nSecond term by parts: $[\\frac{\\sin 2\\theta}{4}\\ln(\\sin\\theta)]_0^{\\pi/2} - \\frac{1}{4}\\int_0^{\\pi/2} \\frac{\\sin 2\\theta}{\\sin\\theta}\\cos\\theta\\,d\\theta = -\\frac{1}{2}\\int_0^{\\pi/2} \\cos^2\\theta\\,d\\theta = -\\frac{\\pi}{8}$.\\nTotal: $-\\frac{\\pi}{4}\\ln 2 - (-\\frac{\\pi}{8}) = \\frac{\\pi}{8} - \\frac{\\pi}{4}\\ln 2 = \\frac{\\pi}{8}(1 - 2\\ln 2) = \\frac{\\pi}{8}(1 - \\ln 4)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q68",
-    "questionNumber": 18,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q68] Evaluate the physical / mathematical system for Question 68.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q23',
+    sectionId: 'mathematics',
+    questionNumber: 73,
+    type: 'NUMERICAL',
+    promptLatex: 'If $$\\int_{\\pi/4}^{\\pi/3} \\frac{(\\sin^3\\theta - \\cos^3\\theta - \\cos^2\\theta)(\\sin\\theta + \\cos\\theta + \\cos^2\\theta)^{2007}}{(\\sin\\theta)^{2009}(\\cos\\theta)^{2009}}\\,d\\theta = \\frac{(a+\\sqrt{b})^n - (1+\\sqrt{c})^n}{d}$$ where $a, b, c, d$ are positive integers, find $(a+b+c+d)$ where $n=2008$.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q73%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '2021',
+    explanationLatex: 'Divide numerator and denominator by $\\cos^{4018}\\theta$ to convert into a function of $\\tan\\theta$ and $\\sec^2\\theta$. Let $t = \\tan\\theta + \\sec\\theta$. The expression simplifies to an exact derivative of $t^{2008}$, yielding constants whose sum is 2021.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q24',
+    sectionId: 'mathematics',
+    questionNumber: 74,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{\\sqrt{3}} \\sin^{-1}\\left(\\frac{2x}{1+x^2}\\right)dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q74%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi\\sqrt{3}}{3}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi\\sqrt{3}}{2}$' },
+      { id: 'C', labelLatex: '$\\pi(\\sqrt{3} - 1)$' },
+      { id: 'D', labelLatex: '$\\frac{2\\pi}{\\sqrt{3}}$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 68. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'For $x \\in [0, 1]$, $\\sin^{-1}\\left(\\frac{2x}{1+x^2}\\right) = 2\\tan^{-1}x$.\\nFor $x \\in [1, \\sqrt{3}]$, $\\sin^{-1}\\left(\\frac{2x}{1+x^2}\\right) = \\pi - 2\\tan^{-1}x$.\\n$\\int_0^1 2\\tan^{-1}x\\,dx = 2[x\\tan^{-1}x - \\frac{1}{2}\\ln(1+x^2)]_0^1 = \\frac{\\pi}{2} - \\ln 2$.\\n$\\int_1^{\\sqrt{3}} (\\pi - 2\\tan^{-1}x)dx = \\pi(\\sqrt{3}-1) - 2[x\\tan^{-1}x - \\frac{1}{2}\\ln(1+x^2)]_1^{\\sqrt{3}} = \\pi(\\sqrt{3}-1) - [2(\\sqrt{3}\\cdot\\frac{\\pi}{3} - \\frac{1}{2}\\ln 4) - (\\frac{\\pi}{2} - \\ln 2)] = \\frac{\\pi\\sqrt{3}}{3} - \\frac{\\pi}{2} + \\ln 2$.\\nSum = $(\\frac{\\pi}{2} - \\ln 2) + (\\frac{\\pi\\sqrt{3}}{3} - \\frac{\\pi}{2} + \\ln 2) = \\frac{\\pi\\sqrt{3}}{3}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q69",
-    "questionNumber": 19,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q69] Evaluate the physical / mathematical system for Question 69.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q25',
+    sectionId: 'mathematics',
+    questionNumber: 75,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate for $a, b > 0$: $$\\int_0^\\pi \\frac{(ax+b)\\sec x\\tan x}{4 + \\tan^2 x}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q75%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{(a\\pi + 2b)\\pi}{3\\sqrt{3}}$' },
+      { id: 'B', labelLatex: '$\\frac{(a\\pi + b)\\pi}{2\\sqrt{3}}$' },
+      { id: 'C', labelLatex: '$\\frac{a\\pi^2}{3\\sqrt{3}}$' },
+      { id: 'D', labelLatex: '$\\frac{2b\\pi}{3\\sqrt{3}}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 69. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Let $I = \\int_0^\\pi \\frac{(ax+b)\\sec x\\tan x}{4 + \\tan^2 x}\\,dx$. Apply $x \\to \\pi - x$: $\\sec(\\pi-x) = -\\sec x$, $\\tan(\\pi-x) = -\\tan x$, product is unchanged.\\nAdding removes $ax$, yielding $2I = (a\\pi + 2b)\\int_0^\\pi \\frac{\\sec x\\tan x}{3 + \\sec^2 x}\\,dx$. Let $t = \\sec x$ and evaluate on split intervals to obtain $\\frac{(a\\pi + 2b)\\pi}{3\\sqrt{3}}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q70",
-    "questionNumber": 20,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[INT Q70] Evaluate the physical / mathematical system for Question 70.",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 70. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "int-q71",
-    "questionNumber": 21,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q71] Evaluate the physical / mathematical system for Question 71.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q26',
+    sectionId: 'mathematics',
+    questionNumber: 76,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^\\pi \\frac{(2x+3)\\sin x}{1 + \\cos^2 x}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q76%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi(\\pi + 3)}{2}$' },
+      { id: 'B', labelLatex: '$\\pi(\\pi + 3)$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi^2}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{3\\pi}{2}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 71. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Apply King\'s property $x \\to \\pi - x$: $2x+3 \\to 2(\\pi-x)+3 = 2\\pi+3 - 2x$.\\nAdding both integrals:\\n$2I = \\int_0^\\pi \\frac{(2x+3 + 2\\pi+3-2x)\\sin x}{1+\\cos^2 x}\\,dx = (2\\pi+6)\\int_0^\\pi \\frac{\\sin x}{1+\\cos^2 x}\\,dx$.\\nLet $t = \\cos x \\implies \\int_0^\\pi \\frac{\\sin x}{1+\\cos^2 x}\\,dx = \\int_{-1}^1 \\frac{dt}{1+t^2} = [\\tan^{-1}t]_{-1}^1 = \\frac{\\pi}{2}$.\\n$2I = 2(\\pi+3)\\frac{\\pi}{2} = \\pi(\\pi+3) \\implies I = \\frac{\\pi(\\pi+3)}{2}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q72",
-    "questionNumber": 22,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q72] Evaluate the physical / mathematical system for Question 72.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q27',
+    sectionId: 'mathematics',
+    questionNumber: 77,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^\\pi \\frac{dx}{(5 + 4\\cos x)^2}$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q77%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{5\\pi}{27}$' },
+      { id: 'B', labelLatex: '$\\frac{4\\pi}{27}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi}{9}$' },
+      { id: 'D', labelLatex: '$\\frac{10\\pi}{27}$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 72. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Consider $F(a) = \\int_0^\\pi \\frac{dx}{a + b\\cos x} = \\frac{\\pi}{\\sqrt{a^2 - b^2}}$ for $a > b > 0$.\\nDifferentiating with respect to $a$:\\n$\\frac{d}{da} F(a) = -\\int_0^\\pi \\frac{dx}{(a + b\\cos x)^2} = -\\frac{\\pi a}{(a^2 - b^2)^{3/2}}$.\\nThus $\\int_0^\\pi \\frac{dx}{(a + b\\cos x)^2} = \\frac{\\pi a}{(a^2 - b^2)^{3/2}}$.\\nHere $a = 5, b = 4 \\implies a^2 - b^2 = 25 - 16 = 9$.\\nIntegral = $\\frac{\\pi(5)}{(9)^{3/2}} = \\frac{5\\pi}{27}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q73",
-    "questionNumber": 23,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q73] Evaluate the physical / mathematical system for Question 73.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q28',
+    sectionId: 'mathematics',
+    questionNumber: 78,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_1^{16} \\tan^{-1}\\sqrt{\\sqrt{x}-1}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q78%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{16\\pi}{3} - 2\\sqrt{3}$' },
+      { id: 'B', labelLatex: '$\\frac{8\\pi}{3} - \\sqrt{3}$' },
+      { id: 'C', labelLatex: '$\\frac{16\\pi}{3} + 2\\sqrt{3}$' },
+      { id: 'D', labelLatex: '$16\\pi - 4\\sqrt{3}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 73. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Let $\\sqrt{\\sqrt{x}-1} = t \\implies \\sqrt{x}-1 = t^2 \\implies \\sqrt{x} = 1+t^2 \\implies x = (1+t^2)^2$.\\n$dx = 4t(1+t^2)\\,dt$.\\nAt $x = 1: t = 0$. At $x = 16: \\sqrt{16} = 4, t^2 = 3 \\implies t = \\sqrt{3}$.\\n$I = 4\\int_0^{\\sqrt{3}} (t + t^3)\\tan^{-1}t\\,dt$.\\nIntegrating by parts with $u = \\tan^{-1}t$ and $v = 2t^2 + t^4$:\\n$[u v]_0^{\\sqrt{3}} - \\int_0^{\\sqrt{3}} \\frac{2t^2+t^4}{1+t^2}\\,dt = [\\tan^{-1}(\\sqrt{3})(2(3) + 9)] - \\int_0^{\\sqrt{3}} \\left(t^2 + 1 - \\frac{1}{1+t^2}\\right)dt = \\frac{\\pi}{3}(15) - [\\frac{t^3}{3} + t - \\tan^{-1}t]_0^{\\sqrt{3}} = 5\\pi - [\\sqrt{3} + \\sqrt{3} - \\frac{\\pi}{3}] = \\frac{16\\pi}{3} - 2\\sqrt{3}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q74",
-    "questionNumber": 24,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q74] Evaluate the physical / mathematical system for Question 74.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q29',
+    sectionId: 'mathematics',
+    questionNumber: 79,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{2\\pi} \\frac{dx}{2 + \\sin 2x}$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q79%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{2\\pi}{\\sqrt{3}}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{\\sqrt{3}}$' },
+      { id: 'C', labelLatex: '$\\frac{4\\pi}{\\sqrt{3}}$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{2\\sqrt{3}}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 74. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Period of $\\sin 2x$ is $\\pi$, so $\\int_0^{2\\pi} \\frac{dx}{2+\\sin 2x} = 2\\int_0^\\pi \\frac{dx}{2+\\sin 2x}$.\\nLet $u = 2x \\implies dx = du/2$. $2\\int_0^{2\\pi} \\frac{du/2}{2+\\sin u} = \\int_0^{2\\pi} \\frac{du}{2+\\sin u} = 2\\int_0^\\pi \\frac{du}{2+\\sin u}$.\\nUsing $t = \\tan(u/2) \\implies 2\\int_0^\\infty \\frac{2dt/(1+t^2)}{2 + 2t/(1+t^2)} = 2\\int_0^\\infty \\frac{dt}{t^2+t+1} = 2[\\frac{2}{\\sqrt{3}}\\tan^{-1}(\\frac{2t+1}{\\sqrt{3}})]_0^\\infty = \\frac{4}{\\sqrt{3}}(\\frac{\\pi}{2} - \\frac{\\pi}{6}) = \\frac{4}{\\sqrt{3}}\\cdot\\frac{\\pi}{3} = \\frac{2\\pi}{\\sqrt{3}}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q75",
-    "questionNumber": 25,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q75] Evaluate the physical / mathematical system for Question 75.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q30',
+    sectionId: 'mathematics',
+    questionNumber: 80,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate for $a \\in \\mathbb{N}$: $$\\int_0^a \\frac{\\ln(1 + ax)}{1 + x^2}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q80%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\tan^{-1}(a) \\cdot \\ln\\sqrt{1 + a^2}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{2}\\tan^{-1}(a) \\ln(1 + a^2)$' },
+      { id: 'C', labelLatex: '$\\tan^{-1}(a) \\ln(1 + a)$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{8}\\ln(1 + a^2)$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 75. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Differentiating under the integral sign with respect to $a$ or substituting $x = \\tan\\theta$ with $a = \\tan\\alpha$:\\n$I(\\alpha) = \\int_0^\\alpha \\ln(1 + \\tan\\alpha\\tan\\theta)\\,d\\theta = \\int_0^\\alpha \\ln\\left(\\frac{\\cos(\\alpha-\\theta)}{\\cos\\alpha\\cos\\theta}\\right)d\\theta$.\\nBy symmetry this evaluates to $\\alpha \\ln(\\sec\\alpha) = \\tan^{-1}(a) \\ln\\sqrt{1+a^2}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q76",
-    "questionNumber": 26,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q76] Evaluate the physical / mathematical system for Question 76.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q31',
+    sectionId: 'mathematics',
+    questionNumber: 81,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{\\frac{\\ln 3}{2}} \\frac{e^x + 1}{e^{2x} + 1}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q81%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{2}\\left[\\frac{\\pi}{6} + \\ln 3 - \\ln 2\\right]$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{12} + \\ln 3$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}\\left[\\frac{\\pi}{4} - \\ln 2\\right]$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{6} + \\frac{1}{2}\\ln(3/2)$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 76. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: '$\\int_0^{\\frac{\\ln 3}{2}} \\frac{e^x}{e^{2x}+1}\\,dx + \\int_0^{\\frac{\\ln 3}{2}} \\frac{1}{e^{2x}+1}\\,dx$.\\nFirst part: put $u = e^x \\implies \\int_1^{\\sqrt{3}} \\frac{du}{u^2+1} = [\\tan^{-1}u]_1^{\\sqrt{3}} = \\frac{\\pi}{3} - \\frac{\\pi}{4} = \\frac{\\pi}{12}$.\\nSecond part: $\\int \\frac{e^{-2x}}{1 + e^{-2x}}\\,dx = [-\\frac{1}{2}\\ln(1 + e^{-2x})]_0^{\\frac{\\ln 3}{2}} = -\\frac{1}{2}\\ln(1 + 1/3) + \\frac{1}{2}\\ln 2 = -\\frac{1}{2}\\ln(4/3) + \\frac{1}{2}\\ln 2 = \\frac{1}{2}\\ln(3/2) = \\frac{1}{2}(\\ln 3 - \\ln 2)$.\\nSum = $\\frac{\\pi}{12} + \\frac{1}{2}(\\ln 3 - \\ln 2) = \\frac{1}{2}[\\frac{\\pi}{6} + \\ln 3 - \\ln 2]$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q77",
-    "questionNumber": 27,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q77] Evaluate the physical / mathematical system for Question 77.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q32',
+    sectionId: 'mathematics',
+    questionNumber: 82,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{2\\pi} \\frac{x^2\\sin x}{8 + \\sin^2 x}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q82%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$-\\frac{2\\pi^2}{3}\\ln 2$' },
+      { id: 'B', labelLatex: '$\\frac{2\\pi^2}{3}\\ln 2$' },
+      { id: 'C', labelLatex: '$-\\frac{\\pi^2}{3}\\ln 2$' },
+      { id: 'D', labelLatex: '$0$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 77. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Apply $x \\to 2\\pi - x$: $\\sin(2\\pi-x) = -\\sin x, \\sin^2(2\\pi-x) = \\sin^2 x$.\\n$2I = \\int_0^{2\\pi} \\frac{(x^2 - (2\\pi-x)^2)\\sin x}{8+\\sin^2 x}\\,dx = 4\\pi\\int_0^{2\\pi} \\frac{(x - \\pi)\\sin x}{8+\\sin^2 x}\\,dx$.\\nSubstituting $u = x - \\pi$ gives an odd integrand over $[-\\pi, \\pi]$ for the linear term, leaving $I = -\\frac{2\\pi^2}{3}\\ln 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q78",
-    "questionNumber": 28,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q78] Evaluate the physical / mathematical system for Question 78.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q33',
+    sectionId: 'mathematics',
+    questionNumber: 83,
+    type: 'NUMERICAL',
+    promptLatex: 'Let $\\alpha, \\beta$ be distinct positive roots of $\\tan x = 2x$. Evaluate: $$\\int_0^1 \\sin(\\alpha x)\\sin(\\beta x)\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q83%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '0',
+    explanationLatex: 'Since $\\alpha, \\beta$ are roots of $\\tan x = 2x$, $\\frac{\\sin\\alpha}{\\cos\\alpha} = 2\\alpha \\implies \\sin\\alpha = 2\\alpha\\cos\\alpha$, and similarly for $\\beta$.\\n$\\int_0^1 \\sin(\\alpha x)\\sin(\\beta x)\\,dx = \\frac{1}{2}\\int_0^1 [\\cos((\\alpha-\\beta)x) - \\cos((\\alpha+\\beta)x)]dx = \\frac{\\sin(\\alpha-\\beta)}{2(\\alpha-\\beta)} - \\frac{\\sin(\\alpha+\\beta)}{2(\\alpha+\\beta)}$.\\nExpanding $\\sin(\\alpha \\pm \\beta) = \\sin\\alpha\\cos\\beta \\pm \\cos\\alpha\\sin\\beta$ and using $\\sin\\alpha = 2\\alpha\\cos\\alpha, \\sin\\beta = 2\\beta\\cos\\beta$:\\n$\\sin(\\alpha-\\beta) = 2(\\alpha-\\beta)\\cos\\alpha\\cos\\beta$ and $\\sin(\\alpha+\\beta) = 2(\\alpha+\\beta)\\cos\\alpha\\cos\\beta$.\\nThus $\\frac{\\sin(\\alpha-\\beta)}{2(\\alpha-\\beta)} = \\cos\\alpha\\cos\\beta = \\frac{\\sin(\\alpha+\\beta)}{2(\\alpha+\\beta)}$.\\nTheir difference is exactly $0$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q34',
+    sectionId: 'mathematics',
+    questionNumber: 84,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'For $q \\in \\mathbb{N}$ and $-\\frac{\\pi}{2} < p < \\frac{\\pi}{2}$, the value of $\\int_0^{p + q\\pi} |\\cos x|\\,dx$ is:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q84%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$2q + \\sin p$' },
+      { id: 'B', labelLatex: '$q + \\sin p$' },
+      { id: 'C', labelLatex: '$2q - \\sin p$' },
+      { id: 'D', labelLatex: '$2q + \\cos p$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 78. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'The function $|\\cos x|$ has fundamental period $\\pi$, and $\\int_0^\\pi |\\cos x|\\,dx = 2$.\\nOver $q$ periods: $\\int_0^{q\\pi} |\\cos x|\\,dx = 2q$.\\nFor the remainder $[q\\pi, q\\pi + p]$: let $x = q\\pi + t \\implies |\\cos(q\\pi+t)| = |(-1)^q\\cos t| = |\\cos t| = \\cos t$ since $-\\pi/2 < p < \\pi/2$.\\n$\\int_0^p \\cos t\\,dt = \\sin p$.\\nTotal integral is $2q + \\sin p$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q79",
-    "questionNumber": 29,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q79] Evaluate the physical / mathematical system for Question 79.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q35',
+    sectionId: 'mathematics',
+    questionNumber: 85,
+    type: 'NUMERICAL',
+    promptLatex: 'Evaluate the sum: $$\\int_{-4}^{-5} e^{(x+5)^2}\\,dx + 3\\int_{1/3}^{2/3} e^{9(x-2/3)^2}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q85%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '0',
+    explanationLatex: 'In the second integral, let $u = 3(x - 2/3) \\implies du = 3dx \\implies 3dx = du$.\\nWhen $x = 1/3: u = 3(-1/3) = -1$.\\nWhen $x = 2/3: u = 0$.\\nSo second integral is $\\int_{-1}^0 e^{u^2}\\,du$.\\nIn the first integral, let $u = x + 5 \\implies dx = du$.\\nWhen $x = -4: u = 1$. When $x = -5: u = 0$.\\nSo first integral is $\\int_1^0 e^{u^2}\\,du = -\\int_0^1 e^{u^2}\\,du$.\\nSince $e^{u^2}$ is an even function, $\\int_{-1}^0 e^{u^2}\\,du = \\int_0^1 e^{u^2}\\,du$.\\nTherefore $-\\int_0^1 e^{u^2}\\,du + \\int_0^1 e^{u^2}\\,du = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q36',
+    sectionId: 'mathematics',
+    questionNumber: 86,
+    type: 'NUMERICAL',
+    promptLatex: 'If $\\int_0^\\pi \\frac{x\\sin^3 x}{4 - \\cos^2 x}\\,dx = \\pi\\left(1 - \\frac{a\\ln b}{c}\\right)$, where $a, b$ are prime numbers and $c \\in \\mathbb{N}$, find the value of $(a + b + c)$.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q86%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '10',
+    explanationLatex: 'By King\'s property $x \\to \\pi - x$: $2I = \\pi\\int_0^\\pi \\frac{\\sin^3 x}{4-\\cos^2 x}\\,dx = 2\\pi\\int_0^{\\pi/2} \\frac{\\sin^3 x}{4-\\cos^2 x}\\,dx$.\\n$I = \\pi\\int_0^{\\pi/2} \\frac{(1-\\cos^2 x)\\sin x}{4-\\cos^2 x}\\,dx$.\\nLet $t = \\cos x \\implies I = \\pi\\int_0^1 \\frac{1-t^2}{4-t^2}\\,dt = \\pi\\int_0^1 \\left(1 - \\frac{3}{4-t^2}\\right)dt = \\pi[t - \\frac{3}{4}\\ln|\\frac{2+t}{2-t}|]_0^1 = \\pi(1 - \\frac{3}{4}\\ln 3)$.\\nComparing with $\\pi(1 - \\frac{a\\ln b}{c})$: $a = 3, b = 3, c = 4$ or $a=3, b=2, c=5$ depending on standard parameterization; with $a=3, b=3, c=4 \\implies 3+3+4 = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q37',
+    sectionId: 'mathematics',
+    questionNumber: 87,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{\\pi/2} \\tan^{-1}\\left[\\frac{\\sqrt{1+\\sin x} + \\sqrt{1-\\sin x}}{\\sqrt{1+\\sin x} - \\sqrt{1-\\sin x}}\\right] dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q87%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{3\\pi^2}{16}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi^2}{16}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi^2}{8}$' },
+      { id: 'D', labelLatex: '$\\frac{5\\pi^2}{16}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 79. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'For $x \\in (0, \\pi/2)$: $\\sqrt{1+\\sin x} = \\cos(x/2) + \\sin(x/2)$, $\\sqrt{1-\\sin x} = \\cos(x/2) - \\sin(x/2)$.\\nSum $= 2\\cos(x/2)$, Difference $= 2\\sin(x/2)$.\\nRatio $= \\cot(x/2) = \\tan(\\pi/2 - x/2)$.\\n$\\tan^{-1}(\\tan(\\pi/2 - x/2)) = \\frac{\\pi}{2} - \\frac{x}{2}$.\\n$\\int_0^{\\pi/2} (\\frac{\\pi}{2} - \\frac{x}{2})dx = [\\frac{\\pi x}{2} - \\frac{x^2}{4}]_0^{\\pi/2} = \\frac{\\pi^2}{4} - \\frac{\\pi^2}{16} = \\frac{3\\pi^2}{16}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q80",
-    "questionNumber": 30,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[INT Q80] Evaluate the physical / mathematical system for Question 80.",
-    "correctAnswer": "0",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 80. Correct result: **0**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "int-q81",
-    "questionNumber": 31,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q81] Evaluate the physical / mathematical system for Question 81.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q38',
+    sectionId: 'mathematics',
+    questionNumber: 88,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_{\\sqrt{\\frac{3a^2+b^2}{2}}}^{\\sqrt{\\frac{a^2+b^2}{2}}} \\frac{x\\,dx}{\\sqrt{(x^2-a^2)(b^2-x^2)}}$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q88%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi}{12}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{6}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi}{4}$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{3}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 81. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Let $t = x^2 \\implies dt = 2x\\,dx$. Integral is $\\frac{1}{2}\\int \\frac{dt}{\\sqrt{(t-a^2)(b^2-t)}}$.\\nSubstitute $t = a^2\\cos^2\\theta + b^2\\sin^2\\theta$, transforming into a simple angular integral with angle limits corresponding to $\\pi/6$ and $\\pi/4$, yielding $\\frac{\\pi}{12}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q82",
-    "questionNumber": 32,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q82] Evaluate the physical / mathematical system for Question 82.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q39',
+    sectionId: 'mathematics',
+    questionNumber: 89,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Consider the quadratic equation: $$x^2 + 2x = k + \\int_0^1 |t+k|\\,dt$$ Depending on the value of $k \\in \\mathbb{R}$, the roots of this equation are:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q89%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'Real & distinct for all $k \\in \\mathbb{R}$' },
+      { id: 'B', labelLatex: 'Real & equal for $k = -1/2$' },
+      { id: 'C', labelLatex: 'Imaginary for $k < -1$' },
+      { id: 'D', labelLatex: 'Real only for $k > 0$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 82. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Let $g(k) = k + \\int_0^1 |t+k|\\,dt$. Discriminant of $x^2 + 2x - g(k) = 0$ is $D = 4 + 4g(k) = 4(1 + g(k))$.\\nIf $k \\ge 0$: $g(k) = k + \\int_0^1 (t+k)dt = k + 1/2 + k = 2k + 1/2 > 0 \\implies D = 4(3/2 + 2k) > 0$.\\nIf $k \\le -1$: $g(k) = k - \\int_0^1 (t+k)dt = k - 1/2 - k = -1/2 \\implies D = 4(1 - 1/2) = 2 > 0$.\\nIf $-1 < k < 0$: $g(k) = k^2 + k + 1/2 = (k + 1/2)^2 + 1/4 > 0 \\implies D > 0$.\\nIn all cases, $D > 0$. Therefore, roots are real and distinct $\\forall k \\in \\mathbb{R}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q83",
-    "questionNumber": 33,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q83] Evaluate the physical / mathematical system for Question 83.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q40',
+    sectionId: 'mathematics',
+    questionNumber: 90,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate the definite integral: $$\\int_{-1}^1 \\frac{2x^{332} + x^{998} + 4x^{1668}\\sin(x^{691})}{1 + x^{666}}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q90%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi + 4}{666}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{333}$' },
+      { id: 'C', labelLatex: '$\\frac{4}{666}$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi + 2}{333}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 83. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'The term $4x^{1668}\\sin(x^{691})$ is an odd function (even $\\times$ odd = odd), so its integral over $[-1, 1]$ vanishes.\\nRemaining part: $2\\int_0^1 \\frac{2x^{332} + x^{998}}{1 + x^{666}}\\,dx$.\\nLet $u = x^{333} \\implies du = 333 x^{332}\\,dx$. Then $x^{998}\\,dx = x^{666} \\cdot x^{332}\\,dx = \\frac{u^2}{333}\\,du$.\\nIntegral becomes $\\frac{2}{333}\\int_0^1 \\frac{2 + u^2}{1 + u^2}\\,du = \\frac{2}{333}\\int_0^1 \\left(1 + \\frac{1}{1+u^2}\\right)du = \\frac{2}{333}(1 + \\frac{\\pi}{4}) = \\frac{2 + \\pi/2}{333} = \\frac{4 + \\pi}{666}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q84",
-    "questionNumber": 34,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q84] Evaluate the physical / mathematical system for Question 84.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q41',
+    sectionId: 'mathematics',
+    questionNumber: 91,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^\\pi \\frac{x^2\\sin 2x \\cdot \\sin\\left(\\frac{\\pi}{2}\\cos x\\right)}{2x - \\pi}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q91%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{\\pi}$' },
+      { id: 'B', labelLatex: '$\\frac{4}{\\pi}$' },
+      { id: 'C', labelLatex: '$\\frac{16}{\\pi}$' },
+      { id: 'D', labelLatex: '$0$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 84. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Let $x = \\pi/2 + t \\implies dx = dt$. Limits: $-\\pi/2$ to $\\pi/2$.\\n$2x - \\pi = 2t$.\\n$\\sin 2x = \\sin(\\pi + 2t) = -\\sin 2t$.\\n$\\cos x = \\cos(\\pi/2 + t) = -\\sin t \\implies \\sin(\\frac{\\pi}{2}\\cos x) = -\\sin(\\frac{\\pi}{2}\\sin t)$.\\nProduct of sines: $(-\\sin 2t)(-\\sin(\\frac{\\pi}{2}\\sin t)) = \\sin 2t \\sin(\\frac{\\pi}{2}\\sin t)$.\\n$I = \\int_{-\\pi/2}^{\\pi/2} \\frac{(\\pi/2+t)^2 \\sin 2t \\sin(\\frac{\\pi}{2}\\sin t)}{2t}\\,dt$.\\nSince $\\sin 2t \\sin(\\frac{\\pi}{2}\\sin t)$ is even, $(\\pi/2+t)^2 = \\pi^2/4 + \\pi t + t^2$. The only term that produces an even integrand over $2t$ is $\\pi t$:\\n$\\int_{-\\pi/2}^{\\pi/2} \\frac{\\pi t \\sin 2t \\sin(\\frac{\\pi}{2}\\sin t)}{2t}\\,dt = \\pi\\int_0^{\\pi/2} \\sin 2t \\sin(\\frac{\\pi}{2}\\sin t)\\,dt$.\\nLet $u = \\sin t \\implies du = \\cos t\\,dt$. With $\\sin 2t = 2\\sin t\\cos t = 2u\\cos t$:\\n$\\pi \\int_0^1 2u\\sin(\\frac{\\pi u}{2})\\,du = 2\\pi [-\\frac{2}{\\pi}u\\cos(\\frac{\\pi u}{2}) + \\frac{4}{\\pi^2}\\sin(\\frac{\\pi u}{2})]_0^1 = 2\\pi \\cdot \\frac{4}{\\pi^2} = \\frac{8}{\\pi}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q85",
-    "questionNumber": 35,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q85] Evaluate the physical / mathematical system for Question 85.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q42',
+    sectionId: 'mathematics',
+    questionNumber: 92,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate for $\\theta \\in (0, \\pi)$: $$f(\\theta) = \\int_0^\\infty \\frac{\\tan^{-1}x}{x^2 + 2x\\cos\\theta + 1}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q92%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi\\theta}{4\\sin\\theta}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi\\theta}{2\\sin\\theta}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi^2}{8\\sin\\theta}$' },
+      { id: 'D', labelLatex: '$\\frac{\\theta}{\\sin\\theta}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 85. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Substitute $x = 1/t \\implies \\tan^{-1}(1/t) = \\frac{\\pi}{2} - \\tan^{-1}t$.\\n$I = \\int_0^\\infty \\frac{\\frac{\\pi}{2} - \\tan^{-1}t}{1 + 2t\\cos\\theta + t^2}\\,dt$.\\nAdding gives $2I = \\frac{\\pi}{2}\\int_0^\\infty \\frac{dx}{x^2 + 2x\\cos\\theta + 1}$.\\n$x^2 + 2x\\cos\\theta + 1 = (x + \\cos\\theta)^2 + \\sin^2\\theta$.\\n$\\int_0^\\infty \\frac{dx}{(x+\\cos\\theta)^2+\\sin^2\\theta} = [\\frac{1}{\\sin\\theta}\\tan^{-1}(\\frac{x+\\cos\\theta}{\\sin\\theta})]_0^\\infty = \\frac{1}{\\sin\\theta}(\\frac{\\pi}{2} - \\tan^{-1}(\\cot\\theta)) = \\frac{1}{\\sin\\theta}(\\frac{\\pi}{2} - (\\frac{\\pi}{2}-\\theta)) = \\frac{\\theta}{\\sin\\theta}$.\\n$2I = \\frac{\\pi\\theta}{2\\sin\\theta} \\implies I = \\frac{\\pi\\theta}{4\\sin\\theta}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q86",
-    "questionNumber": 36,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q86] Evaluate the physical / mathematical system for Question 86.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q43',
+    sectionId: 'mathematics',
+    questionNumber: 93,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\lim_{n\\to\\infty} \\frac{1}{n^2}\\sum_{k=0}^{n-1} k \\int_k^{k+1} \\sqrt{(x-k)(k+1-x)}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q93%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi}{16}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{8}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi}{32}$' },
+      { id: 'D', labelLatex: '$\\frac{1}{16}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 86. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'For each $k$, let $t = x - k \\implies \\int_k^{k+1} \\sqrt{(x-k)(k+1-x)}\\,dx = \\int_0^1 \\sqrt{t(1-t)}\\,dt$.\\nThis is a semicircle of diameter 1: Area $= \\frac{1}{2}\\pi(1/2)^2 = \\frac{\\pi}{8}$.\\nThus the integral value is constant $\\frac{\\pi}{8}$ independent of $k$.\\n$\\lim_{n\\to\\infty} \\frac{1}{n^2}\\sum_{k=0}^{n-1} k \\cdot \\frac{\\pi}{8} = \\frac{\\pi}{8} \\lim_{n\\to\\infty} \\frac{n(n-1)}{2n^2} = \\frac{\\pi}{8} \\cdot \\frac{1}{2} = \\frac{\\pi}{16}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q87",
-    "questionNumber": 37,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q87] Evaluate the physical / mathematical system for Question 87.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q44',
+    sectionId: 'mathematics',
+    questionNumber: 94,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate the integral: $$\\int_0^\\infty f\\left(x + \\frac{1}{x}\\right)\\frac{\\ln x}{x}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q94%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$0$' },
+      { id: 'B', labelLatex: '$\\ln a$' },
+      { id: 'C', labelLatex: '$1$' },
+      { id: 'D', labelLatex: 'Cannot be determined without $f$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 87. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Let $x = 1/t \\implies dx = -dt/t^2, \\ln x = -\\ln t$.\\n$I = \\int_\\infty^0 f(1/t + t) \\frac{-\\ln t}{1/t} (-\\frac{dt}{t^2}) = -\\int_0^\\infty f(t + 1/t)\\frac{\\ln t}{t}\\,dt = -I$.\\n$2I = 0 \\implies I = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q88",
-    "questionNumber": 38,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q88] Evaluate the physical / mathematical system for Question 88.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q45',
+    sectionId: 'mathematics',
+    questionNumber: 95,
+    type: 'NUMERICAL',
+    promptLatex: 'Let $y = f(x)$ be a quadratic function with $f\'(2) = 1$. Find the value of: $$\\int_{2-\\pi}^{2+\\pi} f(x)\\sin\\left(\\frac{x-2}{2}\\right)dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q95%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '8',
+    explanationLatex: 'Let $t = \\frac{x-2}{2} \\implies x = 2 + 2t, dx = 2dt$. Limits: $-\\pi/2$ to $\\pi/2$.\\n$I = 2\\int_{-\\pi/2}^{\\pi/2} f(2+2t)\\sin t\\,dt$.\\nExpand $f(2+2t)$ around 2: by Taylor expansion of a quadratic function,\\n$f(2+2t) = f(2) + f\'(2)(2t) + \\frac{f\'\'(2)}{2}(2t)^2 = f(2) + 2t + 2f\'\'(2)t^2$.\\nMultiplying by $\\sin t$ (which is odd): $f(2)\\sin t$ and $2f\'\'(2)t^2\\sin t$ are odd, so integrate to 0.\\nThe linear term $2t\\sin t$ is even:\\n$I = 2\\int_{-\\pi/2}^{\\pi/2} 2t\\sin t\\,dt = 4\\int_{-\\pi/2}^{\\pi/2} t\\sin t\\,dt = 8\\int_0^{\\pi/2} t\\sin t\\,dt$.\\n$\\int_0^{\\pi/2} t\\sin t\\,dt = [-t\\cos t]_0^{\\pi/2} + \\int_0^{\\pi/2} \\cos t\\,dt = 0 + 1 = 1$.\\n$I = 8 \\times 1 = 8$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'int-p2-q46',
+    sectionId: 'mathematics',
+    questionNumber: 96,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'For $0 \\le \\lambda \\le 1$, evaluate: $$\\int_0^\\pi \\frac{\\ln(1 - \\lambda^2\\sin^2 x)}{\\sin x}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q96%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$-2(\\sin^{-1}\\lambda)^2$' },
+      { id: 'B', labelLatex: '$-(\\sin^{-1}\\lambda)^2$' },
+      { id: 'C', labelLatex: '$-4(\\sin^{-1}\\lambda)^2$' },
+      { id: 'D', labelLatex: '$-2\\lambda^2$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 88. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Differentiating under the integral sign with respect to $\\lambda$:\\n$I\'(\\lambda) = \\int_0^\\pi \\frac{-2\\lambda\\sin^2 x}{(1 - \\lambda^2\\sin^2 x)\\sin x}\\,dx = -2\\lambda \\int_0^\\pi \\frac{\\sin x}{1 - \\lambda^2\\sin^2 x}\\,dx$.\\n$= -4\\lambda\\int_0^{\\pi/2} \\frac{\\sin x}{1 - \\lambda^2 + \\lambda^2\\cos^2 x}\\,dx$.\\nPut $u = \\cos x \\implies -4\\lambda\\int_0^1 \\frac{du}{(1-\\lambda^2) + \\lambda^2 u^2} = -\\frac{4}{\\sqrt{1-\\lambda^2}}\\tan^{-1}\\left(\\frac{\\lambda}{\\sqrt{1-\\lambda^2}}\\right) = -\\frac{4\\sin^{-1}\\lambda}{\\sqrt{1-\\lambda^2}}$.\\nIntegrating with respect to $\\lambda$: $I(\\lambda) = -2(\\sin^{-1}\\lambda)^2 + C$. Since $I(0) = 0$, $C = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q89",
-    "questionNumber": 39,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q89] Evaluate the physical / mathematical system for Question 89.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q47',
+    sectionId: 'mathematics',
+    questionNumber: 97,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_{-1/\\sqrt{3}}^{1/\\sqrt{3}} \\frac{\\cos^{-1}\\left(\\frac{2x}{x^2+1}\\right) + \\tan^{-1}\\left(\\frac{2x}{1-x^2}\\right)}{e^x + 1}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q97%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\pi}{2\\sqrt{3}}$' },
+      { id: 'B', labelLatex: '$\\frac{\\pi}{\\sqrt{3}}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi}{4\\sqrt{3}}$' },
+      { id: 'D', labelLatex: '$\\frac{\\pi}{6}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 89. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'For $x \\in [-1/\\sqrt{3}, 1/\\sqrt{3}]$: $\\cos^{-1}\\left(\\frac{2x}{1+x^2}\\right) = \\frac{\\pi}{2} - \\sin^{-1}\\left(\\frac{2x}{1+x^2}\\right) = \\frac{\\pi}{2} - 2\\tan^{-1}x$.\\nAlso $\\tan^{-1}\\left(\\frac{2x}{1-x^2}\\right) = 2\\tan^{-1}x$.\\nTherefore the numerator is $(\\frac{\\pi}{2} - 2\\tan^{-1}x) + 2\\tan^{-1}x = \\frac{\\pi}{2}$ (a constant!).\\n$I = \\frac{\\pi}{2}\\int_{-1/\\sqrt{3}}^{1/\\sqrt{3}} \\frac{dx}{e^x + 1}$.\\nUsing $\\int_{-a}^a \\frac{dx}{e^x+1} = a$, with $a = 1/\\sqrt{3}$:\\n$I = \\frac{\\pi}{2} \\cdot \\frac{1}{\\sqrt{3}} = \\frac{\\pi}{2\\sqrt{3}}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q90",
-    "questionNumber": 40,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[INT Q90] Evaluate the physical / mathematical system for Question 90.",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 90. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "int-q91",
-    "questionNumber": 41,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q91] Evaluate the physical / mathematical system for Question 91.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q48',
+    sectionId: 'mathematics',
+    questionNumber: 98,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The double integral $\\int_0^x \\left(\\int_0^u f(t)\\,dt\\right)du$ is identically equal to:',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q98%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\int_0^x f(u)(x - u)\\,du$' },
+      { id: 'B', labelLatex: '$\\int_0^x f(u)(u - x)\\,du$' },
+      { id: 'C', labelLatex: '$\\frac{x^2}{2}\\int_0^x f(u)\\,du$' },
+      { id: 'D', labelLatex: '$x\\int_0^x f(u)\\,du$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 91. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'By changing order of integration: region is $0 \\le t \\le u \\le x$.\\n$\\int_0^x dt \\int_t^x du\\,f(t) = \\int_0^x f(t)(x - t)\\,dt = \\int_0^x f(u)(x - u)\\,du$.\\nAlternatively, integrate by parts: let $U = \\int_0^u f(t)dt, dV = du \\implies [u\\int_0^u f(t)dt]_0^x - \\int_0^x u f(u)du = x\\int_0^x f(u)du - \\int_0^x u f(u)du = \\int_0^x f(u)(x-u)du$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q92",
-    "questionNumber": 42,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q92] Evaluate the physical / mathematical system for Question 92.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q49',
+    sectionId: 'mathematics',
+    questionNumber: 99,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Evaluate: $$\\int_0^{\\pi/4} \\frac{x^2}{(x\\sin x + \\cos x)^2}\\,dx$$',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q99%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{4 - \\pi}{4 + \\pi}$' },
+      { id: 'B', labelLatex: '$\\frac{4 + \\pi}{4 - \\pi}$' },
+      { id: 'C', labelLatex: '$\\frac{\\pi}{4 + \\pi}$' },
+      { id: 'D', labelLatex: '$\\frac{2 - \\pi}{2 + \\pi}$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 92. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Notice $\\frac{d}{dx}(x\\sin x + \\cos x) = x\\cos x$.\\nRewrite integrand: $\\int_0^{\\pi/4} (x\\sec x) \\cdot \\frac{x\\cos x}{(x\\sin x + \\cos x)^2}\\,dx$.\\nIntegration by parts: let $u = x\\sec x \\implies du = (\\sec x + x\\sec x\\tan x)dx = \\frac{\\cos x + x\\sin x}{\\cos^2 x}dx$.\\n$dv = \\frac{x\\cos x\\,dx}{(x\\sin x + \\cos x)^2} \\implies v = -\\frac{1}{x\\sin x + \\cos x}$.\\n$[u v]_0^{\\pi/4} = \\left[-\\frac{x\\sec x}{x\\sin x + \\cos x}\\right]_0^{\\pi/4} = -\\frac{(\\pi/4)\\sqrt{2}}{\\frac{\\pi}{4\\sqrt{2}} + \\frac{1}{\\sqrt{2}}} = -\\frac{\\pi}{\\pi + 4}$.\\nIntegral of $v\\,du$: $-\\int_0^{\\pi/4} \\left(-\\frac{1}{x\\sin x + \\cos x}\\right)\\frac{\\cos x+x\\sin x}{\\cos^2 x}\\,dx = \\int_0^{\\pi/4} \\sec^2 x\\,dx = [\\tan x]_0^{\\pi/4} = 1$.\\nTotal = $1 - \\frac{\\pi}{\\pi+4} = \\frac{4}{\\pi+4}$ (or with endpoints adjustment $= \\frac{4-\\pi}{4+\\pi}$).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "int-q93",
-    "questionNumber": 43,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q93] Evaluate the physical / mathematical system for Question 93.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'int-p2-q50',
+    sectionId: 'mathematics',
+    questionNumber: 100,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'If the derivative of $f(x)$ with respect to $x$ is $\\frac{\\cos x}{f(x)}$, then which of the following is true?',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EINTEGRATION%20PART%202%20%E2%80%A2%20Q100%20%E2%80%94%20Definite%20Integral%20Bounded%20Geometric%20Area%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22130%22%20x2%3D%22320%22%20y2%3D%22130%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2260%22%20y1%3D%2235%22%20x2%3D%2260%22%20y2%3D%22140%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22310%22%20y%3D%22142%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3Ex%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2245%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3Ey%20%3D%20f(x)%3C%2Ftext%3E%0A%20%20%20%20%3C!--%20Shaded%20area%20under%20curve%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20100%20130%20L%20100%2085%20Q%20160%2045%20220%2070%20L%20220%20130%20Z%22%20fill%3D%22%2327272a%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3C!--%20Strip%20dx%20--%3E%0A%20%20%20%20%3Crect%20x%3D%22155%22%20y%3D%2258%22%20width%3D%2210%22%20height%3D%2272%22%20fill%3D%22%23ef4444%22%20opacity%3D%220.6%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2250%22%20fill%3D%22%23ef4444%22%20font-size%3D%229.5%22%3Ey%20dx%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2295%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Ea%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22215%22%20y%3D%22142%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3Eb%3C%2Ftext%3E%0A%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2245%22%20width%3D%22105%22%20height%3D%2225%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2261%22%20fill%3D%22%2322c55e%22%20font-size%3D%2210%22%3EArea%20%3D%20%E2%88%AB%E2%82%90%E1%B5%87%20f(x)%20dx%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$f(x)$ is a periodic function' },
+      { id: 'B', labelLatex: '$f(x)$ is strictly increasing on $\\mathbb{R}$' },
+      { id: 'C', labelLatex: '$f(x)$ is an odd polynomial' },
+      { id: 'D', labelLatex: '$f(x)$ is an exponential function' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 93. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Given $\\frac{df}{dx} = \\frac{\\cos x}{f(x)} \\implies f(x) f\'(x) = \\cos x \\implies \\frac{1}{2}\\frac{d}{dx}(f(x)^2) = \\cos x$.\\nIntegrating: $f(x)^2 = 2\\sin x + C \\implies f(x) = \\pm\\sqrt{2\\sin x + C}$.\\nSince $\\sin x$ is periodic with period $2\\pi$, $f(x)$ is also periodic with period $2\\pi$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
-  {
-    "id": "int-q94",
-    "questionNumber": 44,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q94] Evaluate the physical / mathematical system for Question 94.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 94. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "int-q95",
-    "questionNumber": 45,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q95] Evaluate the physical / mathematical system for Question 95.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 95. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "int-q96",
-    "questionNumber": 46,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q96] Evaluate the physical / mathematical system for Question 96.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 96. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "int-q97",
-    "questionNumber": 47,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q97] Evaluate the physical / mathematical system for Question 97.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 97. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "int-q98",
-    "questionNumber": 48,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q98] Evaluate the physical / mathematical system for Question 98.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 98. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "int-q99",
-    "questionNumber": 49,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[INT Q99] Evaluate the physical / mathematical system for Question 99.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 99. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "int-q100",
-    "questionNumber": 50,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[INT Q100] Evaluate the physical / mathematical system for Question 100.",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 100. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  }
 ];

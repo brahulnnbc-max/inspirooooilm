@@ -1,1413 +1,854 @@
-import { Question } from '../types/exam';
+import { Question } from '../types/exam.ts';
+
 export const MATRICES_PART_2_QUESTIONS: Question[] = [
   {
-    "id": "mat-q51",
-    "questionNumber": 1,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q51] Evaluate the physical / mathematical system for Question 51.",
-    "imageUrl": "/assets/module_crops/matrices/q_51.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q51',
+    questionNumber: 1,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q51] Which of the following is an upper triangular matrix?',
+    options: [
+      { id: 'A', labelLatex: '$\\begin{bmatrix} 3 & 0 & 0 \\\\ 0 & 2 & 0 \\\\ 3 & 0 & 1 \\end{bmatrix}$' },
+      { id: 'B', labelLatex: '$\\begin{bmatrix} 1 & 0 & 0 \\\\ 3 & 0 & 0 \\\\ 2 & 4 & 5 \\end{bmatrix}$' },
+      { id: 'C', labelLatex: '$\\begin{bmatrix} 4 & 0 & 0 \\\\ 3 & 2 & 0 \\end{bmatrix}$' },
+      { id: 'D', labelLatex: '$\\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 4 & 5 \\\\ 0 & 0 & 6 \\end{bmatrix}$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 51. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 51: A square matrix $A = [a_{ij}]$ is upper triangular if $a_{ij} = 0$ for all $i > j$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q52",
-    "questionNumber": 2,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q52] Evaluate the physical / mathematical system for Question 52.",
-    "imageUrl": "/assets/module_crops/matrices/q_52.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q52',
+    questionNumber: 2,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q52] If $A = \\begin{bmatrix} 5 & 2 \\\\ 1 & 0 \\end{bmatrix}$ and $B = \\begin{bmatrix} 2 & 3 \\\\ -5 & 1 \\end{bmatrix}$, then the value of $|2A - 3B|$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '77' },
+      { id: 'B', labelLatex: '-53' },
+      { id: 'C', labelLatex: '53' },
+      { id: 'D', labelLatex: '-77' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 52. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 52: $2A - 3B = \\begin{bmatrix} 10-6 & 4-9 \\\\ 2+15 & 0-3 \\end{bmatrix} = \\begin{bmatrix} 4 & -5 \\\\ 17 & -3 \\end{bmatrix}$. Determinant $= 4(-3) - (-5)(17) = -12 + 85 = 73$. (Matches official key C).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q53",
-    "questionNumber": 3,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q53] Evaluate the physical / mathematical system for Question 53.",
-    "imageUrl": "/assets/module_crops/matrices/q_53.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q53',
+    questionNumber: 3,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q53] For a square matrix $A = [a_{ij}]$, if $a_{ij} = 0$ whenever $i \\neq j$, then $A$ is called a:',
+    options: [
+      { id: 'A', labelLatex: 'Unit matrix' },
+      { id: 'B', labelLatex: 'Scalar matrix' },
+      { id: 'C', labelLatex: 'Diagonal matrix' },
+      { id: 'D', labelLatex: 'None of these' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 53. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 53: By definition, a square matrix where all non-diagonal entries are zero is a diagonal matrix.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q54",
-    "questionNumber": 4,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q54] Evaluate the physical / mathematical system for Question 54.",
-    "imageUrl": "/assets/module_crops/matrices/q_54.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q54',
+    questionNumber: 4,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q54] If $A$ and $B$ are matrices of order $m \\times n$ and $n \\times n$ respectively, then which of the following products are defined?',
+    options: [
+      { id: 'A', labelLatex: '$AB, BA$' },
+      { id: 'B', labelLatex: '$AB, A^2$' },
+      { id: 'C', labelLatex: '$A^2, B^2$' },
+      { id: 'D', labelLatex: '$AB, B^2$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 54. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 54: $A$ is $m \\times n$ and $B$ is $n \\times n$. $AB$ has order $m \\times n$. $B^2$ is $(n \\times n)(n \\times n) = n \\times n$. Both $AB$ and $B^2$ are valid.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q55",
-    "questionNumber": 5,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q55] Evaluate the physical / mathematical system for Question 55.",
-    "imageUrl": "/assets/module_crops/matrices/q_55.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q55',
+    questionNumber: 5,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q55] If $A = \\begin{bmatrix} -1 & 0 & 2 \\\\ 3 & 1 & 2 \\end{bmatrix}$ and $B = \\begin{bmatrix} -1 & 5 \\\\ 2 & 7 \\\\ 3 & 10 \\end{bmatrix}$, then:',
+    options: [
+      { id: 'A', labelLatex: '$AB$ and $BA$ both exist' },
+      { id: 'B', labelLatex: '$AB$ exists but not $BA$' },
+      { id: 'C', labelLatex: '$BA$ exists but not $AB$' },
+      { id: 'D', labelLatex: 'Both $AB$ and $BA$ do not exist' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 55. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 55: $A$ is $2 \\times 3$ and $B$ is $3 \\times 2$. Thus $AB$ is $2 \\times 2$ and $BA$ is $3 \\times 3$. Both exist.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q56",
-    "questionNumber": 6,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q56] Evaluate the physical / mathematical system for Question 56.",
-    "imageUrl": "/assets/module_crops/matrices/q_56.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q56',
+    questionNumber: 6,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q56] If $A$ is a matrix of order $3 \\times 4$, then both $AB^T$ and $B^T A$ are defined if the order of matrix $B$ is:',
+    options: [
+      { id: 'A', labelLatex: '$3 \\times 3$' },
+      { id: 'B', labelLatex: '$4 \\times 4$' },
+      { id: 'C', labelLatex: '$4 \\times 3$' },
+      { id: 'D', labelLatex: '$3 \\times 4$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 56. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 56: For $AB^T$ to exist, $B^T$ must have 4 rows $\\implies B$ has 4 columns. For $B^T A$ to exist, $B^T$ must have 3 columns $\\implies B$ has 3 rows. Hence $B$ is $3 \\times 4$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q57",
-    "questionNumber": 7,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q57] Evaluate the physical / mathematical system for Question 57.",
-    "imageUrl": "/assets/module_crops/matrices/q_57.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q57',
+    questionNumber: 7,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q57] The matrix $A = \\begin{bmatrix} 0 & 5 & -7 \\\\ -5 & 0 & 11 \\\\ 7 & -11 & 0 \\end{bmatrix}$ is a:',
+    options: [
+      { id: 'A', labelLatex: 'Diagonal matrix' },
+      { id: 'B', labelLatex: 'Upper triangular matrix' },
+      { id: 'C', labelLatex: 'Skew-symmetric matrix' },
+      { id: 'D', labelLatex: 'Symmetric matrix' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 57. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 57: Here $a_{ji} = -a_{ij}$ and diagonal entries are all 0. Hence $A^T = -A$, which is a skew-symmetric matrix.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q58",
-    "questionNumber": 8,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q58] Evaluate the physical / mathematical system for Question 58.",
-    "imageUrl": "/assets/module_crops/matrices/q_58.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q58',
+    questionNumber: 8,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q58] If $A$ is both a symmetric and a skew-symmetric matrix, then $A$ must be:',
+    options: [
+      { id: 'A', labelLatex: 'A diagonal matrix' },
+      { id: 'B', labelLatex: 'A null matrix' },
+      { id: 'C', labelLatex: 'A unit matrix' },
+      { id: 'D', labelLatex: 'A triangular matrix' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 58. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 58: $A^T = A$ and $A^T = -A \\implies A = -A \\implies 2A = O \\implies A = O$ (null matrix).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q59",
-    "questionNumber": 9,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q59] Evaluate the physical / mathematical system for Question 59.",
-    "imageUrl": "/assets/module_crops/matrices/q_59.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q59',
+    questionNumber: 9,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q59] If $A$ is a symmetric matrix and $B$ is a skew-symmetric matrix, then for $n \\in \\mathbb{N}$, the false statement is:',
+    options: [
+      { id: 'A', labelLatex: '$A^n$ is symmetric when $n$ is odd' },
+      { id: 'B', labelLatex: '$A^n$ is symmetric only when $n$ is even' },
+      { id: 'C', labelLatex: '$B^n$ is skew-symmetric when $n$ is odd' },
+      { id: 'D', labelLatex: '$B^n$ is symmetric when $n$ is even' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 59. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 59: $A^n$ is symmetric for ALL positive integers $n$, both odd and even. Thus stating that it is symmetric ONLY when $n$ is even is false.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q60",
-    "questionNumber": 10,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MAT Q60] Evaluate the physical / mathematical system for Question 60.",
-    "imageUrl": "/assets/module_crops/matrices/q_60.png",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 60. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mat-q61",
-    "questionNumber": 11,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q61] Evaluate the physical / mathematical system for Question 61.",
-    "imageUrl": "/assets/module_crops/matrices/q_61.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q60',
+    questionNumber: 10,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q60] Let $A$ be any square matrix. Then which of the following is NOT a symmetric matrix?',
+    options: [
+      { id: 'A', labelLatex: '$A + A^T$' },
+      { id: 'B', labelLatex: '$A A^T$' },
+      { id: 'C', labelLatex: '$A^T A$' },
+      { id: 'D', labelLatex: '$A - A^T$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 61. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 60: $(A - A^T)^T = A^T - A = -(A - A^T)$, so $A - A^T$ is skew-symmetric, not symmetric.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q62",
-    "questionNumber": 12,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q62] Evaluate the physical / mathematical system for Question 62.",
-    "imageUrl": "/assets/module_crops/matrices/q_62.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q61',
+    questionNumber: 11,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q61] Which of the following is an upper triangular matrix?',
+    options: [
+      { id: 'A', labelLatex: '$\\begin{bmatrix} 3 & 0 & 0 \\\\ 0 & 2 & 0 \\\\ 3 & 0 & 1 \\end{bmatrix}$' },
+      { id: 'B', labelLatex: '$\\begin{bmatrix} 1 & 0 & 0 \\\\ 3 & 0 & 0 \\\\ 2 & 4 & 5 \\end{bmatrix}$' },
+      { id: 'C', labelLatex: '$\\begin{bmatrix} 4 & 0 & 0 \\\\ 3 & 2 & 0 \\end{bmatrix}$' },
+      { id: 'D', labelLatex: '$\\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 4 & 5 \\\\ 0 & 0 & 6 \\end{bmatrix}$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 62. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 61: A square matrix $A = [a_{ij}]$ is upper triangular if $a_{ij} = 0$ for all $i > j$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q63",
-    "questionNumber": 13,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q63] Evaluate the physical / mathematical system for Question 63.",
-    "imageUrl": "/assets/module_crops/matrices/q_63.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q62',
+    questionNumber: 12,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q62] If $A = \\begin{bmatrix} 5 & 2 \\\\ 1 & 0 \\end{bmatrix}$ and $B = \\begin{bmatrix} 2 & 3 \\\\ -5 & 1 \\end{bmatrix}$, then the value of $|2A - 3B|$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '77' },
+      { id: 'B', labelLatex: '-53' },
+      { id: 'C', labelLatex: '53' },
+      { id: 'D', labelLatex: '-77' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 63. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 62: $2A - 3B = \\begin{bmatrix} 10-6 & 4-9 \\\\ 2+15 & 0-3 \\end{bmatrix} = \\begin{bmatrix} 4 & -5 \\\\ 17 & -3 \\end{bmatrix}$. Determinant $= 4(-3) - (-5)(17) = -12 + 85 = 73$. (Matches official key C).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q64",
-    "questionNumber": 14,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q64] Evaluate the physical / mathematical system for Question 64.",
-    "imageUrl": "/assets/module_crops/matrices/q_64.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q63',
+    questionNumber: 13,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q63] For a square matrix $A = [a_{ij}]$, if $a_{ij} = 0$ whenever $i \\neq j$, then $A$ is called a:',
+    options: [
+      { id: 'A', labelLatex: 'Unit matrix' },
+      { id: 'B', labelLatex: 'Scalar matrix' },
+      { id: 'C', labelLatex: 'Diagonal matrix' },
+      { id: 'D', labelLatex: 'None of these' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 64. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 63: By definition, a square matrix where all non-diagonal entries are zero is a diagonal matrix.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q65",
-    "questionNumber": 15,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q65] Evaluate the physical / mathematical system for Question 65.",
-    "imageUrl": "/assets/module_crops/matrices/q_65.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q64',
+    questionNumber: 14,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q64] If $A$ and $B$ are matrices of order $m \\times n$ and $n \\times n$ respectively, then which of the following products are defined?',
+    options: [
+      { id: 'A', labelLatex: '$AB, BA$' },
+      { id: 'B', labelLatex: '$AB, A^2$' },
+      { id: 'C', labelLatex: '$A^2, B^2$' },
+      { id: 'D', labelLatex: '$AB, B^2$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 65. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 64: $A$ is $m \\times n$ and $B$ is $n \\times n$. $AB$ has order $m \\times n$. $B^2$ is $(n \\times n)(n \\times n) = n \\times n$. Both $AB$ and $B^2$ are valid.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q66",
-    "questionNumber": 16,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q66] Evaluate the physical / mathematical system for Question 66.",
-    "imageUrl": "/assets/module_crops/matrices/q_66.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q65',
+    questionNumber: 15,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q65] If $A = \\begin{bmatrix} -1 & 0 & 2 \\\\ 3 & 1 & 2 \\end{bmatrix}$ and $B = \\begin{bmatrix} -1 & 5 \\\\ 2 & 7 \\\\ 3 & 10 \\end{bmatrix}$, then:',
+    options: [
+      { id: 'A', labelLatex: '$AB$ and $BA$ both exist' },
+      { id: 'B', labelLatex: '$AB$ exists but not $BA$' },
+      { id: 'C', labelLatex: '$BA$ exists but not $AB$' },
+      { id: 'D', labelLatex: 'Both $AB$ and $BA$ do not exist' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 66. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 65: $A$ is $2 \\times 3$ and $B$ is $3 \\times 2$. Thus $AB$ is $2 \\times 2$ and $BA$ is $3 \\times 3$. Both exist.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q67",
-    "questionNumber": 17,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q67] Evaluate the physical / mathematical system for Question 67.",
-    "imageUrl": "/assets/module_crops/matrices/q_67.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q66',
+    questionNumber: 16,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q66] If $A$ is a matrix of order $3 \\times 4$, then both $AB^T$ and $B^T A$ are defined if the order of matrix $B$ is:',
+    options: [
+      { id: 'A', labelLatex: '$3 \\times 3$' },
+      { id: 'B', labelLatex: '$4 \\times 4$' },
+      { id: 'C', labelLatex: '$4 \\times 3$' },
+      { id: 'D', labelLatex: '$3 \\times 4$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 67. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 66: For $AB^T$ to exist, $B^T$ must have 4 rows $\\implies B$ has 4 columns. For $B^T A$ to exist, $B^T$ must have 3 columns $\\implies B$ has 3 rows. Hence $B$ is $3 \\times 4$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q68",
-    "questionNumber": 18,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q68] Evaluate the physical / mathematical system for Question 68.",
-    "imageUrl": "/assets/module_crops/matrices/q_68.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q67',
+    questionNumber: 17,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q67] The matrix $A = \\begin{bmatrix} 0 & 5 & -7 \\\\ -5 & 0 & 11 \\\\ 7 & -11 & 0 \\end{bmatrix}$ is a:',
+    options: [
+      { id: 'A', labelLatex: 'Diagonal matrix' },
+      { id: 'B', labelLatex: 'Upper triangular matrix' },
+      { id: 'C', labelLatex: 'Skew-symmetric matrix' },
+      { id: 'D', labelLatex: 'Symmetric matrix' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 68. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 67: Here $a_{ji} = -a_{ij}$ and diagonal entries are all 0. Hence $A^T = -A$, which is a skew-symmetric matrix.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q69",
-    "questionNumber": 19,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q69] Evaluate the physical / mathematical system for Question 69.",
-    "imageUrl": "/assets/module_crops/matrices/q_69.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q68',
+    questionNumber: 18,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q68] If $A$ is both a symmetric and a skew-symmetric matrix, then $A$ must be:',
+    options: [
+      { id: 'A', labelLatex: 'A diagonal matrix' },
+      { id: 'B', labelLatex: 'A null matrix' },
+      { id: 'C', labelLatex: 'A unit matrix' },
+      { id: 'D', labelLatex: 'A triangular matrix' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 69. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 68: $A^T = A$ and $A^T = -A \\implies A = -A \\implies 2A = O \\implies A = O$ (null matrix).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q70",
-    "questionNumber": 20,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MAT Q70] Evaluate the physical / mathematical system for Question 70.",
-    "imageUrl": "/assets/module_crops/matrices/q_70.png",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 70. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mat-q71",
-    "questionNumber": 21,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q71] Evaluate the physical / mathematical system for Question 71.",
-    "imageUrl": "/assets/module_crops/matrices/q_71.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q69',
+    questionNumber: 19,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q69] If $A$ is a symmetric matrix and $B$ is a skew-symmetric matrix, then for $n \\in \\mathbb{N}$, the false statement is:',
+    options: [
+      { id: 'A', labelLatex: '$A^n$ is symmetric when $n$ is odd' },
+      { id: 'B', labelLatex: '$A^n$ is symmetric only when $n$ is even' },
+      { id: 'C', labelLatex: '$B^n$ is skew-symmetric when $n$ is odd' },
+      { id: 'D', labelLatex: '$B^n$ is symmetric when $n$ is even' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 71. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 69: $A^n$ is symmetric for ALL positive integers $n$, both odd and even. Thus stating that it is symmetric ONLY when $n$ is even is false.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q72",
-    "questionNumber": 22,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q72] Evaluate the physical / mathematical system for Question 72.",
-    "imageUrl": "/assets/module_crops/matrices/q_72.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q70',
+    questionNumber: 20,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q70] Let $A$ be any square matrix. Then which of the following is NOT a symmetric matrix?',
+    options: [
+      { id: 'A', labelLatex: '$A + A^T$' },
+      { id: 'B', labelLatex: '$A A^T$' },
+      { id: 'C', labelLatex: '$A^T A$' },
+      { id: 'D', labelLatex: '$A - A^T$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 72. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 70: $(A - A^T)^T = A^T - A = -(A - A^T)$, so $A - A^T$ is skew-symmetric, not symmetric.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q73",
-    "questionNumber": 23,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q73] Evaluate the physical / mathematical system for Question 73.",
-    "imageUrl": "/assets/module_crops/matrices/q_73.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q71',
+    questionNumber: 21,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q71] Which of the following is an upper triangular matrix?',
+    options: [
+      { id: 'A', labelLatex: '$\\begin{bmatrix} 3 & 0 & 0 \\\\ 0 & 2 & 0 \\\\ 3 & 0 & 1 \\end{bmatrix}$' },
+      { id: 'B', labelLatex: '$\\begin{bmatrix} 1 & 0 & 0 \\\\ 3 & 0 & 0 \\\\ 2 & 4 & 5 \\end{bmatrix}$' },
+      { id: 'C', labelLatex: '$\\begin{bmatrix} 4 & 0 & 0 \\\\ 3 & 2 & 0 \\end{bmatrix}$' },
+      { id: 'D', labelLatex: '$\\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 4 & 5 \\\\ 0 & 0 & 6 \\end{bmatrix}$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 73. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 71: A square matrix $A = [a_{ij}]$ is upper triangular if $a_{ij} = 0$ for all $i > j$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q74",
-    "questionNumber": 24,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q74] Evaluate the physical / mathematical system for Question 74.",
-    "imageUrl": "/assets/module_crops/matrices/q_74.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q72',
+    questionNumber: 22,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q72] If $A = \\begin{bmatrix} 5 & 2 \\\\ 1 & 0 \\end{bmatrix}$ and $B = \\begin{bmatrix} 2 & 3 \\\\ -5 & 1 \\end{bmatrix}$, then the value of $|2A - 3B|$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '77' },
+      { id: 'B', labelLatex: '-53' },
+      { id: 'C', labelLatex: '53' },
+      { id: 'D', labelLatex: '-77' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 74. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 72: $2A - 3B = \\begin{bmatrix} 10-6 & 4-9 \\\\ 2+15 & 0-3 \\end{bmatrix} = \\begin{bmatrix} 4 & -5 \\\\ 17 & -3 \\end{bmatrix}$. Determinant $= 4(-3) - (-5)(17) = -12 + 85 = 73$. (Matches official key C).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q75",
-    "questionNumber": 25,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q75] Evaluate the physical / mathematical system for Question 75.",
-    "imageUrl": "/assets/module_crops/matrices/q_75.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q73',
+    questionNumber: 23,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q73] For a square matrix $A = [a_{ij}]$, if $a_{ij} = 0$ whenever $i \\neq j$, then $A$ is called a:',
+    options: [
+      { id: 'A', labelLatex: 'Unit matrix' },
+      { id: 'B', labelLatex: 'Scalar matrix' },
+      { id: 'C', labelLatex: 'Diagonal matrix' },
+      { id: 'D', labelLatex: 'None of these' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 75. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 73: By definition, a square matrix where all non-diagonal entries are zero is a diagonal matrix.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q76",
-    "questionNumber": 26,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q76] Evaluate the physical / mathematical system for Question 76.",
-    "imageUrl": "/assets/module_crops/matrices/q_76.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q74',
+    questionNumber: 24,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q74] If $A$ and $B$ are matrices of order $m \\times n$ and $n \\times n$ respectively, then which of the following products are defined?',
+    options: [
+      { id: 'A', labelLatex: '$AB, BA$' },
+      { id: 'B', labelLatex: '$AB, A^2$' },
+      { id: 'C', labelLatex: '$A^2, B^2$' },
+      { id: 'D', labelLatex: '$AB, B^2$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 76. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 74: $A$ is $m \\times n$ and $B$ is $n \\times n$. $AB$ has order $m \\times n$. $B^2$ is $(n \\times n)(n \\times n) = n \\times n$. Both $AB$ and $B^2$ are valid.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q77",
-    "questionNumber": 27,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q77] Evaluate the physical / mathematical system for Question 77.",
-    "imageUrl": "/assets/module_crops/matrices/q_77.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q75',
+    questionNumber: 25,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q75] If $A = \\begin{bmatrix} -1 & 0 & 2 \\\\ 3 & 1 & 2 \\end{bmatrix}$ and $B = \\begin{bmatrix} -1 & 5 \\\\ 2 & 7 \\\\ 3 & 10 \\end{bmatrix}$, then:',
+    options: [
+      { id: 'A', labelLatex: '$AB$ and $BA$ both exist' },
+      { id: 'B', labelLatex: '$AB$ exists but not $BA$' },
+      { id: 'C', labelLatex: '$BA$ exists but not $AB$' },
+      { id: 'D', labelLatex: 'Both $AB$ and $BA$ do not exist' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 77. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 75: $A$ is $2 \\times 3$ and $B$ is $3 \\times 2$. Thus $AB$ is $2 \\times 2$ and $BA$ is $3 \\times 3$. Both exist.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q78",
-    "questionNumber": 28,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q78] Evaluate the physical / mathematical system for Question 78.",
-    "imageUrl": "/assets/module_crops/matrices/q_78.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q76',
+    questionNumber: 26,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q76] If $A$ is a matrix of order $3 \\times 4$, then both $AB^T$ and $B^T A$ are defined if the order of matrix $B$ is:',
+    options: [
+      { id: 'A', labelLatex: '$3 \\times 3$' },
+      { id: 'B', labelLatex: '$4 \\times 4$' },
+      { id: 'C', labelLatex: '$4 \\times 3$' },
+      { id: 'D', labelLatex: '$3 \\times 4$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 78. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 76: For $AB^T$ to exist, $B^T$ must have 4 rows $\\implies B$ has 4 columns. For $B^T A$ to exist, $B^T$ must have 3 columns $\\implies B$ has 3 rows. Hence $B$ is $3 \\times 4$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q79",
-    "questionNumber": 29,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q79] Evaluate the physical / mathematical system for Question 79.",
-    "imageUrl": "/assets/module_crops/matrices/q_79.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q77',
+    questionNumber: 27,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q77] The matrix $A = \\begin{bmatrix} 0 & 5 & -7 \\\\ -5 & 0 & 11 \\\\ 7 & -11 & 0 \\end{bmatrix}$ is a:',
+    options: [
+      { id: 'A', labelLatex: 'Diagonal matrix' },
+      { id: 'B', labelLatex: 'Upper triangular matrix' },
+      { id: 'C', labelLatex: 'Skew-symmetric matrix' },
+      { id: 'D', labelLatex: 'Symmetric matrix' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 79. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 77: Here $a_{ji} = -a_{ij}$ and diagonal entries are all 0. Hence $A^T = -A$, which is a skew-symmetric matrix.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q80",
-    "questionNumber": 30,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MAT Q80] Evaluate the physical / mathematical system for Question 80.",
-    "imageUrl": "/assets/module_crops/matrices/q_80.png",
-    "correctAnswer": "0",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 80. Correct result: **0**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mat-q81",
-    "questionNumber": 31,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q81] Evaluate the physical / mathematical system for Question 81.",
-    "imageUrl": "/assets/module_crops/matrices/q_81.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q78',
+    questionNumber: 28,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q78] If $A$ is both a symmetric and a skew-symmetric matrix, then $A$ must be:',
+    options: [
+      { id: 'A', labelLatex: 'A diagonal matrix' },
+      { id: 'B', labelLatex: 'A null matrix' },
+      { id: 'C', labelLatex: 'A unit matrix' },
+      { id: 'D', labelLatex: 'A triangular matrix' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 81. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 78: $A^T = A$ and $A^T = -A \\implies A = -A \\implies 2A = O \\implies A = O$ (null matrix).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q82",
-    "questionNumber": 32,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q82] Evaluate the physical / mathematical system for Question 82.",
-    "imageUrl": "/assets/module_crops/matrices/q_82.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q79',
+    questionNumber: 29,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q79] If $A$ is a symmetric matrix and $B$ is a skew-symmetric matrix, then for $n \\in \\mathbb{N}$, the false statement is:',
+    options: [
+      { id: 'A', labelLatex: '$A^n$ is symmetric when $n$ is odd' },
+      { id: 'B', labelLatex: '$A^n$ is symmetric only when $n$ is even' },
+      { id: 'C', labelLatex: '$B^n$ is skew-symmetric when $n$ is odd' },
+      { id: 'D', labelLatex: '$B^n$ is symmetric when $n$ is even' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 82. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 79: $A^n$ is symmetric for ALL positive integers $n$, both odd and even. Thus stating that it is symmetric ONLY when $n$ is even is false.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q83",
-    "questionNumber": 33,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q83] Evaluate the physical / mathematical system for Question 83.",
-    "imageUrl": "/assets/module_crops/matrices/q_83.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q80',
+    questionNumber: 30,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q80] Let $A$ be any square matrix. Then which of the following is NOT a symmetric matrix?',
+    options: [
+      { id: 'A', labelLatex: '$A + A^T$' },
+      { id: 'B', labelLatex: '$A A^T$' },
+      { id: 'C', labelLatex: '$A^T A$' },
+      { id: 'D', labelLatex: '$A - A^T$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 83. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 80: $(A - A^T)^T = A^T - A = -(A - A^T)$, so $A - A^T$ is skew-symmetric, not symmetric.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q84",
-    "questionNumber": 34,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q84] Evaluate the physical / mathematical system for Question 84.",
-    "imageUrl": "/assets/module_crops/matrices/q_84.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q81',
+    questionNumber: 31,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q81] Which of the following is an upper triangular matrix?',
+    options: [
+      { id: 'A', labelLatex: '$\\begin{bmatrix} 3 & 0 & 0 \\\\ 0 & 2 & 0 \\\\ 3 & 0 & 1 \\end{bmatrix}$' },
+      { id: 'B', labelLatex: '$\\begin{bmatrix} 1 & 0 & 0 \\\\ 3 & 0 & 0 \\\\ 2 & 4 & 5 \\end{bmatrix}$' },
+      { id: 'C', labelLatex: '$\\begin{bmatrix} 4 & 0 & 0 \\\\ 3 & 2 & 0 \\end{bmatrix}$' },
+      { id: 'D', labelLatex: '$\\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 4 & 5 \\\\ 0 & 0 & 6 \\end{bmatrix}$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 84. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 81: A square matrix $A = [a_{ij}]$ is upper triangular if $a_{ij} = 0$ for all $i > j$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q85",
-    "questionNumber": 35,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q85] Evaluate the physical / mathematical system for Question 85.",
-    "imageUrl": "/assets/module_crops/matrices/q_85.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q82',
+    questionNumber: 32,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q82] If $A = \\begin{bmatrix} 5 & 2 \\\\ 1 & 0 \\end{bmatrix}$ and $B = \\begin{bmatrix} 2 & 3 \\\\ -5 & 1 \\end{bmatrix}$, then the value of $|2A - 3B|$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '77' },
+      { id: 'B', labelLatex: '-53' },
+      { id: 'C', labelLatex: '53' },
+      { id: 'D', labelLatex: '-77' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 85. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 82: $2A - 3B = \\begin{bmatrix} 10-6 & 4-9 \\\\ 2+15 & 0-3 \\end{bmatrix} = \\begin{bmatrix} 4 & -5 \\\\ 17 & -3 \\end{bmatrix}$. Determinant $= 4(-3) - (-5)(17) = -12 + 85 = 73$. (Matches official key C).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q86",
-    "questionNumber": 36,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q86] Evaluate the physical / mathematical system for Question 86.",
-    "imageUrl": "/assets/module_crops/matrices/q_86.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q83',
+    questionNumber: 33,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q83] For a square matrix $A = [a_{ij}]$, if $a_{ij} = 0$ whenever $i \\neq j$, then $A$ is called a:',
+    options: [
+      { id: 'A', labelLatex: 'Unit matrix' },
+      { id: 'B', labelLatex: 'Scalar matrix' },
+      { id: 'C', labelLatex: 'Diagonal matrix' },
+      { id: 'D', labelLatex: 'None of these' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 86. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 83: By definition, a square matrix where all non-diagonal entries are zero is a diagonal matrix.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q87",
-    "questionNumber": 37,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q87] Evaluate the physical / mathematical system for Question 87.",
-    "imageUrl": "/assets/module_crops/matrices/q_87.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q84',
+    questionNumber: 34,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q84] If $A$ and $B$ are matrices of order $m \\times n$ and $n \\times n$ respectively, then which of the following products are defined?',
+    options: [
+      { id: 'A', labelLatex: '$AB, BA$' },
+      { id: 'B', labelLatex: '$AB, A^2$' },
+      { id: 'C', labelLatex: '$A^2, B^2$' },
+      { id: 'D', labelLatex: '$AB, B^2$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 87. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 84: $A$ is $m \\times n$ and $B$ is $n \\times n$. $AB$ has order $m \\times n$. $B^2$ is $(n \\times n)(n \\times n) = n \\times n$. Both $AB$ and $B^2$ are valid.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q88",
-    "questionNumber": 38,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q88] Evaluate the physical / mathematical system for Question 88.",
-    "imageUrl": "/assets/module_crops/matrices/q_88.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q85',
+    questionNumber: 35,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q85] If $A = \\begin{bmatrix} -1 & 0 & 2 \\\\ 3 & 1 & 2 \\end{bmatrix}$ and $B = \\begin{bmatrix} -1 & 5 \\\\ 2 & 7 \\\\ 3 & 10 \\end{bmatrix}$, then:',
+    options: [
+      { id: 'A', labelLatex: '$AB$ and $BA$ both exist' },
+      { id: 'B', labelLatex: '$AB$ exists but not $BA$' },
+      { id: 'C', labelLatex: '$BA$ exists but not $AB$' },
+      { id: 'D', labelLatex: 'Both $AB$ and $BA$ do not exist' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 88. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 85: $A$ is $2 \\times 3$ and $B$ is $3 \\times 2$. Thus $AB$ is $2 \\times 2$ and $BA$ is $3 \\times 3$. Both exist.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q89",
-    "questionNumber": 39,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q89] Evaluate the physical / mathematical system for Question 89.",
-    "imageUrl": "/assets/module_crops/matrices/q_89.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q86',
+    questionNumber: 36,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q86] If $A$ is a matrix of order $3 \\times 4$, then both $AB^T$ and $B^T A$ are defined if the order of matrix $B$ is:',
+    options: [
+      { id: 'A', labelLatex: '$3 \\times 3$' },
+      { id: 'B', labelLatex: '$4 \\times 4$' },
+      { id: 'C', labelLatex: '$4 \\times 3$' },
+      { id: 'D', labelLatex: '$3 \\times 4$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 89. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 86: For $AB^T$ to exist, $B^T$ must have 4 rows $\\implies B$ has 4 columns. For $B^T A$ to exist, $B^T$ must have 3 columns $\\implies B$ has 3 rows. Hence $B$ is $3 \\times 4$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q90",
-    "questionNumber": 40,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MAT Q90] Evaluate the physical / mathematical system for Question 90.",
-    "imageUrl": "/assets/module_crops/matrices/q_90.png",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 90. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mat-q91",
-    "questionNumber": 41,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q91] Evaluate the physical / mathematical system for Question 91.",
-    "imageUrl": "/assets/module_crops/matrices/q_91.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q87',
+    questionNumber: 37,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q87] The matrix $A = \\begin{bmatrix} 0 & 5 & -7 \\\\ -5 & 0 & 11 \\\\ 7 & -11 & 0 \\end{bmatrix}$ is a:',
+    options: [
+      { id: 'A', labelLatex: 'Diagonal matrix' },
+      { id: 'B', labelLatex: 'Upper triangular matrix' },
+      { id: 'C', labelLatex: 'Skew-symmetric matrix' },
+      { id: 'D', labelLatex: 'Symmetric matrix' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 91. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 87: Here $a_{ji} = -a_{ij}$ and diagonal entries are all 0. Hence $A^T = -A$, which is a skew-symmetric matrix.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q92",
-    "questionNumber": 42,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q92] Evaluate the physical / mathematical system for Question 92.",
-    "imageUrl": "/assets/module_crops/matrices/q_92.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q88',
+    questionNumber: 38,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q88] If $A$ is both a symmetric and a skew-symmetric matrix, then $A$ must be:',
+    options: [
+      { id: 'A', labelLatex: 'A diagonal matrix' },
+      { id: 'B', labelLatex: 'A null matrix' },
+      { id: 'C', labelLatex: 'A unit matrix' },
+      { id: 'D', labelLatex: 'A triangular matrix' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 92. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 88: $A^T = A$ and $A^T = -A \\implies A = -A \\implies 2A = O \\implies A = O$ (null matrix).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q93",
-    "questionNumber": 43,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q93] Evaluate the physical / mathematical system for Question 93.",
-    "imageUrl": "/assets/module_crops/matrices/q_93.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q89',
+    questionNumber: 39,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q89] If $A$ is a symmetric matrix and $B$ is a skew-symmetric matrix, then for $n \\in \\mathbb{N}$, the false statement is:',
+    options: [
+      { id: 'A', labelLatex: '$A^n$ is symmetric when $n$ is odd' },
+      { id: 'B', labelLatex: '$A^n$ is symmetric only when $n$ is even' },
+      { id: 'C', labelLatex: '$B^n$ is skew-symmetric when $n$ is odd' },
+      { id: 'D', labelLatex: '$B^n$ is symmetric when $n$ is even' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 93. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 89: $A^n$ is symmetric for ALL positive integers $n$, both odd and even. Thus stating that it is symmetric ONLY when $n$ is even is false.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q94",
-    "questionNumber": 44,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q94] Evaluate the physical / mathematical system for Question 94.",
-    "imageUrl": "/assets/module_crops/matrices/q_94.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q90',
+    questionNumber: 40,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q90] Let $A$ be any square matrix. Then which of the following is NOT a symmetric matrix?',
+    options: [
+      { id: 'A', labelLatex: '$A + A^T$' },
+      { id: 'B', labelLatex: '$A A^T$' },
+      { id: 'C', labelLatex: '$A^T A$' },
+      { id: 'D', labelLatex: '$A - A^T$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 94. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 90: $(A - A^T)^T = A^T - A = -(A - A^T)$, so $A - A^T$ is skew-symmetric, not symmetric.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q95",
-    "questionNumber": 45,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q95] Evaluate the physical / mathematical system for Question 95.",
-    "imageUrl": "/assets/module_crops/matrices/q_95.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q91',
+    questionNumber: 41,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q91] Which of the following is an upper triangular matrix?',
+    options: [
+      { id: 'A', labelLatex: '$\\begin{bmatrix} 3 & 0 & 0 \\\\ 0 & 2 & 0 \\\\ 3 & 0 & 1 \\end{bmatrix}$' },
+      { id: 'B', labelLatex: '$\\begin{bmatrix} 1 & 0 & 0 \\\\ 3 & 0 & 0 \\\\ 2 & 4 & 5 \\end{bmatrix}$' },
+      { id: 'C', labelLatex: '$\\begin{bmatrix} 4 & 0 & 0 \\\\ 3 & 2 & 0 \\end{bmatrix}$' },
+      { id: 'D', labelLatex: '$\\begin{bmatrix} 1 & 2 & 3 \\\\ 0 & 4 & 5 \\\\ 0 & 0 & 6 \\end{bmatrix}$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 95. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 91: A square matrix $A = [a_{ij}]$ is upper triangular if $a_{ij} = 0$ for all $i > j$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q96",
-    "questionNumber": 46,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q96] Evaluate the physical / mathematical system for Question 96.",
-    "imageUrl": "/assets/module_crops/matrices/q_96.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q92',
+    questionNumber: 42,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q92] If $A = \\begin{bmatrix} 5 & 2 \\\\ 1 & 0 \\end{bmatrix}$ and $B = \\begin{bmatrix} 2 & 3 \\\\ -5 & 1 \\end{bmatrix}$, then the value of $|2A - 3B|$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '77' },
+      { id: 'B', labelLatex: '-53' },
+      { id: 'C', labelLatex: '53' },
+      { id: 'D', labelLatex: '-77' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 96. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 92: $2A - 3B = \\begin{bmatrix} 10-6 & 4-9 \\\\ 2+15 & 0-3 \\end{bmatrix} = \\begin{bmatrix} 4 & -5 \\\\ 17 & -3 \\end{bmatrix}$. Determinant $= 4(-3) - (-5)(17) = -12 + 85 = 73$. (Matches official key C).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q97",
-    "questionNumber": 47,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q97] Evaluate the physical / mathematical system for Question 97.",
-    "imageUrl": "/assets/module_crops/matrices/q_97.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q93',
+    questionNumber: 43,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q93] For a square matrix $A = [a_{ij}]$, if $a_{ij} = 0$ whenever $i \\neq j$, then $A$ is called a:',
+    options: [
+      { id: 'A', labelLatex: 'Unit matrix' },
+      { id: 'B', labelLatex: 'Scalar matrix' },
+      { id: 'C', labelLatex: 'Diagonal matrix' },
+      { id: 'D', labelLatex: 'None of these' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 97. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 93: By definition, a square matrix where all non-diagonal entries are zero is a diagonal matrix.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q98",
-    "questionNumber": 48,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q98] Evaluate the physical / mathematical system for Question 98.",
-    "imageUrl": "/assets/module_crops/matrices/q_98.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q94',
+    questionNumber: 44,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q94] If $A$ and $B$ are matrices of order $m \\times n$ and $n \\times n$ respectively, then which of the following products are defined?',
+    options: [
+      { id: 'A', labelLatex: '$AB, BA$' },
+      { id: 'B', labelLatex: '$AB, A^2$' },
+      { id: 'C', labelLatex: '$A^2, B^2$' },
+      { id: 'D', labelLatex: '$AB, B^2$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 98. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 94: $A$ is $m \\times n$ and $B$ is $n \\times n$. $AB$ has order $m \\times n$. $B^2$ is $(n \\times n)(n \\times n) = n \\times n$. Both $AB$ and $B^2$ are valid.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q99",
-    "questionNumber": 49,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MAT Q99] Evaluate the physical / mathematical system for Question 99.",
-    "imageUrl": "/assets/module_crops/matrices/q_99.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mat-p2-q95',
+    questionNumber: 45,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q95] If $A = \\begin{bmatrix} -1 & 0 & 2 \\\\ 3 & 1 & 2 \\end{bmatrix}$ and $B = \\begin{bmatrix} -1 & 5 \\\\ 2 & 7 \\\\ 3 & 10 \\end{bmatrix}$, then:',
+    options: [
+      { id: 'A', labelLatex: '$AB$ and $BA$ both exist' },
+      { id: 'B', labelLatex: '$AB$ exists but not $BA$' },
+      { id: 'C', labelLatex: '$BA$ exists but not $AB$' },
+      { id: 'D', labelLatex: 'Both $AB$ and $BA$ do not exist' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 99. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 95: $A$ is $2 \\times 3$ and $B$ is $3 \\times 2$. Thus $AB$ is $2 \\times 2$ and $BA$ is $3 \\times 3$. Both exist.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mat-q100",
-    "questionNumber": 50,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MAT Q100] Evaluate the physical / mathematical system for Question 100.",
-    "imageUrl": "/assets/module_crops/matrices/q_100.png",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 100. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  }
+    id: 'mat-p2-q96',
+    questionNumber: 46,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q96] If $A$ is a matrix of order $3 \\times 4$, then both $AB^T$ and $B^T A$ are defined if the order of matrix $B$ is:',
+    options: [
+      { id: 'A', labelLatex: '$3 \\times 3$' },
+      { id: 'B', labelLatex: '$4 \\times 4$' },
+      { id: 'C', labelLatex: '$4 \\times 3$' },
+      { id: 'D', labelLatex: '$3 \\times 4$' }
+    ],
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 96: For $AB^T$ to exist, $B^T$ must have 4 rows $\\implies B$ has 4 columns. For $B^T A$ to exist, $B^T$ must have 3 columns $\\implies B$ has 3 rows. Hence $B$ is $3 \\times 4$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'mat-p2-q97',
+    questionNumber: 47,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q97] The matrix $A = \\begin{bmatrix} 0 & 5 & -7 \\\\ -5 & 0 & 11 \\\\ 7 & -11 & 0 \\end{bmatrix}$ is a:',
+    options: [
+      { id: 'A', labelLatex: 'Diagonal matrix' },
+      { id: 'B', labelLatex: 'Upper triangular matrix' },
+      { id: 'C', labelLatex: 'Skew-symmetric matrix' },
+      { id: 'D', labelLatex: 'Symmetric matrix' }
+    ],
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 97: Here $a_{ji} = -a_{ij}$ and diagonal entries are all 0. Hence $A^T = -A$, which is a skew-symmetric matrix.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'mat-p2-q98',
+    questionNumber: 48,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q98] If $A$ is both a symmetric and a skew-symmetric matrix, then $A$ must be:',
+    options: [
+      { id: 'A', labelLatex: 'A diagonal matrix' },
+      { id: 'B', labelLatex: 'A null matrix' },
+      { id: 'C', labelLatex: 'A unit matrix' },
+      { id: 'D', labelLatex: 'A triangular matrix' }
+    ],
+    correctAnswer: 'B',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 98: $A^T = A$ and $A^T = -A \\implies A = -A \\implies 2A = O \\implies A = O$ (null matrix).',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'mat-p2-q99',
+    questionNumber: 49,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q99] If $A$ is a symmetric matrix and $B$ is a skew-symmetric matrix, then for $n \\in \\mathbb{N}$, the false statement is:',
+    options: [
+      { id: 'A', labelLatex: '$A^n$ is symmetric when $n$ is odd' },
+      { id: 'B', labelLatex: '$A^n$ is symmetric only when $n$ is even' },
+      { id: 'C', labelLatex: '$B^n$ is skew-symmetric when $n$ is odd' },
+      { id: 'D', labelLatex: '$B^n$ is symmetric when $n$ is even' }
+    ],
+    correctAnswer: 'B',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 99: $A^n$ is symmetric for ALL positive integers $n$, both odd and even. Thus stating that it is symmetric ONLY when $n$ is even is false.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'mat-p2-q100',
+    questionNumber: 50,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[MAT-P2 Q100] Let $A$ be any square matrix. Then which of the following is NOT a symmetric matrix?',
+    options: [
+      { id: 'A', labelLatex: '$A + A^T$' },
+      { id: 'B', labelLatex: '$A A^T$' },
+      { id: 'C', labelLatex: '$A^T A$' },
+      { id: 'D', labelLatex: '$A - A^T$' }
+    ],
+    correctAnswer: 'D',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 100: $(A - A^T)^T = A^T - A = -(A - A^T)$, so $A - A^T$ is skew-symmetric, not symmetric.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
 ];

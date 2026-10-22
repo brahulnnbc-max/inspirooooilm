@@ -1,1413 +1,854 @@
-import { Question } from '../types/exam';
+import { Question } from '../types/exam.ts';
+
 export const DIFF_EQ_AUC_PART_3_QUESTIONS: Question[] = [
   {
-    "id": "diffeq-q101",
-    "questionNumber": 1,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q101] Evaluate the physical / mathematical system for Question 101.",
-    "imageUrl": "/assets/module_crops/diffeq/q_101.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q101',
+    questionNumber: 1,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q101] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 101. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 101: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q102",
-    "questionNumber": 2,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q102] Evaluate the physical / mathematical system for Question 102.",
-    "imageUrl": "/assets/module_crops/diffeq/q_102.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q102',
+    questionNumber: 2,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q102] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 102. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 102: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q103",
-    "questionNumber": 3,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q103] Evaluate the physical / mathematical system for Question 103.",
-    "imageUrl": "/assets/module_crops/diffeq/q_103.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q103',
+    questionNumber: 3,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q103] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 103. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 103: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q104",
-    "questionNumber": 4,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q104] Evaluate the physical / mathematical system for Question 104.",
-    "imageUrl": "/assets/module_crops/diffeq/q_104.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q104',
+    questionNumber: 4,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q104] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 104. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 104: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q105",
-    "questionNumber": 5,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q105] Evaluate the physical / mathematical system for Question 105.",
-    "imageUrl": "/assets/module_crops/diffeq/q_105.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q105',
+    questionNumber: 5,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q105] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 105. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 105: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q106",
-    "questionNumber": 6,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q106] Evaluate the physical / mathematical system for Question 106.",
-    "imageUrl": "/assets/module_crops/diffeq/q_106.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q106',
+    questionNumber: 6,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q106] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 106. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 106: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q107",
-    "questionNumber": 7,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q107] Evaluate the physical / mathematical system for Question 107.",
-    "imageUrl": "/assets/module_crops/diffeq/q_107.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q107',
+    questionNumber: 7,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q107] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 107. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 107: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q108",
-    "questionNumber": 8,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q108] Evaluate the physical / mathematical system for Question 108.",
-    "imageUrl": "/assets/module_crops/diffeq/q_108.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q108',
+    questionNumber: 8,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q108] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 108. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 108: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q109",
-    "questionNumber": 9,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q109] Evaluate the physical / mathematical system for Question 109.",
-    "imageUrl": "/assets/module_crops/diffeq/q_109.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q109',
+    questionNumber: 9,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q109] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 109. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 109: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q110",
-    "questionNumber": 10,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[DIFFEQ Q110] Evaluate the physical / mathematical system for Question 110.",
-    "imageUrl": "/assets/module_crops/diffeq/q_110.png",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 110. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "diffeq-q111",
-    "questionNumber": 11,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q111] Evaluate the physical / mathematical system for Question 111.",
-    "imageUrl": "/assets/module_crops/diffeq/q_111.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q110',
+    questionNumber: 10,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q110] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 111. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 110: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q112",
-    "questionNumber": 12,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q112] Evaluate the physical / mathematical system for Question 112.",
-    "imageUrl": "/assets/module_crops/diffeq/q_112.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q111',
+    questionNumber: 11,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q111] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 112. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 111: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q113",
-    "questionNumber": 13,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q113] Evaluate the physical / mathematical system for Question 113.",
-    "imageUrl": "/assets/module_crops/diffeq/q_113.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q112',
+    questionNumber: 12,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q112] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 113. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 112: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q114",
-    "questionNumber": 14,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q114] Evaluate the physical / mathematical system for Question 114.",
-    "imageUrl": "/assets/module_crops/diffeq/q_114.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q113',
+    questionNumber: 13,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q113] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 114. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 113: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q115",
-    "questionNumber": 15,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q115] Evaluate the physical / mathematical system for Question 115.",
-    "imageUrl": "/assets/module_crops/diffeq/q_115.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q114',
+    questionNumber: 14,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q114] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 115. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 114: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q116",
-    "questionNumber": 16,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q116] Evaluate the physical / mathematical system for Question 116.",
-    "imageUrl": "/assets/module_crops/diffeq/q_116.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q115',
+    questionNumber: 15,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q115] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 116. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 115: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q117",
-    "questionNumber": 17,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q117] Evaluate the physical / mathematical system for Question 117.",
-    "imageUrl": "/assets/module_crops/diffeq/q_117.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q116',
+    questionNumber: 16,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q116] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 117. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 116: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q118",
-    "questionNumber": 18,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q118] Evaluate the physical / mathematical system for Question 118.",
-    "imageUrl": "/assets/module_crops/diffeq/q_118.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q117',
+    questionNumber: 17,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q117] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 118. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 117: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q119",
-    "questionNumber": 19,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q119] Evaluate the physical / mathematical system for Question 119.",
-    "imageUrl": "/assets/module_crops/diffeq/q_119.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q118',
+    questionNumber: 18,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q118] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 119. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 118: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q120",
-    "questionNumber": 20,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[DIFFEQ Q120] Evaluate the physical / mathematical system for Question 120.",
-    "imageUrl": "/assets/module_crops/diffeq/q_120.png",
-    "correctAnswer": "0",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 120. Correct result: **0**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "diffeq-q121",
-    "questionNumber": 21,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q121] Evaluate the physical / mathematical system for Question 121.",
-    "imageUrl": "/assets/module_crops/diffeq/q_121.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q119',
+    questionNumber: 19,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q119] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 121. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 119: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q122",
-    "questionNumber": 22,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q122] Evaluate the physical / mathematical system for Question 122.",
-    "imageUrl": "/assets/module_crops/diffeq/q_122.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q120',
+    questionNumber: 20,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q120] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 122. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 120: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q123",
-    "questionNumber": 23,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q123] Evaluate the physical / mathematical system for Question 123.",
-    "imageUrl": "/assets/module_crops/diffeq/q_123.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q121',
+    questionNumber: 21,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q121] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 123. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 121: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q124",
-    "questionNumber": 24,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q124] Evaluate the physical / mathematical system for Question 124.",
-    "imageUrl": "/assets/module_crops/diffeq/q_124.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q122',
+    questionNumber: 22,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q122] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 124. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 122: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q125",
-    "questionNumber": 25,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q125] Evaluate the physical / mathematical system for Question 125.",
-    "imageUrl": "/assets/module_crops/diffeq/q_125.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q123',
+    questionNumber: 23,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q123] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 125. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 123: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q126",
-    "questionNumber": 26,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q126] Evaluate the physical / mathematical system for Question 126.",
-    "imageUrl": "/assets/module_crops/diffeq/q_126.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q124',
+    questionNumber: 24,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q124] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 126. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 124: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q127",
-    "questionNumber": 27,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q127] Evaluate the physical / mathematical system for Question 127.",
-    "imageUrl": "/assets/module_crops/diffeq/q_127.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q125',
+    questionNumber: 25,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q125] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 127. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 125: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q128",
-    "questionNumber": 28,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q128] Evaluate the physical / mathematical system for Question 128.",
-    "imageUrl": "/assets/module_crops/diffeq/q_128.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q126',
+    questionNumber: 26,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q126] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 128. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 126: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q129",
-    "questionNumber": 29,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q129] Evaluate the physical / mathematical system for Question 129.",
-    "imageUrl": "/assets/module_crops/diffeq/q_129.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q127',
+    questionNumber: 27,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q127] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 129. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 127: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q130",
-    "questionNumber": 30,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[DIFFEQ Q130] Evaluate the physical / mathematical system for Question 130.",
-    "imageUrl": "/assets/module_crops/diffeq/q_130.png",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 130. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "diffeq-q131",
-    "questionNumber": 31,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q131] Evaluate the physical / mathematical system for Question 131.",
-    "imageUrl": "/assets/module_crops/diffeq/q_131.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q128',
+    questionNumber: 28,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q128] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 131. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 128: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q132",
-    "questionNumber": 32,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q132] Evaluate the physical / mathematical system for Question 132.",
-    "imageUrl": "/assets/module_crops/diffeq/q_132.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q129',
+    questionNumber: 29,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q129] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 132. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 129: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q133",
-    "questionNumber": 33,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q133] Evaluate the physical / mathematical system for Question 133.",
-    "imageUrl": "/assets/module_crops/diffeq/q_133.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q130',
+    questionNumber: 30,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q130] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 133. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 130: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q134",
-    "questionNumber": 34,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q134] Evaluate the physical / mathematical system for Question 134.",
-    "imageUrl": "/assets/module_crops/diffeq/q_134.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q131',
+    questionNumber: 31,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q131] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 134. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 131: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q135",
-    "questionNumber": 35,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q135] Evaluate the physical / mathematical system for Question 135.",
-    "imageUrl": "/assets/module_crops/diffeq/q_135.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q132',
+    questionNumber: 32,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q132] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 135. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 132: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q136",
-    "questionNumber": 36,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q136] Evaluate the physical / mathematical system for Question 136.",
-    "imageUrl": "/assets/module_crops/diffeq/q_136.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q133',
+    questionNumber: 33,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q133] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 136. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 133: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q137",
-    "questionNumber": 37,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q137] Evaluate the physical / mathematical system for Question 137.",
-    "imageUrl": "/assets/module_crops/diffeq/q_137.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q134',
+    questionNumber: 34,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q134] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 137. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 134: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q138",
-    "questionNumber": 38,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q138] Evaluate the physical / mathematical system for Question 138.",
-    "imageUrl": "/assets/module_crops/diffeq/q_138.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q135',
+    questionNumber: 35,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q135] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 138. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 135: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q139",
-    "questionNumber": 39,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q139] Evaluate the physical / mathematical system for Question 139.",
-    "imageUrl": "/assets/module_crops/diffeq/q_139.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q136',
+    questionNumber: 36,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q136] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 139. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 136: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q140",
-    "questionNumber": 40,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[DIFFEQ Q140] Evaluate the physical / mathematical system for Question 140.",
-    "imageUrl": "/assets/module_crops/diffeq/q_140.png",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 140. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "diffeq-q141",
-    "questionNumber": 41,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q141] Evaluate the physical / mathematical system for Question 141.",
-    "imageUrl": "/assets/module_crops/diffeq/q_141.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q137',
+    questionNumber: 37,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q137] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 141. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 137: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q142",
-    "questionNumber": 42,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q142] Evaluate the physical / mathematical system for Question 142.",
-    "imageUrl": "/assets/module_crops/diffeq/q_142.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q138',
+    questionNumber: 38,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q138] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 142. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 138: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q143",
-    "questionNumber": 43,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q143] Evaluate the physical / mathematical system for Question 143.",
-    "imageUrl": "/assets/module_crops/diffeq/q_143.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q139',
+    questionNumber: 39,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q139] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 143. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 139: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q144",
-    "questionNumber": 44,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q144] Evaluate the physical / mathematical system for Question 144.",
-    "imageUrl": "/assets/module_crops/diffeq/q_144.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q140',
+    questionNumber: 40,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q140] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 144. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 140: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q145",
-    "questionNumber": 45,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q145] Evaluate the physical / mathematical system for Question 145.",
-    "imageUrl": "/assets/module_crops/diffeq/q_145.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q141',
+    questionNumber: 41,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q141] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 145. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 141: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q146",
-    "questionNumber": 46,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q146] Evaluate the physical / mathematical system for Question 146.",
-    "imageUrl": "/assets/module_crops/diffeq/q_146.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q142',
+    questionNumber: 42,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q142] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 146. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 142: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q147",
-    "questionNumber": 47,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q147] Evaluate the physical / mathematical system for Question 147.",
-    "imageUrl": "/assets/module_crops/diffeq/q_147.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q143',
+    questionNumber: 43,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q143] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 147. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 143: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q148",
-    "questionNumber": 48,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q148] Evaluate the physical / mathematical system for Question 148.",
-    "imageUrl": "/assets/module_crops/diffeq/q_148.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q144',
+    questionNumber: 44,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q144] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 148. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 144: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q149",
-    "questionNumber": 49,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DIFFEQ Q149] Evaluate the physical / mathematical system for Question 149.",
-    "imageUrl": "/assets/module_crops/diffeq/q_149.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'diff-p3-q145',
+    questionNumber: 45,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q145] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 149. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 145: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "diffeq-q150",
-    "questionNumber": 50,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[DIFFEQ Q150] Evaluate the physical / mathematical system for Question 150.",
-    "imageUrl": "/assets/module_crops/diffeq/q_150.png",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 150. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  }
+    id: 'diff-p3-q146',
+    questionNumber: 46,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q146] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 146: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'diff-p3-q147',
+    questionNumber: 47,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q147] The area bounded by the parabola $y^2 = 4ax$ and its latus rectum $x = a$ is:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{8}{3} a^2$' },
+      { id: 'B', labelLatex: '$\\frac{4}{3} a^2$' },
+      { id: 'C', labelLatex: '$\\frac{16}{3} a^2$' },
+      { id: 'D', labelLatex: '$4a^2$' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 147: Area $= 2 \\int_0^a 2\\sqrt{a} x^{1/2} dx = 4\\sqrt{a} \\left[\\frac{2}{3} x^{3/2}\\right]_0^a = \\frac{8}{3} a^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'diff-p3-q148',
+    questionNumber: 48,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q148] The area enclosed between the curves $y = x^2$ and $y = x$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{6}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{3}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{2}$' },
+      { id: 'D', labelLatex: '$\\frac{5}{6}$' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 148: Intersection points are $x = 0$ and $x = 1$. Area $= \\int_0^1 (x - x^2) dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'diff-p3-q149',
+    questionNumber: 49,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q149] The order and degree of the differential equation $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2} = \\frac{d^2y}{dx^2}$ are respectively:',
+    options: [
+      { id: 'A', labelLatex: '2 and 2' },
+      { id: 'B', labelLatex: '2 and 3' },
+      { id: 'C', labelLatex: '3 and 2' },
+      { id: 'D', labelLatex: '1 and 2' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 149: Squaring both sides eliminates the radical: $\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^3 = \\left(\\frac{d^2y}{dx^2}\\right)^2$. Highest derivative is order 2, power of highest derivative is 2.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'diff-p3-q150',
+    questionNumber: 50,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DIFF-P3 Q150] The general solution of the differential equation $\\frac{dy}{dx} + \\frac{y}{x} = x^2$ is:',
+    options: [
+      { id: 'A', labelLatex: '$yx = \\frac{x^4}{4} + C$' },
+      { id: 'B', labelLatex: '$y = \\frac{x^3}{3} + C$' },
+      { id: 'C', labelLatex: '$yx = \\frac{x^3}{3} + C$' },
+      { id: 'D', labelLatex: '$y = x^4 + C$' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 150: Integrating factor $I.F. = e^{\\int \\frac{1}{x} dx} = e^{\\ln x} = x$. Solution: $y \\cdot x = \\int x \\cdot x^2 dx = \\frac{x^4}{4} + C$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
 ];

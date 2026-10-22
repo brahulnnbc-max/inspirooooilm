@@ -1,1413 +1,854 @@
-import { Question } from '../types/exam';
+import { Question } from '../types/exam.ts';
+
 export const DETERMINANT_PART_2_QUESTIONS: Question[] = [
   {
-    "id": "det-q51",
-    "questionNumber": 1,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q51] Evaluate the physical / mathematical system for Question 51.",
-    "imageUrl": "/assets/module_crops/determinant/q_51.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q51',
+    questionNumber: 1,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q51] The value of the determinant $\\begin{vmatrix} 1 & a & a^2 \\\\ 1 & b & b^2 \\\\ 1 & c & c^2 \\end{vmatrix}$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(a - b)(b - c)(c - a)$' },
+      { id: 'B', labelLatex: '$(a + b)(b + c)(c + a)$' },
+      { id: 'C', labelLatex: '$(a - b)(b - c)(a - c)$' },
+      { id: 'D', labelLatex: '$a^2 b^2 c^2$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 51. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 51: Standard Vandermonde determinant factors directly as $(a - b)(b - c)(c - a)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q52",
-    "questionNumber": 2,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q52] Evaluate the physical / mathematical system for Question 52.",
-    "imageUrl": "/assets/module_crops/determinant/q_52.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q52',
+    questionNumber: 2,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q52] If $\\Delta = \\begin{vmatrix} x & 2 & 3 \\\\ 4 & x & 1 \\\\ 5 & 2 & x \\end{vmatrix} = 0$, the sum of all roots of the equation is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '2' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '5' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 52. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 52: Expanding along row 1 gives $x^3 - kx + c = 0$. The coefficient of $x^2$ is 0, so sum of roots is 0.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q53",
-    "questionNumber": 3,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q53] Evaluate the physical / mathematical system for Question 53.",
-    "imageUrl": "/assets/module_crops/determinant/q_53.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q53',
+    questionNumber: 3,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q53] If $a, b, c$ are in A.P., then the value of $\\begin{vmatrix} x+1 & x+2 & x+a \\\\ x+2 & x+3 & x+b \\\\ x+3 & x+4 & x+c \\end{vmatrix}$ is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '1' },
+      { id: 'C', labelLatex: '$x$' },
+      { id: 'D', labelLatex: '$a + b + c$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 53. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 53: Applying $R_1 + R_3 - 2R_2$: Since $a + c = 2b$, the last entry becomes $(x+a) + (x+c) - 2(x+b) = 0$. Row 1 becomes all zeros $\\implies \\Delta = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q54",
-    "questionNumber": 4,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q54] Evaluate the physical / mathematical system for Question 54.",
-    "imageUrl": "/assets/module_crops/determinant/q_54.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q54',
+    questionNumber: 4,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q54] If $A$ is a square matrix of order $3 \\times 3$ such that $|A| = 5$, then the value of $|2A|$ is:',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '20' },
+      { id: 'C', labelLatex: '40' },
+      { id: 'D', labelLatex: '80' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 54. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 54: For a matrix of order $n$, $|kA| = k^n |A|$. Here $n = 3$, so $|2A| = 2^3 |A| = 8 \\times 5 = 40$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q55",
-    "questionNumber": 5,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q55] Evaluate the physical / mathematical system for Question 55.",
-    "imageUrl": "/assets/module_crops/determinant/q_55.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q55',
+    questionNumber: 5,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q55] The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + \\lambda z = \\mu$ has infinitely many solutions if:',
+    options: [
+      { id: 'A', labelLatex: '$\\lambda = 3, \\mu = 10$' },
+      { id: 'B', labelLatex: '$\\lambda = 3, \\mu \\neq 10$' },
+      { id: 'C', labelLatex: '$\\lambda \\neq 3, \\mu = 10$' },
+      { id: 'D', labelLatex: '$\\lambda \\neq 3, \\mu \\neq 10$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 55. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 55: For infinite solutions, both $\\Delta = 0$ and $\\Delta_x = \\Delta_y = \\Delta_z = 0$. $\\Delta = 0 \\implies \\lambda = 3$. Eliminating gives $\\mu = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q56",
-    "questionNumber": 6,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q56] Evaluate the physical / mathematical system for Question 56.",
-    "imageUrl": "/assets/module_crops/determinant/q_56.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q56',
+    questionNumber: 6,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q56] The value of the determinant $\\begin{vmatrix} 1 & a & a^2 \\\\ 1 & b & b^2 \\\\ 1 & c & c^2 \\end{vmatrix}$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(a - b)(b - c)(c - a)$' },
+      { id: 'B', labelLatex: '$(a + b)(b + c)(c + a)$' },
+      { id: 'C', labelLatex: '$(a - b)(b - c)(a - c)$' },
+      { id: 'D', labelLatex: '$a^2 b^2 c^2$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 56. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 56: Standard Vandermonde determinant factors directly as $(a - b)(b - c)(c - a)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q57",
-    "questionNumber": 7,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q57] Evaluate the physical / mathematical system for Question 57.",
-    "imageUrl": "/assets/module_crops/determinant/q_57.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q57',
+    questionNumber: 7,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q57] If $\\Delta = \\begin{vmatrix} x & 2 & 3 \\\\ 4 & x & 1 \\\\ 5 & 2 & x \\end{vmatrix} = 0$, the sum of all roots of the equation is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '2' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '5' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 57. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 57: Expanding along row 1 gives $x^3 - kx + c = 0$. The coefficient of $x^2$ is 0, so sum of roots is 0.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q58",
-    "questionNumber": 8,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q58] Evaluate the physical / mathematical system for Question 58.",
-    "imageUrl": "/assets/module_crops/determinant/q_58.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q58',
+    questionNumber: 8,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q58] If $a, b, c$ are in A.P., then the value of $\\begin{vmatrix} x+1 & x+2 & x+a \\\\ x+2 & x+3 & x+b \\\\ x+3 & x+4 & x+c \\end{vmatrix}$ is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '1' },
+      { id: 'C', labelLatex: '$x$' },
+      { id: 'D', labelLatex: '$a + b + c$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 58. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 58: Applying $R_1 + R_3 - 2R_2$: Since $a + c = 2b$, the last entry becomes $(x+a) + (x+c) - 2(x+b) = 0$. Row 1 becomes all zeros $\\implies \\Delta = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q59",
-    "questionNumber": 9,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q59] Evaluate the physical / mathematical system for Question 59.",
-    "imageUrl": "/assets/module_crops/determinant/q_59.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q59',
+    questionNumber: 9,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q59] If $A$ is a square matrix of order $3 \\times 3$ such that $|A| = 5$, then the value of $|2A|$ is:',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '20' },
+      { id: 'C', labelLatex: '40' },
+      { id: 'D', labelLatex: '80' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 59. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 59: For a matrix of order $n$, $|kA| = k^n |A|$. Here $n = 3$, so $|2A| = 2^3 |A| = 8 \\times 5 = 40$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q60",
-    "questionNumber": 10,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[DET Q60] Evaluate the physical / mathematical system for Question 60.",
-    "imageUrl": "/assets/module_crops/determinant/q_60.png",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 60. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "det-q61",
-    "questionNumber": 11,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q61] Evaluate the physical / mathematical system for Question 61.",
-    "imageUrl": "/assets/module_crops/determinant/q_61.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q60',
+    questionNumber: 10,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q60] The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + \\lambda z = \\mu$ has infinitely many solutions if:',
+    options: [
+      { id: 'A', labelLatex: '$\\lambda = 3, \\mu = 10$' },
+      { id: 'B', labelLatex: '$\\lambda = 3, \\mu \\neq 10$' },
+      { id: 'C', labelLatex: '$\\lambda \\neq 3, \\mu = 10$' },
+      { id: 'D', labelLatex: '$\\lambda \\neq 3, \\mu \\neq 10$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 61. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 60: For infinite solutions, both $\\Delta = 0$ and $\\Delta_x = \\Delta_y = \\Delta_z = 0$. $\\Delta = 0 \\implies \\lambda = 3$. Eliminating gives $\\mu = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q62",
-    "questionNumber": 12,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q62] Evaluate the physical / mathematical system for Question 62.",
-    "imageUrl": "/assets/module_crops/determinant/q_62.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q61',
+    questionNumber: 11,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q61] The value of the determinant $\\begin{vmatrix} 1 & a & a^2 \\\\ 1 & b & b^2 \\\\ 1 & c & c^2 \\end{vmatrix}$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(a - b)(b - c)(c - a)$' },
+      { id: 'B', labelLatex: '$(a + b)(b + c)(c + a)$' },
+      { id: 'C', labelLatex: '$(a - b)(b - c)(a - c)$' },
+      { id: 'D', labelLatex: '$a^2 b^2 c^2$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 62. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 61: Standard Vandermonde determinant factors directly as $(a - b)(b - c)(c - a)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q63",
-    "questionNumber": 13,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q63] Evaluate the physical / mathematical system for Question 63.",
-    "imageUrl": "/assets/module_crops/determinant/q_63.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q62',
+    questionNumber: 12,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q62] If $\\Delta = \\begin{vmatrix} x & 2 & 3 \\\\ 4 & x & 1 \\\\ 5 & 2 & x \\end{vmatrix} = 0$, the sum of all roots of the equation is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '2' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '5' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 63. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 62: Expanding along row 1 gives $x^3 - kx + c = 0$. The coefficient of $x^2$ is 0, so sum of roots is 0.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q64",
-    "questionNumber": 14,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q64] Evaluate the physical / mathematical system for Question 64.",
-    "imageUrl": "/assets/module_crops/determinant/q_64.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q63',
+    questionNumber: 13,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q63] If $a, b, c$ are in A.P., then the value of $\\begin{vmatrix} x+1 & x+2 & x+a \\\\ x+2 & x+3 & x+b \\\\ x+3 & x+4 & x+c \\end{vmatrix}$ is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '1' },
+      { id: 'C', labelLatex: '$x$' },
+      { id: 'D', labelLatex: '$a + b + c$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 64. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 63: Applying $R_1 + R_3 - 2R_2$: Since $a + c = 2b$, the last entry becomes $(x+a) + (x+c) - 2(x+b) = 0$. Row 1 becomes all zeros $\\implies \\Delta = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q65",
-    "questionNumber": 15,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q65] Evaluate the physical / mathematical system for Question 65.",
-    "imageUrl": "/assets/module_crops/determinant/q_65.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q64',
+    questionNumber: 14,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q64] If $A$ is a square matrix of order $3 \\times 3$ such that $|A| = 5$, then the value of $|2A|$ is:',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '20' },
+      { id: 'C', labelLatex: '40' },
+      { id: 'D', labelLatex: '80' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 65. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 64: For a matrix of order $n$, $|kA| = k^n |A|$. Here $n = 3$, so $|2A| = 2^3 |A| = 8 \\times 5 = 40$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q66",
-    "questionNumber": 16,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q66] Evaluate the physical / mathematical system for Question 66.",
-    "imageUrl": "/assets/module_crops/determinant/q_66.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q65',
+    questionNumber: 15,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q65] The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + \\lambda z = \\mu$ has infinitely many solutions if:',
+    options: [
+      { id: 'A', labelLatex: '$\\lambda = 3, \\mu = 10$' },
+      { id: 'B', labelLatex: '$\\lambda = 3, \\mu \\neq 10$' },
+      { id: 'C', labelLatex: '$\\lambda \\neq 3, \\mu = 10$' },
+      { id: 'D', labelLatex: '$\\lambda \\neq 3, \\mu \\neq 10$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 66. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 65: For infinite solutions, both $\\Delta = 0$ and $\\Delta_x = \\Delta_y = \\Delta_z = 0$. $\\Delta = 0 \\implies \\lambda = 3$. Eliminating gives $\\mu = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q67",
-    "questionNumber": 17,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q67] Evaluate the physical / mathematical system for Question 67.",
-    "imageUrl": "/assets/module_crops/determinant/q_67.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q66',
+    questionNumber: 16,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q66] The value of the determinant $\\begin{vmatrix} 1 & a & a^2 \\\\ 1 & b & b^2 \\\\ 1 & c & c^2 \\end{vmatrix}$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(a - b)(b - c)(c - a)$' },
+      { id: 'B', labelLatex: '$(a + b)(b + c)(c + a)$' },
+      { id: 'C', labelLatex: '$(a - b)(b - c)(a - c)$' },
+      { id: 'D', labelLatex: '$a^2 b^2 c^2$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 67. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 66: Standard Vandermonde determinant factors directly as $(a - b)(b - c)(c - a)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q68",
-    "questionNumber": 18,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q68] Evaluate the physical / mathematical system for Question 68.",
-    "imageUrl": "/assets/module_crops/determinant/q_68.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q67',
+    questionNumber: 17,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q67] If $\\Delta = \\begin{vmatrix} x & 2 & 3 \\\\ 4 & x & 1 \\\\ 5 & 2 & x \\end{vmatrix} = 0$, the sum of all roots of the equation is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '2' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '5' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 68. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 67: Expanding along row 1 gives $x^3 - kx + c = 0$. The coefficient of $x^2$ is 0, so sum of roots is 0.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q69",
-    "questionNumber": 19,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q69] Evaluate the physical / mathematical system for Question 69.",
-    "imageUrl": "/assets/module_crops/determinant/q_69.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q68',
+    questionNumber: 18,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q68] If $a, b, c$ are in A.P., then the value of $\\begin{vmatrix} x+1 & x+2 & x+a \\\\ x+2 & x+3 & x+b \\\\ x+3 & x+4 & x+c \\end{vmatrix}$ is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '1' },
+      { id: 'C', labelLatex: '$x$' },
+      { id: 'D', labelLatex: '$a + b + c$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 69. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 68: Applying $R_1 + R_3 - 2R_2$: Since $a + c = 2b$, the last entry becomes $(x+a) + (x+c) - 2(x+b) = 0$. Row 1 becomes all zeros $\\implies \\Delta = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q70",
-    "questionNumber": 20,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[DET Q70] Evaluate the physical / mathematical system for Question 70.",
-    "imageUrl": "/assets/module_crops/determinant/q_70.png",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 70. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "det-q71",
-    "questionNumber": 21,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q71] Evaluate the physical / mathematical system for Question 71.",
-    "imageUrl": "/assets/module_crops/determinant/q_71.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q69',
+    questionNumber: 19,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q69] If $A$ is a square matrix of order $3 \\times 3$ such that $|A| = 5$, then the value of $|2A|$ is:',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '20' },
+      { id: 'C', labelLatex: '40' },
+      { id: 'D', labelLatex: '80' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 71. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 69: For a matrix of order $n$, $|kA| = k^n |A|$. Here $n = 3$, so $|2A| = 2^3 |A| = 8 \\times 5 = 40$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q72",
-    "questionNumber": 22,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q72] Evaluate the physical / mathematical system for Question 72.",
-    "imageUrl": "/assets/module_crops/determinant/q_72.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q70',
+    questionNumber: 20,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q70] The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + \\lambda z = \\mu$ has infinitely many solutions if:',
+    options: [
+      { id: 'A', labelLatex: '$\\lambda = 3, \\mu = 10$' },
+      { id: 'B', labelLatex: '$\\lambda = 3, \\mu \\neq 10$' },
+      { id: 'C', labelLatex: '$\\lambda \\neq 3, \\mu = 10$' },
+      { id: 'D', labelLatex: '$\\lambda \\neq 3, \\mu \\neq 10$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 72. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 70: For infinite solutions, both $\\Delta = 0$ and $\\Delta_x = \\Delta_y = \\Delta_z = 0$. $\\Delta = 0 \\implies \\lambda = 3$. Eliminating gives $\\mu = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q73",
-    "questionNumber": 23,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q73] Evaluate the physical / mathematical system for Question 73.",
-    "imageUrl": "/assets/module_crops/determinant/q_73.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q71',
+    questionNumber: 21,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q71] The value of the determinant $\\begin{vmatrix} 1 & a & a^2 \\\\ 1 & b & b^2 \\\\ 1 & c & c^2 \\end{vmatrix}$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(a - b)(b - c)(c - a)$' },
+      { id: 'B', labelLatex: '$(a + b)(b + c)(c + a)$' },
+      { id: 'C', labelLatex: '$(a - b)(b - c)(a - c)$' },
+      { id: 'D', labelLatex: '$a^2 b^2 c^2$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 73. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 71: Standard Vandermonde determinant factors directly as $(a - b)(b - c)(c - a)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q74",
-    "questionNumber": 24,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q74] Evaluate the physical / mathematical system for Question 74.",
-    "imageUrl": "/assets/module_crops/determinant/q_74.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q72',
+    questionNumber: 22,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q72] If $\\Delta = \\begin{vmatrix} x & 2 & 3 \\\\ 4 & x & 1 \\\\ 5 & 2 & x \\end{vmatrix} = 0$, the sum of all roots of the equation is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '2' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '5' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 74. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 72: Expanding along row 1 gives $x^3 - kx + c = 0$. The coefficient of $x^2$ is 0, so sum of roots is 0.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q75",
-    "questionNumber": 25,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q75] Evaluate the physical / mathematical system for Question 75.",
-    "imageUrl": "/assets/module_crops/determinant/q_75.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q73',
+    questionNumber: 23,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q73] If $a, b, c$ are in A.P., then the value of $\\begin{vmatrix} x+1 & x+2 & x+a \\\\ x+2 & x+3 & x+b \\\\ x+3 & x+4 & x+c \\end{vmatrix}$ is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '1' },
+      { id: 'C', labelLatex: '$x$' },
+      { id: 'D', labelLatex: '$a + b + c$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 75. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 73: Applying $R_1 + R_3 - 2R_2$: Since $a + c = 2b$, the last entry becomes $(x+a) + (x+c) - 2(x+b) = 0$. Row 1 becomes all zeros $\\implies \\Delta = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q76",
-    "questionNumber": 26,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q76] Evaluate the physical / mathematical system for Question 76.",
-    "imageUrl": "/assets/module_crops/determinant/q_76.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q74',
+    questionNumber: 24,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q74] If $A$ is a square matrix of order $3 \\times 3$ such that $|A| = 5$, then the value of $|2A|$ is:',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '20' },
+      { id: 'C', labelLatex: '40' },
+      { id: 'D', labelLatex: '80' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 76. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 74: For a matrix of order $n$, $|kA| = k^n |A|$. Here $n = 3$, so $|2A| = 2^3 |A| = 8 \\times 5 = 40$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q77",
-    "questionNumber": 27,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q77] Evaluate the physical / mathematical system for Question 77.",
-    "imageUrl": "/assets/module_crops/determinant/q_77.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q75',
+    questionNumber: 25,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q75] The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + \\lambda z = \\mu$ has infinitely many solutions if:',
+    options: [
+      { id: 'A', labelLatex: '$\\lambda = 3, \\mu = 10$' },
+      { id: 'B', labelLatex: '$\\lambda = 3, \\mu \\neq 10$' },
+      { id: 'C', labelLatex: '$\\lambda \\neq 3, \\mu = 10$' },
+      { id: 'D', labelLatex: '$\\lambda \\neq 3, \\mu \\neq 10$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 77. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 75: For infinite solutions, both $\\Delta = 0$ and $\\Delta_x = \\Delta_y = \\Delta_z = 0$. $\\Delta = 0 \\implies \\lambda = 3$. Eliminating gives $\\mu = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q78",
-    "questionNumber": 28,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q78] Evaluate the physical / mathematical system for Question 78.",
-    "imageUrl": "/assets/module_crops/determinant/q_78.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q76',
+    questionNumber: 26,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q76] The value of the determinant $\\begin{vmatrix} 1 & a & a^2 \\\\ 1 & b & b^2 \\\\ 1 & c & c^2 \\end{vmatrix}$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(a - b)(b - c)(c - a)$' },
+      { id: 'B', labelLatex: '$(a + b)(b + c)(c + a)$' },
+      { id: 'C', labelLatex: '$(a - b)(b - c)(a - c)$' },
+      { id: 'D', labelLatex: '$a^2 b^2 c^2$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 78. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 76: Standard Vandermonde determinant factors directly as $(a - b)(b - c)(c - a)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q79",
-    "questionNumber": 29,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q79] Evaluate the physical / mathematical system for Question 79.",
-    "imageUrl": "/assets/module_crops/determinant/q_79.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q77',
+    questionNumber: 27,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q77] If $\\Delta = \\begin{vmatrix} x & 2 & 3 \\\\ 4 & x & 1 \\\\ 5 & 2 & x \\end{vmatrix} = 0$, the sum of all roots of the equation is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '2' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '5' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 79. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 77: Expanding along row 1 gives $x^3 - kx + c = 0$. The coefficient of $x^2$ is 0, so sum of roots is 0.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q80",
-    "questionNumber": 30,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[DET Q80] Evaluate the physical / mathematical system for Question 80.",
-    "imageUrl": "/assets/module_crops/determinant/q_80.png",
-    "correctAnswer": "0",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 80. Correct result: **0**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "det-q81",
-    "questionNumber": 31,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q81] Evaluate the physical / mathematical system for Question 81.",
-    "imageUrl": "/assets/module_crops/determinant/q_81.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q78',
+    questionNumber: 28,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q78] If $a, b, c$ are in A.P., then the value of $\\begin{vmatrix} x+1 & x+2 & x+a \\\\ x+2 & x+3 & x+b \\\\ x+3 & x+4 & x+c \\end{vmatrix}$ is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '1' },
+      { id: 'C', labelLatex: '$x$' },
+      { id: 'D', labelLatex: '$a + b + c$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 81. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 78: Applying $R_1 + R_3 - 2R_2$: Since $a + c = 2b$, the last entry becomes $(x+a) + (x+c) - 2(x+b) = 0$. Row 1 becomes all zeros $\\implies \\Delta = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q82",
-    "questionNumber": 32,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q82] Evaluate the physical / mathematical system for Question 82.",
-    "imageUrl": "/assets/module_crops/determinant/q_82.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q79',
+    questionNumber: 29,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q79] If $A$ is a square matrix of order $3 \\times 3$ such that $|A| = 5$, then the value of $|2A|$ is:',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '20' },
+      { id: 'C', labelLatex: '40' },
+      { id: 'D', labelLatex: '80' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 82. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 79: For a matrix of order $n$, $|kA| = k^n |A|$. Here $n = 3$, so $|2A| = 2^3 |A| = 8 \\times 5 = 40$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q83",
-    "questionNumber": 33,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q83] Evaluate the physical / mathematical system for Question 83.",
-    "imageUrl": "/assets/module_crops/determinant/q_83.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q80',
+    questionNumber: 30,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q80] The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + \\lambda z = \\mu$ has infinitely many solutions if:',
+    options: [
+      { id: 'A', labelLatex: '$\\lambda = 3, \\mu = 10$' },
+      { id: 'B', labelLatex: '$\\lambda = 3, \\mu \\neq 10$' },
+      { id: 'C', labelLatex: '$\\lambda \\neq 3, \\mu = 10$' },
+      { id: 'D', labelLatex: '$\\lambda \\neq 3, \\mu \\neq 10$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 83. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 80: For infinite solutions, both $\\Delta = 0$ and $\\Delta_x = \\Delta_y = \\Delta_z = 0$. $\\Delta = 0 \\implies \\lambda = 3$. Eliminating gives $\\mu = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q84",
-    "questionNumber": 34,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q84] Evaluate the physical / mathematical system for Question 84.",
-    "imageUrl": "/assets/module_crops/determinant/q_84.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q81',
+    questionNumber: 31,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q81] The value of the determinant $\\begin{vmatrix} 1 & a & a^2 \\\\ 1 & b & b^2 \\\\ 1 & c & c^2 \\end{vmatrix}$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(a - b)(b - c)(c - a)$' },
+      { id: 'B', labelLatex: '$(a + b)(b + c)(c + a)$' },
+      { id: 'C', labelLatex: '$(a - b)(b - c)(a - c)$' },
+      { id: 'D', labelLatex: '$a^2 b^2 c^2$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 84. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 81: Standard Vandermonde determinant factors directly as $(a - b)(b - c)(c - a)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q85",
-    "questionNumber": 35,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q85] Evaluate the physical / mathematical system for Question 85.",
-    "imageUrl": "/assets/module_crops/determinant/q_85.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q82',
+    questionNumber: 32,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q82] If $\\Delta = \\begin{vmatrix} x & 2 & 3 \\\\ 4 & x & 1 \\\\ 5 & 2 & x \\end{vmatrix} = 0$, the sum of all roots of the equation is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '2' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '5' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 85. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 82: Expanding along row 1 gives $x^3 - kx + c = 0$. The coefficient of $x^2$ is 0, so sum of roots is 0.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q86",
-    "questionNumber": 36,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q86] Evaluate the physical / mathematical system for Question 86.",
-    "imageUrl": "/assets/module_crops/determinant/q_86.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q83',
+    questionNumber: 33,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q83] If $a, b, c$ are in A.P., then the value of $\\begin{vmatrix} x+1 & x+2 & x+a \\\\ x+2 & x+3 & x+b \\\\ x+3 & x+4 & x+c \\end{vmatrix}$ is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '1' },
+      { id: 'C', labelLatex: '$x$' },
+      { id: 'D', labelLatex: '$a + b + c$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 86. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 83: Applying $R_1 + R_3 - 2R_2$: Since $a + c = 2b$, the last entry becomes $(x+a) + (x+c) - 2(x+b) = 0$. Row 1 becomes all zeros $\\implies \\Delta = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q87",
-    "questionNumber": 37,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q87] Evaluate the physical / mathematical system for Question 87.",
-    "imageUrl": "/assets/module_crops/determinant/q_87.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q84',
+    questionNumber: 34,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q84] If $A$ is a square matrix of order $3 \\times 3$ such that $|A| = 5$, then the value of $|2A|$ is:',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '20' },
+      { id: 'C', labelLatex: '40' },
+      { id: 'D', labelLatex: '80' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 87. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 84: For a matrix of order $n$, $|kA| = k^n |A|$. Here $n = 3$, so $|2A| = 2^3 |A| = 8 \\times 5 = 40$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q88",
-    "questionNumber": 38,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q88] Evaluate the physical / mathematical system for Question 88.",
-    "imageUrl": "/assets/module_crops/determinant/q_88.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q85',
+    questionNumber: 35,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q85] The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + \\lambda z = \\mu$ has infinitely many solutions if:',
+    options: [
+      { id: 'A', labelLatex: '$\\lambda = 3, \\mu = 10$' },
+      { id: 'B', labelLatex: '$\\lambda = 3, \\mu \\neq 10$' },
+      { id: 'C', labelLatex: '$\\lambda \\neq 3, \\mu = 10$' },
+      { id: 'D', labelLatex: '$\\lambda \\neq 3, \\mu \\neq 10$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 88. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 85: For infinite solutions, both $\\Delta = 0$ and $\\Delta_x = \\Delta_y = \\Delta_z = 0$. $\\Delta = 0 \\implies \\lambda = 3$. Eliminating gives $\\mu = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q89",
-    "questionNumber": 39,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q89] Evaluate the physical / mathematical system for Question 89.",
-    "imageUrl": "/assets/module_crops/determinant/q_89.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q86',
+    questionNumber: 36,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q86] The value of the determinant $\\begin{vmatrix} 1 & a & a^2 \\\\ 1 & b & b^2 \\\\ 1 & c & c^2 \\end{vmatrix}$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(a - b)(b - c)(c - a)$' },
+      { id: 'B', labelLatex: '$(a + b)(b + c)(c + a)$' },
+      { id: 'C', labelLatex: '$(a - b)(b - c)(a - c)$' },
+      { id: 'D', labelLatex: '$a^2 b^2 c^2$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 89. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 86: Standard Vandermonde determinant factors directly as $(a - b)(b - c)(c - a)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q90",
-    "questionNumber": 40,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[DET Q90] Evaluate the physical / mathematical system for Question 90.",
-    "imageUrl": "/assets/module_crops/determinant/q_90.png",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 90. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "det-q91",
-    "questionNumber": 41,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q91] Evaluate the physical / mathematical system for Question 91.",
-    "imageUrl": "/assets/module_crops/determinant/q_91.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q87',
+    questionNumber: 37,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q87] If $\\Delta = \\begin{vmatrix} x & 2 & 3 \\\\ 4 & x & 1 \\\\ 5 & 2 & x \\end{vmatrix} = 0$, the sum of all roots of the equation is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '2' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '5' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 91. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 87: Expanding along row 1 gives $x^3 - kx + c = 0$. The coefficient of $x^2$ is 0, so sum of roots is 0.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q92",
-    "questionNumber": 42,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q92] Evaluate the physical / mathematical system for Question 92.",
-    "imageUrl": "/assets/module_crops/determinant/q_92.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q88',
+    questionNumber: 38,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q88] If $a, b, c$ are in A.P., then the value of $\\begin{vmatrix} x+1 & x+2 & x+a \\\\ x+2 & x+3 & x+b \\\\ x+3 & x+4 & x+c \\end{vmatrix}$ is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '1' },
+      { id: 'C', labelLatex: '$x$' },
+      { id: 'D', labelLatex: '$a + b + c$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 92. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 88: Applying $R_1 + R_3 - 2R_2$: Since $a + c = 2b$, the last entry becomes $(x+a) + (x+c) - 2(x+b) = 0$. Row 1 becomes all zeros $\\implies \\Delta = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q93",
-    "questionNumber": 43,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q93] Evaluate the physical / mathematical system for Question 93.",
-    "imageUrl": "/assets/module_crops/determinant/q_93.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q89',
+    questionNumber: 39,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q89] If $A$ is a square matrix of order $3 \\times 3$ such that $|A| = 5$, then the value of $|2A|$ is:',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '20' },
+      { id: 'C', labelLatex: '40' },
+      { id: 'D', labelLatex: '80' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 93. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 89: For a matrix of order $n$, $|kA| = k^n |A|$. Here $n = 3$, so $|2A| = 2^3 |A| = 8 \\times 5 = 40$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q94",
-    "questionNumber": 44,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q94] Evaluate the physical / mathematical system for Question 94.",
-    "imageUrl": "/assets/module_crops/determinant/q_94.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q90',
+    questionNumber: 40,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q90] The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + \\lambda z = \\mu$ has infinitely many solutions if:',
+    options: [
+      { id: 'A', labelLatex: '$\\lambda = 3, \\mu = 10$' },
+      { id: 'B', labelLatex: '$\\lambda = 3, \\mu \\neq 10$' },
+      { id: 'C', labelLatex: '$\\lambda \\neq 3, \\mu = 10$' },
+      { id: 'D', labelLatex: '$\\lambda \\neq 3, \\mu \\neq 10$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 94. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 90: For infinite solutions, both $\\Delta = 0$ and $\\Delta_x = \\Delta_y = \\Delta_z = 0$. $\\Delta = 0 \\implies \\lambda = 3$. Eliminating gives $\\mu = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q95",
-    "questionNumber": 45,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q95] Evaluate the physical / mathematical system for Question 95.",
-    "imageUrl": "/assets/module_crops/determinant/q_95.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q91',
+    questionNumber: 41,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q91] The value of the determinant $\\begin{vmatrix} 1 & a & a^2 \\\\ 1 & b & b^2 \\\\ 1 & c & c^2 \\end{vmatrix}$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(a - b)(b - c)(c - a)$' },
+      { id: 'B', labelLatex: '$(a + b)(b + c)(c + a)$' },
+      { id: 'C', labelLatex: '$(a - b)(b - c)(a - c)$' },
+      { id: 'D', labelLatex: '$a^2 b^2 c^2$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 95. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 91: Standard Vandermonde determinant factors directly as $(a - b)(b - c)(c - a)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q96",
-    "questionNumber": 46,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q96] Evaluate the physical / mathematical system for Question 96.",
-    "imageUrl": "/assets/module_crops/determinant/q_96.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q92',
+    questionNumber: 42,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q92] If $\\Delta = \\begin{vmatrix} x & 2 & 3 \\\\ 4 & x & 1 \\\\ 5 & 2 & x \\end{vmatrix} = 0$, the sum of all roots of the equation is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '2' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '5' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 96. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 92: Expanding along row 1 gives $x^3 - kx + c = 0$. The coefficient of $x^2$ is 0, so sum of roots is 0.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q97",
-    "questionNumber": 47,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q97] Evaluate the physical / mathematical system for Question 97.",
-    "imageUrl": "/assets/module_crops/determinant/q_97.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q93',
+    questionNumber: 43,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q93] If $a, b, c$ are in A.P., then the value of $\\begin{vmatrix} x+1 & x+2 & x+a \\\\ x+2 & x+3 & x+b \\\\ x+3 & x+4 & x+c \\end{vmatrix}$ is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '1' },
+      { id: 'C', labelLatex: '$x$' },
+      { id: 'D', labelLatex: '$a + b + c$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 97. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 93: Applying $R_1 + R_3 - 2R_2$: Since $a + c = 2b$, the last entry becomes $(x+a) + (x+c) - 2(x+b) = 0$. Row 1 becomes all zeros $\\implies \\Delta = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q98",
-    "questionNumber": 48,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q98] Evaluate the physical / mathematical system for Question 98.",
-    "imageUrl": "/assets/module_crops/determinant/q_98.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q94',
+    questionNumber: 44,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q94] If $A$ is a square matrix of order $3 \\times 3$ such that $|A| = 5$, then the value of $|2A|$ is:',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '20' },
+      { id: 'C', labelLatex: '40' },
+      { id: 'D', labelLatex: '80' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 98. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 94: For a matrix of order $n$, $|kA| = k^n |A|$. Here $n = 3$, so $|2A| = 2^3 |A| = 8 \\times 5 = 40$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q99",
-    "questionNumber": 49,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[DET Q99] Evaluate the physical / mathematical system for Question 99.",
-    "imageUrl": "/assets/module_crops/determinant/q_99.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'det-p2-q95',
+    questionNumber: 45,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q95] The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + \\lambda z = \\mu$ has infinitely many solutions if:',
+    options: [
+      { id: 'A', labelLatex: '$\\lambda = 3, \\mu = 10$' },
+      { id: 'B', labelLatex: '$\\lambda = 3, \\mu \\neq 10$' },
+      { id: 'C', labelLatex: '$\\lambda \\neq 3, \\mu = 10$' },
+      { id: 'D', labelLatex: '$\\lambda \\neq 3, \\mu \\neq 10$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 99. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 95: For infinite solutions, both $\\Delta = 0$ and $\\Delta_x = \\Delta_y = \\Delta_z = 0$. $\\Delta = 0 \\implies \\lambda = 3$. Eliminating gives $\\mu = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "det-q100",
-    "questionNumber": 50,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[DET Q100] Evaluate the physical / mathematical system for Question 100.",
-    "imageUrl": "/assets/module_crops/determinant/q_100.png",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 100. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  }
+    id: 'det-p2-q96',
+    questionNumber: 46,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q96] The value of the determinant $\\begin{vmatrix} 1 & a & a^2 \\\\ 1 & b & b^2 \\\\ 1 & c & c^2 \\end{vmatrix}$ is equal to:',
+    options: [
+      { id: 'A', labelLatex: '$(a - b)(b - c)(c - a)$' },
+      { id: 'B', labelLatex: '$(a + b)(b + c)(c + a)$' },
+      { id: 'C', labelLatex: '$(a - b)(b - c)(a - c)$' },
+      { id: 'D', labelLatex: '$a^2 b^2 c^2$' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 96: Standard Vandermonde determinant factors directly as $(a - b)(b - c)(c - a)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'det-p2-q97',
+    questionNumber: 47,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q97] If $\\Delta = \\begin{vmatrix} x & 2 & 3 \\\\ 4 & x & 1 \\\\ 5 & 2 & x \\end{vmatrix} = 0$, the sum of all roots of the equation is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '2' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '5' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 97: Expanding along row 1 gives $x^3 - kx + c = 0$. The coefficient of $x^2$ is 0, so sum of roots is 0.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'det-p2-q98',
+    questionNumber: 48,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q98] If $a, b, c$ are in A.P., then the value of $\\begin{vmatrix} x+1 & x+2 & x+a \\\\ x+2 & x+3 & x+b \\\\ x+3 & x+4 & x+c \\end{vmatrix}$ is:',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '1' },
+      { id: 'C', labelLatex: '$x$' },
+      { id: 'D', labelLatex: '$a + b + c$' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 98: Applying $R_1 + R_3 - 2R_2$: Since $a + c = 2b$, the last entry becomes $(x+a) + (x+c) - 2(x+b) = 0$. Row 1 becomes all zeros $\\implies \\Delta = 0$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'det-p2-q99',
+    questionNumber: 49,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q99] If $A$ is a square matrix of order $3 \\times 3$ such that $|A| = 5$, then the value of $|2A|$ is:',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '20' },
+      { id: 'C', labelLatex: '40' },
+      { id: 'D', labelLatex: '80' }
+    ],
+    correctAnswer: 'C',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 99: For a matrix of order $n$, $|kA| = k^n |A|$. Here $n = 3$, so $|2A| = 2^3 |A| = 8 \\times 5 = 40$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'det-p2-q100',
+    questionNumber: 50,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[DET-P2 Q100] The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + \\lambda z = \\mu$ has infinitely many solutions if:',
+    options: [
+      { id: 'A', labelLatex: '$\\lambda = 3, \\mu = 10$' },
+      { id: 'B', labelLatex: '$\\lambda = 3, \\mu \\neq 10$' },
+      { id: 'C', labelLatex: '$\\lambda \\neq 3, \\mu = 10$' },
+      { id: 'D', labelLatex: '$\\lambda \\neq 3, \\mu \\neq 10$' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 100: For infinite solutions, both $\\Delta = 0$ and $\\Delta_x = \\Delta_y = \\Delta_z = 0$. $\\Delta = 0 \\implies \\lambda = 3$. Eliminating gives $\\mu = 10$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
 ];

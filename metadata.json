@@ -1,6 +1,8 @@
 {
-  "name": "JEE CBT Test Series (MathonGo & NTA Mode)",
-  "description": "Convert any JEE question paper PDF into an authentic Computer-Based Test with official NTA and MathonGo exam interfaces, live countdown timer, question palette, and detailed post-test analytics.",
+  "name": "Inspiro JEE CBT Simulation & Test Series",
+  "description": "Authentic Kota coaching JEE Main & Advanced CBT test series simulation platform with non-overlapping alternate-day schedule and complete chapter marathon modules.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

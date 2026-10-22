@@ -325,13 +325,6 @@ Solution: By Taylor expansion $\\sin(3x) = 3x - \\frac{(3x)^3}{6} = 3x - \\frac{
         body: JSON.stringify({
           fileBase64: compressed.base64,
           mimeType: compressed.mimeType,
-          images: [
-            {
-              base64: compressed.base64,
-              mimeType: compressed.mimeType,
-              name: file.name,
-            },
-          ],
           examTitle: title,
           pattern: selectedPattern,
           customDurationMinutes: durationMinutes,

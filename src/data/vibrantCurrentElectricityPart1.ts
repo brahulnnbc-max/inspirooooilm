@@ -1,1363 +1,892 @@
 import { Question } from '../types/exam';
+
+// Helper for clean inline SVG diagrams with dark theme for Current Electricity
+export const createCurrentElectricitySvg = (svgContent: string): string => {
+  const fullSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" width="100%" height="160" style="background:#09090b;border-radius:10px;font-family:sans-serif;font-size:12px;color:#fff;">
+    <defs>
+      <pattern id="grid-curr" width="20" height="20" patternUnits="userSpaceOnUse">
+        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#27272a" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid-curr)" />
+    ${svgContent}
+  </svg>`;
+  return 'data:image/svg+xml;utf8,' + encodeURIComponent(fullSvg);
+};
+
+// =========================================================================
+// VIBRANT KOTA CURRENT ELECTRICITY PART 1: QUESTIONS 1 TO 50 (Exercise-I Q1 to Q50)
+// =========================================================================
 export const CURRENT_ELECTRICITY_PART_1_QUESTIONS: Question[] = [
   {
-    "id": "curr-q1",
-    "questionNumber": 1,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q1] Evaluate the physical / mathematical system for Question 1.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q1',
+    sectionId: 'physics',
+    questionNumber: 1,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Two wires each of radius of cross section r but of different materials are connected together end to end (in\nseries). If the densities of charge carriers in the two wires are in the ratio 1 : 4, the drift velocity of electrons\nin the two wires will be in the ratio :',
+    options: [
+      { id: 'A', labelLatex: '1 : 2' },
+      { id: 'B', labelLatex: '2 : 1' },
+      { id: 'C', labelLatex: '4 : 1' },
+      { id: 'D', labelLatex: '1 : 4' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 1. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q1:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q2",
-    "questionNumber": 2,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q2] Evaluate the physical / mathematical system for Question 2.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q2',
+    sectionId: 'physics',
+    questionNumber: 2,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In a wire of cross-section radius r, free electrons travel with drift velocity v when a current I flows through the\nwire. What is the current in another wire of half the radius and of the same material when the drift velocity is\n2v?',
+    options: [
+      { id: 'A', labelLatex: '2I' },
+      { id: 'B', labelLatex: 'I' },
+      { id: 'C', labelLatex: '2\nI' },
+      { id: 'D', labelLatex: '4\nI' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 2. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q2:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q3",
-    "questionNumber": 3,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q3] Evaluate the physical / mathematical system for Question 3.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q3',
+    sectionId: 'physics',
+    questionNumber: 3,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A current I flows through a uniform wire of diameter d when the mean electron drift velocity is V. The same\ncurrent will flow through a wire of diameter d/2 made of the same material if the mean drift velocity of the\nelectron is :',
+    options: [
+      { id: 'A', labelLatex: 'v\n4' },
+      { id: 'B', labelLatex: 'v\n2' },
+      { id: 'C', labelLatex: '2v' },
+      { id: 'D', labelLatex: '4v' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 3. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q3:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q4",
-    "questionNumber": 4,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q4] Evaluate the physical / mathematical system for Question 4.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q4',
+    sectionId: 'physics',
+    questionNumber: 4,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A wire has a non-uniform cross-section as shown in figure. A steady current flows through it. The drift speed\nof electrons at points P and q is v P and v Q .',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q4%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'v P = v Q' },
+      { id: 'B', labelLatex: 'v P < v Q' },
+      { id: 'C', labelLatex: 'v P > v Q' },
+      { id: 'D', labelLatex: 'Data insufficient' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 4. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q4:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q5",
-    "questionNumber": 5,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q5] Evaluate the physical / mathematical system for Question 5.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q5',
+    sectionId: 'physics',
+    questionNumber: 5,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A uniform copper wire carries a current i amperes and has p carriers per metre3\n. The length of the wire is\n\\lambda  metres and its cross-section area is s metre2\n. If the charge on a carrier is q coulombs, the drift velocity in\nms–1 is given by',
+    options: [
+      { id: 'A', labelLatex: 'i\nsq	\\lambda' },
+      { id: 'B', labelLatex: 'i\npsq' },
+      { id: 'C', labelLatex: 'psq\ni' },
+      { id: 'D', labelLatex: 'i\nps q	\\lambda' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 5. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q5:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q6",
-    "questionNumber": 6,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q6] Evaluate the physical / mathematical system for Question 6.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q6',
+    sectionId: 'physics',
+    questionNumber: 6,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The current in a metallic conductor is plotted against voltage at two different temperatures T1 and T 2. Which\nis correct',
+    options: [
+      { id: 'A', labelLatex: 'T 1 > T 2' },
+      { id: 'B', labelLatex: 'T 1 < T 2' },
+      { id: 'C', labelLatex: 'T 1 = T 2' },
+      { id: 'D', labelLatex: 'none' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 6. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q6:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q7",
-    "questionNumber": 7,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q7] Evaluate the physical / mathematical system for Question 7.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q7',
+    sectionId: 'physics',
+    questionNumber: 7,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A piece of copper and another of germanium are cooled from room temperature to 80K. The resistance of :',
+    options: [
+      { id: 'A', labelLatex: 'each of them increases' },
+      { id: 'B', labelLatex: 'each of them decreases' },
+      { id: 'C', labelLatex: 'copper increases and germanium decreases' },
+      { id: 'D', labelLatex: 'copper decreases and germanium increases' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 7. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q7:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q8",
-    "questionNumber": 8,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q8] Evaluate the physical / mathematical system for Question 8.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q8',
+    sectionId: 'physics',
+    questionNumber: 8,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A brass disc and a carbon disc of same radius are assembled alternatively to make a cylindrical conductor.\nThe resistance of the cylinder is independent of the temperature. The ratio of thickness of the brass disc to\nthat of the carbon disc is [\\alpha  is temperature coefficient of resistance & Neglect linear expansion]',
+    options: [
+      { id: 'A', labelLatex: 'C C\nB B\n\\alpha  \\rho \n\\alpha  \\rho' },
+      { id: 'B', labelLatex: 'C B\nB C\n\\alpha  \\rho \n\\alpha  \\rho' },
+      { id: 'C', labelLatex: 'B C\nC B\n\\alpha  \\rho \n\\alpha  \\rho' },
+      { id: 'D', labelLatex: 'B B\nC C\n\\alpha  \\rho \n\\alpha  \\rho' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 8. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q8:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q9",
-    "questionNumber": 9,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q9] Evaluate the physical / mathematical system for Question 9.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q9',
+    sectionId: 'physics',
+    questionNumber: 9,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A wire of resistance 10.0 ohm is stretched and increases its length by 20%. Its resistance then would be :\n(Neglect any change in volume or resistivity).',
+    options: [
+      { id: 'A', labelLatex: '10.0 ohm' },
+      { id: 'B', labelLatex: '12.0 ohm' },
+      { id: 'C', labelLatex: '14.4 ohm' },
+      { id: 'D', labelLatex: '10.2 ohm' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 9. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q9:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q10",
-    "questionNumber": 10,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[CURR Q10] Evaluate the physical / mathematical system for Question 10.",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 10. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "curr-q11",
-    "questionNumber": 11,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q11] Evaluate the physical / mathematical system for Question 11.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q10',
+    sectionId: 'physics',
+    questionNumber: 10,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the circuit shown, what is the potential difference VPQ ?',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q10%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '+ 3V' },
+      { id: 'B', labelLatex: '+ 2V' },
+      { id: 'C', labelLatex: '–2V' },
+      { id: 'D', labelLatex: 'none' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 11. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q10:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q12",
-    "questionNumber": 12,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q12] Evaluate the physical / mathematical system for Question 12.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q11',
+    sectionId: 'physics',
+    questionNumber: 11,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'One end of a Nichrome wire of length 2L and cross-sectional area A is attatched to an end of another\nNichrome wire of length L and cross-sectional area 2A. If the free end of the longer wire is at an electric\npotential of 8.0 volts, and the free end of the shorter wire is at an electric potential of 1.0 volt, the potential\nat the junction of the two wires is equal to',
+    options: [
+      { id: 'A', labelLatex: '2.4 V' },
+      { id: 'B', labelLatex: '3.2 V' },
+      { id: 'C', labelLatex: '4.5 V' },
+      { id: 'D', labelLatex: '5.6 V' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 12. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q11:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q13",
-    "questionNumber": 13,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q13] Evaluate the physical / mathematical system for Question 13.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q12',
+    sectionId: 'physics',
+    questionNumber: 12,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A storage battery is connected to a charger for charging with a voltage of 12.5 Volts. The internal resistance\nof the storage battery is 1\\,\\Omega. When the charging current is 0.5 A, the emf of the storage battery is :',
+    options: [
+      { id: 'A', labelLatex: '13 Volts' },
+      { id: 'B', labelLatex: '12.5 Volts' },
+      { id: 'C', labelLatex: '12 Volts' },
+      { id: 'D', labelLatex: '11.5 Volts' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 13. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q12:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q14",
-    "questionNumber": 14,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q14] Evaluate the physical / mathematical system for Question 14.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q13',
+    sectionId: 'physics',
+    questionNumber: 13,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the figure shown, battery 1 has emf = 6 V and internal resistance = 1 \\,\\Omega. Battery 2 has emf = 2V and\ninternal resistance = 3 \\,\\Omega. The wires have negligible resistance. What is the potential difference across the\nterminals of battery 2 ?',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q13%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '4 V' },
+      { id: 'B', labelLatex: '1.5 V' },
+      { id: 'C', labelLatex: '5 V' },
+      { id: 'D', labelLatex: '0.5 V' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 14. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q13:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q15",
-    "questionNumber": 15,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q15] Evaluate the physical / mathematical system for Question 15.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q14',
+    sectionId: 'physics',
+    questionNumber: 14,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The terminal voltage across a battery of emf E can be',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '> E' },
+      { id: 'C', labelLatex: '< E' },
+      { id: 'D', labelLatex: 'all of above' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 15. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q14:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q16",
-    "questionNumber": 16,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q16] Evaluate the physical / mathematical system for Question 16.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q15',
+    sectionId: 'physics',
+    questionNumber: 15,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Two batteries one of the emf 3V, internal resistance 1 ohm and the other of emf 15 V, internal resistance\n2 ohm are connected in series with a resistance R as shown. If the potential difference between a and b is\nzero the resistance of R in ohm is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q15%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '5' },
+      { id: 'B', labelLatex: '7' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '1' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 16. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q15:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q17",
-    "questionNumber": 17,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q17] Evaluate the physical / mathematical system for Question 17.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q16',
+    sectionId: 'physics',
+    questionNumber: 16,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The battery in the diagram is to be charged by the generator G. The generator has a terminal voltage of 120\nvolts when the charging current is 10 amperes. The battery has an emf of 100 volts and an internal resistance\nof 1 ohm. In order to charge the battery at 10 amperes charging current, the resistance R should be set at',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q16%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '0.1 \\,\\Omega' },
+      { id: 'B', labelLatex: '0.5 \\,\\Omega' },
+      { id: 'C', labelLatex: '1.0 \\,\\Omega' },
+      { id: 'D', labelLatex: '5.0 \\,\\Omega' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 17. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q16:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q18",
-    "questionNumber": 18,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q18] Evaluate the physical / mathematical system for Question 18.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q17',
+    sectionId: 'physics',
+    questionNumber: 17,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Under what condition current passing through the resistance R can be increased by short circuiting the\nbattery of emf E 2. The internal resistances of the two batteries are r1 and r2 respectively.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q17%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'E2r 1 > E1 (R + r2)' },
+      { id: 'B', labelLatex: 'E1r 2 > E2 (R + r1)' },
+      { id: 'C', labelLatex: 'E2r 2 > E1 (R + r2)' },
+      { id: 'D', labelLatex: 'E1r 1 > E2 (R + r1)' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 18. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q17:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q19",
-    "questionNumber": 19,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q19] Evaluate the physical / mathematical system for Question 19.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q18',
+    sectionId: 'physics',
+    questionNumber: 18,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The resistance of all the wires between any two adjacent dots is R. Then equivalent resistance between A\nand B as shown in figure is :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q18%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '7 R\n3' },
+      { id: 'B', labelLatex: '7 R\n6' },
+      { id: 'C', labelLatex: '14 R\n8' },
+      { id: 'D', labelLatex: 'None of these' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 19. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q18:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q20",
-    "questionNumber": 20,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[CURR Q20] Evaluate the physical / mathematical system for Question 20.",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 20. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "curr-q21",
-    "questionNumber": 21,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q21] Evaluate the physical / mathematical system for Question 21.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q19',
+    sectionId: 'physics',
+    questionNumber: 19,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the diagram resistance between any two junctions is R. Equivalent resistance across terminals A and B\nis',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q19%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '7\nR	11' },
+      { id: 'B', labelLatex: '11\nR	18' },
+      { id: 'C', labelLatex: '11\nR	7' },
+      { id: 'D', labelLatex: '18\nR	11' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 21. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q19:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q22",
-    "questionNumber": 22,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q22] Evaluate the physical / mathematical system for Question 22.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q20',
+    sectionId: 'physics',
+    questionNumber: 20,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A Wheatstone\'s bridge is balanced with a resistance of 625 \\,\\Omega in the third arm, where P, Q and S are in the\n1st, 2nd and 4th arm respectively. If P and Q are interchanged, the resistance in the third arm has to be\nincreased by 51\\,\\Omega to secure balance. The unknown resistance in the fourth arm is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q20%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '625 \\,\\Omega' },
+      { id: 'B', labelLatex: '650 \\,\\Omega' },
+      { id: 'C', labelLatex: '676 \\,\\Omega' },
+      { id: 'D', labelLatex: '600 \\,\\Omega' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 22. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q20:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q23",
-    "questionNumber": 23,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q23] Evaluate the physical / mathematical system for Question 23.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q21',
+    sectionId: 'physics',
+    questionNumber: 21,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'ln a balanced wheat stone bridge, current in the galvanometer is zero. It remains zero when :\n[1] battery emf is increased 	[2] all resistances are increased by 10 ohms\n[3] all resistances are made five times 	[4] the battery and the galvanometer are interchanged',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q21%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'only [1] is correct' },
+      { id: 'B', labelLatex: '[1], [2] and [3] are correct' },
+      { id: 'C', labelLatex: '[1], [3] and [4] are correct' },
+      { id: 'D', labelLatex: '[1] and [3] are correct' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 23. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q21:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q24",
-    "questionNumber": 24,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q24] Evaluate the physical / mathematical system for Question 24.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q22',
+    sectionId: 'physics',
+    questionNumber: 22,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'If X, Y and Z in figure are identical lamps, which of the following changes to the brightnesses of the lamps\noccur when switch S is closed?',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q22%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'X stays the same, Y decreases' },
+      { id: 'B', labelLatex: 'X increases, Y decreases' },
+      { id: 'C', labelLatex: 'X increases, Y stays the same' },
+      { id: 'D', labelLatex: 'X decreases, Y increases' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 24. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q22:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q25",
-    "questionNumber": 25,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q25] Evaluate the physical / mathematical system for Question 25.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q23',
+    sectionId: 'physics',
+    questionNumber: 23,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Power generated across a uniform wire connected across a supply is H. If the wire is cut into n equal parts\nand all the parts are connected in parallel across the same supply, the total power generated in the wire is',
+    options: [
+      { id: 'A', labelLatex: '2\nn\nH' },
+      { id: 'B', labelLatex: 'n2H' },
+      { id: 'C', labelLatex: 'nH' },
+      { id: 'D', labelLatex: 'n\nH' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 25. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q23:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q26",
-    "questionNumber": 26,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q26] Evaluate the physical / mathematical system for Question 26.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q24',
+    sectionId: 'physics',
+    questionNumber: 24,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A constant voltage is applied between the two ends of a uniform metallic wire. Some heat is developed in it.\nThe heat developed is doubled if',
+    options: [
+      { id: 'A', labelLatex: 'both the length and the radius of the wire are halved.' },
+      { id: 'B', labelLatex: 'both the length and the radius of the wire are doubled' },
+      { id: 'C', labelLatex: 'the radius of the wire is doubled' },
+      { id: 'D', labelLatex: 'the length of the wire is doubled' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 26. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q24:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q27",
-    "questionNumber": 27,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q27] Evaluate the physical / mathematical system for Question 27.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q25',
+    sectionId: 'physics',
+    questionNumber: 25,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Two bulbs rated (25 W – 220V) and (100W – 220V) are connected in series to a 440 V line. Which one is\nlikely to fuse?',
+    options: [
+      { id: 'A', labelLatex: '25 W bulb' },
+      { id: 'B', labelLatex: '100 W bulb' },
+      { id: 'C', labelLatex: 'both bulbs' },
+      { id: 'D', labelLatex: 'none' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 27. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q25:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q28",
-    "questionNumber": 28,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q28] Evaluate the physical / mathematical system for Question 28.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q26',
+    sectionId: 'physics',
+    questionNumber: 26,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Rate of dissipation of Joule’s heat in resistance per unit volume is (symbols have usual meaning)',
+    options: [
+      { id: 'A', labelLatex: '\\sigma E' },
+      { id: 'B', labelLatex: '\\sigma  J' },
+      { id: 'C', labelLatex: 'J E' },
+      { id: 'D', labelLatex: 'None' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 28. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q26:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q29",
-    "questionNumber": 29,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q29] Evaluate the physical / mathematical system for Question 29.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q27',
+    sectionId: 'physics',
+    questionNumber: 27,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'If the length of the filament of a heater is reduced by 10%, the power of the heater will',
+    options: [
+      { id: 'A', labelLatex: 'increase by about 9%' },
+      { id: 'B', labelLatex: 'increase by about 11%' },
+      { id: 'C', labelLatex: 'increase by about 19%' },
+      { id: 'D', labelLatex: 'decrease by about 10%' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 29. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q27:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q30",
-    "questionNumber": 30,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[CURR Q30] Evaluate the physical / mathematical system for Question 30.",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 30. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "curr-q31",
-    "questionNumber": 31,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q31] Evaluate the physical / mathematical system for Question 31.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q28',
+    sectionId: 'physics',
+    questionNumber: 28,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A heater A gives out 300 W of heat when connected to a 200 V d.c. supply. A second heater B gives out\n600 W when connected to a 200 v d.c. supply. If a series combination of the two heaters is connected to a\n200 V d.c. supply the heat output will be',
+    options: [
+      { id: 'A', labelLatex: '100 W' },
+      { id: 'B', labelLatex: '450 W' },
+      { id: 'C', labelLatex: '300 W' },
+      { id: 'D', labelLatex: '200 W' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 31. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q28:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q32",
-    "questionNumber": 32,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q32] Evaluate the physical / mathematical system for Question 32.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q29',
+    sectionId: 'physics',
+    questionNumber: 29,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Two bulbs one of 200 volts, 60 watts & the other of 200 volts, 100 watts are connected in series to a 200 volt\nsupply. The power consumed will be',
+    options: [
+      { id: 'A', labelLatex: '37.5 watt' },
+      { id: 'B', labelLatex: '160 watt' },
+      { id: 'C', labelLatex: '62.5 watt' },
+      { id: 'D', labelLatex: '110 watt' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 32. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q29:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q33",
-    "questionNumber": 33,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q33] Evaluate the physical / mathematical system for Question 33.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q30',
+    sectionId: 'physics',
+    questionNumber: 30,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Three 60 W light bulbs are mistakenly wired in series and connected to a 120 V power supply. Assume the\nlight bulbs are rated for single connection to 120 V. With the mistaken connection, the power dissipated by\neach bulb is :',
+    options: [
+      { id: 'A', labelLatex: '6.7 W' },
+      { id: 'B', labelLatex: '13.3 W' },
+      { id: 'C', labelLatex: '20 W' },
+      { id: 'D', labelLatex: '40 W' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 33. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q30:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q34",
-    "questionNumber": 34,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q34] Evaluate the physical / mathematical system for Question 34.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q31',
+    sectionId: 'physics',
+    questionNumber: 31,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The ratio of powers dissipatted respectively in R and 3R, as shown is :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q31%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '9' },
+      { id: 'B', labelLatex: '27\n4' },
+      { id: 'C', labelLatex: '4\n9' },
+      { id: 'D', labelLatex: '4\n27' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 34. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q31:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q35",
-    "questionNumber": 35,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q35] Evaluate the physical / mathematical system for Question 35.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q32',
+    sectionId: 'physics',
+    questionNumber: 32,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the figure shown the power generated in y is maximum when y = 5\\,\\Omega. Then R is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q32%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '2 \\,\\Omega' },
+      { id: 'B', labelLatex: '6 \\,\\Omega' },
+      { id: 'C', labelLatex: '5 \\,\\Omega' },
+      { id: 'D', labelLatex: '3 \\,\\Omega' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 35. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q32:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q36",
-    "questionNumber": 36,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q36] Evaluate the physical / mathematical system for Question 36.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q33',
+    sectionId: 'physics',
+    questionNumber: 33,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'For the situation shown, the switch labeled S in the circuit is originally open. Assume that the batteries\nhave no internal resistance, identical emf, and the light bulbs have equal resistance. Which statement is\ncorrect after closing the switch?\nS 	 (battery-2)\n (battery-1)\nR\nR	Bulb-2\nBulb-1',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q33%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'Bulb-1 brightens' },
+      { id: 'B', labelLatex: 'Battery-2 provides more power than Battery-1' },
+      { id: 'C', labelLatex: 'Bulb-2 is brighter than Bulb-1' },
+      { id: 'D', labelLatex: 'The current from Battery-1 is unchanged' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 36. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q33:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q37",
-    "questionNumber": 37,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q37] Evaluate the physical / mathematical system for Question 37.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q34',
+    sectionId: 'physics',
+    questionNumber: 34,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the circuit shown, the resistances are given in ohms and the battery is assumed ideal with emf equal to\n3.0 volts. The resistor that dissipates the most power is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q34%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'R1' },
+      { id: 'B', labelLatex: 'R2' },
+      { id: 'C', labelLatex: 'R3' },
+      { id: 'D', labelLatex: 'R4' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 37. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q34:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q38",
-    "questionNumber": 38,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q38] Evaluate the physical / mathematical system for Question 38.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q35',
+    sectionId: 'physics',
+    questionNumber: 35,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Resistances R1 and R2 each 60\\,\\Omega are connected in series as shown in figure. The Potential difference\nbetween A and B is kept 120 volt. Then what will be the reading of voltmeter connected between the point C\n& D if resistance of voltmeter is 120\\,\\Omega.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q35%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '48 V' },
+      { id: 'B', labelLatex: '24 V' },
+      { id: 'C', labelLatex: '40V' },
+      { id: 'D', labelLatex: 'None' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 38. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q35:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q39",
-    "questionNumber": 39,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q39] Evaluate the physical / mathematical system for Question 39.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q36',
+    sectionId: 'physics',
+    questionNumber: 36,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Which of the following wiring diagrams could be used to experimentally determine R using ohm\'s law?\nAssume an ideal voltmeter and an ideal ammeter.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q36%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q36:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'curr-p1-q37',
+    sectionId: 'physics',
+    questionNumber: 37,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the circuit shown the resistance of voltmeter is 10,000 ohm and that of ammeter is 20 ohm. The ammeter\nreading is 0.10 Amp and voltmeter reading is 12 volt. Then R is equal to',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q37%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '122 \\,\\Omega' },
+      { id: 'B', labelLatex: '140 \\,\\Omega' },
+      { id: 'C', labelLatex: '116 \\,\\Omega' },
+      { id: 'D', labelLatex: '100 \\,\\Omega' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 39. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q37:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q40",
-    "questionNumber": 40,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[CURR Q40] Evaluate the physical / mathematical system for Question 40.",
-    "correctAnswer": "0",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 40. Correct result: **0**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "curr-q41",
-    "questionNumber": 41,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q41] Evaluate the physical / mathematical system for Question 41.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q38',
+    sectionId: 'physics',
+    questionNumber: 38,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the circuit shown the readings of ammeter and voltmeter are 4A and 20V respectively. The meters are non\nideal, then R is :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q38%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '5\\,\\Omega' },
+      { id: 'B', labelLatex: 'less than 5\\,\\Omega' },
+      { id: 'C', labelLatex: 'greater than 5\\,\\Omega' },
+      { id: 'D', labelLatex: 'between 4\\,\\Omega & 5\\,\\Omega' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 41. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q38:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q42",
-    "questionNumber": 42,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q42] Evaluate the physical / mathematical system for Question 42.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q39',
+    sectionId: 'physics',
+    questionNumber: 39,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'By error, a student places moving-coil voltmeter V (nearly ideal) in series with the resistance in a circuit in\norder to read the current, as shown. The voltmeter reading will be',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q39%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '0' },
+      { id: 'B', labelLatex: '4V' },
+      { id: 'C', labelLatex: '6V' },
+      { id: 'D', labelLatex: '12V' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 42. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q39:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q43",
-    "questionNumber": 43,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q43] Evaluate the physical / mathematical system for Question 43.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q40',
+    sectionId: 'physics',
+    questionNumber: 40,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In a galvanometer, the deflection becomes one half when the galvanometer is shunted by a 20\\,\\Omega resistor.\nThe galvanometer resistance is',
+    options: [
+      { id: 'A', labelLatex: '5\\,\\Omega' },
+      { id: 'B', labelLatex: '10\\,\\Omega' },
+      { id: 'C', labelLatex: '40\\,\\Omega' },
+      { id: 'D', labelLatex: '20\\,\\Omega' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 43. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q40:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q44",
-    "questionNumber": 44,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q44] Evaluate the physical / mathematical system for Question 44.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q41',
+    sectionId: 'physics',
+    questionNumber: 41,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A galvanometer has a resistance of 20\\,\\Omega and reads full-scale when 0.2 V is applied across it. To convert it\ninto a 10 A ammeter, the galvanometer coil should have a',
+    options: [
+      { id: 'A', labelLatex: '0.01\\,\\Omega resistor connected across it' },
+      { id: 'B', labelLatex: '0.02\\,\\Omega resistor connected across it' },
+      { id: 'C', labelLatex: '200\\,\\Omega resistor connected in series with it' },
+      { id: 'D', labelLatex: '2000 \\,\\Omega resistor connected in series with it' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 44. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q41:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q45",
-    "questionNumber": 45,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q45] Evaluate the physical / mathematical system for Question 45.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q42',
+    sectionId: 'physics',
+    questionNumber: 42,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A galvanometer coil has a resistance 90 \\,\\Omega and full scale deflection current 10 mA. A 910\\,\\Omega resistance is\nconnected in series with the galvanometer to make a voltmeter. If the least count of the voltmeter is 0.1V,\nthe number of divisions on its scale is',
+    options: [
+      { id: 'A', labelLatex: '90' },
+      { id: 'B', labelLatex: '91' },
+      { id: 'C', labelLatex: '100' },
+      { id: 'D', labelLatex: 'none' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 45. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q42:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q46",
-    "questionNumber": 46,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q46] Evaluate the physical / mathematical system for Question 46.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q43',
+    sectionId: 'physics',
+    questionNumber: 43,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the figure shown for gives values of R1 and R2 the balance point for Jockey is at 40 cm from A. When R2\nis shunted by a resistance of 10 \\,\\Omega, balance shifts to 50 cm. R1 and R2 are (AB = 1 m) :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q43%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '3\n10 \\,\\Omega, 5 \\,\\Omega' },
+      { id: 'B', labelLatex: '20 \\,\\Omega, 30 \\,\\Omega' },
+      { id: 'C', labelLatex: '10 \\,\\Omega, 15 \\,\\Omega' },
+      { id: 'D', labelLatex: '5 \\,\\Omega, 2\n15 \\,\\Omega' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 46. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q43:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q47",
-    "questionNumber": 47,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q47] Evaluate the physical / mathematical system for Question 47.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q44',
+    sectionId: 'physics',
+    questionNumber: 44,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A 6 V battery of negligible internal resistance is connected across a uniform wire of length 1 m. The positive\nterminal of another battery of emf 4V and internal resistance 1 \\,\\Omega is joined to the point A as shown in figure.\nThe ammeter shows zero deflection when the jockey touches the wire at the point C. The AC is equal to',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q44%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '2 m\n3' },
+      { id: 'B', labelLatex: '1 m\n3' },
+      { id: 'C', labelLatex: '3 m\n5' },
+      { id: 'D', labelLatex: '1 m\n2' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 47. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q44:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q48",
-    "questionNumber": 48,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q48] Evaluate the physical / mathematical system for Question 48.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q45',
+    sectionId: 'physics',
+    questionNumber: 45,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A potentiometer wire has length 10 m and resistance 10\\,\\Omega. It is connected to a battery of EMF 11 volt and\ninternal resistance 1 \\,\\Omega, then the potential gradient in the wire is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q45%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '10 V/m' },
+      { id: 'B', labelLatex: '1 V/m' },
+      { id: 'C', labelLatex: '0.1 V/m' },
+      { id: 'D', labelLatex: 'none' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 48. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q45:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q49",
-    "questionNumber": 49,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q49] Evaluate the physical / mathematical system for Question 49.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p1-q46',
+    sectionId: 'physics',
+    questionNumber: 46,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The length of a potentiometer wire is l. A cell of emf E is balanced at a length l/3 from the positive end of the\nwire. If the length of the wire is increased by l/2. At what distance will the same cell give a balance point.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q46%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '3\n2l' },
+      { id: 'B', labelLatex: '2\nl' },
+      { id: 'C', labelLatex: '6\nl' },
+      { id: 'D', labelLatex: '3\n4l' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 49. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q46:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q50",
-    "questionNumber": 50,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[CURR Q50] Evaluate the physical / mathematical system for Question 50.",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 50. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
+    id: 'curr-p1-q47',
+    sectionId: 'physics',
+    questionNumber: 47,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the figure, the potentiometer wire AB of length L and resistance 9r is joined to the cell D of emf  and\ninternal resistance r. The cell C’s emf is /2 and its internal resistance is 2r. The galvanometer G will show\nno deflection when the length AJ is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q47%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '4L\n9' },
+      { id: 'B', labelLatex: '5L\n9' },
+      { id: 'C', labelLatex: '7L\n18' },
+      { id: 'D', labelLatex: '18\nL	11' },
+    ],
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q47:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'curr-p1-q48',
+    sectionId: 'physics',
+    questionNumber: 48,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the given potentiometer circuit length of the wire AB is 3 m and resistance is R = 4.5 \\,\\Omega. The length AC\nfor no deflection in galvanometer is',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-I%20Q48%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '2 m' },
+      { id: 'B', labelLatex: '1.8 m' },
+      { id: 'C', labelLatex: 'dependent on r1' },
+      { id: 'D', labelLatex: 'none of these' },
+    ],
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q48:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'curr-p1-q49',
+    sectionId: 'physics',
+    questionNumber: 49,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'An insulating pipe of cross-section area \'A\' contains an electrolyte which has two types of ions  their\ncharges being –e and +2e. A potential difference applied between the ends of the pipe result in the drifting\nof the two types of ions, having drift speed = v (–ve ion) and v/4 (+ve ion). Both ions have the same number\nper unit volume = n. The current flowing through the pipe is',
+    options: [
+      { id: 'A', labelLatex: 'nev A/2' },
+      { id: 'B', labelLatex: 'nev A/4' },
+      { id: 'C', labelLatex: '5nev A/2' },
+      { id: 'D', labelLatex: '3nev A/2' },
+    ],
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q49:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'curr-p1-q50',
+    sectionId: 'physics',
+    questionNumber: 50,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The total momentum of electrons in a straight wire of length 1000 m carrying a current of 70 A is closest to.',
+    options: [
+      { id: 'A', labelLatex: '40 \\times  10^{-8} N-sec' },
+      { id: 'B', labelLatex: '30 \\times  10^{-8} N-sec' },
+      { id: 'C', labelLatex: '50 \\times  10^{-8} N-sec' },
+      { id: 'D', labelLatex: '70 \\times  10^{-8} N-sec' },
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-I Q50:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   }
 ];

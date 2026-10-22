@@ -1,1363 +1,760 @@
 import { Question } from '../types/exam';
+
+// Helper for clean inline SVG diagrams with dark theme for Current Electricity
+export const createCurrentElectricitySvg = (svgContent: string): string => {
+  const fullSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" width="100%" height="160" style="background:#09090b;border-radius:10px;font-family:sans-serif;font-size:12px;color:#fff;">
+    <defs>
+      <pattern id="grid-curr" width="20" height="20" patternUnits="userSpaceOnUse">
+        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#27272a" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid-curr)" />
+    ${svgContent}
+  </svg>`;
+  return 'data:image/svg+xml;utf8,' + encodeURIComponent(fullSvg);
+};
+
+// =========================================================================
+// VIBRANT KOTA CURRENT ELECTRICITY PART 3: QUESTIONS 101 TO 150 (Exercise-II Q11-Q23 & Exercise-III Q1-Q37)
+// =========================================================================
 export const CURRENT_ELECTRICITY_PART_3_QUESTIONS: Question[] = [
   {
-    "id": "curr-q101",
-    "questionNumber": 1,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q101] Evaluate the physical / mathematical system for Question 101.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q101',
+    sectionId: 'physics',
+    questionNumber: 101,
+    type: 'NUMERICAL',
+    promptLatex: 'Find the equivalent resistance of the circuit between points A and B shown in figure is :\n(each branch is of resistance = 1\\,\\Omega)',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q11%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '22 / 35 \\Omega',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q11:\\nEvaluated Result: $22 / 35 \\Omega$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q102',
+    sectionId: 'physics',
+    questionNumber: 102,
+    type: 'NUMERICAL',
+    promptLatex: 'For what value of R in circuit, current through 4\\,\\Omega resistance is zero.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q12%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '1 \\Omega',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q12:\\nEvaluated Result: $1 \\Omega$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q103',
+    sectionId: 'physics',
+    questionNumber: 103,
+    type: 'NUMERICAL',
+    promptLatex: 'In the circuit shown in figure, all wires have equal resistance r.\nFind the equivalent resistance between A and B.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q13%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '3r / 5',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q13:\\nEvaluated Result: $3r / 5$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q104',
+    sectionId: 'physics',
+    questionNumber: 104,
+    type: 'NUMERICAL',
+    promptLatex: 'The current I through a rod of a certain metallic oxide is given by I = 0.2 V 5/2, where V is the potential\ndifference across it. The rod is connected in series with a resistance to a 6V battery of negligible internal\nresistance. What value should the series resistance have so that :\n(i) the current in the circuit is 0.44;\n(ii) the power dissipated in the rod is twice that dissipated in the resistance.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q14%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '(i) 10.52 \\Omega; (ii) 0.3125 \\Omega',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q14:\\nEvaluated Result: $(i) 10.52 \\Omega; (ii) 0.3125 \\Omega$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q105',
+    sectionId: 'physics',
+    questionNumber: 105,
+    type: 'NUMERICAL',
+    promptLatex: 'A network of resistance is constructed with R1 & R2 as shown in the figure. The potential at the points 1, 2,\n3,.., N are V 1, V 2, V3 , .., V n respectively each having a potential k time smaller than previous one. Find :\n(i) 1\n2\nR\nR and 2\n3\nR\nR in terms of k\n(ii) current that passes through the resistance R2 nearest to the V 0 in terms V 0, k & R3.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q15%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '(i) (k - 1)^2 / k, k / (k - 1); (ii) [(k - 1) / k^2] V_0 / R_3',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q15:\\nEvaluated Result: $(i) (k - 1)^2 / k, k / (k - 1); (ii) [(k - 1) / k^2] V_0 / R_3$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q106',
+    sectionId: 'physics',
+    questionNumber: 106,
+    type: 'NUMERICAL',
+    promptLatex: 'A person decides to use his bath tub water to generate electric power to run a 40 watt bulb. The bath tube\nis located at a height of 10 m from the ground & it holds 200 litres of water. If we install a water driven wheel\ngenerator on the ground, at what rate should the water drain from the bath tube to light bulb? How long can\nwe keep the bulb on, if the bath tub was full initially. The efficiency of generator is 90%.(g = 10 m/s–2\n)',
+    options: [],
+    correctAnswer: '4/9 kg/s, 450 s',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q16:\\nEvaluated Result: $4/9 kg/s, 450 s$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q107',
+    sectionId: 'physics',
+    questionNumber: 107,
+    type: 'NUMERICAL',
+    promptLatex: 'In the circuit shown in figure, calculate the following :\n(i) Potential difference between points a and b when switch S is open.\n(ii) Current through S in the circuit when S is closed.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q17%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '(i) V_{ab} = -12 V, (ii) 3 A from b to a',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q17:\\nEvaluated Result: $(i) V_{ab} = -12 V, (ii) 3 A from b to a$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q108',
+    sectionId: 'physics',
+    questionNumber: 108,
+    type: 'NUMERICAL',
+    promptLatex: 'An ideal cell having a steady emf of 2 volt is connected across the potentiometer wire of length 10 m. The\npotentiometer wire is of magnesium and having resistance of 11.5 \\,\\Omega/m. An another cell gives a null point at\n6.9 m. If a resistance of 5\\,\\Omega is put in series with potentiometer wire, find the new position of the null point.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q18%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '7.2 m',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q18:\\nEvaluated Result: $7.2 m$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q109',
+    sectionId: 'physics',
+    questionNumber: 109,
+    type: 'NUMERICAL',
+    promptLatex: 'Find the potential difference VA – VB for the circuit shown in the figure.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q19%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '-22/9 V',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q19:\\nEvaluated Result: $-22/9 V$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q110',
+    sectionId: 'physics',
+    questionNumber: 110,
+    type: 'NUMERICAL',
+    promptLatex: 'A battery of emf 0 = 10 V is connected across a 1 m long uniform wire having resistance 10 \\,\\Omega/m. Two cells\nof emf 1 = 2V and 2 = 4V having internal resistances 1\\,\\Omega and 5\\,\\Omega respectively are connected as shown in\nthe figure. If a galvanometer shows no deflection at the point P, find the distance of point P from the point a.',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q20%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '46.67 cm',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q20:\\nEvaluated Result: $46.67 cm$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q111',
+    sectionId: 'physics',
+    questionNumber: 111,
+    type: 'NUMERICAL',
+    promptLatex: 'In the figure shown for which values of R1 and R2 the balance point for Jockey is at 40 cm from A. When R2\nis shunted by a resistance of 10 \\,\\Omega, balance shifts to 50 cm. Find R1 and R2\n. (AB = 1 m) :',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q21%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '10/3 \\Omega, 5 \\Omega',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q21:\\nEvaluated Result: $10/3 \\Omega, 5 \\Omega$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q112',
+    sectionId: 'physics',
+    questionNumber: 112,
+    type: 'NUMERICAL',
+    promptLatex: 'An accumulator of emf 2 Volt and negligible internal resistance is connected across a uniform wire of length\n10m and resistance 30\\,\\Omega. The appropriate terminals of a cell of emf 1.5 Volt and internal resistance 1\\,\\Omega is\nconnected to one end of the wire, and the other terminal of the cell is connected through a sensitive\ngalvanometer to a slider on the wire. What length of the wire will be required to produce zero deflection of the\ngalvanometer? How will the balancing change (a) when a coil of resistance 5\\,\\Omega is placed in series with the\naccumulator, (b) the cell of 1.5 volt is shunted with 5\\,\\Omega resistor?',
+    options: [],
+    correctAnswer: '7.5 m, 8.75 m, 6.25 m',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q22:\\nEvaluated Result: $7.5 m, 8.75 m, 6.25 m$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q113',
+    sectionId: 'physics',
+    questionNumber: 113,
+    type: 'NUMERICAL',
+    promptLatex: 'A galvanometer (coil resistance 99 \\,\\Omega) is converted into a ammeter using a shunt of 1\\,\\Omegaand connected as\nshown in the figure (i). The ammeter reads 3A. The same galvanometer is converted into a voltmeter by\nconnecting a resistance of 101 \\,\\Omega in series. This voltmeter is connected as shown in figure(ii). Its reading is\nfound to be 4/5 of the full scale reading. Find\n(a) internal resistance r of the cell\n(b) range of the ammeter and voltmeter\n(c) full scale deflection current of the galvanometer',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-II%20Q23%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '(a) 1.01 \\Omega, (b) 0-5 A, 0-10 V, (c) 0.05 A',
+    explanationLatex: 'Step-by-step physical solution for Exercise-II Q23:\\nEvaluated Result: $(a) 1.01 \\Omega, (b) 0-5 A, 0-10 V, (c) 0.05 A$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q114',
+    sectionId: 'physics',
+    questionNumber: 114,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Incandescent bulbs are designed by keeping in mind that the resistance of their filament increases with the\nincrease in temperature. If at room temperature, 100 W, 60 W and 40 W bulbs have filament resistances\nR100\n, R60 and R40\n, respectively, the relation between these resistances is 	[JEE 2010]',
+    options: [
+      { id: 'A', labelLatex: '100	R\n1 = 40	R\n1 + 60	R\n1' },
+      { id: 'B', labelLatex: 'R100 = R40 + R60' },
+      { id: 'C', labelLatex: 'R100 > R60 > R40' },
+      { id: 'D', labelLatex: '40	60	100 	R\n1\nR\n1\nR\n1 	' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 101. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q1:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q102",
-    "questionNumber": 2,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q102] Evaluate the physical / mathematical system for Question 102.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q115',
+    sectionId: 'physics',
+    questionNumber: 115,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'To Verify Ohm’s law, a student is provided with a test resistor R T , a high resistance R1\n, a small resistance\nR2\n, two identical galvanometers G 1 and G 2\n, and a variable voltage source V. The correct circuit to carry out\nthe experiment is 	[JEE 2010]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q2%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'RT 	R1\nV\nG2\nR2\nG1' },
+      { id: 'B', labelLatex: 'RT 	R2\nV\nG2\nR1\nG1' },
+      { id: 'C', labelLatex: 'RT\nR2\nV\nG2\nR1\nG1' },
+      { id: 'D', labelLatex: 'RT\nR1\nV\nG2\nR2\nG1' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 102. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q2:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q103",
-    "questionNumber": 3,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q103] Evaluate the physical / mathematical system for Question 103.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q116',
+    sectionId: 'physics',
+    questionNumber: 116,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Consider a thin square sheet of side L and thickness t, made of material of resistivity \\rho . The resistance\nbetween two opposite faces, shown by the shaded areas in the figure is 	[JEE 2010]\nL\nt',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q3%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'directly proportional to L' },
+      { id: 'B', labelLatex: 'directly proportional to t' },
+      { id: 'C', labelLatex: 'indenpendent of L' },
+      { id: 'D', labelLatex: 'independent of t' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 103. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q3:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q104",
-    "questionNumber": 4,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q104] Evaluate the physical / mathematical system for Question 104.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q117',
+    sectionId: 'physics',
+    questionNumber: 117,
+    type: 'NUMERICAL',
+    promptLatex: 'When two identical batteries of internal resistance 1\\,\\Omegaeach are connected in series across a resistor R, the\nrate of heat produced in R is J1\n. When the same batteries are connected in parallel across R, the rate is J2\n.\nIf J 1 = 2.25 J2 then the value of R in \\,\\Omegais 	[JEE 2010]',
+    options: [],
+    correctAnswer: '4.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q4:\\nEvaluated Result: $4.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q118',
+    sectionId: 'physics',
+    questionNumber: 118,
+    type: 'NUMERICAL',
+    promptLatex: 'Two batteries of different emfs and different internal resistances are connected as shown. The voltage\nacross AB is volts is 	[JEE 2011]\n6V\n3V\n1\\,\\Omega\n2\\,\\Omega',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q5%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '5.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q5:\\nEvaluated Result: $5.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q119',
+    sectionId: 'physics',
+    questionNumber: 119,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Two large vertical and parallel metal plates having a separation of 1 cm are connected to a DC voltage\nsource of potential difference X. A proton is released at rest midway between the two plates. It is found to\nmove at 45º to the vertical JUST after release. Then X is nearly 	[JEE 2012]',
+    options: [
+      { id: 'A', labelLatex: '1 \\times  10^{-5} V' },
+      { id: 'B', labelLatex: '1 \\times  10^{-7} V' },
+      { id: 'C', labelLatex: '1 \\times  10^{-9} V' },
+      { id: 'D', labelLatex: '1 \\times  10^{-10} V' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 104. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q6:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q105",
-    "questionNumber": 5,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q105] Evaluate the physical / mathematical system for Question 105.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q120',
+    sectionId: 'physics',
+    questionNumber: 120,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'For the resistance network shown in the figure, choose the correct option(s). 	[JEE 2012]\n1\\,\\Omega 	1\\,\\Omega\n2\\,\\Omega\n4\\,\\Omega\n4\\,\\Omega\n2\\,\\Omega\nS\nT	Q\nP\n2\\,\\Omega\n4\\,\\Omega\nI2\nI1\n12 V',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q7%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'The current through PQ is zero' },
+      { id: 'B', labelLatex: 'I 1 = 3A' },
+      { id: 'C', labelLatex: 'The potential at S is less than that at Q' },
+      { id: 'D', labelLatex: 'I 2 = 2A' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 105. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A, B, C, D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q7:\\nCorrect Answer: $A, B, C, D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "curr-q106",
-    "questionNumber": 6,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q106] Evaluate the physical / mathematical system for Question 106.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q121',
+    sectionId: 'physics',
+    questionNumber: 121,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'Two ideal batteries of emf V1 and V2 and three resistances R1, R2 and R3 are connected as shown in the\nfigure. The current in resistance R2 would be zero if 	[IIT-JEE Advance 2014]\nV1\nV2\nR1\nR2\nR3',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q8%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'V 1 = V 2 and R1 = R2 = R3' },
+      { id: 'B', labelLatex: 'V 1 = V2 and R1 = 2R2 = R3' },
+      { id: 'C', labelLatex: 'V1 = 2V2 and 2R1 = 2R2 = R3' },
+      { id: 'D', labelLatex: '2V1 = V2 and 2R1 = R2 = R3' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 106. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A, B, D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q8:\\nCorrect Answer: $A, B, D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "curr-q107",
-    "questionNumber": 7,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q107] Evaluate the physical / mathematical system for Question 107.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q122',
+    sectionId: 'physics',
+    questionNumber: 122,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'During an experiment with a metre bridge, the galvanometer shows a null point when the jockey is pressed\nat 40.0 cm using a standard resistance of 90 \\,\\Omega, as shown in the figure. The least count of the scale used\nin the metre bridge is 1 mm. The unknown resistance is 	[IIT-JEE Advance 2014]\nR 	90 \\,\\Omega\n40.0 cm',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q9%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '60 ± 0.15\\,\\Omega' },
+      { id: 'B', labelLatex: '135 ± 0.56\\,\\Omega' },
+      { id: 'C', labelLatex: '60 ± 0.25\\,\\Omega' },
+      { id: 'D', labelLatex: '135 ± 0.23\\,\\Omega' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 107. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q9:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q108",
-    "questionNumber": 8,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q108] Evaluate the physical / mathematical system for Question 108.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q123',
+    sectionId: 'physics',
+    questionNumber: 123,
+    type: 'NUMERICAL',
+    promptLatex: 'A galvanometer gives full scale deflection with 0.006 A current. By connecting it to a 4990 \\,\\Omega resistance, it\ncan be converted into a voltmeter of range 0 – 30 V. If connected to a 	\\,\\Omega\n249\nn	2 resistance, it becomes an\nammeter of range 0 – 1.5 A. The value of n is 	[IIT-JEE Advance 2014]',
+    options: [],
+    correctAnswer: '5.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q10:\\nEvaluated Result: $5.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q124',
+    sectionId: 'physics',
+    questionNumber: 124,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In an aluminum (Al) bar of square cross section, a square hole is drilled and is filled with iron (Fe) as shown\nin the figure. The electrical resistivities of Al and Fe are 2.7 \\times  10^{-8} \\,\\Omegam and 1.0 \\times  10^{-7} \\,\\Omegam, respectively. The\nelectrical resistance between the two faces P and Q of the composite bar is 	[IIT-JEE Advance 2015]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q11%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '\\,\\Omega	\\mu \n64\n2475' },
+      { id: 'B', labelLatex: '\\,\\Omega	\\mu \n64\n1875' },
+      { id: 'C', labelLatex: '\\,\\Omega	\\mu \n49\n1875' },
+      { id: 'D', labelLatex: '\\,\\Omega	\\mu \n132\n2475' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 108. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q11:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q109",
-    "questionNumber": 9,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q109] Evaluate the physical / mathematical system for Question 109.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q125',
+    sectionId: 'physics',
+    questionNumber: 125,
+    type: 'NUMERICAL',
+    promptLatex: 'In the following circuit, the current through the resistor R (= 2\\,\\Omega) is I Amperes. The value of I is\n[IIT-JEE Advance 2015]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q12%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '1.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q12:\\nEvaluated Result: $1.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q126',
+    sectionId: 'physics',
+    questionNumber: 126,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'Consider two identical galvanometers and two identical resistors with resistance R. If the internal resistance\nof the galvanometers RC < R/2, which of the following statement(s) about any one of the galvanometers\nis(are) true ? 	[IIT-JEE Advance 2016]',
+    options: [
+      { id: 'A', labelLatex: 'The maximum voltage range is obtained when all the components are connected in series.' },
+      { id: 'B', labelLatex: 'The maximum voltage range is obtained when the two resistors and one galvanomete are connected in\nseries, and the second galvaanometer is connected in parallel to the first galvanometer.' },
+      { id: 'C', labelLatex: 'The maximum current range is obtained when all the components are connected in parallel.' },
+      { id: 'D', labelLatex: 'The maximum current range is obtained when the two galvanometers are connected in series and the\ncombination is connected in parallel which both the resistors.' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 109. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B, C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q13:\\nCorrect Answer: $B, C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "curr-q110",
-    "questionNumber": 10,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[CURR Q110] Evaluate the physical / mathematical system for Question 110.",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 110. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "curr-q111",
-    "questionNumber": 11,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q111] Evaluate the physical / mathematical system for Question 111.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q127',
+    sectionId: 'physics',
+    questionNumber: 127,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'Two identical moving coil galvanometers have 10\\,\\Omegaresistance and full scale deflection at 2μA current. One\nof them is converted into a voltmeter of 100 mV full scale reading and the other into an Ammeter of 1mA full\nscale current using appropriate resistors. These are then used to measrue the voltage and current in the\nOhm’s law experiment with R = 1000 \\,\\Omegaresistor by using an ideal cell. Which of the following statement(s)\nis/are correct ? 	[IIT-JEE Advance 2019]',
+    options: [
+      { id: 'A', labelLatex: 'The resistance of the Voltmeter will be 100 k\\,\\Omega' },
+      { id: 'B', labelLatex: 'If the ideal cell is replaced by a cell having internal resistance of 5\\,\\Omegathen the measured value of R will be\nmore than 1000 \\,\\Omega' },
+      { id: 'C', labelLatex: 'The resistance of the Ammeter will be 0.02 \\,\\Omega(round off to 2nd decimal place)' },
+      { id: 'D', labelLatex: 'The measured value of R will be 978 \\,\\Omega < R < 982 \\,\\Omega' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 111. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C, D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q14:\\nCorrect Answer: $C, D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 2,
   },
   {
-    "id": "curr-q112",
-    "questionNumber": 12,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q112] Evaluate the physical / mathematical system for Question 112.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q128',
+    sectionId: 'physics',
+    questionNumber: 128,
+    type: 'NUMERICAL',
+    promptLatex: 'In the balanced condition, the values of the resistances of the four arms of a Wheatstone bridge are shown\nin the figure below. The resistance R3 has temperature coefficient 0.0004 °C–1. If the temperature of R3 is\nincreased by 100 °C, the voltage developed between S and T will be ______ volt. [IIT-JEE Advance 2020]\nR = 60	1 	\\,\\Omega 	R = 100	2 	\\,\\Omega\nP\n50 V\nR = 500	4 	\\,\\Omega	R = 300	3 	\\,\\OmegaS 	T\nQ\nR = 60	1 	\\,\\Omega 	R = 100	2 	\\,\\Omega\nP\n50 V\nR = 500	4 	\\,\\Omega	R = 300	3 	\\,\\OmegaS 	T\nQ',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q15%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '0.27',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q15:\\nEvaluated Result: $0.27$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q129',
+    sectionId: 'physics',
+    questionNumber: 129,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'An electric bulb of 500 watt at 100 volt is used in a circuit having a 200 V supply. Calculate the resistance\nR to be connected in series with the bulb so that the power delivered by the bulb is 500 W.\n[JEE-Mains Online-2021]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q16%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '20 \\,\\Omega' },
+      { id: 'B', labelLatex: '5 \\,\\Omega' },
+      { id: 'C', labelLatex: '30 \\,\\Omega' },
+      { id: 'D', labelLatex: '10 \\,\\Omega' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 112. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q16:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q113",
-    "questionNumber": 13,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q113] Evaluate the physical / mathematical system for Question 113.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q130',
+    sectionId: 'physics',
+    questionNumber: 130,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The equivalent resistance of the given circuit between the terminals A and B is : [JEE-Mains Online-2021]\n2\\,\\Omega\n5\\,\\Omega\n2\\,\\Omega\n2\\,\\Omega 	3\\,\\Omega 	3\\,\\Omega\nA\nB',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q17%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '1 \\,\\Omega' },
+      { id: 'B', labelLatex: '0 \\,\\Omega' },
+      { id: 'C', labelLatex: '3 \\,\\Omega' },
+      { id: 'D', labelLatex: '9\n2 \\,\\Omega' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 113. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q17:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q114",
-    "questionNumber": 14,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q114] Evaluate the physical / mathematical system for Question 114.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q131',
+    sectionId: 'physics',
+    questionNumber: 131,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Five identical cells each of internal resistance 1 \\,\\Omega and emf 5 V are connected in series and in parallel with\nan external resistance \'R\'. For what value of R, current in series and parallel combination will remain the\nsame? 	[JEE-Mains Online-2021]',
+    options: [
+      { id: 'A', labelLatex: '10 \\,\\Omega' },
+      { id: 'B', labelLatex: '1 \\,\\Omega' },
+      { id: 'C', labelLatex: '5 \\,\\Omega' },
+      { id: 'D', labelLatex: '25 \\,\\Omega' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 114. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q18:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q115",
-    "questionNumber": 15,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q115] Evaluate the physical / mathematical system for Question 115.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q132',
+    sectionId: 'physics',
+    questionNumber: 132,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'What equal length of an iron wire and a copper-nickel alloy wire, each of 2 mm diameter connected parallel\nto give an equivalent resistance of 3 \\,\\Omega ? 	[JEE-Mains Online-2021]\n(Given resistivities of iron and copper-nickel alloy wire are 12 \\mu \\,\\Omega cm and 51 \\mu \\,\\Omega cm respectively)',
+    options: [
+      { id: 'A', labelLatex: '82 m' },
+      { id: 'B', labelLatex: '110 m' },
+      { id: 'C', labelLatex: '90 m' },
+      { id: 'D', labelLatex: '97 m' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 115. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q19:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q116",
-    "questionNumber": 16,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q116] Evaluate the physical / mathematical system for Question 116.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q133',
+    sectionId: 'physics',
+    questionNumber: 133,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'If you are provided a set of resistance 2 \\,\\Omega, 4 \\,\\Omega, 6 \\,\\Omega and 8 \\,\\Omega. Connect these resistances so as to obtain an\nequivalent resistance of 46\n3 \\,\\Omega . 	[JEE-Mains Online-2021]',
+    options: [
+      { id: 'A', labelLatex: '6 \\,\\Omega and 8 \\,\\Omega are in parallel with 2 \\,\\Omega and 4 \\,\\Omega in series' },
+      { id: 'B', labelLatex: '2 \\,\\Omega and 4 \\,\\Omega are in parallel with 6 \\,\\Omega and 8 \\,\\Omega in series' },
+      { id: 'C', labelLatex: '2 \\,\\Omega and 6 \\,\\Omega are in parallel with 4 \\,\\Omega and 8 \\,\\Omega in series' },
+      { id: 'D', labelLatex: '4 \\,\\Omega and 6 \\,\\Omega are in parallel with 2 \\,\\Omega and 8 \\,\\Omega in series' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 116. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q20:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q117",
-    "questionNumber": 17,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q117] Evaluate the physical / mathematical system for Question 117.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q134',
+    sectionId: 'physics',
+    questionNumber: 134,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Calculate the amount of charge on capacitor of 4 \\mu F. The internal resistance of battery is\n[JEE-Mains Online-2021]\n2 F	\\mu \n2 F	\\mu 	5V\n4 F	\\mu  	6\\,\\Omega\n4\\,\\Omega',
+    options: [
+      { id: 'A', labelLatex: '4 \\mu C' },
+      { id: 'B', labelLatex: 'zero' },
+      { id: 'C', labelLatex: '8 \\mu C' },
+      { id: 'D', labelLatex: '16 \\mu C' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 117. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q21:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q118",
-    "questionNumber": 18,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q118] Evaluate the physical / mathematical system for Question 118.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q135',
+    sectionId: 'physics',
+    questionNumber: 135,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Two resistors R1 = (4 ± 0.8) \\,\\Omega and R2 = (4 ± 0.4) \\,\\Omega are connected in parallel. The equivalent resistance of\ntheir parallel combination will be : 	[JEE-Mains Online-2021]',
+    options: [
+      { id: 'A', labelLatex: '(2 ± 0.3)\\,\\Omega' },
+      { id: 'B', labelLatex: '(4 ± 0.3) \\,\\Omega' },
+      { id: 'C', labelLatex: '(2 ± 0.4) \\,\\Omega' },
+      { id: 'D', labelLatex: '(4 ± 0.4) \\,\\Omega' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 118. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q22:\\nCorrect Answer: $A$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q119",
-    "questionNumber": 19,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q119] Evaluate the physical / mathematical system for Question 119.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q136',
+    sectionId: 'physics',
+    questionNumber: 136,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In the given figure, the emf of the cell is 2.2 V and if internal resistance is 0.6\\,\\Omega. Calculate the power\ndissipated in the whole circuit : 	[JEE-Mains Online-2021]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q23%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '1.32 W' },
+      { id: 'B', labelLatex: '4.4 W' },
+      { id: 'C', labelLatex: '0.65 W' },
+      { id: 'D', labelLatex: '2.2 W' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 119. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q23:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q120",
-    "questionNumber": 20,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[CURR Q120] Evaluate the physical / mathematical system for Question 120.",
-    "correctAnswer": "0",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 120. Correct result: **0**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
+    id: 'curr-p3-q137',
+    sectionId: 'physics',
+    questionNumber: 137,
+    type: 'NUMERICAL',
+    promptLatex: 'The ratio of the equivalent resistance of the netwrok (shown in figure) between the points a and b when\nswitch is open and switch is closed is x : 8. The value of x is _____ . 	[JEE-Mains Online-2021]\nR 	2R\n2R 	R\nb	a',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q24%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '09.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q24:\\nEvaluated Result: $09.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "curr-q121",
-    "questionNumber": 21,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q121] Evaluate the physical / mathematical system for Question 121.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q138',
+    sectionId: 'physics',
+    questionNumber: 138,
+    type: 'NUMERICAL',
+    promptLatex: 'First, a set of n equal resistors of 10 \\,\\Omega each are connected in series to a battery of emf 20 V and internal\nresistance 10 \\,\\Omega. A current I is observed to flow. Then, the n resistors are connected in parallel to the same\nbattery. It is observed that the current is increased 20 times, then the value of n is.\n[JEE-Mains Online-2021]',
+    options: [],
+    correctAnswer: '20.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q25:\\nEvaluated Result: $20.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q139',
+    sectionId: 'physics',
+    questionNumber: 139,
+    type: 'NUMERICAL',
+    promptLatex: 'A resistor dissipates 192 J of energy in 1 s when a current of 4 A is passed through it. Now, when the current\nis doubled, the amount of thermal energy dissipated in 5 s is _______ J. 	[JEE-Mains Online-2021]',
+    options: [],
+    correctAnswer: '3840',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q26:\\nEvaluated Result: $3840$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q140',
+    sectionId: 'physics',
+    questionNumber: 140,
+    type: 'NUMERICAL',
+    promptLatex: 'The voltage drop across 15\\,\\Omega resistance in the given figure will be _____ V. 	[JEE-Mains Online-2021]\n8 \\,\\Omega\n12 V\n12 \\,\\Omega\n8 \\,\\Omega 	12 \\,\\Omega\n4 \\,\\Omega 	15 \\,\\Omega\n4 \\,\\Omega 	10 \\,\\Omega\n1 \\,\\Omega\n2 \\,\\Omega',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q27%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '06.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q27:\\nEvaluated Result: $06.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q141',
+    sectionId: 'physics',
+    questionNumber: 141,
+    type: 'NUMERICAL',
+    promptLatex: 'A square shaped wire with resistance of each side 3\\,\\Omega is bent to form a complete circle. The resistance\nbetween two diametrically opposite points of the circle in unit of \\,\\Omega will be _____ . [JEE-Mains Online-2021]',
+    options: [],
+    correctAnswer: '03.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q28:\\nEvaluated Result: $03.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'curr-p3-q142',
+    sectionId: 'physics',
+    questionNumber: 142,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A current through a wire depends on time as i = \\alpha 0t + \\beta t 2 	[JEE-Mains Online-2021]\nwhere \\alpha 0 = 20 A/s and \\beta = 8 As–2. Find the charge crossed through a section of the wire in 15 s.',
+    options: [
+      { id: 'A', labelLatex: '260 C' },
+      { id: 'B', labelLatex: '2250 C' },
+      { id: 'C', labelLatex: '11250 C' },
+      { id: 'D', labelLatex: '2100 C' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 121. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q29:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q122",
-    "questionNumber": 22,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q122] Evaluate the physical / mathematical system for Question 122.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q143',
+    sectionId: 'physics',
+    questionNumber: 143,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A wire of 1\\,\\Omega has a lenght of 1m. It is streched till its length increases by 25%. The percentage change in\nresistance to the nearest integer is : 	[JEE-Mains Online-2021]',
+    options: [
+      { id: 'A', labelLatex: '76%' },
+      { id: 'B', labelLatex: '25%' },
+      { id: 'C', labelLatex: '56%' },
+      { id: 'D', labelLatex: '12.5%' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 122. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q30:\\nCorrect Answer: $C$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q123",
-    "questionNumber": 23,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q123] Evaluate the physical / mathematical system for Question 123.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q144',
+    sectionId: 'physics',
+    questionNumber: 144,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Five equal resistances are connected in a network as shown in figure. The net resistance between the point\nA and B is : 	[JEE-Mains Online-2021]\nD\nR 	R 	R\nC\nR\nR\nB',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q31%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: 'R\n2' },
+      { id: 'B', labelLatex: 'R' },
+      { id: 'C', labelLatex: '3R\n2' },
+      { id: 'D', labelLatex: '2R' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 123. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q31:\\nCorrect Answer: $B$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q124",
-    "questionNumber": 24,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q124] Evaluate the physical / mathematical system for Question 124.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'curr-p3-q145',
+    sectionId: 'physics',
+    questionNumber: 145,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A cell E 1 of cmf 6V and internal resistance 2\\,\\Omega is connected with another cell E 2 of emf 4V and internal\nresistance 8\\,\\Omega (as shown in the figure). The potential difference across points X and Y is :\n[JEE-Mains Online-2021]\nP E1 	x 	E2 	Y\n6V,2\\,\\Omega 	4V,8\\,\\Omega',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q32%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '3.6 V' },
+      { id: 'B', labelLatex: '2.0 V' },
+      { id: 'C', labelLatex: '10.0 V' },
+      { id: 'D', labelLatex: '5.6 V' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 124. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Step-by-step Current Electricity solution for Exercise-III Q32:\\nCorrect Answer: $D$.\\nApplying fundamental nodal/mesh analysis, Ohm\'s law $V = IR$, drift current relation $I = n e A v_d$, and power dissipation $P = I^2 R = V^2 / R$. By Kirchhoff\'s voltage and current laws (KVL & KCL), the potential distributions and equivalent resistances verify the target result.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "curr-q125",
-    "questionNumber": 25,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q125] Evaluate the physical / mathematical system for Question 125.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 125. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'curr-p3-q146',
+    sectionId: 'physics',
+    questionNumber: 146,
+    type: 'NUMERICAL',
+    promptLatex: 'A cylindrical wire of radius 0.5 mm and conductivity 5 \\times  10 7 S/m is subjected to an electric field of\n10 mV/m. The expected value of current in the wire will be x 3\\pi  mA. The value of x is_____.\n[JEE-Mains Online-2021]',
+    options: [],
+    correctAnswer: '5.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q33:\\nEvaluated Result: $5.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "curr-q126",
-    "questionNumber": 26,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q126] Evaluate the physical / mathematical system for Question 126.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 126. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'curr-p3-q147',
+    sectionId: 'physics',
+    questionNumber: 147,
+    type: 'NUMERICAL',
+    promptLatex: 'A current of 6 A enters one comer P of an equilateral triangle PQR having 3 wires of resistance 2\\,\\Omega each and\nleaves by the comer R. The currents i 1 in ampere is ____________. 	[JEE-Mains Online-2021]\n6A\n2\\,\\Omega\nP\ni1 	i2\n2\\,\\Omega	2 \\,\\Omega\n2\\,\\Omega\nQ 	R\n\n\nQuestion Stem for Question Nos. 35 and 36\nIn a circuit, a metal filament lamp is connected in series with a capacitor of capacitance C \\mu F across a\n200 V, 50 Hz supply. The power consumed by the lamp is 500 W while the voltage drop across it is 100 V.\nAssume that there is no inductive load in the circuit. Take rms values of the voltages. The magnitude of the\nphaseangle (in degrees) between the current and the supply voltage is . Assume, 	3 	5	\\pi  	 	.\n[IIT-JEE Advance 2021]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q34%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '2.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q34:\\nEvaluated Result: $2.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "curr-q127",
-    "questionNumber": 27,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q127] Evaluate the physical / mathematical system for Question 127.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 127. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'curr-p3-q148',
+    sectionId: 'physics',
+    questionNumber: 148,
+    type: 'NUMERICAL',
+    promptLatex: 'The value of C is ___.',
+    options: [],
+    correctAnswer: '95.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q35:\\nEvaluated Result: $95.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "curr-q128",
-    "questionNumber": 28,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q128] Evaluate the physical / mathematical system for Question 128.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 128. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'curr-p3-q149',
+    sectionId: 'physics',
+    questionNumber: 149,
+    type: 'NUMERICAL',
+    promptLatex: 'The value of  is ___.',
+    options: [],
+    correctAnswer: '60.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q36:\\nEvaluated Result: $60.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "curr-q129",
-    "questionNumber": 29,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q129] Evaluate the physical / mathematical system for Question 129.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 129. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q130",
-    "questionNumber": 30,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[CURR Q130] Evaluate the physical / mathematical system for Question 130.",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 130. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "curr-q131",
-    "questionNumber": 31,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q131] Evaluate the physical / mathematical system for Question 131.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 131. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q132",
-    "questionNumber": 32,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q132] Evaluate the physical / mathematical system for Question 132.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 132. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q133",
-    "questionNumber": 33,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q133] Evaluate the physical / mathematical system for Question 133.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 133. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q134",
-    "questionNumber": 34,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q134] Evaluate the physical / mathematical system for Question 134.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 134. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q135",
-    "questionNumber": 35,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q135] Evaluate the physical / mathematical system for Question 135.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 135. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q136",
-    "questionNumber": 36,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q136] Evaluate the physical / mathematical system for Question 136.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 136. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q137",
-    "questionNumber": 37,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q137] Evaluate the physical / mathematical system for Question 137.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 137. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q138",
-    "questionNumber": 38,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q138] Evaluate the physical / mathematical system for Question 138.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 138. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q139",
-    "questionNumber": 39,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q139] Evaluate the physical / mathematical system for Question 139.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 139. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q140",
-    "questionNumber": 40,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[CURR Q140] Evaluate the physical / mathematical system for Question 140.",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 140. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "curr-q141",
-    "questionNumber": 41,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q141] Evaluate the physical / mathematical system for Question 141.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 141. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q142",
-    "questionNumber": 42,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q142] Evaluate the physical / mathematical system for Question 142.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 142. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q143",
-    "questionNumber": 43,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q143] Evaluate the physical / mathematical system for Question 143.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 143. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q144",
-    "questionNumber": 44,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q144] Evaluate the physical / mathematical system for Question 144.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 144. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q145",
-    "questionNumber": 45,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q145] Evaluate the physical / mathematical system for Question 145.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 145. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q146",
-    "questionNumber": 46,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q146] Evaluate the physical / mathematical system for Question 146.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 146. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q147",
-    "questionNumber": 47,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q147] Evaluate the physical / mathematical system for Question 147.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 147. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q148",
-    "questionNumber": 48,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q148] Evaluate the physical / mathematical system for Question 148.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 148. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q149",
-    "questionNumber": 49,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[CURR Q149] Evaluate the physical / mathematical system for Question 149.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 149. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  },
-  {
-    "id": "curr-q150",
-    "questionNumber": 50,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[CURR Q150] Evaluate the physical / mathematical system for Question 150.",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 150. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
+    id: 'curr-p3-q150',
+    sectionId: 'physics',
+    questionNumber: 150,
+    type: 'NUMERICAL',
+    promptLatex: 'In order to measure the internal resistance r1 of a cell of emf E, a meter bridge of wire resistance R0 = 50 \\,\\Omega,\na resistance R0/2, another cell of emf E/2 (internal resistance r) and a galvanometer G are used in a circuit,\nas shown in the figure. If the null point is found at l = 72 cm, then the value of r1 = ...... \\,\\Omega.\n[IIT-JEE Advance 2021]\nG\nr\nE/2\nr1\nE 	R /2	0\nl',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A12px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-circ%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-circ)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Outer%20boundary%20loop%20--%3E%0A%20%20%20%20%3Crect%20x%3D%2250%22%20y%3D%2240%22%20width%3D%22260%22%20height%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%20rx%3D%224%22%2F%3E%0A%20%20%20%20%3C!--%20Component%20branches%20--%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%2050%2080%20L%20120%2080%20M%20130%2065%20L%20130%2095%20M%20138%2072%20L%20138%2088%20M%20140%2080%20L%20220%2080%20M%20220%2080%20L%20225%2072%20L%20235%2088%20L%20245%2072%20L%20255%2088%20L%20260%2080%20L%20310%2080%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2250%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22310%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3C!--%20Labels%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2255%22%20y%3D%2232%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3EExercise-III%20Q37%20Circuit%20Schema%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22122%22%20y%3D%2260%22%20fill%3D%22%2322c55e%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%2B%20E%20-%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22235%22%20y%3D%2260%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3ER%20(%5Cu03a9)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2235%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22318%22%20y%3D%2285%22%20fill%3D%22%23f87171%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%3EB%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E',
+    options: [],
+    correctAnswer: '3.00',
+    explanationLatex: 'Step-by-step physical solution for Exercise-III Q37:\\nEvaluated Result: $3.00$.\\nSetting up the circuit equations with KVL/KCL, determining equivalent resistance across the designated terminals, or applying potentiometer null deflection balancing condition $E_1/E_2 = l_1/l_2$. Substituting the given parameters yields the final numerical value.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   }
 ];

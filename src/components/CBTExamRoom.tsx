@@ -32,7 +32,7 @@ import {
   Zap,
   Flame,
   ZoomIn,
-  Sparkles,
+  Pause,
 } from 'lucide-react';
 
 interface CBTExamRoomProps {
@@ -70,18 +70,35 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
     }
   }, [isDarkMode]);
 
-  // Session Data restoration (LOOPHOLE 1 & LOOPHOLE 2 FIX)
+  // Flag to identify open module marathon / practice test vs strict scheduled CBT
+  const isModulePractice =
+    paper.id.startsWith('module-marathon-') ||
+    paper.id.startsWith('mod-') ||
+    scheduledTest === null;
+
+  // Session Data restoration (MARATHON RESUME AT EXACT QUESTION & TIMESTAMP)
   const [sessionData] = useState(() => {
     const now = Date.now();
 
-    // 1. Try to restore in-progress session if student refreshed or navigated away
+    // 1. Try to restore in-progress session if student refreshed, navigated away, or escaped
     if (!isReattempt) {
       try {
         const stored = localStorage.getItem(sessionStorageKey);
         if (stored) {
           const parsed = JSON.parse(stored);
-          if (parsed && parsed.scheduledEndTimestamp) {
-            return parsed;
+          if (parsed) {
+            // For open module marathons: restore exact remaining timestamp & question
+            if (isModulePractice && typeof parsed.secondsRemaining === 'number' && parsed.secondsRemaining > 0) {
+              return {
+                ...parsed,
+                secondsRemaining: parsed.secondsRemaining,
+                activeSectionId: parsed.activeSectionId || paper.sections[0]?.id || 'physics',
+                activeQuestionIndex: typeof parsed.activeQuestionIndex === 'number' ? parsed.activeQuestionIndex : 0,
+              };
+            }
+            if (!isModulePractice && parsed.scheduledEndTimestamp) {
+              return parsed;
+            }
           }
         }
       } catch (e) {
@@ -89,20 +106,18 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
       }
     }
 
-    // 2. Fresh session creation
-    let targetEndMs = now + paper.durationMinutes * 60 * 1000;
+    // 2. Fresh session creation (4 mins x total number of questions)
+    const initialSec = paper.durationMinutes * 60;
+    let targetEndMs = now + initialSec * 1000;
 
-    // LOOPHOLE 1: If joining a scheduled locked test during its live shift window,
-    // anchor timer strictly to the official window end time (e.g. 12:00:00).
-    // Late joiners get strictly remaining time, not a fresh 3 hours!
-    if (!isReattempt && scheduledTest?.scheduledDate && scheduledTest?.endTime) {
+    // Anchor timer strictly to official shift window ONLY for live scheduled tests
+    if (!isModulePractice && !isReattempt && scheduledTest?.scheduledDate && scheduledTest?.endTime) {
       try {
         const [endH, endM] = scheduledTest.endTime.split(':').map(Number);
         const scheduledEndDate = new Date(scheduledTest.scheduledDate);
         scheduledEndDate.setHours(endH, endM, 0, 0);
         const winEndMs = scheduledEndDate.getTime();
 
-        // If the window is in the future
         if (winEndMs > now) {
           targetEndMs = winEndMs;
         }
@@ -111,15 +126,14 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
       }
     }
 
-    const initialSec = Math.max(1, Math.min(
-      paper.durationMinutes * 60,
-      Math.floor((targetEndMs - now) / 1000)
-    ));
+    const calculatedSec = !isModulePractice
+      ? Math.max(1, Math.min(paper.durationMinutes * 60, Math.floor((targetEndMs - now) / 1000)))
+      : initialSec;
 
     const freshSession = {
       scheduledEndTimestamp: targetEndMs,
       startedAt: now,
-      secondsRemaining: initialSec,
+      secondsRemaining: calculatedSec,
       answers: {},
       statuses: {},
       timeSpent: {},
@@ -136,16 +150,19 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
     return freshSession;
   });
 
-  // Active section & question indices (restored if previously active)
+  // Active section & question indices (restored to exact question left)
   const [activeSectionId, setActiveSectionId] = useState<SubjectId>(
     sessionData.activeSectionId || paper.sections[0]?.id || 'physics'
   );
   const [activeQuestionIndex, setActiveQuestionIndex] = useState<number>(
-    sessionData.activeQuestionIndex || 0
+    typeof sessionData.activeQuestionIndex === 'number' ? sessionData.activeQuestionIndex : 0
   );
 
-  // Examination state (strictly tied to wall-clock time)
+  // Examination timer state (strictly tied to frozen remaining seconds for module practice)
   const [secondsRemaining, setSecondsRemaining] = useState<number>(() => {
+    if (isModulePractice && typeof sessionData.secondsRemaining === 'number') {
+      return Math.max(0, Math.min(paper.durationMinutes * 60, sessionData.secondsRemaining));
+    }
     const now = Date.now();
     const diff = Math.floor((sessionData.scheduledEndTimestamp - now) / 1000);
     return Math.max(0, Math.min(paper.durationMinutes * 60, diff));
@@ -177,6 +194,7 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
   const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
   const [isInstructionsModalOpen, setIsInstructionsModalOpen] = useState(false);
   const [isMobilePaletteOpen, setIsMobilePaletteOpen] = useState(false);
+  const [isPauseModalOpen, setIsPauseModalOpen] = useState(false);
   const [zoomedImageUrl, setZoomedImageUrl] = useState<string | null>(null);
 
   // Active section reference
@@ -222,39 +240,68 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
     setStatuses(initialStatuses);
   }, [paper, statuses]);
 
-  // Track time spent per active question & overall countdown (strictly tied to wall-clock time)
+  // Track time spent per active question & overall countdown
   useEffect(() => {
-    // If time already expired while student was away, submit immediately!
-    const checkNow = Date.now();
-    const initialRemaining = Math.floor((sessionData.scheduledEndTimestamp - checkNow) / 1000);
-    if (initialRemaining <= 0) {
-      handleFinalSubmit();
-      return;
-    }
-
-    const timer = setInterval(() => {
-      const now = Date.now();
-      const currentRemaining = Math.max(0, Math.floor((sessionData.scheduledEndTimestamp - now) / 1000));
-      setSecondsRemaining(currentRemaining);
-
-      if (currentRemaining <= 0) {
-        clearInterval(timer);
+    if (isModulePractice) {
+      // For practice marathons: timer counts down 1s per second while active inside the test.
+      // If student escapes or leaves, the timer remains FROZEN in localStorage.
+      if (secondsRemaining <= 0) {
         handleFinalSubmit();
         return;
       }
 
-      if (currentQuestion) {
-        setTimeSpent((prev) => ({
-          ...prev,
-          [currentQuestion.id]: (prev[currentQuestion.id] || 0) + 1,
-        }));
+      const timer = setInterval(() => {
+        setSecondsRemaining((prev) => {
+          if (prev <= 1) {
+            clearInterval(timer);
+            handleFinalSubmit();
+            return 0;
+          }
+          return prev - 1;
+        });
+
+        if (currentQuestion) {
+          setTimeSpent((prev) => ({
+            ...prev,
+            [currentQuestion.id]: (prev[currentQuestion.id] || 0) + 1,
+          }));
+        }
+      }, 1000);
+
+      return () => clearInterval(timer);
+    } else {
+      // For scheduled live shift tests: anchor strictly to shift window wall clock
+      const checkNow = Date.now();
+      const initialRemaining = Math.floor((sessionData.scheduledEndTimestamp - checkNow) / 1000);
+      if (initialRemaining <= 0) {
+        handleFinalSubmit();
+        return;
       }
-    }, 1000);
 
-    return () => clearInterval(timer);
-  }, [currentQuestion, sessionData.scheduledEndTimestamp]);
+      const timer = setInterval(() => {
+        const now = Date.now();
+        const currentRemaining = Math.max(0, Math.floor((sessionData.scheduledEndTimestamp - now) / 1000));
+        setSecondsRemaining(currentRemaining);
 
-  // LOOPHOLE 2 FIX: Continuously sync active exam answers & progress to localStorage
+        if (currentRemaining <= 0) {
+          clearInterval(timer);
+          handleFinalSubmit();
+          return;
+        }
+
+        if (currentQuestion) {
+          setTimeSpent((prev) => ({
+            ...prev,
+            [currentQuestion.id]: (prev[currentQuestion.id] || 0) + 1,
+          }));
+        }
+      }, 1000);
+
+      return () => clearInterval(timer);
+    }
+  }, [isModulePractice, currentQuestion, sessionData.scheduledEndTimestamp]);
+
+  // Continuously sync active exam answers & exact timestamp to localStorage
   useEffect(() => {
     try {
       localStorage.setItem(
@@ -262,17 +309,32 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
         JSON.stringify({
           scheduledEndTimestamp: sessionData.scheduledEndTimestamp,
           startedAt,
+          secondsRemaining,
           answers,
           statuses,
           timeSpent,
           activeSectionId,
           activeQuestionIndex,
+          paperTitle: paper.title,
+          totalQuestions: paper.sections.reduce((acc, s) => acc + s.questions.length, 0),
+          lastUpdated: Date.now(),
         })
       );
     } catch (e) {
       // quota or private mode
     }
-  }, [answers, statuses, timeSpent, activeSectionId, activeQuestionIndex, sessionData.scheduledEndTimestamp, startedAt, sessionStorageKey]);
+  }, [answers, statuses, timeSpent, activeSectionId, activeQuestionIndex, secondsRemaining, sessionData.scheduledEndTimestamp, startedAt, sessionStorageKey, paper]);
+
+  // Escape key listener to pause and save
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsPauseModalOpen(true);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Format seconds into HH:MM:SS
   const formattedTimer = useMemo(() => {
@@ -830,6 +892,20 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
             <span className="hidden lg:inline">Rough Sheet</span>
           </button>
 
+          {/* Pause / Escape Marathon Button */}
+          <button
+            onClick={() => setIsPauseModalOpen(true)}
+            className={`px-2.5 py-1 rounded text-xs font-bold flex items-center gap-1.5 transition-colors border ${
+              uiMode === 'NTA_OFFICIAL' && !isDarkMode
+                ? 'bg-amber-100 hover:bg-amber-200 text-amber-800 border-amber-300'
+                : 'bg-amber-500/15 hover:bg-amber-500/25 text-amber-400 border-amber-500/40'
+            }`}
+            title="Pause marathon practice and save progress (or press Escape)"
+          >
+            <Pause className="w-3.5 h-3.5 fill-current" />
+            <span className="hidden sm:inline">Pause & Exit</span>
+          </button>
+
           {/* Mobile Question Palette Drawer Button */}
           <button
             onClick={() => setIsMobilePaletteOpen(true)}
@@ -1069,32 +1145,27 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
                 </div>
 
                 {/* Question Prompt with KaTeX */}
-                <div className="text-sm md:text-base leading-relaxed">
-                  <MathRenderer content={currentQuestion.promptLatex} />
-                </div>
+                {(!currentQuestion.imageUrl || (currentQuestion.promptLatex && !currentQuestion.promptLatex.match(/^Question\s+\d+$/i))) && (
+                  <div className="text-sm md:text-base leading-relaxed">
+                    <MathRenderer content={currentQuestion.promptLatex} />
+                  </div>
+                )}
 
                 {currentQuestion.imageUrl && (
-                  <div className="my-3 p-3 rounded-xl border border-zinc-700/80 bg-zinc-950/80 dark:bg-black/80 flex flex-col items-center group max-w-xl mx-auto shadow-md">
-                    <div className="flex items-center justify-between w-full mb-2 pb-1.5 border-b border-zinc-800">
-                      <div className="flex items-center gap-1.5 text-[11px] font-bold tracking-wider uppercase text-emerald-400 bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-md">
-                        <Sparkles className="w-3 h-3 text-emerald-400" />
-                        <span>Original Question Paper Scan / Diagram</span>
-                      </div>
-                      <span className="text-[11px] text-zinc-500 font-mono">Q.{currentQuestion.questionNumber}</span>
-                    </div>
+                  <div className="my-3 p-3.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white flex flex-col items-center group max-w-3xl mx-auto shadow-md">
                     <img
                       src={currentQuestion.imageUrl}
-                      alt={`Diagram for Question ${currentQuestion.questionNumber}`}
-                      className="max-h-80 w-auto object-contain rounded-lg cursor-zoom-in transition-transform duration-200 group-hover:scale-[1.01]"
+                      alt={`Question ${currentQuestion.questionNumber}`}
+                      className="max-h-[520px] w-auto max-w-full object-contain rounded cursor-zoom-in filter contrast-[1.05] transition-transform duration-200 group-hover:scale-[1.01]"
                       onClick={() => setZoomedImageUrl(currentQuestion.imageUrl || null)}
                     />
                     <button
                       type="button"
                       onClick={() => setZoomedImageUrl(currentQuestion.imageUrl || null)}
-                      className="mt-2.5 text-[11px] font-semibold text-zinc-300 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-zinc-900 hover:bg-zinc-800 border border-zinc-700/80 hover:border-red-600 transition-colors shadow-xs"
+                      className="mt-2.5 text-[11px] font-semibold text-slate-700 dark:text-zinc-300 hover:text-black dark:hover:text-white flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 dark:bg-zinc-800 border border-slate-300 dark:border-zinc-700 hover:border-red-600 transition-colors shadow-xs"
                     >
-                      <ZoomIn className="w-3.5 h-3.5 text-red-500" />
-                      <span>Inspect High-Res Scan / Fullscreen</span>
+                      <ZoomIn className="w-3.5 h-3.5 text-red-600" />
+                      <span>Click to Enlarge / Fullscreen</span>
                     </button>
                   </div>
                 )}
@@ -1191,12 +1262,14 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
                                   <div className="w-2 h-2 rounded-full bg-white" />
                                 ) : null}
                               </div>
-                              <span className="font-bold text-xs pt-0.5 text-slate-500 shrink-0">
-                                ({optionNum})
+                              <span className="font-bold text-xs pt-0.5 text-slate-700 dark:text-zinc-300 shrink-0">
+                                ({option.id})
                               </span>
-                              <div className="flex-1 text-xs md:text-sm pt-0.5">
-                                <MathRenderer content={option.labelLatex} />
-                              </div>
+                              {option.labelLatex && !option.labelLatex.match(/^\(?([A-D]|[1-4])\)?$/i) && (
+                                <div className="flex-1 text-xs md:text-sm pt-0.5">
+                                  <MathRenderer content={option.labelLatex} />
+                                </div>
+                              )}
                             </div>
                           );
                         })}
@@ -1592,6 +1665,62 @@ export const CBTExamRoom: React.FC<CBTExamRoomProps> = ({
                 className="px-6 py-2.5 text-xs font-black uppercase tracking-wider text-white bg-red-600 hover:bg-red-500 rounded-lg shadow-[0_0_15px_rgba(220,38,38,0.5)] transition-all active:scale-95"
               >
                 Yes, Submit Final
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Pause / Escape Marathon Modal */}
+      {isPauseModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-xs p-4">
+          <div className="w-full max-w-md bg-zinc-950 rounded-2xl shadow-2xl border border-zinc-800 p-6 text-white space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center shrink-0">
+                <Pause className="w-5 h-5 text-amber-400" />
+              </div>
+              <div>
+                <h3 className="font-bold text-sm text-white">Pause Marathon Practice</h3>
+                <p className="text-xs text-zinc-400">Your exact question and timestamp are frozen and saved.</p>
+              </div>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs space-y-2">
+              <div className="flex justify-between">
+                <span className="text-zinc-400">Current Question:</span>
+                <span className="font-bold text-white">
+                  Question {activeQuestionIndex + 1} of {paper.sections.reduce((a, s) => a + s.questions.length, 0)}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-zinc-400">Timer Frozen At:</span>
+                <span className="font-mono font-bold text-amber-400">{formattedTimer}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-zinc-400">Answered So Far:</span>
+                <span className="font-bold text-emerald-400">{overallCounts.answered} questions</span>
+              </div>
+            </div>
+
+            <p className="text-[11px] text-zinc-400 leading-relaxed">
+              You can safely escape or leave. When you return, you will rejoin at <strong className="text-white">Question {activeQuestionIndex + 1}</strong> with exactly <strong className="text-white">{formattedTimer}</strong> remaining.
+            </p>
+
+            <div className="grid grid-cols-2 gap-2 pt-2">
+              <button
+                onClick={() => setIsPauseModalOpen(false)}
+                className="py-2.5 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-xs font-bold text-zinc-200 transition-colors"
+              >
+                Keep Practicing
+              </button>
+              <button
+                onClick={() => {
+                  setIsPauseModalOpen(false);
+                  onExit();
+                }}
+                className="py-2.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-xs font-black uppercase tracking-wider text-black font-sans shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all active:scale-95"
+              >
+                Save & Exit to Hub
               </button>
             </div>
           </div>

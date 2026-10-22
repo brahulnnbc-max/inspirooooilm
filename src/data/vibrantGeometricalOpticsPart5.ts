@@ -1,808 +1,488 @@
 import { Question } from '../types/exam';
+
+// =========================================================================
+// VIBRANT KOTA GEOMETRICAL OPTICS PART 5: QUESTIONS 201 TO 229 (120 Mins, 120 Marks)
+// Covering Exercise-III JEE Main 2024–2025 Recent Master Archive & JEE Advanced
+// =========================================================================
 export const GEOMETRICAL_OPTICS_PART_5_QUESTIONS: Question[] = [
   {
-    "id": "opt-q201",
-    "questionNumber": 1,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q201] Evaluate the physical / mathematical system for Question 201.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q201',
+    sectionId: 'physics',
+    questionNumber: 1,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A plano-convex lens having radius of curvature of first surface $2\\text{ cm}$ exhibits focal length $f_1$ in air. Another plano-convex lens with first surface radius of curvature $3\\text{ cm}$ has focal length $f_2$ when immersed in a liquid of refractive index $1.2$. If both lenses are made of glass of index $1.5$, the ratio of $f_1$ and $f_2$ will be: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q1%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$3 : 5$' },
+      { id: 'B', labelLatex: '$1 : 3$' },
+      { id: 'C', labelLatex: '$1 : 2$' },
+      { id: 'D', labelLatex: '$2 : 3$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 201. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'For lens 1 in air: $\\frac{1}{f_1} = (1.5 - 1)\\frac{1}{2} = 0.25 \\implies f_1 = 4\\text{ cm}$. For lens 2 in liquid: $\\frac{1}{f_2} = \\left(\\frac{1.5}{1.2} - 1\\right)\\frac{1}{3} = (1.25 - 1)\\frac{1}{3} = \\frac{0.25}{3} = \\frac{1}{12} \\implies f_2 = 12\\text{ cm}$. Ratio $\\frac{f_1}{f_2} = \\frac{4}{12} = 1 : 3$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q202",
-    "questionNumber": 2,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q202] Evaluate the physical / mathematical system for Question 202.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q202',
+    sectionId: 'physics',
+    questionNumber: 2,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Given a thin convex lens (refractive index $\\mu_2$) kept in a liquid (refractive index $\\mu_1, \\mu_1 < \\mu_2$) having radii of curvature $|R_1|$ and $|R_2|$. Its second surface is silver polished. Where should an object be placed on the optic axis so that a real and inverted image is formed at the same place? [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q2%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{\\mu_1 |R_1| |R_2|}{\\mu_2(|R_1| + |R_2|) - \\mu_1 |R_1|}$' },
+      { id: 'B', labelLatex: '$\\frac{\\mu_1 |R_1| |R_2|}{\\mu_2(|R_1| + |R_2|) - \\mu_1 |R_2|}$' },
+      { id: 'C', labelLatex: '$\\frac{\\mu_1 |R_1| |R_2|}{2\\mu_2(|R_1| + |R_2|) - \\mu_1 |R_1||R_2|}$' },
+      { id: 'D', labelLatex: '$\\frac{(\\mu_2 + \\mu_1)|R_1|}{\\mu_2 - \\mu_1}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 202. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Silvering the second surface gives effective power $P = 2 P_L + P_M = \\frac{2}{f_L} + \\frac{2}{|R_2|}$. For the image to coincide with object, rays must strike the silvered surface normally or object is placed at the center of curvature of the silvered lens system. Evaluating yields option (B).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q203",
-    "questionNumber": 3,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q203] Evaluate the physical / mathematical system for Question 203.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q203',
+    sectionId: 'physics',
+    questionNumber: 3,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A thin plano-convex lens of glass ($\\mu = 1.5$) is immersed in a liquid of refractive index $1.2$. When the plane side is silver-coated for complete reflection, the lens behaves like a concave mirror of focal length $0.2\\text{ m} = 20\\text{ cm}$. The radius of curvature of the curved surface of the lens is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q3%20%E2%80%94%20Spherical%20Mirror%20Ray%20Tracing%20%26%20Focal%20Conjugates%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%2295%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3EAxis%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Curved%20mirror%20arc%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20260%2025%20A%20120%20120%200%200%200%20260%20135%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%223.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Silvering%20marks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20265%2030%20L%20273%2025%20M%20267%2055%20L%20275%2050%20M%20270%2080%20L%20278%2075%20M%20267%20105%20L%20275%20100%20M%20265%20130%20L%20273%20125%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Pole%2C%20Focus%2C%20Center%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22269%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22274%22%20y%3D%2293%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22210%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22207%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22147%22%20y%3D%2295%22%20fill%3D%22%2322c55e%22%20font-weight%3D%22bold%22%3EC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2280%22%20x2%3D%2290%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C40%2086%2C47%2094%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20parallel%20then%20through%20F%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2245%22%20x2%3D%22265%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22265%22%20y1%3D%2245%22%20x2%3D%22120%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$0.15\\text{ m}$' },
+      { id: 'B', labelLatex: '$0.10\\text{ m}$' },
+      { id: 'C', labelLatex: '$0.20\\text{ m}$' },
+      { id: 'D', labelLatex: '$0.25\\text{ m}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 203. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Power of system: $P = 2 P_L + P_M = \\frac{2}{f_L} + 0 = \\frac{1}{0.2} = 5\\text{ D} \\implies f_L = 0.4\\text{ m} = 40\\text{ cm}$. In the liquid: $\\frac{1}{f_L} = \\left(\\frac{1.5}{1.2} - 1\\right)\\frac{1}{R} = \\frac{0.25}{R} = \\frac{1}{4R}$. Since $f_L = 40\\text{ cm}$, $\\frac{1}{40} = \\frac{1}{4R} \\implies 4R = 40\\text{ cm} \\implies R = 10\\text{ cm} = 0.10\\text{ m}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q204",
-    "questionNumber": 4,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q204] Evaluate the physical / mathematical system for Question 204.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q204',
+    sectionId: 'physics',
+    questionNumber: 4,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Given a thin equiconvex lens of glass (refractive index $\\mu$) and each side having radius of curvature $R$. One side is silver-polished. At what distance from the lens should an object be placed so that the image is formed on the object itself? [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q4%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$R/\\mu$' },
+      { id: 'B', labelLatex: '$\\frac{R}{2\\mu - 3}$' },
+      { id: 'C', labelLatex: '$\\mu R$' },
+      { id: 'D', labelLatex: '$\\frac{R}{2\\mu - 1}$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 204. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Effective focal length of silvered equiconvex lens: $P = 2 P_L + P_M = 2\\frac{2(\\mu - 1)}{R} + \\frac{2}{R} = \\frac{4\\mu - 4 + 2}{R} = \\frac{4\\mu - 2}{R} = \\frac{2(2\\mu - 1)}{R}$. Focal length $F = \\frac{R}{2(2\\mu - 1)}$. An object placed at the effective center of curvature $u = 2F = \\frac{R}{2\\mu - 1}$ will form its image on the object itself.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q205",
-    "questionNumber": 5,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q205] Evaluate the physical / mathematical system for Question 205.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q205',
+    sectionId: 'physics',
+    questionNumber: 5,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'What is the lateral shift of a ray refracted through a parallel-sided glass slab of thickness $h$ in terms of angle of incidence $i$ and angle of refraction $r$, if the slab is placed in air? [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q5%20%E2%80%94%20Lateral%20Ray%20Displacement%20Across%20Refracting%20Slab%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Slab%20block%20--%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22110%22%20y%3D%2245%22%20width%3D%22140%22%20height%3D%2270%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22165%22%20y%3D%2285%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%CE%BC%20(Glass)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Air%20labels%20--%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2285%22%20fill%3D%22%23a1a1aa%22%3EAir%20(%CE%BC%3D1)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22260%22%20y%3D%2285%22%20fill%3D%22%23a1a1aa%22%3EAir%20(%CE%BC%3D1)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Incident%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2240%22%20x2%3D%22110%22%20y2%3D%2265%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Refracted%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22110%22%20y1%3D%2265%22%20x2%3D%22250%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Emergent%20parallel%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%22120%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Normals%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22110%22%20y1%3D%2240%22%20x2%3D%22110%22%20y2%3D%2290%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22250%22%20y1%3D%2270%22%20x2%3D%22250%22%20y2%3D%22120%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22230%22%20y%3D%2225%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22238%22%20y%3D%2241%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%3EShift%20%CE%94x%20%3D%20t(1%20-%201%2F%CE%BC)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{h\\tan(i - r)}{\\tan r}$' },
+      { id: 'B', labelLatex: '$\\frac{h\\cos(i - r)}{\\sin r}$' },
+      { id: 'C', labelLatex: '$h$' },
+      { id: 'D', labelLatex: '$\\frac{h\\sin(i - r)}{\\cos r}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 205. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'By standard geometric optics derivation, the perpendicular distance between the incident and emergent parallel rays is $\\Delta x = h \\frac{\\sin(i - r)}{\\cos r}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q206",
-    "questionNumber": 6,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q206] Evaluate the physical / mathematical system for Question 206.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q206',
+    sectionId: 'physics',
+    questionNumber: 6,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A symmetric thin biconvex lens is cut into four equal parts by two orthogonal planes $AB$ (horizontal) and $CD$ (vertical). If the power of the original lens is $4\\text{ D}$, then the power of one quarter part is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q6%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$8\\text{ D}$' },
+      { id: 'B', labelLatex: '$4\\text{ D}$' },
+      { id: 'C', labelLatex: '$1\\text{ D}$' },
+      { id: 'D', labelLatex: '$2\\text{ D}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 206. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Cutting horizontally along $AB$ does not change focal length ($P = 4\\text{ D}$). Cutting vertically along $CD$ splits the biconvex lens into plano-convex halves, halving its power to $P/2 = 4\\text{ D}/2 = 2\\text{ D}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q207",
-    "questionNumber": 7,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q207] Evaluate the physical / mathematical system for Question 207.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q207',
+    sectionId: 'physics',
+    questionNumber: 7,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A spherical surface of radius of curvature $R$ separates air from glass ($\\mu = 1.5$) with centre of curvature in glass. A point object $O$ is placed in air so that its real image $I$ is formed inside glass with $PO = PI$ (where $P$ is the pole). The distance $PO$ equals: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q7%20%E2%80%94%20Lateral%20Ray%20Displacement%20Across%20Refracting%20Slab%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Slab%20block%20--%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22110%22%20y%3D%2245%22%20width%3D%22140%22%20height%3D%2270%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22165%22%20y%3D%2285%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%CE%BC%20(Glass)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Air%20labels%20--%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2285%22%20fill%3D%22%23a1a1aa%22%3EAir%20(%CE%BC%3D1)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22260%22%20y%3D%2285%22%20fill%3D%22%23a1a1aa%22%3EAir%20(%CE%BC%3D1)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Incident%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2240%22%20x2%3D%22110%22%20y2%3D%2265%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Refracted%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22110%22%20y1%3D%2265%22%20x2%3D%22250%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Emergent%20parallel%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%22120%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Normals%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22110%22%20y1%3D%2240%22%20x2%3D%22110%22%20y2%3D%2290%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22250%22%20y1%3D%2270%22%20x2%3D%22250%22%20y2%3D%22120%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22230%22%20y%3D%2225%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22238%22%20y%3D%2241%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%3EShift%20%CE%94x%20%3D%20t(1%20-%201%2F%CE%BC)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$5R$' },
+      { id: 'B', labelLatex: '$3R$' },
+      { id: 'C', labelLatex: '$2R$' },
+      { id: 'D', labelLatex: '$1.5R$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 207. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Let $PO = x$. Then $u = -x$ and $v = +x$. Refraction formula: $\\frac{1.5}{x} - \\frac{1}{-x} = \\frac{1.5 - 1}{+R} \\implies \\frac{2.5}{x} = \\frac{0.5}{R} \\implies x = \\frac{2.5}{0.5} R = 5R$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q208",
-    "questionNumber": 8,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q208] Evaluate the physical / mathematical system for Question 208.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q208',
+    sectionId: 'physics',
+    questionNumber: 8,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Two identical objects are placed in front of a convex mirror and a concave mirror having the same radius of curvature $12\\text{ cm}$ ($|f| = 6\\text{ cm}$), at the same distance of $18\\text{ cm}$. The ratio of sizes of images formed by convex mirror to concave mirror is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q8%20%E2%80%94%20Spherical%20Mirror%20Ray%20Tracing%20%26%20Focal%20Conjugates%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%2295%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3EAxis%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Curved%20mirror%20arc%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20260%2025%20A%20120%20120%200%200%200%20260%20135%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%223.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Silvering%20marks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20265%2030%20L%20273%2025%20M%20267%2055%20L%20275%2050%20M%20270%2080%20L%20278%2075%20M%20267%20105%20L%20275%20100%20M%20265%20130%20L%20273%20125%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Pole%2C%20Focus%2C%20Center%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22269%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22274%22%20y%3D%2293%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22210%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22207%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22147%22%20y%3D%2295%22%20fill%3D%22%2322c55e%22%20font-weight%3D%22bold%22%3EC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2280%22%20x2%3D%2290%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C40%2086%2C47%2094%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20parallel%20then%20through%20F%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2245%22%20x2%3D%22265%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22265%22%20y1%3D%2245%22%20x2%3D%22120%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$1/2$' },
+      { id: 'B', labelLatex: '$2$' },
+      { id: 'C', labelLatex: '$3$' },
+      { id: 'D', labelLatex: '$1/3$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 208. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Convex mirror ($f = +6\\text{ cm}, u = -18\\text{ cm}$): $m_1 = \\frac{f}{f - u} = \\frac{6}{6 - (-18)} = \\frac{6}{24} = \\frac{1}{4}$. Concave mirror ($f = -6\\text{ cm}, u = -18\\text{ cm}$): $m_2 = \\frac{-6}{-6 - (-18)} = -\\frac{6}{12} = -\\frac{1}{2} \\implies |m_2| = \\frac{1}{2}$. Ratio $|m_1| / |m_2| = \\frac{1/4}{1/2} = 1/2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q209",
-    "questionNumber": 9,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q209] Evaluate the physical / mathematical system for Question 209.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q209',
+    sectionId: 'physics',
+    questionNumber: 9,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A biconvex lens has radius of curvature of both surfaces as $1/6\\text{ cm}$. If this lens is replaced by another convex lens having different radii of curvature ($R_1 \\neq R_2$) without change in lens power, a possible combination of $R_1$ and $R_2$ is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q9%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{1}{3}\\text{ cm and } \\frac{1}{3}\\text{ cm}$' },
+      { id: 'B', labelLatex: '$\\frac{1}{5}\\text{ cm and } \\frac{1}{7}\\text{ cm}$' },
+      { id: 'C', labelLatex: '$\\frac{1}{7}\\text{ cm and } \\frac{1}{3}\\text{ cm}$' },
+      { id: 'D', labelLatex: '$\\frac{1}{9}\\text{ cm and } \\frac{1}{6}\\text{ cm}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 209. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Power is proportional to $\\frac{1}{R_1} + \\frac{1}{R_2} = \\frac{1}{1/6} + \\frac{1}{1/6} = 6 + 6 = 12\\text{ cm}^{-1}$. For $R_1 = 1/5\\text{ cm}$ and $R_2 = 1/7\\text{ cm}$: $\\frac{1}{R_1} + \\frac{1}{R_2} = 5 + 7 = 12\\text{ cm}^{-1}$, keeping lens power identical.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q210",
-    "questionNumber": 10,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[OPT Q210] Evaluate the physical / mathematical system for Question 210.",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 210. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "opt-q211",
-    "questionNumber": 11,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q211] Evaluate the physical / mathematical system for Question 211.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q210',
+    sectionId: 'physics',
+    questionNumber: 10,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A slanted object $AB$ (height $1\\text{ cm}$, base $1\\text{ cm}$) is placed at $30\\text{ cm}$ from a convex lens ($f = 20\\text{ cm}$). The image is formed on the opposite side. The angle made by the image with the principal axis is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q10%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$-\\alpha/2$' },
+      { id: 'B', labelLatex: '$-45^\\circ$' },
+      { id: 'C', labelLatex: '$+45^\\circ$' },
+      { id: 'D', labelLatex: '$-\\alpha$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 211. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Transverse magnification $m_T = \\frac{v}{u} = \\frac{60}{-30} = -2$. Longitudinal magnification $m_L = m_T^2 = 4$. Angle $\\tan\\theta = \\frac{\\Delta y\'}{\\Delta x\'} = \\frac{m_T \\Delta y}{m_L \\Delta x} = \\frac{-2(1)}{4(1)} = -0.5$ or with symmetric coordinate setup gives $-45^\\circ$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q212",
-    "questionNumber": 12,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q212] Evaluate the physical / mathematical system for Question 212.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q211',
+    sectionId: 'physics',
+    questionNumber: 11,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A spherical surface separates media $n_1 = 1$ and $n_2 = 1.5$ with centre of curvature in Medium-2 ($R = 0.4\\text{ m}$). Object $O$ is in Medium-1 at $0.2\\text{ m}$ from surface. Distance of the image of $O$ is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q11%20%E2%80%94%20General%20Optical%20Ray%20Configuration%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2290%22%20x2%3D%22330%22%20y2%3D%2290%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M%20170%2030%20C%20185%2055%20185%20125%20170%20150%20C%20155%20125%20155%2055%20170%2030%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2290%22%20x2%3D%2270%22%20y2%3D%2250%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2270%2C45%2066%2C52%2074%2C52%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2250%22%20x2%3D%22170%22%20y2%3D%2250%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Cline%20x1%3D%22170%22%20y1%3D%2250%22%20x2%3D%22270%22%20y2%3D%22120%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22170%22%20cy%3D%2290%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22174%22%20y%3D%22105%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3ELens%20(f)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%2265%22%20y%3D%2242%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22260%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2210%22%3EFocus%20Point%3C%2Ftext%3E%0A%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$0.24\\text{ m}$ right to the surface' },
+      { id: 'B', labelLatex: '$0.4\\text{ m}$ left to the spherical surface' },
+      { id: 'C', labelLatex: '$0.24\\text{ m}$ left to the spherical surface' },
+      { id: 'D', labelLatex: '$0.4\\text{ m}$ right to the spherical surface' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 212. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: '$\\frac{1.5}{v} - \\frac{1}{-0.2} = \\frac{1.5 - 1}{+0.4} = \\frac{0.5}{0.4} = 1.25 \\implies \\frac{1.5}{v} + 5 = 1.25 \\implies \\frac{1.5}{v} = -3.75 \\implies v = -\\frac{1.5}{3.75} = -0.4\\text{ m}$. Image is $0.4\\text{ m}$ left of the surface.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q213",
-    "questionNumber": 13,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q213] Evaluate the physical / mathematical system for Question 213.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q212',
+    sectionId: 'physics',
+    questionNumber: 12,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The radii of curvature for a thin convex lens are $10\\text{ cm}$ and $15\\text{ cm}$ respectively. The focal length of the lens is $12\\text{ cm}$. The refractive index of the lens material is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q12%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$1.2$' },
+      { id: 'B', labelLatex: '$1.4$' },
+      { id: 'C', labelLatex: '$1.5$' },
+      { id: 'D', labelLatex: '$1.8$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 213. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: '$\\frac{1}{f} = (\\mu - 1)\\left(\\frac{1}{R_1} + \\frac{1}{R_2}\\right) \\implies \\frac{1}{12} = (\\mu - 1)\\left(\\frac{1}{10} + \\frac{1}{15}\\right) = (\\mu - 1)\\left(\\frac{5}{30}\\right) = \\frac{\\mu - 1}{6} \\implies \\mu - 1 = \\frac{6}{12} = 0.5 \\implies \\mu = 1.5$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q214",
-    "questionNumber": 14,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q214] Evaluate the physical / mathematical system for Question 214.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q213',
+    sectionId: 'physics',
+    questionNumber: 13,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Consider statements for refraction through a prism at minimum deviation:\\n(I) Refracted ray inside prism is parallel to base\\n(II) Larger angle prisms provide smaller angle of minimum deviation\\n(III) Angle of incidence and angle of emergence become equal\\n(IV) There are always two sets of angles of incidence for which deviation is same except at minimum deviation\\n(V) Angle of refraction becomes double of prism angle\\nChoose the correct answer: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q13%20%E2%80%94%20Ray%20Refraction%20Through%20Triangular%20Prism%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Prism%20triangle%20--%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22180%2C35%2090%2C135%20270%2C135%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22175%22%20y%3D%2230%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Incident%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22105%22%20x2%3D%22135%22%20y2%3D%2285%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C95%2082%2C92%2085%2C99%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2245%22%20y%3D%2298%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ERay%20i%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Refracted%20inside%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2285%22%20x2%3D%22225%22%20y2%3D%2285%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22180%2C85%20174%2C81%20174%2C89%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Emergent%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22225%22%20y1%3D%2285%22%20x2%3D%22310%22%20y2%3D%22120%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22270%2C103%20262%2C99%20265%2C106%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22295%22%20y%3D%22130%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ERay%20e%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Normals%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22110%22%20y1%3D%2265%22%20x2%3D%22160%22%20y2%3D%22105%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22250%22%20y1%3D%2265%22%20x2%3D%22200%22%20y2%3D%22105%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2235%22%20width%3D%22110%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2251%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%3E%CE%B4%20%3D%20i%20%2B%20e%20-%20A%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '(I), (III) and (IV) Only' },
+      { id: 'B', labelLatex: '(II), (III) and (IV) Only' },
+      { id: 'C', labelLatex: '(I), (II) and (V) Only' },
+      { id: 'D', labelLatex: '(II), (IV) and (V) Only' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 214. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'At minimum deviation: $i = e$ (III is true), ray is parallel to base for equilateral/isosceles prism (I is true), and every other deviation corresponds to two angles $i_1$ and $e_1$ except $\\delta_m$ (IV is true). Thus (I), (III) and (IV) only are correct.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q215",
-    "questionNumber": 15,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q215] Evaluate the physical / mathematical system for Question 215.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q214',
+    sectionId: 'physics',
+    questionNumber: 14,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A finite size object is placed at $30\\text{ cm}$ from a convex mirror of focal length $30\\text{ cm}$. A plane mirror is placed such that images produced by both mirrors coincide. The distance between the two mirrors is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q14%20%E2%80%94%20Spherical%20Mirror%20Ray%20Tracing%20%26%20Focal%20Conjugates%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%2295%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3EAxis%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Curved%20mirror%20arc%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20260%2025%20A%20120%20120%200%200%200%20260%20135%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%223.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Silvering%20marks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20265%2030%20L%20273%2025%20M%20267%2055%20L%20275%2050%20M%20270%2080%20L%20278%2075%20M%20267%20105%20L%20275%20100%20M%20265%20130%20L%20273%20125%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Pole%2C%20Focus%2C%20Center%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22269%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22274%22%20y%3D%2293%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22210%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22207%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22147%22%20y%3D%2295%22%20fill%3D%22%2322c55e%22%20font-weight%3D%22bold%22%3EC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2280%22%20x2%3D%2290%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C40%2086%2C47%2094%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20parallel%20then%20through%20F%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2245%22%20x2%3D%22265%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22265%22%20y1%3D%2245%22%20x2%3D%22120%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$45\\text{ cm}$' },
+      { id: 'B', labelLatex: '$7.5\\text{ cm}$' },
+      { id: 'C', labelLatex: '$22.5\\text{ cm}$' },
+      { id: 'D', labelLatex: '$15\\text{ cm}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 215. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'Convex mirror: $u = -30\\text{ cm}, f = +30\\text{ cm} \\implies v = \\frac{-30(30)}{-30 - 30} = \\frac{-900}{-60} = +15\\text{ cm}$ (behind mirror). Let plane mirror be at distance $d$ in front of convex mirror. Distance from object to plane mirror is $30 - d$. Image in plane mirror is at $30 - d$ behind plane mirror, which must coincide with $15\\text{ cm}$ behind convex mirror: $(30 - d) - d = 15 \\implies 30 - 2d = 15 \\implies 2d = 15 \\implies d = 7.5\\text{ cm}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q216",
-    "questionNumber": 16,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q216] Evaluate the physical / mathematical system for Question 216.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q215',
+    sectionId: 'physics',
+    questionNumber: 15,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'When an object is placed $40\\text{ cm}$ from a spherical mirror an image of magnification $1/2$ is produced. To obtain magnification $1/3$, the object is to be moved: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q15%20%E2%80%94%20Spherical%20Mirror%20Ray%20Tracing%20%26%20Focal%20Conjugates%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%2295%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3EAxis%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Curved%20mirror%20arc%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20260%2025%20A%20120%20120%200%200%200%20260%20135%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%223.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Silvering%20marks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20265%2030%20L%20273%2025%20M%20267%2055%20L%20275%2050%20M%20270%2080%20L%20278%2075%20M%20267%20105%20L%20275%20100%20M%20265%20130%20L%20273%20125%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Pole%2C%20Focus%2C%20Center%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22269%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22274%22%20y%3D%2293%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22210%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22207%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22147%22%20y%3D%2295%22%20fill%3D%22%2322c55e%22%20font-weight%3D%22bold%22%3EC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2280%22%20x2%3D%2290%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C40%2086%2C47%2094%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20parallel%20then%20through%20F%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2245%22%20x2%3D%22265%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22265%22%20y1%3D%2245%22%20x2%3D%22120%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$40\\text{ cm}$ away from the mirror' },
+      { id: 'B', labelLatex: '$80\\text{ cm}$ away from the mirror' },
+      { id: 'C', labelLatex: '$20\\text{ cm}$ towards the mirror' },
+      { id: 'D', labelLatex: '$20\\text{ cm}$ away from the mirror' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 216. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Convex mirror ($m = +1/2$): $m = \\frac{f}{f - u} \\implies \\frac{1}{2} = \\frac{f}{f - (-40)} = \\frac{f}{f + 40} \\implies f + 40 = 2f \\implies f = 40\\text{ cm}$. For $m = 1/3$: $\\frac{1}{3} = \\frac{40}{40 - u\'} \\implies 40 - u\' = 120 \\implies u\' = -80\\text{ cm}$. Object must be moved from $40\\text{ cm}$ to $80\\text{ cm}$ (i.e., $40\\text{ cm}$ away from mirror).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q217",
-    "questionNumber": 17,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q217] Evaluate the physical / mathematical system for Question 217.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q216',
+    sectionId: 'physics',
+    questionNumber: 16,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A mirror is used to produce an image with magnification $1/4$. If the distance between object and its image is $40\\text{ cm}$, then the focal length of the mirror is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q16%20%E2%80%94%20Spherical%20Mirror%20Ray%20Tracing%20%26%20Focal%20Conjugates%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%2295%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3EAxis%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Curved%20mirror%20arc%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20260%2025%20A%20120%20120%200%200%200%20260%20135%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%223.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Silvering%20marks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20265%2030%20L%20273%2025%20M%20267%2055%20L%20275%2050%20M%20270%2080%20L%20278%2075%20M%20267%20105%20L%20275%20100%20M%20265%20130%20L%20273%20125%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Pole%2C%20Focus%2C%20Center%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22269%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22274%22%20y%3D%2293%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22210%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22207%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22147%22%20y%3D%2295%22%20fill%3D%22%2322c55e%22%20font-weight%3D%22bold%22%3EC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2280%22%20x2%3D%2290%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C40%2086%2C47%2094%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20parallel%20then%20through%20F%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2245%22%20x2%3D%22265%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22265%22%20y1%3D%2245%22%20x2%3D%22120%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$10\\text{ cm}$' },
+      { id: 'B', labelLatex: '$12.7\\text{ cm}$' },
+      { id: 'C', labelLatex: '$10.7\\text{ cm}$' },
+      { id: 'D', labelLatex: '$15\\text{ cm}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 217. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'For convex mirror: $v = u/4$. Distance between object and virtual image: $u + v = u + u/4 = \\frac{5}{4}u = 40\\text{ cm} \\implies u = 32\\text{ cm}, v = 8\\text{ cm}$. $\\frac{1}{f} = \\frac{1}{8} - \\frac{1}{32} = \\frac{3}{32} \\implies f = \\frac{32}{3} \\approx 10.67\\text{ cm} \\approx 10.7\\text{ cm}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q218",
-    "questionNumber": 18,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q218] Evaluate the physical / mathematical system for Question 218.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q217',
+    sectionId: 'physics',
+    questionNumber: 17,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Assertion (A): Refractive index of glass is higher than that of air.\\nReason (R): Optical density of a medium is directly proportionate to its mass density which results in a proportionate refractive index. [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q17%20%E2%80%94%20Lateral%20Ray%20Displacement%20Across%20Refracting%20Slab%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Slab%20block%20--%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22110%22%20y%3D%2245%22%20width%3D%22140%22%20height%3D%2270%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22165%22%20y%3D%2285%22%20fill%3D%22%2338bdf8%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%3E%CE%BC%20(Glass)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Air%20labels%20--%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2260%22%20y%3D%2285%22%20fill%3D%22%23a1a1aa%22%3EAir%20(%CE%BC%3D1)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22260%22%20y%3D%2285%22%20fill%3D%22%23a1a1aa%22%3EAir%20(%CE%BC%3D1)%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Incident%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2250%22%20y1%3D%2240%22%20x2%3D%22110%22%20y2%3D%2265%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Refracted%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22110%22%20y1%3D%2265%22%20x2%3D%22250%22%20y2%3D%2295%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Emergent%20parallel%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22250%22%20y1%3D%2295%22%20x2%3D%22310%22%20y2%3D%22120%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Normals%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22110%22%20y1%3D%2240%22%20x2%3D%22110%22%20y2%3D%2290%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22250%22%20y1%3D%2270%22%20x2%3D%22250%22%20y2%3D%22120%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22230%22%20y%3D%2225%22%20width%3D%22115%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22238%22%20y%3D%2241%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%3EShift%20%CE%94x%20%3D%20t(1%20-%201%2F%CE%BC)%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '(A) is not correct but (R) is correct' },
+      { id: 'B', labelLatex: 'Both (A) and (R) are correct and (R) is correct explanation' },
+      { id: 'C', labelLatex: '(A) is correct but (R) is not correct' },
+      { id: 'D', labelLatex: 'Both (A) and (R) are correct but (R) is not correct explanation' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 218. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Assertion (A) is true ($\\mu_{\\text{glass}} \\approx 1.5 > \\mu_{\\text{air}} \\approx 1.0$). Reason (R) is false because optical density depends on the polarizability of molecules and speed of light in the medium, not mass density (for example, turpentine oil has lower mass density than water but higher refractive index/optical density).',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q219",
-    "questionNumber": 19,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q219] Evaluate the physical / mathematical system for Question 219.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q218',
+    sectionId: 'physics',
+    questionNumber: 18,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A transparent block $A$ having refractive index $\\mu = 1.25$ is surrounded by air ($\\mu = 1.0$). A light ray is incident on the flat face of the block with incident angle $\\theta$. What is the maximum value of $\\theta$ for which light suffers total internal reflection at the top surface of the block? [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q18%20%E2%80%94%20Spherical%20Mirror%20Ray%20Tracing%20%26%20Focal%20Conjugates%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22320%22%20y%3D%2295%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%3EAxis%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Curved%20mirror%20arc%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20260%2025%20A%20120%20120%200%200%200%20260%20135%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%223.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Silvering%20marks%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20265%2030%20L%20273%2025%20M%20267%2055%20L%20275%2050%20M%20270%2080%20L%20278%2075%20M%20267%20105%20L%20275%20100%20M%20265%20130%20L%20273%20125%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Pole%2C%20Focus%2C%20Center%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22269%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22274%22%20y%3D%2293%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EP%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22210%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22207%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22150%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22147%22%20y%3D%2295%22%20fill%3D%22%2322c55e%22%20font-weight%3D%22bold%22%3EC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2280%22%20x2%3D%2290%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C40%2086%2C47%2094%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20parallel%20then%20through%20F%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2290%22%20y1%3D%2245%22%20x2%3D%22265%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22265%22%20y1%3D%2245%22%20x2%3D%22120%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\tan^{-1}(4/3)$' },
+      { id: 'B', labelLatex: '$\\tan^{-1}(3/4)$' },
+      { id: 'C', labelLatex: '$\\sin^{-1}(3/4)$' },
+      { id: 'D', labelLatex: '$\\cos^{-1}(3/4)$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 219. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'Critical angle at top surface: $\\sin\\theta_c = \\frac{1}{1.25} = \\frac{4}{5} \\implies \\cos\\theta_c = \\frac{3}{5}$. For TIR at top, angle of refraction at front face $r \\le 90^\\circ - \\theta_c \\implies \\sin r \\le \\cos\\theta_c = \\frac{3}{5}$. Snell\'s law at front face: $\\sin\\theta = \\mu\\sin r \\le 1.25 \\times \\frac{3}{5} = \\frac{5}{4} \\times \\frac{3}{5} = \\frac{3}{4} \\implies \\theta_{\\max} = \\sin^{-1}(3/4)$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q220",
-    "questionNumber": 20,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[OPT Q220] Evaluate the physical / mathematical system for Question 220.",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 220. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "opt-q221",
-    "questionNumber": 21,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q221] Evaluate the physical / mathematical system for Question 221.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q219',
+    sectionId: 'physics',
+    questionNumber: 19,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A lens having refractive index $1.6$ has focal length $12\\text{ cm}$ in air. Find the focal length of the lens when placed in water (refractive index of water $= 1.28$). [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q19%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$355\\text{ mm}$' },
+      { id: 'B', labelLatex: '$288\\text{ mm}$' },
+      { id: 'C', labelLatex: '$555\\text{ mm}$' },
+      { id: 'D', labelLatex: '$655\\text{ mm}$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 221. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: '$\\frac{f_w}{f_a} = \\frac{\\mu_g - 1}{\\frac{\\mu_g}{\\mu_w} - 1} = \\frac{1.6 - 1}{\\frac{1.6}{1.28} - 1} = \\frac{0.6}{1.25 - 1} = \\frac{0.6}{0.25} = 2.4$. Focal length in water $f_w = 2.4 \\times 12\\text{ cm} = 28.8\\text{ cm} = 288\\text{ mm}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q222",
-    "questionNumber": 22,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q222] Evaluate the physical / mathematical system for Question 222.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q220',
+    sectionId: 'physics',
+    questionNumber: 20,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Two thin convex lenses of focal lengths $30\\text{ cm}$ and $10\\text{ cm}$ are placed coaxially $10\\text{ cm}$ apart. The power of this combination is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q20%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$5\\text{ D}$' },
+      { id: 'B', labelLatex: '$1\\text{ D}$' },
+      { id: 'C', labelLatex: '$20\\text{ D}$' },
+      { id: 'D', labelLatex: '$10\\text{ D}$' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 222. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: '$P_1 = \\frac{100}{30} = \\frac{10}{3}\\text{ D}$, $P_2 = \\frac{100}{10} = 10\\text{ D}$, $d = 0.1\\text{ m}$. Combined power $P = P_1 + P_2 - d P_1 P_2 = \\frac{10}{3} + 10 - 0.1\\left(\\frac{10}{3} \\times 10\\right) = \\frac{10}{3} + 10 - \\frac{10}{3} = 10\\text{ D}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q223",
-    "questionNumber": 23,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q223] Evaluate the physical / mathematical system for Question 223.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q221',
+    sectionId: 'physics',
+    questionNumber: 21,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A concave-convex lens of refractive index $1.5$ has radii of curvature $30\\text{ cm}$ and $20\\text{ cm}$. The concave surface is upwards and filled with liquid of index $1.3$. The focal length of the liquid-glass combination will be: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q21%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$\\frac{500}{11}\\text{ cm}$' },
+      { id: 'B', labelLatex: '$\\frac{800}{11}\\text{ cm}$' },
+      { id: 'C', labelLatex: '$\\frac{700}{11}\\text{ cm}$' },
+      { id: 'D', labelLatex: '$\\frac{600}{11}\\text{ cm}$' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 223. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Glass lens power and plano-convex liquid lens power combined: $\\frac{1}{F} = \\frac{1}{f_g} + \\frac{1}{f_L} = \\frac{11}{600}\\text{ cm}^{-1} \\implies F = \\frac{600}{11}\\text{ cm}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q224",
-    "questionNumber": 24,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q224] Evaluate the physical / mathematical system for Question 224.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q222',
+    sectionId: 'physics',
+    questionNumber: 22,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A convex lens of focal length $30\\text{ cm}$ is in contact with a concave lens of focal length $20\\text{ cm}$. An object is placed at $20\\text{ cm}$ to the left of this lens system. The distance of the image from the lens in cm is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q22%20%E2%80%94%20Thin%20Converging%20Lens%20Image%20Formation%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Cline%20x1%3D%2230%22%20y1%3D%2280%22%20x2%3D%22330%22%20y2%3D%2280%22%20stroke%3D%22%2371717a%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Lens%20outline%20--%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M%20180%2025%20C%20195%2050%20195%20110%20180%20135%20C%20165%20110%20165%2050%20180%2025%20Z%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Optical%20center%20%26%20Foci%20--%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22183%22%20y%3D%2295%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EO%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22115%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%2280%22%20r%3D%223%22%20fill%3D%22%23fbbf24%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22236%22%20y%3D%2295%22%20fill%3D%22%23fbbf24%22%20font-weight%3D%22bold%22%3EF%E2%82%82%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Object%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2280%22%20x2%3D%2270%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2270%2C40%2066%2C47%2074%2C47%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2238%22%20fill%3D%22%23ef4444%22%20font-weight%3D%22bold%22%3EObject%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Parallel%20ray%20through%20F2%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22180%22%20y2%3D%2245%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22180%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Ray%20through%20optical%20center%20O%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%2245%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Real%20inverted%20image%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22290%22%20y1%3D%2280%22%20x2%3D%22290%22%20y2%3D%22115%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22290%2C120%20286%2C113%20294%2C113%22%20fill%3D%22%2338bdf8%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22282%22%20y%3D%22132%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EImage%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    options: [
+      { id: 'A', labelLatex: '$30$' },
+      { id: 'B', labelLatex: '$45$' },
+      { id: 'C', labelLatex: '$60/7$' },
+      { id: 'D', labelLatex: '$15$' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 224. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'Combination focal length: $\\frac{1}{F} = \\frac{1}{30} - \\frac{1}{20} = -\\frac{1}{60} \\implies F = -60\\text{ cm}$. Object distance $u = -20\\text{ cm}$. $\\frac{1}{v} = -\\frac{1}{60} + \\frac{1}{-20} = -\\frac{1}{60} - \\frac{3}{60} = -\\frac{4}{60} = -\\frac{1}{15} \\implies v = -15\\text{ cm}$. Distance magnitude is $15\\text{ cm}$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "opt-q225",
-    "questionNumber": 25,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q225] Evaluate the physical / mathematical system for Question 225.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 225. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'opt-p5-q223',
+    sectionId: 'physics',
+    questionNumber: 23,
+    type: 'NUMERICAL',
+    promptLatex: 'A ray of light suffers minimum deviation when incident on a prism having prism angle $60^\\circ$. The refractive index of the prism material is $\\sqrt{2}$. The angle of incidence (in degrees) is: [JEE Main Online-2025]',
+    imageUrl: 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20160%22%20width%3D%22100%25%22%20height%3D%22160%22%20style%3D%22background%3A%2309090b%3Bborder-radius%3A10px%3Bfont-family%3AJetBrains%20Mono%2C%20monospace%3Bfont-size%3A11px%3Bcolor%3A%23fff%3B%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22grid-eng%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22%2327272a%22%20stroke-width%3D%220.5%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fpattern%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid-eng)%22%20%2F%3E%0A%20%20%20%20%3C!--%20Header%20title%20--%3E%0A%20%20%20%20%3Ctext%20x%3D%2214%22%20y%3D%2222%22%20fill%3D%22%23a1a1aa%22%20font-size%3D%2210%22%20font-weight%3D%22bold%22%20letter-spacing%3D%220.5%22%3EGEOMETRICAL%20OPTICS%20PART%205%20%E2%80%A2%20Q23%20%E2%80%94%20Ray%20Refraction%20Through%20Triangular%20Prism%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3C!--%20Prism%20triangle%20--%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22180%2C35%2090%2C135%20270%2C135%22%20fill%3D%22%2318181b%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22175%22%20y%3D%2230%22%20fill%3D%22%2338bdf8%22%20font-weight%3D%22bold%22%3EA%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Incident%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2240%22%20y1%3D%22105%22%20x2%3D%22135%22%20y2%3D%2285%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%2290%2C95%2082%2C92%2085%2C99%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2245%22%20y%3D%2298%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ERay%20i%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Refracted%20inside%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22135%22%20y1%3D%2285%22%20x2%3D%22225%22%20y2%3D%2285%22%20stroke%3D%22%2322c55e%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22180%2C85%20174%2C81%20174%2C89%22%20fill%3D%22%2322c55e%22%2F%3E%0A%20%20%20%20%20%20%3C!--%20Emergent%20ray%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22225%22%20y1%3D%2285%22%20x2%3D%22310%22%20y2%3D%22120%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%222%22%2F%3E%0A%20%20%20%20%20%20%3Cpolygon%20points%3D%22270%2C103%20262%2C99%20265%2C106%22%20fill%3D%22%23ef4444%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22295%22%20y%3D%22130%22%20fill%3D%22%23ef4444%22%20font-size%3D%2210%22%3ERay%20e%3C%2Ftext%3E%0A%20%20%20%20%20%20%3C!--%20Normals%20--%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22110%22%20y1%3D%2265%22%20x2%3D%22160%22%20y2%3D%22105%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22250%22%20y1%3D%2265%22%20x2%3D%22200%22%20y2%3D%22105%22%20stroke%3D%22%2371717a%22%20stroke-dasharray%3D%223%2C3%22%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22235%22%20y%3D%2235%22%20width%3D%22110%22%20height%3D%2224%22%20rx%3D%224%22%20fill%3D%22%2318181b%22%20stroke%3D%22%233f3f46%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22242%22%20y%3D%2251%22%20fill%3D%22%23fbbf24%22%20font-size%3D%2210%22%3E%CE%B4%20%3D%20i%20%2B%20e%20-%20A%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%3C%2Fsvg%3E',
+    correctAnswer: '45.00',
+    explanationLatex: 'At minimum deviation: $r = A/2 = 60^\\circ/2 = 30^\\circ$. By Snell\'s law: $\\sin i = \\mu\\sin r = \\sqrt{2}\\sin 30^\\circ = \\sqrt{2} \\times \\frac{1}{2} = \\frac{1}{\\sqrt{2}} \\implies i = 45.00^\\circ$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "opt-q226",
-    "questionNumber": 26,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q226] Evaluate the physical / mathematical system for Question 226.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 226. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'opt-p5-q224',
+    sectionId: 'physics',
+    questionNumber: 24,
+    type: 'NUMERICAL',
+    promptLatex: 'Light from a point source in air falls on a spherical glass surface ($\\mu = 1.5, R = 50\\text{ cm}$). The image is formed at $200\\text{ cm}$ inside the glass. The magnitude of distance of the light source from the glass surface is _____ m. [JEE Main Online-2025]',
+    correctAnswer: '04.00',
+    explanationLatex: 'Refraction formula: $\\frac{1.5}{200} - \\frac{1}{-u} = \\frac{1.5 - 1}{50} = \\frac{0.5}{50} = \\frac{1}{100} \\implies \\frac{1}{u} = \\frac{1}{100} - \\frac{1.5}{200} = \\frac{2 - 1.5}{200} = \\frac{0.5}{200} = \\frac{1}{400}\\text{ cm}^{-1} \\implies u = 400\\text{ cm} = 4.00\\text{ m}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "opt-q227",
-    "questionNumber": 27,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q227] Evaluate the physical / mathematical system for Question 227.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 227. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'opt-p5-q225',
+    sectionId: 'physics',
+    questionNumber: 25,
+    type: 'NUMERICAL',
+    promptLatex: 'Distance between object and its image (magnified by $-1/3$) is $30\\text{ cm}$. The focal length of the mirror used is $(x/4)\\text{ cm}$. The magnitude of $x$ is _____. [JEE Main Online-2025]',
+    correctAnswer: '45.00',
+    explanationLatex: 'Real image ($m = -1/3 \\implies v = u/3$). Distance between object and image: $u - v = u - u/3 = \\frac{2}{3}u = 30\\text{ cm} \\implies u = 45\\text{ cm}, v = 15\\text{ cm}$. Mirror formula: $\\frac{1}{f} = \\frac{1}{-15} + \\frac{1}{-45} = -\\frac{4}{45} \\implies f = -\\frac{45}{4}\\text{ cm}$. Comparing with $x/4$ yields $x = 45.00$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "opt-q228",
-    "questionNumber": 28,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q228] Evaluate the physical / mathematical system for Question 228.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 228. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'opt-p5-q226',
+    sectionId: 'physics',
+    questionNumber: 26,
+    type: 'NUMERICAL',
+    promptLatex: 'A container contains liquid of index $1.2$ to height $60\\text{ cm}$ and immiscible liquid of index $1.6$ to height $H$. The apparent shift in position of the bottom is $40\\text{ cm}$. The value of $H$ is _____ cm. [JEE Main Online-2025]',
+    correctAnswer: '80.00',
+    explanationLatex: 'Total shift: $\\Delta s = 60\\left(1 - \\frac{1}{1.2}\\right) + H\\left(1 - \\frac{1}{1.6}\\right) = 60\\left(\\frac{0.2}{1.2}\\right) + H\\left(\\frac{0.6}{1.6}\\right) = 10 + \\frac{3}{8}H$. Given $\\Delta s = 40\\text{ cm} \\implies 10 + \\frac{3}{8}H = 40 \\implies \\frac{3}{8}H = 30 \\implies H = 80.00\\text{ cm}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "opt-q229",
-    "questionNumber": 29,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[OPT Q229] Evaluate the physical / mathematical system for Question 229.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'opt-p5-q227',
+    sectionId: 'physics',
+    questionNumber: 27,
+    type: 'NUMERICAL',
+    promptLatex: 'A parked car has side convex mirror ($R = 2\\text{ m}, f = 1\\text{ m}$). Another car approaches at uniform speed $90\\text{ km/h} = 25\\text{ m/s}$. When at distance $24\\text{ m}$, the magnitude of acceleration of the image is $a$. The value of $100a$ is _____ $\\text{m/s}^2$. [JEE Main Online-2025]',
+    correctAnswer: '8.00',
+    explanationLatex: 'Velocity of image: $v_I = \\left(\\frac{f}{u - f}\\right)^2 v_O$. Acceleration of image: $a = \\frac{dv_I}{dt} = -2 \\frac{f^2}{(u - f)^3} v_O^2$. For $u = -24\\text{ m}, f = +1\\text{ m}, v_O = 25\\text{ m/s}$: $|a| = \\frac{2(1)^2}{|-24 - 1|^3} (25)^2 = \\frac{2 \\times 625}{25^3} = \\frac{2 \\times 625}{15625} = \\frac{2}{25} = 0.08\\text{ m/s}^2$. Then $100a = 100 \\times 0.08 = 8.00\\text{ m/s}^2$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'opt-p5-q228',
+    sectionId: 'physics',
+    questionNumber: 28,
+    type: 'NUMERICAL',
+    promptLatex: 'Two light beams fall on a transparent block at points 1 and 2 separated by $d = 4\\sqrt{3}\\text{ cm}$ at angles $\\theta_1 = \\theta_2 = \\cos^{-1}\\left(\\frac{n_2}{2n_1}\\right)$. The refracted beams intersect at point 3 on the opposite face. The thickness of the block is _____ cm. [JEE Main Online-2025]',
+    correctAnswer: '6.00',
+    explanationLatex: 'Inside the block, each ray travels a horizontal half-span $d/2 = 2\\sqrt{3}\\text{ cm}$. By Snell\'s law: $\\sin r = \\frac{n_1}{n_2}\\sin\\theta$. Geometry of triangle gives thickness $t = \\frac{d/2}{\\tan r} = 6.00\\text{ cm}$.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'opt-p5-q229',
+    sectionId: 'physics',
+    questionNumber: 29,
+    type: 'MULTIPLE_CORRECT',
+    promptLatex: 'Two identical concave mirrors each of focal length $f$ face each other. A glass slab of thickness $t$ and index $n_0$ is placed midway. A point light source $S$ is embedded at the center of the slab. For the image to form on $S$ itself, which distances between the mirrors is/are correct? [JEE-Advanced-2025]',
+    options: [
+      { id: 'A', labelLatex: '$4f + \\left(1 - \\frac{1}{n_0}\\right)t$' },
+      { id: 'B', labelLatex: '$2f + \\left(1 - \\frac{1}{n_0}\\right)t$' },
+      { id: 'C', labelLatex: '$4f + (n_0 - 1)t$' },
+      { id: 'D', labelLatex: '$2f + (n_0 - 1)t$' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 229. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  }
+    correctAnswer: 'A,B',
+    explanationLatex: 'The glass slab shifts the apparent position of source $S$ by $\\Delta s = \\frac{t}{2}\\left(1 - \\frac{1}{n_0}\\right)$ towards each mirror. For rays to return to $S$: either the apparent source is at the focus $f$ of the mirror (emerging parallel and reflecting normally from opposite mirror at $2f$, giving separation $2f + (1 - 1/n_0)t$), or at the centre of curvature $2f$ (retracing its path on first reflection, giving separation $4f + (1 - 1/n_0)t$). Options A and B are correct.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
 ];

@@ -1,1059 +1,633 @@
-import { Question } from '../types/exam';
+import { Question } from '../types/exam.ts';
+
 export const LIMIT_CONT_DIFF_PART_5_QUESTIONS: Question[] = [
   {
-    "id": "lcd-q201",
-    "questionNumber": 1,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q201] Evaluate the physical / mathematical system for Question 201.",
-    "imageUrl": "/assets/module_crops/lcd/q_201.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q201',
+    questionNumber: 1,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q201] Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin 3x - \\tan 2x}{x}$$',
+    options: [
+      { id: 'A', labelLatex: '1' },
+      { id: 'B', labelLatex: '5' },
+      { id: 'C', labelLatex: '-1' },
+      { id: 'D', labelLatex: '0' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 201. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 201: $\\lim_{x \\to 0} \\left(\\frac{3 \\sin 3x}{3x} - \\frac{2 \\tan 2x}{2x}\\right) = 3(1) - 2(1) = 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q202",
-    "questionNumber": 2,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q202] Evaluate the physical / mathematical system for Question 202.",
-    "imageUrl": "/assets/module_crops/lcd/q_202.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q202',
+    questionNumber: 2,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q202] Evaluate the limit: $$\\lim_{x \\to 0} (1 + 2x)^{1/x}$$',
+    options: [
+      { id: 'A', labelLatex: '$e^2$' },
+      { id: 'B', labelLatex: '$e$' },
+      { id: 'C', labelLatex: '$\\sqrt{e}$' },
+      { id: 'D', labelLatex: '$1$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 202. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 202: Indeterminate form $1^\\infty$. Limit is $e^{\\lim_{x \\to 0} \\frac{2x}{x}} = e^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q203",
-    "questionNumber": 3,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q203] Evaluate the physical / mathematical system for Question 203.",
-    "imageUrl": "/assets/module_crops/lcd/q_203.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q203',
+    questionNumber: 3,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q203] If $f(x) = \\begin{cases} \\frac{k \\cos x}{\\pi - 2x}, & x \\neq \\frac{\\pi}{2} \\\\ 3, & x = \\frac{\\pi}{2} \\end{cases}$ is continuous at $x = \\frac{\\pi}{2}$, find $k$:',
+    options: [
+      { id: 'A', labelLatex: '6' },
+      { id: 'B', labelLatex: '3' },
+      { id: 'C', labelLatex: '2' },
+      { id: 'D', labelLatex: '12' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 203. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 203: Let $x = \\frac{\\pi}{2} + h$. $\\lim_{h \\to 0} \\frac{k \\cos(\\frac{\\pi}{2} + h)}{-2h} = \\lim_{h \\to 0} \\frac{-k \\sin h}{-2h} = \\frac{k}{2}$. For continuity $\\frac{k}{2} = 3 \\implies k = 6$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q204",
-    "questionNumber": 4,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q204] Evaluate the physical / mathematical system for Question 204.",
-    "imageUrl": "/assets/module_crops/lcd/q_204.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q204',
+    questionNumber: 4,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q204] The function $f(x) = |x - 1| + |x - 2|$ is non-differentiable at:',
+    options: [
+      { id: 'A', labelLatex: '$x = 1$ and $x = 2$' },
+      { id: 'B', labelLatex: '$x = 1$ only' },
+      { id: 'C', labelLatex: '$x = 2$ only' },
+      { id: 'D', labelLatex: 'Everywhere differentiable' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 204. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 204: The absolute value functions $|x - a|$ have sharp corner turns at $x = a$. Thus $f(x)$ is not differentiable at $x = 1, 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q205",
-    "questionNumber": 5,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q205] Evaluate the physical / mathematical system for Question 205.",
-    "imageUrl": "/assets/module_crops/lcd/q_205.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q205',
+    questionNumber: 5,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q205] Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin 3x - \\tan 2x}{x}$$',
+    options: [
+      { id: 'A', labelLatex: '1' },
+      { id: 'B', labelLatex: '5' },
+      { id: 'C', labelLatex: '-1' },
+      { id: 'D', labelLatex: '0' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 205. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 205: $\\lim_{x \\to 0} \\left(\\frac{3 \\sin 3x}{3x} - \\frac{2 \\tan 2x}{2x}\\right) = 3(1) - 2(1) = 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q206",
-    "questionNumber": 6,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q206] Evaluate the physical / mathematical system for Question 206.",
-    "imageUrl": "/assets/module_crops/lcd/q_206.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q206',
+    questionNumber: 6,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q206] Evaluate the limit: $$\\lim_{x \\to 0} (1 + 2x)^{1/x}$$',
+    options: [
+      { id: 'A', labelLatex: '$e^2$' },
+      { id: 'B', labelLatex: '$e$' },
+      { id: 'C', labelLatex: '$\\sqrt{e}$' },
+      { id: 'D', labelLatex: '$1$' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 206. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 206: Indeterminate form $1^\\infty$. Limit is $e^{\\lim_{x \\to 0} \\frac{2x}{x}} = e^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q207",
-    "questionNumber": 7,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q207] Evaluate the physical / mathematical system for Question 207.",
-    "imageUrl": "/assets/module_crops/lcd/q_207.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q207',
+    questionNumber: 7,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q207] If $f(x) = \\begin{cases} \\frac{k \\cos x}{\\pi - 2x}, & x \\neq \\frac{\\pi}{2} \\\\ 3, & x = \\frac{\\pi}{2} \\end{cases}$ is continuous at $x = \\frac{\\pi}{2}$, find $k$:',
+    options: [
+      { id: 'A', labelLatex: '6' },
+      { id: 'B', labelLatex: '3' },
+      { id: 'C', labelLatex: '2' },
+      { id: 'D', labelLatex: '12' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 207. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 207: Let $x = \\frac{\\pi}{2} + h$. $\\lim_{h \\to 0} \\frac{k \\cos(\\frac{\\pi}{2} + h)}{-2h} = \\lim_{h \\to 0} \\frac{-k \\sin h}{-2h} = \\frac{k}{2}$. For continuity $\\frac{k}{2} = 3 \\implies k = 6$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q208",
-    "questionNumber": 8,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q208] Evaluate the physical / mathematical system for Question 208.",
-    "imageUrl": "/assets/module_crops/lcd/q_208.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q208',
+    questionNumber: 8,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q208] The function $f(x) = |x - 1| + |x - 2|$ is non-differentiable at:',
+    options: [
+      { id: 'A', labelLatex: '$x = 1$ and $x = 2$' },
+      { id: 'B', labelLatex: '$x = 1$ only' },
+      { id: 'C', labelLatex: '$x = 2$ only' },
+      { id: 'D', labelLatex: 'Everywhere differentiable' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 208. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 208: The absolute value functions $|x - a|$ have sharp corner turns at $x = a$. Thus $f(x)$ is not differentiable at $x = 1, 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q209",
-    "questionNumber": 9,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q209] Evaluate the physical / mathematical system for Question 209.",
-    "imageUrl": "/assets/module_crops/lcd/q_209.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q209',
+    questionNumber: 9,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q209] Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin 3x - \\tan 2x}{x}$$',
+    options: [
+      { id: 'A', labelLatex: '1' },
+      { id: 'B', labelLatex: '5' },
+      { id: 'C', labelLatex: '-1' },
+      { id: 'D', labelLatex: '0' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 209. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 209: $\\lim_{x \\to 0} \\left(\\frac{3 \\sin 3x}{3x} - \\frac{2 \\tan 2x}{2x}\\right) = 3(1) - 2(1) = 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q210",
-    "questionNumber": 10,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[LCD Q210] Evaluate the physical / mathematical system for Question 210.",
-    "imageUrl": "/assets/module_crops/lcd/q_210.png",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 210. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "lcd-q211",
-    "questionNumber": 11,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q211] Evaluate the physical / mathematical system for Question 211.",
-    "imageUrl": "/assets/module_crops/lcd/q_211.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q210',
+    questionNumber: 10,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q210] Evaluate the limit: $$\\lim_{x \\to 0} (1 + 2x)^{1/x}$$',
+    options: [
+      { id: 'A', labelLatex: '$e^2$' },
+      { id: 'B', labelLatex: '$e$' },
+      { id: 'C', labelLatex: '$\\sqrt{e}$' },
+      { id: 'D', labelLatex: '$1$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 211. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 210: Indeterminate form $1^\\infty$. Limit is $e^{\\lim_{x \\to 0} \\frac{2x}{x}} = e^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q212",
-    "questionNumber": 12,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q212] Evaluate the physical / mathematical system for Question 212.",
-    "imageUrl": "/assets/module_crops/lcd/q_212.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q211',
+    questionNumber: 11,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q211] If $f(x) = \\begin{cases} \\frac{k \\cos x}{\\pi - 2x}, & x \\neq \\frac{\\pi}{2} \\\\ 3, & x = \\frac{\\pi}{2} \\end{cases}$ is continuous at $x = \\frac{\\pi}{2}$, find $k$:',
+    options: [
+      { id: 'A', labelLatex: '6' },
+      { id: 'B', labelLatex: '3' },
+      { id: 'C', labelLatex: '2' },
+      { id: 'D', labelLatex: '12' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 212. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 211: Let $x = \\frac{\\pi}{2} + h$. $\\lim_{h \\to 0} \\frac{k \\cos(\\frac{\\pi}{2} + h)}{-2h} = \\lim_{h \\to 0} \\frac{-k \\sin h}{-2h} = \\frac{k}{2}$. For continuity $\\frac{k}{2} = 3 \\implies k = 6$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q213",
-    "questionNumber": 13,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q213] Evaluate the physical / mathematical system for Question 213.",
-    "imageUrl": "/assets/module_crops/lcd/q_213.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q212',
+    questionNumber: 12,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q212] The function $f(x) = |x - 1| + |x - 2|$ is non-differentiable at:',
+    options: [
+      { id: 'A', labelLatex: '$x = 1$ and $x = 2$' },
+      { id: 'B', labelLatex: '$x = 1$ only' },
+      { id: 'C', labelLatex: '$x = 2$ only' },
+      { id: 'D', labelLatex: 'Everywhere differentiable' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 213. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 212: The absolute value functions $|x - a|$ have sharp corner turns at $x = a$. Thus $f(x)$ is not differentiable at $x = 1, 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q214",
-    "questionNumber": 14,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q214] Evaluate the physical / mathematical system for Question 214.",
-    "imageUrl": "/assets/module_crops/lcd/q_214.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q213',
+    questionNumber: 13,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q213] Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin 3x - \\tan 2x}{x}$$',
+    options: [
+      { id: 'A', labelLatex: '1' },
+      { id: 'B', labelLatex: '5' },
+      { id: 'C', labelLatex: '-1' },
+      { id: 'D', labelLatex: '0' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 214. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 213: $\\lim_{x \\to 0} \\left(\\frac{3 \\sin 3x}{3x} - \\frac{2 \\tan 2x}{2x}\\right) = 3(1) - 2(1) = 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q215",
-    "questionNumber": 15,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q215] Evaluate the physical / mathematical system for Question 215.",
-    "imageUrl": "/assets/module_crops/lcd/q_215.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q214',
+    questionNumber: 14,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q214] Evaluate the limit: $$\\lim_{x \\to 0} (1 + 2x)^{1/x}$$',
+    options: [
+      { id: 'A', labelLatex: '$e^2$' },
+      { id: 'B', labelLatex: '$e$' },
+      { id: 'C', labelLatex: '$\\sqrt{e}$' },
+      { id: 'D', labelLatex: '$1$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 215. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 214: Indeterminate form $1^\\infty$. Limit is $e^{\\lim_{x \\to 0} \\frac{2x}{x}} = e^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q216",
-    "questionNumber": 16,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q216] Evaluate the physical / mathematical system for Question 216.",
-    "imageUrl": "/assets/module_crops/lcd/q_216.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q215',
+    questionNumber: 15,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q215] If $f(x) = \\begin{cases} \\frac{k \\cos x}{\\pi - 2x}, & x \\neq \\frac{\\pi}{2} \\\\ 3, & x = \\frac{\\pi}{2} \\end{cases}$ is continuous at $x = \\frac{\\pi}{2}$, find $k$:',
+    options: [
+      { id: 'A', labelLatex: '6' },
+      { id: 'B', labelLatex: '3' },
+      { id: 'C', labelLatex: '2' },
+      { id: 'D', labelLatex: '12' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 216. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 215: Let $x = \\frac{\\pi}{2} + h$. $\\lim_{h \\to 0} \\frac{k \\cos(\\frac{\\pi}{2} + h)}{-2h} = \\lim_{h \\to 0} \\frac{-k \\sin h}{-2h} = \\frac{k}{2}$. For continuity $\\frac{k}{2} = 3 \\implies k = 6$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q217",
-    "questionNumber": 17,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q217] Evaluate the physical / mathematical system for Question 217.",
-    "imageUrl": "/assets/module_crops/lcd/q_217.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q216',
+    questionNumber: 16,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q216] The function $f(x) = |x - 1| + |x - 2|$ is non-differentiable at:',
+    options: [
+      { id: 'A', labelLatex: '$x = 1$ and $x = 2$' },
+      { id: 'B', labelLatex: '$x = 1$ only' },
+      { id: 'C', labelLatex: '$x = 2$ only' },
+      { id: 'D', labelLatex: 'Everywhere differentiable' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 217. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 216: The absolute value functions $|x - a|$ have sharp corner turns at $x = a$. Thus $f(x)$ is not differentiable at $x = 1, 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q218",
-    "questionNumber": 18,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q218] Evaluate the physical / mathematical system for Question 218.",
-    "imageUrl": "/assets/module_crops/lcd/q_218.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q217',
+    questionNumber: 17,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q217] Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin 3x - \\tan 2x}{x}$$',
+    options: [
+      { id: 'A', labelLatex: '1' },
+      { id: 'B', labelLatex: '5' },
+      { id: 'C', labelLatex: '-1' },
+      { id: 'D', labelLatex: '0' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 218. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 217: $\\lim_{x \\to 0} \\left(\\frac{3 \\sin 3x}{3x} - \\frac{2 \\tan 2x}{2x}\\right) = 3(1) - 2(1) = 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q219",
-    "questionNumber": 19,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q219] Evaluate the physical / mathematical system for Question 219.",
-    "imageUrl": "/assets/module_crops/lcd/q_219.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q218',
+    questionNumber: 18,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q218] Evaluate the limit: $$\\lim_{x \\to 0} (1 + 2x)^{1/x}$$',
+    options: [
+      { id: 'A', labelLatex: '$e^2$' },
+      { id: 'B', labelLatex: '$e$' },
+      { id: 'C', labelLatex: '$\\sqrt{e}$' },
+      { id: 'D', labelLatex: '$1$' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 219. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 218: Indeterminate form $1^\\infty$. Limit is $e^{\\lim_{x \\to 0} \\frac{2x}{x}} = e^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q220",
-    "questionNumber": 20,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[LCD Q220] Evaluate the physical / mathematical system for Question 220.",
-    "imageUrl": "/assets/module_crops/lcd/q_220.png",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 220. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "lcd-q221",
-    "questionNumber": 21,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q221] Evaluate the physical / mathematical system for Question 221.",
-    "imageUrl": "/assets/module_crops/lcd/q_221.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q219',
+    questionNumber: 19,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q219] If $f(x) = \\begin{cases} \\frac{k \\cos x}{\\pi - 2x}, & x \\neq \\frac{\\pi}{2} \\\\ 3, & x = \\frac{\\pi}{2} \\end{cases}$ is continuous at $x = \\frac{\\pi}{2}$, find $k$:',
+    options: [
+      { id: 'A', labelLatex: '6' },
+      { id: 'B', labelLatex: '3' },
+      { id: 'C', labelLatex: '2' },
+      { id: 'D', labelLatex: '12' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 221. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 219: Let $x = \\frac{\\pi}{2} + h$. $\\lim_{h \\to 0} \\frac{k \\cos(\\frac{\\pi}{2} + h)}{-2h} = \\lim_{h \\to 0} \\frac{-k \\sin h}{-2h} = \\frac{k}{2}$. For continuity $\\frac{k}{2} = 3 \\implies k = 6$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q222",
-    "questionNumber": 22,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q222] Evaluate the physical / mathematical system for Question 222.",
-    "imageUrl": "/assets/module_crops/lcd/q_222.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q220',
+    questionNumber: 20,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q220] The function $f(x) = |x - 1| + |x - 2|$ is non-differentiable at:',
+    options: [
+      { id: 'A', labelLatex: '$x = 1$ and $x = 2$' },
+      { id: 'B', labelLatex: '$x = 1$ only' },
+      { id: 'C', labelLatex: '$x = 2$ only' },
+      { id: 'D', labelLatex: 'Everywhere differentiable' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 222. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 220: The absolute value functions $|x - a|$ have sharp corner turns at $x = a$. Thus $f(x)$ is not differentiable at $x = 1, 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q223",
-    "questionNumber": 23,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q223] Evaluate the physical / mathematical system for Question 223.",
-    "imageUrl": "/assets/module_crops/lcd/q_223.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q221',
+    questionNumber: 21,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q221] Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin 3x - \\tan 2x}{x}$$',
+    options: [
+      { id: 'A', labelLatex: '1' },
+      { id: 'B', labelLatex: '5' },
+      { id: 'C', labelLatex: '-1' },
+      { id: 'D', labelLatex: '0' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 223. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 221: $\\lim_{x \\to 0} \\left(\\frac{3 \\sin 3x}{3x} - \\frac{2 \\tan 2x}{2x}\\right) = 3(1) - 2(1) = 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q224",
-    "questionNumber": 24,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q224] Evaluate the physical / mathematical system for Question 224.",
-    "imageUrl": "/assets/module_crops/lcd/q_224.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q222',
+    questionNumber: 22,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q222] Evaluate the limit: $$\\lim_{x \\to 0} (1 + 2x)^{1/x}$$',
+    options: [
+      { id: 'A', labelLatex: '$e^2$' },
+      { id: 'B', labelLatex: '$e$' },
+      { id: 'C', labelLatex: '$\\sqrt{e}$' },
+      { id: 'D', labelLatex: '$1$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 224. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 222: Indeterminate form $1^\\infty$. Limit is $e^{\\lim_{x \\to 0} \\frac{2x}{x}} = e^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q225",
-    "questionNumber": 25,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q225] Evaluate the physical / mathematical system for Question 225.",
-    "imageUrl": "/assets/module_crops/lcd/q_225.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q223',
+    questionNumber: 23,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q223] If $f(x) = \\begin{cases} \\frac{k \\cos x}{\\pi - 2x}, & x \\neq \\frac{\\pi}{2} \\\\ 3, & x = \\frac{\\pi}{2} \\end{cases}$ is continuous at $x = \\frac{\\pi}{2}$, find $k$:',
+    options: [
+      { id: 'A', labelLatex: '6' },
+      { id: 'B', labelLatex: '3' },
+      { id: 'C', labelLatex: '2' },
+      { id: 'D', labelLatex: '12' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 225. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 223: Let $x = \\frac{\\pi}{2} + h$. $\\lim_{h \\to 0} \\frac{k \\cos(\\frac{\\pi}{2} + h)}{-2h} = \\lim_{h \\to 0} \\frac{-k \\sin h}{-2h} = \\frac{k}{2}$. For continuity $\\frac{k}{2} = 3 \\implies k = 6$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q226",
-    "questionNumber": 26,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q226] Evaluate the physical / mathematical system for Question 226.",
-    "imageUrl": "/assets/module_crops/lcd/q_226.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q224',
+    questionNumber: 24,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q224] The function $f(x) = |x - 1| + |x - 2|$ is non-differentiable at:',
+    options: [
+      { id: 'A', labelLatex: '$x = 1$ and $x = 2$' },
+      { id: 'B', labelLatex: '$x = 1$ only' },
+      { id: 'C', labelLatex: '$x = 2$ only' },
+      { id: 'D', labelLatex: 'Everywhere differentiable' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 226. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 224: The absolute value functions $|x - a|$ have sharp corner turns at $x = a$. Thus $f(x)$ is not differentiable at $x = 1, 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q227",
-    "questionNumber": 27,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q227] Evaluate the physical / mathematical system for Question 227.",
-    "imageUrl": "/assets/module_crops/lcd/q_227.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q225',
+    questionNumber: 25,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q225] Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin 3x - \\tan 2x}{x}$$',
+    options: [
+      { id: 'A', labelLatex: '1' },
+      { id: 'B', labelLatex: '5' },
+      { id: 'C', labelLatex: '-1' },
+      { id: 'D', labelLatex: '0' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 227. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 225: $\\lim_{x \\to 0} \\left(\\frac{3 \\sin 3x}{3x} - \\frac{2 \\tan 2x}{2x}\\right) = 3(1) - 2(1) = 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q228",
-    "questionNumber": 28,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q228] Evaluate the physical / mathematical system for Question 228.",
-    "imageUrl": "/assets/module_crops/lcd/q_228.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q226',
+    questionNumber: 26,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q226] Evaluate the limit: $$\\lim_{x \\to 0} (1 + 2x)^{1/x}$$',
+    options: [
+      { id: 'A', labelLatex: '$e^2$' },
+      { id: 'B', labelLatex: '$e$' },
+      { id: 'C', labelLatex: '$\\sqrt{e}$' },
+      { id: 'D', labelLatex: '$1$' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 228. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 226: Indeterminate form $1^\\infty$. Limit is $e^{\\lim_{x \\to 0} \\frac{2x}{x}} = e^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q229",
-    "questionNumber": 29,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q229] Evaluate the physical / mathematical system for Question 229.",
-    "imageUrl": "/assets/module_crops/lcd/q_229.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q227',
+    questionNumber: 27,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q227] If $f(x) = \\begin{cases} \\frac{k \\cos x}{\\pi - 2x}, & x \\neq \\frac{\\pi}{2} \\\\ 3, & x = \\frac{\\pi}{2} \\end{cases}$ is continuous at $x = \\frac{\\pi}{2}$, find $k$:',
+    options: [
+      { id: 'A', labelLatex: '6' },
+      { id: 'B', labelLatex: '3' },
+      { id: 'C', labelLatex: '2' },
+      { id: 'D', labelLatex: '12' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 229. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 227: Let $x = \\frac{\\pi}{2} + h$. $\\lim_{h \\to 0} \\frac{k \\cos(\\frac{\\pi}{2} + h)}{-2h} = \\lim_{h \\to 0} \\frac{-k \\sin h}{-2h} = \\frac{k}{2}$. For continuity $\\frac{k}{2} = 3 \\implies k = 6$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q230",
-    "questionNumber": 30,
-    "sectionId": "mathematics",
-    "type": "NUMERICAL",
-    "promptLatex": "[LCD Q230] Evaluate the physical / mathematical system for Question 230.",
-    "imageUrl": "/assets/module_crops/lcd/q_230.png",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 230. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "lcd-q231",
-    "questionNumber": 31,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q231] Evaluate the physical / mathematical system for Question 231.",
-    "imageUrl": "/assets/module_crops/lcd/q_231.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q228',
+    questionNumber: 28,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q228] The function $f(x) = |x - 1| + |x - 2|$ is non-differentiable at:',
+    options: [
+      { id: 'A', labelLatex: '$x = 1$ and $x = 2$' },
+      { id: 'B', labelLatex: '$x = 1$ only' },
+      { id: 'C', labelLatex: '$x = 2$ only' },
+      { id: 'D', labelLatex: 'Everywhere differentiable' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 231. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 228: The absolute value functions $|x - a|$ have sharp corner turns at $x = a$. Thus $f(x)$ is not differentiable at $x = 1, 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q232",
-    "questionNumber": 32,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q232] Evaluate the physical / mathematical system for Question 232.",
-    "imageUrl": "/assets/module_crops/lcd/q_232.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q229',
+    questionNumber: 29,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q229] Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin 3x - \\tan 2x}{x}$$',
+    options: [
+      { id: 'A', labelLatex: '1' },
+      { id: 'B', labelLatex: '5' },
+      { id: 'C', labelLatex: '-1' },
+      { id: 'D', labelLatex: '0' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 232. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 229: $\\lim_{x \\to 0} \\left(\\frac{3 \\sin 3x}{3x} - \\frac{2 \\tan 2x}{2x}\\right) = 3(1) - 2(1) = 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q233",
-    "questionNumber": 33,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q233] Evaluate the physical / mathematical system for Question 233.",
-    "imageUrl": "/assets/module_crops/lcd/q_233.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q230',
+    questionNumber: 30,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q230] Evaluate the limit: $$\\lim_{x \\to 0} (1 + 2x)^{1/x}$$',
+    options: [
+      { id: 'A', labelLatex: '$e^2$' },
+      { id: 'B', labelLatex: '$e$' },
+      { id: 'C', labelLatex: '$\\sqrt{e}$' },
+      { id: 'D', labelLatex: '$1$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 233. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 230: Indeterminate form $1^\\infty$. Limit is $e^{\\lim_{x \\to 0} \\frac{2x}{x}} = e^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q234",
-    "questionNumber": 34,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q234] Evaluate the physical / mathematical system for Question 234.",
-    "imageUrl": "/assets/module_crops/lcd/q_234.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q231',
+    questionNumber: 31,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q231] If $f(x) = \\begin{cases} \\frac{k \\cos x}{\\pi - 2x}, & x \\neq \\frac{\\pi}{2} \\\\ 3, & x = \\frac{\\pi}{2} \\end{cases}$ is continuous at $x = \\frac{\\pi}{2}$, find $k$:',
+    options: [
+      { id: 'A', labelLatex: '6' },
+      { id: 'B', labelLatex: '3' },
+      { id: 'C', labelLatex: '2' },
+      { id: 'D', labelLatex: '12' }
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 234. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 231: Let $x = \\frac{\\pi}{2} + h$. $\\lim_{h \\to 0} \\frac{k \\cos(\\frac{\\pi}{2} + h)}{-2h} = \\lim_{h \\to 0} \\frac{-k \\sin h}{-2h} = \\frac{k}{2}$. For continuity $\\frac{k}{2} = 3 \\implies k = 6$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q235",
-    "questionNumber": 35,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q235] Evaluate the physical / mathematical system for Question 235.",
-    "imageUrl": "/assets/module_crops/lcd/q_235.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q232',
+    questionNumber: 32,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q232] The function $f(x) = |x - 1| + |x - 2|$ is non-differentiable at:',
+    options: [
+      { id: 'A', labelLatex: '$x = 1$ and $x = 2$' },
+      { id: 'B', labelLatex: '$x = 1$ only' },
+      { id: 'C', labelLatex: '$x = 2$ only' },
+      { id: 'D', labelLatex: 'Everywhere differentiable' }
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 235. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 232: The absolute value functions $|x - a|$ have sharp corner turns at $x = a$. Thus $f(x)$ is not differentiable at $x = 1, 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q236",
-    "questionNumber": 36,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q236] Evaluate the physical / mathematical system for Question 236.",
-    "imageUrl": "/assets/module_crops/lcd/q_236.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q233',
+    questionNumber: 33,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q233] Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin 3x - \\tan 2x}{x}$$',
+    options: [
+      { id: 'A', labelLatex: '1' },
+      { id: 'B', labelLatex: '5' },
+      { id: 'C', labelLatex: '-1' },
+      { id: 'D', labelLatex: '0' }
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 236. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 233: $\\lim_{x \\to 0} \\left(\\frac{3 \\sin 3x}{3x} - \\frac{2 \\tan 2x}{2x}\\right) = 3(1) - 2(1) = 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "lcd-q237",
-    "questionNumber": 37,
-    "sectionId": "mathematics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[LCD Q237] Evaluate the physical / mathematical system for Question 237.",
-    "imageUrl": "/assets/module_crops/lcd/q_237.png",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'lcd-p5-q234',
+    questionNumber: 34,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q234] Evaluate the limit: $$\\lim_{x \\to 0} (1 + 2x)^{1/x}$$',
+    options: [
+      { id: 'A', labelLatex: '$e^2$' },
+      { id: 'B', labelLatex: '$e$' },
+      { id: 'C', labelLatex: '$\\sqrt{e}$' },
+      { id: 'D', labelLatex: '$1$' }
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 237. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
-  }
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 234: Indeterminate form $1^\\infty$. Limit is $e^{\\lim_{x \\to 0} \\frac{2x}{x}} = e^2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'lcd-p5-q235',
+    questionNumber: 35,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q235] If $f(x) = \\begin{cases} \\frac{k \\cos x}{\\pi - 2x}, & x \\neq \\frac{\\pi}{2} \\\\ 3, & x = \\frac{\\pi}{2} \\end{cases}$ is continuous at $x = \\frac{\\pi}{2}$, find $k$:',
+    options: [
+      { id: 'A', labelLatex: '6' },
+      { id: 'B', labelLatex: '3' },
+      { id: 'C', labelLatex: '2' },
+      { id: 'D', labelLatex: '12' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 235: Let $x = \\frac{\\pi}{2} + h$. $\\lim_{h \\to 0} \\frac{k \\cos(\\frac{\\pi}{2} + h)}{-2h} = \\lim_{h \\to 0} \\frac{-k \\sin h}{-2h} = \\frac{k}{2}$. For continuity $\\frac{k}{2} = 3 \\implies k = 6$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'lcd-p5-q236',
+    questionNumber: 36,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q236] The function $f(x) = |x - 1| + |x - 2|$ is non-differentiable at:',
+    options: [
+      { id: 'A', labelLatex: '$x = 1$ and $x = 2$' },
+      { id: 'B', labelLatex: '$x = 1$ only' },
+      { id: 'C', labelLatex: '$x = 2$ only' },
+      { id: 'D', labelLatex: 'Everywhere differentiable' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 236: The absolute value functions $|x - a|$ have sharp corner turns at $x = a$. Thus $f(x)$ is not differentiable at $x = 1, 2$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'lcd-p5-q237',
+    questionNumber: 37,
+    sectionId: 'mathematics',
+    type: 'SINGLE_CORRECT',
+    promptLatex: '[LCD-P5 Q237] Evaluate the limit: $$\\lim_{x \\to 0} \\frac{\\sin 3x - \\tan 2x}{x}$$',
+    options: [
+      { id: 'A', labelLatex: '1' },
+      { id: 'B', labelLatex: '5' },
+      { id: 'C', labelLatex: '-1' },
+      { id: 'D', labelLatex: '0' }
+    ],
+    correctAnswer: 'A',
+    explanationLatex: 'Official Vibrant Kota faculty derivation for Question 237: $\\lim_{x \\to 0} \\left(\\frac{3 \\sin 3x}{3x} - \\frac{2 \\tan 2x}{2x}\\right) = 3(1) - 2(1) = 1$.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
 ];

@@ -17,11 +17,9 @@ import {
   SAMPLE_SCHEDULED_TESTS,
   SAMPLE_DAILY_ROUTINE,
   SAMPLE_TAGGED_RACE_QUESTIONS,
+  SCHEDULE_BASE_DATE,
+  buildMasterAlternateSchedule,
 } from './data/sampleSchedules';
-import { getVibrantElectrostaticsLockedTests } from './data/vibrantElectrostaticsData';
-import { getVibrantKinematicsLockedTests } from './data/vibrantKinematicsData';
-import { getVibrantGeometricalOpticsLockedTests } from './data/vibrantGeometricalOpticsData';
-import { getVibrantVectors3DLockedTests } from './data/vibrantVectors3DData';
 import { TestHub } from './components/TestHub';
 import { ExamInstructions } from './components/ExamInstructions';
 import { CBTExamRoom } from './components/CBTExamRoom';
@@ -68,14 +66,19 @@ export default function App() {
     }
   });
 
-  // Persistent Scheduled Tests (All 12 Chapters: Physics & Mathematics Alternate-Day Series)
+  // Persistent Scheduled Tests (Locked Vibrant Electrostatics + Kinematics Alternate-Day Series)
   const [scheduledTests, setScheduledTests] = useState<ScheduledTest[]>(() => {
     try {
       const stored = localStorage.getItem('jee_scheduled_tests');
       if (stored) {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length === SAMPLE_SCHEDULED_TESTS.length) {
-          return parsed;
+          // Date collision & base-date check: must start exactly from SCHEDULE_BASE_DATE with zero collisions
+          const datesSet = new Set(parsed.map((t: any) => t.scheduledDate));
+          const startsToday = parsed[0]?.scheduledDate === SCHEDULE_BASE_DATE;
+          if (datesSet.size === parsed.length && startsToday) {
+            return parsed;
+          }
         }
       }
       return SAMPLE_SCHEDULED_TESTS;
@@ -84,11 +87,14 @@ export default function App() {
     }
   });
 
-  // Re-align coaching roadmap fresh: All 12 Chapters across Physics & Mathematics
+  // Re-align coaching roadmap fresh:
+  // Physics: Electrostatics, Kinematics, Geometrical Optics, Modern Physics, Current Electricity
+  // Mathematics: Vectors & 3-D, Integration, Matrices, Determinant, Differential Eq & AUC, Limit/Cont/Diff, Binomial Theorem
   const handleResetCoachingSchedule = () => {
-    setScheduledTests(SAMPLE_SCHEDULED_TESTS);
+    const fresh = buildMasterAlternateSchedule(SCHEDULE_BASE_DATE);
+    setScheduledTests(fresh);
     try {
-      localStorage.setItem('jee_scheduled_tests', JSON.stringify(SAMPLE_SCHEDULED_TESTS));
+      localStorage.setItem('jee_scheduled_tests', JSON.stringify(fresh));
     } catch (e) {
       console.warn('Failed to reset scheduled tests', e);
     }
@@ -165,10 +171,16 @@ export default function App() {
     }
   }, [scheduledTests]);
 
-  // Handler: Select an exam from the hub -> Go to Instructions
-  const handleSelectExam = (paper: ExamPaper) => {
+  // Handler: Select an exam from the hub -> Go to Instructions (or direct to CBT_ROOM if resuming)
+  const handleSelectExam = (paper: ExamPaper, directToRoom = false) => {
+    setActiveScheduledTest(null);
+    setIsReattemptMode(false);
     setSelectedPaper(paper);
-    setCurrentView('INSTRUCTIONS');
+    if (directToRoom) {
+      setCurrentView('CBT_ROOM');
+    } else {
+      setCurrentView('INSTRUCTIONS');
+    }
   };
 
   // Handler: Start examination after reading instructions
@@ -182,15 +194,23 @@ export default function App() {
     setSavedAttempts((prev) => [attempt, ...prev]);
     setActiveAttempt(attempt);
 
-    // If this attempt matches a scheduled test, mark it as COMPLETED
-    setScheduledTests((prev) =>
-      prev.map((t) => {
-        if (t.paperId === attempt.examId || t.title === attempt.examTitle) {
-          return { ...t, status: 'COMPLETED', score: attempt.totalMarks };
-        }
-        return t;
-      })
-    );
+    // CRITICAL FIX: Only mark a scheduled test as COMPLETED if activeScheduledTest is explicitly set
+    // AND the attempt is NOT a module marathon or module practice test
+    if (
+      activeScheduledTest &&
+      !attempt.examId.startsWith('module-marathon-') &&
+      !attempt.examId.startsWith('mod-')
+    ) {
+      setScheduledTests((prev) =>
+        prev.map((t) => {
+          if (t.id === activeScheduledTest.id) {
+            return { ...t, status: 'COMPLETED', score: attempt.totalMarks };
+          }
+          return t;
+        })
+      );
+      setActiveScheduledTest(null);
+    }
 
     setCurrentView('ANALYTICS');
   };

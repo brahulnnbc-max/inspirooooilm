@@ -9,6 +9,7 @@ import {
 import { MathRenderer } from './MathRenderer';
 import { RemedialPracticeModal } from './RemedialPracticeModal';
 import { InspiroLogo } from './InspiroLogo';
+import { synthesizeAutomaticAiSolution } from '../utils/aiSolutionSynthesizer';
 import {
   estimateMathonGoPercentile,
   ShiftDifficulty,
@@ -76,7 +77,67 @@ export const PostTestAnalytics: React.FC<PostTestAnalyticsProps> = ({
   const [isLoadingRemedial, setIsLoadingRemedial] = useState(false);
   const [zoomedImg, setZoomedImg] = useState<string | null>(null);
 
+  // Automatic AI Solution & Kota Shortcut breakdown state
+  const [aiSolutions, setAiSolutions] = useState<
+    Record<
+      string,
+      {
+        keyConcept?: string;
+        stepByStep?: string;
+        shortcutTrick?: string;
+        commonMistake?: string;
+      }
+    >
+  >({});
+  const [loadingAiSolutions, setLoadingAiSolutions] = useState<
+    Record<string, boolean>
+  >({});
+
+  const handleGenerateAiSolution = async (q: Question, userAnswer: any) => {
+    if (loadingAiSolutions[q.id]) return;
+    setLoadingAiSolutions((prev) => ({ ...prev, [q.id]: true }));
+    try {
+      const res = await fetch('/api/generate-ai-solution', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: q, userAnswer }),
+      });
+      const data = await res.json();
+      if (data?.success && data?.aiSolution) {
+        setAiSolutions((prev) => ({ ...prev, [q.id]: data.aiSolution }));
+      }
+    } catch (e) {
+      console.warn('Failed to generate AI solution', e);
+    } finally {
+      setLoadingAiSolutions((prev) => ({ ...prev, [q.id]: false }));
+    }
+  };
+
+  // Automatically synthesize and populate AI solutions for all questions upon submission
   useEffect(() => {
+    const initialAiSolutions: Record<string, any> = {};
+    const autoExpanded: Record<string, boolean> = {};
+
+    paper.sections.forEach((sec) => {
+      sec.questions.forEach((q, idx) => {
+        const uAns = attempt.answers[q.id];
+        initialAiSolutions[q.id] = synthesizeAutomaticAiSolution(q, uAns);
+        // Automatically expand the first 5 questions and all incorrect questions so solutions are immediately visible
+        if (idx < 5 || (uAns && uAns !== q.correctAnswer)) {
+          autoExpanded[q.id] = true;
+        }
+      });
+    });
+
+    setAiSolutions((prev) => ({
+      ...initialAiSolutions,
+      ...prev,
+    }));
+    setExpandedQuestions((prev) => ({
+      ...autoExpanded,
+      ...prev,
+    }));
+
     try {
       confetti({
         particleCount: 80,
@@ -86,7 +147,7 @@ export const PostTestAnalytics: React.FC<PostTestAnalyticsProps> = ({
     } catch {
       // ignore
     }
-  }, []);
+  }, [paper, attempt]);
 
   // Compute detailed analytics & time management radar
   const analytics = useMemo(() => {
@@ -403,7 +464,7 @@ export const PostTestAnalytics: React.FC<PostTestAnalyticsProps> = ({
                 {paper.title}
               </h1>
               <p className="text-xs text-zinc-400 mt-1">
-                Submitted on {attempt.submittedAt ? new Date(attempt.submittedAt).toLocaleDateString() : 'Just now'}
+                Submitted on {new Date(attempt.submittedAt || Date.now()).toLocaleDateString()}
               </p>
             </div>
 
@@ -715,8 +776,29 @@ export const PostTestAnalytics: React.FC<PostTestAnalyticsProps> = ({
               </h2>
             </div>
 
-            {/* Filter Tabs */}
-            <div className="flex items-center gap-1.5 p-1 bg-zinc-950 border border-zinc-800 rounded-xl text-xs font-semibold">
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  const allExpanded = filteredQuestions.every((item) => expandedQuestions[item.question.id]);
+                  const next: Record<string, boolean> = {};
+                  filteredQuestions.forEach((item) => {
+                    next[item.question.id] = !allExpanded;
+                  });
+                  setExpandedQuestions((prev) => ({ ...prev, ...next }));
+                }}
+                className="px-3 py-1.5 rounded-xl border border-zinc-800 bg-zinc-950 hover:bg-zinc-900 text-xs text-zinc-300 font-semibold transition-colors flex items-center gap-1.5"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <span>
+                  {filteredQuestions.length > 0 && filteredQuestions.every((item) => expandedQuestions[item.question.id])
+                    ? 'Collapse All Solutions'
+                    : 'Expand All Solutions'}
+                </span>
+              </button>
+
+              {/* Filter Tabs */}
+              <div className="flex items-center gap-1.5 p-1 bg-zinc-950 border border-zinc-800 rounded-xl text-xs font-semibold">
               <button
                 onClick={() => setFilter('ALL')}
                 className={`px-3 py-1.5 rounded-lg transition-colors ${
@@ -759,6 +841,7 @@ export const PostTestAnalytics: React.FC<PostTestAnalyticsProps> = ({
               </button>
             </div>
           </div>
+        </div>
 
           {/* Question List */}
           <div className="space-y-4">
@@ -841,20 +924,20 @@ export const PostTestAnalytics: React.FC<PostTestAnalyticsProps> = ({
                         </div>
 
                         {q.imageUrl && (
-                          <div className="p-3 bg-zinc-950 rounded-xl border border-zinc-800 flex flex-col items-center">
+                          <div className="p-3.5 bg-white rounded-xl border border-slate-300 dark:border-zinc-700 flex flex-col items-center max-w-3xl mx-auto shadow-md">
                             <img
                               src={q.imageUrl}
-                              alt={`Diagram for Question ${q.questionNumber}`}
-                              className="max-h-72 w-auto object-contain rounded-lg cursor-zoom-in"
+                              alt={`Question ${q.questionNumber}`}
+                              className="max-h-[500px] w-auto max-w-full object-contain rounded cursor-zoom-in filter contrast-[1.05]"
                               onClick={() => setZoomedImg(q.imageUrl || null)}
                             />
                             <button
                               type="button"
                               onClick={() => setZoomedImg(q.imageUrl || null)}
-                              className="mt-2 text-[11px] font-semibold text-zinc-400 hover:text-white flex items-center gap-1.5 px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 hover:border-red-600 transition-colors shadow-xs"
+                              className="mt-2 text-[11px] font-semibold text-slate-700 dark:text-zinc-300 hover:text-black dark:hover:text-white flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 dark:bg-zinc-800 border border-slate-300 dark:border-zinc-700 hover:border-red-600 transition-colors shadow-xs"
                             >
-                              <ZoomIn className="w-3.5 h-3.5 text-red-500" />
-                              <span>Inspect Diagram Fullscreen</span>
+                              <ZoomIn className="w-3.5 h-3.5 text-red-600" />
+                              <span>Inspect Question Fullscreen</span>
                             </button>
                           </div>
                         )}
@@ -940,6 +1023,64 @@ export const PostTestAnalytics: React.FC<PostTestAnalyticsProps> = ({
                             </div>
                           </div>
                         )}
+
+                        {/* Automatic AI Solution & Kota Shortcut Breakdown */}
+                        <div className="p-4 rounded-xl bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border border-red-900/40 text-xs space-y-3">
+                          <div className="flex flex-wrap items-center justify-between gap-2">
+                            <div className="font-bold text-red-400 flex items-center gap-2">
+                              <Sparkles className="w-4 h-4 text-red-500" />
+                              <span>AI Deep Solution & Kota Shortcut Tricks</span>
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 flex items-center gap-1">
+                                <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                                Auto-Generated with AI
+                              </span>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => handleGenerateAiSolution(q, userAnswer)}
+                              disabled={loadingAiSolutions[q.id]}
+                              className="px-2.5 py-1 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white rounded-md border border-zinc-700 transition-colors flex items-center gap-1 font-semibold text-[11px]"
+                            >
+                              <Sparkles className="w-3 h-3 text-red-400" />
+                              {loadingAiSolutions[q.id] ? 'Refreshing with AI...' : 'Regenerate via Gemini AI'}
+                            </button>
+                          </div>
+
+                          {aiSolutions[q.id] ? (
+                            <div className="space-y-2.5 pt-1 border-t border-zinc-800">
+                              {aiSolutions[q.id].keyConcept && (
+                                <div className="p-2.5 bg-black/40 rounded-lg border border-zinc-800">
+                                  <span className="font-bold text-amber-400">🎯 Key Governing Principle: </span>
+                                  <span className="text-zinc-300">{aiSolutions[q.id].keyConcept}</span>
+                                </div>
+                              )}
+                              {aiSolutions[q.id].stepByStep && (
+                                <div className="p-2.5 bg-black/40 rounded-lg border border-zinc-800">
+                                  <div className="font-bold text-emerald-400 mb-1">📝 AI Step-by-Step Derivation:</div>
+                                  <div className="text-zinc-300 leading-relaxed">
+                                    <MathRenderer content={aiSolutions[q.id].stepByStep || ''} />
+                                  </div>
+                                </div>
+                              )}
+                              {aiSolutions[q.id].shortcutTrick && (
+                                <div className="p-2.5 bg-red-950/20 rounded-lg border border-red-900/30">
+                                  <span className="font-bold text-cyan-400">⚡ 30-Second Kota Shortcut: </span>
+                                  <span className="text-zinc-300">{aiSolutions[q.id].shortcutTrick}</span>
+                                </div>
+                              )}
+                              {aiSolutions[q.id].commonMistake && (
+                                <div className="p-2.5 bg-red-950/20 rounded-lg border border-red-900/30">
+                                  <span className="font-bold text-rose-400">⚠️ Negative Marking Trap: </span>
+                                  <span className="text-zinc-300">{aiSolutions[q.id].commonMistake}</span>
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="text-zinc-400 text-[11px] flex items-center justify-between">
+                              <span>Generate an AI-driven conceptual explanation, 30-second shortcut trick, and trap analysis for this question.</span>
+                            </div>
+                          )}
+                        </div>
 
                         {/* Root-Cause Classification & AI Remedial Practice */}
                         {status !== 'CORRECT' && (

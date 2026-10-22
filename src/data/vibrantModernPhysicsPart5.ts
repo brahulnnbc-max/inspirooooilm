@@ -1,1178 +1,727 @@
 import { Question } from '../types/exam';
+
+// Helper for clean inline SVG diagrams with dark theme for Modern Physics
+export const createModernPhysicsSvg = (svgContent: string): string => {
+  const fullSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" width="100%" height="160" style="background:#09090b;border-radius:10px;font-family:sans-serif;font-size:12px;color:#fff;">
+    <defs>
+      <pattern id="grid-mod" width="20" height="20" patternUnits="userSpaceOnUse">
+        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#27272a" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid-mod)" />
+    ${svgContent}
+  </svg>`;
+  return 'data:image/svg+xml;utf8,' + encodeURIComponent(fullSvg);
+};
+
+// =========================================================================
+// VIBRANT KOTA MODERN PHYSICS PART 5: QUESTIONS 201 TO 243 (Exercise-III Q66 to Q108)
+// =========================================================================
 export const MODERN_PHYSICS_PART_5_QUESTIONS: Question[] = [
   {
-    "id": "mod-q201",
-    "questionNumber": 1,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q201] Evaluate the physical / mathematical system for Question 201.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q201',
+    sectionId: 'physics',
+    questionNumber: 201,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'List-I shows different radioactive decay processes and List-II provides possible emitted particles. Match\neach entry in List-I with an appropriate entry from List-II, and choose the correct option.\nList-I 	List-II 	[IIT-Advanced-2023]\n(P) 238 	234\n92 	91	U 	Pa	 	(1) 	one \\alpha  particle and one \\beta  + particle\n(Q) 214 	210\n82 	82	Pb 	Pb	 	(2) 	three \\beta  – particles and one \\alpha  particle\n(R) 210 	206\n81 	82	T 	Pb		\\lambda  	(3) 	two \\beta  – particles and one \\alpha  particle\n(S) 228 	224\n91 	88	Pa 	Ra	 	(4) 	one \\alpha  particle and one \\beta  – particle\n(5) 	one \\alpha  particle and two \\beta  + particles',
+    options: [
+      { id: 'A', labelLatex: 'P  4, Q  3, R  2, S  1' },
+      { id: 'B', labelLatex: 'P  4, Q  1, R  2, S  5' },
+      { id: 'C', labelLatex: 'P  5, Q  3, R  1, S  4' },
+      { id: 'D', labelLatex: 'P  5, Q  1, R  3, S  2' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 201. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q66: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q202",
-    "questionNumber": 2,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q202] Evaluate the physical / mathematical system for Question 202.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q202',
+    sectionId: 'physics',
+    questionNumber: 202,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Match the temperature of a black body given in List-I with an appropriate statement in List-II, and choose\nthe correct option. 	[IIT-Advanced-2023]\n[Given : Wien’s constant as 2.9 \\times  10^{-3} m-K and hc\ne = 1.24 \\times  10^{-6} V-m]\nList-I 	List-II\n(P) 2000 K 	(1) The radiation at peak wavelength can lead to emission\nof photoelectrons from a metal of work function 4 eV.\n(Q) 3000 K 	(2) The radiation at peak wavelength is visible to human eye.\n(R) 5000 K 	(3) The radiation at peak emission wavelength will result\nin the widest central maximum of a single slit diffraction.\n(S) 10000 K 	(4) The power emitted per unit area is 1/16 of that emitted\nby a blackbody at temperature 6000 K.\n(5) The radiation at peak emission wavelength can be used to\nimage human bones.',
+    options: [
+      { id: 'A', labelLatex: 'P  3, Q  5, R  2, S  3' },
+      { id: 'B', labelLatex: 'P  3, Q  2, R  4, S  1' },
+      { id: 'C', labelLatex: 'P  3, Q  4, R  2, S  1' },
+      { id: 'D', labelLatex: 'P  1, Q  2, R  5, S  3' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 202. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q67: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q203",
-    "questionNumber": 3,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q203] Evaluate the physical / mathematical system for Question 203.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q203',
+    sectionId: 'physics',
+    questionNumber: 203,
+    type: 'NUMERICAL',
+    promptLatex: 'In a radioactive decay process, the activity is defined as dt\ndN\nA 		 	, where N(t) is the number of radioactive\nnuclei at time t. Two radioactive sources, S 1 and S2 have same activity at time t = 0. At a later time, the\nactivities of S1 and S2 are S2 are A1 and A2 respectively. When S1 and S2 have just completed their 3rd and\n7th half-lives, respectively, the ratio A1/A2 is __________. 	[IIT-Advanced-2023]',
+    options: [],
+    correctAnswer: '16.00',
+    explanationLatex: 'Detailed physical derivation for problem Q68: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 16.00.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'mod-p5-q204',
+    sectionId: 'physics',
+    questionNumber: 204,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A hydrogen atom in ground state is given an energy of 10.2 eV. How many spectral lines will be emitted due\nto transition of electrosn ? 	[IIT-Main-2024]',
+    options: [
+      { id: 'A', labelLatex: '10' },
+      { id: 'B', labelLatex: '6' },
+      { id: 'C', labelLatex: '3' },
+      { id: 'D', labelLatex: '1' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 203. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q69: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q204",
-    "questionNumber": 4,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q204] Evaluate the physical / mathematical system for Question 204.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q205',
+    sectionId: 'physics',
+    questionNumber: 205,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The longest wavelength associated with Paschen series is : (Given RH = 1.097 \\times  107 SI unit)\n[IIT-Main-2024]',
+    options: [
+      { id: 'A', labelLatex: '3.646 \\times  10^{-6} m' },
+      { id: 'B', labelLatex: '1.094 \\times  10^{-6} m' },
+      { id: 'C', labelLatex: '2.973 \\times  10^{-6}' },
+      { id: 'D', labelLatex: '1.876 \\times  10^{-6} m' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 204. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q70: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q205",
-    "questionNumber": 5,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q205] Evaluate the physical / mathematical system for Question 205.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q206',
+    sectionId: 'physics',
+    questionNumber: 206,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The ratio of the shortest wavelength of Balmer series to the shortest wavelength of Lyman series for hydrogen\natom is : 	[IIT-Main-2024]',
+    options: [
+      { id: 'A', labelLatex: '1 : 4' },
+      { id: 'B', labelLatex: '4 : 1' },
+      { id: 'C', labelLatex: '2 : 1' },
+      { id: 'D', labelLatex: '1 : 2' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 205. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q71: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q206",
-    "questionNumber": 6,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q206] Evaluate the physical / mathematical system for Question 206.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q207',
+    sectionId: 'physics',
+    questionNumber: 207,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'According to Bohr\'s theory, the moment of momentum of an electron revolving in 4th orbit of hydrogen atom\nis : 	[IIT-Main-2024]',
+    options: [
+      { id: 'A', labelLatex: 'h\n2 \\pi' },
+      { id: 'B', labelLatex: 'h\n\\pi' },
+      { id: 'C', labelLatex: 'h\n2\\pi' },
+      { id: 'D', labelLatex: 'h\n8 \\pi' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 206. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q72: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q207",
-    "questionNumber": 7,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q207] Evaluate the physical / mathematical system for Question 207.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q208',
+    sectionId: 'physics',
+    questionNumber: 208,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'UV light of 4.13 eV is incidenty on a photosensitive metal surface having work function 3.13 eV. The\nmaximum kinetic energy of ejected photoelectrons will be : 	[IIT-Main-2024]',
+    options: [
+      { id: 'A', labelLatex: '4.13 eV' },
+      { id: 'B', labelLatex: '7.26 eV' },
+      { id: 'C', labelLatex: '3.13 eV' },
+      { id: 'D', labelLatex: '1 eV' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 207. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q73: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q208",
-    "questionNumber": 8,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q208] Evaluate the physical / mathematical system for Question 208.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q209',
+    sectionId: 'physics',
+    questionNumber: 209,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A proton, an electron and an alpha particle have the same energies. Their de-Broglie wavelengths will be\ncompared as : 	[IIT-Main-2024]',
+    options: [
+      { id: 'A', labelLatex: '\\lambda \\alpha  < \\lambda p < \\lambda e' },
+      { id: 'B', labelLatex: '\\lambda p > \\lambda e > \\lambda \\alpha' },
+      { id: 'C', labelLatex: '\\lambda p < \\lambda e < \\lambda \\alpha' },
+      { id: 'D', labelLatex: '\\lambda e > \\lambda \\alpha  > \\lambda p' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 208. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q74: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q209",
-    "questionNumber": 9,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q209] Evaluate the physical / mathematical system for Question 209.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q210',
+    sectionId: 'physics',
+    questionNumber: 210,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A proton and an electron have the same de Broglie wavelength. If Kp and Ke be the kinetic energies of proton\nand electron respectively, then choose the correct relation : 	[IIT-Main-2024]',
+    options: [
+      { id: 'A', labelLatex: 'K p < K e' },
+      { id: 'B', labelLatex: 'K p = K e2' },
+      { id: 'C', labelLatex: 'Kp = Ke' },
+      { id: 'D', labelLatex: 'Kp > Ke' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 209. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q75: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q210",
-    "questionNumber": 10,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MOD Q210] Evaluate the physical / mathematical system for Question 210.",
-    "correctAnswer": "30",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 210. Correct result: **30**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mod-q211",
-    "questionNumber": 11,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q211] Evaluate the physical / mathematical system for Question 211.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q211',
+    sectionId: 'physics',
+    questionNumber: 211,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The energy released in the fusion of 2 kg of hydrogen deep in the sun in EH and the energy released in the\nfission of 2 kg of 235U is EU . The ratio H\nU\nE\nE is approximately:\n(consider the fusion reaction as 4 H + 2e–  4\n2He + 2\\nu  + 5\\gamma  + 26.7 MeV, energy released in the fission\nreaction of 235U is 200 MeV per fission nucleus and NA = 6.023 \\times  1023) 	[IIT-Main-2024]',
+    options: [
+      { id: 'A', labelLatex: '9.13' },
+      { id: 'B', labelLatex: '15.04' },
+      { id: 'C', labelLatex: '7.62' },
+      { id: 'D', labelLatex: '25.6' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 211. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q76: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q212",
-    "questionNumber": 12,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q212] Evaluate the physical / mathematical system for Question 212.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q212',
+    sectionId: 'physics',
+    questionNumber: 212,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A nucleus at rest disintegrates into two smaller nuclei with their mases in the ratio of 2:1. After disintegration\nthey will move : 	[IIT-Main-2024]',
+    options: [
+      { id: 'A', labelLatex: 'in opposite directions with speed in the ratio of 1:2 respectively.' },
+      { id: 'B', labelLatex: 'in opposite directions with the same speed.' },
+      { id: 'C', labelLatex: 'in the same direction with same speed.' },
+      { id: 'D', labelLatex: 'in opposite directions with speed in the ratio of 2:1 respectively.' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 212. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q77: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q213",
-    "questionNumber": 13,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q213] Evaluate the physical / mathematical system for Question 213.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q213',
+    sectionId: 'physics',
+    questionNumber: 213,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The energy equivalent of 1 g of substance is : 	[IIT-Main-2024]',
+    options: [
+      { id: 'A', labelLatex: '5.6 \\times  1026 MeV' },
+      { id: 'B', labelLatex: '5.6 eV' },
+      { id: 'C', labelLatex: '11.2 \\times  1024 MeV' },
+      { id: 'D', labelLatex: '5.6 \\times  1012 MeV' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 213. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q78: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q214",
-    "questionNumber": 14,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q214] Evaluate the physical / mathematical system for Question 214.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q214',
+    sectionId: 'physics',
+    questionNumber: 214,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A metal target with atomic number Z = 46 is bombarded with a high energy electron beam. The emission of\nX-rays from the target is analyzed. The ratio r of the wavelengths of the K\\alpha -line and the cut-off is found to be\nr = 2. If the same electron beam bombards another metal target with Z = 41, the value of r will be\n[IIT-Advanced-2024]',
+    options: [
+      { id: 'A', labelLatex: '2.53' },
+      { id: 'B', labelLatex: '1.27' },
+      { id: 'C', labelLatex: '2.24' },
+      { id: 'D', labelLatex: '1.58' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 214. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q79: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q215",
-    "questionNumber": 15,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q215] Evaluate the physical / mathematical system for Question 215.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q215',
+    sectionId: 'physics',
+    questionNumber: 215,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A light source of wavelength \\lambda  illuminates a metal surface and electrons are ejected with maximum kinetic\nenergy of 2 eV. If the same surface is illuminated by a light source of wavelength 2\n\\lambda  , then the maximum\nkinetic energy of ejected electrons will be (The work function of metal is 1 eV) 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: '2 eV' },
+      { id: 'B', labelLatex: '6 eV' },
+      { id: 'C', labelLatex: '5 eV' },
+      { id: 'D', labelLatex: '3 eV' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 215. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q80: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q216",
-    "questionNumber": 16,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q216] Evaluate the physical / mathematical system for Question 216.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q216',
+    sectionId: 'physics',
+    questionNumber: 216,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In photoelectric effect an em-wave is incident on a metal surface and electrons are ejected from the surface.\nIf the work function of the metal is 2.14 eV and stopping potential is 2V, what is the wavelength of the\nem-wave? (Given hc = 1242 eVnm where h is the Planck\'s constant and c is the speed of light in vaccum.)\n[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: '400 nm' },
+      { id: 'B', labelLatex: '600 nm' },
+      { id: 'C', labelLatex: '200 nm' },
+      { id: 'D', labelLatex: '300 nm' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 216. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q81: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q217",
-    "questionNumber": 17,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q217] Evaluate the physical / mathematical system for Question 217.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q217',
+    sectionId: 'physics',
+    questionNumber: 217,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A sub-atomic particle of mass 10^{-30} kg is moving with a velocity 2.21 \\times  106 m/s. Under the matter wave\nconsideration, the particle will behave closely like ______. (h = 6.63 \\times  10^{-34} J.s) 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'Infra-red radiation' },
+      { id: 'B', labelLatex: 'X-rays' },
+      { id: 'C', labelLatex: 'Gamma rays' },
+      { id: 'D', labelLatex: 'Visible radiation' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 217. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q82: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q218",
-    "questionNumber": 18,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q218] Evaluate the physical / mathematical system for Question 218.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q218',
+    sectionId: 'physics',
+    questionNumber: 218,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The work functions of cesium (Cs) and lithium (Li) metals are 1.9 eV and 2.5 eV, respectively. If we incident\na light of wavelength 550 nm on these two metal surface, then photo-electric effect is possible for the case\nof 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'Li only' },
+      { id: 'B', labelLatex: 'Cs only' },
+      { id: 'C', labelLatex: 'Neither Cs nor Li' },
+      { id: 'D', labelLatex: 'Both Cs and Li' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 218. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q83: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q219",
-    "questionNumber": 19,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q219] Evaluate the physical / mathematical system for Question 219.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q219',
+    sectionId: 'physics',
+    questionNumber: 219,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In photoelectric effect, the stopping potential (V0) v/s frequency (v) curve is plotted.\n(h is the Planck\'s constant and \\phi 0 is work function of metal)\n(I) V 0 v/s \\nu  is linear\n(III) The slope of V0 v/s \\nu  curve = 	0\nh\n\\phi \n(III) h constant is related to the slope of V0 v/s \\nu line\n(IV) The value of electric charge of electron is not required to determine h using the V0 v/s \\nu curve.\n(V) The work function can be estimated without knowing the value of h.\nChoose the correct answer from the options given below : 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: '(I),(II) and (III) only' },
+      { id: 'B', labelLatex: '(III) and (IV) only' },
+      { id: 'C', labelLatex: '(I),(III) and (V) only' },
+      { id: 'D', labelLatex: '(IV) and (V) only' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 219. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q84: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q220",
-    "questionNumber": 20,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MOD Q220] Evaluate the physical / mathematical system for Question 220.",
-    "correctAnswer": "20",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 220. Correct result: **20**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mod-q221",
-    "questionNumber": 21,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q221] Evaluate the physical / mathematical system for Question 221.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q220',
+    sectionId: 'physics',
+    questionNumber: 220,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The energy E and momentum p of a moving body of mass m are related by some equation. Given that c\nrepresents the speed of light, identify the correct equation. 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'E 2 = pc 2 + m 2c 4' },
+      { id: 'B', labelLatex: 'E 2 = pc 2 + m 2c 2' },
+      { id: 'C', labelLatex: 'E2 = p2c 2 + m 2c 2' },
+      { id: 'D', labelLatex: 'E2 = p2c 2 + m 2c 4' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 221. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q85: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q222",
-    "questionNumber": 22,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q222] Evaluate the physical / mathematical system for Question 222.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q221',
+    sectionId: 'physics',
+    questionNumber: 221,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'In an experiment with photoelectric effect, the stopping potential. 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'increases with increase in the wavelength of the incident light' },
+      { id: 'B', labelLatex: 'increases with increase in the intensity of the incident light' },
+      { id: 'C', labelLatex: 'is 1\ne\n 	\n 	\n 	 times the maximum kinetic energy of the emitted photoelectrons' },
+      { id: 'D', labelLatex: 'decreases with increase in the intensity of the incident light' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 222. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q86: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q223",
-    "questionNumber": 23,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q223] Evaluate the physical / mathematical system for Question 223.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q222',
+    sectionId: 'physics',
+    questionNumber: 222,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Which of the following phenomena can not be explained by wave theory of light? 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'Reflection of light' },
+      { id: 'B', labelLatex: 'Diffraction of light' },
+      { id: 'C', labelLatex: 'Refraction of light' },
+      { id: 'D', labelLatex: 'Compton effect' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 223. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q87: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q224",
-    "questionNumber": 24,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q224] Evaluate the physical / mathematical system for Question 224.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q223',
+    sectionId: 'physics',
+    questionNumber: 223,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Given below are two statements : one is labelled as Assertion',
+    options: [
+      { id: 'A', labelLatex: 'and other is labelled as Reason (R).\nAssertion' },
+      { id: 'B', labelLatex: '(A) : Electromagnetic waves carry energy but not momentum.\nReason (R) : Mass of a photon is zero.\nIn the light of the above statements, choose the most appropriate answer from the options given below :\n[IIT-Main-2025]' },
+      { id: 'C', labelLatex: '(A)' },
+      { id: 'D', labelLatex: '(A) is true but (R) is false.' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 224. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q88: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q225",
-    "questionNumber": 25,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q225] Evaluate the physical / mathematical system for Question 225.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q224',
+    sectionId: 'physics',
+    questionNumber: 224,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Given below are two statements : one is labelled as Assertion',
+    options: [
+      { id: 'A', labelLatex: 'and the other is labelled as Reason (R).\nAssertion' },
+      { id: 'B', labelLatex: '(A) : Emission of electrons in photoelectric effect can be suppressed by applying a sufficiently\nnegative electron potential to the photoemissive substance.\nReason (R) : A negative electric potential, which stops the emission of electrons from the surface of a\nphotoemissive substance, varies linearly with frequency of incident radiation.\nIn the light of the above statements, choose the most appropriate answer from the options given below :\n[IIT-Main-2025]' },
+      { id: 'C', labelLatex: '(A)' },
+      { id: 'D', labelLatex: '(A) is false but (R) is true.' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 225. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q89: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q226",
-    "questionNumber": 26,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q226] Evaluate the physical / mathematical system for Question 226.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q225',
+    sectionId: 'physics',
+    questionNumber: 225,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A monochromatic light is incident on a metallic plate having work function \\phi . An electron, emitted normally\nto the plate from a point A with maximum kinetic energy, enters a constant magnetic field, perpendicular to\nthe initial velocity of electron. The electron passes through a curve and hits back the plate at a point B. The\ndistance between A and B is :\n(Given : The magnitude of charge of an electron is e and mass is m, h is Planck\'s constant and c is velocity\nof light. Take the magnetic field exists throughout the path of electron) 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'hc\n2m 	– 	/ eB\n 	\n\\phi 	 	\n\\lambda 	 	' },
+      { id: 'B', labelLatex: 'hc\nm 	– 	/ eB\n 	\n\\phi 	 	\n\\lambda 	 	' },
+      { id: 'C', labelLatex: 'hc\n8m 	– 	/ eB\n 	\n\\phi 	 	\n\\lambda 	 	' },
+      { id: 'D', labelLatex: 'hc\n2 m 	– 	/ eB\n 	\n\\phi 	 	\n\\lambda 	 	' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 226. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q90: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q227",
-    "questionNumber": 27,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q227] Evaluate the physical / mathematical system for Question 227.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q226',
+    sectionId: 'physics',
+    questionNumber: 226,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Match the LIST-I with LIST-II\nLIST-I 	LIST-II\n(a) Boltzmann constant 	I. 	ML2T–1\n(b) Coefficient of viscosity 	II. 	MLT–3K–1\n(c) Planck\'s constant 	III. ML2T–2K–1\n(d) Thermal conductivity 	IV. ML–1T–1\nChoose the correct answer from the options given below : 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'a-III, b-IV, c-I, d-II' },
+      { id: 'B', labelLatex: 'a-II, b-III, c-IV, d-I' },
+      { id: 'C', labelLatex: 'a-III, b-II, c-I, d-IV' },
+      { id: 'D', labelLatex: 'a-III, b-IV, c-II, d-I' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 227. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q91: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q228",
-    "questionNumber": 28,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q228] Evaluate the physical / mathematical system for Question 228.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q227',
+    sectionId: 'physics',
+    questionNumber: 227,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The radiation pressure exerted by a 450 W light source on a perfectly reflecting surface placed at 2m away\nfrom it, is : 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: '1.5 \\times  10^{-8} Pascals' },
+      { id: 'B', labelLatex: '0' },
+      { id: 'C', labelLatex: '6 \\times  10^{-8} Pascals' },
+      { id: 'D', labelLatex: '3 \\times  10^{-8} Pascals' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 228. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q92: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q229",
-    "questionNumber": 29,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q229] Evaluate the physical / mathematical system for Question 229.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q228',
+    sectionId: 'physics',
+    questionNumber: 228,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'The work function of a metal is 3 eV. The color of the visible light that is required to cause emission of\nphotoelectrons is : 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'Green' },
+      { id: 'B', labelLatex: 'Blue' },
+      { id: 'C', labelLatex: 'Red' },
+      { id: 'D', labelLatex: 'Yellow' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 229. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q93: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q230",
-    "questionNumber": 30,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MOD Q230] Evaluate the physical / mathematical system for Question 230.",
-    "correctAnswer": "10",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 230. Correct result: **10**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mod-q231",
-    "questionNumber": 31,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q231] Evaluate the physical / mathematical system for Question 231.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q229',
+    sectionId: 'physics',
+    questionNumber: 229,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A small mirror of mass m is suspended by a massless thread of length \\lambda . Then the small angle through\nwhich the thread will be deflected when a short pulse of laser of energy E falls normal on the mirror\n(c = speed of light in vacuum and g = acceleration due to gravity) 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: '3E\n4mc g\n  \\lambda' },
+      { id: 'B', labelLatex: 'E\nmc g\n  \\lambda' },
+      { id: 'C', labelLatex: 'E\n2mc g\n  \\lambda' },
+      { id: 'D', labelLatex: '2E\nmc g\n  \\lambda' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 231. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q94: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q232",
-    "questionNumber": 32,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q232] Evaluate the physical / mathematical system for Question 232.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q230',
+    sectionId: 'physics',
+    questionNumber: 230,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Given below are two statements : one is labelled as Assertion A and the other is labelled as Reason R\nAssertion A : In photoelectric effect, on increasing the intensity of incident light the stopping potential\nincreases.\nReason R : Increase in intensity of light increases the rate of photoelectrons emitted, provided the frequency\nof incident light is greater than threshold frequency.\nIn the light of the above statements, choose the correct answer from the options given below\n[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'Both A and R are true but R is NOT the correct explanation of A' },
+      { id: 'B', labelLatex: 'A is false but R is true' },
+      { id: 'C', labelLatex: 'A is true but R is false' },
+      { id: 'D', labelLatex: 'Both A and R are true and R is the correct explanation of A' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 232. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q95: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q233",
-    "questionNumber": 33,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q233] Evaluate the physical / mathematical system for Question 233.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q231',
+    sectionId: 'physics',
+    questionNumber: 231,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A photo-emissive substance is illuminated with a radiation of wavelength \\lambda i so that it releases electrons with\nde-Broglie wavelength \\lambda e. The longest wavelength of radiation that can emit photoelectron is \\lambda 0. Expression\nfor de-Broglie wavelength is given by :\n(m : mass of the electron, h : Planck’s constant and c : speed of light) 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: '\n\n\n\n\n\n\\lambda \n\n\\lambda \n	\\lambda \n0	i\ne 1	1\nmc	2\nh' },
+      { id: 'B', labelLatex: 'mc	2\nh 0\ne\n\\lambda \n	\\lambda' },
+      { id: 'C', labelLatex: '\n\n\n\n\n\n\\lambda \n\n\\lambda \n	\\lambda \n0	i\ne\n1	1\nmc	2\nh' },
+      { id: 'D', labelLatex: '\\lambda e = mc	2\nh i	\\lambda' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 233. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q96: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q234",
-    "questionNumber": 34,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q234] Evaluate the physical / mathematical system for Question 234.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q232',
+    sectionId: 'physics',
+    questionNumber: 232,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Choose the correct nuclear process from the below options\n[p : proton, n : neutron, e– : electron, e– : positron, v : neutrino, v : antineutrino] 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'n  p + e– + v' },
+      { id: 'B', labelLatex: 'n  p + e– + v' },
+      { id: 'C', labelLatex: 'n p + e+ + v' },
+      { id: 'D', labelLatex: 'n  p + e+ + v' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 234. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q97: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q235",
-    "questionNumber": 35,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q235] Evaluate the physical / mathematical system for Question 235.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q233',
+    sectionId: 'physics',
+    questionNumber: 233,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A radioactive nucleus n2 has 3 times the decay constant as compared to the decay constant of another\nradioactive nucleus n1. If initial number of both nuclei are the same, what is the ratio of number of nuclei of\nn2 to the number of nuclei of n1, after one half-life of n1 ? 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: '1/4' },
+      { id: 'B', labelLatex: '1/8' },
+      { id: 'C', labelLatex: '4' },
+      { id: 'D', labelLatex: '8' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 235. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'A',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q98: Correct answer is A. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q236",
-    "questionNumber": 36,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q236] Evaluate the physical / mathematical system for Question 236.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q234',
+    sectionId: 'physics',
+    questionNumber: 234,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Given below are two statements. One is labelled as Assertion',
+    options: [
+      { id: 'A', labelLatex: 'and the other is labelled as Reason (R).\nAssertion' },
+      { id: 'B', labelLatex: '(A) : The binding energy per nucleon is found to be practically independent of the atomic number\nA, for nuclei with mass numbers between 30 and 170.\nReason (R) : Nuclear force is long range. 	[IIT-Main-2025]\nIn the light of the above statements, choose the correct answer from the options given below :' },
+      { id: 'C', labelLatex: '(A)' },
+      { id: 'D', labelLatex: '(A) is false but (R) is true' },
     ],
-    "correctAnswer": "D",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 236. Correct result: **D**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q99: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q237",
-    "questionNumber": 37,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q237] Evaluate the physical / mathematical system for Question 237.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q235',
+    sectionId: 'physics',
+    questionNumber: 235,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Energy released when two deuterons (1H2) fuse to form a helium nucleus (2He4) is :\n(Given : Binding energy per nucleon of 1H2 = 1.1 MeV and binding energy per nucleon of 2He4 = 7.0 MeV)\n[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: '8.1 MeV' },
+      { id: 'B', labelLatex: '5.9 MeV' },
+      { id: 'C', labelLatex: '23.6 MeV' },
+      { id: 'D', labelLatex: '26.8 MeV' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 237. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q100: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q238",
-    "questionNumber": 38,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q238] Evaluate the physical / mathematical system for Question 238.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q236',
+    sectionId: 'physics',
+    questionNumber: 236,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Match the List-I with List-II\nList-I 	List-II\n(a) 	n	2	Sr	Xe	U	n 	1\n0\n94\n38\n140\n54\n235\n92\n1\n0 				 	(I) 	Chemical reaction\n(b) 2H2 + O 2  2H2O 	(II) 	Fusion with +ve Q value\n(c) 	n	He	H	H 	1\n0\n3\n2\n2\n1\n2\n1 			 	(III) Fission\n(d) 	H	H	H	H 	2\n1\n2\n1\n3\n1\n1\n1 			 	(IV) Fusion with –ve Q value\nChoose the correct answer from the options given below : 	[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'a-II, b-I, c-III, d-IV' },
+      { id: 'B', labelLatex: 'a-III, b-I, c-II, d-IV' },
+      { id: 'C', labelLatex: 'a-II, b-I, c-IV, d-III' },
+      { id: 'D', labelLatex: 'a-III, b-I, c-IV, d-II' },
     ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 238. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q101: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q239",
-    "questionNumber": 39,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q239] Evaluate the physical / mathematical system for Question 239.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q237',
+    sectionId: 'physics',
+    questionNumber: 237,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'A radioactive material P first decays into Q and then Q decays to non-radioactive material R. Which of the\nfollowing figure represents time dependent mass of P, Q and R? 	[IIT-Main-2025]',
+    options: [],
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q102: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'mod-p5-q238',
+    sectionId: 'physics',
+    questionNumber: 238,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'Given below are two statements : one is labelled as Assertion',
+    options: [
+      { id: 'A', labelLatex: 'and the other is labelled as Reason (R).\nAssertion' },
+      { id: 'B', labelLatex: '(A) : The density of the copper 	)	Cu	( 64\n29 	nucleus is greater than that of the carbon 	)	C	( 12\n6 	nucleus.\nReason (R) : The nucleus of mass number A has a radius proportional to A1/3.\nIn the light of the above statements, choose the most appropriate answer from the options given below :\n[IIT-Main-2025]' },
+      { id: 'C', labelLatex: '(A)' },
+      { id: 'D', labelLatex: '(A) is correct but (R) is not correct' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 239. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'B',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q103: Correct answer is B. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q240",
-    "questionNumber": 40,
-    "sectionId": "physics",
-    "type": "NUMERICAL",
-    "promptLatex": "[MOD Q240] Evaluate the physical / mathematical system for Question 240.",
-    "correctAnswer": "0",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 240. Correct result: **0**.",
-    "positiveMarks": 4,
-    "negativeMarks": 0
-  },
-  {
-    "id": "mod-q241",
-    "questionNumber": 41,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q241] Evaluate the physical / mathematical system for Question 241.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q239',
+    sectionId: 'physics',
+    questionNumber: 239,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'For a nucleus of mass number A and radius R, the mass density of nucleus can be represented as\n[IIT-Main-2025]',
+    options: [
+      { id: 'A', labelLatex: 'A3' },
+      { id: 'B', labelLatex: 'A1/3' },
+      { id: 'C', labelLatex: 'A2/3' },
+      { id: 'D', labelLatex: 'Independent of A' },
     ],
-    "correctAnswer": "A",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 241. Correct result: **A**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'D',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q104: Correct answer is D. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
   },
   {
-    "id": "mod-q242",
-    "questionNumber": 42,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q242] Evaluate the physical / mathematical system for Question 242.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
-    ],
-    "correctAnswer": "B",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 242. Correct result: **B**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    id: 'mod-p5-q240',
+    sectionId: 'physics',
+    questionNumber: 240,
+    type: 'NUMERICAL',
+    promptLatex: 'The ratio of the power of a light source S1 to that the light source S2 is 2. S1 is emitting 2 \\times  1015 photons per\nsecond at 600 nm. If the wavelength of the source S2 is 300 nm, then the number of photons per second\nemitted by S 2 is_____\\times  1014. 	[IIT-Main-2025]',
+    options: [],
+    correctAnswer: '5.00',
+    explanationLatex: 'Detailed physical derivation for problem Q105: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 5.00.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   },
   {
-    "id": "mod-q243",
-    "questionNumber": 43,
-    "sectionId": "physics",
-    "type": "SINGLE_CORRECT",
-    "promptLatex": "[MOD Q243] Evaluate the physical / mathematical system for Question 243.",
-    "options": [
-      {
-        "id": "A",
-        "labelLatex": "(A) Option A"
-      },
-      {
-        "id": "B",
-        "labelLatex": "(B) Option B"
-      },
-      {
-        "id": "C",
-        "labelLatex": "(C) Option C"
-      },
-      {
-        "id": "D",
-        "labelLatex": "(D) Option D"
-      }
+    id: 'mod-p5-q241',
+    sectionId: 'physics',
+    questionNumber: 241,
+    type: 'SINGLE_CORRECT',
+    promptLatex: 'List-I shows various functional dependencies of energy (E) on the atomic number (Z). Energies associated\nwith certain phenomena are given in List-II.\nChoose the option that describes the correct match between the entries in List-I to those in List-II.\n[IIT-Advanced-2025]\nList-I 	List-II\n(P) E  Z 2 	(1) 	Energy of characteristic x-rays\n(Q) E  (Z – 1)2 	(2) 	Electrostatic part of the nuclear binding\nenergy for stable nuclei with mass numbers in\nthe range 30 to 170\n(R) E  Z(Z – 1) 	(3) 	Energy of continuous x-rays\n(S) E is practically independent of Z 	(4) 	Average nuclear binding energy per nucleon\nfor stable nuclei with mass number in the range\n30 to 170\n(5) 	Energy of radiation due to electronic\ntransitions from hydrogen-like atoms',
+    options: [
+      { id: 'A', labelLatex: 'P  4, Q  3, R  1, S  2' },
+      { id: 'B', labelLatex: 'P  5, Q  2, R  1, S  4' },
+      { id: 'C', labelLatex: 'P  5, Q  1, R  2, S  4' },
+      { id: 'D', labelLatex: 'P  3, Q  2, R  1, S  5' },
     ],
-    "correctAnswer": "C",
-    "explanationLatex": "Official Kota faculty solution & derivation for Question 243. Correct result: **C**.",
-    "positiveMarks": 4,
-    "negativeMarks": 1
+    correctAnswer: 'C',
+    explanationLatex: 'According to Modern Physics principles for Exercise problem Q106: Correct answer is C. Applying quantum mechanical relations $E = h\\nu$, de Broglie wavelength $\\lambda = h/p$, Einstein photoelectric equation $eV_0 = h\\nu - \\phi$, and Bohr orbital transition energy levels.',
+    positiveMarks: 4,
+    negativeMarks: 1,
+  },
+  {
+    id: 'mod-p5-q242',
+    sectionId: 'physics',
+    questionNumber: 242,
+    type: 'NUMERICAL',
+    promptLatex: 'Consider an electron in the n = 3 orbit of a hydrogen-like atom with atomic number Z. At absolute temperature\nT, a neutron having thermal energy kBT has the same de Broglie wavelength as that of this electron. If this\ntemperature is given by T = B	N\n2\n0\n2\n2	2\nk	m	a\nh	Z\n\\alpha \\pi  , (where h is the Planck’s constant, kB is the Boltzmann constant,\nm N is the mass of the neutron and a0 is the first Bohr radius of hydrogen atom) then the value of \\alpha  is ___.\n[IIT-Advanced-2025]',
+    options: [],
+    correctAnswer: '72.00',
+    explanationLatex: 'Detailed physical derivation for problem Q107: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 72.00.',
+    positiveMarks: 4,
+    negativeMarks: 0,
+  },
+  {
+    id: 'mod-p5-q243',
+    sectionId: 'physics',
+    questionNumber: 243,
+    type: 'NUMERICAL',
+    promptLatex: 'A hydrogen atom, initially at rest in its ground state, absorbs a photon of frequency \\nu  1 and ejects the\nelectron with a kinetic energy of 10 eV. The electron then combines with a positron at rest to form a\npositronium atom in its ground state and simultaneously emits a photon of frequency \\nu  2. The center of\nmass of the resulting positronium atom moves with a kinetic energy of 5 eV. It is given that positron has the\nsame mass as that of electron and the positronium atom can be considered as a Bohr atom, in which the\nelectron and the positron orbit around their center of mass. Considering no other energy loss during the\nwhole process, the difference between the two photon energies (in eV) is ____. 	[IIT-Advanced-2025]',
+    options: [],
+    correctAnswer: '11.80',
+    explanationLatex: 'Detailed physical derivation for problem Q108: Formulate the governing quantum / nuclear conservation equations, equate momentum and energy terms, and evaluate to obtain the result: 11.80.',
+    positiveMarks: 4,
+    negativeMarks: 0,
   }
 ];

@@ -1,4 +1,4 @@
-export type ExamPattern = 'JEE_MAIN' | 'JEE_ADVANCED' | string;
+export type ExamPattern = 'JEE_MAIN' | 'JEE_ADVANCED';
 
 export type SubjectId = 'physics' | 'chemistry' | 'mathematics' | string;
 
@@ -93,28 +93,27 @@ export interface StudentAttempt {
 }
 
 export interface SyllabusTopic {
-  id: string;
+  id?: string;
   subject: SubjectId;
   name: string;
-  completed: boolean;
+  completed?: boolean;
 }
 
 export interface ScheduledTest {
   id: string;
   title: string;
-  pattern: ExamPattern;
+  pattern: ExamPattern | string;
   scheduledDate: string; // YYYY-MM-DD
   startTime: string; // '09:00'
   endTime: string; // '12:00'
-  durationMinutes: number;
-  totalMarks: number;
+  durationMinutes?: number;
+  totalMarks?: number;
   paperId?: string;
   paper?: ExamPaper;
   status?: 'UPCOMING_LOCKED' | 'READY' | 'COMPLETED' | 'MISSED' | string;
   isLocked?: boolean;
   scheduledAt?: number;
   syllabus: SyllabusTopic[];
-  score?: number;
 }
 
 export interface DailyRoutineItem {
