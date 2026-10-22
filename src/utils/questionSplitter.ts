@@ -1,5 +1,5 @@
-import { ExamPaper, ExamPattern, Question, ScheduledTest, QuestionOption } from '../types/exam';
-import { getIsoDate, getTomorrowIso } from './scheduleCalculator';
+import type { ExamPaper, ExamPattern, Question, ScheduledTest, QuestionOption } from '../types/exam.ts';
+import { getIsoDate, getTomorrowIso } from './scheduleCalculator.ts';
 
 /**
  * Randomizes MCQ options unpredictably so students cannot guess by pattern (e.g. all A or all C).

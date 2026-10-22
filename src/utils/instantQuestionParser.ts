@@ -1,5 +1,5 @@
 import type { ExamPaper, ExamPattern, Question, ExamSection } from '../types/exam.ts';
-import { randomizeQuestionMcq } from './questionSplitter';
+import { randomizeQuestionMcq } from './questionSplitter.ts';
 
 export interface ParseResult {
   success: boolean;

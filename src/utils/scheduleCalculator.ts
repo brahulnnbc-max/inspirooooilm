@@ -1,4 +1,4 @@
-import { ScheduledTest, ExamPattern, ExamPaper, SyllabusTopic } from '../types/exam';
+import type { ScheduledTest, ExamPattern, ExamPaper, SyllabusTopic } from '../types/exam.ts';
 
 export interface ScheduleOptions {
   paper: ExamPaper;
